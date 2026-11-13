@@ -1,0 +1,23 @@
+name: Air dates
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  dates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - name: Categorize
+        run: python3 build/catalog.py catalog/raw.json.gz /tmp/catalog.json > /tmp/catalog.log 2>&1 || tail -5 /tmp/catalog.log
+      - name: Resolve air dates
+        run: BUDGET_MIN=300 CATJSON=/tmp/catalog.json python3 harvest/dates.py
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/dates.json.gz catalog/epguide.json.gz catalog/adsdates.json.gz 2>/dev/null || true
+          git commit -q -m "Update air dates" || exit 0
+          for i in 1 2 3 4 5 6; do git pull -q --rebase && git push && break; sleep 15; done

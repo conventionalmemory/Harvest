@@ -1,0 +1,20 @@
+name: School-age kids harvest
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  schoolage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - name: Harvest school-age kids shows
+        run: THREADS=16 python3 harvest/schoolage.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/schoolage.json.gz
+          git commit -q -m "Update school-age kids catalog" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase && git push && break; sleep 10; done

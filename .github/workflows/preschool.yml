@@ -1,0 +1,60 @@
+name: Preschool harvest
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search
+        run: MODE=plan python3 harvest/preschool.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pcands
+          path: parts/pcands.json.gz
+          retention-days: 3
+  lookup:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pcands
+          path: parts
+      - name: Look up
+        run: MODE=meta SHARD=${{ matrix.shard }} SHARDS=6 THREADS=16 python3 harvest/preschool.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pshard-${{ matrix.shard }}
+          path: parts/pshard-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: lookup
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pshard-*
+          path: parts
+          merge-multiple: true
+      - name: Merge
+        run: MODE=merge python3 harvest/preschool.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/preschool.json.gz
+          git commit -q -m "Update preschool catalog" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase && git push && break; sleep 10; done

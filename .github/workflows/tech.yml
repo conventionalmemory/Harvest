@@ -1,0 +1,20 @@
+name: Tech show harvest
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  tech:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - name: Harvest tech shows
+        run: python3 harvest/tech.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/tech.json.gz
+          git commit -q -m "Update tech show catalog" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase && git push && break; sleep 10; done
