@@ -133,7 +133,7 @@ def parse(html):
     seen = []
     raw = [ps['reason']] if isinstance(ps.get('reason'), str) else texts(ps.get('reason'), [])
     for t in raw + texts(ps.get('errorScreen'), []) + texts(ps.get('messages'), []):
-        t = re.sub(r'\s+', ' ', t).strip()
+        t = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', t)).strip()
         if t and t not in seen: seen.append(t)
     g = re.search(r'"GL":\s*"([A-Z]{2})"', html)
     r = {'st': str(ps.get('status')), 'emb': ps.get('playableInEmbed'), 'why': ' / '.join(seen)[:200], 'gl': g.group(1) if g else ''}
@@ -163,7 +163,7 @@ def embed(vid):
 
 def kind(w):
     w = (w or '').lower()
-    if 'not a bot' in w or 'unusual traffic' in w or 'automated' in w: return 'bot'
+    if 'not a bot' in w or 'unusual traffic' in w or 'automated' in w or 'configuration error' in w or 'error 153' in w: return 'bot'
     if 'private' in w: return 'private'
     if 'terminated' in w or ('account' in w and 'closed' in w): return 'terminated'
     if 'country' in w or 'your location' in w or 'region' in w: return 'region'
@@ -197,7 +197,9 @@ def judge(oe, note, em):
     if not em: return 'ok', 'embeddable' + tail
     if st == 'OK' and em['emb'] is not False: return 'ok', 'playable' + tail
     if k in LIMITED: return 'restricted', LIMITED[k] + tail
-    if k == 'embed' or em['emb'] is False: return 'noembed', 'not playable in embeds' + tail
+    if k == 'embed' or em['emb'] is False:
+        m = re.search(r'content from (.{1,60}?), who has blocked it from display', em['why'])
+        return 'noembed', ('embedding blocked by the content owner (%s)' % m.group(1) if m else 'not playable in embeds') + tail
     if k in GONE: return 'restricted', 'unavailable in the embedded player' + tail
     return 'restricted', 'not playable' + tail
 
@@ -227,7 +229,8 @@ def canary():
     v = random.choice(GOOD)
     for a in range(6):
         oe, note = oembed(v)
-        if oe == 200: return True
+        em = embed(v) if USE_EMBED[0] and oe == 200 else None
+        if oe == 200 and (not USE_EMBED[0] or (em and em['st'] == 'OK' and em['emb'] is not False)): return True
         with LOCK: STAT['canary_miss'] += 1
         if left() < 120: return False
         slow(30 + 30 * a); time.sleep(5)
@@ -393,7 +396,7 @@ def merge():
     print('planned', len(ids), 'answered', len(res), 'missing', len(miss), flush=True)
     table({v: res[v] for v in ids if v in res}, 'shard results')
     usable = setup()
-    again = [v for v in ids if v in res and res[v]['s'] != 'ok']
+    again = [v for v in ids if v in res and (res[v]['s'] != 'ok' or 'not read' in res[v]['r'])]
     again.sort(key=lambda v: (res[v]['s'] == 'unknown', v))
     cross = collections.Counter()
     if usable and miss:
@@ -409,7 +412,7 @@ def merge():
             a = res[v]; ob = obs[v]
             d = [o['s'] for o in ob if o['s'] != 'unknown']
             if ob and ob[-1]['r'].startswith('not checked'): return False
-            if a['s'] == 'unknown': return settle(ob) is None and len(ob) < 4
+            if a['s'] in ('unknown', 'ok'): return settle(ob) is None and len(ob) < 4
             if not d: return len(ob) < 2
             if all(x == a['s'] for x in d) and len(d) >= 1: return False
             return len(ob) < 3
@@ -436,6 +439,19 @@ def merge():
                     res[v] = {'s': 'unknown', 'r': 'inconsistent answers (%s) | last: %s' % (ss, d[-1]['r']), 'oe': d[-1]['oe'], 'em': d[-1]['em'], 'gl': d[-1]['gl'], 'n': a.get('n', 0) + len(ob)}
                 else:
                     cross['unknown stays, no answer'] += 1
+            elif a['s'] == 'ok':
+                f = settle(ob)
+                if f and f['s'] == 'ok':
+                    cross['ok, embed page %s on the second runner' % ('still not read' if 'not read' in f['r'] else 'read')] += 1
+                    res[v] = dict(f, n=a.get('n', 0) + len(ob))
+                elif f and f['oe'] == 200:
+                    cross['ok changed to %s by the embed page' % f['s']] += 1
+                    res[v] = dict(f, n=a.get('n', 0) + len(ob))
+                elif d:
+                    cross['runners disagree: first ok, second ' + ss] += 1
+                    res[v] = {'s': 'unknown', 'r': 'inconsistent answers (first runner ok, second runner %s) | first: %s' % (ss, a['r']), 'oe': a.get('oe', 0), 'em': a.get('em', ''), 'gl': a.get('gl', ''), 'n': a.get('n', 0) + len(ob)}
+                else:
+                    cross['ok, embed page still not read'] += 1
             elif not d:
                 cross['second opinion missing, kept ' + a['s']] += 1
             elif all(o['s'] == a['s'] for o in d):
