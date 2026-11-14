@@ -5,6 +5,7 @@ here = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(here, '..', 'catalog'); PARTS = os.path.join(here, '..', 'parts')
 os.makedirs(OUT, exist_ok=True); os.makedirs(PARTS, exist_ok=True)
 MODE = os.environ.get('MODE', 'plan'); SHARD = int(os.environ.get('SHARD', '0')); SHARDS = int(os.environ.get('SHARDS', '1'))
+FOCUS = [z.strip().lower() for z in os.environ.get('FOCUS', '').split(';') if z.strip()]
 THREADS = int(os.environ.get('THREADS', '16')); BUDGET = float(os.environ.get('BUDGET_MIN', '0')) * 60; T0 = time.time()
 SHOWS = json.load(open(os.path.join(here, 'shows_primetime.json'), encoding='utf-8'))
 KMAP = {'sitcom': 'prime', 'drama': 'prime', 'variety': 'prime', 'reality': 'prime', 'special': 'prime', 'news': 'news', 'soap': 'soap', 'game': 'game', 'talk': 'talk', 'movie': 'movie'}
@@ -233,12 +234,46 @@ def consider(sh, it, route='t'):
     if weak and (not mod or dev or st): return 't'
     if st: return 't' if not mod else 'v'
     return False
+def fcons(sh, it):
+    t = flat(it.get('title')); low = clean(t)
+    if not t or NONLAT.search(t) or JUNK.search(low) or FOREIGN.search(low) or SPIN.search(low): return False
+    if sh.get('junk') and re.search(sh['junk'], low): return False
+    lang = flat(it.get('language')).lower()
+    if lang and not re.search(r'eng|english|^en$', lang): return False
+    if MOD2.search(t): return False
+    desc = flat(it.get('description')).lower(); subj = flat(it.get('subject')).lower()
+    cols = set(it.get('collection') or []) if isinstance(it.get('collection'), list) else {it.get('collection')}
+    blob = low + ' ' + clean(desc) + ' ' + subj + ' ' + clean(re.sub(r'[-_.]+', ' ', it.get('identifier') or ''))
+    if JUNKD.search(desc) and not SE1.search(low): return False
+    if not (SE1.search(blob) or seasons(low) or MULTI.search(blob) or ep_key(sh, low) or cols & TVSET or re.search(r'\bepisodes?\b', blob)): return False
+    return 'f'
+def named(sh, text):
+    z = ' ' + norm(clean(re.sub(r'[-_.]+', ' ', text))) + ' '
+    return any((' ' + norm(q) + ' ') in z for q in sh['q'] + sh.get('alt', []))
+def fcheck(sh, c, files, m):
+    g = EP.get(sh['title'])
+    if not g: return None
+    real = flat(m.get('title')); one = len(files) <= 2
+    hit = []
+    for f in files:
+        v = file_se(sh, f[0].rsplit('/', 1)[-1]) or (file_se(sh, real) if one else None)
+        if v and v in g['d']: hit.append(f)
+    if not hit: return None
+    ds = sorted(f[1] for f in hit); med = ds[len(ds) // 2]
+    if not 900 <= med <= 6000: return None
+    if any(named(sh, f[0]) for f in hit) or named(sh, c['identifier']) or named(sh, real): return 'name'
+    if any(ep_key(sh, clean(f[0].rsplit('/', 1)[-1])) for f in hit) and named(sh, flat(m.get('description')) + ' ' + flat(m.get('subject'))): return 'episode titles'
+    z = norm(clean(flat(m.get('description')) + ' ' + flat(m.get('subject'))))
+    for q in sh['q']:
+        if re.search(r'\b' + re.escape(norm(q)) + r' (the )?(complete|season|series|s\d|episodes?|\d{1,2}x\d\d)', z): return 'description'
+    return None
 def load_old():
     F = os.path.join(OUT, 'primetime.json.gz')
     if not os.path.exists(F): return [], []
     keep, drop = [], []
     for x in json.load(gzip.open(F, 'rt', encoding='utf-8')):
         sh = BYT.get(x.get('k'))
+        if sh and x.get('fv'): keep.append(x); continue
         r = sh and consider(sh, {'title': x.get('t'), 'collection': x.get('c'), 'subject': x.get('s'), 'description': x.get('ds'), 'date': '' if x.get('ad') else x.get('d')}, 'd' if x.get('r') == 'd' else 't')
         if r in ('b', 'd'): x['r'] = r
         if not r: drop.append(x); continue
@@ -269,19 +304,41 @@ def plan():
                     if len(sig(q)) <= 1 or generic(sh): pre += [slug + a + b for a in sorted({sep, '-', '_', ''}) for b in ('s0', 's1', 'season', 'complete', 'tv', 'vhs', 'dvd', '19', '20')]
                     else: pre.append(slug)
                 qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(x + '*' for x in sorted(set(pre))) + ')', 'i'))
+            if sh.get('guide'):
+                ws = norm(q).split()
+                extra = ' AND (' + ' OR '.join('"%s"' % c for c in sh['cast'][:5]) + ' OR season OR episode OR episodes OR sitcom OR ' + sh['net'] + ')' if len(sig(q)) <= 1 and sh.get('cast') else ''
+                qs.append(('mediatype:movies AND "%s"%s AND NOT title:("%s")' % (ph, extra, ph), 'f'))
+                qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({sep.join(ws) + '*' for sep in ('-', '_', '.', '')})) + ') AND NOT title:("%s")' % ph, 'f'))
+                qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({'*' + sep.join(ws) + '*' for sep in ('-', '_', '')})) + ') AND NOT title:("%s")' % ph, 'f'))
+                if q == sh['q'][0]: qs += [('mediatype:movies AND title:("%s")' % a, 'f') for a in sh.get('alt', [])]
             for qq, route in qs:
-                for it in scrape(qq):
+                hits = scrape(qq); st = [len(hits), 0, 0, 0]
+                if sh.get('guide'): DIAG[sh['title']].append((route, qq[:150], st))
+                for it in hits:
                     i = it.get('identifier')
-                    if not i or i in res or i in mine or (i in have and not (sh.get('guide') and route == 't')): continue
+                    if not i or i in res: continue
+                    if i in mine: st[1] += 1; continue
+                    if i in have and not (sh.get('guide') and route in ('t', 'f')): st[2] += 1; continue
+                    if route == 'f':
+                        try: r = fcons(sh, it)
+                        except Exception as e: print('skip', i, e); r = False
+                        if r:
+                            if not named(sh, flat(it.get('title'))): it = dict(it, title=(sh['title'] + ' - ' + flat(it.get('title')))[:200], pt=1)
+                            res[i] = (it, 'f'); st[3] += 1
+                        elif sh.get('guide') and i not in have: DREJ[sh['title']].append((it.get('downloads') or 0, 'f', i, flat(it.get('title'))[:90]))
+                        continue
                     if route == 'i':
                         if any((' ' + norm(z) + ' ') in (' ' + norm(clean(flat(it.get('title')))) + ' ') for z in sh['q']): continue
                         it = dict(it, title=(sh['title'] + ' - ' + flat(it.get('title')) + ' (' + re.sub(r'[-_.]+', ' ', re.sub(r'[-_.]?20[012]\d[01]\d[0-3]\d([-_]\d+)*$', '', i)).strip() + ')')[:200], pt=1)
                     try: r = consider(sh, it, 't' if route == 'i' else route)
                     except Exception as e: print('skip', i, e); r = False
-                    if r: res[i] = (it, r)
+                    if r: res[i] = (it, r); st[3] += 1
+                    elif sh.get('guide') and i not in have: DREJ[sh['title']].append((it.get('downloads') or 0, route, i, flat(it.get('title'))[:90]))
         return sh, res
+    DIAG = collections.defaultdict(list); DREJ = collections.defaultdict(list)
     seen = {}; per = collections.Counter(); perd = collections.Counter(); peri = collections.Counter()
     order = sorted(SHOWS, key=lambda s: (0 if s.get('must') else 1, -len(s['title'])))
+    if FOCUS: order = [s for s in order if s['title'].lower() in FOCUS or ('guide' in FOCUS and s.get('guide')) or ('must' in FOCUS and s.get('must'))]
     with ThreadPoolExecutor(6) as ex:
         for sh, res in ex.map(one, order):
             for i, (it, r) in res.items():
@@ -291,11 +348,20 @@ def plan():
                 if it.get('pt'): seen[i]['pt'] = it['title']; peri[sh['title']] += 1
                 if r == 't': per[sh['title']] += 1
                 else: perd[sh['title']] += 1
+    nrf = 0
+    for x in keep:
+        sh = BYT[x['k']]
+        if (sh.get('must') or sh.get('guide')) and x['i'] not in seen and 60 <= len(x['f']) < min(x.get('nf') or 9999, 500):
+            seen[x['i']] = {'identifier': x['i'], 'downloads': x.get('dl') or 0, 'k': sh['title'], 'net': sh['net'], 'kind': sh['kind'], 'first': sh['first'], 'last': sh['last'], 'must': 1 if sh.get('must') else 0, 'r': x.get('r', 't'), 'rf': 1}; nrf += 1
+    print('refresh', nrf, flush=True)
     c = sorted(seen.values(), key=lambda x: (-x['must'], x['r'] != 't', -x['downloads']))
     print('candidates', len(c), 'title', sum(1 for x in c if x['r'] == 't'), 'tape', sum(1 for x in c if x['r'] != 't'), flush=True)
     for sh in SHOWS:
         if sh.get('must'): print('MUSTCAND', per[sh['title']], perd[sh['title']], peri[sh['title']], sh['title'])
     for k, n in per.most_common(60): print('  cand', n, k)
+    for k in DIAG:
+        for route, qq, st in DIAG[k]: print('DIAGQ', k, '|', route, '| hits %d mine %d elsewhere %d accepted %d |' % tuple(st), qq)
+        for dl, route, i, t in sorted(set(DREJ[k]), reverse=True)[:70]: print('DIAGREJ', k, '|', route, '|', dl, '|', i, '|', t)
     json.dump(c, gzip.open(os.path.join(PARTS, 'cands.json.gz'), 'wt', encoding='utf-8'), separators=(',', ':'))
 def secs(v):
     try:
@@ -376,13 +442,21 @@ def meta(c):
         return rej(c, 'nomp4_other' if nomp4 else 'nofiles')
     if sum(f[1] for f in files) < 900: return rej(c, 'short')
     files.sort(key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f[0])])
-    sh = BYT[c['k']]
+    sh = BYT[c['k']]; fwhy = ''
+    if c.get('r') == 'f':
+        fwhy = fcheck(sh, c, files, m)
+        if not fwhy: return rej(c, 'files do not match the episode guide')
+        c = dict(c, r='t')
+        if not named(sh, flat(m.get('title'))): c['pt'] = (sh['title'] + ' - ' + flat(m.get('title')))[:200]
+        else: c.pop('pt', None)
     t = c.get('pt') or flat(m.get('title'))[:200]; desc = ' '.join(flat(m.get('description')).split())[:400]
-    x = {'i': c['identifier'], 'q': KMAP.get(c['kind'], 'prime'), 't': t, 'd': '', 'y': '', 'c': [], 's': flat(m.get('subject')).replace(' ', ' ')[:200], 'ds': desc, 'f': files[:500 if sh.get('guide') else 60], 'dl': c.get('downloads') or 0, 'k': c['k'], 'e': 0, 'net': c['net'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
+    x = {'i': c['identifier'], 'q': KMAP.get(c['kind'], 'prime'), 't': t, 'd': '', 'y': '', 'c': [], 's': flat(m.get('subject')).replace(' ', ' ')[:200], 'ds': desc, 'f': files[:500 if sh.get('guide') or sh.get('must') else 60], 'dl': c.get('downloads') or 0, 'k': c['k'], 'e': 0, 'net': c['net'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
     col = m.get('collection', []); x['c'] = ([col] if isinstance(col, str) else col)[:4]
     x['d'] = flat(m.get('date'))
     if c.get('hb'): x['hb'] = c['hb']
     if why: maybe(x, why)
+    if fwhy: x['fv'] = 1
+    if fwhy and fwhy != 'name': maybe(x, 'show identified from ' + fwhy + ' only')
     if x['r'] == 'v':
         if not verify(sh, x): maybe(x, 'show match not verified by cast, description or episode lengths'); rej(c, 'verify_kept')
         x['r'] = 't'
@@ -458,7 +532,7 @@ def merge():
     print('old in raw dropped', sum(1 for x in keep if x['i'] in rawids))
     keep = [x for x in keep if x['i'] not in rawids or x.get('sup')]
     for x in keep: stamp(BYT[x['k']], x)
-    mine = {x['i'] for x in keep}; have = mine | load_have(); add = []
+    mine = {x['i'] for x in keep}; have = mine | load_have(); add = []; old = {x['i']: n for n, x in enumerate(keep)}; nref = 0
     got2 = collections.defaultdict(set); discs = collections.defaultdict(set)
     R = collections.defaultdict(lambda: [0, 0, 0])
     keys = [(sh, [' ' + norm(q) + ' ' for q in sh['q']]) for sh in SHOWS]
@@ -480,6 +554,11 @@ def merge():
                     break
     for p in sorted(glob.glob(os.path.join(PARTS, 'pt-*.json.gz'))):
         for x in json.load(gzip.open(p, 'rt', encoding='utf-8')):
+            if x['i'] in old and len(x['f']) > len(keep[old[x['i']]]['f']):
+                o = keep[old[x['i']]]
+                for kk in ('t', 'r', 'sup', 'fv'):
+                    if kk in o: x[kk] = o[kk]
+                keep[old[x['i']]] = x; nref += 1
             if x['i'] in mine: continue
             if x['i'] in have:
                 if not BYT[x['k']].get('guide'): continue
@@ -495,7 +574,7 @@ def merge():
     if not allx: print('nothing to write'); return
     json.dump(allx, gzip.open(F, 'wt', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     hrs = lambda xs: round(sum(sum(f[1] for f in x['f']) for x in xs) / 3600)
-    print('old kept', len(keep), 'old purged', len(drop), 'added', len(add), 'total', len(allx), 'hours', hrs(allx))
+    print('old kept', len(keep), 'old purged', len(drop), 'refreshed', nref, 'added', len(add), 'total', len(allx), 'hours', hrs(allx))
     print('== PURGED per show')
     for k, n in collections.Counter(x['k'] for x in drop).most_common(): print('PURGED', n, k)
     for x in drop[:400:8]: print('PURGEDSAMPLE', x['k'], '|', x['t'][:90])
