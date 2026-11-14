@@ -1,4 +1,4 @@
-import json, gzip, os, re, sys, time, glob, random, collections, urllib.parse, urllib.request
+import json, gzip, os, re, sys, time, glob, random, collections, unicodedata, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 UA = {'User-Agent': 'Mozilla/5.0 (retrotv-sources harvester)'}
 here = os.path.dirname(os.path.abspath(__file__))
@@ -43,17 +43,17 @@ TAIL = re.compile(r"^\s*(?:$|[-:|(\[,#]|\b(?:s\s?\d{1,2}\s?e\s?\d{1,3}|s\s?\d{1,
 STOP = {'the', 'a', 'an', 'of', 'and', 'in', 'on', 'to', 'with', 'show', 'by', 'for', 'is', 'it', 'at', 'from', 'md', 'mr', 'tv', 'new'}
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
 RARE = set('adderly aftermash andersonville andromeda arliss arli$$ avonlea backyardigans ballykissangel berrengers bewitched bodyshaping booknotes boomtown bordertown buzzkill carnivale cavanaughs citykids columbo comicview commish counterstrike crosswits cybercops deadwood eastenders elimidate entourage fastlane felicity foofur futurama geraldo gunsmoke halloweentown hometime hornblower housesmart hughleys inquizition inuyasha kissyfur knightwatch kojak lovejoy mannix mathnet matlock moneyline motorweek mousercise mousercize nightingales nightline overhaulin pictionary pinwheel rockumentary rollergames rollerjam rolonda scattergories seaquest smallville sportscenter sportscentury starrcade summerslam superbook supercarrier tattingers tattletales teknoman tekwar thirtysomething thundercats toonheads torkelsons videopolis wildboyz wintuition witchblade wonderworks wrestlemania youthquake jeopardy donahue montel leeza marilu daria sopranos sportsworld speedweek shortstories homeworks ncis mxc flcl wccw quincy riptide dragnet laramie profiler'.split()) | {'muppet show', 'gong show', 'daily show', 'elephant show', 'bozo show', 'sinbad show', 'roseanne show', 'norm show', 'weber show', 'ellen show', 'moxy show', 'today show', 'early show', 'gossip show', 'house md', 'mr t', 'mr president', 'mr sunshine', 'mr personality', 'tv 101', 'owl tv', 'tots tv', 'real tv', 'new detectives', 'new dragnet', 'new lassie', 'new zorro', 'new wilderness'}
-TREKJUNK = r"hidden frontier|new voyages|phase (ii|2)\b|of gods and men|star trek[\s:._-]*(continues|odyssey|intrepid|horizon|renegades|axanar|aurora|farragut|picard|discovery|lower decks|strange new worlds|prodigy|short treks|online|beyond(?! the farthest)|into darkness|generations|first contact|insurrection|nemesis|the motion picture|(ii|iii|iv|v|vi|vii|viii|ix|x|2|3|4|5|6|7|8|9|10)\b)|axanar|starship (exeter|farragut)|fan (film|series|production|made)|wrath of khan|search for spock|voyage home|final frontier|undiscovered country|motion picture|25th anniversary|judgment rites|starfleet (command|academy)|elite force|bridge commander|armada|birth of the federation|final unity|klingon honor guard|hidden evil|dominion wars|captain's chair|omnipedia|encyclopedia|technical manual|interactive|cd-?rom|bonus|extras|special features|featurettes?|deleted|trekkies|what we left behind|the captains|chaos on the bridge|center seat|roddenberry|power records|peter pan|audio (drama|book|story|adventure)|read-along|music from|raumschiff|viaje a las estrellas|jornada nas estrelas|patrouille|nouvelle|la s[eé]rie|v\.?f\.?\b|german|french|italian|spanish|dub\b|dubbed|mst3k|cinebinge|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bgame (footage|play|trailer|show)\b|\bexcerpts?\b"
+TREKJUNK = r"hidden frontier|new voyages|phase (ii|2)\b|of gods and men|star trek[\s:._-]*(continues|odyssey|intrepid|horizon|renegades|axanar|aurora|farragut|picard|discovery|lower decks|strange new worlds|prodigy|short treks|online|beyond(?! the farthest)|into darkness|generations|first contact|insurrection|nemesis|the motion picture|(ii|iii|iv|v|vi|vii|viii|ix|x|2|3|4|5|6|7|8|9|10)\b)|axanar|starship (exeter|farragut)|fan (film|series|production|made|cut|edit)|extended cut|wrath of khan|search for spock|voyage home|final frontier|undiscovered country|motion picture|25th anniversary|judgment rites|starfleet (command|academy)|elite force|bridge commander|armada|birth of the federation|final unity|klingon honor guard|hidden evil|dominion wars|captain s chair|captain's chair|omnipedia|encyclopedia|technical manual|interactive|cd ?-?rom|bonus|extras|special features|featurettes?|deleted|trekkies|what we left behind|the captains|captain s summit|chaos on the bridge|center seat|roddenberry|power records|peter pan|audio (drama|book|story|adventure)|read ?-?along|music from|raumschiff|viaje a las estrellas|jornada nas estrelas|patrouille|nouvelle|la s[eé]rie|\bv ?\.?f\b|german|french|italian|spanish|\bdub\b|dubbed|mst3k|cinebinge|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bgame (footage|play|trailer|show)\b|\bexcerpts?\b|stoked|\bsto\b|barbary coast|trivia|my experience|celebration|\bsaga\b|cast on|hack attack|manic episodes|that time|remember when|\bis bad\b|worst|silliest|dumbest|unethical|\b(the|a) \w+ episodes? of\b|final generation|helped lure|footage|\bspecial\b|anniversary|a captain s log|captain's log"
 TREKOTHER = r"next generation|next gen\b|\btng\b|deep space|\bds9\b|voyager|\bvoy\b|\bent\b|animated|\btas\b|star trek[\s:._-]*enterprise(?![\s._-]*incident)|\benterprise[\s._-]*(s\d|season|\d{1,2}x\d)"
-PEAKSJUNK = r"fire walk with me|fwwm|missing pieces|the return|limited event|season (3|three)\b|\bs0?3\b|deleted|log lady|secret diary|autobiography|access guide|festival|twin perfect|explained|georgia coffee|between two worlds|slice of lynch|phenomenon|secrets from another place|postcards from|rewatch|unobscura|\bedit\b|recut|re-cut|murder most foul|missing season|international (version|pilot|ending)|european (version|pilot|ending)|julee cruise|saturday night live|\bsnl\b|bonus|extras|featurettes?|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bgame (footage|play|trailer|show)\b|\bexcerpts?\b"
+PEAKSJUNK = r"fire walk with me|fwwm|missing pieces|the return|limited event|season (3|three)\b|\bs0?3\b|deleted|log lady|secret diary|autobiography|access guide|festival|twin perfect|explained|georgia coffee|between two worlds|slice of lynch|phenomenon|secrets from another place|postcards from|rewatch|unobscura|\bedit\b|recut|re ?-?cut|murder most foul|missing season|international (version|pilot|ending)|european (version|pilot|ending)|julee cruise|saturday night live|\bsnl\b|bonus|extras|featurettes?|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bexcerpts?\b|\btapes of\b|\b1992\b"
 HINTS = {'Tuesday Night Titans': {'drop': ['TNT']}, 'Wonderful World of Disney': {'drop': ['Walt Disney']},
-    'Star Trek': {'full': 1, 'fam': 1, 'junk': TREKJUNK + '|' + TREKOTHER, 'self': r"\btos\b|original series", 'ids': ['star-trek-tos', 'startrektos', 'st-tos', 'sttos', 'tos-s0', 'tos_s0', 'star-trek-the-original', 'star-trek-original']},
-    'Star Trek: The Animated Series': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"animated series|\btas\b|star trek[\s:._-]*(the[\s._-]*)?animated|animated adventures", 'ids': ['star-trek-tas', 'startrektas', 'st-tas', 'sttas', 'tas-s0', 'star-trek-animated', 'star-trek-the-animated']},
-    'Star Trek: The Next Generation': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"next generation|next gen\b|\btng\b", 'ids': ['star-trek-tng', 'startrektng', 'st-tng', 'sttng', 'tng-s0', 'tng_s0', 'tng-0', 'tng0', 'star-trek-next-gen', 'star.-trek.-tng', 'star.-trek.-the.-next']},
-    'Star Trek: Deep Space Nine': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"deep space (nine|9)|\bds9\b", 'ids': ['star-trek-ds9', 'startrekds9', 'st-ds9', 'stds9', 'ds9-s0', 'ds9_s0', 'ds9-0', 'ds90', 'deep-space-nine', 'deep-space-9', 'deepspacenine', 'deepspace9', 'star.-trek.-ds9', 'star.-trek.-deep']},
-    'Star Trek: Voyager': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"star trek[\s:._-]*voyager|\bvoy\b|\bvoyager[\s._-]*(s\d|season|\d{1,2}x\d)", 'ids': ['star-trek-voy', 'startrekvoy', 'st-voy', 'stvoy', 'voy-s0', 'voy_s0', 'voyager-s0', 'voyager_s0', 'star.-trek.-voy']},
-    'Star Trek: Enterprise': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'until': '2005-12-31', 'self': r"star trek[\s:._-]*enterprise(?![\s._-]*incident)|\bent\b|\benterprise[\s._-]*(s\d|season|\d{1,2}x\d)", 'ids': ['star-trek-ent', 'startrekent', 'st-ent', 'stent', 'ent-s0', 'ent_s0', 'enterprise-s0', 'enterprise_s0', 'star.-trek.-ent']},
-    'Twin Peaks': {'full': 1, 'pilot0': 1, 'junk': PEAKSJUNK, 'self': r"twin peaks", 'ids': ['twinpeaks', 'twin-peaks', 'twin_peaks', 'twin.-peaks', 'tp-s0']}}
+    'Star Trek': {'full': 1, 'fam': 1, 'junk': TREKJUNK + '|' + TREKOTHER, 'self': r"\btos\b|original series", 'ev': r"star trek", 'ids': ['star-trek-tos', 'startrektos', 'st-tos', 'sttos', 'tos-s0', 'tos_s0', 'star-trek-the-original', 'star-trek-original'], 'idsub': ['startrek', 'star-trek', 'star_trek', 'star.trek']},
+    'Star Trek: The Animated Series': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"animated series|\btas\b|star trek[\s:._-]*(the[\s._-]*)?animated|animated adventures", 'ev': r"star trek", 'ids': ['star-trek-tas', 'startrektas', 'st-tas', 'sttas', 'tas-s0', 'star-trek-animated', 'star-trek-the-animated']},
+    'Star Trek: The Next Generation': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"next generation|next gen\b|\btng\b", 'ev': r"star trek|\btng\b", 'ids': ['star-trek-tng', 'startrektng', 'st-tng', 'sttng', 'tng-s0', 'tng_s0', 'tng-0', 'tng0', 'star-trek-next-gen', 'star.-trek.-tng', 'star.-trek.-the.-next'], 'idsub': ['tng-s', 'tng_s', 'tngs0', 'sttng', 'st-tng', 'nextgeneration', 'next-generation']},
+    'Star Trek: Deep Space Nine': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"deep space (nine|9)|\bds9\b", 'ev': r"star trek|\bds9\b|deep space (nine|9)", 'ids': ['star-trek-ds9', 'startrekds9', 'st-ds9', 'stds9', 'ds9-s0', 'ds9_s0', 'ds9-0', 'ds90', 'deep-space-nine', 'deep-space-9', 'deepspacenine', 'deepspace9', 'star.-trek.-ds9', 'star.-trek.-deep'], 'idsub': ['ds9', 'deepspace9', 'deepspacenine', 'deep-space-nine', 'deep-space-9', 'deep_space_nine', 'deep_space_9', 'deep.-space']},
+    'Star Trek: Voyager': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"star trek[\s:._-]*voyager|\bvoy\b|\bvoyager[\s._-]*(s\d|season|\d{1,2}x\d)", 'ev': r"star trek|\bvoy\b", 'ids': ['star-trek-voy', 'startrekvoy', 'st-voy', 'stvoy', 'voy-s0', 'voy_s0', 'voyager-s0', 'voyager_s0', 'star.-trek.-voy'], 'idsub': ['voyager-s', 'voyager_s', 'voyagers0', 'stvoy', 'st-voy', 'voy-s', 'voy_s']},
+    'Star Trek: Enterprise': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'until': '2005-12-31', 'self': r"star trek[\s:._-]*enterprise(?![\s._-]*incident)|\bent\b|\benterprise[\s._-]*(s\d|season|\d{1,2}x\d)", 'ev': r"star trek", 'ids': ['star-trek-ent', 'startrekent', 'st-ent', 'stent', 'ent-s0', 'ent_s0', 'enterprise-s0', 'enterprise_s0', 'star.-trek.-ent'], 'idsub': ['enterprise-s', 'enterprise_s', 'enterprises0', 'st-ent', 'ent-s0']},
+    'Twin Peaks': {'full': 1, 'pilot0': 1, 'junk': PEAKSJUNK, 'self': r"twin peaks", 'ids': ['twinpeaks', 'twin-peaks', 'twin_peaks', 'twin.-peaks', 'tp-s0'], 'idsub': ['twinpeaks', 'twin-peaks', 'twin_peaks', 'twin.peaks', 'twin.-peaks']}}
 ADONLY = re.compile(r"\bcommercials?,|\bcommercial (break|block)s?\b|\bcommercials (and|from|during|block|breaks?|only|compilation)\b|\b(open|close|closing|ending|end credits|intro|outro|sign-?off|sign-?on|station id|ident|promo)$")
 ABROAD = re.compile(r"\b(atv|ads|tcn|gtv|qtq|nws|hsv|tvq|sas|ntd|stw|tvw|bcv|nbn|gmv|rtq|tnq|ten|nine|seven)-(\d{1,2})\b|\b(bbc ?[1-4]|bbc one|bbc two|itv[1-4]?|channel 4|channel four|sky one|uk gold|ytv|cbc|ctv|global tv|rte|network ten|nine network|seven network)\b")
 UKOK = {'pbs', 'a&e', 'bravo', 'bbca', 'bbc america', 'comedy'}
@@ -64,7 +64,8 @@ def norm(s):
     s = s.lower().replace('&', ' and ').replace('’', "'")
     s = re.sub(r"[.'!?,:*]", '', s)
     return re.sub(r'[^a-z0-9$/]+', ' ', s).strip()
-def norm0(t): return re.sub(r'\s+', ' ', re.sub(r"[^a-z0-9]+", ' ', t.lower().replace("'", '').replace('’', ''))).strip()
+def fold(t): return ''.join(ch for ch in unicodedata.normalize('NFKD', t) if not unicodedata.combining(ch))
+def norm0(t): return re.sub(r'\s+', ' ', re.sub(r"[^a-z0-9]+", ' ', fold(t).lower().replace("'", '').replace('’', ''))).strip()
 def clean(t): return re.sub(r'(?<=[a-z0-9]{2})\.(?=[a-z0-9]{2})', ' ', re.sub(r'[_]+', ' ', t.lower().replace('’', "'")))
 def bare(t): return re.sub(r'\s*\([^)]*\)', '', t).strip() or t
 def sig(n): return [w for w in re.sub(r'^the ', '', n).split() if w not in STOP]
@@ -113,6 +114,7 @@ def prep(sh):
     sh['junk'] = re.compile(h['junk']) if h.get('junk') else None
     sh['full'] = bool(h.get('full')); sh['fam'] = bool(h.get('fam')); sh['pilot0'] = bool(h.get('pilot0')); sh['until'] = h.get('until', '2004-08-31'); sh['ids'] = h.get('ids', [])
     sh['selfrx'] = re.compile(h['self']) if h.get('self') else None
+    sh['evrx'] = re.compile(h.get('ev') or h.get('self') or 'no evidence rule'); sh['idsub'] = h.get('idsub', [])
     q = QMAP.get(sh['type'])
     if not q:
         q = 'prime'
@@ -209,9 +211,17 @@ def build_ep():
         for r in rows:
             nm = r[2]; m = PARTRX.search(nm); part = 0
             if m:
-                pp = (m.group(1) or m.group(2)).lower(); part = PNUM.get(pp) or int(pp); nm = nm[:m.start()]
+                pp = (m.group(1) or m.group(2) or m.group(3)).lower(); part = PNUM.get(pp) or int(pp); nm = nm[:m.start()]
             z = norm0(nm)
-            if z: by.setdefault(z, {})[part] = (r[0], r[1])
+            if not z: continue
+            d0 = by.setdefault(z, {})
+            if part in d0: part = max(d0) + 1 if max(d0) else 2
+            if part and 0 in d0: d0[1] = d0.pop(0)
+            if not part and d0: part = max(d0) + 1
+            d0[part] = (r[0], r[1])
+        for z in list(by):
+            z2 = re.sub(r'^(the|a|an) ', '', z)
+            if z2 != z and len(z2) >= 8 and len(z2.split()) >= 2 and z2 not in by: by[z2] = by[z]
         rts = sorted(r[4] for r in rows if len(r) > 4 and r[4]); typ = rts[len(rts) // 2] if rts else 0
         split = {}; cur = collections.Counter()
         for r in rows:
@@ -221,7 +231,12 @@ def build_ep():
         for r in rows: smax[r[0]] = max(smax[r[0]], r[1])
         eprx = re.compile(r"(?<![a-z0-9])(?:" + '|'.join(r"[\W_]+".join("[.'’]?".join(re.escape(ch) for ch in w) for w in z.split()) for z in sorted(by, key=len, reverse=True) if len(z) >= 4) + r")(?![a-z0-9])") if by else None
         EP[k].update({'by': by, 'keys': sorted(by, key=len, reverse=True), 'split': split, 'order': [(r[0], r[1]) for r in rows], 'smax': smax, 'eprx': eprx})
-PARTRX = re.compile(r"[\s,:;-]*\(?\b(?:part|pt)\.?\s*(\d|i{1,3}|one|two|three)\)?\s*$|\s*\((\d)\)\s*$", re.I)
+PARTRX = re.compile(r"[\s,:;-]*\(?\b(?:part|pt)\.?\s*(\d|i{1,3}|one|two|three)\)?\s*$|\s*\((\d)\)\s*$|(?<=[a-z.])\s+(i{1,3})\s*$", re.I)
+FULLMIN = {'drama': 2280, 'kids': 1200, 'sitcom': 1080}
+FULLTYP = {'drama': 2700, 'kids': 1440, 'sitcom': 1320}
+SERTOK = {'tng', 'ds9', 'voy', 'tos', 'ent', 'tas', 'generation', 'nine', '9', 'voyager', 'enterprise', 'trek', 'peaks'}
+GUARD = r"(?:^|\s)(?:\d{1,3}|tng|ds9|voy|tos|ent|tas|generation|nine|9|voyager|enterprise|trek|peaks)\s+"
+
 PNUM = {'i': 1, 'ii': 2, 'iii': 3, 'one': 1, 'two': 2, 'three': 3}
 QTAG = re.compile(r"\b(dvd|dvdrip|bluray|blu ray|bdrip|brrip|webrip|web dl|hdtv|sdtv|tvrip|vhsrip|x264|x265|h264|h 264|hevc|xvid|divx|aac|ac3|dts|480p|576p|720p|1080p|2160p|remastered|remaster|upscale|\d{3,4}mb)\b")
 SEM = re.compile(r"\bs(?:eason)?\s?(\d{1,2})[\s._-]{0,3}(?:e|ep|episode)\s?(\d{1,3})(?:(?:\s?[-&+]\s?|\s?and\s?)(?:e|ep)?(\d{1,3})|e(\d{1,3}))?(?!\d)|(?<![a-z0-9])(\d{1,2})x(\d{2,3})(?:\s?[-&+]\s?(\d{2,3}))?(?!\d)")
@@ -236,9 +251,9 @@ def series_of(sh, path):
     return [sh]
 def parse_full(sh, text, dur, ctx):
     G = EP.get(sh['title'])
-    if not G or 'by' not in G: return []
+    if not G or 'by' not in G: return [], ''
     b = re.sub(r'\.(ia\.)?[a-z0-9]{2,4}$', '', text.rsplit('/', 1)[-1], flags=re.I)
-    low = re.sub(r'[._]+', ' ', b.lower().replace('’', "'"))
+    low = re.sub(r'[._]+', ' ', fold(b).lower().replace('’', "'"))
     ses = []
     for m in SEM.finditer(low):
         if m.group(1): a, b1, b2 = int(m.group(1)), int(m.group(2)), m.group(3) or m.group(4)
@@ -248,39 +263,63 @@ def parse_full(sh, text, dur, ctx):
     rem = SEM.sub(' ', low)
     m = QTAG.search(rem)
     if m and m.start() > 6: rem = rem[:m.start()]
-    z = norm0(rem)
-    z = PREFIX.sub('', z + ' ').strip()
-    tk = G['by'].get(z); more = []
+    z0 = norm0(rem)
+    z = PREFIX.sub('', z0 + ' ').strip()
+    tk = G['by'].get(z); more = []; key = z if tk else ''
+    zq = norm0(re.sub(r"[;:()\[\],|~&+]| - |--", ' qqsep ', rem)).split()
+    def lone(k):
+        for i, tok in enumerate(zq):
+            if tok != k: continue
+            prev = zq[i - 1] if i else 'qqsep'; nxt = zq[i + 1] if i + 1 < len(zq) else 'qqsep'
+            if prev == 'qqsep' or prev.isdigit() or prev in SERTOK or nxt in ('qqsep', 'part', 'pt', 'parts'): return True
+        return False
     if not tk:
         zz = ' ' + z + ' '
         for k in G['keys']:
-            if len(k) >= 6 and (' ' + k + ' ') in zz:
-                if not tk: tk = G['by'][k]
-                else: more.append(G['by'][k])
-                zz = zz.replace(' ' + k + ' ', ' | ')
-                if ses: break
-    if tk and more and not ses: return sorted({w for d in [tk] + more for w in d.values()})
+            if len(k) < 4 or (' ' + k + ' ') not in zz: continue
+            if ' ' not in k and (not ses or len(k) < 6) and not lone(k): continue
+            if ' ' in k and len(k) < 8 and not ses and not re.search(GUARD + re.escape(k) + r'(?:\s|$)', z0): continue
+            pos = zz.find(' ' + k + ' '); after = zz[pos + len(k) + 1:pos + len(k) + 12]
+            if not tk: tk = G['by'][k]; key = k
+            more.append((G['by'][k], after))
+            zz = zz.replace(' ' + k + ' ', ' | ', 1)
+            if ses: break
+    if tk and len(more) > 1 and not ses:
+        out = set()
+        for d, after in more:
+            pm = re.match(r"\s*(?:part|pt|parts)?\s*(\d|i{1,3}|one|two|three)\b(?:\s*(?:and|,)?\s*(\d|ii|two)\b)?", after)
+            ps = [PNUM.get(q) or (int(q) if q.isdigit() else 0) for q in (pm.groups() if pm else ()) if q]
+            ps = [q for q in ps if q in d]
+            out |= {d[q] for q in ps} if ps else {d[min(d)]}
+        return sorted(out), 't'
     long = dur >= (2400 if sh['type'] == 'kids' else 4200)
     valid = [w for w in ses if w in G['d']]
     if tk:
         vals = sorted(tk.values())
         hit = sorted({w for w in valid if w in vals})
-        if hit: return vals if long and len(vals) == 2 else hit
-        pm = re.search(r"(?:part|pt)\s*(\d|i{1,3}|one|two|three)\b|\((\d)\)", rem)
+        if hit: return (vals if long and len(vals) == 2 else hit), 't'
+        if valid:
+            nz = norm0(G['names'][valid[0]])
+            if key and (key in nz or nz in key): return valid, 't'
+        pm = re.search(r"(?:part|pt)\s*(\d|i{1,3}|one|two|three)\b|\((\d)\)|\s(i{1,3})\s*$", rem)
         if pm:
-            pp = pm.group(1) or pm.group(2); part = PNUM.get(pp) or int(pp)
-            if part in tk: return [tk[part]]
-        if len(vals) == 1 or long: return vals
-        return [vals[0]]
+            pp = pm.group(1) or pm.group(2) or pm.group(3); part = PNUM.get(pp) or int(pp)
+            if part in tk: return [tk[part]], 't'
+        if len(vals) == 1 or long: return vals, 't'
+        return [vals[0]], 't'
     if ses and ctx.get('shift') and all(w[0] == 1 for w in ses): ses = [(1, w[1] + 1) for w in ses]; valid = [w for w in ses if w in G['d']]
-    if ses and any(w[0] in ctx.get('split', ()) for w in ses): return sorted({G['split'][w] for w in ses if w in G['split']})
-    if valid: return valid
-    if ses: return sorted({G['split'][w] for w in ses if w in G['split']})
+    if ses and any(w[0] in ctx.get('split', ()) for w in ses):
+        out = sorted({G['split'][w] for w in ses if w in G['split']})
+        if out: return out, 'n'
+    if valid: return valid, 'n'
+    if ses:
+        out = sorted({G['split'][w] for w in ses if w in G['split']} | {G['order'][w[1] - 1] for w in ses if w[0] == 1 and w not in G['split'] and 0 < w[1] <= len(G['order'])})
+        if out: return out, 'n'
     if sh['pilot0'] and not ses:
-        if re.search(r'\bpilot\b', low): return [G['order'][0]]
+        if re.search(r'\bpilot\b', low): return [G['order'][0]], 't'
         am = re.search(r'\b(?:episode|ep|e)\s?#?(\d{1,2})\b', low)
-        if am and int(am.group(1)) < len(G['order']): return [G['order'][int(am.group(1))]]
-    return []
+        if am and int(am.group(1)) < len(G['order']): return [G['order'][int(am.group(1))]], 'n'
+    return [], ''
 def tag_full(sh, x):
     files = x['f']; rows = []
     ctx = {'shift': False, 'split': set()}
@@ -292,13 +331,19 @@ def tag_full(sh, x):
                 a, b1 = (int(m.group(1)), int(m.group(2))) if m.group(1) else (int(m.group(5)), int(m.group(6)))
                 if G0['smax'].get(a) and b1 > G0['smax'][a]: ctx['split'].add(a)
     title = x['t'][len(sh['title']) + 3:] if x['t'].startswith(sh['title'] + ' - ') else x['t']
+    hows = []
     for n, f in enumerate(files):
+        if f[1] < FULLMIN[sh['type']]: continue
         for s2 in series_of(sh, f[0]):
-            ws = parse_full(s2, f[0], f[1], ctx if s2 is sh else {})
-            if not ws and len(files) <= 2: ws = parse_full(s2, title, f[1], ctx if s2 is sh else {})
+            ws, how = parse_full(s2, f[0], f[1], ctx if s2 is sh else {})
+            if not ws and len(files) <= 2: ws, how = parse_full(s2, title, f[1], ctx if s2 is sh else {})
             G = EP.get(s2['title']) or {}
+            base = f[0].rsplit('/', 1)[-1]
+            sure = how == 't' or fname(s2, base) or bool(s2['selfrx'] and s2['selfrx'].search(re.sub(r'[._]+', ' ', base.lower())))
             for w in ws:
-                if w in G.get('d', {}): rows.append([n, 'S%02dE%02d' % w, G['d'][w], G['names'][w]] + ([s2['title']] if s2 is not sh else []))
+                if w in G.get('d', {}):
+                    rows.append([n, 'S%02dE%02d' % w, G['d'][w], G['names'][w]] + ([s2['title']] if s2 is not sh else [])); hows.append(sure)
+    if rows and not any(hows): rows = []
     if rows: x['se'] = rows
     else: x.pop('se', None)
     return rows
@@ -355,11 +400,15 @@ def consider(sh, it, route='t'):
         if route == 't': return None
         blob = ' ' + norm(clean(re.sub(r'[-_.]+', ' ', ident)) + ' ' + subj + ' ' + desc) + ' '
         nm = next((x for x in sh['names'] if x['lvl'] <= 1 and (' ' + x['n'] + ' ') in blob), None)
-        if not nm and sh['full'] and sh['selfrx'] and sh['selfrx'].search(low + ' ' + blob): nm = sh['names'][0]
+        if not nm and sh['full'] and sh['evrx'].search(low + ' ' + blob): nm = sh['names'][0]
         if not nm: return None
         hd = -1
-    rest = strip_names(sh, low)
-    if sh['full'] and (EP.get(sh['title']) or {}).get('eprx'): rest = EP[sh['title']]['eprx'].sub(' ', rest)
+    rest = strip_names(sh, low); rest0 = rest; eptf = False
+    if sh['full']:
+        if ident.startswith(('youtube-', 'bliptv-')) and not SE1.search(low): return None
+        if (EP.get(sh['title']) or {}).get('eprx'):
+            eptf = bool(EP[sh['title']]['eprx'].search(fold(rest))); rest = EP[sh['title']]['eprx'].sub(' ', fold(rest))
+        if sh['junk'] and sh['junk'].search(re.sub(r'[\W_]+', ' ', fold(low))): return None
     if JUNK.search(rest) or SPIN.search(rest) or MOD2.search(t) or ADONLY.search(low.strip()): return None
     if ABROAD.search(low) and sh['net'] not in UKOK and '(uk)' not in sh['title'].lower(): return None
     if sh['cls'] == 'scripted' and JUNKS.search(rest): return None
@@ -386,7 +435,7 @@ def consider(sh, it, route='t'):
     if g and g['maxs'] and ss and not MULTI.search(low) and any(n > g['maxs'] + 1 for n in ss): return None
     if sh['cls'] == 'scripted' and not g and ss and any(y0 + n - 1 > y1 + 1 for n in ss) and not MULTI.search(low): return None
     se = bool(ss) or bool(MULTI.search(low)) or bool(SE1.search(low))
-    ept = bool(ep_title(sh, rest)) if sh['cls'] == 'scripted' else False
+    ept = (eptf or bool(ep_title(sh, rest0))) if sh['cls'] == 'scripted' else False
     cast = has_cast(sh, desc + ' ' + subj + ' ' + low)
     netw = bool(sh['netrx'] and sh['netrx'].search(rest + ' ' + subj + ' ' + desc[:300]))
     tape = bool(TAPE.search(rest)); tvcol = bool(cols & TVSET); dev = bool(DESCEV.search(desc + ' ' + subj))
@@ -406,6 +455,7 @@ def consider(sh, it, route='t'):
         strong = se or ept or cast
         if mod and not (strong or inrun): return None
         if lvl >= 2:
+            if sh['full']: return ('d', 't') if hd >= 0.5 else None
             if (cast or ept) and hd >= 0.5: return ('y', 't')
             if hd == 2 and se and (ctx or dev or inrun): return ('y', 't')
             if hd == 2 and inrun and (ctx or dev): return ('y', 't')
@@ -462,6 +512,20 @@ def consider(sh, it, route='t'):
     if not dated: return ('m', 'no broadcast year') if hd == 2 and (ctx or dev) else None
     if hd >= 0.5 or ctx: return ('y', 't')
     return ('m', 'name inside a longer title')
+def trim_full(sh, x):
+    x['f'] = [f for f in x['f'] if f[1] >= FULLMIN[sh['type']]]
+    if not x['f']: return set()
+    ver = {r[0] for r in tag_full(sh, x)}
+    pack = len(ver) * 10 >= len(x['f']) * 6
+    maxs = (EP.get(sh['title']) or {}).get('maxs', 99)
+    def extra(f):
+        low = re.sub(r'[._]+', ' ', f[0].lower())
+        if pack or (sh['junk'] and sh['junk'].search(re.sub(r'[\W_]+', ' ', fold(low)))): return True
+        return any(int(m.group(1) or m.group(5)) > maxs for m in SEM.finditer(low))
+    keepf = [f for n, f in enumerate(x['f']) if n in ver or not extra(f)]
+    if len(keepf) < len(x['f']):
+        x['f'] = keepf; ver = {r[0] for r in tag_full(sh, x)}
+    return ver
 def secs(v):
     try:
         if ':' in str(v):
@@ -520,23 +584,26 @@ def meta(c):
             key = f.get('original') if f.get('source') == 'derivative' else f['name']
             groups.setdefault(key, []).append(f)
         elif re.search(r'\.(mkv|avi|mpg|mpeg|m4v|mov|ts|vob|iso|ogv|webm|wmv)$', n): other += 1
-    files = []; hb = 0
+    files = []; hb = 0; est = 0
     for key, g in groups.items():
         g.sort(key=lambda f: RANK.get(f.get('format', ''), 5)); b = g[0]
         d = secs(b.get('length') or next((x.get('length') for x in g if x.get('length')), 0)) or lenby.get(key, 0)
         sz = float(b.get('size') or 0)
+        if not d and sh['full'] and sz >= 6e7: d = FULLTYP[sh['type']]; est += 1
         if d < 240: continue
         if FOREIGN.search(clean(b['name'])): continue
         if sz and sz / 1e6 / (d / 60) > 60: hb += 1; continue
         files.append([b['name'], round(d), b.get('format', '')])
-    if not files: return rej(c, 'no mp4 (other video only)' if other else 'no playable files' if not hb else 'bitrate too high')
+    if not files:
+        if sh['full']: print('NOFILES', sh['title'], '|', c['identifier'], '|', flat(m.get('title'))[:60], '|', sorted(collections.Counter(f.get('name', '').rsplit('.', 1)[-1].lower()[:6] for f in j['files']).items()), [(f.get('name', '')[-40:], f.get('format'), f.get('length'), f.get('size')) for f in j['files'] if re.search(r'\.(mp4|m4v|mkv|avi|mpg|mpeg|iso|vob|ts|wmv|flv|rm|zip|rar|7z|ogv|webm|mov)$', f.get('name', '').lower())][:3], flush=True)
+        return rej(c, 'no mp4 (other video only)' if other else 'no playable files' if not hb else 'bitrate too high')
     if max(f[1] for f in files) < 600: return rej(c, 'under 10 minutes')
     files.sort(key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f[0])])
     title = flat(m.get('title'))[:200]
     desc = ' '.join(re.sub(r'<[^>]+>', ' ', flat(m.get('description'))).split())
     subj = ';'.join(m['subject']) if isinstance(m.get('subject'), list) else flat(m.get('subject'))
     col = m.get('collection', []); col = [col] if isinstance(col, str) else col
-    it = {'identifier': c['identifier'], 'title': title, 'description': desc[:1500], 'subject': subj, 'collection': col, 'date': m.get('date'), 'year': m.get('year'), 'language': m.get('language')}
+    it = {'identifier': c['identifier'], 'title': title, 'description': desc[:400 if sh['full'] else 1500], 'subject': subj[:200] if sh['full'] else subj, 'collection': col, 'date': m.get('date'), 'year': m.get('year'), 'language': m.get('language')}
     v = consider(sh, it, c.get('r', 't'))
     if not v: return rej(c, 'rejected on full details')
     blob = (desc[:1500] + ' ' + subj).lower()
@@ -547,17 +614,16 @@ def meta(c):
     one = len(files) <= 2
     if sh['full']:
         if v[0] == 'd' and find(sh, title)[1] < 0: x['t'] = (sh['title'] + ' - ' + title)[:200]
-        ver = {r[0] for r in tag_full(sh, x)}
-        keepf = [f for n, f in enumerate(x['f']) if n in ver or f[1] >= EPLEN[sh['type']] * 0.8]
-        if not keepf: return rej(c, 'no episode-length files')
-        if len(keepf) < len(x['f']): x['f'] = keepf; ver = {r[0] for r in tag_full(sh, x)}
+        ver = trim_full(sh, x)
+        if not x['f']: return rej(c, 'no episode-length files')
         files = x['f']; se = x.get('se', []); nse = len(ver)
         if v[0] == 'd' and not (ver and len(ver) * 2 >= len(files)): return rej(c, 'files do not match the episode guide')
         if not ver:
             nm0, hd0 = find(sh, title)
-            if not nm0 or nm0['lvl'] >= 2: return rej(c, 'files do not match the episode guide')
+            if not nm0 or nm0['lvl'] >= 2 or len(files) >= 3: return rej(c, 'files do not match the episode guide')
             maybe(x, 'no file matched the episode guide')
         elif v[0] == 'm' and len(ver) * 2 < len(files): maybe(x, v[1])
+        if est: x['est'] = est; maybe(x, 'running time not listed; usual episode length assumed')
         stamp(sh, x)
         return x
     for n, f in enumerate(x['f']):
@@ -590,6 +656,7 @@ def recheck(x):
     if not sh: return 'show no longer listed'
     t = x['t']
     if t.startswith(sh['title'] + ' - ') and x.get('r') in ('d', 'u', 'e', 'i'):
+        if sh['full']: return '' if consider(sh, {'identifier': x['i'], 'title': t[len(sh['title']) + 3:], 'description': x.get('ds'), 'subject': x.get('s'), 'collection': x.get('c'), 'date': '' if x.get('ad') else x.get('d')}, x['r']) else 'no longer passes the title rules'
         return 'junk words in the title' if sh['junk'] and sh['junk'].search(clean(t[len(sh['title']) + 3:])) else ''
     it = {'identifier': x['i'], 'title': t, 'description': x.get('ds'), 'subject': x.get('s'), 'collection': x.get('c'), 'date': '' if x.get('ad') else x.get('d')}
     v = consider(sh, it, x.get('r', 't'))
@@ -633,6 +700,8 @@ def plan():
                     qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({sep.join(ws) + '*' for sep in ('-', '_', '.', '')})) + ') AND NOT title:("%s")' % ph, 'i'))
                 qs.append(('mediatype:movies AND "%s" AND NOT title:("%s") AND (collection:(%s) OR title:(vhs OR tape OR commercials OR recorded OR episodes OR season OR complete OR series))' % (ph, ph, TVCOL), 'd'))
             if nm is sh['names'][0] and sh['ids']: qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(x + '*' for x in sh['ids']) + ')', 'i'))
+            if nm is sh['names'][0] and sh['idsub']: qs.append(('mediatype:movies AND identifier:(' + ' OR '.join('*' + x + '*' for x in sh['idsub']) + ')', 'i'))
+            if sh['full'] and nm['lvl'] <= 1: qs.append(('mediatype:movies AND "%s" AND NOT title:("%s")' % (ph, ph), 'd'))
             if nm is sh['names'][0] and sh['full']:
                 G = EP.get(sh['title']) or {}
                 tl = sorted({re.sub(r'["\\()\[\]{}:!?*^~/]', ' ', PARTRX.sub('', n2)).strip() for n2 in G.get('names', {}).values()})
@@ -725,7 +794,7 @@ def hours(L): return round(sum(sum(f[1] for f in x['f']) for x in L) / 3600)
 def merge():
     old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
     held = []; other = load_ids(held); old = []
-    def dup(x): return x['i'] in other and not (x.get('sup') and len(x['f']) > other[x['i']])
+    def dup(x): return x['i'] in other and not (x.get('sup') and len(x['f']) > other[x['i']] and x.get('se'))
     for x in old0:
         why = 'held in another catalog file' if dup(x) else recheck(x)
         if why: print('DROP', x['k'], '|', x['i'], '|', x['t'][:80], '|', why)
@@ -738,24 +807,27 @@ def merge():
     for x in res:
         sh = BYT[x['k']]; x['q'] = sh['q']; x['pri'] = sh['pri']; x['ct'] = sh['ct']
         if sh['full']:
-            tag_full(sh, x)
+            f0 = list(x['f']); trim_full(sh, x)
+            if not x['f']: x['f'] = f0
             if not x.get('se') and not x.get('keep'): maybe(x, 'no file matched the episode guide')
+            if x.get('se') and x.get('why') == 'no file matched the episode guide': x.pop('keep'); x.pop('why')
     fulls = sorted([s for s in SHOWS if s['full']], key=lambda s: -len(s['title']))
-    cov = {s['title']: {'held': {}, 'new': {}} for s in fulls}
+    cov = {s['title']: {'held': {}, 'new': {}, 'est': {}} for s in fulls}
     def credit(x, where):
         for r in x.get('se', []):
             k = r[4] if len(r) > 4 else x['k']
             if k in cov: cov[k][where].setdefault(r[1], []).append(x['i'])
     for x in res:
         if BYT[x['k']]['full'] and not x.get('keep'): credit(x, 'new')
+        elif BYT[x['k']]['full'] and x.get('est') and x.get('why') == 'running time not listed; usual episode length assumed': credit(x, 'est')
     quick = re.compile('|'.join(sorted({re.escape(nm['n']) for s in fulls for nm in s['names'] if nm['lvl'] <= 1}, key=len, reverse=True)) or 'no full shows')
     for x in held:
         t = flat(x.get('t')); low = clean(t)
         if not quick.search(norm(low)) or NONLAT.search(t) or FOREIGN.search(low): continue
         for sh in fulls:
             nm, hd = find(sh, t)
-            if not nm or nm['lvl'] >= 2 or (sh['junk'] and sh['junk'].search(low)) or JUNK.search(strip_names(sh, low)): continue
-            y = {'i': x['i'], 't': t, 'k': sh['title'], 'f': [f for f in x['f'] if isinstance(f, list) and len(f) > 1 and isinstance(f[0], str) and isinstance(f[1], (int, float)) and f[1] >= EPLEN[sh['type']] * 0.8]}
+            if not nm or nm['lvl'] >= 2 or (sh['junk'] and (sh['junk'].search(low) or sh['junk'].search(re.sub(r'[\W_]+', ' ', fold(low))))) or JUNK.search(strip_names(sh, low)): continue
+            y = {'i': x['i'], 't': t, 'k': sh['title'], 'f': [f for f in x['f'] if isinstance(f, list) and len(f) > 1 and isinstance(f[0], str) and isinstance(f[1], (int, float)) and f[1] >= FULLMIN[sh['type']]]}
             if y['f'] and tag_full(sh, y):
                 credit(y, 'held'); print('HELD', sh['title'], '|', x['i'], '|', t[:70], '|', len(x['f']), 'files', len(y['se']), 'episodes')
             break
@@ -766,13 +838,14 @@ def merge():
         codes = ['S%02dE%02d' % w for w in g.get('order', [])]
         got = set(c['held']) | set(c['new'])
         miss = [k for k in codes if k not in got]
+        soft = [k for k in miss if k in c['est']]
         per = collections.OrderedDict()
         for k in codes:
             v = per.setdefault(k[:3], [0, 0]); v[1] += 1; v[0] += k in got
-        coverage[sh['title']] = {'episodes': len(codes), 'held_elsewhere': len(set(c['held']) & set(codes)), 'in_this_file': len(set(c['new']) & set(codes)), 'covered': len(codes) - len(miss), 'seasons': {k: '%d/%d' % tuple(v) for k, v in per.items()}, 'missing': [[k, g['names'][(int(k[1:3]), int(k[4:6]))]] for k in miss]}
+        coverage[sh['title']] = {'episodes': len(codes), 'held_elsewhere': len(set(c['held']) & set(codes)), 'in_this_file': len(set(c['new']) & set(codes)), 'covered': len(codes) - len(miss), 'seasons': {k: '%d/%d' % tuple(v) for k, v in per.items()}, 'missing': [[k, g['names'][(int(k[1:3]), int(k[4:6]))]] for k in miss], 'missing_but_in_items_without_listed_running_time': soft}
         print('  COVER %-32s episodes %3d held elsewhere %3d here %3d covered %3d missing %3d | %s' % (sh['title'], len(codes), len(set(c['held']) & set(codes)), len(set(c['new']) & set(codes)), len(codes) - len(miss), len(miss), ' '.join('%s %d/%d' % (k, v[0], v[1]) for k, v in per.items())))
         if not codes: print('  COVER', sh['title'], 'no episode guide loaded')
-        for k in miss: print('    MISSING', sh['title'], k, '|', g['names'][(int(k[1:3]), int(k[4:6]))])
+        for k in miss: print('    MISSING', sh['title'], k, '|', g['names'][(int(k[1:3]), int(k[4:6]))], '| in an item without listed running time' if k in soft else '')
         only = [k for k in codes if k in c['new'] and k not in c['held']]
         print('    NEWLY COVERED', sh['title'], len(only), ' '.join(only))
     with gzip.open(OUTF, 'wt', encoding='utf-8') as f: json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
