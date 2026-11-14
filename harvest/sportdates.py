@@ -549,6 +549,7 @@ def races(blocks, year, src, sr=''):
                 e = {'lg': 'racing', 'd': d, 'k': norm(cells[ir]).strip(), 'y': year, 'src': src, 'kt': re.sub(r'[*†‡#]+$', '', cells[ir]).strip()[:80]}
                 if not short and 0 <= itr < len(cells) and itr != ir: ltr = (norm(re.sub(r'^[ORS] ', '', cells[itr])).strip() + (' ' + norm(cells[ict]).strip() if 0 <= ict < len(cells) and ict not in (itr, ir, idt) else ''))[:80]
                 if ltr: e['tr'] = ltr
+                if not short and 0 <= itr < len(cells) and itr != ir and 0 <= ict < len(cells) and ict != itr: e['tn'] = norm(re.sub(r'^[ORS] ', '', cells[itr])).strip()[:60]
                 if cells[0].strip().isdigit() and not short: e['rn'] = int(cells[0].strip())
                 if not short and 0 <= itv < len(cells) and pnet(cells[itv]): e['net'] = pnet(cells[itv])
                 ev.append(e)
@@ -576,7 +577,7 @@ def races(blocks, year, src, sr=''):
         if sr: e['sr'] = sr
         k = (e['k'], e['d'])
         if k in seen:
-            for f in ('tr', 'net', 'rn', 'kt'):
+            for f in ('tr', 'net', 'rn', 'kt', 'tn'):
                 if e.get(f) and not seen[k].get(f): seen[k][f] = e[f]
             continue
         seen[k] = e; out.append(e)
@@ -630,6 +631,7 @@ def build():
         jobs.append(('race', '%d NASCAR Busch Series' % y, y, 'busch'))
         if y >= 1995: jobs.append(('race', '%d NASCAR Craftsman Truck Series' % y, y, 'truck'))
         jobs.append(('race', '%d CART season' % y if y < 2004 else '2004 Champ Car season', y, 'cart'))
+        jobs.append(('race', '%d NASCAR Winston West Series' % y, y, 'west'))
         if y == 1995: jobs.append(('race', '1995 NASCAR SuperTruck Series', y, 'truck'))
         jobs.append(('info', '%d Major League Baseball All-Star Game' % y, 'mlb', 'all star game', y)); jobs.append(('info', '%d NBA All-Star Game' % y, 'nba', 'all star game', y))
         for k, p in GOLF: jobs.append(('info', p % y, 'golf', k, y))
@@ -817,11 +819,11 @@ RSTOP = set('nascar series cup grand national craftsman truck trucks race full r
 def racefind(SC, nt, ys, sr, ctx, net):
     c = []
     for y in ys:
-        L = [e for e in SC.race.get(y, []) if (sr is None and e.get('sr') != 'cart') or e.get('sr', '') == sr]
-        if sr == 'cart':
+        L = [e for e in SC.race.get(y, []) if (sr is None and e.get('sr') not in ('cart', 'west')) or e.get('sr', '') == sr]
+        if sr in ('cart', 'west'):
             rn = re.search(r' (?:round|rd|rnd) (\d{1,2}) ', nt)
-            words = set(w for w in nt.split() if len(w) > 3 and not w.isdigit() and w not in RSTOP and w not in ('cart', 'espn', 'round', 'indycar', 'champ', 'world', 'grand', 'prix', 'indy', 'full', 'race', 'broadcast', 'ppg'))
-            ov = lambda e: len(words & set((e['k'] + ' ' + e.get('tr', '')).split()))
+            words = set(w for w in nt.split() if len(w) > 3 and not w.isdigit() and w not in RSTOP and w not in ('cart', 'espn', 'round', 'indycar', 'champ', 'world', 'grand', 'prix', 'indy', 'full', 'race', 'broadcast', 'ppg', 'west', 'winston', 'nascar', 'series', 'live', 'raceway', 'speedway', 'international', 'motor', 'park'))
+            ov = lambda e: 2 * len(words & set(e.get('tn', '').split())) + len(words & set((e['k'] + ' ' + e.get('tr', '')).split()))
             cc = [e for e in L if rn and e.get('rn') == int(rn.group(1)) and (ov(e) or not words)]
             if not cc:
                 mx = max([ov(e) for e in L] or [0])
@@ -883,6 +885,9 @@ def resolve(SC, title, desc='', ctx=''):
     if m and int(m.group(2)) == (int(m.group(1)) + 1) % 100: ys = [int(m.group(1)) + 1] if lg in ('ncaab', 'nba', 'nhl') else sorted(set(ys) | {int(m.group(1)), int(m.group(1)) + 1})
     if not ys:
         m = re.search(r' (?:playoffs?|finals|nba|nfl|mlb|ws|world series|alcs|nlcs|alds|nlds) (8[4-9]|9\d|0[0-4]) ', nt)
+        if m: ys = [int(('19' if m.group(1) > '50' else '20') + m.group(1))]
+    if not ys:
+        m = re.search(r' (?:' + MONS + r') (8[4-9]|9\d|0[0-4]) ', nt)
         if m: ys = [int(('19' if m.group(1) > '50' else '20') + m.group(1))]
     if not ys: return None, 'noyear'
     if re.search(REBX, nt): return None, 'rebroadcast'
@@ -984,15 +989,16 @@ def resolve(SC, title, desc='', ctx=''):
         sr = None
         for tx in (nt, nd):
             if re.search(r' (cart|indycar|indy car|champ car) ', tx) and not re.search(r' (nascar|busch|winston cup) ', tx): sr = 'cart'
+            elif re.search(r' winston west ', tx) and not re.search(r' (winter heat|southwest) ', tx): sr = 'west'
             elif re.search(r' (truck|trucks|supertruck|ncts|cts) ', tx): sr = 'truck'
             elif re.search(r' (busch grand national|busch series|busch gn|bgn|grand national|nbs|bgns) ', tx): sr = 'busch'
             elif re.search(r' (winston cup|nextel cup|cup series|nwcs) ', tx): sr = ''
-            elif re.search(r' (busch north|bgnn|modified|modifieds|southwest tour|winston west|featherlite|dash series|arca|irl|formula one|formula 1|nhra|imsa|trans am|iroc|winter heat|late model|sprint car|world of outlaws) ', tx): return None, 'race_otherseries'
+            elif re.search(r' (busch north|bgnn|modified|modifieds|southwest tour|featherlite|dash series|arca|irl|formula one|formula 1|nhra|imsa|trans am|iroc|winter heat|late model|sprint car|world of outlaws) ', tx): return None, 'race_otherseries'
             if sr is not None: break
         c = racefind(SC, nt, ys, sr, norm(desc[:200]), netof(title, ''))
         ds = sorted(set(e['d'] for e in c))
         if len(ds) > 1 and (datetime.date.fromisoformat(ds[-1]) - datetime.date.fromisoformat(ds[0])).days <= 3: c = [e for e in c if e['d'] == ds[-1]]
-        if not c and not re.search(r' [1-9]\d\dk?s? ', nt) and sr != 'cart': return None, 'race_noname'
+        if not c and not re.search(r' [1-9]\d\dk?s? ', nt) and sr not in ('cart', 'west'): return None, 'race_noname'
         e, why = one(c, 'race')
         if e: return {'ad': e['d'], 'ev': '%s %s' % (e['d'][:4], e['k'].upper()), 'ct': 'racing', 'row': e}, None
         return None, why
@@ -1208,6 +1214,8 @@ def minefiles(SC):
             cb = 'ncaab' if re.search(r' basketball ', norm(ctx)) else 'ncaaf' if re.search(r' football ', norm(ctx)) else ''
             if lg in ('ncaaf', 'ncaab') and cb and not re.search(r' (basketball|football|bowl) ', nt): lg = cb
             ys = [int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)]
+            m2 = re.search(r' (?:' + MONS + r') (8[4-9]|9\d|0[0-4]) ', nt)
+            if not ys and m2: ys = [int(('19' if m2.group(1) > '50' else '20') + m2.group(1))]
             base = {'ct': lg, 'k': LGK.get(lg, 'SPORTS'), 'e': ys[0] if ys else x.get('e') or (gy[0] if gy else 0), 'net': netof(nm, '') or (list(gn)[0] if len(gn) == 1 else ''), 'nm': nm}
             if re.search(DOCRX, nt) or (not multi and re.search(DOCRX, norm(gt))) or re.search(r' (highlight films?|season in reviews?|documentaries|vhs tape documentar(y|ies)) ', norm(gt)) or re.search(r' (world series|super bowl|nba finals|stanley cup) (video|vhs|home video) ', nt):
                 rec = dict(base, ct='sportsdoc', k='SPORTS FILMS'); key = ('doc', nt)
@@ -1223,7 +1231,7 @@ def minefiles(SC):
                 else:
                     r, why = resolve(SC, nm, gt, gt)
                     if not r and why == 'nosport' and lg in LTAG: r, why = resolve(SC, nm + ' ' + LTAG[lg], gt, gt)
-                    if not r and why == 'noyear' and len(gy) == 1: r, why = resolve(SC, '%d %s %s' % (gy[0], nm, LTAG.get(lg, '')), gt, gt)
+                    if not r and why == 'noyear' and len(gy) == 1 and not re.search(r'\b(prior to|before|through|thru|until|up to|pre|since|after)\b|\d\s*[-–]\s*\d', gt.lower()): r, why = resolve(SC, '%d %s %s' % (gy[0], nm, LTAG.get(lg, '')), gt, gt)
                     if not r and why in ('allstar_none', 'nba_nogame', 'mlb_nogame', 'noteam'):
                         for lw in ('mlb', 'nba', 'nhl', 'nfl'):
                             if (' ' + lw + ' ') in norm(gt) and (' ' + lw + ' ') not in nt:
