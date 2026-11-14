@@ -32,10 +32,11 @@ BADT = re.compile(r"(?i)\b(reaction|reacts?|reacting|reviewed|best of|compilatio
 PARTX = re.compile(r"(?i)\b\d\s*of\s*\d\b|\b(part|pt\.?)\s*([1-9]|one|two|three)\s*(of|/)\s*\d|\[\s*\d\s*/\s*\d\s*\]|\(\s*\d\s*/\s*\d\s*\)|\b\d\s*/\s*\d\s*$")
 JUNKT = re.compile(r"(?i)\b(web ?series|icons unearthed|ruminations?|re-?binge|watch party|re:view|first watch|logcast|unwrapped|tv fails|summary|solving|i love bad|worst of|commentaries|spoilers?|thoughts|assigned viewing|a look at|a look back|looking back|history of|the story of|what happened to|the truth about|cancell?ed|rise and fall|tragic|net worth|scandal|video essay|critique|untold|you didn'?t know|never knew|gmod|minecraft|roblox|fortnite|playstation|nintendo|game ?boy|n64|gamecube|dreamcast|pc game|video ?game|full game|cutscenes?|game movie|bridge commander|star trek online|prop|props|model kit|for the first time|we watch(ed)?|re-?watch(ed|ing)?|revisited|rundown|after ?show|afterbuzz|play ?through|let'?s play|script reading|table read|discuss(es|ed|ing|ion)?|analy[sz](ing|ed|is)|facts about|weird facts|un episodio|joined by|check out|watch ?along|my thoughts|deep dive|drinking game|ft\.|feat\.|ps[1-5]|xbox|let'?s watch|live ?stream|sermon|school project|stage production|decoded|reviews|then (and|&|vs\.?) now|where are they now|ranking every|every episode|iceberg|cast update|still alive|making of|featurette|reboot|fan ?film|fan ?fiction|audio only|audio drama|old time radio|otr|cosplay|comic ?con|q ?& ?a|unreleased|animatic|storyboard|lost media|creepypasta|ytp|poop|tier list|how to|tutorial|collection review|lego|rom ?hack|emulator|ep(isode)?s? ?\d+ ?- ?\d+|vol(ume)?\.? ?\d+|disc \d+|24/7|non ?stop)\b")
 JUNKC = re.compile(r"(?i)(react|podcast|(pod|log|vid|trek|geek|nerd)cast\b|geek|nerd|rumination|rebinge|commentar|critic|pensky|lorerunner|vinesauce|trekculture|gaming|gamer|commentary|rewatch|reviews?\b|plays\b|after ?show|longplay|\bfm\b|radio)")
-OFFS = re.compile(r"(?i)^(star trek|star trek official|startrek\.com|paramount( ?\+| plus)?( [a-z]{2,10})?|cbs|cbs all access|pluto tv|paramount pictures|paramount network|showtime|twin peaks|cbs home entertainment)$")
+OFFS = re.compile(r"(?i)^(sony pictures television|sony pictures tv|warner bros\.? (tv|television|entertainment|classics)|wb tv|hbo max|max|peacock|nbc|fox|abc|cbs|the cw|filmrise( classic tv)?|tubi|the roku channel|crackle|shout! factory tv|shout! studios|amazon freevee|freevee|universal television|nbc classics|star trek|star trek official|startrek\.com|paramount( ?\+| plus)?( [a-z]{2,10})?|cbs|cbs all access|pluto tv|paramount pictures|paramount network|showtime|twin peaks|cbs home entertainment)$")
 FANC = re.compile(r"(?i)(trek|geek|nerd|lore|culture|chat|archive|pod|cast\b|review|react|talk|\bfan|sci-?fi|peaks|perfect|unwrapped|pensky|vinesauce|debris|explained|theory|media|critic|watch|commentary|opinion|rant|show\b|live\b|stream|gaming|games?\b)")
 PODX = re.compile(r"(?i)\b(audio ?book|abridged|telling you|full face|tutorial|recorded|makeup|products|podcasts?|discuss(es|ed|ing|ion)?|reviews?|recaps?|re-?watch(ing)?|our thoughts|we talk|we watch|we cover|we look at|patreon|spotify|apple podcasts|anchor\.fm|commentary|reactions?|reacts?|watch ?along|watch party|join us|this week|in this episode,? (we|i)|hosts?|listen|breakdown|analysis|first time|bedtime|sleep|narrat(ed|ion|or)|audio drama|fan (film|made|production|series)|parody|my take|opinions?|rank(ed|ing)?|live ?stream|chat)\b")
 PODG = re.compile(r"(?i)\b(podcasts?|we discuss|discussion of|(our|my) (review|thoughts|reaction|take)|patreon\.com|spotify|apple podcasts|anchor\.fm|(my|our|first) reaction|reaction (video|to)|reacts? to|watch ?along|watch party|commentary track|fan (film|made|production|series|edit)|first time watching|audio ?book|abridged|gameplay|walkthrough|lets play|let's play|review of|(i|we) review|recap of|video essay|in this video,? (i|we)|today (i|we)|hey (guys|yall|y'all|everyone)|what'?s up (guys|everyone)|telling you|full face|tutorial|this week('s)? episode|episode of (our|my|the) (show|podcast)|temporary upload|compilation|clips from|highlights from|supercut)\b")
+PAIDC = re.compile(r'(?i)^youtube (movies|movies & tv|movies and tv|tv|originals)$')
 SOFTJ = re.compile(r"(?i)\b(hours?|hrs?|vs\.?|versus|mix|mega ?mix|convention|panel|reunion|reunite[sd]?|toy|toys|figure|figures|pitch|mod|mods|genesis|sega|nes|snes|arcade|radio|trivia|quiz|theory|theories|the game|revival|cover|theme|edit|ending|opening|credits|preview|intro|outro|shorts?|scenes?|interview|tribute|deleted|review|clips?|moments|parody|german|french|polish|russian|arabic|partial|marathon|remix|highlights|commentary|recap|soundtrack)\b")
 LATEY = re.compile(r'\b(200[5-9]|20[12]\d)\b|\b\d{1,2}[./]\d{1,2}[./](0[5-9]|[12]\d)\b')
 OFFX = re.compile(r"(?i)(official|\bpbs\b|\bnbc\b|\bcbs\b|\babc\b|\bfox\b|warner|paramount|sony pictures|universal|disney|\bmgm\b|lionsgate|shout! ?(studios|factory)|shout ?factory|filmrise|hasbro|mattel|wildbrain|nelvana|9 story|cookie jar|nickelodeon|cartoon network|a&e|history channel|discovery|c-span|associated press|ap archive|\bbbc\b|\bitv\b|britbox|\bhbo\b|showtime|\bmtv\b|comedy central|\bbet\b|national geographic|smithsonian|american archive|library of congress|museum|university|public (television|media|broadcasting)|\bwgbh\b|\bwttw\b|\bwnet\b|\bkqed\b|\bopb\b|buzzr|fremantle|carsey|norman lear|stephen j\. cannell|cannell|peanuts|jim henson|henson|sesame|scholastic|dhx|cinedigm|multicom|mill creek|kino|questar|janson|echo bridge|vision films|grand ole opry|circle|opry|tv land|me-?tv|antenna tv|decades|the film detective|classic media|dreamworks|\bamc\b|ifc|sundance|food network|hgtv|\btlc\b|travel channel|court tv|\bcnn\b|\bespn\b|\bnfl\b|\bnba\b|\bmlb\b|\bnhl\b|\bwwe\b|nascar)")
@@ -293,7 +294,7 @@ def tvget(url):
             try: return json.loads(raw)
             except Exception: return None
         if st == 404: return None
-        time.sleep(1.5 + a * 2.5 + random.random())
+        time.sleep((6 if st == 429 else 1.5) + a * 3 + random.random())
     with LOCK: STAT['tvfail'] += 1
     return None
 
@@ -303,6 +304,9 @@ def guide_ok(g, s):
     try: py = int(str(g.get('premiered') or '')[:4])
     except Exception: return False
     y0 = s['hint'] or s['y0']
+    gn = nz(str(g.get('network') or ''))
+    big = {'nbc': 'nbc', 'abc': 'abc', 'cbs': 'cbs', 'fox': 'fox', 'pbs': 'pbs'}
+    if gn in big and s.get('net') and s['net'] not in big and s['net'] not in ('syn', 'nick', 'nickelodeon', 'disney', 'family', 'usa', 'tbs', 'tnt', 'a&e', 'lifetime', 'cartoon network', 'upn', 'wb'): return False
     if not y0: return g.get('country') == 'US'
     if s['hint']: return abs(py - y0) <= 1
     if abs(py - y0) <= 2: return True
@@ -356,6 +360,10 @@ def plan():
         try:
             for it in json.load(gzip.open(OUT, 'rt', encoding='utf-8')): prev[it['k']] += 1
         except Exception: pass
+    done = []
+    if os.path.exists(REP) and not os.environ.get('REDO'):
+        try: done = json.load(open(REP, encoding='utf-8')).get('done') or []
+        except Exception: done = []
     G = {}
     todo = []
     for s in sel:
@@ -372,8 +380,9 @@ def plan():
         g = fetch_guide(s)
         if guide_ok(g, s):
             with LOCK: G[s['k']] = g
-    with ThreadPoolExecutor(3) as ex: list(ex.map(one, todo))
+    with ThreadPoolExecutor(2) as ex: list(ex.map(one, todo))
     print('guides total', len(G), 'stat', dict(STAT), flush=True)
+    print('no guide for', [s['title'] for s in sel if s['kind'] == 'ep' and s['k'] not in G], flush=True)
     tasks = []
     for s in sel:
         g = G.get(s['k'])
@@ -406,21 +415,21 @@ def plan():
             qs += [bt + ' season %d full episode' % n for n in seas]
             if s['pri'] <= 2: qs += [bt + ' s%02d' % n for n in seas] + [bt + ' season %d episode 1' % n for n in seas]
             if not seas: qs += [bt + ' season 1 episode 1', bt + ' s01e01', bt + ' pilot episode', bt + ' ' + str(s['y0'] or '') + ' episode 1']
-            cap = DEEP or (400 if s['pri'] == 1 else 150 if s['pri'] == 2 else 40)
+            cap = DEEP or (400 if s['pri'] <= 1 else 150 if s['pri'] == 2 else 40)
             pool = [e for e in eps if str(e[2]) <= s['until']]
             if len(pool) > cap:
                 random.seed(s['k']); pool = sorted(random.sample(pool, cap))
             for e in pool:
                 et = nz(str(e[3]))
                 if len(et) >= 5 and not re.match(r'^(episode|part|pilot|show|chapter)\b', et): epq.append(bt + ' ' + str(e[3]))
-                elif s['pri'] == 1: epq.append(bt + ' season %d episode %d' % (e[0], e[1]))
+                elif s['pri'] <= 1: epq.append(bt + ' season %d episode %d' % (e[0], e[1]))
             plq = [bt + ' full episodes', bt + ' season 1'] if s['pri'] <= 2 else [bt + ' full episodes']
         else:
             for nm in names:
                 qs += [nm + ' full episode', nm + ' full show', nm + ' ' + (nw + ' ' if nw else '') + 'full broadcast']
                 qs += [nm + ' %d' % y for y in ys if y] + [nm + ' %d full' % y for y in ys if y]
             if s['pri'] <= 2:
-                step = 1 if s['pri'] == 1 else 3
+                step = 1 if s['pri'] <= 1 else 3
                 epq = [bt + ' ' + mo + ' %d' % y for y in ys if y for mo in MONTHS[::step]]
             plq = [bt + ' full episodes'] if s['pri'] <= 2 else []
         t['qs'] = [re.sub(r'\s+', ' ', q).strip() for q in qs]; t['epq'] = epq; t['plq'] = plq; t['chq'] = chq
@@ -428,7 +437,7 @@ def plan():
         tasks.append(t)
     tasks.sort(key=lambda t: (t['pri'], t['title'].lower()))
     os.makedirs(PARTS, exist_ok=True)
-    json.dump({'tasks': tasks, 'all': {k: {x: s[x] for x in ('title', 'pri', 'type', 'kind', 'strict')} for k, s in S.items()}}, gzip.open(os.path.join(PARTS, 'ytn_plan.json.gz'), 'wt', encoding='utf-8'))
+    json.dump({'done': done, 'tasks': tasks, 'all': {k: {x: s[x] for x in ('title', 'pri', 'type', 'kind', 'strict')} for k, s in S.items()}}, gzip.open(os.path.join(PARTS, 'ytn_plan.json.gz'), 'wt', encoding='utf-8'))
     print('tasks', len(tasks), 'queries', sum(len(t['qs']) + len(t['epq']) + len(t['plq']) for t in tasks))
     print('PLAN (pri, kind, amb, show, years, guide eps, queries, previous items)')
     for t in tasks[:700]:
@@ -513,6 +522,7 @@ def rawpat(a):
 def match(t, c, M):
     T = c['t']
     if c.get('live') or not c.get('dur'): return None, 'live'
+    if PAIDC.match((c.get('ch') or '').strip()): return None, 'paid'
     if re.search(r'[^\x00-\x7f]', re.sub(r'[’‘“”–—…é·•|®™½]', '', T)): return None, 'nonascii'
     n = nz(T); pn = ' ' + n + ' '
     hit = ''
@@ -622,7 +632,7 @@ def match(t, c, M):
             elif G and not off and not r.get('m'): r['m'] = 'episode not identified'
     if t['strict']:
         if not r['se'] or strong < 1 or r.get('m'): return None, 'strict: episode not confirmed'
-        offs = bool(OFFS.match((c.get('ch') or '').strip()))
+        offs = bool(OFFS.match((c.get('ch') or '').strip())) or nzk(c.get('ch') or '') in set(nzk(a) for a in t['al']) or bool(c.get('ver') and OFFX.search(c.get('ch') or '') and not FANC.search(c.get('ch') or ''))
         rest = [w for w in re.sub(SERX, ' ', pn.replace(' ' + hit + ' ', ' ', 1)).split() if w not in STOPW and w not in ew and not w.isdigit() and w not in MONW and len(w) >= 3 and w not in ('remastered', 'restored', 'uncut', 'paramount', 'plus', 'star', 'trek', 'tos', 'tng', 'ds9', 'voy', 'ent', 'tas')]
         inrt = any(a <= c['dur'] <= b for a, b in t['runtime'])
         if not offs:
@@ -635,7 +645,10 @@ def match(t, c, M):
             if not inrt: r['m'] = 'official channel, runtime differs from broadcast length'
             elif rest and not full: r['m'] = 'official channel, title has extra words'
     if not t['strict'] and t['kind'] == 'ep' and strong < 2 and re.match(r'\s*(#?\d+\s*[:.\-]|ep(isode)?\.?\s*#?\d+\s*[:\-])', T, re.I) and pre == [] and i > 0: r.setdefault('m', 'numbered title')
-    if df == 2 and strong < 2: r.setdefault('m', 'double length')
+    if df == 2 and not off and not t['strict']: r.setdefault('m', 'double length')
+    if not r['se'] and not t['strict'] and not G and t['kind'] == 'ep' and off:
+        mc = re.match(r'\s*[:\-|]?\s*(\d{1,2})(\d{2})\b', raw[mm.end():] if mm else '')
+        if mc and 1 <= int(mc.group(1)) <= 30 and 1 <= int(mc.group(2)) <= 40: r['se'] = [int(mc.group(1)), int(mc.group(2))]; r.pop('m', None)
     if df == 3:
         if strong < 2: return None, 'duration'
         r.setdefault('m', 'short for the show')
@@ -713,6 +726,14 @@ def enrich(c, t, G):
     fin(c)
 
 
+DONE = set()
+
+
+def qh(k, q, params):
+    import hashlib
+    return hashlib.sha1((k + '\t' + q + '\t' + params).encode()).hexdigest()[:10]
+
+
 def run_search():
     P = json.load(gzip.open(os.path.join(PARTS, 'ytn_plan.json.gz'), 'rt', encoding='utf-8'))
     tasks = P['tasks']
@@ -728,6 +749,10 @@ def run_search():
         for j, q in enumerate(t.get('chq') or []): jobs.append((t['pri'], j + 0.8, t['k'], q, 0, 'ch'))
         for j, q in enumerate(t['epq']): jobs.append((t['pri'] + 0.5, j, t['k'], q, 1, 'EgIQAQ==' if short else 'EgQQARgC'))
     jobs.sort(key=lambda x: (x[0], x[1], x[2]))
+    done0 = set(P.get('done') or [])
+    n0 = len(jobs)
+    jobs = [j for j in jobs if qh(j[2], j[3], j[5]) not in done0]
+    print('queries already done in earlier runs', n0 - len(jobs), 'of', n0, flush=True)
     jobs = [j for n, j in enumerate(jobs) if n % SHARDS == SHARD]
     print('shard', SHARD, 'queries', len(jobs), flush=True)
     acc = {}; seen = set(); chan = collections.Counter(); chname = {}; chver = {}; rejs = collections.Counter(); rsamp = collections.defaultdict(list); perq = collections.Counter(); pls = set(); offch = set()
@@ -746,8 +771,9 @@ def run_search():
         acc[c['vid']] = c
         return True
     def one(job):
-        if left() < BUDGET * 0.42: return
+        if left() < BUDGET * 0.5: return
         _, _, k, q, pages, params = job
+        with LOCK: DONE.add(qh(k, q, params))
         t = byk[k]
         if params == 'ch':
             d = inner('search', {'query': q, 'params': 'EgIQAg=='})
@@ -758,7 +784,7 @@ def run_search():
                         chname[cid] = nm; offch.add(cid)
             return
         if params == 'pl':
-            if left() < BUDGET * 0.5: return
+            if left() < BUDGET * 0.55: return
             cand = []
             for p in search_playlists(q)[:8]:
                 pn = ' ' + nz(p['t']) + ' '
@@ -800,7 +826,7 @@ def run_search():
     print('rights-holder channels found', [(c, chname.get(c)) for c in sorted(offch)], flush=True)
     print('channels to enumerate', len(tops), flush=True)
     def enum(chid):
-        if left() < BUDGET * 0.2: return
+        if left() < BUDGET * 0.4: return
         vs = channel_videos(chid, chname.get(chid, ''))
         ages = sorted(c['age'] for c in acc.values() if c['chid'] == chid and c['age'] >= 0)
         med = ages[len(ages) // 2] if ages else -1
@@ -837,10 +863,14 @@ def run_search():
         L.sort(key=lambda x: x[0], reverse=True)
         items += [x[1] for x in L[:2]]
     print('distinct episodes', len(best), 'kept with alternates', len(items), flush=True)
-    def det(c):
-        if left() < 60: c['oe'] = -1; return
+    def oe(c):
+        if left() < 45: c['oe'] = -1; return
         c['oe'] = oembed(c['vid'])
-        if c['oe'] == 200 and left() > 200:
+        time.sleep(0.05 + random.random() * 0.15)
+    with ThreadPoolExecutor(8) as ex: list(ex.map(oe, items))
+    print('oembed done, left min', round(left() / 60), flush=True)
+    def det(c):
+        if c.get('oe') == 200 and left() > 90:
             ds = describe(c['vid'])
             with LOCK: STAT['desc_ok' if ds is not None else 'desc_fail'] += 1
             if ds is not None:
@@ -849,9 +879,9 @@ def run_search():
         if c['r'].get('need') and not c.get('drop'):
             if (byk[c['k']]['y1'] or 2004) >= 2004: c['drop'] = 'undated'
             else: c['r'].pop('need')
-        time.sleep(0.15 + random.random() * 0.3)
-    items.sort(key=lambda c: (0 if c['r'].get('need') else 1, c['vid']))
-    with ThreadPoolExecutor(THREADS) as ex: list(ex.map(det, items))
+        time.sleep(0.1 + random.random() * 0.2)
+    items.sort(key=lambda c: (0 if c['r'].get('need') else 1 if not (c['r'].get('se') or c['r'].get('ad')) else 2 if c.get('maybe') else 3, c['vid']))
+    with ThreadPoolExecutor(6) as ex: list(ex.map(det, items))
     dropped = collections.Counter(c.get('drop') for c in items if c.get('drop'))
     print('dropped after description', dict(dropped), 'fixed', dict(collections.Counter(c['r'].get('src') for c in items if c['r'].get('src'))), flush=True)
     dsamp = [c for c in items if c.get('drop') == 'description']
@@ -870,7 +900,7 @@ def run_search():
     for why0, L in rsamp.items():
         for x in random.sample(L, min(len(L), 14 if why0 not in ('duration', 'badword') else 6)): print('  ', why0.ljust(18), '|', x[0][:26], '|', x[2], 'min |', x[1][:90])
     os.makedirs(PARTS, exist_ok=True)
-    json.dump(items, gzip.open(os.path.join(PARTS, 'ytn-%d.json.gz' % SHARD), 'wt', encoding='utf-8'))
+    json.dump({'items': items, 'done': sorted(DONE)}, gzip.open(os.path.join(PARTS, 'ytn-%d.json.gz' % SHARD), 'wt', encoding='utf-8'))
 
 
 def rank(it):
@@ -898,8 +928,12 @@ def merge():
             if x.get('keep'): continue
             if x.get('se') and x.get('ad'): osek.add((nzk(str(x.get('k'))), tuple(x['se'])))
     cand = []
+    newdone = set()
     for p in sorted(glob.glob(os.path.join(PARTS, 'ytn-*.json.gz'))):
-        try: cand += json.load(gzip.open(p, 'rt', encoding='utf-8'))
+        try:
+            d = json.load(gzip.open(p, 'rt', encoding='utf-8'))
+            if isinstance(d, dict): cand += d.get('items') or []; newdone |= set(d.get('done') or [])
+            else: cand += d
         except Exception as e: print('bad part', p, e)
     rej = collections.Counter(); out = {}
     def put(it):
@@ -931,6 +965,7 @@ def merge():
                 elif st_ok: it.pop('keep', None); it['why'] = w
                 else: it['keep'] = 'maybe'; it['why'] = 'maybe: ' + w
         elif BADT.search(it['t']) or JUNKT.search(it['t']) or JUNKC.search(it.get('ch') or ''): purged += 1; continue
+        if PAIDC.match((it.get('ch') or '').strip()): purged += 1; continue
         put(it)
     print('purged from previous', purged)
     for c in cand:
@@ -949,14 +984,22 @@ def merge():
         if c['age'] >= 0: it['agey'] = round(c['age'], 1)
         put(it)
     stitles = set(v['title'] for v in ALL.values() if v.get('strict'))
-    chk = [(ek, it) for ek, it in out.items() if it['k'] in stitles][:500]
+    chk = [(ek, it) for ek, it in out.items() if it['k'] in stitles][:6000]
     print('DESCRIPTION CHECK', len(chk))
-    for ek, it in chk:
-        ds = describe(it['vid'])
-        time.sleep(0.3)
+    schn = collections.Counter(it.get('chid') or it['ch'] for ek, it in chk)
+    def dchk(x):
+        ek, it = x
+        ds = describe(it['vid']) if time.time() - T0 < 40 * 60 else None
+        time.sleep(0.2)
         pm = PODX.search(ds or '')
-        print(' ', it['i'], '|', it['k'][:24], '|', it['ch'][:22], '|', it['t'][:50], '|', 'DROP ' + pm.group(0) if pm else 'keep', '|', (ds or 'no description')[:160])
-        if pm: out.pop(ek); rej['description'] += 1
+        res = 'keep'
+        if pm: res = 'DROP ' + pm.group(0)
+        elif ds and str(it.get('why', '')).startswith('maybe: unofficial upload') and it.get('agey', 0) >= 4 and (it.get('views', 0) >= 5000 or it.get('views', 0) >= 1000 and schn[it.get('chid') or it['ch']] >= 3):
+            it.pop('keep', None); it['why'] = 'up %d years, %d views, runtime and description fit the episode' % (int(it['agey']), it['views']); res = 'FIRM'
+        with LOCK:
+            print(' ', it['i'], '|', it['k'][:24], '|', it['ch'][:22], '|', it['t'][:50], '|', res, '|', (ds or 'no description')[:140])
+            if pm: out.pop(ek, None); rej['description'] += 1
+    with ThreadPoolExecutor(6) as ex: list(ex.map(dchk, chk))
     chn = collections.Counter(x.get('chid') or x['ch'] for x in out.values() if x.get('se') or x.get('ad'))
     promoted = 0
     for it in out.values():
@@ -1014,8 +1057,10 @@ def merge():
     if os.path.exists(REP):
         try: prevrep = json.load(open(REP, encoding='utf-8'))
         except Exception: prevrep = {}
+    done = sorted(set(prevrep.get('done') or []) | newdone)
+    print('queries recorded as done', len(done), 'new this run', len(newdone))
     cover = dict(prevrep.get('coverage') or {}, **cover)
-    rep = {'coverage': cover, 'run': RUN, 'date': str(TODAY), 'total': len(items), 'firm': len(firm), 'maybe': len(items) - len(firm), 'usable': sum(1 for x in items if use(x)), 'usable_firm': sum(1 for x in firm if use(x)), 'hours': round(sum(x['dur'] for x in items) / 3600), 'official': sum(1 for x in items if x['off']), 'rejected': dict(rej), 'priority': pp, 'shows': rows}
+    rep = {'done': done, 'coverage': cover, 'run': RUN, 'date': str(TODAY), 'total': len(items), 'firm': len(firm), 'maybe': len(items) - len(firm), 'usable': sum(1 for x in items if use(x)), 'usable_firm': sum(1 for x in firm if use(x)), 'hours': round(sum(x['dur'] for x in items) / 3600), 'official': sum(1 for x in items if x['off']), 'rejected': dict(rej), 'priority': pp, 'shows': rows}
     json.dump(rep, open(REP, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     random.seed(7)
     print('SAMPLES FIRM')

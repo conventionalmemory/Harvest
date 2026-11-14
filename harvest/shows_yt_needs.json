@@ -1,5 +1,224 @@
 [
 {
+"title": "Beverly Hills, 90210",
+"aka": [
+"Beverly Hills 90210"
+],
+"type": "drama",
+"net": "fox",
+"years": [
+1990,
+2000
+],
+"pri": 0,
+"strict": 1,
+"runtime": [
+[
+2460,
+2940
+],
+[
+4920,
+5880
+]
+],
+"not": [
+"bh90210",
+"2008",
+"reunion"
+]
+},
+{
+"title": "Cheers",
+"aka": [],
+"type": "sitcom",
+"net": "nbc",
+"years": [
+1982,
+1993
+],
+"pri": 0,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"frasier",
+"tortellis",
+"reunion"
+]
+},
+{
+"title": "ER",
+"aka": [],
+"type": "drama",
+"net": "nbc",
+"years": [
+1994,
+2004
+],
+"pri": 0,
+"strict": 1,
+"runtime": [
+[
+2460,
+2940
+],
+[
+4920,
+5880
+]
+],
+"not": []
+},
+{
+"title": "Frasier",
+"aka": [],
+"type": "sitcom",
+"net": "nbc",
+"years": [
+1993,
+2004
+],
+"pri": 0,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"2023",
+"2024",
+"revival",
+"reboot",
+"cheers"
+]
+},
+{
+"title": "Full House",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1987,
+1995
+],
+"pri": 0,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"fuller",
+"reunion"
+]
+},
+{
+"title": "L.A. Law",
+"aka": [
+"LA Law"
+],
+"type": "drama",
+"net": "nbc",
+"years": [
+1986,
+1994
+],
+"pri": 0,
+"strict": 1,
+"runtime": [
+[
+2460,
+2940
+],
+[
+4920,
+5880
+]
+],
+"not": [
+"reunion",
+"the movie"
+]
+},
+{
+"title": "Melrose Place",
+"aka": [],
+"type": "drama",
+"net": "fox",
+"years": [
+1992,
+1999
+],
+"pri": 0,
+"strict": 1,
+"runtime": [
+[
+2460,
+2940
+],
+[
+4920,
+5880
+]
+],
+"not": [
+"2009",
+"reunion"
+]
+},
+{
+"title": "Seinfeld",
+"aka": [],
+"type": "sitcom",
+"net": "nbc",
+"years": [
+1989,
+1998
+],
+"pri": 0,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"curb",
+"comedians in cars",
+"unfrosted",
+"stand up",
+"standup",
+"reunion",
+"bee movie"
+]
+},
+{
 "title": "Star Trek",
 "aka": [
 "Star Trek: The Original Series",
@@ -444,6 +663,36 @@
 ]
 },
 {
+"title": "The Fresh Prince of Bel-Air",
+"aka": [
+"Fresh Prince of Bel Air",
+"Fresh Prince"
+],
+"type": "sitcom",
+"net": "nbc",
+"years": [
+1990,
+1996
+],
+"pri": 0,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"bel air",
+"reunion",
+"peacock"
+]
+},
+{
 "title": "Twin Peaks",
 "aka": [],
 "type": "drama",
@@ -656,6 +905,17 @@
 "years": [
 1961,
 1998
+],
+"pri": 1
+},
+{
+"title": "Access Hollywood",
+"aka": [],
+"type": "mag",
+"net": "syn",
+"years": [
+1996,
+2004
 ],
 "pri": 1
 },
@@ -914,21 +1174,6 @@
 "pri": 1
 },
 {
-"title": "Beverly Hills, 90210",
-"aka": [
-"90210",
-"Beverly Hills",
-"Beverly Hills 90210"
-],
-"type": "drama",
-"net": "fox",
-"years": [
-1990,
-2000
-],
-"pri": 1
-},
-{
 "title": "Bewitched",
 "aka": [],
 "type": "sitcom",
@@ -1173,6 +1418,8 @@
 {
 "title": "CNN Headline News",
 "aka": [
+"CNN News",
+"CNN aircheck",
 "Headline News"
 ],
 "type": "news",
@@ -1249,15 +1496,17 @@
 "type": "talk",
 "net": "tnn",
 "years": [
-1983,
+1986,
 1999
 ],
 "pri": 1
 },
 {
 "title": "Crossfire",
-"aka": [],
-"type": "news",
+"aka": [
+"CNN Crossfire"
+],
+"type": "talk",
 "net": "cnn",
 "years": [
 1982,
@@ -1548,6 +1797,19 @@
 "pri": 1
 },
 {
+"title": "Electric Playground",
+"aka": [
+"The Electric Playground"
+],
+"type": "other",
+"net": "syn",
+"years": [
+1997,
+2004
+],
+"pri": 1
+},
+{
 "title": "Ellen",
 "aka": [
 "These Friends of Mine"
@@ -1581,17 +1843,6 @@
 "years": [
 1981,
 2004
-],
-"pri": 1
-},
-{
-"title": "ER",
-"aka": [],
-"type": "drama",
-"net": "nbc",
-"years": [
-1994,
-2009
 ],
 "pri": 1
 },
@@ -1725,17 +1976,6 @@
 "pri": 1
 },
 {
-"title": "Full House",
-"aka": [],
-"type": "sitcom",
-"net": "abc",
-"years": [
-1987,
-1995
-],
-"pri": 1
-},
-{
 "title": "Futurama",
 "aka": [],
 "type": "sitcom",
@@ -1743,6 +1983,19 @@
 "years": [
 1999,
 2003
+],
+"pri": 1
+},
+{
+"title": "GamePro TV",
+"aka": [
+"GamePro"
+],
+"type": "other",
+"net": "syn",
+"years": [
+1991,
+1992
 ],
 "pri": 1
 },
@@ -1832,7 +2085,9 @@
 },
 {
 "title": "Grand Ole Opry Live",
-"aka": [],
+"aka": [
+"Opry Live"
+],
 "type": "music",
 "net": "tnn",
 "years": [
@@ -1954,6 +2209,17 @@
 "years": [
 1973,
 2004
+],
+"pri": 1
+},
+{
+"title": "Hee Haw",
+"aka": [],
+"type": "other",
+"net": "syn",
+"years": [
+1969,
+1993
 ],
 "pri": 1
 },
@@ -2260,19 +2526,6 @@
 "pri": 1
 },
 {
-"title": "L.A. Law",
-"aka": [
-"LA Law"
-],
-"type": "drama",
-"net": "nbc",
-"years": [
-1986,
-1994
-],
-"pri": 1
-},
-{
 "title": "Larry King Live",
 "aka": [],
 "type": "talk",
@@ -2549,17 +2802,6 @@
 "pri": 1
 },
 {
-"title": "Melrose Place",
-"aka": [],
-"type": "drama",
-"net": "fox",
-"years": [
-1992,
-1999
-],
-"pri": 1
-},
-{
 "title": "Millennium",
 "aka": [],
 "type": "drama",
@@ -2594,6 +2836,22 @@
 "net": "abc",
 "years": [
 1970,
+2004
+],
+"pri": 1
+},
+{
+"title": "Moneyline",
+"aka": [
+"CNN Moneyline",
+"Lou Dobbs Moneyline",
+"Lou Dobbs Tonight",
+"Moneyline with Lou Dobbs"
+],
+"type": "news",
+"net": "cnn",
+"years": [
+1980,
 2004
 ],
 "pri": 1
@@ -2887,6 +3145,19 @@
 "years": [
 1987,
 1997
+],
+"pri": 1
+},
+{
+"title": "Nick Arcade",
+"aka": [
+"Nickelodeon Arcade"
+],
+"type": "kids",
+"net": "nick",
+"years": [
+1992,
+1993
 ],
 "pri": 1
 },
@@ -3441,6 +3712,17 @@
 "pri": 1
 },
 {
+"title": "Starcade",
+"aka": [],
+"type": "other",
+"net": "tbs",
+"years": [
+1982,
+1984
+],
+"pri": 1
+},
+{
 "title": "Stargate SG-1",
 "aka": [
 "Stargate SG1"
@@ -3513,7 +3795,7 @@
 {
 "title": "Talk Soup",
 "aka": [],
-"type": "other",
+"type": "talk",
 "net": "e!",
 "years": [
 1991,
@@ -3545,6 +3827,17 @@
 "years": [
 1999,
 2004
+],
+"pri": 1
+},
+{
+"title": "Teen Summit",
+"aka": [],
+"type": "talk",
+"net": "bet",
+"years": [
+1989,
+2002
 ],
 "pri": 1
 },
@@ -4390,6 +4683,17 @@
 "pri": 1
 },
 {
+"title": "Video Power",
+"aka": [],
+"type": "kids",
+"net": "syn",
+"years": [
+1990,
+1992
+],
+"pri": 1
+},
+{
 "title": "Video Soul",
 "aka": [],
 "type": "music",
@@ -4628,6 +4932,20 @@
 "pri": 1
 },
 {
+"title": "X-Play",
+"aka": [
+"X Play",
+"Xplay"
+],
+"type": "other",
+"net": "techtv",
+"years": [
+2003,
+2004
+],
+"pri": 1
+},
+{
 "title": "Yo! MTV Raps",
 "aka": [
 "Yo MTV Raps"
@@ -4838,17 +5156,6 @@
 "net": "abc",
 "years": [
 1992,
-2004
-],
-"pri": 2
-},
-{
-"title": "Access Hollywood",
-"aka": [],
-"type": "mag",
-"net": "syn",
-"years": [
-1996,
 2004
 ],
 "pri": 2
@@ -7433,21 +7740,6 @@
 "pri": 2
 },
 {
-"title": "Moneyline",
-"aka": [
-"Lou Dobbs Moneyline",
-"Lou Dobbs Tonight",
-"Moneyline with Lou Dobbs"
-],
-"type": "news",
-"net": "cnn",
-"years": [
-1980,
-2004
-],
-"pri": 2
-},
-{
 "title": "Mousercise",
 "aka": [
 "Mousercize"
@@ -9207,17 +9499,6 @@
 "years": [
 1984,
 1989
-],
-"pri": 2
-},
-{
-"title": "Teen Summit",
-"aka": [],
-"type": "talk",
-"net": "bet",
-"years": [
-1989,
-2002
 ],
 "pri": 2
 },
