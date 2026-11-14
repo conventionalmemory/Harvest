@@ -172,6 +172,7 @@ def head(sh, t):
                 best = 1
     return best
 def strict(sh, t): return head(sh, t) == 2
+def seg(sh, t): return any(head(sh, p) == 2 for p in re.split(r'\s[-|]\s|[,;/|]', t))
 def verify(sh, x):
     ds = sorted(f[1] for f in x['f'])
     blob = ((x.get('ds') or '') + ' ' + (x.get('s') or '')).lower()
@@ -211,7 +212,7 @@ def consider(sh, it, route='t'):
     if sh['kind'] in DAILY and not (airdate(t) or any(1984 <= int(y) <= 2004 and sh['first'] <= int(y) <= sh['last'] for y in YR.findall(t))): return False
     strong = bool(seasons(low)) or bool(MULTI.search(low)) or bool(gk)
     if sh.get('strictg') and not (strong or (TAPE2.search(low) and not mod) or (re.search(r'\bfox\b', low) and inrun)): return False
-    if gk and not mod: return 't'
+    if gk and not mod and not (generic(sh) and len(sig(sh['q'][0])) <= 1 and head(sh, low) != 2 and not cast and not ep_key(sh, low) and not seg(sh, t)): return 't'
     m = EPN.search(low)
     if m and not seasons(low) and sh['kind'] not in DAILY and sh['kind'] not in ('game', 'reality') and int(m.group(1)) > 30 * (sh['last'] - start(sh) + 1): return False
     weak = bool(DISC.search(low + ' ' + subj)) or bool(cols & TVSET) or bool(inrun) or any(norm(q) in norm(subj) for q in sh['q'])
@@ -260,21 +261,26 @@ def plan():
             if sh.get('must'):
                 extra = ' AND (' + ' OR '.join('"%s"' % c for c in sh['cast'][:4]) + ' OR nbc OR cbs OR abc OR fox OR sitcom)' if len(sig(q)) <= 1 and sh.get('cast') else ''
                 qs.append(('mediatype:movies AND description:("%s")%s AND (collection:(%s) OR title:(vhs OR tape OR commercials OR nbc OR cbs OR abc OR fox OR upn OR wb OR recorded))' % (ph, extra, TVCOL), 'd'))
-            if sh.get('guide') and q == sh['q'][-1] and sh['title'] in EP:
-                core = norm(q)
-                for k, v in EP[sh['title']]['t']:
-                    qs.append(('mediatype:movies AND title:("%s") AND title:("%s")' % (core, k), 't'))
-                if sh.get('strictg'): qs += [('mediatype:movies AND title:("%s")' % k, 't') for k, v in EP[sh['title']]['t'] if len(sig(k)) >= 3]
-                if sh.get('extra'): qs += [('mediatype:movies AND title:("%s")' % e, 't') for e in sh['extra']]
+            if sh.get('guide') and q == sh['q'][-1] and sh.get('extra'): qs += [('mediatype:movies AND title:("%s")' % e, 't') for e in sh['extra']]
+            if sh.get('must'):
+                ws = norm(q).split(); pre = []
+                for sep in ('-', '_', '.', ''):
+                    slug = sep.join(ws)
+                    if len(sig(q)) <= 1 or generic(sh): pre += [slug + a + b for a in sorted({sep, '-', '_', ''}) for b in ('s0', 's1', 'season', 'complete', 'tv', 'vhs', 'dvd', '19', '20')]
+                    else: pre.append(slug)
+                qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(x + '*' for x in sorted(set(pre))) + ')', 'i'))
             for qq, route in qs:
                 for it in scrape(qq):
                     i = it.get('identifier')
                     if not i or i in res or i in mine or (i in have and not (sh.get('guide') and route == 't')): continue
-                    try: r = consider(sh, it, route)
+                    if route == 'i':
+                        if any((' ' + norm(z) + ' ') in (' ' + norm(clean(flat(it.get('title')))) + ' ') for z in sh['q']): continue
+                        it = dict(it, title=(sh['title'] + ' - ' + flat(it.get('title')) + ' (' + re.sub(r'[-_.]+', ' ', re.sub(r'[-_.]?20[012]\d[01]\d[0-3]\d([-_]\d+)*$', '', i)).strip() + ')')[:200], pt=1)
+                    try: r = consider(sh, it, 't' if route == 'i' else route)
                     except Exception as e: print('skip', i, e); r = False
                     if r: res[i] = (it, r)
         return sh, res
-    seen = {}; per = collections.Counter(); perd = collections.Counter()
+    seen = {}; per = collections.Counter(); perd = collections.Counter(); peri = collections.Counter()
     order = sorted(SHOWS, key=lambda s: (0 if s.get('must') else 1, -len(s['title'])))
     with ThreadPoolExecutor(6) as ex:
         for sh, res in ex.map(one, order):
@@ -282,12 +288,13 @@ def plan():
                 if i in seen:
                     if seen[i]['r'] == 't' or r != 't': continue
                 seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': sh['title'], 'net': sh['net'], 'kind': sh['kind'], 'first': sh['first'], 'last': sh['last'], 'must': 1 if sh.get('must') else 0, 'r': r}
+                if it.get('pt'): seen[i]['pt'] = it['title']; peri[sh['title']] += 1
                 if r == 't': per[sh['title']] += 1
                 else: perd[sh['title']] += 1
     c = sorted(seen.values(), key=lambda x: (-x['must'], x['r'] != 't', -x['downloads']))
     print('candidates', len(c), 'title', sum(1 for x in c if x['r'] == 't'), 'tape', sum(1 for x in c if x['r'] != 't'), flush=True)
     for sh in SHOWS:
-        if sh.get('must'): print('MUSTCAND', per[sh['title']], perd[sh['title']], sh['title'])
+        if sh.get('must'): print('MUSTCAND', per[sh['title']], perd[sh['title']], peri[sh['title']], sh['title'])
     for k, n in per.most_common(60): print('  cand', n, k)
     json.dump(c, gzip.open(os.path.join(PARTS, 'cands.json.gz'), 'wt', encoding='utf-8'), separators=(',', ':'))
 def secs(v):
@@ -334,7 +341,10 @@ def meta(c):
     lang = flat(m.get('language')).lower()
     if lang and not re.search(r'eng|english|^en$', lang): return rej(c, 'lang')
     cap = 60 if c.get('must') else 30; hb = 0; nomp4 = sum(1 for f in j['files'] if re.search(r'\.(mkv|avi|mpg|mpeg|m4v|mov|ts|vob|iso|ogv|webm)$', f.get('name', '').lower()))
-    groups = {}; alt = {}; fmts = collections.Counter()
+    groups = {}; alt = {}; fmts = collections.Counter(); est = 0
+    lenby = {f.get('name'): secs(f.get('length')) for f in j['files'] if secs(f.get('length') or 0) > 0}
+    for f in j['files']:
+        if f.get('original') and secs(f.get('length') or 0) > 0: lenby.setdefault(f['original'], secs(f['length']))
     for f in j['files']:
         n = f.get('name', '').lower()
         if n.endswith(('.mp4', '.m4v')):
@@ -344,9 +354,10 @@ def meta(c):
     files = []; hbf = []
     for key, g in groups.items():
         g.sort(key=lambda f: RANK.get(f.get('format', ''), 5)); b = g[0]
-        d = secs(b.get('length') or next((x.get('length') for x in g if x.get('length')), 0))
-        if d < 240: continue
+        d = secs(b.get('length') or next((x.get('length') for x in g if x.get('length')), 0)) or lenby.get(key, 0)
         sz = float(b.get('size') or 0)
+        if not d and sz >= 4e7 and c.get('must'): d = min(7200, max(1200, sz / 1e6 / 5 * 60)); est += 1
+        if d < 240: continue
         if sz and sz / 1e6 / (d / 60) > cap: hbf.append([b['name'], round(d), b.get('format', '')]); continue
         if sz and sz / 1e6 / (d / 60) > 30: c['hb'] = 1
         files.append([b['name'], round(d), b.get('format', '')])
@@ -358,13 +369,15 @@ def meta(c):
             d = secs(f.get('length') or 0)
             if d >= 240: files.append([n, round(d), f.get('format', '')])
         if files: why = 'no mp4; mkv/mov/webm originals only (may not play in every browser)'
+    if est and not why: why = 'running time missing from the listing; estimated from file size'
     if not files:
         if fmts: REJ['fmt ' + ' / '.join(sorted(fmts))[:80]] += 1
+        if BYT[c['k']].get('guide'): print('NOFILES', c['k'], '|', c['identifier'], '|', len(j['files']), sorted(collections.Counter(f.get('name', '').rsplit('.', 1)[-1].lower()[:6] for f in j['files']).items()), [(f.get('name', '')[-40:], f.get('format'), f.get('length'), f.get('size')) for f in j['files'] if f.get('name', '').lower().endswith(('.mp4', '.m4v', '.mkv', '.avi', '.mpg', '.mpeg', '.iso', '.vob', '.ts', '.wmv', '.flv', '.rm', '.zip', '.rar', '.7z'))][:4], flush=True)
         return rej(c, 'nomp4_other' if nomp4 else 'nofiles')
     if sum(f[1] for f in files) < 900: return rej(c, 'short')
     files.sort(key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f[0])])
     sh = BYT[c['k']]
-    t = flat(m.get('title'))[:200]; desc = ' '.join(flat(m.get('description')).split())[:400]
+    t = c.get('pt') or flat(m.get('title'))[:200]; desc = ' '.join(flat(m.get('description')).split())[:400]
     x = {'i': c['identifier'], 'q': KMAP.get(c['kind'], 'prime'), 't': t, 'd': '', 'y': '', 'c': [], 's': flat(m.get('subject')).replace(' ', ' ')[:200], 'ds': desc, 'f': files[:500 if sh.get('guide') else 60], 'dl': c.get('downloads') or 0, 'k': c['k'], 'e': 0, 'net': c['net'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
     col = m.get('collection', []); x['c'] = ([col] if isinstance(col, str) else col)[:4]
     x['d'] = flat(m.get('date'))
