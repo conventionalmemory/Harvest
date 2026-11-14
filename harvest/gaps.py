@@ -26,6 +26,7 @@ for s in SHOWS:
     s['W'] = [(norm(a.lstrip('^')), a.startswith('^')) for a in s.get('w', [])]
     s['N'] = re.compile(s.get('need') or DEFNEED)
     s['X'] = re.compile(s['x']) if s.get('x') else None
+    s['XN'] = [re.compile(a) for a in s.get('xn', [])]
     r = re.findall(r'\d{4}', s['run'])
     a = int(r[0]); b = int(r[1]) if len(r) > 1 else 2030
     s['a'] = a; s['b'] = b
@@ -50,7 +51,7 @@ def scrape(q, cap=60000):
         out += [x for x in (j.get('items') or []) if isinstance(x, dict) and x.get('identifier')]; cursor = j.get('cursor')
         if not cursor or len(out) > cap: break
     return out
-X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblada|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|fran[cç]ais|french dub|vf|vostfr|italiano|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|rom[aâ]n[aă]|t[uü]rk[cç]e|русск|hindi|tamil|telugu|urdu|arabic|bahasa|tagalog|sub ?esp|subtitulado|temporada|cap[ií]tulo|episodio|folge|staffel|saison|aflevering|odcinek|uk version|australian version|canadian version|bbc|itv|channel 4|sky one|rte|cbc|ctv|global tv|nine network|seven network|network ten)\b"
+X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblada|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|fran[cç]ais|french dub|vf|vostfr|italiano|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|rom[aâ]n[aă]|t[uü]rk[cç]e|русск|hindi|tamil|telugu|urdu|arabic|bahasa|tagalog|sub ?esp|subtitulado|temporada|cap[ií]tulo|episodio|folge|staffel|saison|aflevering|odcinek|uk version|uk vhs|uk dvd|uk pal|pal vhs|australian version|canadian version|bbc|itv|channel 4|sky one|rte|cbc|ctv|global tv|nine network|seven network|network ten)\b"
 X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|playstation|xbox|rom ?hack|emulator|pinball|board game|comic book|audiobook|audio book|ebook|pdf|soundtrack|ost|theme song|theme music|fan ?made|fan-?edit|fanfilm|fan film|amv|ytp|parody|spoof|abridged|recap|podcast|reaction|commentary track|retrospective|making of|documentary about|radio show|radio broadcast|otr|old time radio|vinyl|cassette|album|sheet music|screenplay|unboxing|slideshow|screensaver|supercut|mashup|remix|karaoke|lyrics|xxx|porn|hentai|nude|bloopers?|outtakes?|trailers?|teaser|tribute|logos?|idents?|audio only|mp3|script|transcript)\b"
 X_ADS = r"\b(commercial breaks?|commercial block|commercial compilation|ad breaks?|promos?|bumpers?|station ids?|radio|fm)\b|commercials?\s*(\(|-|:|from|of)|^\s*commercials"
 X_MOD = r"(?<!\d)(20(0[5-9]|[1-3]\d))(?!\d)|\b(reboot|revival|netflix|hulu|disney\+|paramount\+|hbo max|prime video|youtube|tiktok|twitch|livestream|zoom)\b"
@@ -159,7 +160,7 @@ if MODE == 'plan':
         if via in ('t', 'q') and not match(s, t): return why(k, 'nomatch')
         e, how = era(s, t, it.get('date'), it.get('year'))
         if how == 'x': return why(k, 'era')
-        if via == 'x' and how == 'g' and not match(s, t): return why(k, 'undated')
+        if via == 'x' and not match(s, t) and (how == 'g' or not all(r.search(t) for r in s['XN'])): return why(k, 'loose')
         if via == 'm':
             if match(s, t): via = 't'
             elif how not in ('t', 'd') or not re.search(r'\b(vhs|tape|recording|recorded|aircheck|air check|off.?air|betamax)\b', t.lower()): return why(k, 'mention')
@@ -234,6 +235,7 @@ def meta0(it):
     s = SHOWS[it['k']]; via = it.get('v', 't')
     if not ok_title(title, s): return 'title'
     if via in ('t', 'q') and not match(s, title): return 'nomatch'
+    if via == 'x' and not match(s, title) and not all(r.search(title) for r in s['XN']): return 'loose'
     desc = m.get('description', '')
     if isinstance(desc, list): desc = ' '.join(str(x) for x in desc)
     desc = ' '.join(re.sub(r'<[^>]+>', ' ', str(desc)).split())
@@ -268,6 +270,7 @@ def keep(x):
     s = BYT.get(x['k'])
     if not s or not ok_title(x['t'], s): return False
     if x.get('v', 't') in ('t', 'q') and not match(s, x['t']): return False
+    if x.get('v') == 'x' and not match(s, x['t']) and not all(r.search(x['t']) for r in s['XN']): return False
     if x.get('v') == 'm' and not re.search(r'\b(vhs|tape|recording|recorded|aircheck|air check|off.?air|betamax)\b', x['t'].lower()): return False
     if max(f[1] for f in x['f']) < LIM.get(s['ct'], 1020): return False
     return era(s, x['t'], x.get('d'), x.get('y'))[1] != 'x'

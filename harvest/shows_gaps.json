@@ -31,7 +31,7 @@
 "show"
 ],
 "open": 1,
-"x": "today tonight|usa today|australia|today in |today.s (special|world)|bbc|radio"
+"x": "today tonight|usa today|australia|today in |today.s (special|world)|bbc|radio|beyonc|interview with"
 },
 {
 "title": "Good Morning America",
@@ -53,7 +53,7 @@
 "morning"
 ],
 "open": 1,
-"x": "telesine|gma network|kapuso|pinoy|gma 7|gma news"
+"x": "telesine|gma network|kapuso|pinoy|gma 7|gma news|cheche|tng|report with"
 },
 {
 "title": "CBS Morning News",
@@ -188,7 +188,7 @@
 ],
 "need": "(19(8[4-9]|9\\d)|200[0-4])",
 "open": 1,
-"x": "radio|vietnam|good morning (miss|vietnam|britain|australia|scotland)|america"
+"x": "radio|vietnam|good morning (miss|vietnam|britain|australia|scotland)|america|orwell|paik"
 },
 {
 "title": "Donahue",
@@ -1842,7 +1842,10 @@
 "food network"
 ],
 "need": "(199[3-9]|200[0-4])",
-"open": 1
+"open": 1,
+"xn": [
+"(?i:food network|tvfn|emeril|iron chef|good eats|molto mario|two fat ladies|bobby flay|sara moulton|ready set cook|too hot tamales|rosengarten|curtis aikens|batali|ming tsai|rachael ray|alton brown)"
+]
 },
 {
 "title": "30 Minute Meals",
@@ -1958,10 +1961,14 @@
 "cooking mexican",
 "louisiana kitchen",
 "graham kerr",
-"natural foods cooking",
-"jeff smith"
+"natural foods cooking"
 ],
-"open": 0
+"open": 0,
+"xn": [
+"(?i:\\b(cook|cooks|cooking|chef|kitchen|gourmet|cuisine|recipes?|baking)\\b)",
+"(?i:\\b(show|episode|pbs|season|cooks|cooking in america|vol|tv)\\b)"
+],
+"x": "pingu|hell.s kitchen|documentary|chefs d|dvd 2004|whats cooking 2000|weschler|emission|nightmares|\\buk\\b"
 },
 {
 "title": "This Old House",
@@ -2761,7 +2768,11 @@
 ],
 "need": "(19(8[4-9]|9\\d)|200[0-4])",
 "open": 1,
-"x": "emulat|simulat|recreat|remake|mock|fan ?made"
+"x": "emulat|simulat|recreat|remake|mock|fan ?made|weather report live|worship|safety|story of|young ones|documentary|movie",
+"xn": [
+"(?i:weather|tornado|hurricane|blizzard|storm|flood)",
+"(?i:\\b(coverage|forecast|channel|twc|news|live|warning|doppler|wx|newscast)\\b)|\\b[WK][A-Z]{2,3}\\b"
+]
 },
 {
 "title": "WeatherStar",
@@ -2797,7 +2808,11 @@
 ],
 "need": "(19(8[4-9]|9\\d)|200[0-4])",
 "open": 1,
-"x": "band|jazz|shorter|zawinul|concert"
+"x": "band|jazz|shorter|zawinul|concert|weather report live|worship|safety|story of|young ones|documentary|movie",
+"xn": [
+"(?i:weather|tornado|hurricane|blizzard|storm|flood)",
+"(?i:\\b(coverage|forecast|channel|twc|news|live|warning|doppler|wx|newscast)\\b)|\\b[WK][A-Z]{2,3}\\b"
+]
 },
 {
 "title": "The Tonight Show Starring Johnny Carson",
@@ -3169,7 +3184,8 @@
 "the new dance show",
 "new dance show",
 "the scene detroit"
-]
+],
+"x": "watch|from the vault|react"
 },
 {
 "title": "Yo! MTV Raps",
@@ -3265,24 +3281,24 @@
 "run": "1984-2004",
 "s": [
 "donnie simpson",
-"video lp",
-"screen scene",
 "bet on jazz",
 "jazz central",
-"lead story",
-"our voices",
 "bet news",
 "caribbean rhythms",
 "cita s world",
-"hits from the street",
-"bobby jones",
 "comic view",
 "bet comicview",
-"heart and soul",
-"planet groove"
+"planet groove",
+"bobby jones gospel",
+"bets video lp",
+"bet video lp"
 ],
 "open": 0,
-"x": "awards 20"
+"x": "awards 20|shin bet|aleph|hebrew|sesame",
+"xn": [
+"\\bBET\\b(?! (Shin|Din))|(?i:black entertainment)",
+"(?i:\\b(19(8[4-9]|9\\d)|200[0-4]|vhs|tape|aircheck|episode)\\b)"
+]
 },
 {
 "title": "Music video shows",
@@ -3291,22 +3307,19 @@
 "run": "1984-2004",
 "s": [
 "hit video usa",
-"hot tracks",
 "the box music",
-"jukebox network",
-"video jukebox",
-"the box 199",
 "friday night videos",
 "night tracks",
 "power play dancin",
 "dance party usa",
-"club mtv",
-"club connect",
-"soul beat",
-"in the mix",
-"midnight star"
+"club mtv"
 ],
-"open": 0
+"open": 0,
+"xn": [
+"(?i:\\b(videos?|block|countdown|bet|soul|rap|r&b|hip.?hop|new jack)\\b)",
+"(?i:\\b(vhs|tape|bet|mtv|the box|videos|19(8[4-9]|9\\d)|200[0-4])\\b)"
+],
+"x": "anniversary|mega video mix|\\bdj\\b|lounge|unknown|documentary|catholic|hawaii"
 },
 {
 "title": "Network morning tapes",
@@ -3321,23 +3334,20 @@
 "cbs morning",
 "this morning cbs",
 "morning program",
-"sunrise",
 "early today",
-"early show",
 "world news this morning",
 "cbs morning news",
-"daybreak",
-"wake up",
 "am america",
-"good day",
 "fox and friends",
 "breakfast time",
-"mike and maty",
-"home show",
-"live with regis"
+"mike and maty"
 ],
 "need": "(19(8[4-9]|9\\d)|200[0-4])",
 "open": 1,
-"x": "radio|britain|australia|scotland|vietnam|sunrise (earth|semester|ave|at)|records"
+"x": "radio|britain|australia|scotland|vietnam|sunrise (earth|semester|ave|at)|records|msnbc|beatles|before sunrise|sonic youth|dads army|dad.s army|concert|live in|bootleg|\\(early show\\)|late show",
+"xn": [
+"(?i:\\b(morning|today show|good morning|daybreak|sunrise|early show|wake.?up)\\b)",
+"(?i:\\b(news|nbc|cbs|abc|fox|cnn)\\b)|\\b[WK][A-Z]{2,3}\\b"
+]
 }
 ]
