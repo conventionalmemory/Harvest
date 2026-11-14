@@ -399,11 +399,15 @@ for it in cands:
     else: todo.append(it)
 _ci = set(it['identifier'] for it in cands)
 R2D = {x[0]: x for x in R2}
+J3 = re.compile(r"\b(nostalgia critic|completionist|speedpaint|lets watch|let s watch|reaction|review|podcast|livestream|gameplay|longplay|lot \d|image gallery|equestria|friendship is magic|mystic force|spd|rpm|megaforce|dino charge|dino fury|ninja steel|aco ninja|battle for the grid|once and always|cbeebies|creature shop challenge|closing credits|years old|honest truth|vs|uk vhs|uk dvd|vhs australia|jetix|surprise \d|tricked|guilty|bdrip|ai upscale|commentary|ranking|top \d+|explained|theory|interview|unboxing|toy|toys|fan made|fanmade|parody|ytp|amv|minecraft|roblox)\b")
+def _j3(x): return bool(J3.search(sq(x.get('t', '')))) or bool(MODERN.search(norm(x.get('t', ''))) and not ERA.search(norm(x.get('t', ''))))
 res = [x for x in res if x['k'] not in R2D or r2ok(R2D[x['k']], x['t'], x['i'])]
+res = [x for x in res if not _j3(x)]
 purged = 0
 for _i, _p in prev.items():
     if _i in _ci or _i in have: continue
     if _p['k'] in R2D and not r2ok(R2D[_p['k']], _p['t'], _i): purged += 1; continue
+    if _j3(_p): purged += 1; continue
     res.append(_p)
 print('purged', purged, flush=True)
 print('reused', len(res), 'to look up', len(todo), flush=True)
