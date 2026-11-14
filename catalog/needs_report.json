@@ -1,7 +1,7 @@
 {
-"updated": "2026-11-14 12:12 UTC",
-"items": 37,
-"hours": 836,
+"updated": "2026-11-14 13:19 UTC",
+"items": 1212,
+"hours": 8656,
 "priority": {
 "0": {
 "shows": 7,
@@ -9,17 +9,17 @@
 "thin": 2,
 "maybe": 0,
 "missing": 0,
-"items": 37,
-"hours": 837
+"items": 38,
+"hours": 903
 },
 "1": {
 "shows": 327,
-"found": 0,
-"thin": 0,
-"maybe": 0,
-"missing": 327,
-"items": 0,
-"hours": 0
+"found": 79,
+"thin": 68,
+"maybe": 50,
+"missing": 130,
+"items": 1174,
+"hours": 7756
 },
 "2": {
 "shows": 539,
@@ -841,10 +841,10 @@
 1969
 ],
 "guide_episodes": 79,
-"items": 10,
+"items": 11,
 "maybe": 5,
-"files": 89,
-"hours": 82,
+"files": 168,
+"hours": 148,
 "episodes": 79,
 "other_files": 0,
 "status": "FOUND"
@@ -966,14 +966,14 @@
 2000,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 13,
+"items": 4,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 56,
+"hours": 10,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 7,
+"status": "FOUND"
 },
 {
 "title": "20/20",
@@ -984,14 +984,14 @@
 1978,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 3,
+"items": 2,
+"maybe": 1,
+"files": 2,
+"hours": 1,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "25 Days of Christmas",
@@ -1003,13 +1003,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 1,
+"files": 2,
+"hours": 7,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "30 Minute Meals",
@@ -1020,7 +1020,7 @@
 2001,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 157,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1038,14 +1038,14 @@
 1968,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 89,
+"items": 18,
+"maybe": 12,
+"files": 18,
+"hours": 12,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 6,
+"status": "FOUND"
 },
 {
 "title": "7th Heaven",
@@ -1056,14 +1056,14 @@
 1996,
 2007
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 177,
+"items": 3,
+"maybe": 3,
+"files": 3,
+"hours": 11,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "A Charlie Brown Thanksgiving",
@@ -1075,13 +1075,13 @@
 2000
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
+"files": 1,
 "hours": 0,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "A Christmas Story 24-hour marathon",
@@ -1093,13 +1093,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 3,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "A Current Affair",
@@ -1111,13 +1111,13 @@
 1996
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 3,
+"maybe": 2,
+"files": 4,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "A Different World",
@@ -1128,14 +1128,14 @@
 1987,
 1993
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"guide_episodes": 141,
+"items": 2,
+"maybe": 2,
+"files": 2,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "ABC Afterschool Special",
@@ -1165,13 +1165,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 25,
+"maybe": 3,
+"files": 76,
+"hours": 38,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 70,
+"status": "FOUND"
 },
 {
 "title": "ABC's Wide World of Sports",
@@ -1183,13 +1183,13 @@
 1998
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 14,
+"maybe": 5,
+"files": 16,
+"hours": 21,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 11,
+"status": "FOUND"
 },
 {
 "title": "AMC classic movies / Remember WENN",
@@ -1201,13 +1201,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 14,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "AMC classic movies with Bob Dorian",
@@ -1219,13 +1219,13 @@
 2002
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 3,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 3,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 3,
+"status": "THIN"
 },
 {
 "title": "AMC movie package",
@@ -1254,7 +1254,7 @@
 1994,
 1997
 ],
-"guide_episodes": 0,
+"guide_episodes": 102,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1272,7 +1272,7 @@
 2001,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 66,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1290,14 +1290,14 @@
 1970,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 1441,
+"items": 23,
+"maybe": 2,
+"files": 1701,
+"hours": 774,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 991,
+"status": "FOUND"
 },
 {
 "title": "All in the Family",
@@ -1308,14 +1308,14 @@
 1971,
 1979
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 210,
+"items": 7,
+"maybe": 1,
+"files": 281,
+"hours": 131,
+"episodes": 200,
+"other_files": 23,
+"status": "FOUND"
 },
 {
 "title": "Ally McBeal",
@@ -1326,7 +1326,7 @@
 1997,
 2002
 ],
-"guide_episodes": 0,
+"guide_episodes": 112,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1344,14 +1344,14 @@
 1988,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 195,
+"items": 2,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 210,
+"hours": 149,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 198,
+"status": "FOUND"
 },
 {
 "title": "America's Next Top Model",
@@ -1362,7 +1362,7 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 21,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1380,14 +1380,14 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 32,
+"items": 1,
+"maybe": 1,
+"files": 2,
+"hours": 8,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "American Idol",
@@ -1398,14 +1398,14 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 108,
+"items": 8,
+"maybe": 5,
+"files": 218,
+"hours": 139,
+"episodes": 103,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "An Evening at the Improv",
@@ -1434,14 +1434,14 @@
 1999,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 110,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Antiques Roadshow",
@@ -1452,14 +1452,14 @@
 1997,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 132,
+"items": 38,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"files": 38,
+"hours": 37,
+"episodes": 1,
+"other_files": 37,
+"status": "FOUND"
 },
 {
 "title": "Are You Being Served?",
@@ -1470,14 +1470,14 @@
 1972,
 1985
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 64,
+"items": 6,
+"maybe": 1,
+"files": 586,
+"hours": 325,
+"episodes": 64,
+"other_files": 2,
+"status": "FOUND"
 },
 {
 "title": "Arrested Development",
@@ -1488,7 +1488,7 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 22,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1507,13 +1507,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 6,
+"maybe": 1,
+"files": 8,
+"hours": 10,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 5,
+"status": "FOUND"
 },
 {
 "title": "Attitudes",
@@ -1525,13 +1525,13 @@
 1991
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
+"files": 1,
 "hours": 0,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Band of Brothers",
@@ -1542,14 +1542,14 @@
 2001,
 2001
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 10,
+"items": 2,
+"maybe": 1,
+"files": 12,
+"hours": 13,
+"episodes": 10,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Baseball Tonight",
@@ -1578,7 +1578,7 @@
 2004,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 32,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1596,14 +1596,14 @@
 1990,
 2000
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 293,
+"items": 3,
+"maybe": 3,
+"files": 3,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Bewitched",
@@ -1614,14 +1614,14 @@
 1964,
 1972
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 254,
+"items": 51,
+"maybe": 5,
+"files": 64,
+"hours": 39,
+"episodes": 50,
+"other_files": 3,
+"status": "FOUND"
 },
 {
 "title": "Beyond 2000",
@@ -1632,14 +1632,14 @@
 1985,
 1999
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 1,
+"items": 4,
+"maybe": 3,
+"files": 4,
+"hours": 4,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Biography",
@@ -1651,13 +1651,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 58,
+"hours": 62,
+"episodes": 1,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "Blind Date",
@@ -1669,13 +1669,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 8,
+"maybe": 7,
+"files": 41,
+"hours": 26,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 28,
+"status": "FOUND"
 },
 {
 "title": "Bobby Jones Gospel",
@@ -1723,13 +1723,13 @@
 1999
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 2,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 2,
+"hours": 1,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Bozo's Circus",
@@ -1741,13 +1741,13 @@
 2001
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "C-SPAN call-in program",
@@ -1776,14 +1776,14 @@
 1962,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 865,
+"items": 24,
+"maybe": 8,
+"files": 92,
+"hours": 56,
+"episodes": 1,
+"other_files": 15,
+"status": "FOUND"
 },
 {
 "title": "CBS Sunday Movie",
@@ -1831,13 +1831,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "CSI: Crime Scene Investigation",
@@ -1848,14 +1848,14 @@
 2000,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 92,
+"items": 6,
+"maybe": 6,
+"files": 27,
+"hours": 15,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "CSI: Miami",
@@ -1866,14 +1866,14 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 48,
+"items": 1,
+"maybe": 1,
+"files": 2,
+"hours": 5,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Celebrity Deathmatch",
@@ -1884,14 +1884,14 @@
 1998,
 2002
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 77,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 89,
+"hours": 31,
+"episodes": 72,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Charmed",
@@ -1902,7 +1902,7 @@
 1998,
 2006
 ],
-"guide_episodes": 0,
+"guide_episodes": 134,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1921,13 +1921,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 6,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 6,
+"hours": 11,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 6,
+"status": "FOUND"
 },
 {
 "title": "Chicago Cubs Baseball (WGN)",
@@ -1974,14 +1974,14 @@
 1994,
 2000
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 141,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 3,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "China Beach",
@@ -1992,7 +1992,7 @@
 1988,
 1991
 ],
-"guide_episodes": 0,
+"guide_episodes": 64,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2029,13 +2029,13 @@
 1999
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "College Basketball on ESPN (Big Monday)",
@@ -2100,7 +2100,7 @@
 2000,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 55,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2154,14 +2154,14 @@
 2000,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 40,
+"items": 3,
+"maybe": 2,
+"files": 54,
+"hours": 42,
+"episodes": 33,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Danger Mouse",
@@ -2172,14 +2172,14 @@
 1981,
 1992
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 89,
+"items": 2,
+"maybe": 1,
+"files": 2,
+"hours": 5,
+"episodes": 1,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "Daria",
@@ -2190,14 +2190,14 @@
 1997,
 2002
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 65,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Dark Shadows",
@@ -2208,14 +2208,14 @@
 1966,
 1971
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 1225,
+"items": 3,
+"maybe": 1,
+"files": 832,
+"hours": 298,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 831,
+"status": "FOUND"
 },
 {
 "title": "Dateline NBC",
@@ -2227,13 +2227,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 1,
+"files": 4,
+"hours": 4,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 3,
+"status": "THIN"
 },
 {
 "title": "Dawson's Creek",
@@ -2244,7 +2244,7 @@
 1998,
 2003
 ],
-"guide_episodes": 0,
+"guide_episodes": 128,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2262,14 +2262,14 @@
 1965,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 4802,
+"items": 7,
+"maybe": 2,
+"files": 16,
+"hours": 12,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 14,
+"status": "FOUND"
 },
 {
 "title": "Deadwood",
@@ -2280,14 +2280,14 @@
 2004,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 12,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Def Comedy Jam",
@@ -2298,7 +2298,7 @@
 1992,
 1997
 ],
-"guide_episodes": 0,
+"guide_episodes": 1,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2317,13 +2317,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"items": 13,
+"maybe": 1,
+"files": 233,
+"hours": 92,
+"episodes": 208,
+"other_files": 2,
+"status": "FOUND"
 },
 {
 "title": "Dennis Miller Live",
@@ -2334,14 +2334,14 @@
 1994,
 2002
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 215,
+"items": 1,
 "maybe": 0,
-"files": 0,
+"files": 1,
 "hours": 0,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Desperate Housewives",
@@ -2353,13 +2353,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 3,
+"maybe": 1,
+"files": 8,
+"hours": 6,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 4,
+"status": "FOUND"
 },
 {
 "title": "Dharma & Greg",
@@ -2370,14 +2370,14 @@
 1997,
 2002
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 119,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 73,
+"hours": 26,
+"episodes": 73,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Dial MTV",
@@ -2425,13 +2425,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 5,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 8,
+"hours": 11,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 8,
+"status": "FOUND"
 },
 {
 "title": "Dr. Phil",
@@ -2442,14 +2442,14 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"guide_episodes": 343,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Dr. Quinn, Medicine Woman",
@@ -2460,14 +2460,14 @@
 1993,
 1998
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 150,
+"items": 3,
+"maybe": 2,
+"files": 3,
+"hours": 2,
+"episodes": 1,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "E! News Daily",
@@ -2496,7 +2496,7 @@
 1996,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 289,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2532,14 +2532,14 @@
 1994,
 2009
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 223,
+"items": 3,
+"maybe": 3,
+"files": 6,
+"hours": 14,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "ESPN College Basketball",
@@ -2569,13 +2569,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 1,
+"hours": 6,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "ESPN Sunday Night Football",
@@ -2604,14 +2604,14 @@
 1994,
 1998
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"guide_episodes": 109,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Emeril Live",
@@ -2640,14 +2640,14 @@
 1981,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 239,
+"items": 8,
+"maybe": 4,
+"files": 9,
+"hours": 5,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 5,
+"status": "FOUND"
 },
 {
 "title": "Essence of Emeril",
@@ -2676,7 +2676,7 @@
 1987,
 1993
 ],
-"guide_episodes": 0,
+"guide_episodes": 1,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2695,13 +2695,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 7,
+"maybe": 3,
+"files": 310,
+"hours": 124,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 306,
+"status": "FOUND"
 },
 {
 "title": "Felicity",
@@ -2712,7 +2712,7 @@
 1998,
 2002
 ],
-"guide_episodes": 0,
+"guide_episodes": 84,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2748,14 +2748,14 @@
 2000,
 2000
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 3,
+"items": 4,
+"maybe": 2,
+"files": 6,
+"hours": 16,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 4,
+"status": "FOUND"
 },
 {
 "title": "From the Earth to the Moon",
@@ -2784,14 +2784,14 @@
 1987,
 1995
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 192,
+"items": 3,
+"maybe": 3,
+"files": 3,
+"hours": 7,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Futurama",
@@ -2802,14 +2802,14 @@
 1999,
 2003
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 72,
+"items": 6,
+"maybe": 2,
+"files": 10,
+"hours": 11,
+"episodes": 1,
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Get a Life",
@@ -2820,14 +2820,14 @@
 1990,
 1992
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 35,
+"items": 3,
+"maybe": 3,
+"files": 3,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Gilmore Girls",
@@ -2838,14 +2838,14 @@
 2000,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"guide_episodes": 87,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Girlfriends",
@@ -2856,14 +2856,14 @@
 2000,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 93,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 170,
+"hours": 61,
+"episodes": 92,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Good Eats",
@@ -2874,7 +2874,7 @@
 1999,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 110,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2893,13 +2893,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 14,
+"maybe": 10,
+"files": 15,
+"hours": 11,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 4,
+"status": "THIN"
 },
 {
 "title": "Good Sex! with Dr. Ruth Westheimer",
@@ -2911,13 +2911,13 @@
 1988
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 3,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Grace Under Fire",
@@ -2928,7 +2928,7 @@
 1993,
 1998
 ],
-"guide_episodes": 0,
+"guide_episodes": 112,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2964,14 +2964,14 @@
 1985,
 1992
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 166,
+"items": 3,
+"maybe": 2,
+"files": 3,
+"hours": 2,
+"episodes": 1,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "Gunsmoke",
@@ -2982,14 +2982,14 @@
 1955,
 1975
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 635,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "HBO Saturday night movie premieres",
@@ -3073,13 +3073,13 @@
 1999
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"items": 18,
+"maybe": 13,
+"files": 42,
+"hours": 21,
+"episodes": 25,
+"other_files": 3,
+"status": "FOUND"
 },
 {
 "title": "Hangin' with Mr. Cooper",
@@ -3090,7 +3090,7 @@
 1992,
 1997
 ],
-"guide_episodes": 0,
+"guide_episodes": 101,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3109,13 +3109,13 @@
 1999
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 2,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 7,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 7,
+"status": "FOUND"
 },
 {
 "title": "Hogan's Heroes",
@@ -3126,14 +3126,14 @@
 1965,
 1971
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 168,
+"items": 3,
+"maybe": 2,
+"files": 4,
+"hours": 2,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Home Shopping Club",
@@ -3162,7 +3162,7 @@
 1993,
 1999
 ],
-"guide_episodes": 0,
+"guide_episodes": 122,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3181,13 +3181,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"items": 22,
+"maybe": 19,
+"files": 53,
+"hours": 28,
+"episodes": 33,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "House and Senate floor coverage",
@@ -3217,13 +3217,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 18,
+"maybe": 11,
+"files": 20,
+"hours": 27,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 7,
+"status": "FOUND"
 },
 {
 "title": "House of Representatives floor coverage",
@@ -3252,14 +3252,14 @@
 1984,
 1991
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 152,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 152,
+"hours": 120,
+"episodes": 152,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Infomercials (Amazing Discoveries, Psychic Friends Network, Ronco)",
@@ -3271,13 +3271,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Inside Edition",
@@ -3288,14 +3288,14 @@
 1989,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 1,
+"items": 3,
+"maybe": 1,
+"files": 10,
+"hours": 10,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 9,
+"status": "FOUND"
 },
 {
 "title": "Inside the Actors Studio",
@@ -3306,7 +3306,7 @@
 1994,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 122,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3361,13 +3361,13 @@
 1987
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 42,
+"maybe": 38,
+"files": 74,
+"hours": 212,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 4,
+"status": "THIN"
 },
 {
 "title": "JAG",
@@ -3378,7 +3378,7 @@
 1995,
 2005
 ],
-"guide_episodes": 0,
+"guide_episodes": 205,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3396,14 +3396,14 @@
 1984,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 4530,
+"items": 18,
+"maybe": 10,
+"files": 18,
+"hours": 10,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 8,
+"status": "FOUND"
 },
 {
 "title": "Jimmy Kimmel Live!",
@@ -3414,14 +3414,14 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 130,
+"items": 4,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 4,
+"hours": 2,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 4,
+"status": "THIN"
 },
 {
 "title": "Joe Millionaire",
@@ -3432,7 +3432,7 @@
 2003,
 2003
 ],
-"guide_episodes": 0,
+"guide_episodes": 18,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3450,14 +3450,14 @@
 1996,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 930,
+"items": 3,
+"maybe": 2,
+"files": 131,
+"hours": 51,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 129,
+"status": "FOUND"
 },
 {
 "title": "Julia Child: Cooking with Master Chefs / Baking with Julia",
@@ -3486,14 +3486,14 @@
 1997,
 2003
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 148,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 4,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Keeping Up Appearances",
@@ -3504,14 +3504,14 @@
 1990,
 1995
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 40,
+"items": 14,
+"maybe": 3,
+"files": 112,
+"hours": 64,
+"episodes": 40,
+"other_files": 6,
+"status": "FOUND"
 },
 {
 "title": "Ken Burns: Baseball",
@@ -3523,13 +3523,13 @@
 1994
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 3,
+"maybe": 1,
+"files": 27,
+"hours": 68,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 19,
+"status": "FOUND"
 },
 {
 "title": "L.A. Law",
@@ -3540,14 +3540,14 @@
 1986,
 1994
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 171,
+"items": 3,
+"maybe": 3,
+"files": 3,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Larry King Live",
@@ -3558,14 +3558,14 @@
 1985,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 42,
+"items": 5,
+"maybe": 3,
+"files": 5,
+"hours": 2,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Late Show with David Letterman",
@@ -3577,13 +3577,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 5,
+"maybe": 4,
+"files": 15,
+"hours": 17,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Law & Order",
@@ -3594,14 +3594,14 @@
 1990,
 2010
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 325,
+"items": 11,
+"maybe": 10,
+"files": 14,
+"hours": 15,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Law & Order: Special Victims Unit",
@@ -3612,14 +3612,14 @@
 1999,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 116,
+"items": 13,
+"maybe": 12,
+"files": 500,
+"hours": 355,
+"episodes": 115,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Leave It to Beaver",
@@ -3630,7 +3630,7 @@
 1957,
 1963
 ],
-"guide_episodes": 0,
+"guide_episodes": 234,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3649,13 +3649,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 3,
+"hours": 18,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Little House on the Prairie",
@@ -3666,14 +3666,14 @@
 1974,
 1983
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 200,
+"items": 6,
+"maybe": 4,
+"files": 116,
+"hours": 92,
+"episodes": 1,
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Live with Regis and Kathie Lee",
@@ -3684,14 +3684,14 @@
 1988,
 2000
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 1,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 1,
+"hours": 1,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Live with Regis and Kelly",
@@ -3702,14 +3702,14 @@
 1988,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 1,
+"items": 3,
+"maybe": 1,
+"files": 6,
+"hours": 4,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 5,
+"status": "FOUND"
 },
 {
 "title": "Lois & Clark: The New Adventures of Superman",
@@ -3720,14 +3720,14 @@
 1993,
 1997
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 87,
+"items": 2,
+"maybe": 1,
+"files": 89,
+"hours": 67,
+"episodes": 84,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Lost",
@@ -3739,13 +3739,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 122,
+"hours": 86,
+"episodes": 121,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "M*A*S*H",
@@ -3756,14 +3756,14 @@
 1972,
 1983
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 251,
+"items": 4,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"files": 506,
+"hours": 216,
+"episodes": 251,
+"other_files": 2,
+"status": "FOUND"
 },
 {
 "title": "MLB on Fox",
@@ -3792,7 +3792,7 @@
 1980,
 1988
 ],
-"guide_episodes": 0,
+"guide_episodes": 162,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3865,13 +3865,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 11,
+"maybe": 11,
+"files": 11,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Matlock",
@@ -3882,14 +3882,14 @@
 1986,
 1995
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 177,
+"items": 3,
+"maybe": 3,
+"files": 4,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Maury",
@@ -3900,14 +3900,14 @@
 1991,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 168,
+"items": 2,
+"maybe": 1,
+"files": 2,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Melrose Place",
@@ -3918,7 +3918,7 @@
 1992,
 1999
 ],
-"guide_episodes": 0,
+"guide_episodes": 226,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3936,14 +3936,14 @@
 1996,
 1999
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 67,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 74,
+"hours": 52,
+"episodes": 67,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Monday Night Football",
@@ -3955,13 +3955,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 5,
+"maybe": 2,
+"files": 7,
+"hours": 10,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 5,
+"status": "FOUND"
 },
 {
 "title": "Monk",
@@ -3972,14 +3972,14 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 37,
+"items": 2,
+"maybe": 2,
+"files": 32,
+"hours": 23,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Monster Garage",
@@ -3990,7 +3990,7 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 51,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4008,14 +4008,14 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 36,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 72,
+"hours": 24,
+"episodes": 26,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "My So-Called Life",
@@ -4026,7 +4026,7 @@
 1994,
 1995
 ],
-"guide_episodes": 0,
+"guide_episodes": 19,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4045,13 +4045,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 3,
+"maybe": 3,
+"files": 3,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "NASCAR Winston Cup (ESPN/TBS/TNN/CBS)",
@@ -4063,13 +4063,13 @@
 1993
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 13,
+"maybe": 8,
+"files": 14,
+"hours": 23,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 5,
+"status": "FOUND"
 },
 {
 "title": "NBA Finals",
@@ -4081,13 +4081,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 21,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 51,
+"hours": 109,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 50,
+"status": "FOUND"
 },
 {
 "title": "NBA on CBS",
@@ -4135,13 +4135,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 3,
+"maybe": 1,
+"files": 3,
+"hours": 7,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "NBC Nightly News",
@@ -4153,13 +4153,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 13,
+"maybe": 4,
+"files": 26,
+"hours": 22,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 21,
+"status": "FOUND"
 },
 {
 "title": "NCAA Men's Basketball Championship",
@@ -4171,13 +4171,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 3,
+"maybe": 2,
+"files": 5,
+"hours": 9,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 3,
+"status": "THIN"
 },
 {
 "title": "NCAA Tournament on CBS",
@@ -4189,13 +4189,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "NCIS",
@@ -4206,14 +4206,14 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 23,
+"items": 4,
+"maybe": 1,
+"files": 4,
+"hours": 2,
+"episodes": 1,
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "NFL Primetime",
@@ -4315,13 +4315,13 @@
 1998
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Nash Bridges",
@@ -4332,14 +4332,14 @@
 1996,
 2001
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 122,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Nashville Now",
@@ -4368,7 +4368,7 @@
 1985,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 58,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4386,7 +4386,7 @@
 1994,
 1998
 ],
-"guide_episodes": 0,
+"guide_episodes": 89,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4404,14 +4404,14 @@
 1984,
 1992
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 193,
+"items": 1,
 "maybe": 0,
-"files": 0,
+"files": 1,
 "hours": 0,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Night Flight",
@@ -4423,13 +4423,13 @@
 1988
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 5,
+"maybe": 4,
+"files": 5,
+"hours": 4,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Nightline",
@@ -4440,14 +4440,14 @@
 1980,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 4,
+"items": 15,
+"maybe": 4,
+"files": 39,
+"hours": 31,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 34,
+"status": "FOUND"
 },
 {
 "title": "Nip/Tuck",
@@ -4458,7 +4458,7 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 24,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4477,13 +4477,13 @@
 1995
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 3,
+"maybe": 1,
+"files": 539,
+"hours": 685,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 481,
+"status": "FOUND"
 },
 {
 "title": "Olympic Games 2000/2002/2004",
@@ -4512,14 +4512,14 @@
 1975,
 1990
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 1,
+"items": 2,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 4,
+"hours": 5,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 4,
+"status": "THIN"
 },
 {
 "title": "Oz",
@@ -4530,14 +4530,14 @@
 1997,
 2003
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"guide_episodes": 56,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Pardon the Interruption",
@@ -4549,13 +4549,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 33,
+"maybe": 27,
+"files": 34,
+"hours": 16,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 7,
+"status": "FOUND"
 },
 {
 "title": "Perry Mason",
@@ -4566,14 +4566,14 @@
 1957,
 1966
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"guide_episodes": 271,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Pinwheel",
@@ -4602,14 +4602,14 @@
 1993,
 2002
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 318,
+"items": 3,
+"maybe": 1,
+"files": 250,
+"hours": 87,
+"episodes": 49,
+"other_files": 176,
+"status": "FOUND"
 },
 {
 "title": "Power Rangers (1999-2004 series)",
@@ -4621,13 +4621,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"items": 28,
+"maybe": 8,
+"files": 217,
+"hours": 92,
+"episodes": 190,
+"other_files": 13,
+"status": "FOUND"
 },
 {
 "title": "Power Rangers Zeo",
@@ -4728,7 +4728,7 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 24,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4747,13 +4747,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 3,
+"maybe": 2,
+"files": 3,
+"hours": 4,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Queer Eye for the Straight Guy",
@@ -4764,14 +4764,14 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 37,
+"items": 26,
+"maybe": 4,
+"files": 26,
+"hours": 26,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 22,
+"status": "FOUND"
 },
 {
 "title": "Rap City",
@@ -4783,13 +4783,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 9,
+"hours": 2,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Reno 911!",
@@ -4800,7 +4800,7 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 26,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4818,14 +4818,14 @@
 1993,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 2,
+"items": 3,
+"maybe": 1,
+"files": 5,
+"hours": 4,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Road to Avonlea",
@@ -4836,14 +4836,14 @@
 1990,
 1996
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 91,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 4,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Samurai Jack",
@@ -4854,14 +4854,14 @@
 2001,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 48,
+"items": 2,
+"maybe": 2,
+"files": 6,
+"hours": 5,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Scrabble",
@@ -4872,7 +4872,7 @@
 1984,
 1993
 ],
-"guide_episodes": 0,
+"guide_episodes": 3,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4890,7 +4890,7 @@
 2001,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 69,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4908,14 +4908,14 @@
 2000,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 39,
+"items": 1,
+"maybe": 1,
+"files": 2,
+"hours": 13,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Senate floor coverage",
@@ -4927,13 +4927,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Sex and the City",
@@ -4944,14 +4944,14 @@
 1998,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 94,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 18,
+"hours": 13,
+"episodes": 12,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "Short Attention Span Theater",
@@ -4963,13 +4963,13 @@
 1994
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Simon & Simon",
@@ -4980,14 +4980,14 @@
 1981,
 1989
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 156,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 1,
+"hours": 1,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Singled Out",
@@ -4998,7 +4998,7 @@
 1995,
 1998
 ],
-"guide_episodes": 0,
+"guide_episodes": 1,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5034,14 +5034,14 @@
 2001,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 66,
+"items": 4,
+"maybe": 2,
+"files": 4,
+"hours": 10,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Solid Gold",
@@ -5052,14 +5052,14 @@
 1980,
 1988
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 342,
+"items": 4,
+"maybe": 2,
+"files": 4,
+"hours": 9,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Soul Train",
@@ -5070,14 +5070,14 @@
 1971,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 1077,
+"items": 3,
+"maybe": 2,
+"files": 3,
+"hours": 2,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Space Ghost Coast to Coast",
@@ -5088,7 +5088,7 @@
 1994,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 98,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5106,7 +5106,7 @@
 1996,
 2002
 ],
-"guide_episodes": 0,
+"guide_episodes": 145,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5125,13 +5125,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
+"files": 1,
 "hours": 0,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "SportsCentury",
@@ -5142,14 +5142,14 @@
 1999,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 5,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 1,
+"hours": 1,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Square One TV",
@@ -5160,14 +5160,14 @@
 1987,
 1992
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 231,
+"items": 3,
+"maybe": 2,
+"files": 21,
+"hours": 5,
+"episodes": 17,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "Star Search",
@@ -5178,14 +5178,14 @@
 1983,
 1995
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 1,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 2,
+"hours": 1,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Stargate SG-1",
@@ -5196,14 +5196,14 @@
 1997,
 2007
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 161,
+"items": 4,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"files": 220,
+"hours": 167,
+"episodes": 1,
+"other_files": 219,
+"status": "FOUND"
 },
 {
 "title": "Strangers with Candy",
@@ -5214,7 +5214,7 @@
 1999,
 2000
 ],
-"guide_episodes": 0,
+"guide_episodes": 30,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5232,14 +5232,14 @@
 2000,
 2006
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 98,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 132,
+"hours": 97,
+"episodes": 53,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Sunday Night Baseball",
@@ -5268,7 +5268,7 @@
 2000,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 122,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5305,13 +5305,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "TNT launch movies and MGM library",
@@ -5323,13 +5323,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 4,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 135,
+"hours": 79,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 128,
+"status": "FOUND"
 },
 {
 "title": "TNT movie package",
@@ -5358,14 +5358,14 @@
 2002,
 2002
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 10,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 11,
+"hours": 14,
+"episodes": 7,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Talk Soup",
@@ -5377,13 +5377,13 @@
 2002
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 12,
+"maybe": 10,
+"files": 202,
+"hours": 100,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 189,
+"status": "FOUND"
 },
 {
 "title": "The $25,000 Pyramid",
@@ -5394,7 +5394,7 @@
 1982,
 1988
 ],
-"guide_episodes": 0,
+"guide_episodes": 39,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5412,7 +5412,7 @@
 1966,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 3,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5431,13 +5431,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "The Amazing Race",
@@ -5448,14 +5448,14 @@
 2001,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 61,
+"items": 2,
+"maybe": 1,
+"files": 2,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "The American Experience",
@@ -5466,14 +5466,14 @@
 1988,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 215,
+"items": 3,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"files": 66,
+"hours": 82,
+"episodes": 17,
+"other_files": 1,
+"status": "FOUND"
 },
 {
 "title": "The Andy Griffith Show",
@@ -5484,14 +5484,14 @@
 1960,
 1968
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 249,
+"items": 5,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 6,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 5,
+"status": "THIN"
 },
 {
 "title": "The Anna Nicole Show",
@@ -5502,14 +5502,14 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 28,
+"items": 1,
 "maybe": 0,
-"files": 0,
+"files": 1,
 "hours": 0,
-"episodes": 0,
+"episodes": 1,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "The Bachelor",
@@ -5520,7 +5520,7 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 48,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5538,14 +5538,14 @@
 1987,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"guide_episodes": 1436,
+"items": 2,
+"maybe": 1,
+"files": 2,
 "hours": 0,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "The Bugs Bunny & Tweety Show",
@@ -5557,13 +5557,13 @@
 2000
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 12,
+"maybe": 10,
+"files": 16,
+"hours": 25,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "The Bugs Bunny/Looney Tunes Comedy Hour",
@@ -5592,14 +5592,14 @@
 1997,
 2000
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 17,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 13,
+"hours": 6,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 13,
+"status": "FOUND"
 },
 {
 "title": "The Critic",
@@ -5610,7 +5610,7 @@
 1994,
 1995
 ],
-"guide_episodes": 0,
+"guide_episodes": 33,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5628,7 +5628,7 @@
 1996,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 386,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5647,13 +5647,13 @@
 1983
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 23,
+"maybe": 5,
+"files": 30,
+"hours": 43,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 22,
+"status": "FOUND"
 },
 {
 "title": "The Donna Reed Show",
@@ -5664,7 +5664,7 @@
 1958,
 1966
 ],
-"guide_episodes": 0,
+"guide_episodes": 275,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5682,7 +5682,7 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 166,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5700,7 +5700,7 @@
 1979,
 1988
 ],
-"guide_episodes": 0,
+"guide_episodes": 200,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5718,14 +5718,14 @@
 1983,
 1991
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 85,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 1,
+"hours": 1,
+"episodes": 1,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "The Howard Stern Show (E!)",
@@ -5737,13 +5737,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 34,
+"maybe": 18,
+"files": 581,
+"hours": 313,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 131,
+"status": "FOUND"
 },
 {
 "title": "The Jamie Foxx Show",
@@ -5754,7 +5754,7 @@
 1996,
 2001
 ],
-"guide_episodes": 0,
+"guide_episodes": 100,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5773,13 +5773,13 @@
 2003
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 13,
+"hours": 8,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 13,
+"status": "FOUND"
 },
 {
 "title": "The Jerry Springer Show",
@@ -5790,14 +5790,14 @@
 1991,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 1,
+"items": 16,
+"maybe": 7,
+"files": 591,
+"hours": 154,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 85,
+"status": "FOUND"
 },
 {
 "title": "The King of Queens",
@@ -5808,14 +5808,14 @@
 1998,
 2007
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 149,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 1,
+"hours": 1,
+"episodes": 1,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "The Lawrence Welk Show",
@@ -5827,13 +5827,13 @@
 1982
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 1,
+"files": 5,
+"hours": 4,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 4,
+"status": "THIN"
 },
 {
 "title": "The Muppet Show",
@@ -5844,14 +5844,14 @@
 1976,
 1981
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 120,
+"items": 4,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"files": 4,
+"hours": 3,
+"episodes": 2,
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "The Mystery of Al Capone's Vaults",
@@ -5881,13 +5881,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 4,
+"maybe": 1,
+"files": 4,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 3,
+"status": "THIN"
 },
 {
 "title": "The O'Reilly Factor",
@@ -5899,13 +5899,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 3,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 3,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 3,
+"status": "THIN"
 },
 {
 "title": "The Oprah Winfrey Show",
@@ -5916,14 +5916,14 @@
 1986,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 22,
+"items": 4,
+"maybe": 2,
+"files": 5,
+"hours": 6,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 3,
+"status": "THIN"
 },
 {
 "title": "The Parkers",
@@ -5934,7 +5934,7 @@
 1999,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 110,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5953,13 +5953,13 @@
 1993
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 7,
+"maybe": 2,
+"files": 7,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 5,
+"status": "FOUND"
 },
 {
 "title": "The Real World",
@@ -5970,14 +5970,14 @@
 1992,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 313,
+"items": 3,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"files": 339,
+"hours": 153,
+"episodes": 225,
+"other_files": 82,
+"status": "FOUND"
 },
 {
 "title": "The Rosie O'Donnell Show",
@@ -5988,14 +5988,14 @@
 1996,
 2002
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 111,
+"items": 4,
+"maybe": 1,
+"files": 33,
+"hours": 20,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 32,
+"status": "FOUND"
 },
 {
 "title": "The Shield",
@@ -6006,7 +6006,7 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 41,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -6024,7 +6024,7 @@
 1996,
 1997
 ],
-"guide_episodes": 0,
+"guide_episodes": 196,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -6042,14 +6042,14 @@
 1999,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 65,
+"items": 19,
+"maybe": 11,
+"files": 20,
+"hours": 22,
+"episodes": 7,
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "The Statler Brothers Show",
@@ -6078,7 +6078,7 @@
 1996,
 2002
 ],
-"guide_episodes": 0,
+"guide_episodes": 122,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -6096,7 +6096,7 @@
 1997,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 421,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -6114,7 +6114,7 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 25,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -6133,13 +6133,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 8,
+"maybe": 8,
+"files": 8,
+"hours": 3,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "The Young and the Restless",
@@ -6150,14 +6150,14 @@
 1973,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 915,
+"items": 3,
+"maybe": 2,
+"files": 3,
+"hours": 6,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Thirtysomething",
@@ -6168,14 +6168,14 @@
 1987,
 1991
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 85,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 20,
+"hours": 16,
+"episodes": 20,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Three's Company",
@@ -6186,14 +6186,14 @@
 1977,
 1984
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 170,
+"items": 6,
+"maybe": 2,
+"files": 7,
+"hours": 7,
+"episodes": 2,
+"other_files": 3,
+"status": "THIN"
 },
 {
 "title": "Today",
@@ -6205,13 +6205,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 7,
+"maybe": 5,
+"files": 8,
+"hours": 8,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 3,
+"status": "THIN"
 },
 {
 "title": "Tom & Jerry Kids",
@@ -6222,14 +6222,14 @@
 1990,
 1993
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 195,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 66,
+"hours": 24,
+"episodes": 66,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Top 20 Video Countdown",
@@ -6241,13 +6241,13 @@
 1998
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Total Request Live",
@@ -6276,14 +6276,14 @@
 1994,
 2003
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 211,
+"items": 2,
+"maybe": 1,
+"files": 2,
+"hours": 1,
+"episodes": 1,
 "other_files": 0,
-"status": "MISSING"
+"status": "THIN"
 },
 {
 "title": "Trading Spaces",
@@ -6294,14 +6294,14 @@
 2000,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 198,
+"items": 2,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 2,
+"hours": 1,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "Turner Classic Movies hosted features",
@@ -6313,13 +6313,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 3,
+"maybe": 2,
+"files": 4,
+"hours": 5,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Two Fat Ladies",
@@ -6330,7 +6330,7 @@
 1996,
 1999
 ],
-"guide_episodes": 0,
+"guide_episodes": 22,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -6348,14 +6348,14 @@
 2003,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
+"guide_episodes": 24,
+"items": 2,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 2,
+"hours": 3,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 2,
+"status": "THIN"
 },
 {
 "title": "USA Cartoon Express",
@@ -6367,13 +6367,13 @@
 1996
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 4,
+"maybe": 3,
+"files": 7,
+"hours": 16,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "USA Tuesday Night Fights",
@@ -6439,13 +6439,13 @@
 1989
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 4,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "VH1 Divas",
@@ -6493,13 +6493,13 @@
 1996
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 1,
+"hours": 1,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "WGN Cubs Baseball / Bulls Basketball",
@@ -6511,13 +6511,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 21,
+"maybe": 5,
+"files": 41,
+"hours": 82,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 36,
+"status": "FOUND"
 },
 {
 "title": "WWE pay-per-views 1999-2004",
@@ -6529,13 +6529,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 9,
+"maybe": 2,
+"files": 9,
+"hours": 20,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 7,
+"status": "FOUND"
 },
 {
 "title": "WWF Monday Night Raw",
@@ -6547,13 +6547,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 1,
+"hours": 2,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "WWF Raw Is War",
@@ -6565,13 +6565,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Wall Street Week",
@@ -6619,13 +6619,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 12,
+"maybe": 4,
+"files": 12,
+"hours": 8,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 8,
+"status": "FOUND"
 },
 {
 "title": "Who's the Boss?",
@@ -6636,14 +6636,14 @@
 1984,
 1992
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 196,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Wild Discovery",
@@ -6654,14 +6654,14 @@
 1985,
 2002
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 13,
+"items": 6,
+"maybe": 4,
+"files": 214,
+"hours": 185,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 209,
+"status": "FOUND"
 },
 {
 "title": "Win Ben Stein's Money",
@@ -6673,13 +6673,13 @@
 2003
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Wings",
@@ -6708,14 +6708,14 @@
 2002,
 2004
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"guide_episodes": 47,
+"items": 4,
+"maybe": 3,
+"files": 121,
+"hours": 89,
+"episodes": 47,
 "other_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Wonderful World of Disney",
@@ -6726,14 +6726,14 @@
 1954,
 1990
 ],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"guide_episodes": 941,
+"items": 6,
+"maybe": 2,
+"files": 17,
+"hours": 13,
+"episodes": 9,
+"other_files": 1,
+"status": "FOUND"
 },
 {
 "title": "World Poker Tour",
@@ -6745,13 +6745,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "World Series",
@@ -6763,13 +6763,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 46,
+"maybe": 5,
+"files": 142,
+"hours": 295,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 114,
+"status": "FOUND"
 },
 {
 "title": "World Series of Poker",
@@ -6799,13 +6799,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
+"files": 1,
 "hours": 0,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 1,
+"status": "THIN"
 },
 {
 "title": "Yo! MTV Raps",
@@ -6817,13 +6817,13 @@
 1995
 ],
 "guide_episodes": 0,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
+"files": 80,
+"hours": 84,
 "episodes": 0,
-"other_files": 0,
-"status": "MISSING"
+"other_files": 71,
+"status": "FOUND"
 },
 {
 "title": "seaQuest DSV",
@@ -6834,7 +6834,7 @@
 1993,
 1996
 ],
-"guide_episodes": 0,
+"guide_episodes": 57,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -13854,7 +13854,7 @@
 1997,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 39,
 "items": 0,
 "maybe": 0,
 "files": 0,
