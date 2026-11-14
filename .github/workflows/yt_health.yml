@@ -1,0 +1,85 @@
+name: Video link health
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: all, or recheck for ids that were not ok in the last result plus new ids
+        default: all
+      limit:
+        description: check only this many ids, 0 for all
+        default: "0"
+permissions:
+  contents: write
+concurrency:
+  group: yt-health
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Plan
+        env:
+          SCOPE: ${{ inputs.scope }}
+          LIMIT: ${{ inputs.limit }}
+        run: MODE=plan BUDGET_MIN=15 python3 harvest/yt_health.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yth-plan
+          path: parts/yth_plan.json.gz
+          retention-days: 3
+  check:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: yth-plan
+          path: parts
+      - name: Check
+        run: MODE=check SHARD=${{ matrix.shard }} SHARDS=6 THREADS=3 GAP=0.3 BUDGET_MIN=120 python3 harvest/yt_health.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yth-${{ matrix.shard }}
+          path: parts/yth-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: [plan, check]
+    if: ${{ !cancelled() && needs.plan.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: yth-plan
+          path: parts
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: yth-[0-9]*
+          path: parts
+          merge-multiple: true
+      - name: Merge
+        run: ls -la parts; MODE=merge THREADS=3 GAP=0.3 BUDGET_MIN=90 python3 harvest/yt_health.py
+      - name: Commit
+        if: ${{ inputs.limit == '0' || inputs.limit == '' }}
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp catalog/yt_health.json.gz /tmp/yt_health.json.gz
+          for i in 1 2 3 4 5 6 7 8; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/yt_health.json.gz catalog/yt_health.json.gz && git add catalog/yt_health.json.gz || { sleep $((10 + RANDOM % 20)); continue; }
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update video link health" && git push origin HEAD:main && exit 0
+            sleep $((10 + RANDOM % 20))
+          done
+          exit 1
