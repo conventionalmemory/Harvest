@@ -26,8 +26,8 @@ def rx(names): return re.compile(r' (' + '|'.join(sorted((re.escape(n) for n in 
 RXT = {'nfl': rx(NFL), 'nba': rx(NBA), 'mlb': rx(MLB), 'nhl': rx(NHL)}
 RXC = rx(COL)
 FIGHT = rx(['tyson', 'holyfield', 'sugar ray leonard', 'leonard', 'hagler', 'hearns', 'duran', 'chavez', 'de la hoya', 'foreman', 'lennox lewis', 'bowe', 'whitaker', 'trinidad', 'roy jones', 'hopkins', 'mayweather', 'pacquiao', 'camacho', 'spinks', 'larry holmes', 'holmes', 'buster douglas', 'morrison', 'moorer', 'mosley', 'vargas', 'gatti', 'barrera', 'morales', 'hamed', 'pryor', 'arguello', 'mancini', 'mcgirt', 'meldrick taylor', 'terry norris', 'toney', 'benn', 'eubank', 'cooney', 'tucker', 'ruddock', 'mercer', 'tua', 'golota', 'klitschko', 'rahman', 'byrd', 'tszyu', 'judah', 'forrest', 'quartey', 'mcclellan', 'nunn', 'kalambay', 'curry', 'starling', 'breland', 'mccallum', 'jackson', 'qawi', 'cokes', 'tarver', 'calzaghe'])
-X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|dublado|legendado|portugu[eê]s|deutsch|fran[cç]ais|vostfr|italiano|nederlands|svenska|polski|русск|hindi|tamil|urdu|arabic|bahasa|tagalog|subtitulado|bbc|itv|channel 4|sky sports|sky news|rte|cbc|tsn|hockey night in canada|sportsnet|cfl|grey cup|premier league|la liga|bundesliga|serie a|uefa|fifa|cricket|rugby|afl|nrl|gaa|tagesschau|kbs|nhk|zdf|ard|heute|telediario|noticias|noticiero|noticiario|telejornal|jornal|journal de|tf1|france 2|rai|tg1|tg2|televisa|vremya|cctv|doordarshan|wwos|gtv|tcn|nws|qtq|hsv|gts|bkn|abn|tvw|stw|nine network|channel nine|seven network|ten network|a current affair australia|granada|thames|anglia|ulster|grampian|central news|calendar news|look north|reporting scotland|ntv|ctv|global news|citytv|cfto|cbmt|radio canada|seven news|nine news|ten news|national nine)\b"
-X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|nes|snes|sega|genesis|playstation|ps[1-5]|xbox|game ?boy|n64|nintendo|arcade|dos game|pc game|rom|emulator|madden|nba jam|nba live|nba 2k|nhl hitz|blitz|tecmo|ea sports|pinball|board game|trading cards?|card pack|comic|novel|audiobook|ebook|pdf|magazine|program scan|scans?|ticket stub|soundtrack|theme song|theme music|intro|intros|news opens?|show opens?|opening credits|closing credits|credits|how to|g4tv|halftime|half time show|marching band|power rangers|bumpers?|promos?|trailers?|teaser|bloopers?|outtakes?|follies|fan ?made|fan-?edit|parody|spoof|review|recap|podcast|reaction|rewatch|retrospective|tribute|documentary|making of|behind the scenes|yearbook|nfl films|highlights?|highlight reel|top \d+|greatest moments|best of|plays of|mixtape|compilation|supercut|montage|mashup|remix|music video|karaoke|lyrics|radio|radio broadcast|radio call|audio only|audio|press conference|interview|xxx|porn|adult|wwf|wwe|wcw|ecw|nwa|awa|wrestlemania|summerslam|royal rumble|wrestling|special olympics|simulation|simulated|sim|what if|photos?|slideshow|screensaver|wallpaper)\b"
+X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|dublado|legendado|portugu[eê]s|deutsch|fran[cç]ais|vostfr|italiano|nederlands|svenska|polski|русск|hindi|tamil|urdu|arabic|bahasa|tagalog|subtitulado|bbc|itv|channel 4|sky sports|sky news|rte|cbc|tsn|hockey night in canada|sportsnet|cfl|grey cup|premier league|la liga|bundesliga|serie a|uefa|fifa|cricket|rugby|afl|nrl|gaa|tagesschau|kbs|nhk|zdf|ard|heute|telediario|noticias|noticiero|noticiario|telejornal|jornal|journal de|tf1|france 2|rai|tg1|tg2|televisa|vremya|cctv|doordarshan|wwos|gtv|tcn|nws|qtq|hsv|gts|bkn|abn|tvw|stw|nine network|channel nine|seven network|ten network|a current affair australia|granada|thames|anglia|ulster|grampian|central news|calendar news|look north|reporting scotland|ntv|ctv|global news|citytv|cfto|cbmt|radio canada|seven news|nine news|ten news|national nine|tvq|btq|qtq|itn|ten eyewitness|seven nightly|local news sample: c[a-z]{3}\b|news at ten|bbc news)\b"
+X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|nes|snes|sega|genesis|playstation|ps[1-5]|xbox|game ?boy|n64|nintendo|arcade|dos game|pc game|rom|emulator|madden|nba jam|nba live|nba 2k|nhl hitz|blitz|tecmo|ea sports|pinball|board game|trading cards?|card pack|comic|novel|audiobook|ebook|pdf|magazine|program scan|scans?|ticket stub|soundtrack|theme song|theme music|intro|intros|news opens?|show opens?|opening credits|closing credits|credits|how to|g4tv|halftime|half time show|marching band|power rangers|parade|bumpers?|promos?|trailers?|teaser|bloopers?|outtakes?|follies|fan ?made|fan-?edit|parody|spoof|review|recap|podcast|reaction|rewatch|retrospective|tribute|documentary|making of|behind the scenes|yearbook|nfl films|highlights?|highlight reel|top \d+|greatest moments|best of|plays of|mixtape|compilation|supercut|montage|mashup|remix|music video|karaoke|lyrics|radio|radio broadcast|radio call|audio only|audio|press conference|interview|xxx|porn|adult|wwf|wwe|wcw|ecw|nwa|awa|wrestlemania|summerslam|royal rumble|wrestling|special olympics|simulation|simulated|sim|what if|photos?|slideshow|screensaver|wallpaper)\b"
 X_ADS = r"\bcommercials?\b|\bads?\b"
 OK_ADS = r"(with|w/|w|incl\w*|original|and) ?(original |orig\.? )?(commercials|ads)|commercials included|\bwoc\b"
 MON = {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6, 'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12}
@@ -166,6 +166,10 @@ def sport(title, desc, ad):
         if mo in (11, 12, 1, 2, 3, 4): return 'ncaab', 'COLLEGE BASKETBALL'
     return None
 def late(title, ad):
+    r = late1(title, ad)
+    if r and r[0] != 'SATURDAY NIGHT LIVE' and datetime.date(int(ad[:4]), int(ad[5:7]), int(ad[8:10])).weekday() > 4: return None
+    return r
+def late1(title, ad):
     nt = norm(title)
     if re.search(r' (monologue|top ten list|top 10 list|musical guest performance|performs|performance|sketch|sketches|clip|clips|segment|bit|cold open) ', nt): return None
     if ' tonight show ' in nt or ' johnny carson ' in nt or (' leno ' in nt and ' jay ' in nt):
@@ -232,7 +236,7 @@ def classify(title, ident, dfield, desc):
     r = news(title, title)
     if r: return {'q': 'news', 'ct': 'news_' + r[2], 'k': r[0], 'net': r[1], 'ad': ad, 'as': src, 'min': 600, 'st': r[3]}
     r = sport(title, desc, ad)
-    if r: return {'q': 'sports', 'ct': r[0], 'k': r[1], 'net': netof(title, desc), 'ad': ad, 'as': src, 'min': 1200 if r[0] == 'studio' else 2400}
+    if r: return {'q': 'sports', 'ct': r[0], 'k': r[1], 'net': netof(title, desc), 'ad': ad, 'as': src, 'min': 1200 if r[0] == 'studio' else 1800}
     return None
 def get(url, tries=4):
     for k in range(tries):
@@ -303,14 +307,14 @@ if MODE == 'plan':
     have = known()
     if os.path.exists(OUTF): have |= set(x['i'] for x in json.load(gzip.open(OUTF, 'rt', encoding='utf-8')))
     print('known', len(have), 'queries', len(QUERIES), flush=True)
-    seen = {}; stat = collections.defaultdict(collections.Counter)
+    seen = {}; stat = collections.defaultdict(collections.Counter); nod = collections.defaultdict(list)
     def run(k): return k, scrape(QUERIES[k][1])
     with ThreadPoolExecutor(6) as ex:
         for k, items in ex.map(run, range(len(QUERIES))):
             name = QUERIES[k][0]; stat[name]['raw'] = len(items)
             for it in items:
                 i = it['identifier']
-                if i in have or i in seen: continue
+                if i in have or i in seen: stat[name]['x_have'] += 1; continue
                 lang = S(it.get('language'))
                 if lang and not re.search(r'(?i)eng|english|^en\b', lang): continue
                 col = it.get('collection') or []
@@ -318,10 +322,19 @@ if MODE == 'plan':
                 if set(col) & XCOL: continue
                 t = S(it.get('title')); desc = ' '.join(re.sub(r'<[^>]+>', ' ', S(it.get('description'))).split())
                 c = classify(t, i, S(it.get('date')), desc)
-                if not c: continue
+                if not c:
+                    if not ok_title(t): stat[name]['x_junk'] += 1
+                    elif find_date(t, i, S(it.get('date')), desc)[0]: stat[name]['x_noclass'] += 1
+                    elif late(t, '1994-06-18') or sport(t, desc, '1994-06-18') or news(t, t) or shop(t):
+                        stat[name]['x_nodate'] += 1
+                        if len(nod[name]) < 400: nod[name].append(t[:90] + ' | ' + S(it.get('date'))[:10])
+                    continue
                 seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0}
                 stat[name]['kept'] += 1; stat[name][c['k']] += 1
             print('query', name, dict(stat[name].most_common(8)), 'total', len(seen), round((time.time() - T0) / 60, 1), 'min', flush=True)
+    random.seed(3)
+    for name in nod:
+        for t in random.sample(nod[name], min(10, len(nod[name]))): print('NODATE', name, '|', t)
     cands = sorted(seen.values(), key=lambda x: x['identifier'])
     print('candidates', len(cands), flush=True)
     with gzip.open(os.path.join(PARTS, 'dated_cands.json.gz'), 'wt', encoding='utf-8') as f:
@@ -336,15 +349,20 @@ def secs(v):
         return float(v)
     except Exception: return 0
 RANK = {'h.264 IA': 0, 'h.264': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
+REJ = collections.Counter()
 def meta(it):
-    if time.time() - T0 > BUDGET: return None
+    r = meta1(it)
+    if isinstance(r, str): REJ[r] += 1; return None
+    return r
+def meta1(it):
+    if time.time() - T0 > BUDGET: return 'budget'
     j = get('https://archive.org/metadata/' + urllib.parse.quote(it['identifier']))
-    if not j or not j.get('files') or j.get('is_dark'): return None
+    if not j or not j.get('files') or j.get('is_dark'): return 'dark'
     m = j.get('metadata', {})
-    if str(m.get('access-restricted-item', '')).lower() == 'true': return None
-    if str(m.get('mediatype', 'movies')) != 'movies': return None
+    if str(m.get('access-restricted-item', '')).lower() == 'true': return 'restricted'
+    if str(m.get('mediatype', 'movies')) != 'movies': return 'mediatype'
     lang = S(m.get('language'))
-    if lang and not re.search(r'(?i)eng|english|^en\b', lang): return None
+    if lang and not re.search(r'(?i)eng|english|^en\b', lang): return 'lang'
     groups = {}
     for f in j['files']:
         if not f.get('name', '').lower().endswith('.mp4'): continue
@@ -360,23 +378,24 @@ def meta(it):
         sz = float(b.get('size') or 0)
         if sz and sz / 1e6 / (d / 60) > 30: continue
         files.append([b['name'], round(d), b.get('format', '')])
-    if not files: return None
+    if not files: return 'nomp4'
     files.sort(key=lambda f: f[0])
     title = S(m.get('title'))
     desc = ' '.join(re.sub(r'<[^>]+>', ' ', S(m.get('description'))).split())
     col = m.get('collection', [])
     if isinstance(col, str): col = [col]
-    if set(col) & XCOL: return None
+    if set(col) & XCOL: return 'col'
     subj = m.get('subject', '')
     if isinstance(subj, list): subj = ';'.join(subj)
     blob = (title + ' ' + str(subj) + ' ' + desc[:500]).lower()
-    if re.search(X_FOR, blob): return None
-    if re.search(r'\b(podcast|fan ?film|fan ?made|video ?game|gameplay|radio (show|program|broadcast|call)|audio only|simulation)\b', blob): return None
+    if re.search(X_FOR, blob): return 'foreign'
+    if re.search(r'\b(podcast|fan ?film|fan ?made|video ?game|gameplay|radio (show|program|broadcast|call)|audio only|simulation)\b', blob): return 'junk'
     c = classify(title, it['identifier'], S(m.get('date')), desc)
-    if not c: return None
+    if not c: return 'noclass'
     tot = sum(f[1] for f in files)
-    if tot < c['min'] or tot > 14 * 3600: return None
-    if c['q'] in ('sports', 'late', 'news') and len(files) > 12: return None
+    if tot < c['min']: return 'short_' + c['q']
+    if tot > 14 * 3600: return 'long'
+    if c['q'] in ('sports', 'late', 'news') and len(files) > 12: return 'manyfiles'
     r = {'i': it['identifier'], 'q': c['q'], 't': title[:200], 'd': S(m.get('date')), 'y': S(m.get('year')), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': c['k'], 'e': int(c['ad'][:4]), 'net': c['net'], 'ct': c['ct'], 'ad': c['ad'], 'as': c['as']}
     if c.get('st'): r['st'] = c['st']
     return r
@@ -396,7 +415,7 @@ if MODE == 'meta':
             if n % 1000 == 0: print('meta', n, len(res), round((time.time() - T0) / 60, 1), 'min', flush=True)
     with gzip.open(os.path.join(PARTS, 'dated-%d.json.gz' % SHARD), 'wt', encoding='utf-8') as f:
         json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
-    print('shard done', len(res)); sys.exit(0)
+    print('shard done', len(res), 'rejected', REJ.most_common()); sys.exit(0)
 if MODE == 'merge':
     old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
     old = [x for x in old0 if keep(x)]
