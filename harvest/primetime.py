@@ -238,6 +238,8 @@ def consider(sh, it, route='t'):
     if weak and (not mod or dev or st): return 't'
     if st: return 't' if not mod else 'v'
     return False
+def infocus(sh, g=1):
+    return not FOCUS or sh['title'].lower() in FOCUS or ('guide' in FOCUS and (sh.get('guide') == 1 if g else sh.get('guide'))) or ('must' in FOCUS and sh.get('must'))
 def fcons(sh, it):
     t = flat(it.get('title')); low = clean(t)
     if not t or NONLAT.search(t) or JUNK.search(low) or FOREIGN.search(low) or SPIN.search(low): return False
@@ -312,13 +314,13 @@ def load_old():
     keep, drop = [], []
     for x in json.load(gzip.open(F, 'rt', encoding='utf-8')):
         sh = BYT.get(x.get('k'))
-        if sh and FOCUS and not (sh['title'].lower() in FOCUS or ('guide' in FOCUS and sh.get('guide') == 1) or ('must' in FOCUS and sh.get('must'))): keep.append(x); continue
+        if sh and not infocus(sh): keep.append(x); continue
         if sh and sum(1 for f in x['f'] if FORF.search(clean(f[0]))) * 2 > len(x['f']): drop.append(x); continue
         if sh and x.get('fv'):
             if fv_ok(sh, x): keep.append(x)
             else: drop.append(x)
             continue
-        r = sh and consider(sh, {'title': x.get('t'), 'collection': x.get('c'), 'subject': x.get('s'), 'description': x.get('ds'), 'date': '' if x.get('ad') else x.get('d')}, 'd' if x.get('r') == 'd' else 't')
+        r = sh and consider(sh, {'title': x.get('t'), 'collection': x.get('c'), 'subject': x.get('s'), 'description': (x.get('ds') or '') + ' ' + (x.get('dq') or ''), 'date': '' if x.get('ad') else x.get('d')}, 'd' if x.get('r') == 'd' else 't')
         if not r and sh and sh.get('guide') and x.get('se') and fv_ok(sh, x) == 'name': r = 't'
         if r in ('b', 'd'): x['r'] = r
         if not r: drop.append(x); continue
@@ -384,7 +386,7 @@ def plan():
     DIAG = collections.defaultdict(list); DREJ = collections.defaultdict(list)
     seen = {}; per = collections.Counter(); perd = collections.Counter(); peri = collections.Counter()
     order = sorted(SHOWS, key=lambda s: (0 if s.get('must') else 1, -len(s['title'])))
-    if FOCUS: order = [s for s in order if s['title'].lower() in FOCUS or ('guide' in FOCUS and s.get('guide')) or ('must' in FOCUS and s.get('must'))]
+    if FOCUS: order = [s for s in order if infocus(s, 0)]
     with ThreadPoolExecutor(6) as ex:
         for sh, res in ex.map(one, order):
             for i, (it, r) in res.items():
@@ -398,7 +400,7 @@ def plan():
     for x in keep:
         for r in x.get('se') or []: cov[x['k']].add(r[1])
     thin = {k for k in EP if len(cov[k]) < 0.5 * max(1, len(EP[k]['d']))}
-    ups = collections.defaultdict(set); src = [x for x in keep if (BYT[x['k']].get('guide') == 1 and (x.get('fv') or len(x.get('se') or []) >= 5)) or (x['k'] in thin and x.get('se') and (not FOCUS or x['k'].lower() in FOCUS))]
+    ups = collections.defaultdict(set); src = [x for x in keep if (BYT[x['k']].get('guide') == 1 and (x.get('fv') or len(x.get('se') or []) >= 5)) or (x['k'] in thin and x.get('se') and infocus(BYT[x['k']], 0))]
     def upl(x):
         j = get('https://archive.org/metadata/' + urllib.parse.quote(x['i']) + '/metadata') or {}
         return x['k'], flat((j.get('result') or {}).get('uploader'))
@@ -531,6 +533,13 @@ def meta(c):
     x = {'i': c['identifier'], 'q': KMAP.get(c['kind'], 'prime'), 't': t, 'd': '', 'y': '', 'c': [], 's': flat(m.get('subject')).replace(' ', ' ')[:200], 'ds': desc, 'f': files[:500 if sh.get('guide') or sh.get('must') else 60], 'dl': c.get('downloads') or 0, 'k': c['k'], 'e': 0, 'net': c['net'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
     col = m.get('collection', []); x['c'] = ([col] if isinstance(col, str) else col)[:4]
     x['d'] = flat(m.get('date'))
+    if x['r'] == 'd':
+        fd = ' '.join(flat(m.get('description')).split()); lo = fd.lower()
+        for q in sh['q']:
+            pos = lo.find(q.lower())
+            if pos >= 0:
+                if pos + len(q) > 400: x['dq'] = fd[max(0, pos - 200):pos + len(q) + 200]
+                break
     if c.get('hb'): x['hb'] = c['hb']
     if why: maybe(x, why)
     if fwhy: x['fv'] = 1
