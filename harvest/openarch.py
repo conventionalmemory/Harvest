@@ -78,69 +78,51 @@ def show(tag, url, extra=''):
     return d, st, hd
 def probe():
     print('== NASA')
-    j = jget('https://images-api.nasa.gov/search?q=STS-31%20launch&media_type=video&year_start=1984&year_end=2004&page_size=5')
-    print(json.dumps(j)[:1500] if j else 'NASA search failed')
-    for it in ((j or {}).get('collection', {}).get('items') or [])[:5]:
-        d0 = it['data'][0]
-        a = jget('https://images-api.nasa.gov/asset/' + urllib.parse.quote(d0['nasa_id']))
-        hs = [x['href'] for x in (a or {}).get('collection', {}).get('items', [])]
-        print(' ', d0['nasa_id'], d0.get('date_created'), d0.get('title'), [h.rsplit('~', 1)[-1] for h in hs])
-        v = [h for h in hs if h.lower().endswith('.mp4')]
-        if v: show('nasa', v[0].replace(' ', '%20').replace('http://', 'https://'), d0.get('title', ''))
-    print('== LOC')
-    for u in ('https://www.loc.gov/film-and-videos/?fo=json&c=5&dates=1984/2004&fa=online-format:video', 'https://www.loc.gov/search/?fo=json&c=5&q=television+broadcast&fa=online-format:video&dates=1984/2004'):
-        st, hd, body, _ = req(u)
-        print(' ', u, st, hd.get('content-type'), len(body))
-        try: j = json.loads(body)
-        except Exception: j = None; print(body[:300])
-        if not j: continue
-        print('  pagination', json.dumps(j.get('pagination'))[:300])
-        for r in (j.get('results') or [])[:5]:
-            print('  ', r.get('id'), r.get('date'), r.get('title'), r.get('online_format'), r.get('partof'))
-            ij = jget(r['id'].rstrip('/') + '/?fo=json') if str(r.get('id', '')).startswith('http') else None
-            if ij:
-                res = ij.get('resources') or []
-                print('    resources', json.dumps(res)[:900])
-                print('    item keys', sorted((ij.get('item') or {}).keys())[:60])
-                fl = [f.get('url') for rr in res for g in (rr.get('files') or []) for f in (g if isinstance(g, list) else [g]) if isinstance(f, dict) and str(f.get('url', '')).lower().endswith('.mp4')]
-                if fl: show('loc', fl[0], str(r.get('title')))
-            time.sleep(3)
-    print('== AAPB')
-    j = jget('https://americanarchive.org/api.json?q=macneil+lehrer+newshour&fq=access_types:online&rows=5&fl=id,title,xml')
-    print(json.dumps(j)[:1200] if j else 'AAPB api failed')
-    for d in ((j or {}).get('response', {}).get('docs') or [])[:5]:
-        i = d.get('id')
-        for u in ('https://americanarchive.org/media/%s?part=1' % i,):
-            st, hd, body, fin = req(u, rng=(0, 2047), headers={'Referer': 'https://americanarchive.org/catalog/%s' % i})
-            print('  aapb media', i, st, hd.get('content-type'), hd.get('accept-ranges'), fin[:160], hd.get('error'))
-            st, hd, body, fin = req(u, rng=(0, 2047))
-            print('  aapb media noref', i, st, hd.get('content-type'), fin[:160])
-    print('== NARA')
-    for u in ('https://catalog.archives.gov/proxy/records/search?q=space%20shuttle%20launch&typeOfMaterials=Moving%20Images&availableOnline=true&limit=5', 'https://catalog.archives.gov/api/v2/records/search?q=space%20shuttle%20launch&limit=5', 'https://catalog.archives.gov/proxy/records/search?q=state%20of%20the%20union&levelOfDescription=item&objectType=Video&limit=5'):
-        st, hd, body, _ = req(u)
-        print(' ', u, st, hd.get('content-type'), body[:1500].decode('utf-8', 'replace'))
-        try:
-            j = json.loads(body)
-            hits = (j.get('body') or {}).get('hits', {}).get('hits', [])
-            for h in hits[:5]:
-                rec = h.get('_source', {}).get('record', {})
-                objs = rec.get('digitalObjects') or []
-                print('   rec', rec.get('naId'), rec.get('title'), rec.get('productionDates') or rec.get('coverageStartDate') or rec.get('broadcastDates'), [(o.get('objectType'), o.get('objectUrl')) for o in objs[:4]])
-                v = [o.get('objectUrl') for o in objs if str(o.get('objectUrl', '')).lower().endswith('.mp4')]
-                if v: show('nara', v[0], str(rec.get('title')))
-        except Exception as e:
-            print('   parse', e)
-    print('== CSPAN')
-    st, hd, body, fin = req('https://www.c-span.org/video/?c=1&q=state+of+the+union+1996')
-    print('  cspan', st, hd.get('content-type'), len(body), fin[:120], re.findall(rb'https?://[^"\' ]+\.(?:mp4|m3u8)[^"\' ]*', body)[:5])
+    for q, extra in (('STS-31', ''), ('space shuttle launch', '&year_start=1984&year_end=2004'), ('shuttle', '&year_start=1990&year_end=1990'), ('Challenger', ''), ('mission highlights', ''), ('STS-61 Hubble', ''), ('launch', '&year_start=1995&year_end=1995'), ('Mars Pathfinder', ''), ('resource tape', ''), ('post flight presentation', '')):
+        j = jget('https://images-api.nasa.gov/search?q=%s&media_type=video&page_size=100%s' % (urllib.parse.quote(q), extra))
+        its = (j or {}).get('collection', {}).get('items') or []
+        print(' q', q, extra, 'hits', (j or {}).get('collection', {}).get('metadata'), 'years', sorted(collections.Counter(str(i['data'][0].get('date_created'))[:4] for i in its).items()))
+        for it in its[:3]:
+            d0 = it['data'][0]
+            a = jget('https://images-api.nasa.gov/asset/' + urllib.parse.quote(d0['nasa_id']))
+            hs = [x['href'] for x in (a or {}).get('collection', {}).get('items', [])]
+            print('  ', d0['nasa_id'], d0.get('date_created'), '|', str(d0.get('title'))[:70], '|', str(d0.get('description'))[:160].replace('\n', ' '), '|', d0.get('center'), [h.rsplit('~', 1)[-1] for h in hs])
+            v = [h for h in hs if h.lower().endswith('.mp4')]
+            if v: show('nasa', urllib.parse.quote(v[0].replace('http://', 'https://'), safe=':/~'), str(d0.get('title')))
+    print('== COMMONS')
+    for cat in ('Videos of State of the Union addresses', 'Videos of Space Shuttle launches', 'Videos of Ronald Reagan', 'Videos of Bill Clinton', 'Videos of George H. W. Bush', 'Videos by C-SPAN', 'Videos from the White House', 'Videos of the Space Shuttle Challenger disaster', 'Videos of Space Shuttle missions', 'Videos from NASA', 'Videos of United States presidential debates', 'Videos of presidential inaugurations of the United States'):
+        j = jget('https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=categorymembers&gcmtitle=' + urllib.parse.quote('Category:' + cat) + '&gcmtype=file|subcat&gcmlimit=60&prop=videoinfo&viprop=url|size|mime|derivatives|extmetadata&viextmetadatafilter=DateTimeOriginal|LicenseShortName|ObjectName')
+        pg = list(((j or {}).get('query') or {}).get('pages', {}).values())
+        fs = [p for p in pg if p.get('videoinfo')]
+        print(' cat', cat, 'members', len(pg), 'videos', len(fs), 'subcats', [p['title'] for p in pg if p.get('ns') == 14][:12])
+        for p in fs[:4]:
+            vi = p['videoinfo'][0]; em = vi.get('extmetadata') or {}
+            print('   ', p['title'][:80], '| dur', vi.get('duration'), '| mime', vi.get('mime'), '| date', (em.get('DateTimeOriginal') or {}).get('value', '')[:60], '| lic', (em.get('LicenseShortName') or {}).get('value'), '| deriv', [(d.get('transcodekey') or d.get('shorttitle'), d.get('type')) for d in (vi.get('derivatives') or [])][:8])
+            ds = [d for d in (vi.get('derivatives') or []) if '480p' in str(d.get('transcodekey') or d.get('src'))] or (vi.get('derivatives') or [])
+            if ds:
+                st, hd, body, fin = req(ds[0]['src'], rng=(0, 2047))
+                print('     SAMPLE commons', ds[0]['src'][:140], st, hd.get('content-type'), hd.get('accept-ranges'), hd.get('access-control-allow-origin'), hd.get('content-range'))
+        time.sleep(1)
     print('== MILLER')
-    st, hd, body, fin = req('https://api.millercenter.org/speeches', method='POST', data=b'{}', headers={'Content-Type': 'application/json'})
-    print('  miller', st, hd.get('content-type'), body[:700].decode('utf-8', 'replace'))
-    st, hd, body, fin = req('https://millercenter.org/the-presidency/presidential-speeches/january-23-1996-state-union-address')
-    print('  miller page', st, len(body), [x.decode() for x in set(re.findall(rb'https?://[^"\' <>]+\.(?:mp4|m3u8|mp3)[^"\' <>]*', body))][:8])
-    print('== REAGAN/CLINTON/BUSH')
-    for u in ('https://www.reaganlibrary.gov/archives/speech/address-nation-explosion-space-shuttle-challenger', 'https://www.clintonlibrary.gov/research/video-and-audio', 'https://bush41library.tamu.edu/audiovisual/videos'):
+    for u in ('https://millercenter.org/the-presidency/presidential-speeches', 'https://millercenter.org/the-presidency/presidential-speeches/january-28-1986-address-space-shuttle-challenger-disaster', 'https://millercenter.org/the-presidency/presidential-speeches/january-20-1993-first-inaugural', 'https://millercenter.org/the-presidency/presidential-speeches/september-11-2001-address-nation-terrorist-attacks', 'https://millercenter.org/the-presidency/presidential-speeches/june-12-1987-address-berlin-wall-brandenburg-gate', 'https://millercenter.org/the-presidency/presidential-speeches/january-16-1991-address-nation-invasion-iraq'):
         st, hd, body, fin = req(u)
-        print(' ', u, st, len(body), [x.decode() for x in set(re.findall(rb'https?://[^"\' <>]+\.(?:mp4|m3u8)[^"\' <>]*', body))][:6], [x.decode() for x in set(re.findall(rb'(?:youtube\.com/embed/|youtu\.be/)[\w-]+', body))][:4])
+        print(' ', u[-70:], st, len(body), [x.decode() for x in set(re.findall(rb'https?://[^"\' <>]+\.(?:mp4|m3u8|webm)[^"\' <>]*', body))][:6], [x.decode() for x in set(re.findall(rb'(?:youtube\.com/embed/|youtu\.be/|vimeo\.com/video/)[\w-]+', body))][:4], len(set(re.findall(rb'/the-presidency/presidential-speeches/[a-z0-9-]+', body))))
+    print('== LOC')
+    time.sleep(20)
+    st, hd, body, _ = req('https://www.loc.gov/film-and-videos/?fo=json&c=10&dates=1984/2004&fa=online-format:video&q=television&at=facets,pagination,results')
+    try:
+        j = json.loads(body)
+        print('  of', (j.get('pagination') or {}).get('of'))
+        for f in j.get('facets') or []:
+            if f.get('fieldName') in ('partof', 'original-format', 'subject'): print('  facet', f.get('fieldName'), [(x.get('title'), x.get('count')) for x in (f.get('filters') or [])[:25]])
+        for r in (j.get('results') or [])[:10]:
+            print('   ', r.get('id'), r.get('date'), str(r.get('title'))[:70], r.get('partof'))
+        r0 = [r for r in (j.get('results') or []) if 'veterans' not in str(r.get('partof')).lower()][:2]
+        for r in r0:
+            time.sleep(8)
+            ij = jget(r['id'].replace('http://', 'https://').rstrip('/') + '/?fo=json&at=resources,item')
+            print('    item', r['id'], json.dumps((ij or {}).get('resources'))[:1200])
+    except Exception as e:
+        print('  loc fail', st, e, body[:200])
 if MODE == 'probe':
     probe(); sys.exit(0)
