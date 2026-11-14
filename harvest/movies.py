@@ -57,11 +57,12 @@ else:
             films.append({'q': fid, 't': v('label'), 'd': v('d')[:10], 'bo': bo, 'sl': sl, 'g': [g for g in v('genres').split('|') if g][:6], 'r': v('rating'), 'rt': du})
         print('year', y, 'films', n, flush=True)
         time.sleep(2)
+ALLT = set(); ALLP = set()
 def norm(s):
     s = s.lower().replace('&', 'and')
     s = re.sub(r"[’'`]", '', s)
     return re.sub(r'[^a-z0-9]+', ' ', s).strip()
-BAD = r'\b(trailers?|teasers?|opening|closing|promo|soundtrack|ost|review|behind the scenes|making of|commentary|tv spots?|featurette|scenes?|clips?|music video|fan ?made|fan ?edit|parody|reaction|dublado|doblaje|doblada|latino|castellano|espa[nñ]ol|deutsch|fran[cç]ais|italiano|russian|hindi|tamil|soundtracks?|audio ?book|novel|book|comic|game|gameplay|walkthrough|lego|minecraft|toy|toys|interview|premiere|press|outtakes|deleted|bloopers?|karaoke|sing ?along|ep\s?\d|episode)\b'
+BAD = r'\b(documentary|podcast|rifftrax|playback|watch ?along|live ?stream|concert|performances?|trailers?|teasers?|opening|closing|promo|soundtrack|ost|review|behind the scenes|making of|commentary|tv spots?|featurette|scenes?|clips?|music video|fan ?made|fan ?edit|parody|reaction|dublado|doblaje|doblada|latino|castellano|espa[nñ]ol|deutsch|fran[cç]ais|italiano|russian|hindi|tamil|soundtracks?|audio ?book|novel|book|comic|game|gameplay|walkthrough|lego|minecraft|toy|toys|interview|premiere|press|outtakes|deleted|bloopers?|karaoke|sing ?along|ep\s?\d|episode)\b'
 RANK = {'h.264 IA': 0, 'h.264': 1, 'h.264 HD': 2, 'MPEG4': 3, '512Kb MPEG4': 4}
 def secs(v):
     try:
@@ -104,7 +105,7 @@ def files_of(ident):
     out.sort(key=lambda f: f[0])
     return out, hmax, blob
 FOREIGN = r"\b(dublado|dublada|doblaje|doblada|doblado|latino|castellano|espa[nñ]ol|subtitulad[oa]|legendado|deutsch|german dub|synchronisiert|fran[cç]ais|\bvf\b|\bvostfr\b|truefrench|italiano|\bita\b|russian|rus dub|hindi|tamil|telugu|urdu|polski|lektor|magyar|szinkron|t[uü]rk[cç]e|arabic dub|dubbed in|en espa|pel[ií]cula completa|filme completo|film complet|ganzer film|film completo)\b"
-OKW = set('vhs rip vhsrip full movie film the tape widescreen fullscreen version edition cut theatrical dvd dvdrip tv laserdisc ld ntsc original release woc with commercials broadcast abc cbs nbc fox hbo cinemax showtime tnt tbs usa remastered uncut unrated complete hd sd betamax beta 480p 360p 240p english eng open matte pan scan and letterbox letterboxed directors special extended mp4 avi xvid divx ac3 x264 h264 aac'.split())
+OKW = set('vhs rip vhsrip full movie film the tape widescreen fullscreen version edition cut theatrical dvd dvdrip tv laserdisc ld ntsc original release woc with commercials broadcast abc cbs nbc fox hbo cinemax showtime tnt tbs usa remastered uncut unrated complete hd sd betamax beta 480p 360p 240p english eng open matte pan scan and letterbox letterboxed directors special extended mp4 avi xvid divx ac3 x264 h264 aac hdrip bdrip brrip webrip web dl bluray blu ray 1080p 720p yify yts rarbg x265 hevc movie movies uk us rated unrated r pg workprint print 35mm 16mm restored hq watch free online copy of hollywood vintage recording popcornarchive www com net co io yt classic'.split())
 T_TAPE = r"\b(vhs|vhsrip|vhs rip|betamax|beta ?max|laser ?disc|\bld ?rip\b|tv ?rip|recorded (from|off)|off[- ]air|videotape|video tape|ced)\b"
 T_TV = r"\b(with commercials|w/ ?commercials|woc|broadcast|tv edit|edited for tv|tv version|network (premiere|version|tv))\b"
 T_DVD = r"\b(dvd|dvdrip|dvd rip|dvd5|dvd9)\b"
@@ -151,6 +152,56 @@ def variants(t):
             seen.add(n); out.append((x, n, k))
     return out
 SEQ = set('2 3 4 5 6 7 8 ii iii iv v vi vii viii part chapter returns'.split())
+SRC = r'^(roosterteeth|patma|bliptv|twitch|tiktok|soundcloud|podcast|g4tv|turner_video|youtube-|twitter)'
+PEOPLE = {}
+def people(qs):
+    for a in range(0, len(qs), 80):
+        q = 'SELECT ?film ?pl ?sl ?k WHERE { VALUES ?film { %s } { ?film wdt:P57 ?p BIND(1 AS ?k) } UNION { ?film wdt:P161 ?p BIND(0 AS ?k) } ?p wikibase:sitelinks ?sl; rdfs:label ?pl FILTER(lang(?pl)="en") }' % ' '.join('wd:' + x for x in qs[a:a + 80])
+        j = get('https://query.wikidata.org/sparql?format=json&query=' + urllib.parse.quote(q), accept='application/sparql-results+json')
+        tmp = {}
+        for r in (j or {}).get('results', {}).get('bindings', []):
+            fid = r['film']['value'].rsplit('/', 1)[-1]
+            try: sl = int(float(r['sl']['value']))
+            except Exception: sl = 0
+            tmp.setdefault(fid, []).append((int(r['k']['value']), sl, r['pl']['value']))
+        for fid, v in tmp.items():
+            d = sorted([x for x in v if x[0]], key=lambda x: -x[1])[:1]; c = sorted([x for x in v if not x[0]], key=lambda x: -x[1])
+            PEOPLE[fid] = [x[2] for x in d + c[:3]], set(w for x in v for w in norm(x[2]).split() if len(w) > 2)
+        time.sleep(1.5)
+def idnorm(ident):
+    sp = re.sub(r'[_-](19|20)\d{4,6}(_\d+)?$', '', ident)
+    sp = re.sub(r'(?<=[a-z])(?=[A-Z])|(?<=[A-Za-z])(?=(19|20)\d\d)|(?<=\d\d\d\d)(?=[A-Za-z])', ' ', sp)
+    return norm(sp.replace('-', ' ').replace('_', ' ').replace('.', ' ')), sp
+def odd(hit, src, names=(), tail=False):
+    p = (' ' + src + ' ').find(' ' + hit + ' ')
+    if p < 0: return ''
+    before = src[:p].split(); after = src[p + len(hit):].split()
+    okw = lambda w: w in OKW or w.isdigit() or bool(re.match(r'^(19|20)\d\d$', w)) or w in names
+    if after and after[0] in SEQ and not hit.endswith(' ' + after[0]):
+        if not (tail and len(after) == 1 and after[0].isdigit() and (hit + ' ' + after[0]) not in ALLT and (hit + ' ' + ARA.get(after[0], after[0])) not in ALLT): return 'sequel'
+        after = []
+    nb = [w for w in before if not okw(w)]
+    if nb and not (len(nb) <= 3 and before[-1].endswith('s') and len(before[-1]) > 3): return 'prefix'
+    if len(hit.split()) == 1 and after and not okw(after[0]): return 'suffix'
+    k = next((n for n, w in enumerate(after) if re.match(r'^(19|20)\d\d$', w)), None)
+    mid = after if k is None else after[:k]
+    if len([w for w in mid if not okw(w)]) >= 5: return 'long'
+    return ''
+def suspect(f, ident):
+    if re.search(SRC, ident.lower()): return 'source'
+    idn, sp = idnorm(ident)
+    y = int(f['d'][:4]) if f['d'][:4].isdigit() else 0
+    names = PEOPLE.get(f['q'], ([], set()))[1]
+    for x, nt, k in variants(f['t']):
+        if (' ' + nt + ' ') in (' ' + idn + ' '):
+            o = odd(nt, idn, names, True)
+            if o: return o
+            left = idn.replace(nt, ' ', 1)
+            if re.search(BAD, left): return 'bad'
+            ys = [int(v) for v in re.findall(r'(?<!\d)(19\d\d|20\d\d)(?!\d)', sp)]
+            if y and ys and not any(abs(v - y) <= 1 for v in ys) and min(ys) < 2005: return 'year'
+            return ''
+    return ''
 def consider(f, d, vs, y, pool, dg):
     ident = d.get('identifier')
     if not ident or ident in pool: return
@@ -167,9 +218,9 @@ def consider(f, d, vs, y, pool, dg):
     lang = d.get('language') or ''
     if isinstance(lang, list): lang = ' '.join(str(x) for x in lang)
     lang = str(lang).lower()
-    idsp = re.sub(r'[_-](19|20)\d{4,6}$', '', ident)
-    idsp = re.sub(r'(?<=[a-z])(?=[A-Z])|(?<=[A-Za-z])(?=(19|20)\d\d)|(?<=\d\d\d\d)(?=[A-Za-z])', ' ', idsp)
-    idn = norm(idsp.replace('-', ' ').replace('_', ' ').replace('.', ' '))
+    idn, idsp = idnorm(ident)
+    if re.search(SRC, ident.lower()): return no('source')
+    names = PEOPLE.get(f['q'], ([], set()))
     if re.search(FOREIGN, tl + ' ' + idn) or re.search(FOREIGN, ds) or (lang and not re.search(r'eng|english|^en\b', lang)):
         pool[ident] = None; CNT['foreign'] += 1; return no('foreign')
     if re.search(r'[^\x00-\x7f]', t) and len(re.findall(r'[^\x00-\x7f]', t)) > 2:
@@ -180,10 +231,26 @@ def consider(f, d, vs, y, pool, dg):
     if not hit:
         for x, nt, k in vs:
             if idn == nt or idn.startswith(nt + ' ') or (' ' + nt + ' ') in (' ' + idn + ' ') or (len(nt) >= 6 and idn.replace(' ', '').startswith(nt.replace(' ', ''))): hit = nt; prim = k; src = idn; byid = True; break
-    if not hit: return no('nohit')
+    flags = []
+    if not hit:
+        dsn = norm(re.sub(r'<[^>]+>', ' ', str(d.get('description') or ''))[:3000])
+        for x, nt, k in vs:
+            if k and (len(nt.split()) >= 2 or len(nt) >= 8 or (y and dsn.startswith('%s %d' % (nt, y)))) and (' ' + nt + ' ') in (' ' + dsn + ' ') and any(norm(n) in dsn for n in names[0]):
+                if any(o in (' ' + nd + ' ') for o in ALLP if o != nt): return no('other')
+                yd = bool(y) and str(y) in dsn
+                sc = 6 + (6 if yd else 0) + (6 if nt in dsn[:120] else 0) + min(12, 3 * len(str(int(d.get('downloads') or 0))))
+                tg = [t2 for t2, rx in (('tape', T_TAPE), ('dvd', T_DVD), ('hd', T_HD)) if re.search(rx, tl + ' ' + idn + ' ' + ds[:300])]
+                pool[ident] = [sc, tg, int(d.get('downloads') or 0), yd, ['desc'] + ([] if nt in dsn[:120] and yd else ['far'])]
+                dg['desc'] = dg.get('desc', 0) + 1
+                return
+        return no('nohit')
     if byid and hit not in src: src = hit + ' ' + src.replace(' ', '')[len(hit.replace(' ', '')):]
     left = src.replace(hit, ' ', 1)
-    if re.search(BAD, left) or re.search(T_PACK, left): return no('bad')
+    if re.search(BAD, left): return no('bad')
+    if re.search(T_PACK, left):
+        pool[ident] = [12 + min(12, 3 * len(str(int(d.get('downloads') or 0)))), [t2 for t2, rx in (('tape', T_TAPE), ('dvd', T_DVD), ('hd', T_HD)) if re.search(rx, tl + ' ' + idn + ' ' + ds[:300])], int(d.get('downloads') or 0), False, ['pack']]
+        dg['pack'] = dg.get('pack', 0) + 1
+        return
     ys = [int(x) for x in re.findall(r'\b(19\d\d|20\d\d)\b', t if not byid else idsp + ' ' + t)]
     ys = [x for x in ys if 1900 <= x <= 2026]
     dy = str(d.get('year') or '')
@@ -192,9 +259,11 @@ def consider(f, d, vs, y, pool, dg):
     if not yok and y and any(abs(int(x) - y) <= 1 for x in re.findall(r'(?<!\d)(19\d\d|20\d\d)(?!\d)', idsp)): yok = True
     if dy.isdigit() and y and not ys and abs(int(dy) - y) > 1 and int(dy) < 2005: return no('year')
     rest = [w for w in left.split() if not re.match(r'^(19|20)\d\d$', w) and w not in OKW]
-    after = src.split(hit, 1)[1].split() if hit in src else []
-    if after and after[0] in SEQ and not hit.endswith(' ' + after[0]): return no('sequel')
-    if len(rest) > (10 if yok and src.startswith(hit) else 2): return no('rest')
+    o = odd(hit, src, names[1])
+    if o: return no(o)
+    rest = [w for w in rest if w not in names[1]]
+    ytext = bool(ys) or (bool(y) and any(abs(int(x) - y) <= 1 for x in re.findall(r'(?<!\d)(19\d\d|20\d\d)(?!\d)', idsp)))
+    if len(rest) > (10 if ytext else 3 if yok else 2): return no('rest')
     if byid and not yok: return no('idnoyear')
     if not prim and not yok: return no('varnoyear')
     if len(hit.split()) == 1 and not yok and rest: return no('oneword')
@@ -206,7 +275,7 @@ def consider(f, d, vs, y, pool, dg):
     if re.search(T_HD, blob): tags.append('hd')
     if re.search(T_CAM, tl): tags.append('cam')
     sc = 10 + (8 if yok else 0) + (6 if src == hit or not rest else 0) + min(12, 3 * len(str(int(d.get('downloads') or 0)))) - (4 if byid else 0) - (3 if len(rest) > 2 else 0)
-    pool[ident] = [sc, tags, int(d.get('downloads') or 0), yok]
+    pool[ident] = [sc, tags, int(d.get('downloads') or 0), yok, flags]
 def final(sc, tags):
     if 'tape' in tags and 'hd' not in tags: sc += 50
     elif 'dvd' in tags and 'hd' not in tags: sc += 25
@@ -217,8 +286,11 @@ def final(sc, tags):
     if 'parts' in tags: sc -= 5
     if 'sd' in tags: sc += 6
     return sc
-TOL = float(os.environ.get('TOL', '0.09')); PASS = int(os.environ.get('PASS', '4')); CAP = int(os.environ.get('CAP', '14'))
+TOL = float(os.environ.get('TOL', '0.09')); PASS = int(os.environ.get('PASS', '5')); CAP = int(os.environ.get('CAP', '14'))
 T0 = time.time(); BUDGET = float(os.environ.get('BUDGET', '270')) * 60; REDO = os.environ.get('REDO') == '1'
+for x in films:
+    n0 = norm(x['t']); ALLT.add(n0)
+    if len(n0.split()) >= 2 or len(n0) >= 7: ALLP.add(n0)
 DIAG = int(os.environ.get('DIAG', '45'))
 def slugs(n, y):
     w = n.split()
@@ -245,18 +317,30 @@ def match(f):
         for d in dd: consider(f, d, vs, y, pool, dg)
     live = lambda: [k for k, v in pool.items() if v]
     tq = f['t'].replace('"', '')
-    for x, n, k in vs[:6]: run('title:("%s")' % x.replace('"', '') + mm, 60)
-    if f.get('pia'): run('identifier:"%s"' % f['pia'], 1)
-    if y:
-        run('"%s" %d' % (tq, y) + mm, 50)
-        run('title:("%s") AND year:%d' % (tq, y) + mm, 50)
-        run('title:(%s) AND title:(%d)' % (re.sub(r'[^A-Za-z0-9 ]+', ' ', tq), y) + mm, 50)
-    for x, n, k in [v for v in vs if v[2]][:2]:
-        sl = slugs(n, y)
-        for a in range(0, len(sl), 20): run('identifier:(%s)' % ' OR '.join(sl[a:a + 20]) + mm, 60)
-    run('subject:("%s")' % tq + mm, 40)
-    if not any('tape' in pool[k][1] for k in live()): run('"%s" AND (vhs OR laserdisc OR betamax OR vhsrip)' % tq + mm, 40)
-    if len(live()) < 3: run('"%s" AND ("full movie" OR "full film")' % tq + mm, 30)
+    names = PEOPLE.get(f['q'], ([], set()))[0]
+    run('title:("%s")' % tq + mm, 60)
+    if names:
+        run('"%s" AND (%s)' % (tq, ' OR '.join('"%s"' % n.replace('"', '') for n in names)) + mm, 60)
+        if y: run('"%s" AND %d AND (%s)' % (tq, y, ' OR '.join('"%s"' % n.replace('"', '') for n in names)) + mm, 40)
+    pk = '(trilogy OR quadrilogy OR anthology OR collection OR "box set" OR "double feature" OR movies OR films)'
+    run('"%s" AND %s' % (tq, pk) + mm, 40)
+    for x, n, k in [v for v in vs if not v[2]][:1]: run('title:("%s") AND title:%s' % (x.replace('"', ''), pk) + mm, 40)
+    if PASS < 5 or REDO:
+        for x, n, k in vs[1:6]: run('title:("%s")' % x.replace('"', '') + mm, 60)
+        if f.get('pia'): run('identifier:"%s"' % f['pia'], 1)
+        if y:
+            run('"%s" %d' % (tq, y) + mm, 50)
+            run('title:("%s") AND year:%d' % (tq, y) + mm, 50)
+            run('title:(%s) AND title:(%d)' % (re.sub(r'[^A-Za-z0-9 ]+', ' ', tq), y) + mm, 50)
+        for x, n, k in [v for v in vs if v[2]][:2]:
+            sl = slugs(n, y)
+            for a in range(0, len(sl), 20): run('identifier:(%s)' % ' OR '.join(sl[a:a + 20]) + mm, 60)
+        run('subject:("%s")' % tq + mm, 40)
+        if not any('tape' in pool[k][1] for k in live()): run('"%s" AND (vhs OR laserdisc OR betamax OR vhsrip)' % tq + mm, 40)
+        if len(live()) < 3: run('"%s" AND ("full movie" OR "full film")' % tq + mm, 30)
+    def fhit(name):
+        nf = norm(re.sub(r'\.(ia\.)?mp4$', '', name.rsplit('/', 1)[-1]).replace('.', ' ').replace('_', ' '))
+        return any((k or len(n.split()) >= 3) and (' ' + n + ' ') in (' ' + nf + ' ') and odd(n, nf) != 'sequel' for x, n, k in vs)
     order = sorted(live(), key=lambda k: -final(pool[k][0], pool[k][1]))
     rt = (f.get('rt') or 0) * 60
     out = []
@@ -266,7 +350,11 @@ def match(f):
         if not r: dg['m_gone'] = dg.get('m_gone', 0) + 1; continue
         fs, hmax, blob = r
         if not fs: dg['m_nomp4'] = dg.get('m_nomp4', 0) + 1; continue
-        sc, tags, dl, yok = pool[ident]; tags = list(tags)
+        sc, tags, dl, yok, flags = pool[ident]; tags = list(tags)
+        feats = [x for x in fs if x[1] >= 2400]
+        named = [x for x in fs if x[1] >= 2400 and fhit(x[0])]
+        if named and (len(feats) >= 2 or 'pack' in flags): fs = [sorted(named, key=lambda x: abs(x[1] - rt) if rt else -x[1])[0]]
+        elif 'pack' in flags or (len(feats) >= 3 and not named and len(fs) > 6): dg['m_pack'] = dg.get('m_pack', 0) + 1; continue
         if re.search(T_TAPE, blob) and 'tape' not in tags: tags.append('tape')
         if re.search(T_HD, blob) and 'hd' not in tags and 'tape' not in tags: tags.append('hd')
         if hmax >= 700 and 'hd' not in tags: tags.append('hd')
@@ -283,6 +371,11 @@ def match(f):
             if 3600 <= big[1] <= 4 * 3600: pick = [big]
             elif 2 <= len(fs) <= 6 and 3600 <= tot <= 4 * 3600: pick = [x for x in fs if x[1]]; tags.append('parts')
         if not pick and rt and 2400 <= big[1] and abs(big[1] - rt) <= 0.25 * rt: pick = [big]; tags.append('maybe'); why = 'runtime %d min vs listed %d' % (round(big[1] / 60), round(rt / 60))
+        if pick and 'desc' in flags:
+            if not rt or not big[1] or abs(big[1] - rt) > 0.05 * rt: pick = None
+            else:
+                tags.append('desc')
+                if 'far' in flags and 'maybe' not in tags: tags.append('maybe'); why = 'title only in description'
         if not pick:
             dg['m_runtime'] = dg.get('m_runtime', 0) + 1
             if len(dg.setdefault('ex_runtime', [])) < 3: dg['ex_runtime'].append('%s %d/%d' % (ident, round(big[1] / 60), round(rt / 60)))
@@ -314,9 +407,27 @@ if MODE == 'merge':
     print('part films', len(by), flush=True)
     work = []
     films = [by.get(x['q'], x) for x in films]
+    flagged = [x for x in films if any('maybe' not in c[3] and suspect(x, c[0]) for c in x.get('ias') or [])]
+    people([x['q'] for x in flagged])
+    dem = 0
+    for x in flagged:
+        for c in x['ias']:
+            if 'maybe' in c[3]: continue
+            r = suspect(x, c[0])
+            if r:
+                c[3].append('maybe'); c[2] -= 25; del c[4:]; c.append('identifier suggests another title (%s)' % r); dem += 1
+                print('DEMOTE', r, '|', x['t'], x['d'][:4], '->', c[0], flush=True)
+        x['ias'].sort(key=lambda c: -c[2])
+        sure = [c for c in x['ias'] if 'maybe' not in c[3]]
+        x.pop('ia', None); x.pop('keep', None); x.pop('why', None)
+        if sure: x['ia'] = [sure[0][0], sure[0][1]]
+        else: x['keep'] = 'maybe'; x['why'] = x['ias'][0][4] if len(x['ias'][0]) > 4 else 'doubtful match'
+    print('demoted candidates', dem, 'films flagged', len(flagged), flush=True)
 elif MODE == 'shard':
     work = sorted([x for x in films if not x.get('ia') or REDO], key=lambda x: (-(x.get('sl') or 0), -(x.get('bo') or 0), x['q']))[SHARD::SHARDS]
     print('shard', SHARD, 'of', SHARDS, 'films', len(work), flush=True)
+    people([x['q'] for x in work])
+    print('people for', len(PEOPLE), flush=True)
 else:
     work = films
 done = []
@@ -346,7 +457,7 @@ print('plain sd chosen', sum(1 for x in have if not set(top(x)) & {'tape', 'dvd'
 print('foreign rejected', CNT['foreign'])
 print('candidates per film', {k: sum(1 for x in have if len(x['ias']) == k) for k in range(1, 15)})
 if HAD is not None:
-    print('newly matched', sum(1 for x in have if x['q'] not in HAD), 'lost', sum(1 for x in res if x['q'] in HAD and not x.get('ia')))
+    print('newly matched', sum(1 for x in have if x['q'] not in HAD and x.get('ia')), 'new maybe', sum(1 for x in have if x['q'] not in HAD and not x.get('ia')), 'no longer sure', sum(1 for x in res if x['q'] in HAD and not x.get('ia')))
 import random
 random.seed(7)
 new = [x for x in have if HAD is not None and x['q'] not in HAD and x.get('ia')]
