@@ -1,4 +1,4 @@
-import json, gzip, os, re, sys, time, random, glob, collections, datetime, urllib.parse, urllib.request
+import json, gzip, os, re, sys, time, random, glob, collections, datetime, threading, urllib.parse, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 here = os.path.dirname(os.path.abspath(__file__))
@@ -23,7 +23,7 @@ SHARD = int(os.environ.get('SHARD', '0')); SHARDS = int(os.environ.get('SHARDS',
 BUDGET = float(os.environ.get('BUDGET_MIN', '320')) * 60
 REBUILD = os.environ.get('REBUILD', '') == '1'
 T0 = time.time()
-OUTF = os.path.join(OUT, 'sports2.json.gz'); SCHF = os.path.join(OUT, 'sportsched.json.gz')
+OUTF = os.path.join(OUT, 'sports2.json.gz'); SCHF = os.path.join(OUT, 'sportsched.json.gz'); NOPG = os.path.join(OUT, 'sportsched_nopages.json')
 WUA = {'User-Agent': 'sports schedule table builder (github.com/conventionalmemory/harvest)'}
 ALIAS = {'niners': '49ers', 'bucs': 'buccaneers', 'cavs': 'cavaliers', 'sixers': '76ers', 'mavs': 'mavericks', 'sonics': 'supersonics', 'blazers': 'trail blazers', 'pitt': 'pittsburgh', 'unc': 'north carolina', 'north carolina state': 'nc state', 'connecticut': 'uconn', 'memphis state': 'memphis'}
 def canon(x): return ALIAS.get(x, x)
@@ -96,17 +96,33 @@ class Doc(HTMLParser):
         if s.cells: s.cells[-1][1].append(d)
         elif s.head: s.head[1].append(d)
         elif s.para is not None: s.para.append(d)
+WGAP = float(os.environ.get('WGAP', '0.7'))
+WLOCK = threading.Lock(); WNEXT = [0.0]
 def wiki(title):
-    u = 'https://en.wikipedia.org/w/api.php?' + urllib.parse.urlencode({'action': 'parse', 'page': title, 'prop': 'text', 'format': 'json', 'formatversion': 2, 'redirects': 1, 'disableeditsection': 1, 'disabletoc': 1})
-    for k in range(4):
+    u = 'https://en.wikipedia.org/w/api.php?' + urllib.parse.urlencode({'action': 'parse', 'page': title, 'prop': 'text', 'format': 'json', 'formatversion': 2, 'redirects': 1, 'disableeditsection': 1, 'disabletoc': 1, 'maxlag': 5})
+    for k in range(8):
+        with WLOCK:
+            w = WNEXT[0] - time.time()
+            WNEXT[0] = max(WNEXT[0], time.time()) + WGAP
+        if w > 0: time.sleep(w)
         try:
             with urllib.request.urlopen(urllib.request.Request(u, headers=WUA), timeout=60) as r:
                 j = json.loads(r.read().decode('utf-8', 'replace'))
-            if 'parse' not in j: return None
+            if 'parse' not in j:
+                if j.get('error', {}).get('code') == 'maxlag': time.sleep(6); continue
+                return None
             p = Doc(); p.feed(j['parse']['text']); return p.out
+        except urllib.error.HTTPError as e:
+            ra = e.headers.get('Retry-After') if e.headers else None
+            wait = min(180, int(ra) if ra and ra.isdigit() else 20 * (k + 1))
+            if e.code in (429, 503):
+                with WLOCK: WNEXT[0] = max(WNEXT[0], time.time() + wait)
+            if k == 7: print('wiki fail', title, e, flush=True); return 0
+            time.sleep(2)
         except Exception as e:
-            if k == 3: print('wiki fail', title, e, flush=True); return None
+            if k == 7: print('wiki fail', title, e, flush=True); return 0
             time.sleep(4 * (k + 1))
+    return 0
 def col(hdr, *names):
     for i, h in enumerate(hdr):
         hl = h.lower()
@@ -310,11 +326,17 @@ def build():
         for k, p in TENNIS: jobs.append(('info', p % y, 'tennis', k, y))
     for n in BOXERS: jobs.append(('box', n))
     jobs.append(('nohit', 'List of Major League Baseball no-hitters'))
-    print('pages', len(jobs), flush=True)
+    prev = []
+    if os.path.exists(SCHF):
+        prev = [e for e in json.load(gzip.open(SCHF, 'rt', encoding='utf-8')) if e.get('src')]
+    done = set(e['src'] for e in prev) | set(json.load(open(NOPG)) if os.path.exists(NOPG) else [])
+    alljobs = len(jobs); jobs = [j for j in jobs if j[1] not in done]
+    print('pages', alljobs, 'already have', alljobs - len(jobs), 'to fetch', len(jobs), 'kept events', len(prev), flush=True)
     stat = collections.Counter(); zero = []
     def run(j):
         time.sleep(random.random() * .4)
         b = wiki(j[1])
+        if b == 0: return j, 0
         if b is None: return j, None
         if j[0] == 'nfl': return j, nfl_like(b, 'nfl', j[2], j[3], j[1])
         if j[0] == 'cfb': return j, nfl_like(b, 'ncaaf', j[2], j[3], j[1])
@@ -326,11 +348,12 @@ def build():
         if j[0] == 'info':
             a, z = infodate(b, j[4])
             return j, ([{'lg': j[2], 'k': j[3], 'y': j[4], 'd': a, 'd2': z, 'src': j[1]}] if a else [])
-    ev = []
-    with ThreadPoolExecutor(5) as ex:
+    ev = list(prev); nopg = set(json.load(open(NOPG)) if os.path.exists(NOPG) else [])
+    with ThreadPoolExecutor(3) as ex:
         for n, (j, r) in enumerate(ex.map(run, jobs)):
-            if r is None: stat[j[0] + '_missing'] += 1; zero.append('MISSING ' + j[1]); continue
-            if not r: stat[j[0] + '_zero'] += 1; zero.append('ZERO ' + j[1])
+            if r == 0: stat[j[0] + '_failed'] += 1; zero.append('FAILED ' + j[1]); continue
+            if r is None: stat[j[0] + '_missing'] += 1; zero.append('MISSING ' + j[1]); nopg.add(j[1]); continue
+            if not r: stat[j[0] + '_zero'] += 1; zero.append('ZERO ' + j[1]); nopg.add(j[1])
             stat[j[0] + '_pages'] += 1; stat[j[0] + '_events'] += len(r); ev += r
             if n % 200 == 0: print('sched', n, len(ev), round((time.time() - T0) / 60, 1), 'min', flush=True)
     for a, z, s, c in OLY:
@@ -350,6 +373,7 @@ def build():
         print('LEAGUE', lg, len(L), 'events', sorted(collections.Counter(e['d'][:4] for e in L).items()))
         for e in random.sample(L, min(8, len(L))): print('   ', json.dumps(e, ensure_ascii=False)[:230])
     with gzip.open(SCHF, 'wt', encoding='utf-8') as f: json.dump(ev, f, ensure_ascii=False, separators=(',', ':'))
+    json.dump(sorted(nopg), open(NOPG, 'w'), ensure_ascii=False)
     return ev
 PSCH = os.path.join(PARTS, 'sportsched.json.gz')
 def load_sched():
