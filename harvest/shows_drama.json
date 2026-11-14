@@ -1,0 +1,4165 @@
+[
+{
+"title": "Magnum, P.I.",
+"net": "cbs",
+"first_year": 1980,
+"last_year": 1988,
+"original_run": "1980-1988",
+"q": "prime",
+"alt": [
+"Magnum PI",
+"Magnum P.I"
+],
+"slots": [
+[
+1980,
+1986,
+"cbs",
+4,
+"20:00"
+],
+[
+1986,
+1988,
+"cbs",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "The A-Team",
+"net": "nbc",
+"first_year": 1983,
+"last_year": 1987,
+"original_run": "1983-1987",
+"q": "prime",
+"alt": [
+"A-Team",
+"A Team"
+],
+"slots": [
+[
+1983,
+1986,
+"nbc",
+2,
+"20:00"
+],
+[
+1986,
+1987,
+"nbc",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Knight Rider",
+"net": "nbc",
+"first_year": 1982,
+"last_year": 1986,
+"original_run": "1982-1986",
+"q": "prime",
+"slots": [
+[
+1982,
+1983,
+"nbc",
+5,
+"21:00"
+],
+[
+1983,
+1985,
+"nbc",
+0,
+"20:00"
+],
+[
+1985,
+1986,
+"nbc",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Airwolf",
+"net": "cbs",
+"first_year": 1984,
+"last_year": 1987,
+"original_run": "1984-1987",
+"q": "prime",
+"slots": [
+[
+1984,
+1986,
+"cbs",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "MacGyver",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1992,
+"original_run": "1985-1992",
+"q": "prime",
+"slots": [
+[
+1986,
+1991,
+"abc",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Miami Vice",
+"net": "nbc",
+"first_year": 1984,
+"last_year": 1989,
+"original_run": "1984-1989",
+"q": "prime",
+"slots": [
+[
+1984,
+1986,
+"nbc",
+5,
+"22:00"
+],
+[
+1986,
+1987,
+"nbc",
+5,
+"21:00"
+],
+[
+1987,
+1989,
+"nbc",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "Hill Street Blues",
+"net": "nbc",
+"first_year": 1981,
+"last_year": 1987,
+"original_run": "1981-1987",
+"q": "prime",
+"slots": [
+[
+1981,
+1986,
+"nbc",
+4,
+"22:00"
+],
+[
+1986,
+1987,
+"nbc",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "St. Elsewhere",
+"net": "nbc",
+"first_year": 1982,
+"last_year": 1988,
+"original_run": "1982-1988",
+"q": "prime",
+"alt": [
+"St Elsewhere"
+],
+"slots": [
+[
+1983,
+1988,
+"nbc",
+3,
+"22:00"
+]
+]
+},
+{
+"title": "L.A. Law",
+"net": "nbc",
+"first_year": 1986,
+"last_year": 1994,
+"original_run": "1986-1994",
+"q": "prime",
+"alt": [
+"LA Law"
+],
+"slots": [
+[
+1986,
+1994,
+"nbc",
+4,
+"22:00"
+]
+]
+},
+{
+"title": "Moonlighting",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1989,
+"original_run": "1985-1989",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1985,
+1989,
+"abc",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "Remington Steele",
+"net": "nbc",
+"first_year": 1982,
+"last_year": 1987,
+"original_run": "1982-1987",
+"q": "prime",
+"slots": [
+[
+1983,
+1986,
+"nbc",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "Simon & Simon",
+"net": "cbs",
+"first_year": 1981,
+"last_year": 1989,
+"original_run": "1981-1989",
+"q": "prime",
+"alt": [
+"Simon and Simon"
+],
+"slots": [
+[
+1982,
+1986,
+"cbs",
+4,
+"21:00"
+]
+]
+},
+{
+"title": "Hunter",
+"net": "nbc",
+"first_year": 1984,
+"last_year": 1991,
+"original_run": "1984-1991",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1985,
+1990,
+"nbc",
+6,
+"22:00"
+]
+]
+},
+{
+"title": "Matlock",
+"net": "nbc",
+"first_year": 1986,
+"last_year": 1995,
+"original_run": "1986-1995",
+"q": "prime",
+"slots": [
+[
+1986,
+1992,
+"nbc",
+2,
+"20:00"
+],
+[
+1993,
+1995,
+"abc",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Murder, She Wrote",
+"net": "cbs",
+"first_year": 1984,
+"last_year": 1996,
+"original_run": "1984-1996",
+"q": "prime",
+"alt": [
+"Murder She Wrote"
+],
+"slots": [
+[
+1984,
+1995,
+"cbs",
+0,
+"20:00"
+],
+[
+1995,
+1996,
+"cbs",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "In the Heat of the Night",
+"net": "nbc",
+"first_year": 1988,
+"last_year": 1995,
+"original_run": "1988-1995",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1988,
+1992,
+"nbc",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "Quantum Leap",
+"net": "nbc",
+"first_year": 1989,
+"last_year": 1993,
+"original_run": "1989-1993",
+"q": "prime",
+"slots": [
+[
+1989,
+1990,
+"nbc",
+3,
+"22:00"
+],
+[
+1991,
+1992,
+"nbc",
+3,
+"22:00"
+]
+]
+},
+{
+"title": "Northern Exposure",
+"net": "cbs",
+"first_year": 1990,
+"last_year": 1995,
+"original_run": "1990-1995",
+"q": "prime",
+"slots": [
+[
+1991,
+1994,
+"cbs",
+1,
+"22:00"
+]
+]
+},
+{
+"title": "Twin Peaks",
+"net": "abc",
+"first_year": 1990,
+"last_year": 1991,
+"original_run": "1990-1991",
+"q": "prime",
+"slots": [
+[
+1990,
+1990,
+"abc",
+4,
+"21:00"
+],
+[
+1990,
+1991,
+"abc",
+6,
+"22:00"
+]
+]
+},
+{
+"title": "Beverly Hills, 90210",
+"net": "fox",
+"first_year": 1990,
+"last_year": 2000,
+"original_run": "1990-2000",
+"q": "prime",
+"alt": [
+"Beverly Hills 90210"
+],
+"slots": [
+[
+1990,
+1992,
+"fox",
+4,
+"21:00"
+],
+[
+1992,
+2000,
+"fox",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Melrose Place",
+"net": "fox",
+"first_year": 1992,
+"last_year": 1999,
+"original_run": "1992-1999",
+"q": "prime",
+"slots": [
+[
+1992,
+1994,
+"fox",
+3,
+"21:00"
+],
+[
+1994,
+1999,
+"fox",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Party of Five",
+"net": "fox",
+"first_year": 1994,
+"last_year": 2000,
+"original_run": "1994-2000",
+"q": "prime",
+"slots": [
+[
+1995,
+1999,
+"fox",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "ER",
+"net": "nbc",
+"first_year": 1994,
+"last_year": 2009,
+"original_run": "1994-2009",
+"q": "prime",
+"ambiguous": true,
+"alt": [
+"E.R."
+],
+"slots": [
+[
+1994,
+2004,
+"nbc",
+4,
+"22:00"
+]
+]
+},
+{
+"title": "NYPD Blue",
+"net": "abc",
+"first_year": 1993,
+"last_year": 2005,
+"original_run": "1993-2005",
+"q": "prime",
+"slots": [
+[
+1993,
+2004,
+"abc",
+2,
+"22:00"
+]
+]
+},
+{
+"title": "Law & Order",
+"net": "nbc",
+"first_year": 1990,
+"last_year": 2010,
+"original_run": "1990-2010",
+"q": "prime",
+"alt": [
+"Law and Order"
+],
+"slots": [
+[
+1990,
+1992,
+"nbc",
+2,
+"22:00"
+],
+[
+1992,
+2004,
+"nbc",
+3,
+"22:00"
+]
+]
+},
+{
+"title": "Homicide: Life on the Street",
+"net": "nbc",
+"first_year": 1993,
+"last_year": 1999,
+"original_run": "1993-1999",
+"q": "prime",
+"alt": [
+"Homicide Life on the Street"
+],
+"slots": [
+[
+1994,
+1999,
+"nbc",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "Chicago Hope",
+"net": "cbs",
+"first_year": 1994,
+"last_year": 2000,
+"original_run": "1994-2000",
+"q": "prime",
+"slots": [
+[
+1994,
+1997,
+"cbs",
+1,
+"22:00"
+]
+]
+},
+{
+"title": "The X-Files",
+"net": "fox",
+"first_year": 1993,
+"last_year": 2002,
+"original_run": "1993-2002",
+"q": "prime",
+"alt": [
+"X-Files",
+"X Files"
+],
+"slots": [
+[
+1993,
+1996,
+"fox",
+5,
+"21:00"
+],
+[
+1996,
+2002,
+"fox",
+0,
+"21:00"
+]
+]
+},
+{
+"title": "Millennium",
+"net": "fox",
+"first_year": 1996,
+"last_year": 1999,
+"original_run": "1996-1999",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1996,
+1999,
+"fox",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Walker, Texas Ranger",
+"net": "cbs",
+"first_year": 1993,
+"last_year": 2001,
+"original_run": "1993-2001",
+"q": "prime",
+"alt": [
+"Walker Texas Ranger"
+],
+"slots": [
+[
+1993,
+2001,
+"cbs",
+6,
+"22:00"
+]
+]
+},
+{
+"title": "Baywatch",
+"net": "syn",
+"first_year": 1989,
+"last_year": 2001,
+"original_run": "1989-2001",
+"q": "prime",
+"slots": [
+[
+1989,
+1990,
+"nbc",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Renegade",
+"net": "syn",
+"first_year": 1992,
+"last_year": 1997,
+"original_run": "1992-1997",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Highlander: The Series",
+"net": "syn",
+"first_year": 1992,
+"last_year": 1998,
+"original_run": "1992-1998",
+"q": "prime",
+"alt": [
+"Highlander The Series"
+]
+},
+{
+"title": "Xena: Warrior Princess",
+"net": "syn",
+"first_year": 1995,
+"last_year": 2001,
+"original_run": "1995-2001",
+"q": "prime",
+"alt": [
+"Xena Warrior Princess"
+]
+},
+{
+"title": "Hercules: The Legendary Journeys",
+"net": "syn",
+"first_year": 1995,
+"last_year": 1999,
+"original_run": "1995-1999",
+"q": "prime",
+"alt": [
+"Hercules The Legendary Journeys"
+]
+},
+{
+"title": "Star Trek: The Next Generation",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1994,
+"original_run": "1987-1994",
+"q": "prime",
+"alt": [
+"Star Trek The Next Generation",
+"Star Trek TNG"
+]
+},
+{
+"title": "Star Trek: Deep Space Nine",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1999,
+"original_run": "1993-1999",
+"q": "prime",
+"alt": [
+"Star Trek Deep Space Nine",
+"Star Trek DS9"
+]
+},
+{
+"title": "Star Trek: Voyager",
+"net": "upn",
+"first_year": 1995,
+"last_year": 2001,
+"original_run": "1995-2001",
+"q": "prime",
+"alt": [
+"Star Trek Voyager"
+],
+"slots": [
+[
+1995,
+1998,
+"upn",
+1,
+"20:00"
+],
+[
+1998,
+2001,
+"upn",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "Star Trek: Enterprise",
+"net": "upn",
+"first_year": 2001,
+"last_year": 2005,
+"original_run": "2001-2005",
+"q": "prime",
+"alt": [
+"Star Trek Enterprise"
+],
+"slots": [
+[
+2001,
+2004,
+"upn",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Babylon 5",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1998,
+"original_run": "1993-1998",
+"q": "prime"
+},
+{
+"title": "seaQuest DSV",
+"net": "nbc",
+"first_year": 1993,
+"last_year": 1996,
+"original_run": "1993-1996",
+"q": "prime",
+"alt": [
+"seaQuest 2032",
+"seaQuest"
+],
+"slots": [
+[
+1993,
+1995,
+"nbc",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Sliders",
+"net": "fox",
+"first_year": 1995,
+"last_year": 2000,
+"original_run": "1995-2000",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Lois & Clark: The New Adventures of Superman",
+"net": "abc",
+"first_year": 1993,
+"last_year": 1997,
+"original_run": "1993-1997",
+"q": "prime",
+"alt": [
+"Lois and Clark",
+"Lois & Clark"
+],
+"slots": [
+[
+1993,
+1997,
+"abc",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Buffy the Vampire Slayer",
+"net": "wb",
+"first_year": 1997,
+"last_year": 2003,
+"original_run": "1997-2003",
+"q": "prime",
+"slots": [
+[
+1998,
+2001,
+"wb",
+2,
+"20:00"
+],
+[
+2001,
+2003,
+"upn",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "Angel",
+"net": "wb",
+"first_year": 1999,
+"last_year": 2004,
+"original_run": "1999-2004",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1999,
+2001,
+"wb",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "Charmed",
+"net": "wb",
+"first_year": 1998,
+"last_year": 2006,
+"original_run": "1998-2006",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1998,
+1999,
+"wb",
+3,
+"21:00"
+],
+[
+1999,
+2001,
+"wb",
+4,
+"21:00"
+],
+[
+2002,
+2004,
+"wb",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Dawson's Creek",
+"net": "wb",
+"first_year": 1998,
+"last_year": 2003,
+"original_run": "1998-2003",
+"q": "prime",
+"alt": [
+"Dawsons Creek"
+],
+"slots": [
+[
+1998,
+1998,
+"wb",
+2,
+"21:00"
+],
+[
+1998,
+2003,
+"wb",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "7th Heaven",
+"net": "wb",
+"first_year": 1996,
+"last_year": 2007,
+"original_run": "1996-2007",
+"q": "prime",
+"alt": [
+"Seventh Heaven"
+],
+"slots": [
+[
+1996,
+2004,
+"wb",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Touched by an Angel",
+"net": "cbs",
+"first_year": 1994,
+"last_year": 2003,
+"original_run": "1994-2003",
+"q": "prime",
+"slots": [
+[
+1996,
+2001,
+"cbs",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Dr. Quinn, Medicine Woman",
+"net": "cbs",
+"first_year": 1993,
+"last_year": 1998,
+"original_run": "1993-1998",
+"q": "prime",
+"alt": [
+"Dr Quinn Medicine Woman",
+"Dr. Quinn"
+],
+"slots": [
+[
+1993,
+1998,
+"cbs",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "Diagnosis: Murder",
+"net": "cbs",
+"first_year": 1993,
+"last_year": 2001,
+"original_run": "1993-2001",
+"q": "prime",
+"alt": [
+"Diagnosis Murder"
+],
+"slots": [
+[
+1993,
+1995,
+"cbs",
+5,
+"20:00"
+],
+[
+1996,
+2001,
+"cbs",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "JAG",
+"net": "cbs",
+"first_year": 1995,
+"last_year": 2005,
+"original_run": "1995-2005",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1997,
+2003,
+"cbs",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "Nash Bridges",
+"net": "cbs",
+"first_year": 1996,
+"last_year": 2001,
+"original_run": "1996-2001",
+"q": "prime",
+"slots": [
+[
+1996,
+2001,
+"cbs",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "Pacific Blue",
+"net": "usa",
+"first_year": 1996,
+"last_year": 2000,
+"original_run": "1996-2000",
+"q": "prime"
+},
+{
+"title": "Silk Stalkings",
+"net": "usa",
+"first_year": 1991,
+"last_year": 1999,
+"original_run": "1991-1999",
+"q": "prime"
+},
+{
+"title": "La Femme Nikita",
+"net": "usa",
+"first_year": 1997,
+"last_year": 2001,
+"original_run": "1997-2001",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Pretender",
+"net": "nbc",
+"first_year": 1996,
+"last_year": 2000,
+"original_run": "1996-2000",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1996,
+2000,
+"nbc",
+6,
+"21:00"
+]
+]
+},
+{
+"title": "Profiler",
+"net": "nbc",
+"first_year": 1996,
+"last_year": 2000,
+"original_run": "1996-2000",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1996,
+2000,
+"nbc",
+6,
+"22:00"
+]
+]
+},
+{
+"title": "Early Edition",
+"net": "cbs",
+"first_year": 1996,
+"last_year": 2000,
+"original_run": "1996-2000",
+"q": "prime",
+"slots": [
+[
+1996,
+2000,
+"cbs",
+6,
+"21:00"
+]
+]
+},
+{
+"title": "Ally McBeal",
+"net": "fox",
+"first_year": 1997,
+"last_year": 2002,
+"original_run": "1997-2002",
+"q": "prime",
+"slots": [
+[
+1997,
+2002,
+"fox",
+1,
+"21:00"
+]
+]
+},
+{
+"title": "The Practice",
+"net": "abc",
+"first_year": 1997,
+"last_year": 2004,
+"original_run": "1997-2004",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1998,
+2003,
+"abc",
+0,
+"22:00"
+]
+]
+},
+{
+"title": "The West Wing",
+"net": "nbc",
+"first_year": 1999,
+"last_year": 2006,
+"original_run": "1999-2006",
+"q": "prime",
+"slots": [
+[
+1999,
+2004,
+"nbc",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "24",
+"net": "fox",
+"first_year": 2001,
+"last_year": 2010,
+"original_run": "2001-2010",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+2001,
+2004,
+"fox",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "Alias",
+"net": "abc",
+"first_year": 2001,
+"last_year": 2006,
+"original_run": "2001-2006",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+2001,
+2004,
+"abc",
+0,
+"21:00"
+]
+]
+},
+{
+"title": "CSI: Crime Scene Investigation",
+"net": "cbs",
+"first_year": 2000,
+"last_year": 2015,
+"original_run": "2000-2015",
+"q": "prime",
+"alt": [
+"CSI Crime Scene Investigation"
+],
+"slots": [
+[
+2001,
+2004,
+"cbs",
+4,
+"21:00"
+]
+]
+},
+{
+"title": "Smallville",
+"net": "wb",
+"first_year": 2001,
+"last_year": 2011,
+"original_run": "2001-2011",
+"q": "prime",
+"slots": [
+[
+2001,
+2003,
+"wb",
+2,
+"21:00"
+],
+[
+2003,
+2004,
+"wb",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Gilmore Girls",
+"net": "wb",
+"first_year": 2000,
+"last_year": 2007,
+"original_run": "2000-2007",
+"q": "prime",
+"slots": [
+[
+2000,
+2001,
+"wb",
+4,
+"20:00"
+],
+[
+2001,
+2004,
+"wb",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "Dallas",
+"net": "cbs",
+"first_year": 1978,
+"last_year": 1991,
+"original_run": "1978-1991",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1981,
+1990,
+"cbs",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Dynasty",
+"net": "abc",
+"first_year": 1981,
+"last_year": 1989,
+"original_run": "1981-1989",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1981,
+1988,
+"abc",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "Knots Landing",
+"net": "cbs",
+"first_year": 1979,
+"last_year": 1993,
+"original_run": "1979-1993",
+"q": "prime",
+"slots": [
+[
+1982,
+1993,
+"cbs",
+4,
+"22:00"
+]
+]
+},
+{
+"title": "Falcon Crest",
+"net": "cbs",
+"first_year": 1981,
+"last_year": 1990,
+"original_run": "1981-1990",
+"q": "prime",
+"slots": [
+[
+1981,
+1990,
+"cbs",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "Cagney & Lacey",
+"net": "cbs",
+"first_year": 1982,
+"last_year": 1988,
+"original_run": "1982-1988",
+"q": "prime",
+"alt": [
+"Cagney and Lacey"
+],
+"slots": [
+[
+1983,
+1987,
+"cbs",
+1,
+"22:00"
+]
+]
+},
+{
+"title": "Scarecrow and Mrs. King",
+"net": "cbs",
+"first_year": 1983,
+"last_year": 1987,
+"original_run": "1983-1987",
+"q": "prime",
+"alt": [
+"Scarecrow and Mrs King",
+"Scarecrow & Mrs. King"
+],
+"slots": [
+[
+1983,
+1986,
+"cbs",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "T.J. Hooker",
+"net": "abc",
+"first_year": 1982,
+"last_year": 1986,
+"original_run": "1982-1986",
+"q": "prime",
+"alt": [
+"TJ Hooker",
+"T. J. Hooker"
+],
+"slots": [
+[
+1982,
+1985,
+"abc",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "The Equalizer",
+"net": "cbs",
+"first_year": 1985,
+"last_year": 1989,
+"original_run": "1985-1989",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1985,
+1988,
+"cbs",
+3,
+"22:00"
+]
+]
+},
+{
+"title": "Spenser: For Hire",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1988,
+"original_run": "1985-1988",
+"q": "prime",
+"alt": [
+"Spenser For Hire"
+]
+},
+{
+"title": "Wiseguy",
+"net": "cbs",
+"first_year": 1987,
+"last_year": 1990,
+"original_run": "1987-1990",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "21 Jump Street",
+"net": "fox",
+"first_year": 1987,
+"last_year": 1991,
+"original_run": "1987-1991",
+"q": "prime",
+"slots": [
+[
+1987,
+1989,
+"fox",
+0,
+"19:00"
+]
+]
+},
+{
+"title": "China Beach",
+"net": "abc",
+"first_year": 1988,
+"last_year": 1991,
+"original_run": "1988-1991",
+"q": "prime"
+},
+{
+"title": "Tour of Duty",
+"net": "cbs",
+"first_year": 1987,
+"last_year": 1990,
+"original_run": "1987-1990",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "thirtysomething",
+"net": "abc",
+"first_year": 1987,
+"last_year": 1991,
+"original_run": "1987-1991",
+"q": "prime",
+"slots": [
+[
+1987,
+1991,
+"abc",
+2,
+"22:00"
+]
+]
+},
+{
+"title": "Life Goes On",
+"net": "abc",
+"first_year": 1989,
+"last_year": 1993,
+"original_run": "1989-1993",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1989,
+1993,
+"abc",
+0,
+"19:00"
+]
+]
+},
+{
+"title": "The Young Riders",
+"net": "abc",
+"first_year": 1989,
+"last_year": 1992,
+"original_run": "1989-1992",
+"q": "prime"
+},
+{
+"title": "Unsolved Mysteries",
+"net": "nbc",
+"first_year": 1987,
+"last_year": 2002,
+"original_run": "1987-2002",
+"q": "prime",
+"slots": [
+[
+1988,
+1994,
+"nbc",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Rescue 911",
+"net": "cbs",
+"first_year": 1989,
+"last_year": 1996,
+"original_run": "1989-1996",
+"q": "prime",
+"slots": [
+[
+1989,
+1995,
+"cbs",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "Riptide",
+"net": "nbc",
+"first_year": 1984,
+"last_year": 1986,
+"original_run": "1984-1986",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1984,
+1986,
+"nbc",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "Hardcastle and McCormick",
+"net": "abc",
+"first_year": 1983,
+"last_year": 1986,
+"original_run": "1983-1986",
+"q": "prime",
+"alt": [
+"Hardcastle & McCormick"
+]
+},
+{
+"title": "The Fall Guy",
+"net": "abc",
+"first_year": 1981,
+"last_year": 1986,
+"original_run": "1981-1986",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1981,
+1985,
+"abc",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Street Hawk",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1985,
+"original_run": "1985-1985",
+"q": "prime"
+},
+{
+"title": "Automan",
+"net": "abc",
+"first_year": 1983,
+"last_year": 1984,
+"original_run": "1983-1984",
+"q": "prime"
+},
+{
+"title": "Blue Thunder",
+"net": "abc",
+"first_year": 1984,
+"last_year": 1984,
+"original_run": "1984-1984",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "V",
+"net": "nbc",
+"first_year": 1983,
+"last_year": 1985,
+"original_run": "1983-1985",
+"q": "prime",
+"ambiguous": true,
+"alt": [
+"V The Series",
+"V The Final Battle"
+]
+},
+{
+"title": "Misfits of Science",
+"net": "nbc",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "prime"
+},
+{
+"title": "Crime Story",
+"net": "nbc",
+"first_year": 1986,
+"last_year": 1988,
+"original_run": "1986-1988",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Stingray",
+"net": "nbc",
+"first_year": 1985,
+"last_year": 1987,
+"original_run": "1985-1987",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Sledge Hammer!",
+"net": "abc",
+"first_year": 1986,
+"last_year": 1988,
+"original_run": "1986-1988",
+"q": "prime",
+"alt": [
+"Sledge Hammer"
+]
+},
+{
+"title": "Mike Hammer",
+"net": "cbs",
+"first_year": 1984,
+"last_year": 1987,
+"original_run": "1984-1987",
+"q": "prime",
+"ambiguous": true,
+"alt": [
+"Mickey Spillane's Mike Hammer"
+]
+},
+{
+"title": "Jake and the Fatman",
+"net": "cbs",
+"first_year": 1987,
+"last_year": 1992,
+"original_run": "1987-1992",
+"q": "prime"
+},
+{
+"title": "Father Dowling Mysteries",
+"net": "abc",
+"first_year": 1989,
+"last_year": 1991,
+"original_run": "1989-1991",
+"q": "prime"
+},
+{
+"title": "Columbo",
+"net": "abc",
+"first_year": 1968,
+"last_year": 2003,
+"original_run": "1968-2003",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The Commish",
+"net": "abc",
+"first_year": 1991,
+"last_year": 1996,
+"original_run": "1991-1996",
+"q": "prime",
+"slots": [
+[
+1991,
+1995,
+"abc",
+6,
+"22:00"
+]
+]
+},
+{
+"title": "Picket Fences",
+"net": "cbs",
+"first_year": 1992,
+"last_year": 1996,
+"original_run": "1992-1996",
+"q": "prime",
+"slots": [
+[
+1992,
+1996,
+"cbs",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "Sisters",
+"net": "nbc",
+"first_year": 1991,
+"last_year": 1996,
+"original_run": "1991-1996",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1991,
+1996,
+"nbc",
+6,
+"22:00"
+]
+]
+},
+{
+"title": "I'll Fly Away",
+"net": "nbc",
+"first_year": 1991,
+"last_year": 1993,
+"original_run": "1991-1993",
+"q": "prime"
+},
+{
+"title": "Reasonable Doubts",
+"net": "nbc",
+"first_year": 1991,
+"last_year": 1993,
+"original_run": "1991-1993",
+"q": "prime"
+},
+{
+"title": "Law & Order: Special Victims Unit",
+"net": "nbc",
+"first_year": 1999,
+"last_year": 2004,
+"original_run": "1999-2004",
+"q": "prime",
+"alt": [
+"Law and Order SVU",
+"Law & Order SVU"
+]
+},
+{
+"title": "The Wonder Years",
+"net": "abc",
+"first_year": 1988,
+"last_year": 1993,
+"original_run": "1988-1993",
+"q": "prime"
+},
+{
+"title": "Doogie Howser, M.D.",
+"net": "abc",
+"first_year": 1989,
+"last_year": 1993,
+"original_run": "1989-1993",
+"q": "prime",
+"alt": [
+"Doogie Howser MD",
+"Doogie Howser"
+]
+},
+{
+"title": "My So-Called Life",
+"net": "abc",
+"first_year": 1994,
+"last_year": 1995,
+"original_run": "1994-1995",
+"q": "prime",
+"alt": [
+"My So Called Life"
+],
+"slots": [
+[
+1994,
+1995,
+"abc",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Felicity",
+"net": "wb",
+"first_year": 1998,
+"last_year": 2002,
+"original_run": "1998-2002",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Roswell",
+"net": "wb",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Dark Angel",
+"net": "fox",
+"first_year": 2000,
+"last_year": 2002,
+"original_run": "2000-2002",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Lone Gunmen",
+"net": "fox",
+"first_year": 2001,
+"last_year": 2001,
+"original_run": "2001-2001",
+"q": "prime"
+},
+{
+"title": "Space: Above and Beyond",
+"net": "fox",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "prime",
+"alt": [
+"Space Above and Beyond"
+]
+},
+{
+"title": "The Adventures of Brisco County, Jr.",
+"net": "fox",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "prime",
+"alt": [
+"Brisco County Jr",
+"Adventures of Brisco County"
+]
+},
+{
+"title": "M.A.N.T.I.S.",
+"net": "fox",
+"first_year": 1994,
+"last_year": 1995,
+"original_run": "1994-1995",
+"q": "prime",
+"alt": [
+"MANTIS"
+]
+},
+{
+"title": "VR.5",
+"net": "fox",
+"first_year": 1995,
+"last_year": 1995,
+"original_run": "1995-1995",
+"q": "prime",
+"alt": [
+"VR5"
+]
+},
+{
+"title": "Alien Nation",
+"net": "fox",
+"first_year": 1989,
+"last_year": 1990,
+"original_run": "1989-1990",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Werewolf",
+"net": "fox",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Freddy's Nightmares",
+"net": "syn",
+"first_year": 1988,
+"last_year": 1990,
+"original_run": "1988-1990",
+"q": "prime"
+},
+{
+"title": "Friday the 13th: The Series",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1990,
+"original_run": "1987-1990",
+"q": "prime",
+"alt": [
+"Friday the 13th The Series"
+]
+},
+{
+"title": "War of the Worlds",
+"net": "syn",
+"first_year": 1988,
+"last_year": 1990,
+"original_run": "1988-1990",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Tales from the Darkside",
+"net": "syn",
+"first_year": 1983,
+"last_year": 1988,
+"original_run": "1983-1988",
+"q": "prime"
+},
+{
+"title": "Monsters",
+"net": "syn",
+"first_year": 1988,
+"last_year": 1991,
+"original_run": "1988-1991",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Twilight Zone",
+"net": "cbs",
+"first_year": 1985,
+"last_year": 1989,
+"original_run": "1985-1989",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Amazing Stories",
+"net": "nbc",
+"first_year": 1985,
+"last_year": 1987,
+"original_run": "1985-1987",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1985,
+1987,
+"nbc",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Alfred Hitchcock Presents",
+"net": "nbc",
+"first_year": 1985,
+"last_year": 1989,
+"original_run": "1985-1989",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Outer Limits",
+"net": "syn",
+"first_year": 1995,
+"last_year": 2002,
+"original_run": "1995-2002",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Poltergeist: The Legacy",
+"net": "syn",
+"first_year": 1996,
+"last_year": 1999,
+"original_run": "1996-1999",
+"q": "prime",
+"alt": [
+"Poltergeist The Legacy"
+]
+},
+{
+"title": "Stargate SG-1",
+"net": "syn",
+"first_year": 1997,
+"last_year": 2007,
+"original_run": "1997-2007",
+"q": "prime",
+"alt": [
+"Stargate SG1"
+]
+},
+{
+"title": "Farscape",
+"net": "syfy",
+"first_year": 1999,
+"last_year": 2003,
+"original_run": "1999-2003",
+"q": "prime"
+},
+{
+"title": "Earth: Final Conflict",
+"net": "syn",
+"first_year": 1997,
+"last_year": 2002,
+"original_run": "1997-2002",
+"q": "prime",
+"alt": [
+"Earth Final Conflict"
+]
+},
+{
+"title": "Andromeda",
+"net": "syn",
+"first_year": 2000,
+"last_year": 2005,
+"original_run": "2000-2005",
+"q": "prime",
+"ambiguous": true,
+"alt": [
+"Gene Roddenberry's Andromeda"
+]
+},
+{
+"title": "Relic Hunter",
+"net": "syn",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "prime"
+},
+{
+"title": "V.I.P.",
+"net": "syn",
+"first_year": 1998,
+"last_year": 2002,
+"original_run": "1998-2002",
+"q": "prime",
+"ambiguous": true,
+"alt": [
+"VIP"
+]
+},
+{
+"title": "Mutant X",
+"net": "syn",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "prime"
+},
+{
+"title": "The Lost World",
+"net": "syn",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "prime",
+"ambiguous": true,
+"alt": [
+"Sir Arthur Conan Doyle's The Lost World"
+]
+},
+{
+"title": "BeastMaster",
+"net": "syn",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Cleopatra 2525",
+"net": "syn",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "prime"
+},
+{
+"title": "Jack of All Trades",
+"net": "syn",
+"first_year": 2000,
+"last_year": 2000,
+"original_run": "2000-2000",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Adventures of Sinbad",
+"net": "syn",
+"first_year": 1996,
+"last_year": 1998,
+"original_run": "1996-1998",
+"q": "prime",
+"alt": [
+"Adventures of Sinbad"
+]
+},
+{
+"title": "Tarzan: The Epic Adventures",
+"net": "syn",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "prime",
+"alt": [
+"Tarzan The Epic Adventures"
+]
+},
+{
+"title": "Conan the Adventurer",
+"net": "syn",
+"first_year": 1997,
+"last_year": 1998,
+"original_run": "1997-1998",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Kung Fu: The Legend Continues",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1997,
+"original_run": "1993-1997",
+"q": "prime",
+"alt": [
+"Kung Fu The Legend Continues"
+]
+},
+{
+"title": "Time Trax",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "prime"
+},
+{
+"title": "RoboCop: The Series",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1994,
+"original_run": "1994-1994",
+"q": "prime",
+"alt": [
+"RoboCop The Series"
+]
+},
+{
+"title": "Viper",
+"net": "nbc",
+"first_year": 1994,
+"last_year": 1999,
+"original_run": "1994-1999",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Thunder in Paradise",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1994,
+"original_run": "1994-1994",
+"q": "prime"
+},
+{
+"title": "Acapulco H.E.A.T.",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1999,
+"original_run": "1993-1999",
+"q": "prime",
+"alt": [
+"Acapulco HEAT"
+]
+},
+{
+"title": "Baywatch Nights",
+"net": "syn",
+"first_year": 1995,
+"last_year": 1997,
+"original_run": "1995-1997",
+"q": "prime"
+},
+{
+"title": "Forever Knight",
+"net": "syn",
+"first_year": 1992,
+"last_year": 1996,
+"original_run": "1992-1996",
+"q": "prime"
+},
+{
+"title": "Due South",
+"net": "cbs",
+"first_year": 1994,
+"last_year": 1999,
+"original_run": "1994-1999",
+"q": "prime"
+},
+{
+"title": "The Sentinel",
+"net": "upn",
+"first_year": 1996,
+"last_year": 1999,
+"original_run": "1996-1999",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Seven Days",
+"net": "upn",
+"first_year": 1998,
+"last_year": 2001,
+"original_run": "1998-2001",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Nowhere Man",
+"net": "upn",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Marker",
+"net": "upn",
+"first_year": 1995,
+"last_year": 1995,
+"original_run": "1995-1995",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Legend",
+"net": "upn",
+"first_year": 1995,
+"last_year": 1995,
+"original_run": "1995-1995",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Burning Zone",
+"net": "upn",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "prime"
+},
+{
+"title": "Dark Skies",
+"net": "nbc",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Earth 2",
+"net": "nbc",
+"first_year": 1994,
+"last_year": 1995,
+"original_run": "1994-1995",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Flash",
+"net": "cbs",
+"first_year": 1990,
+"last_year": 1991,
+"original_run": "1990-1991",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Beauty and the Beast",
+"net": "cbs",
+"first_year": 1987,
+"last_year": 1990,
+"original_run": "1987-1990",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Incredible Hulk",
+"net": "cbs",
+"first_year": 1977,
+"last_year": 1982,
+"original_run": "1977-1982",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Wonder Woman",
+"net": "cbs",
+"first_year": 1975,
+"last_year": 1979,
+"original_run": "1975-1979",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The Six Million Dollar Man",
+"net": "abc",
+"first_year": 1973,
+"last_year": 1978,
+"original_run": "1973-1978",
+"q": "rerun",
+"alt": [
+"Six Million Dollar Man"
+]
+},
+{
+"title": "The Bionic Woman",
+"net": "abc",
+"first_year": 1976,
+"last_year": 1978,
+"original_run": "1976-1978",
+"q": "rerun",
+"alt": [
+"Bionic Woman"
+]
+},
+{
+"title": "Battlestar Galactica",
+"net": "abc",
+"first_year": 1978,
+"last_year": 1979,
+"original_run": "1978-1979",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Buck Rogers in the 25th Century",
+"net": "nbc",
+"first_year": 1979,
+"last_year": 1981,
+"original_run": "1979-1981",
+"q": "rerun"
+},
+{
+"title": "CHiPs",
+"net": "nbc",
+"first_year": 1977,
+"last_year": 1983,
+"original_run": "1977-1983",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Emergency!",
+"net": "nbc",
+"first_year": 1972,
+"last_year": 1977,
+"original_run": "1972-1977",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Adam-12",
+"net": "nbc",
+"first_year": 1968,
+"last_year": 1975,
+"original_run": "1968-1975",
+"q": "rerun",
+"alt": [
+"Adam 12"
+]
+},
+{
+"title": "Dragnet",
+"net": "nbc",
+"first_year": 1967,
+"last_year": 1970,
+"original_run": "1967-1970",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Bonanza",
+"net": "nbc",
+"first_year": 1959,
+"last_year": 1973,
+"original_run": "1959-1973",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Gunsmoke",
+"net": "cbs",
+"first_year": 1955,
+"last_year": 1975,
+"original_run": "1955-1975",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The Big Valley",
+"net": "abc",
+"first_year": 1965,
+"last_year": 1969,
+"original_run": "1965-1969",
+"q": "rerun"
+},
+{
+"title": "The Rifleman",
+"net": "abc",
+"first_year": 1958,
+"last_year": 1963,
+"original_run": "1958-1963",
+"q": "rerun"
+},
+{
+"title": "Rawhide",
+"net": "cbs",
+"first_year": 1959,
+"last_year": 1965,
+"original_run": "1959-1965",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Wagon Train",
+"net": "nbc",
+"first_year": 1957,
+"last_year": 1965,
+"original_run": "1957-1965",
+"q": "rerun"
+},
+{
+"title": "The Virginian",
+"net": "nbc",
+"first_year": 1962,
+"last_year": 1971,
+"original_run": "1962-1971",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The High Chaparral",
+"net": "nbc",
+"first_year": 1967,
+"last_year": 1971,
+"original_run": "1967-1971",
+"q": "rerun",
+"alt": [
+"High Chaparral"
+]
+},
+{
+"title": "The Wild Wild West",
+"net": "cbs",
+"first_year": 1965,
+"last_year": 1969,
+"original_run": "1965-1969",
+"q": "rerun",
+"ambiguous": true,
+"alt": [
+"Wild Wild West"
+]
+},
+{
+"title": "Have Gun - Will Travel",
+"net": "cbs",
+"first_year": 1957,
+"last_year": 1963,
+"original_run": "1957-1963",
+"q": "rerun",
+"alt": [
+"Have Gun Will Travel"
+]
+},
+{
+"title": "The Rockford Files",
+"net": "nbc",
+"first_year": 1974,
+"last_year": 1980,
+"original_run": "1974-1980",
+"q": "rerun",
+"alt": [
+"Rockford Files"
+]
+},
+{
+"title": "Kojak",
+"net": "cbs",
+"first_year": 1973,
+"last_year": 1978,
+"original_run": "1973-1978",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Charlie's Angels",
+"net": "abc",
+"first_year": 1976,
+"last_year": 1981,
+"original_run": "1976-1981",
+"q": "rerun",
+"ambiguous": true,
+"alt": [
+"Charlies Angels"
+]
+},
+{
+"title": "Hawaii Five-O",
+"net": "cbs",
+"first_year": 1968,
+"last_year": 1980,
+"original_run": "1968-1980",
+"q": "rerun",
+"ambiguous": true,
+"alt": [
+"Hawaii Five O"
+]
+},
+{
+"title": "Mission: Impossible",
+"net": "cbs",
+"first_year": 1966,
+"last_year": 1973,
+"original_run": "1966-1973",
+"q": "rerun",
+"ambiguous": true,
+"alt": [
+"Mission Impossible"
+]
+},
+{
+"title": "Star Trek",
+"net": "nbc",
+"first_year": 1966,
+"last_year": 1969,
+"original_run": "1966-1969",
+"q": "rerun",
+"ambiguous": true,
+"alt": [
+"Star Trek The Original Series",
+"Star Trek TOS"
+]
+},
+{
+"title": "Perry Mason",
+"net": "cbs",
+"first_year": 1957,
+"last_year": 1966,
+"original_run": "1957-1966",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Little House on the Prairie",
+"net": "nbc",
+"first_year": 1974,
+"last_year": 1983,
+"original_run": "1974-1983",
+"q": "rerun"
+},
+{
+"title": "The Waltons",
+"net": "cbs",
+"first_year": 1972,
+"last_year": 1981,
+"original_run": "1972-1981",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Starsky & Hutch",
+"net": "abc",
+"first_year": 1975,
+"last_year": 1979,
+"original_run": "1975-1979",
+"q": "rerun",
+"ambiguous": true,
+"alt": [
+"Starsky and Hutch"
+]
+},
+{
+"title": "The Streets of San Francisco",
+"net": "abc",
+"first_year": 1972,
+"last_year": 1977,
+"original_run": "1972-1977",
+"q": "rerun",
+"alt": [
+"Streets of San Francisco"
+]
+},
+{
+"title": "Barnaby Jones",
+"net": "cbs",
+"first_year": 1973,
+"last_year": 1980,
+"original_run": "1973-1980",
+"q": "rerun"
+},
+{
+"title": "Cannon",
+"net": "cbs",
+"first_year": 1971,
+"last_year": 1976,
+"original_run": "1971-1976",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Mannix",
+"net": "cbs",
+"first_year": 1967,
+"last_year": 1975,
+"original_run": "1967-1975",
+"q": "rerun"
+},
+{
+"title": "Ironside",
+"net": "nbc",
+"first_year": 1967,
+"last_year": 1975,
+"original_run": "1967-1975",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The Fugitive",
+"net": "abc",
+"first_year": 1963,
+"last_year": 1967,
+"original_run": "1963-1967",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Quincy, M.E.",
+"net": "nbc",
+"first_year": 1976,
+"last_year": 1983,
+"original_run": "1976-1983",
+"q": "rerun",
+"alt": [
+"Quincy ME",
+"Quincy M.E"
+]
+},
+{
+"title": "Hart to Hart",
+"net": "abc",
+"first_year": 1979,
+"last_year": 1984,
+"original_run": "1979-1984",
+"q": "rerun"
+},
+{
+"title": "Vega$",
+"net": "abc",
+"first_year": 1978,
+"last_year": 1981,
+"original_run": "1978-1981",
+"q": "rerun",
+"ambiguous": true,
+"alt": [
+"Vegas"
+]
+},
+{
+"title": "Fantasy Island",
+"net": "abc",
+"first_year": 1977,
+"last_year": 1984,
+"original_run": "1977-1984",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The Love Boat",
+"net": "abc",
+"first_year": 1977,
+"last_year": 1986,
+"original_run": "1977-1986",
+"q": "prime",
+"alt": [
+"Love Boat"
+],
+"slots": [
+[
+1977,
+1985,
+"abc",
+6,
+"21:00"
+]
+]
+},
+{
+"title": "Hotel",
+"net": "abc",
+"first_year": 1983,
+"last_year": 1988,
+"original_run": "1983-1988",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1983,
+1987,
+"abc",
+3,
+"22:00"
+]
+]
+},
+{
+"title": "Highway to Heaven",
+"net": "nbc",
+"first_year": 1984,
+"last_year": 1989,
+"original_run": "1984-1989",
+"q": "prime",
+"slots": [
+[
+1984,
+1988,
+"nbc",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Our House",
+"net": "nbc",
+"first_year": 1986,
+"last_year": 1988,
+"original_run": "1986-1988",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Trapper John, M.D.",
+"net": "cbs",
+"first_year": 1979,
+"last_year": 1986,
+"original_run": "1979-1986",
+"q": "prime",
+"alt": [
+"Trapper John MD",
+"Trapper John"
+]
+},
+{
+"title": "Lou Grant",
+"net": "cbs",
+"first_year": 1977,
+"last_year": 1982,
+"original_run": "1977-1982",
+"q": "rerun"
+},
+{
+"title": "Kung Fu",
+"net": "abc",
+"first_year": 1972,
+"last_year": 1975,
+"original_run": "1972-1975",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The Man from U.N.C.L.E.",
+"net": "nbc",
+"first_year": 1964,
+"last_year": 1968,
+"original_run": "1964-1968",
+"q": "rerun",
+"alt": [
+"Man from UNCLE",
+"The Man from UNCLE"
+]
+},
+{
+"title": "Lost in Space",
+"net": "cbs",
+"first_year": 1965,
+"last_year": 1968,
+"original_run": "1965-1968",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Voyage to the Bottom of the Sea",
+"net": "abc",
+"first_year": 1964,
+"last_year": 1968,
+"original_run": "1964-1968",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The Time Tunnel",
+"net": "abc",
+"first_year": 1966,
+"last_year": 1967,
+"original_run": "1966-1967",
+"q": "rerun",
+"alt": [
+"Time Tunnel"
+]
+},
+{
+"title": "Land of the Lost",
+"net": "nbc",
+"first_year": 1974,
+"last_year": 1976,
+"original_run": "1974-1976",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Combat!",
+"net": "abc",
+"first_year": 1962,
+"last_year": 1967,
+"original_run": "1962-1967",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The Untouchables",
+"net": "abc",
+"first_year": 1959,
+"last_year": 1963,
+"original_run": "1959-1963",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Route 66",
+"net": "cbs",
+"first_year": 1960,
+"last_year": 1964,
+"original_run": "1960-1964",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Daniel Boone",
+"net": "nbc",
+"first_year": 1964,
+"last_year": 1970,
+"original_run": "1964-1970",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "Lassie",
+"net": "cbs",
+"first_year": 1954,
+"last_year": 1973,
+"original_run": "1954-1973",
+"q": "rerun",
+"ambiguous": true
+},
+{
+"title": "The Dukes of Hazzard",
+"net": "cbs",
+"first_year": 1979,
+"last_year": 1985,
+"original_run": "1979-1985",
+"q": "prime",
+"alt": [
+"Dukes of Hazzard"
+],
+"slots": [
+[
+1979,
+1985,
+"cbs",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "The Greatest American Hero",
+"net": "abc",
+"first_year": 1981,
+"last_year": 1983,
+"original_run": "1981-1983",
+"q": "prime",
+"alt": [
+"Greatest American Hero"
+]
+},
+{
+"title": "B.J. and the Bear",
+"net": "nbc",
+"first_year": 1979,
+"last_year": 1981,
+"original_run": "1979-1981",
+"q": "rerun",
+"alt": [
+"BJ and the Bear"
+]
+},
+{
+"title": "Manimal",
+"net": "nbc",
+"first_year": 1983,
+"last_year": 1983,
+"original_run": "1983-1983",
+"q": "prime"
+},
+{
+"title": "Tales of the Gold Monkey",
+"net": "abc",
+"first_year": 1982,
+"last_year": 1983,
+"original_run": "1982-1983",
+"q": "prime"
+},
+{
+"title": "Voyagers!",
+"net": "nbc",
+"first_year": 1982,
+"last_year": 1983,
+"original_run": "1982-1983",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Powers of Matthew Star",
+"net": "nbc",
+"first_year": 1982,
+"last_year": 1983,
+"original_run": "1982-1983",
+"q": "prime",
+"alt": [
+"Powers of Matthew Star"
+]
+},
+{
+"title": "Cover Up",
+"net": "cbs",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Crazy Like a Fox",
+"net": "cbs",
+"first_year": 1984,
+"last_year": 1986,
+"original_run": "1984-1986",
+"q": "prime"
+},
+{
+"title": "Finder of Lost Loves",
+"net": "abc",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "prime"
+},
+{
+"title": "Partners in Crime",
+"net": "nbc",
+"first_year": 1984,
+"last_year": 1984,
+"original_run": "1984-1984",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Hawaiian Heat",
+"net": "abc",
+"first_year": 1984,
+"last_year": 1984,
+"original_run": "1984-1984",
+"q": "prime"
+},
+{
+"title": "Otherworld",
+"net": "cbs",
+"first_year": 1985,
+"last_year": 1985,
+"original_run": "1985-1985",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Insiders",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Lady Blue",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "MacGruder and Loud",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1985,
+"original_run": "1985-1985",
+"q": "prime"
+},
+{
+"title": "Our Family Honor",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "prime"
+},
+{
+"title": "The Colbys",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1987,
+"original_run": "1985-1987",
+"q": "prime"
+},
+{
+"title": "Starman",
+"net": "abc",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Sidekicks",
+"net": "abc",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Heart of the City",
+"net": "abc",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Wizard",
+"net": "cbs",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Outlaws",
+"net": "cbs",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Houston Knights",
+"net": "cbs",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "prime"
+},
+{
+"title": "Private Eye",
+"net": "nbc",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "J.J. Starbuck",
+"net": "nbc",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "prime",
+"alt": [
+"JJ Starbuck"
+]
+},
+{
+"title": "Max Headroom",
+"net": "abc",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Probe",
+"net": "abc",
+"first_year": 1988,
+"last_year": 1988,
+"original_run": "1988-1988",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Something Is Out There",
+"net": "nbc",
+"first_year": 1988,
+"last_year": 1988,
+"original_run": "1988-1988",
+"q": "prime"
+},
+{
+"title": "Midnight Caller",
+"net": "nbc",
+"first_year": 1988,
+"last_year": 1991,
+"original_run": "1988-1991",
+"q": "prime"
+},
+{
+"title": "Paradise",
+"net": "cbs",
+"first_year": 1988,
+"last_year": 1991,
+"original_run": "1988-1991",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Mission: Impossible (1988)",
+"net": "abc",
+"first_year": 1988,
+"last_year": 1990,
+"original_run": "1988-1990",
+"q": "prime",
+"alt": [
+"Mission Impossible 1988"
+]
+},
+{
+"title": "Booker",
+"net": "fox",
+"first_year": 1989,
+"last_year": 1990,
+"original_run": "1989-1990",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Hardball",
+"net": "nbc",
+"first_year": 1989,
+"last_year": 1990,
+"original_run": "1989-1990",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Mancuso, F.B.I.",
+"net": "nbc",
+"first_year": 1989,
+"last_year": 1990,
+"original_run": "1989-1990",
+"q": "prime",
+"alt": [
+"Mancuso FBI"
+]
+},
+{
+"title": "Island Son",
+"net": "cbs",
+"first_year": 1989,
+"last_year": 1990,
+"original_run": "1989-1990",
+"q": "prime"
+},
+{
+"title": "B.L. Stryker",
+"net": "abc",
+"first_year": 1989,
+"last_year": 1990,
+"original_run": "1989-1990",
+"q": "prime",
+"alt": [
+"BL Stryker"
+]
+},
+{
+"title": "Gabriel's Fire",
+"net": "abc",
+"first_year": 1990,
+"last_year": 1991,
+"original_run": "1990-1991",
+"q": "prime",
+"alt": [
+"Gabriels Fire"
+]
+},
+{
+"title": "Equal Justice",
+"net": "abc",
+"first_year": 1990,
+"last_year": 1991,
+"original_run": "1990-1991",
+"q": "prime"
+},
+{
+"title": "Cop Rock",
+"net": "abc",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "prime"
+},
+{
+"title": "Law & Order: Criminal Intent",
+"net": "nbc",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "prime",
+"alt": [
+"Law and Order Criminal Intent"
+]
+},
+{
+"title": "The Trials of Rosie O'Neill",
+"net": "cbs",
+"first_year": 1990,
+"last_year": 1992,
+"original_run": "1990-1992",
+"q": "prime",
+"alt": [
+"Trials of Rosie ONeill"
+]
+},
+{
+"title": "Dark Justice",
+"net": "cbs",
+"first_year": 1991,
+"last_year": 1993,
+"original_run": "1991-1993",
+"q": "prime"
+},
+{
+"title": "Street Justice",
+"net": "syn",
+"first_year": 1991,
+"last_year": 1993,
+"original_run": "1991-1993",
+"q": "prime"
+},
+{
+"title": "The Young Indiana Jones Chronicles",
+"net": "abc",
+"first_year": 1992,
+"last_year": 1993,
+"original_run": "1992-1993",
+"q": "prime",
+"alt": [
+"Young Indiana Jones Chronicles",
+"Young Indiana Jones"
+]
+},
+{
+"title": "Covington Cross",
+"net": "abc",
+"first_year": 1992,
+"last_year": 1992,
+"original_run": "1992-1992",
+"q": "prime"
+},
+{
+"title": "The Heights",
+"net": "fox",
+"first_year": 1992,
+"last_year": 1992,
+"original_run": "1992-1992",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Raven",
+"net": "cbs",
+"first_year": 1992,
+"last_year": 1993,
+"original_run": "1992-1993",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Untouchables (1993)",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "prime"
+},
+{
+"title": "SeaQuest 2032",
+"net": "nbc",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "prime"
+},
+{
+"title": "Lonesome Dove: The Series",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1996,
+"original_run": "1994-1996",
+"q": "prime",
+"alt": [
+"Lonesome Dove The Series",
+"Lonesome Dove The Outlaw Years"
+]
+},
+{
+"title": "Models Inc.",
+"net": "fox",
+"first_year": 1994,
+"last_year": 1995,
+"original_run": "1994-1995",
+"q": "prime",
+"alt": [
+"Models Inc"
+]
+},
+{
+"title": "Under Suspicion",
+"net": "cbs",
+"first_year": 1994,
+"last_year": 1995,
+"original_run": "1994-1995",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "New York Undercover",
+"net": "fox",
+"first_year": 1994,
+"last_year": 1998,
+"original_run": "1994-1998",
+"q": "prime",
+"slots": [
+[
+1994,
+1998,
+"fox",
+4,
+"21:00"
+]
+]
+},
+{
+"title": "Central Park West",
+"net": "cbs",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "prime"
+},
+{
+"title": "American Gothic",
+"net": "cbs",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Murder One",
+"net": "abc",
+"first_year": 1995,
+"last_year": 1997,
+"original_run": "1995-1997",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Strange Luck",
+"net": "fox",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "prime"
+},
+{
+"title": "The Client",
+"net": "cbs",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Savannah",
+"net": "wb",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Promised Land",
+"net": "cbs",
+"first_year": 1996,
+"last_year": 1999,
+"original_run": "1996-1999",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Brimstone",
+"net": "fox",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Martial Law",
+"net": "cbs",
+"first_year": 1998,
+"last_year": 2000,
+"original_run": "1998-2000",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Vengeance Unlimited",
+"net": "abc",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "prime"
+},
+{
+"title": "L.A. Heat",
+"net": "tnt",
+"first_year": 1999,
+"last_year": 1999,
+"original_run": "1999-1999",
+"q": "prime",
+"alt": [
+"LA Heat"
+]
+},
+{
+"title": "Third Watch",
+"net": "nbc",
+"first_year": 1999,
+"last_year": 2005,
+"original_run": "1999-2005",
+"q": "prime"
+},
+{
+"title": "Judging Amy",
+"net": "cbs",
+"first_year": 1999,
+"last_year": 2005,
+"original_run": "1999-2005",
+"q": "prime"
+},
+{
+"title": "Providence",
+"net": "nbc",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Once and Again",
+"net": "abc",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "prime"
+},
+{
+"title": "Popular",
+"net": "wb",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Freaks and Geeks",
+"net": "nbc",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "prime"
+},
+{
+"title": "Now and Again",
+"net": "cbs",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Harsh Realm",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "prime"
+},
+{
+"title": "Boston Public",
+"net": "fox",
+"first_year": 2000,
+"last_year": 2004,
+"original_run": "2000-2004",
+"q": "prime"
+},
+{
+"title": "Ed",
+"net": "nbc",
+"first_year": 2000,
+"last_year": 2004,
+"original_run": "2000-2004",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Fugitive (2000)",
+"net": "cbs",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "prime"
+},
+{
+"title": "Level 9",
+"net": "upn",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "prime"
+},
+{
+"title": "FreakyLinks",
+"net": "fox",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "prime"
+},
+{
+"title": "The Invisible Man",
+"net": "syfy",
+"first_year": 2000,
+"last_year": 2002,
+"original_run": "2000-2002",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Crossing Jordan",
+"net": "nbc",
+"first_year": 2001,
+"last_year": 2007,
+"original_run": "2001-2007",
+"q": "prime"
+},
+{
+"title": "The Agency",
+"net": "cbs",
+"first_year": 2001,
+"last_year": 2003,
+"original_run": "2001-2003",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The District",
+"net": "cbs",
+"first_year": 2000,
+"last_year": 2004,
+"original_run": "2000-2004",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Guardian",
+"net": "cbs",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Six Feet Under",
+"net": "hbo",
+"first_year": 2001,
+"last_year": 2005,
+"original_run": "2001-2005",
+"q": "prime"
+},
+{
+"title": "Without a Trace",
+"net": "cbs",
+"first_year": 2002,
+"last_year": 2009,
+"original_run": "2002-2009",
+"q": "prime"
+},
+{
+"title": "CSI: Miami",
+"net": "cbs",
+"first_year": 2002,
+"last_year": 2012,
+"original_run": "2002-2012",
+"q": "prime",
+"alt": [
+"CSI Miami"
+]
+},
+{
+"title": "Firefly",
+"net": "fox",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "John Doe",
+"net": "fox",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Birds of Prey",
+"net": "wb",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Everwood",
+"net": "wb",
+"first_year": 2002,
+"last_year": 2006,
+"original_run": "2002-2006",
+"q": "prime"
+},
+{
+"title": "The Shield",
+"net": "fx",
+"first_year": 2002,
+"last_year": 2008,
+"original_run": "2002-2008",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Monk",
+"net": "usa",
+"first_year": 2002,
+"last_year": 2009,
+"original_run": "2002-2009",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Dead Zone",
+"net": "usa",
+"first_year": 2002,
+"last_year": 2007,
+"original_run": "2002-2007",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "NCIS",
+"net": "cbs",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Cold Case",
+"net": "cbs",
+"first_year": 2003,
+"last_year": 2010,
+"original_run": "2003-2010",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The O.C.",
+"net": "fox",
+"first_year": 2003,
+"last_year": 2007,
+"original_run": "2003-2007",
+"q": "prime",
+"alt": [
+"The OC"
+]
+},
+{
+"title": "One Tree Hill",
+"net": "wb",
+"first_year": 2003,
+"last_year": 2012,
+"original_run": "2003-2012",
+"q": "prime"
+},
+{
+"title": "Tru Calling",
+"net": "fox",
+"first_year": 2003,
+"last_year": 2005,
+"original_run": "2003-2005",
+"q": "prime"
+},
+{
+"title": "Las Vegas",
+"net": "nbc",
+"first_year": 2003,
+"last_year": 2008,
+"original_run": "2003-2008",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Lost",
+"net": "abc",
+"first_year": 2004,
+"last_year": 2004,
+"original_run": "2004-2004",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Tales from the Crypt",
+"net": "hbo",
+"first_year": 1989,
+"last_year": 1996,
+"original_run": "1989-1996",
+"q": "prime"
+},
+{
+"title": "The Hitchhiker",
+"net": "hbo",
+"first_year": 1983,
+"last_year": 1991,
+"original_run": "1983-1991",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Ray Bradbury Theater",
+"net": "usa",
+"first_year": 1985,
+"last_year": 1992,
+"original_run": "1985-1992",
+"q": "prime",
+"alt": [
+"The Ray Bradbury Theater"
+]
+},
+{
+"title": "Counterstrike",
+"net": "usa",
+"first_year": 1990,
+"last_year": 1993,
+"original_run": "1990-1993",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Swamp Thing",
+"net": "usa",
+"first_year": 1990,
+"last_year": 1993,
+"original_run": "1990-1993",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The New Adventures of Robin Hood",
+"net": "tnt",
+"first_year": 1997,
+"last_year": 1999,
+"original_run": "1997-1999",
+"q": "prime",
+"alt": [
+"New Adventures of Robin Hood"
+]
+},
+{
+"title": "Mortal Kombat: Conquest",
+"net": "syn",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "prime",
+"alt": [
+"Mortal Kombat Conquest"
+]
+},
+{
+"title": "The Crow: Stairway to Heaven",
+"net": "syn",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "prime",
+"alt": [
+"The Crow Stairway to Heaven"
+]
+},
+{
+"title": "Team Knight Rider",
+"net": "syn",
+"first_year": 1997,
+"last_year": 1998,
+"original_run": "1997-1998",
+"q": "prime"
+},
+{
+"title": "Night Man",
+"net": "syn",
+"first_year": 1997,
+"last_year": 1999,
+"original_run": "1997-1999",
+"q": "prime",
+"ambiguous": true,
+"alt": [
+"NightMan"
+]
+},
+{
+"title": "Soldier of Fortune, Inc.",
+"net": "syn",
+"first_year": 1997,
+"last_year": 1999,
+"original_run": "1997-1999",
+"q": "prime",
+"alt": [
+"Soldier of Fortune Inc"
+]
+},
+{
+"title": "Pensacola: Wings of Gold",
+"net": "syn",
+"first_year": 1997,
+"last_year": 2000,
+"original_run": "1997-2000",
+"q": "prime",
+"alt": [
+"Pensacola Wings of Gold"
+]
+},
+{
+"title": "Air America",
+"net": "syn",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Sheena",
+"net": "syn",
+"first_year": 2000,
+"last_year": 2002,
+"original_run": "2000-2002",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "She Spies",
+"net": "syn",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "prime"
+},
+{
+"title": "Psi Factor: Chronicles of the Paranormal",
+"net": "syn",
+"first_year": 1996,
+"last_year": 2000,
+"original_run": "1996-2000",
+"q": "prime",
+"alt": [
+"Psi Factor"
+]
+},
+{
+"title": "Sightings",
+"net": "fox",
+"first_year": 1992,
+"last_year": 1997,
+"original_run": "1992-1997",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Cops",
+"net": "fox",
+"first_year": 1989,
+"last_year": 2004,
+"original_run": "1989-2004",
+"q": "prime",
+"ambiguous": true,
+"slots": [
+[
+1989,
+2004,
+"fox",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "America's Most Wanted",
+"net": "fox",
+"first_year": 1988,
+"last_year": 2004,
+"original_run": "1988-2004",
+"q": "prime",
+"alt": [
+"Americas Most Wanted"
+],
+"slots": [
+[
+1994,
+2004,
+"fox",
+6,
+"21:00"
+]
+]
+},
+{
+"title": "Real Stories of the Highway Patrol",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1999,
+"original_run": "1993-1999",
+"q": "prime"
+},
+{
+"title": "Wild Palms",
+"net": "abc",
+"first_year": 1993,
+"last_year": 1993,
+"original_run": "1993-1993",
+"q": "prime"
+},
+{
+"title": "Tales of the City",
+"net": "pbs",
+"first_year": 1994,
+"last_year": 1994,
+"original_run": "1994-1994",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "North and South",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "Lonesome Dove",
+"net": "cbs",
+"first_year": 1989,
+"last_year": 1989,
+"original_run": "1989-1989",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Winds of War",
+"net": "abc",
+"first_year": 1983,
+"last_year": 1983,
+"original_run": "1983-1983",
+"q": "prime",
+"alt": [
+"Winds of War"
+]
+},
+{
+"title": "War and Remembrance",
+"net": "abc",
+"first_year": 1988,
+"last_year": 1989,
+"original_run": "1988-1989",
+"q": "prime"
+},
+{
+"title": "Shogun",
+"net": "nbc",
+"first_year": 1980,
+"last_year": 1980,
+"original_run": "1980-1980",
+"q": "prime",
+"ambiguous": true
+},
+{
+"title": "The Thorn Birds",
+"net": "abc",
+"first_year": 1983,
+"last_year": 1983,
+"original_run": "1983-1983",
+"q": "prime",
+"alt": [
+"Thorn Birds"
+]
+},
+{
+"title": "Amerika",
+"net": "abc",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "prime",
+"ambiguous": true
+}
+]
