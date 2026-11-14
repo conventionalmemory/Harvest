@@ -106,6 +106,8 @@ def subj_ok(s, subj):
 def keep(x):
     if x.get('ct') == 'tape': return bool(tape(x['t']))
     s = BYT.get(x['k'])
+    if re.match(r'(twitch|bliptv|podcast)', x['i'].lower()): return False
+    if x.get('via') and not match(s, x['t']) and not re.search(r'(?i)\bs\d{1,2}\s?e\d{1,3}\b|\b\d{1,2}x\d{2}\b', x['t']): return False
     if not s or not ok_title(x['t']) or not (match(s, x['t']) or x.get('via')) or not yr_ok(s, x['t']): return False
     if s['q'] in DATED and not era(s, x['t'], x.get('d'), x.get('y')): return False
     if set(x.get('c') or []) & XCOL: return False
