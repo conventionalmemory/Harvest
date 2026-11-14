@@ -1,7 +1,7 @@
 {
-"updated": "2026-11-14 14:02 UTC",
-"items": 777,
-"hours": 8398,
+"updated": "2026-11-14 22:45 UTC",
+"items": 834,
+"hours": 8903,
 "priority": {
 "0": {
 "shows": 7,
@@ -14,12 +14,12 @@
 },
 "1": {
 "shows": 355,
-"found": 67,
+"found": 65,
 "thin": 70,
-"maybe": 49,
-"missing": 169,
-"items": 735,
-"hours": 6564
+"maybe": 59,
+"missing": 161,
+"items": 792,
+"hours": 7070
 },
 "2": {
 "shows": 523,
@@ -314,7 +314,7 @@
 2000,
 2004
 ],
-"guide_episodes": 13,
+"guide_episodes": 14,
 "items": 3,
 "maybe": 0,
 "files": 3,
@@ -368,7 +368,7 @@
 2001,
 2004
 ],
-"guide_episodes": 157,
+"guide_episodes": 195,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -386,7 +386,7 @@
 1968,
 2004
 ],
-"guide_episodes": 89,
+"guide_episodes": 101,
 "items": 13,
 "maybe": 7,
 "files": 13,
@@ -404,7 +404,7 @@
 1996,
 2007
 ],
-"guide_episodes": 177,
+"guide_episodes": 188,
 "items": 1,
 "maybe": 1,
 "files": 1,
@@ -603,13 +603,13 @@
 1997
 ],
 "guide_episodes": 102,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 52,
+"hours": 20,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Access Hollywood",
@@ -656,7 +656,7 @@
 1970,
 2004
 ],
-"guide_episodes": 1441,
+"guide_episodes": 1528,
 "items": 16,
 "maybe": 1,
 "files": 1507,
@@ -675,10 +675,10 @@
 1979
 ],
 "guide_episodes": 210,
-"items": 7,
-"maybe": 1,
-"files": 235,
-"hours": 112,
+"items": 8,
+"maybe": 2,
+"files": 347,
+"hours": 162,
 "episodes": 200,
 "other_files": 23,
 "status": "FOUND"
@@ -710,7 +710,7 @@
 1988,
 2004
 ],
-"guide_episodes": 195,
+"guide_episodes": 207,
 "items": 2,
 "maybe": 0,
 "files": 210,
@@ -728,7 +728,7 @@
 2003,
 2004
 ],
-"guide_episodes": 21,
+"guide_episodes": 34,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -746,7 +746,7 @@
 2003,
 2004
 ],
-"guide_episodes": 32,
+"guide_episodes": 38,
 "items": 1,
 "maybe": 1,
 "files": 2,
@@ -890,7 +890,7 @@
 2003,
 2004
 ],
-"guide_episodes": 22,
+"guide_episodes": 28,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -998,7 +998,7 @@
 2004,
 2004
 ],
-"guide_episodes": 32,
+"guide_episodes": 46,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1179,13 +1179,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "CBS Evening News",
@@ -1251,10 +1251,10 @@
 2000
 ],
 "guide_episodes": 0,
-"items": 2,
-"maybe": 2,
-"files": 2,
-"hours": 7,
+"items": 3,
+"maybe": 3,
+"files": 3,
+"hours": 13,
 "episodes": 0,
 "other_files": 0,
 "status": "MAYBE"
@@ -1305,10 +1305,10 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 5,
-"maybe": 4,
-"files": 9,
-"hours": 4,
+"items": 6,
+"maybe": 5,
+"files": 10,
+"hours": 6,
 "episodes": 0,
 "other_files": 2,
 "status": "THIN"
@@ -1322,7 +1322,7 @@
 2000,
 2004
 ],
-"guide_episodes": 92,
+"guide_episodes": 102,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1340,7 +1340,7 @@
 2002,
 2004
 ],
-"guide_episodes": 48,
+"guide_episodes": 59,
 "items": 1,
 "maybe": 1,
 "files": 2,
@@ -1359,10 +1359,10 @@
 2002
 ],
 "guide_episodes": 77,
-"items": 1,
-"maybe": 0,
-"files": 73,
-"hours": 26,
+"items": 3,
+"maybe": 2,
+"files": 79,
+"hours": 28,
 "episodes": 72,
 "other_files": 0,
 "status": "FOUND"
@@ -1376,7 +1376,7 @@
 1998,
 2006
 ],
-"guide_episodes": 134,
+"guide_episodes": 144,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1592,7 +1592,7 @@
 2000,
 2004
 ],
-"guide_episodes": 55,
+"guide_episodes": 58,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -1754,7 +1754,7 @@
 1965,
 2004
 ],
-"guide_episodes": 4802,
+"guide_episodes": 4904,
 "items": 2,
 "maybe": 0,
 "files": 7,
@@ -1809,10 +1809,10 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 6,
-"maybe": 1,
-"files": 68,
-"hours": 28,
+"items": 7,
+"maybe": 2,
+"files": 120,
+"hours": 51,
 "episodes": 58,
 "other_files": 2,
 "status": "FOUND"
@@ -1844,7 +1844,7 @@
 2004,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 10,
 "items": 1,
 "maybe": 0,
 "files": 1,
@@ -1934,7 +1934,7 @@
 2002,
 2004
 ],
-"guide_episodes": 343,
+"guide_episodes": 422,
 "items": 1,
 "maybe": 1,
 "files": 1,
@@ -2024,7 +2024,7 @@
 1994,
 2009
 ],
-"guide_episodes": 223,
+"guide_episodes": 232,
 "items": 1,
 "maybe": 1,
 "files": 1,
@@ -2385,10 +2385,10 @@
 1992
 ],
 "guide_episodes": 35,
-"items": 3,
-"maybe": 3,
-"files": 3,
-"hours": 2,
+"items": 4,
+"maybe": 4,
+"files": 60,
+"hours": 23,
 "episodes": 0,
 "other_files": 0,
 "status": "MAYBE"
@@ -2402,7 +2402,7 @@
 2000,
 2004
 ],
-"guide_episodes": 87,
+"guide_episodes": 97,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2420,7 +2420,7 @@
 2000,
 2004
 ],
-"guide_episodes": 93,
+"guide_episodes": 104,
 "items": 1,
 "maybe": 0,
 "files": 92,
@@ -2438,7 +2438,7 @@
 1999,
 2004
 ],
-"guide_episodes": 110,
+"guide_episodes": 117,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2457,10 +2457,10 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 9,
-"maybe": 9,
-"files": 10,
-"hours": 5,
+"items": 10,
+"maybe": 10,
+"files": 11,
+"hours": 7,
 "episodes": 0,
 "other_files": 0,
 "status": "MAYBE"
@@ -2762,7 +2762,7 @@
 2004,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 7,
 "items": 2,
 "maybe": 0,
 "files": 23,
@@ -2799,12 +2799,12 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 18,
-"maybe": 11,
-"files": 20,
-"hours": 27,
+"items": 20,
+"maybe": 12,
+"files": 64,
+"hours": 136,
 "episodes": 0,
-"other_files": 7,
+"other_files": 49,
 "status": "FOUND"
 },
 {
@@ -2924,7 +2924,7 @@
 1994,
 2004
 ],
-"guide_episodes": 122,
+"guide_episodes": 131,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -2996,7 +2996,7 @@
 1995,
 2005
 ],
-"guide_episodes": 205,
+"guide_episodes": 215,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3014,7 +3014,7 @@
 1984,
 2004
 ],
-"guide_episodes": 4530,
+"guide_episodes": 4615,
 "items": 8,
 "maybe": 4,
 "files": 8,
@@ -3032,7 +3032,7 @@
 2003,
 2004
 ],
-"guide_episodes": 130,
+"guide_episodes": 182,
 "items": 1,
 "maybe": 0,
 "files": 1,
@@ -3212,11 +3212,11 @@
 1990,
 2010
 ],
-"guide_episodes": 325,
-"items": 4,
-"maybe": 3,
-"files": 7,
-"hours": 5,
+"guide_episodes": 336,
+"items": 8,
+"maybe": 7,
+"files": 11,
+"hours": 8,
 "episodes": 0,
 "other_files": 1,
 "status": "THIN"
@@ -3230,7 +3230,7 @@
 1999,
 2004
 ],
-"guide_episodes": 116,
+"guide_episodes": 126,
 "items": 5,
 "maybe": 4,
 "files": 150,
@@ -3249,13 +3249,13 @@
 1963
 ],
 "guide_episodes": 234,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Lifetime Original Movies",
@@ -3285,10 +3285,10 @@
 1983
 ],
 "guide_episodes": 200,
-"items": 5,
-"maybe": 3,
-"files": 115,
-"hours": 92,
+"items": 7,
+"maybe": 5,
+"files": 134,
+"hours": 107,
 "episodes": 1,
 "other_files": 1,
 "status": "THIN"
@@ -3356,14 +3356,14 @@
 2004,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 11,
 "items": 1,
-"maybe": 0,
-"files": 25,
-"hours": 18,
-"episodes": 25,
+"maybe": 1,
+"files": 1,
+"hours": 1,
+"episodes": 0,
 "other_files": 0,
-"status": "FOUND"
+"status": "MAYBE"
 },
 {
 "title": "M*A*S*H",
@@ -3591,10 +3591,10 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 1,
-"maybe": 1,
-"files": 1,
-"hours": 3,
+"items": 3,
+"maybe": 3,
+"files": 3,
+"hours": 7,
 "episodes": 0,
 "other_files": 0,
 "status": "MAYBE"
@@ -3627,13 +3627,13 @@
 2004
 ],
 "guide_episodes": 37,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Monster Garage",
@@ -3644,7 +3644,7 @@
 2002,
 2004
 ],
-"guide_episodes": 51,
+"guide_episodes": 59,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -3662,7 +3662,7 @@
 2003,
 2004
 ],
-"guide_episodes": 36,
+"guide_episodes": 41,
 "items": 1,
 "maybe": 0,
 "files": 72,
@@ -3860,7 +3860,7 @@
 2003,
 2004
 ],
-"guide_episodes": 23,
+"guide_episodes": 33,
 "items": 3,
 "maybe": 0,
 "files": 3,
@@ -3969,10 +3969,10 @@
 2001
 ],
 "guide_episodes": 122,
-"items": 1,
-"maybe": 1,
-"files": 1,
-"hours": 6,
+"items": 2,
+"maybe": 2,
+"files": 8,
+"hours": 12,
 "episodes": 0,
 "other_files": 0,
 "status": "MAYBE"
@@ -4004,7 +4004,7 @@
 1985,
 2004
 ],
-"guide_episodes": 58,
+"guide_episodes": 61,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4094,11 +4094,11 @@
 1980,
 2004
 ],
-"guide_episodes": 4,
-"items": 8,
-"maybe": 3,
-"files": 13,
-"hours": 9,
+"guide_episodes": 5,
+"items": 9,
+"maybe": 4,
+"files": 14,
+"hours": 12,
 "episodes": 0,
 "other_files": 9,
 "status": "FOUND"
@@ -4112,7 +4112,7 @@
 2003,
 2004
 ],
-"guide_episodes": 24,
+"guide_episodes": 29,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4275,10 +4275,10 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 16,
-"maybe": 6,
-"files": 22,
-"hours": 17,
+"items": 20,
+"maybe": 10,
+"files": 68,
+"hours": 35,
 "episodes": 3,
 "other_files": 13,
 "status": "FOUND"
@@ -4418,7 +4418,7 @@
 2003,
 2004
 ],
-"guide_episodes": 37,
+"guide_episodes": 43,
 "items": 6,
 "maybe": 4,
 "files": 6,
@@ -4454,7 +4454,7 @@
 2003,
 2004
 ],
-"guide_episodes": 26,
+"guide_episodes": 30,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4508,14 +4508,14 @@
 2001,
 2004
 ],
-"guide_episodes": 48,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"guide_episodes": 52,
+"items": 1,
+"maybe": 1,
+"files": 63,
+"hours": 23,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Scrabble",
@@ -4544,7 +4544,7 @@
 2001,
 2004
 ],
-"guide_episodes": 69,
+"guide_episodes": 80,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4562,11 +4562,11 @@
 2000,
 2004
 ],
-"guide_episodes": 39,
-"items": 1,
-"maybe": 1,
-"files": 2,
-"hours": 13,
+"guide_episodes": 44,
+"items": 3,
+"maybe": 3,
+"files": 56,
+"hours": 27,
 "episodes": 0,
 "other_files": 0,
 "status": "MAYBE"
@@ -4724,7 +4724,7 @@
 2001,
 2004
 ],
-"guide_episodes": 66,
+"guide_episodes": 76,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -4760,7 +4760,7 @@
 1971,
 2004
 ],
-"guide_episodes": 1077,
+"guide_episodes": 1085,
 "items": 1,
 "maybe": 0,
 "files": 1,
@@ -4779,13 +4779,13 @@
 2004
 ],
 "guide_episodes": 98,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 111,
+"hours": 22,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Spin City",
@@ -4904,11 +4904,11 @@
 1997,
 2007
 ],
-"guide_episodes": 161,
-"items": 2,
-"maybe": 0,
-"files": 218,
-"hours": 165,
+"guide_episodes": 163,
+"items": 3,
+"maybe": 1,
+"files": 327,
+"hours": 247,
 "episodes": 1,
 "other_files": 217,
 "status": "FOUND"
@@ -4940,7 +4940,7 @@
 2000,
 2006
 ],
-"guide_episodes": 98,
+"guide_episodes": 106,
 "items": 1,
 "maybe": 0,
 "files": 132,
@@ -4976,7 +4976,7 @@
 2000,
 2004
 ],
-"guide_episodes": 122,
+"guide_episodes": 137,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5103,10 +5103,10 @@
 2002
 ],
 "guide_episodes": 0,
-"items": 11,
-"maybe": 9,
-"files": 201,
-"hours": 100,
+"items": 13,
+"maybe": 11,
+"files": 203,
+"hours": 101,
 "episodes": 0,
 "other_files": 189,
 "status": "FOUND"
@@ -5174,7 +5174,7 @@
 1966,
 2004
 ],
-"guide_episodes": 3,
+"guide_episodes": 6,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5210,7 +5210,7 @@
 2001,
 2004
 ],
-"guide_episodes": 61,
+"guide_episodes": 71,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5228,7 +5228,7 @@
 1988,
 2004
 ],
-"guide_episodes": 215,
+"guide_episodes": 218,
 "items": 3,
 "maybe": 0,
 "files": 66,
@@ -5264,7 +5264,7 @@
 2002,
 2004
 ],
-"guide_episodes": 28,
+"guide_episodes": 29,
 "items": 1,
 "maybe": 0,
 "files": 1,
@@ -5282,7 +5282,7 @@
 2002,
 2004
 ],
-"guide_episodes": 48,
+"guide_episodes": 58,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5300,7 +5300,7 @@
 1987,
 2004
 ],
-"guide_episodes": 1436,
+"guide_episodes": 1520,
 "items": 1,
 "maybe": 0,
 "files": 1,
@@ -5337,13 +5337,13 @@
 2000
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 2,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "The Capital Gang",
@@ -5427,12 +5427,12 @@
 1983
 ],
 "guide_episodes": 0,
-"items": 22,
-"maybe": 5,
-"files": 29,
-"hours": 43,
+"items": 24,
+"maybe": 6,
+"files": 32,
+"hours": 47,
 "episodes": 0,
-"other_files": 21,
+"other_files": 23,
 "status": "FOUND"
 },
 {
@@ -5462,7 +5462,7 @@
 2003,
 2004
 ],
-"guide_episodes": 166,
+"guide_episodes": 241,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5588,7 +5588,7 @@
 1998,
 2007
 ],
-"guide_episodes": 149,
+"guide_episodes": 156,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5625,10 +5625,10 @@
 1981
 ],
 "guide_episodes": 120,
-"items": 4,
-"maybe": 0,
-"files": 4,
-"hours": 3,
+"items": 7,
+"maybe": 3,
+"files": 130,
+"hours": 62,
 "episodes": 2,
 "other_files": 2,
 "status": "THIN"
@@ -5679,13 +5679,13 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 4,
 "episodes": 0,
 "other_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "The Oprah Winfrey Show",
@@ -5697,9 +5697,9 @@
 2004
 ],
 "guide_episodes": 22,
-"items": 4,
-"maybe": 2,
-"files": 5,
+"items": 5,
+"maybe": 3,
+"files": 6,
 "hours": 6,
 "episodes": 0,
 "other_files": 3,
@@ -5750,11 +5750,11 @@
 1992,
 2004
 ],
-"guide_episodes": 313,
-"items": 3,
-"maybe": 0,
-"files": 339,
-"hours": 153,
+"guide_episodes": 329,
+"items": 8,
+"maybe": 5,
+"files": 437,
+"hours": 189,
 "episodes": 225,
 "other_files": 82,
 "status": "FOUND"
@@ -5876,7 +5876,7 @@
 1997,
 2004
 ],
-"guide_episodes": 421,
+"guide_episodes": 504,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5894,7 +5894,7 @@
 2002,
 2004
 ],
-"guide_episodes": 25,
+"guide_episodes": 37,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -5930,7 +5930,7 @@
 1973,
 2004
 ],
-"guide_episodes": 915,
+"guide_episodes": 999,
 "items": 2,
 "maybe": 1,
 "files": 2,
@@ -6003,10 +6003,10 @@
 1993
 ],
 "guide_episodes": 195,
-"items": 1,
-"maybe": 0,
-"files": 66,
-"hours": 24,
+"items": 2,
+"maybe": 1,
+"files": 67,
+"hours": 25,
 "episodes": 66,
 "other_files": 0,
 "status": "FOUND"
@@ -6074,7 +6074,7 @@
 2000,
 2004
 ],
-"guide_episodes": 198,
+"guide_episodes": 215,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -6128,7 +6128,7 @@
 2003,
 2004
 ],
-"guide_episodes": 24,
+"guide_episodes": 35,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -6254,7 +6254,7 @@
 2004,
 2004
 ],
-"guide_episodes": 0,
+"guide_episodes": 10,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -6381,10 +6381,10 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 1,
-"maybe": 0,
-"files": 1,
-"hours": 2,
+"items": 2,
+"maybe": 1,
+"files": 8,
+"hours": 10,
 "episodes": 0,
 "other_files": 1,
 "status": "THIN"
@@ -6453,10 +6453,10 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 1,
-"maybe": 1,
-"files": 1,
-"hours": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
 "status": "MAYBE"
@@ -6542,14 +6542,14 @@
 2002,
 2004
 ],
-"guide_episodes": 47,
-"items": 2,
+"guide_episodes": 57,
+"items": 1,
 "maybe": 1,
-"files": 48,
-"hours": 36,
-"episodes": 47,
+"files": 1,
+"hours": 2,
+"episodes": 0,
 "other_files": 0,
-"status": "FOUND"
+"status": "MAYBE"
 },
 {
 "title": "Wonderful World of Disney",
@@ -6597,10 +6597,10 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 3,
-"maybe": 2,
-"files": 3,
-"hours": 5,
+"items": 5,
+"maybe": 4,
+"files": 5,
+"hours": 9,
 "episodes": 0,
 "other_files": 1,
 "status": "THIN"
@@ -6651,10 +6651,10 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 4,
-"maybe": 1,
-"files": 432,
-"hours": 182,
+"items": 7,
+"maybe": 4,
+"files": 436,
+"hours": 190,
 "episodes": 0,
 "other_files": 190,
 "status": "FOUND"
