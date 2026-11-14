@@ -647,7 +647,7 @@ def label(e, lg):
     return '%d %s%s: %s AT %s' % (y, sn, ' GAME %d' % e['g'] if e.get('g') else '', a, h)
 WOMEN = r' (women|womens|ladies|graf|navratilova|evert|seles|hingis|williams|sabatini|sanchez|davenport|capriati|henin|clijsters|pierce|novotna|mandlikova|martinez) '
 MEN = r' (men|mens|gentlemen|sampras|agassi|becker|edberg|lendl|mcenroe|connors|wilander|courier|federer|roddick|hewitt|ivanisevic|rafter|kuerten|chang|stich|cash|kafelnikov|safin|muster|bruguera|korda|krajicek|moya|costa|ferrero|gaudio|philippoussis|nalbandian) '
-DOCRX = r' (nfl films|season in review|year in review|greatest games|nfl yearbook|team yearbook|highlight film|world series film|hardwood classics|sportscentury|this week in baseball|game of the week|inside the nfl|nfl follies|football follies|nba superstars|nfl s greatest|greatest moments|nfl presents|road to the super bowl|nfl crunch course|super bloopers|baseball s greatest|super bowl highlights) '
+DOCRX = r' (nfl films|season in review|year in review|greatest games|nfl yearbook|team yearbook|highlight film|world series film|hardwood classics|sportscentury|this week in baseball|game of the week|inside the nfl|nfl follies|football follies|nba superstars|nfl s greatest|greatest moments|nfl presents|road to the super bowl|nfl crunch course|super bloopers|baseball s greatest|super bowl highlights|the movie|championship video|official video|first \d+ years) '
 REBX = r' (marathon|rebroadcast|re broadcast|re air|re aired|reair|reairing|espn classic|classic sports network|nfl network|mlb network|nba tv|encore presentation) '
 RSTOP = set('nascar series cup grand national craftsman truck trucks race full raw feed satellite the at of presented by and winston busch bgn nbs ncts nwcs supertruck international speedway raceway motor classic original broadcast'.split())
 def racefind(SC, nt, ys, sr, ctx, net):
@@ -691,7 +691,7 @@ def resolve(SC, title, desc='', ctx=''):
     if lg == 'ncaaf' and re.search(r' (ncaa championship|ncaa finals?|final four|regional|ncaa tournament|basketball) ', nt) and not re.search(r' (football|bowl) ', nt): lg = 'ncaab'
     ys = sorted(set(int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)))
     m = re.search(r' (19[89]\d|200[0-3]) (\d\d) ', nt)
-    if m and int(m.group(2)) == (int(m.group(1)) + 1) % 100: ys = sorted(set(ys) | {int(m.group(1)), int(m.group(1)) + 1})
+    if m and int(m.group(2)) == (int(m.group(1)) + 1) % 100: ys = [int(m.group(1)) + 1] if lg in ('ncaab', 'nba', 'nhl') else sorted(set(ys) | {int(m.group(1)), int(m.group(1)) + 1})
     if not ys:
         m = re.search(r' (?:playoffs?|finals|nba|nfl|mlb|ws|world series|alcs|nlcs|alds|nlds) (8[4-9]|9\d|0[0-4]) ', nt)
         if m: ys = [int(('19' if m.group(1) > '50' else '20') + m.group(1))]
@@ -835,7 +835,7 @@ def resolve(SC, title, desc='', ctx=''):
         if e: return {'ad': e['d'], 'ev': '%s %s OLYMPICS %s' % (e['d'][:4], e['s'].upper(), k.upper()), 'ct': 'olympics', 'row': e}, None
         return None, why
     if lg == 'ncaab':
-        k = 'championship' if re.search(r' (national championship|championship game|title game|ncaa championship|ncaa final|ncaa finals) ', nt) else 'final four' if re.search(r' (final four|national semifinals?) ', nt) else None
+        k = 'final four' if re.search(r' (final four|national semi ?finals?) ', nt) and not re.search(r' (national championship|championship game|title game) ', nt) else 'championship' if re.search(r' (national championship|championship game|title game|ncaa championship|ncaa final|ncaa finals) ', nt) else None
         if not k or re.search(r' (big east|acc|sec|big ten|big 8|big eight|pac 10|conference|nit|womens|women|regional|hockey|football) ', nt): return None, 'ncaab_nokey'
         for y in ys:
             L = SC.key.get(('ncaab', k, y))
@@ -865,8 +865,8 @@ def classify(SC, title, ident, dfield, desc):
         r0 = sport(title, desc, '1994-06-18') or sport(title, desc, '1994-10-15')
         ys = [int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)]
         if not r0 or not ys: return None, why
-        return {'ct': r0[0], 'k': LGK.get(r0[0], 'SPORTS'), 'ad': '', 'ev': '', 'e': ys[0], 'min': 2400, 'net': netof(title, desc), 'keep': 'maybe', 'why': 'day unresolved: ' + str(why)}, None
-    return {'ct': r['ct'], 'k': LGK.get(r['ct'], 'SPORTS'), 'ad': r['ad'], 'ev': r['ev'], 'e': int(r['ad'][:4]), 'min': 2400, 'net': r['row'].get('net') or r.get('net') or netof(title, desc), 'st': r['row'].get('st', ''), 'row': r['row']}, None
+        return {'ct': r0[0], 'k': LGK.get(r0[0], 'SPORTS'), 'ad': '', 'ev': '', 'e': ys[0], 'min': 2400, 'net': netof(title, desc) or known_net(r0[0], nt, '', ys[0]), 'keep': 'maybe', 'why': 'day unresolved: ' + str(why)}, None
+    return {'ct': r['ct'], 'k': LGK.get(r['ct'], 'SPORTS'), 'ad': r['ad'], 'ev': r['ev'], 'e': int(r['ad'][:4]), 'min': 2400, 'net': netof(title, '') or r['row'].get('net') or r.get('net') or netof(title, desc) or known_net(r['ct'], nt, r['ad'], 0), 'st': r['row'].get('st', ''), 'row': r['row']}, None
 LTAG = {'nfl': 'nfl', 'nba': 'nba', 'mlb': 'mlb', 'nhl': 'nhl', 'racing': 'nascar', 'ncaaf': 'college football', 'ncaab': 'ncaa basketball'}
 GAMEX = r' (madden|nba live|playstation|ps2|ps3|ps 2|ps 3|xbox|nintendo|how to install|rebuilt mod|video game|gameplay|nba 2k\d*|nhl 2004 rebuilt|tournament of legends) '
 def fdate(nm, ctx):
@@ -893,6 +893,22 @@ def fdate(nm, ctx):
         d = iso(y, m.group(1), m.group(2))
         if d and '1960' < d < '2006': return d
     return None
+ONET = {(1984, 'winter'): 'abc', (1984, 'summer'): 'abc', (1988, 'winter'): 'abc', (1988, 'summer'): 'nbc', (1992, 'winter'): 'cbs', (1992, 'summer'): 'nbc', (1994, 'winter'): 'cbs', (1996, 'summer'): 'nbc', (1998, 'winter'): 'cbs', (2000, 'summer'): 'nbc', (2002, 'winter'): 'nbc', (2004, 'summer'): 'nbc'}
+def known_net(ct, nt, ad, e):
+    y = int(ad[:4]) if ad else int(e or 0)
+    if ct == 'nfl' and ' super bowl ' in nt and ad: return SBNET.get(ad, '')
+    if ct == 'racing' and ' daytona 500 ' in nt and ad and ad[5:7] == '02': return 'cbs' if y <= 2000 else 'fox' if y in (2001, 2003) else 'nbc'
+    if ct == 'racing' and re.search(r' (indy|indianapolis) 500 ', nt) and ad and ad[5:7] == '05': return 'abc'
+    if ct == 'horse' and ' kentucky derby ' in nt: return 'abc' if y <= 2000 else 'nbc'
+    if ct == 'ncaab' and ad and ad[5:7] in ('03', '04') and re.search(r' (ncaa|sweet 16|sweet sixteen|elite 8|elite eight|final four|final 4|regional|regionals|national championship|national semi ?finals?) ', nt) and not re.search(r' (nit|women|womens|softball|baseball|hockey|football) ', nt):
+        if y >= 1991 or re.search(r' (final four|final 4|championship|national semi ?finals?) ', nt): return 'cbs'
+    if ct == 'olympics':
+        se = 'winter' if ' winter ' in nt else 'summer' if ' summer ' in nt else ''
+        c = set(v for (yy, ss), v in ONET.items() if yy == y and (not se or ss == se))
+        if len(c) == 1: return list(c)[0]
+    if ct == 'golf': return 'cbs' if ' masters ' in nt else ('abc' if y <= 1994 else 'nbc') if ' us open ' in nt else ('abc' if y <= 1990 else 'cbs') if ' pga championship ' in nt else 'abc' if re.search(r' (british open|open championship) ', nt) else ''
+    if ct == 'tennis' and re.search(r' finals? ', nt): return 'nbc' if re.search(r' (wimbledon|french open|roland garros) ', nt) else 'cbs' if ' us open ' in nt else ''
+    return ''
 FORX = r' (etapa|juego|finales nba|foreign telecasts?|en espanol|radio coverage|radio broadcasts?|radio network) '
 SBNET = dict(zip(D['SB'].values(), 'cbs abc nbc cbs abc nbc cbs abc cbs nbc nbc abc nbc fox nbc fox abc cbs fox abc cbs'.split()))
 def rowat(SC, lg, d, nt):
@@ -967,7 +983,7 @@ def minefiles(SC):
             if rec.get('row'):
                 if rec['row'].get('net') and not netof(nm, ''): rec['net'] = rec['row']['net']
                 if rec['row'].get('st'): rec['st'] = rec['row']['st']
-            if rec.get('ad') and not rec.get('net') and ' super bowl ' in nt and SBNET.get(rec['ad']): rec['net'] = SBNET[rec['ad']]
+            if not rec.get('net'): rec['net'] = known_net(rec['ct'], nt, rec.get('ad', ''), rec.get('e'))
             if key in groups: groups[key]['f'].append(f)
             else: rec['f'] = [f]; groups[key] = rec
         for key, rec in groups.items():
@@ -1179,8 +1195,8 @@ if MODE == 'merge':
             elif isinstance(x, dict) and x.get('q') == 'sports' and x.get('ad'): i, t, d, lg = x['i'], x['t'], x['ad'], x.get('ct', '')
             else: continue
             row, ev = rowat(SC, lg, d, norm(t))
-            net = (row or {}).get('net') or (SBNET.get(d, '') if ' super bowl ' in norm(t) else '')
-            if row and (net or row.get('st')): ext.append({'i': i, 'ad': d, 'ev': ev, 'net': net, 'st': row.get('st', '')})
+            net = (row or {}).get('net') or known_net(lg, norm(t), d, d[:4])
+            if net or (row and row.get('st')): ext.append({'i': i, 'ad': d, 'ev': ev, 'net': net, 'st': (row or {}).get('st', '')})
     with gzip.open(os.path.join(OUT, 'sports2_times.json.gz'), 'wt', encoding='utf-8') as f: json.dump(ext, f, ensure_ascii=False, separators=(',', ':'))
     print('TIMES for already dated sports items', len(ext), 'with st', sum(1 for x in ext if x['st']), 'with net', sum(1 for x in ext if x['net']))
     hrs = lambda L: round(sum(sum(f[1] for f in x['f']) for x in L) / 3600)
