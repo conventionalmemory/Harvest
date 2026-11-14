@@ -692,6 +692,9 @@ def resolve(SC, title, desc='', ctx=''):
     ys = sorted(set(int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)))
     m = re.search(r' (19[89]\d|200[0-3]) (\d\d) ', nt)
     if m and int(m.group(2)) == (int(m.group(1)) + 1) % 100: ys = sorted(set(ys) | {int(m.group(1)), int(m.group(1)) + 1})
+    if not ys:
+        m = re.search(r' (?:playoffs?|finals|nba|nfl|mlb|ws|world series|alcs|nlcs|alds|nlds) (8[4-9]|9\d|0[0-4]) ', nt)
+        if m: ys = [int(('19' if m.group(1) > '50' else '20') + m.group(1))]
     if not ys: return None, 'noyear'
     if re.search(REBX, nt): return None, 'rebroadcast'
     for n, w in enumerate(('one', 'two', 'three', 'four', 'five', 'six', 'seven')): nt = nt.replace(' game ' + w + ' ', ' game %d ' % (n + 1))
@@ -772,7 +775,7 @@ def resolve(SC, title, desc='', ctx=''):
         if len(T) >= 2: c = [e for e in pairs() if int(e['d'][:4]) in ys and e.get('g') == g and (not ser or not e.get('ser') or e['ser'] == ser)]
         elif ser:
             for y in ys: c += [e for e in SC.ser.get((lg, ser, y), []) if e.get('g') == g and (not T or e['a'] in T[0] or e['h'] in T[0])]
-            if ser not in ('ws', 'finals') and not T: c = []
+            if (ser in ('alds', 'nlds') or (lg != 'mlb' and ser != 'finals')) and not T: c = []
         else: return None, lg + '_noseries'
         e, why = one(c, lg + '_ser')
         if e: return {'ad': e['d'], 'ev': label(e, lg), 'ct': lg, 'row': e}, None
@@ -792,7 +795,7 @@ def resolve(SC, title, desc='', ctx=''):
             if re.search(r' (truck|trucks|supertruck|ncts|cts) ', tx): sr = 'truck'
             elif re.search(r' (busch grand national|busch series|busch gn|bgn|grand national|nbs|bgns) ', tx): sr = 'busch'
             elif re.search(r' (winston cup|nextel cup|cup series|nwcs) ', tx): sr = ''
-            elif re.search(r' (busch north|bgnn|modified|southwest tour|winston west|featherlite|goodys dash|dash series|all pro|arca|asa|hooters|irl|indycar|cart|champ car|formula|nhra|imsa|trans am|iroc|winter heat|late model|sprint car|world of outlaws|slim jim) ', tx): return None, 'race_otherseries'
+            elif re.search(r' (busch north|bgnn|modified|modifieds|southwest tour|winston west|featherlite|dash series|arca|irl|indycar|champ car|formula one|formula 1|nhra|imsa|trans am|iroc|winter heat|late model|sprint car|world of outlaws) ', tx): return None, 'race_otherseries'
             if sr is not None: break
         c = racefind(SC, nt, ys, sr, norm(desc[:200]), netof(title, ''))
         if not c and not re.search(r' [1-9]\d\dk?s? ', nt): return None, 'race_noname'
@@ -876,7 +879,9 @@ def fdate(nm, ctx):
     if m and len(y1) == 1 and not re.search(r'(?<!\d)(19[0-7]\d|198[0-3]|200[5-9]|20[1-3]\d)(?!\d)', nm):
         d = iso(list(y1)[0], MON[m.group(1).lower()[:3]], m.group(2))
         if d: return d
+    nm = re.sub(r'\s*/\s*', '/', nm)
     ys = set(re.findall(r'(?<!\d)((?:19|20)\d\d)(?!\d)', nm + ' ' + ctx))
+    for a, z in re.findall(r'(?<!\d)((?:19|20)\d\d)\s*[-–]\s*((?:19|20)\d\d)(?!\d)', ctx): ys |= set(str(y) for y in range(int(a), int(z) + 1))
     for m in re.finditer(r'(?<!\d)((?:19|20)\d\d)[ ./-](\d{1,2})[ ./-](\d{1,2})(?!\d)', nm):
         d = iso(m.group(1), m.group(2), m.group(3))
         if d and '1960' < d < '2006': return d
@@ -924,6 +929,12 @@ def minefiles(SC):
             if re.search(FORX, nt) or re.search(FORX, norm(gt)) or re.search(X_FOR, nm.lower()) or re.search(X_FOR, gt.lower()): C['x_foreign_or_radio'] += 1; continue
             r0 = sport(nm, '', '1994-06-18') or sport(nm, '', '1994-10-15') or sport(gt, str(x.get('s') or ''), '1994-06-18') or sport(gt, str(x.get('s') or ''), '1994-10-15')
             lg = r0[0] if r0 else 'sports'
+            if not r0:
+                hit = [l for l in ('nfl', 'nba', 'mlb', 'nhl') if RXT[l].search(norm(ctx)) or RXT[l].search(nt)]
+                if len(hit) == 1: lg = hit[0]
+                elif 'nfl' in hit and re.search(r' (week|wk) ?\d', nt + norm(ctx)): lg = 'nfl'
+            if lg == 'mlb' and re.search(r' (softball|college|ncaa|little league|poker|numismatics) ', nt + norm(ctx)): lg = 'sports'
+            if re.search(r' numismatics ', nt): C['x_badword'] += 1; continue
             rg = sport(gt, str(x.get('s') or ''), '1994-06-18') or sport(gt, str(x.get('s') or ''), '1994-10-15')
             cb = 'ncaab' if re.search(r' basketball ', norm(ctx)) else 'ncaaf' if re.search(r' football ', norm(ctx)) else ''
             if lg in ('ncaaf', 'ncaab') and cb and not re.search(r' (basketball|football|bowl) ', nt): lg = cb
@@ -949,6 +960,10 @@ def minefiles(SC):
                     else:
                         rec = dict(base, keep='maybe', why='day unresolved: ' + str(why))
                         key = ('', ' '.join(re.sub(r' (part|pt|disc|tape|cd|dvd|vts) ?\d+( \d+)?( of \d+)? | \d of \d | (1st|2nd|first|second) half | \d $', ' ', nt + ' ').split()))
+            oy = re.findall(r'(?<!\d)(19[0-7]\d|198[0-3]|200[5-9]|20[1-3]\d)(?!\d)', nm)
+            if (rec.get('ad') and not ('1984' <= rec['ad'][:4] <= '2004')) or (not rec.get('ad') and rec['ct'] != 'sportsdoc' and oy and not ys):
+                rec['keep'] = 'maybe'; rec['why'] = 'outside 1984-2004'
+                if not rec.get('ad'): rec['e'] = int(oy[0])
             if rec.get('row'):
                 if rec['row'].get('net') and not netof(nm, ''): rec['net'] = rec['row']['net']
                 if rec['row'].get('st'): rec['st'] = rec['row']['st']
@@ -968,6 +983,7 @@ def minefiles(SC):
             if rec.get('keep'): r['keep'] = rec['keep']; r['why'] = rec['why']
             C['out_' + ('doc' if rec['ct'] == 'sportsdoc' else rec.get('as') or 'maybe')] += 1
             if rec.get('keep'): C['why ' + rec['why']] += 1
+            if rec.get('keep') and rec.get('ad'): C['out_dated_but_maybe'] += 1
             out.append(r)
     return out, C
 def known():
