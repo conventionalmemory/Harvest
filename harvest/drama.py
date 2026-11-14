@@ -86,8 +86,9 @@ def match(show, title):
 def subhit(show, subj, title):
     sj = subj if isinstance(subj, list) else re.split(r'[;,]', str(subj or ''))
     names = set([show['n']] + [norm(a) for a in show.get('alt', [])])
-    if show.get('ambiguous') or len(show['n'].split()) < 2 or len(show['n']) < 10: return False
     if not any(norm(v) in names for v in sj): return False
+    if show.get('ambiguous') or len(show['n'].split()) < 2 or len(show['n']) < 10:
+        return len(show['n']) >= 5 and len(sj) <= 4 and bool(re.search(r'\bs\d{1,2}\s?e\d{1,2}\b', title.lower()))
     return bool(re.search(r's\d{1,2}\s?e\s?\d|season \d|episode \d|\b\d{1,2}x\s?\d\d|\bep\.? ?\d', title.lower()))
 for s in SHOWS: s['longer'] = [o['n'] for o in SHOWS if o is not s and len(o['n']) > len(s['n']) and (' ' + s['n'] + ' ') in (' ' + o['n'] + ' ')] + (['svu', 'special victims', 'criminal intent', 'trial by jury'] if s['n'] == 'law and order' else []) + (['miami', 'ny', 'new york'] if s['n'].startswith('csi crime') else [])
 def extra(s, title):
