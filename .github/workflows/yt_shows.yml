@@ -43,6 +43,7 @@ jobs:
         with:
           name: yt-plan
           path: parts
+      - run: pip install -q yt-dlp
       - name: Search
         run: MODE=search SHARD=${{ matrix.shard }} SHARDS=12 THREADS=4 BUDGET_MIN=170 python3 harvest/yt_shows.py
       - uses: actions/upload-artifact@v4

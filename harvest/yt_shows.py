@@ -204,8 +204,23 @@ def search(q, pages=2, params='EgQQARgC'):
     return out
 
 
-def channel_videos(chid, ch, maxpages=40):
+def channel_flat(chid, ch):
     out = []
+    try:
+        import yt_dlp
+        with yt_dlp.YoutubeDL({'quiet': True, 'no_warnings': True, 'extract_flat': True, 'skip_download': True, 'playlistend': 6000}) as y:
+            r = y.extract_info('https://www.youtube.com/channel/' + chid + '/videos', download=False)
+        for e in (r or {}).get('entries') or []:
+            if not e or not e.get('id'): continue
+            out.append({'vid': e['id'], 't': e.get('title') or '', 'ch': ch or (r.get('channel') or ''), 'chid': chid, 'dur': int(e.get('duration') or 0), 'views': int(e.get('view_count') or 0), 'age': -1, 'ver': 1 if r.get('channel_is_verified') else 0, 'live': 1 if e.get('live_status') in ('is_live', 'is_upcoming') else 0})
+    except Exception as ex:
+        with LOCK: STAT['flatfail'] += 1
+    return out
+
+
+def channel_videos(chid, ch, maxpages=40):
+    out = channel_flat(chid, ch)
+    if out: return out
     d = inner('browse', {'browseId': chid, 'params': 'EgZ2aWRlb3PyBgQKAjoA'})
     ver = 0
     if d and 'VERIFIED' in json.dumps(walk(d, 'badges', []))[:4000].upper(): ver = 1
@@ -477,6 +492,7 @@ def build_M(tasks):
 def stable(c):
     off = 1 if c.get('ver') or (OFFX.search(c.get('ch') or '') and c.get('views', 0) >= 200) else 0
     if c.get('ver'): return 1, 'verified channel'
+    if c.get('inh') and c['age'] >= 4 and c.get('views', 0) >= 500: return off, 'channel of long-standing uploads, %d views' % c['views']
     if c['age'] >= 4 and c.get('views', 0) >= 1500: return off, 'up %d years, %d views' % (int(c['age']), c['views'])
     if off and c['age'] >= 1: return 1, 'rights-holder style channel'
     return off, ''
@@ -525,6 +541,11 @@ def run_search():
     def enum(chid):
         if left() < BUDGET * 0.22: return
         vs = channel_videos(chid, chname.get(chid, ''))
+        ages = sorted(c['age'] for c in acc.values() if c['chid'] == chid and c['age'] >= 0)
+        med = ages[len(ages) // 2] if ages else -1
+        for c in vs:
+            if c['age'] < 0: c['age'] = med; c['inh'] = 1
+            if chver.get(chid): c['ver'] = 1
         got = 0
         with LOCK:
             STAT['chan_enum'] += 1; STAT['chan_videos'] += len(vs)
