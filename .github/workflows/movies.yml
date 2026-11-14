@@ -4,15 +4,38 @@ on:
 permissions:
   contents: write
 jobs:
-  shelf:
+  lookup:
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4]
     steps:
       - uses: actions/checkout@v4
-      - name: Build the shelf
-        run: python3 harvest/movies.py
-      - name: Commit
+      - name: Search for copies
+        run: MODE=shard SHARD=${{ matrix.shard }} SHARDS=5 THREADS=8 BUDGET=240 python3 harvest/movies.py
+      - uses: actions/upload-artifact@v4
         if: always()
+        with:
+          name: movies-${{ matrix.shard }}
+          path: parts/movies-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: lookup
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: movies-[0-9]*
+          path: parts
+          merge-multiple: true
+      - name: Merge
+        run: ls -la parts; MODE=merge python3 harvest/movies.py
+      - name: Commit
         run: |
           git config user.name "Conventional Memory"
           git config user.email "conventionalmemory@users.noreply.github.com"
