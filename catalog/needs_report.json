@@ -1,16 +1,16 @@
 {
-"updated": "2026-11-14 11:42 UTC",
-"items": 65,
-"hours": 901,
+"updated": "2026-11-14 11:55 UTC",
+"items": 42,
+"hours": 846,
 "priority": {
 "0": {
 "shows": 7,
-"found": 3,
-"thin": 4,
+"found": 5,
+"thin": 2,
 "maybe": 0,
 "missing": 0,
-"items": 65,
-"hours": 901
+"items": 42,
+"hours": 846
 },
 "1": {
 "shows": 327,
@@ -51,23 +51,32 @@
 "S02": "26/26",
 "S03": "24/24"
 },
-"missing": []
+"missing": [],
+"missing_but_in_items_without_listed_running_time": []
 },
 "Star Trek: Deep Space Nine": {
 "episodes": 176,
-"held_elsewhere": 11,
-"in_this_file": 7,
-"covered": 15,
+"held_elsewhere": 10,
+"in_this_file": 4,
+"covered": 11,
 "seasons": {
-"S01": "5/20",
+"S01": "3/20",
 "S02": "7/26",
 "S03": "0/26",
 "S04": "1/26",
 "S05": "0/26",
-"S06": "2/26",
+"S06": "0/26",
 "S07": "0/26"
 },
 "missing": [
+[
+"S01E01",
+"Emissary, Part I"
+],
+[
+"S01E02",
+"Emissary, Part II"
+],
 [
 "S01E03",
 "Past Prologue"
@@ -597,6 +606,14 @@
 "The Reckoning"
 ],
 [
+"S06E22",
+"Valiant"
+],
+[
+"S06E23",
+"Profit and Lace"
+],
+[
 "S06E24",
 "Time's Orphan"
 ],
@@ -712,25 +729,22 @@
 "S07E26",
 "What You Leave Behind, Part II"
 ]
-]
+],
+"missing_but_in_items_without_listed_running_time": []
 },
 "Star Trek: Enterprise": {
 "episodes": 98,
-"held_elsewhere": 60,
-"in_this_file": 97,
-"covered": 97,
+"held_elsewhere": 61,
+"in_this_file": 98,
+"covered": 98,
 "seasons": {
-"S01": "25/26",
+"S01": "26/26",
 "S02": "26/26",
 "S03": "24/24",
 "S04": "22/22"
 },
-"missing": [
-[
-"S01E01",
-"Broken Bow"
-]
-]
+"missing": [],
+"missing_but_in_items_without_listed_running_time": []
 },
 "Star Trek: The Animated Series": {
 "episodes": 22,
@@ -766,32 +780,25 @@
 "S02E06",
 "The Counter-Clock Incident"
 ]
-]
+],
+"missing_but_in_items_without_listed_running_time": []
 },
 "Star Trek: The Next Generation": {
 "episodes": 178,
-"held_elsewhere": 121,
-"in_this_file": 176,
-"covered": 176,
+"held_elsewhere": 128,
+"in_this_file": 178,
+"covered": 178,
 "seasons": {
-"S01": "25/26",
+"S01": "26/26",
 "S02": "22/22",
 "S03": "26/26",
 "S04": "26/26",
-"S05": "25/26",
+"S05": "26/26",
 "S06": "26/26",
 "S07": "26/26"
 },
-"missing": [
-[
-"S01E01",
-"Encounter at Farpoint"
-],
-[
-"S05E01",
-"Redemption II"
-]
-]
+"missing": [],
+"missing_but_in_items_without_listed_running_time": []
 },
 "Star Trek: Voyager": {
 "episodes": 172,
@@ -807,7 +814,8 @@
 "S06": "26/26",
 "S07": "26/26"
 },
-"missing": []
+"missing": [],
+"missing_but_in_items_without_listed_running_time": []
 },
 "Twin Peaks": {
 "episodes": 30,
@@ -818,7 +826,8 @@
 "S01": "8/8",
 "S02": "22/22"
 },
-"missing": []
+"missing": [],
+"missing_but_in_items_without_listed_running_time": []
 }
 },
 "shows": [
@@ -832,11 +841,11 @@
 1969
 ],
 "guide_episodes": 79,
-"items": 30,
-"maybe": 13,
-"files": 127,
-"hours": 125,
-"episodes": 79,
+"items": 10,
+"maybe": 3,
+"files": 92,
+"hours": 86,
+"episodes": 80,
 "other_files": 0,
 "status": "FOUND"
 },
@@ -850,11 +859,11 @@
 1999
 ],
 "guide_episodes": 176,
-"items": 2,
+"items": 0,
 "maybe": 0,
-"files": 2,
-"hours": 2,
-"episodes": 3,
+"files": 0,
+"hours": 0,
+"episodes": 0,
 "other_files": 0,
 "status": "THIN"
 },
@@ -868,13 +877,13 @@
 2005
 ],
 "guide_episodes": 98,
-"items": 2,
+"items": 3,
 "maybe": 0,
-"files": 98,
-"hours": 71,
-"episodes": 97,
+"files": 99,
+"hours": 74,
+"episodes": 98,
 "other_files": 0,
-"status": "THIN"
+"status": "FOUND"
 },
 {
 "title": "Star Trek: The Animated Series",
@@ -886,10 +895,10 @@
 1974
 ],
 "guide_episodes": 22,
-"items": 2,
+"items": 1,
 "maybe": 0,
-"files": 17,
-"hours": 7,
+"files": 16,
+"hours": 6,
 "episodes": 16,
 "other_files": 0,
 "status": "THIN"
@@ -904,13 +913,13 @@
 1994
 ],
 "guide_episodes": 178,
-"items": 24,
-"maybe": 5,
-"files": 336,
+"items": 21,
+"maybe": 1,
+"files": 333,
 "hours": 391,
-"episodes": 177,
+"episodes": 179,
 "other_files": 0,
-"status": "THIN"
+"status": "FOUND"
 },
 {
 "title": "Star Trek: Voyager",
@@ -925,7 +934,7 @@
 "items": 3,
 "maybe": 0,
 "files": 337,
-"hours": 260,
+"hours": 261,
 "episodes": 172,
 "other_files": 0,
 "status": "FOUND"
@@ -940,10 +949,10 @@
 1991
 ],
 "guide_episodes": 30,
-"items": 2,
-"maybe": 1,
-"files": 50,
-"hours": 45,
+"items": 4,
+"maybe": 0,
+"files": 33,
+"hours": 28,
 "episodes": 30,
 "other_files": 0,
 "status": "FOUND"
