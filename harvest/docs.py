@@ -85,7 +85,39 @@ def match(show, title):
     return False
 XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio', 'microsoftresearch', 'pyvideo', 'ted', 'tedtalks', 'conferences', 'computersandtechvideos', 'redwoodcenter', 'seagl', 'lecturevideos', 'stanford', 'ucberkeley-webcast', 'mit_ocw', 'religious_videos', 'spirituality_videos'}
 X_OFF = r"(conspiracy|epstein|jesuit|\bpope\b|streamer|\bipad\b|\bapp\b|hypervisor|neural network|microsoft research|pycon|\bcrm\b|webinar|sermon|lecture series|city council|county connections|bad movie|no sound|\buk vhs\b|uk dvd|\bpal\b)"
+LR = {'NOVA': 1974, 'American Experience': 1988, 'American Masters': 1986, 'Frontline': 1983, 'Nature': 1982, 'Secrets of the Dead': 2000, 'MythBusters': 2003, 'Nature of Things': 1960, 'Great Performances': 1972, 'Masterpiece Theatre': 1971, 'Mystery!': 1980, 'Austin City Limits': 1976, 'Biography': 1987, 'Modern Marvels': 1995, 'Independent Lens': 1999, 'P.O.V.': 1988, 'Antiques Roadshow': 1997, 'This Old House': 1979, 'History Detectives': 2003, 'Scientific American Frontiers': 1990, 'Wild Discovery': 1995, 'Shark Week': 1988, 'National Geographic Explorer': 1985, 'Live from Lincoln Center': 1976, 'The Victory Garden': 1975, 'The Woodwright\'s Shop': 1979, 'Washington Week': 1967, 'Wall Street Week': 1970, 'Nightly Business Report': 1979, 'Globe Trekker': 1994, 'Rick Steves\' Europe': 2000, 'California\'s Gold': 1991, 'The Lawrence Welk Show': 1951}
+X_HARD = r"\b(3d|1080[ip]|2160p|4k|uhd|japanese|covid|wait in the wings|granny|prehistoric planet|il pianeta|pandemic|trump|obama|iphone|bitcoin|climate crisis)\b"
+INR = r'(?<!\d)(19(8[4-9]|9\d)|200[0-4])(?!\d)'
+def lr_ok(x):
+    s1 = LR.get(x['k'])
+    if not s1: return True
+    low = x['t'].lower()
+    m = re.search(r'\bs(?:e|eason)? ?(\d{1,2}) ?(?:e|ep|x| episode)', low) or re.search(r'\bseason (\d{1,2})\b', low)
+    if m:
+        yr = s1 + int(m.group(1)) - 1
+        return yr <= 2005 and (yr >= 1983 or x['k'] in ('The Lawrence Welk Show', 'Nature of Things'))
+    if re.search(INR, x['t']): return True
+    if x.get('e'): return True
+    if re.search(INR, x.get('ds', '')[:300]) and not re.search(r'(?<!\d)20(0[5-9]|[12]\d)(?!\d)', x.get('ds', '')[:300]): return True
+    return False
+BRANDS = [('National Geographic Specials', r'national geographic', 'nature', 'pbs'), ('Discovery Channel Specials', r'discovery channel', 'science', 'cab'), ('History Channel Specials', r'history channel', 'history', 'cab'), ('A&E Specials', r'\ba ?(&|and) ?e\b', 'bio', 'cab'), ('The Learning Channel Specials', r'learning channel|\btlc\b', 'science', 'cab'), ('PBS Specials', r'\bpbs\b', 'newsdoc', 'pbs'), ('Jacques Cousteau Specials', r'cousteau', 'nature', 'pbs'), ('Bill Moyers Specials', r'bill moyers|\bmoyers\b', 'newsdoc', 'pbs'), ('Ken Burns Films', r'ken burns', 'history', 'pbs'), ('David Attenborough Specials', r'attenborough', 'nature', 'pbs'), ('Smithsonian World', r'smithsonian', 'history', 'pbs'), ('Time-Life Video', r'time[- ]life', 'history', 'syn'), ('Reader\'s Digest Video', r'reader.?s digest', 'travel', 'syn'), ('IMAX Films', r'\bimax\b', 'nature', 'syn'), ('CBS Reports', r'cbs reports', 'newsdoc', 'cbs'), ('NBC White Paper', r'nbc white paper|nbc news special', 'newsdoc', 'nbc'), ('ABC News Closeup', r'abc news close.?up|abc news special', 'newsdoc', 'abc'), ('Travel Channel Specials', r'travel channel', 'travel', 'cab'), ('Animal Planet Specials', r'animal planet', 'nature', 'cab'), ('TBS National Geographic Explorer', r'\bexplorer\b.*\btbs\b|\btbs\b.*\bexplorer\b', 'nature', 'cab')]
+BRX = [re.compile(b[1]) for b in BRANDS]
+DOCW = r'\b(documentary|special|vhs|video|presents|series|episode|tv|television|broadcast|aired|program|film)\b'
+def brand_ok(x):
+    low = (x['t'] + ' ').lower()
+    b = x.get('br')
+    if b is None or not (0 <= b < len(BRANDS)) or not BRX[b].search(low): return False
+    if not ok_title(x['t']) or re.search(X_HARD, low) or re.search(X_OFF, (x['t'] + ' ' + x['i']).lower().replace('_', ' ')): return False
+    if set(x.get('c') or []) & XCOL: return False
+    blob = (x['t'] + ' ' + x.get('ds', '')[:300] + ' ' + x.get('s', '')).lower()
+    if not re.search(DOCW, blob): return False
+    if not x.get('e'): return False
+    if re.search(r'\b(magazine|issue|map|book|kids? magazine|commercial|promo|trailer|bumper|ident|opening|closing|logo|review|unboxing|collection of|compilation)\b', low): return False
+    T = sum(f[1] for f in x['f'])
+    return 1100 <= T <= 6 * 3600
 def keep(x):
+    if x.get('br') is not None: return brand_ok(x)
+    if re.search(X_HARD, x['t'].lower()) or not lr_ok(x): return False
     s = BYT.get(x['k'])
     if not s or not ok_title(x['t'], s.get('brit')) or not match(s, x['t']): return False
     if s.get('req'):
@@ -203,10 +235,25 @@ if MODE == 'plan':
             if k is None or not ok_title(t, SHOWS[k].get('brit')): continue
             seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': k}; hits[k] += 1; n += 1
         print('collection sweep added', n, flush=True)
+    nb = 0
+    for b, br in enumerate(BRANDS):
+        terms = {'A&E Specials': '"a&e" OR "a and e"', 'The Learning Channel Specials': '"learning channel" OR tlc', 'Bill Moyers Specials': 'moyers', 'Reader\'s Digest Video': '"readers digest" OR "reader\'s digest"', 'Time-Life Video': '"time life" OR "time-life"', 'NBC White Paper': '"nbc white paper" OR "nbc news special"', 'ABC News Closeup': '"abc news closeup" OR "abc news special"', 'TBS National Geographic Explorer': '"explorer" AND tbs'}.get(br[0]) or ('"' + {'National Geographic Specials': 'national geographic', 'Discovery Channel Specials': 'discovery channel', 'History Channel Specials': 'history channel', 'PBS Specials': 'pbs', 'Jacques Cousteau Specials': 'cousteau', 'Ken Burns Films': 'ken burns', 'David Attenborough Specials': 'attenborough', 'Smithsonian World': 'smithsonian', 'IMAX Films': 'imax', 'CBS Reports': 'cbs reports', 'Travel Channel Specials': 'travel channel', 'Animal Planet Specials': 'animal planet'}[br[0]] + '"')
+        for it in scrape('mediatype:movies AND title:(' + terms + ')'):
+            i = it['identifier']
+            if i in have or i in seen: continue
+            t = it.get('title'); t = ' '.join(t) if isinstance(t, list) else str(t or '')
+            lang = it.get('language'); lang = ' '.join(lang) if isinstance(lang, list) else str(lang or '')
+            if lang and not re.search(r'(?i)eng|english|^en\b', lang): continue
+            if not BRX[b].search(t.lower()) or not ok_title(t) or re.search(X_HARD, t.lower()): continue
+            yy = re.match(r'(\d{4})', str(it.get('year') or it.get('date') or ''))
+            if not re.search(INR, t) and not (yy and 1984 <= int(yy.group(1)) <= 2004): continue
+            seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': -1, 'b': b}; nb += 1
+        print('brand', br[0], nb, flush=True)
     cands = sorted(seen.values(), key=lambda x: x['identifier'])
     print('candidates', len(cands), flush=True)
     ct = collections.Counter()
     for k, n in hits.items(): ct[SHOWS[k]['q']] += n
+    ct['brand'] = nb
     print('candidates per type', sorted(ct.items()))
     print('top candidate shows', [(SHOWS[k]['title'], n) for k, n in hits.most_common(60)])
     print('no candidates', [s['title'] for k, s in enumerate(SHOWS) if not hits[k]])
@@ -250,8 +297,9 @@ def meta(it):
     if not files or sum(f[1] for f in files) < 600: return None
     files.sort(key=lambda f: f[0])
     title = m.get('title', ''); title = ' '.join(title) if isinstance(title, list) else str(title)
-    s = SHOWS[it['k']]
-    if not ok_title(title, s.get('brit')) or not match(s, title): return None
+    isb = it.get('b') is not None
+    s = {'title': BRANDS[it['b']][0], 'q': 'pub', 'net': BRANDS[it['b']][3], 'ct': BRANDS[it['b']][2], 'original_run': '1984-2004'} if isb else SHOWS[it['k']]
+    if not ok_title(title, s.get('brit')) or (not isb and not match(s, title)): return None
     desc = m.get('description', '')
     if isinstance(desc, list): desc = ' '.join(desc)
     desc = ' '.join(re.sub(r'<[^>]+>', ' ', str(desc)).split())
@@ -265,7 +313,9 @@ def meta(it):
     orr = s.get('original_run', '')
     e = era(s, title, m.get('date'), m.get('year'))
     oy = [int(v) for v in re.findall(r'\d{4}', orr)]
-    return {'i': it['identifier'], 'q': 'pub', 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': e, 'net': s.get('net', ''), 'ct': s.get('ct', 'doc'), 'or': orr}
+    r0 = {'i': it['identifier'], 'q': 'pub', 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': e, 'net': s.get('net', ''), 'ct': s.get('ct', 'doc'), 'or': orr}
+    if isb: r0['br'] = it['b']
+    return r0
 def meta2(it):
     r = meta(it)
     return r if r and keep(r) else None
@@ -282,7 +332,8 @@ if MODE == 'meta':
     print('shard done', len(res)); sys.exit(0)
 old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
 old = [x for x in old0 if keep(x)]
-for x in old: x['e'] = era(BYT[x['k']], x['t'], x.get('d'), x.get('y'))
+for x in old:
+    if x.get('br') is None: x['e'] = era(BYT[x['k']], x['t'], x.get('d'), x.get('y'))
 print('refiltered existing', len(old0), '->', len(old))
 have = set(x['i'] for x in old); add = []
 for p in sorted(glob.glob(os.path.join(PARTS, 'docs-*.json.gz'))):
@@ -301,6 +352,7 @@ bs = collections.Counter(x['k'] for x in res)
 print('SHOW TABLE')
 fs = collections.Counter(); hs = collections.Counter()
 for x in res: fs[x['k']] += len(x['f']); hs[x['k']] += sum(f[1] for f in x['f']) / 3600
+for b in BRANDS: print('  %-8s %4d items %5d files %5d h  %s' % ('BRAND', bs[b[0]], fs[b[0]], round(hs[b[0]]), b[0]))
 for s in sorted(SHOWS, key=lambda s: -fs[s['title']]): print('  %-8s %4d items %5d files %5d h  %s' % ('MISSING' if not bs[s['title']] else 'THIN' if fs[s['title']] < 10 else 'FOUND', bs[s['title']], fs[s['title']], round(hs[s['title']]), s['title']))
 print('COUNTS', collections.Counter('MISSING' if not bs[s['title']] else 'THIN' if fs[s['title']] < 10 else 'FOUND' for s in SHOWS))
 covprint('BEFORE (other catalogs only)', coverage([]))
