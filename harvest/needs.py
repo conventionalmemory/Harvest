@@ -20,14 +20,18 @@ TVSET = set(TVCOL.split(' OR '))
 DISQ = 'title:(season OR seasons OR episode OR episodes OR complete OR series OR nbc OR cbs OR abc OR fox OR pbs OR hbo OR espn OR vhs OR commercials OR woc OR pilot OR finale OR s0* OR s1* OR 1x* OR 2x* OR 3x* OR 4x* OR 5x* OR 198* OR 199* OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR subject:(television OR sitcom OR "tv series" OR "tv show" OR nbc OR cbs OR abc OR pbs OR vhs OR commercials OR tv)'
 NETRX = {'nbc': 'nbc', 'cbs': 'cbs', 'abc': 'abc', 'fox': 'fox', 'pbs': 'pbs', 'hbo': 'hbo', 'tbs': 'tbs|wtbs|superstation', 'wgn': 'wgn', 'wor': 'wor', 'usa': 'usa network|usa', 'tnt': 'tnt', 'tnn': 'tnn|nashville network', 'bet': 'bet', 'mtv': 'mtv', 'vh1': 'vh1|vh-1', 'cnn': 'cnn', 'espn': 'espn', 'cspan': 'c-span|cspan', 'c-span': 'c-span|cspan', 'a&e': 'a&e|a and e|arts and entertainment', 'discovery': 'discovery', 'disney': 'disney', 'nick': 'nick|nickelodeon', 'nickelodeon': 'nick|nickelodeon', 'nickatnite': 'nick at nite|nickelodeon', 'lifetime': 'lifetime', 'cbn': 'cbn|family channel', 'family': 'family channel|cbn', 'comedy': 'comedy central|comedy channel', 'ha': 'ha!', 'sci-fi': 'sci-fi|sci fi|scifi', 'showtime': 'showtime', 'cinemax': 'cinemax', 'tlc': 'tlc|learning channel', 'food': 'food network|tvfn', 'e!': 'e!', 'amc': 'amc|american movie classics', 'bravo': 'bravo', 'qvc': 'qvc', 'hsn': 'hsn|home shopping', 'tmc': 'movie channel|tmc', 'cartoon': 'cartoon network', 'ppv': 'ppv|pay per view|pay-per-view', 'upn': 'upn', 'g4': 'g4|g4tv|g4techtv|techtv|tech tv', 'cmt': 'cmt|country music television', 'wb': 'wb|kids wb', 'syn': 'syndicat\\w*', 'prevue': 'prevue', 'movietime': 'movietime'}
 NETNAMES = {'tnt', 'amc', 'vh-1', 'vh 1', 'vh1', 'hsn', 'qvc', 'turner network television', 'american movie classics', 'home shopping network', 'braves', 'cubs', 'atlanta braves', 'chicago cubs', 'nascar', 'winston cup', 'college basketball', 'college football', 'house of representatives', 'us house of representatives', 'us senate', 'walt disney', 'oscars', 'academy awards', 'world series', 'nba finals', 'usfl', 'hbo movie', 'hbo premiere', 'hbo boxing', 'house session', 'senate session', 'miss america', 'grammy awards', 'super bowl', 'stanley cup', 'ncaa tournament', 'mtv', 'bet', 'nickelodeon', 'cnn', 'espn', 'explorer', 'mystery', 'superman', 'bozo', 'game of the week', 'late show', 'sunday morning', 'beverly hills', 'homicide', 'prime news', 'e news', 'safari', 'invention', 'real world', 'time machine', 'pov'}
-JUNK = re.compile(r"\b(trailers?|teasers?|promos?|bumpers?|theme song|theme music|soundtrack|ost|reviews?|reviewed|reaction|reacts?|podcast|commentary|video essay|explained|analysis|ranking|ranked|top \d+ |fan ?made|fan ?edit|fan ?film|fanvid|amv|ytp|parody|spoof|abridged|recap|gameplay|walkthrough|playthrough|longplay|speedrun|video ?game|pc game|dos game|ps[1-5]|playstation|xbox|nintendo|sega|genesis|snes|nes|game ?boy|gba|amiga|atari|commodore|c64|pinball|slot machine|rom ?hack|emulator|lego|toys?|unboxing|action figures?|audiobook|audio book|ebook|pdf|comic book|comics|novel|screenplay|sheet music|karaoke|remix|lyrics|mixtape|twitch|tiktok|livestream|live stream|upscaled?|deepfake|supercut|mashup|clips?|scenes?|moments|excerpts?|outtakes|gag reel|slideshow|screensaver|wallpaper|rifftrax|dublado|doblaje|doblada|latino|castellano|espa[nñ]ol|deutsch|german dub|fran[cç]ais|french dub|italiano|portugu[eê]s|legendado|subtitulado|vostfr|russian|polski|lektor|hindi|arabic|turkish|svenska|suomi|norsk|dansk|magyar|sub ita|sub esp|subbed|vietsub|tagalog|indonesia|xxx|porn|hentai|sermon|city council|town meeting|selectmen|school committee|board of|webinar|zoom|discord)\b")
-JUNKS = re.compile(r"\b(interviews?|panel|q&a|convention|comic-?con|reunion|tribute|retrospective|behind the scenes|making of|documentary|bloopers?|cast of|where are they now|true hollywood story|opening|intro|credits|themes?)\b")
+JUNK = re.compile(r"\b(opening to|closing to|logos?|idents?|trailers?|teasers?|promos?|bumpers?|theme song|theme music|soundtrack|ost|reviews?|reviewed|reaction|reacts?|podcast|commentary|video essay|explained|analysis|ranking|ranked|top \d+ |fan ?made|fan ?edit|fan ?film|fanvid|amv|ytp|parody|spoof|abridged|recap|gameplay|walkthrough|playthrough|longplay|speedrun|video ?game|pc game|dos game|ps[1-5]|playstation|xbox|nintendo|sega|genesis|snes|nes|game ?boy|gba|amiga|atari|commodore|c64|pinball|slot machine|rom ?hack|emulator|lego|toys?|unboxing|action figures?|audiobook|audio book|ebook|pdf|comic book|comics|novel|screenplay|sheet music|karaoke|remix|lyrics|mixtape|twitch|tiktok|livestream|live stream|upscaled?|deepfake|supercut|mashup|clips?|scenes?|moments|excerpts?|outtakes|gag reel|slideshow|screensaver|wallpaper|rifftrax|dublado|doblaje|doblada|latino|castellano|espa[nñ]ol|deutsch|german dub|fran[cç]ais|french dub|italiano|portugu[eê]s|legendado|subtitulado|vostfr|russian|polski|lektor|hindi|arabic|turkish|svenska|suomi|norsk|dansk|magyar|sub ita|sub esp|subbed|vietsub|tagalog|indonesia|xxx|porn|hentai|sermon|city council|town meeting|selectmen|school committee|board of|webinar|zoom|discord)\b")
+JUNKS = re.compile(r"\b(extras|bonus|special features|featurettes?|unauthorized story|behind the camera|interviews?|panel|q&a|convention|comic-?con|reunion|tribute|retrospective|behind the scenes|making of|documentary|bloopers?|cast of|where are they now|true hollywood story|opening|intro|credits|themes?)\b")
 JUNKN = re.compile(r"\b(highlights|best of|compilation)\b")
 JUNKD = re.compile(r"\b(podcast|gameplay|walkthrough|let's play|longplay|fan ?film|fan ?made|video ?game|radio (show|program|broadcast)|old time radio|audio only|reaction video|public access|community television|community media|city council|school district|chamber of commerce|webinar)\b")
-FOREIGN = re.compile(r"\b(saison|temporada|staffel|episodio|epis[oó]dio|cap[ií]tulo|folge|piloto|serie tv|vf|pt br|dual audio|dublagem|napisy|aflevering|odcinek|b[oö]l[uü]m)\b")
+FOREIGN = re.compile(r"\b(parte|quarta|primeira|saison|temporada|staffel|episodio|epis[oó]dio|cap[ií]tulo|folge|piloto|serie tv|vf|pt br|dual audio|dublagem|napisy|aflevering|odcinek|b[oö]l[uü]m)\b")
 SPIN = re.compile(r"\b(reboot|revival|remake|new class|college years|animated series|netflix|hulu|disney\+|paramount\+|hbo max|prime video)\b")
 NONLAT = re.compile(r'[^\x00-\xff‐-‧™]')
-YR = re.compile(r'(?<!\d)(19[4-9]\d|20[0-3]\d)(?!\d)')
+YR = re.compile(r'(?<!\d)(1[89]\d\d|20[0-3]\d)(?!\d)')
+ADS = re.compile(r"\bcommercials?\b")
+ADSOK = re.compile(r"\b(with|w/|w|incl\w*|plus|and|&|original|\+)\s+(the\s+)?(original\s+)?(tv\s+)?commercials?\b|\bwoc\b|\bw/c\b")
+WEBID = re.compile(r"^(youtube|twitch|bliptv|tiktok|twitter|vimeo|dailymotion|rumble|roosterteeth)[-_]")
+BADID = re.compile(r"spank|porn|xxx|xvideos|xhamster|onlyfans|hentai")
 MOD2 = re.compile(r'\b\d{1,2}[./-]\d{1,2}[./-](0[5-9]|[12]\d)\b|\b20(0[5-9]|[12]\d)[01]\d[0-3]\d\b')
 TAPE = re.compile(r"\b(vhs|betamax|tape|taped|recorded|recording|commercials|woc|broadcast|aired|airing|rerun|syndicat\w*|nbc|cbs|abc|fox|upn|wb|pbs|hbo|espn|tbs|wtbs|wgn|tnt|usa network|nick at nite|nickelodeon|tv land|a&e|mtv|vh1|cnn|c-span|tnn|lifetime|discovery|primetime|prime time|off air|off-air)\b")
 TAPE2 = re.compile(r"\b(vhs|betamax|commercials|woc|off air|off-air|home recording)\b")
@@ -39,7 +43,7 @@ WORDN.update({w: i + 1 for i, w in enumerate('first second third fourth fifth si
 MULTI = re.compile(r"\bseasons\b|\b(?:s|season)\s?\d{1,2}\s?(?:-|&|and|to|thru|through)\s?(?:s|season)?\s?\d{1,2}\b|complete series|all episodes|all seasons|entire series|full series|complete collection|the complete|complete show")
 SEAS = re.compile(r"\bseason\s?(\d{1,2})\b|\bseason\s(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen)\b|\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth)(?:\sand\sfinal)?\sseason\b|\b(?:s|se)\s?(\d{1,2})\s?(?:e|ep|d|disc)\s?\d{1,3}\b|\bs(\d{1,2})\b|\b(\d{1,2})x\s?\d{2,3}\b")
 LEAD = re.compile(r"^(?:\s*(?:\(?\d{1,4}[-./]\d{1,2}(?:[-./]\d{1,4})?\)?|(?:19|20)\d\d|vhs|beta|tape|dvd|tv|the|classic|nbc|cbs|abc|fox|upn|wb|pbs|hbo|espn|mtv|tnn|tbs|usa|[wk][a-z]{2,3}(?:-tv)?(?:\s?\d{1,2})?)\b[\s\-:,.|]*)*", re.I)
-TAIL = re.compile(r"^\s*(?:$|[-:|(\[,#]|\b(?:s\s?\d{1,2}\s?e\s?\d{1,3}|s\s?\d{1,2}\b|d\s?\d{1,2}\b|\d{1,2}x\s?\d{1,3}|\d{1,4}\b|season|seasons|series|episode|episodes|ep\b|eps\b|the complete|complete|full|sitcom|tv|pilot|finale|premiere|nbc|cbs|abc|fox|upn|wb|pbs|hbo|espn|mtv|tnn|tbs|wgn|usa|vhs|dvd|disc|vol|volume|tape|part|pt|with commercials|w commercials|woc|commercials|on|from|show|special|marathon|block|(?:19[4-9]\d|200[0-4])|\d{1,2}[-./]\d{1,2}[-./]\d{2,4}|january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\b)", re.I)
+TAIL = re.compile(r"^\s*(?:$|[-:|(\[,#]|\b(?:s\s?\d{1,2}\s?e\s?\d{1,3}|s\s?\d{1,2}\b|d\s?\d{1,2}\b|\d{1,2}x\s?\d{1,3}|\d{1,4}\b|\d{6}\b|\d{8}\b|season|seasons|series|episode|episodes|ep\b|eps\b|the complete|complete|full|sitcom|tv|pilot|finale|premiere|nbc|cbs|abc|fox|upn|wb|pbs|hbo|espn|mtv|tnn|tbs|wgn|usa|vhs|dvd|disc|vol|volume|tape|part|pt|with commercials|w commercials|woc|commercials|on|from|show|special|marathon|block|(?:19[4-9]\d|200[0-4])|\d{1,2}[-./]\d{1,2}[-./]\d{2,4}|january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\b)", re.I)
 STOP = {'the', 'a', 'an', 'of', 'and', 'in', 'on', 'to', 'with', 'show', 'by', 'for', 'is', 'it', 'at', 'from', 'md', 'mr', 'tv', 'new'}
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
 RARE = set('adderly aftermash andersonville andromeda arliss arli$$ avonlea backyardigans ballykissangel berrengers bewitched bodyshaping booknotes boomtown bordertown buzzkill carnivale cavanaughs citykids columbo comicview commish counterstrike crosswits cybercops deadwood eastenders elimidate entourage fastlane felicity foofur futurama geraldo gunsmoke halloweentown hometime hornblower housesmart hughleys inquizition inuyasha kissyfur knightwatch kojak lovejoy mannix mathnet matlock moneyline motorweek mousercise mousercize nightingales nightline overhaulin pictionary pinwheel rockumentary rollergames rollerjam rolonda scattergories seaquest smallville sportscenter sportscentury starrcade summerslam superbook supercarrier tattingers tattletales teknoman tekwar thirtysomething thundercats toonheads torkelsons videopolis wildboyz wintuition witchblade wonderworks wrestlemania youthquake jeopardy donahue montel leeza marilu daria sopranos sportsworld speedweek shortstories homeworks ncis mxc flcl wccw quincy riptide dragnet laramie profiler cinematech starcade'.split()) | {'gamepro tv', 'muppet show', 'gong show', 'daily show', 'elephant show', 'bozo show', 'sinbad show', 'roseanne show', 'norm show', 'weber show', 'ellen show', 'moxy show', 'today show', 'early show', 'gossip show', 'house md', 'mr t', 'mr president', 'mr sunshine', 'mr personality', 'tv 101', 'owl tv', 'tots tv', 'real tv', 'new detectives', 'new dragnet', 'new lassie', 'new zorro', 'new wilderness'}
@@ -80,6 +84,10 @@ def airdate(t):
         return '%d-%02d-%02d' % (y, int(m.group(1)), int(m.group(2)))
     m = re.search(r'\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(\d{1,2})(st|nd|rd|th)?,?\s+(19[89]\d|200[0-4])\b', t.lower())
     if m: return '%s-%02d-%02d' % (m.group(4), MON[m.group(1)], int(m.group(2)))
+    m = re.search(r'(?<!\d)(19[89]\d|200[0-4])(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])(?!\d)', t)
+    if m: return '%s-%s-%s' % m.groups()
+    m = re.search(r'(?<!\d)(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])(19[89]\d|200[0-4])(?!\d)', t)
+    if m: return '%s-%s-%s' % (m.group(3), m.group(1), m.group(2))
     return ''
 def seasons(low):
     out = set()
@@ -109,12 +117,12 @@ def prep(sh):
         rx = re.compile(r"(?<![a-z0-9])(?:the[\W_]+)?" + r"[\W_]*".join("[.'*]?".join(re.escape(ch) for ch in w) for w in ws) + r"(?![a-z0-9])")
         names.append({'n': n0, 'lvl': lvl, 'rx': rx, 'q': ' '.join(re.sub(r'["!:()\[\]{}/\\*?^~+\-]', ' ', bare(a)).split())})
     sh['names'] = names
-    sh['y0'], sh['y1'] = sh['years'][0], sh['years'][1]
+    sh['y0'], sh['y1'] = sh['years'][0], min(sh['years'][1], 2005 if h.get('until') else 2004)
     sh['remake'] = bool(re.search(r'\((19|20)\d\d\)|\(series\)|\(fox\)', sh['title'].lower())) or bool(h.get('remake'))
     sh['cls'] = 'scripted' if sh['type'] in SCRIPTED else 'event' if sh['type'] in EVENT else 'strip'
     sh['netrx'] = re.compile(r'\b(' + NETRX[sh['net']] + r')\b') if NETRX.get(sh['net']) and sh['net'] != 'syn' else None
     sh['junk'] = re.compile(h['junk']) if h.get('junk') else None
-    sh['full'] = bool(h.get('full')); sh['fam'] = bool(h.get('fam')); sh['pilot0'] = bool(h.get('pilot0')); sh['until'] = h.get('until', '2004-08-31'); sh['ids'] = h.get('ids', [])
+    sh['full'] = bool(h.get('full')); sh['fam'] = bool(h.get('fam')); sh['pilot0'] = bool(h.get('pilot0')); sh['until'] = h.get('until', '2004-12-31'); sh['ids'] = h.get('ids', [])
     sh['selfrx'] = re.compile(h['self']) if h.get('self') else None
     sh['evrx'] = re.compile(h.get('ev') or h.get('self') or 'no evidence rule'); sh['idsub'] = h.get('idsub', []); sh['evq'] = h.get('evq', '')
     q = QMAP.get(sh['type'])
@@ -199,7 +207,7 @@ def fetch_guides(G, todo):
                 py = int((w.get('premiered') or '0000')[:4] or 0)
                 if norm0(w.get('name', '')) in names and abs(py - sh['y0']) <= 1: best = w; break
             if best: break
-        if not best: return sh['title'], {'miss': 1}
+        if not best: return sh['title'], {'miss': 1, 'u': sh['until']}
         w = get('https://api.tvmaze.com/shows/%d?embed[]=episodes&embed[]=cast' % best['id']) or {}
         time.sleep(0.6)
         emb = w.get('_embedded') or {}
@@ -208,7 +216,7 @@ def fetch_guides(G, todo):
         for c in emb.get('cast', []):
             n = (c.get('person') or {}).get('name')
             if n and n not in cast: cast.append(n)
-        return sh['title'], {'id': best['id'], 'eps': rows, 'cast': cast[:8], 'lang': best.get('language') or ''}
+        return sh['title'], {'id': best['id'], 'eps': rows, 'cast': cast[:8], 'lang': best.get('language') or '', 'u': sh['until']}
     with ThreadPoolExecutor(2) as ex:
         for n, (k, g) in enumerate(ex.map(one, todo)):
             G[k] = g
@@ -442,7 +450,9 @@ def consider(sh, it, route='t'):
             eptf = bool(EP[sh['title']]['eprx'].search(fold(rest))); rest = EP[sh['title']]['eprx'].sub(' ', fold(rest))
         if sh['junk'] and sh['junk'].search(re.sub(r'[\W_]+', ' ', fold(low))): return None
         if REVIEW.search(rest) or REVIEW.search(subj): return None
-    if JUNK.search(rest) or SPIN.search(rest) or MOD2.search(t) or ADONLY.search(low.strip()): return None
+    if JUNK.search(rest) or SPIN.search(rest) or MOD2.search(t) or ADONLY.search(low.strip()) or BADID.search(ident.lower()): return None
+    if ADS.search(low) and not ADSOK.search(low): return None
+    if sh['cls'] == 'scripted' and WEBID.search(ident.lower()) and not SE1.search(low): return None
     if ABROAD.search(low) and sh['net'] not in UKOK and '(uk)' not in sh['title'].lower(): return None
     if sh['cls'] == 'scripted' and JUNKS.search(rest): return None
     if sh['type'] != 'sports' and sh['q'] != 'wrest' and JUNKN.search(rest) and not TAPE2.search(low): return None
@@ -454,19 +464,21 @@ def consider(sh, it, route='t'):
     ys = [int(y) for y in YR.findall(t)]
     ad = airdate(t)
     if ad: ys.append(int(ad[:4]))
-    hi = max(y1 + 1, 2004) if not sh['remake'] else y1 + 1
-    inrun = any(y0 <= y <= y1 + 1 for y in ys)
-    inera = any(y0 <= y <= min(hi, 2004) for y in ys)
+    top = y1 if y1 >= 2004 else y1 + 1
+    hi = max(top, 2004) if not sh['remake'] else top
+    lo = y0 if sh['cls'] == 'scripted' or sh['ct'] == 'rerun' or sh['type'] in ('special', 'movie-package', 'movie') else max(y0, 1984)
+    inrun = any(lo <= y <= top for y in ys)
+    inera = any(lo <= y <= min(hi, 2004) for y in ys)
     if ys and not (inrun or inera): return None
     m = re.match(r'(\d{4})', flat(it.get('date')) or flat(it.get('year')) or '')
     iy = int(m.group(1)) if m else 0
     yt = ident.startswith('youtube-') or 'youtube' in subj[:40]
-    mod = iy > 2004 or (yt and not iy)
-    dated = inrun or inera or (iy and not yt and max(y0, 1984) <= iy <= min(hi, 2004)) or (iy and y0 <= iy <= y1)
+    mod = iy > max(top, 2004) or (yt and not iy)
+    dated = inrun or inera or (iy and not yt and max(y0, 1984) <= iy <= min(hi, 2004)) or (iy and lo <= iy <= top)
     ss = seasons(low)
     g = EP.get(sh['title'])
-    if g and g['maxs'] and ss and not MULTI.search(low) and any(n > g['maxs'] + 1 for n in ss): return None
-    if sh['cls'] == 'scripted' and not g and ss and any(y0 + n - 1 > y1 + 1 for n in ss) and not MULTI.search(low): return None
+    if g and g['maxs'] and ss and not MULTI.search(low) and any(n > g['maxs'] for n in ss): return None
+    if not (g and g['maxs']) and ss and any(y0 + n - 1 > top for n in ss) and not MULTI.search(low): return None
     se = bool(ss) or bool(MULTI.search(low)) or bool(SE1.search(low)) or bool(re.search(r'\bcomplete\b', low))
     ept = (eptf or bool(ep_title(sh, rest0))) if sh['cls'] == 'scripted' else False
     cast = has_cast(sh, desc + ' ' + subj + ' ' + low)
@@ -475,12 +487,13 @@ def consider(sh, it, route='t'):
     ctx = tape or tvcol or netw
     lvl = nm['lvl']
     if JUNKD.search(desc) and not (cast or ept): return None
-    if sh['remake'] and not (inrun or cast or ept or (iy and y0 <= iy <= y1 + 1)): return None
+    if sh['remake'] and not (inrun or cast or ept or (iy and y0 <= iy <= top)): return None
     if route != 't' and hd < 0:
         if sh['full']: return ('d', route) if not (mod and ys and not inrun) else None
         if route == 'u': return ('y', 'u') if (se or dated or tape) and not mod else ('m', 'show named outside the title only')
         if not (tape or tvcol or se): return None
         if mod and not (inera or inrun): return None
+        if not (' ' + nm['n'] + ' ') in (' ' + norm(clean(re.sub(r'[-_.]+', ' ', ident)) + ' ' + subj + ' ' + desc[:400]) + ' '): return None
         return ('d', 'd')
     if sh['cls'] == 'scripted':
         m2 = EPN.search(low)
@@ -546,6 +559,19 @@ def consider(sh, it, route='t'):
     if not dated: return ('m', 'no broadcast year') if hd == 2 and (ctx or dev) else None
     if hd >= 0.5 or ctx: return ('y', 't')
     return ('m', 'name inside a longer title')
+def trim_seasons(sh, x):
+    if sh['cls'] != 'scripted' or sh['full']: return 0
+    g = EP.get(sh['title']) or {}
+    maxs = g.get('maxs') or 0
+    def late(f):
+        m = SE1.search(clean(f[0].rsplit('/', 1)[-1]))
+        if not m: return False
+        sn = int(m.group(1) or m.group(3))
+        return sn > maxs if maxs else sh['y0'] + sn - 1 > 2004
+    keepf = [f for f in x['f'] if not late(f)]
+    n = len(x['f']) - len(keepf)
+    if n: x['f'] = keepf
+    return n
 def trim_full(sh, x):
     x['f'] = [f for f in x['f'] if f[1] >= FULLMIN[sh['type']]]
     if not x['f']: return set()
@@ -658,6 +684,9 @@ def meta(c):
     blob = (desc[:1500] + ' ' + subj).lower()
     x = {'i': c['identifier'], 'q': sh['q'], 't': title, 'd': flat(m.get('date')), 'y': '', 'c': col[:4], 's': subj[:200], 'ds': desc[:400], 'f': files[:1500 if sh['full'] else 500], 'dl': c.get('downloads') or 0, 'k': sh['title'], 'e': 0, 'net': sh['net'] if sh['net'] != 'syn' else '', 'ct': sh['ct'], 'pri': sh['pri'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
     if c.get('held'): x['sup'] = 1
+    if trim_seasons(sh, x):
+        files = x['f']
+        if not files or max(f[1] for f in files) < 600: return rej(c, 'later seasons only')
     named = sum(1 for f in files if fname(sh, f[0]))
     g = EP.get(sh['title']); se = []; nse = 0
     one = len(files) <= 2
@@ -689,10 +718,11 @@ def meta(c):
     if se: x['se'] = se
     ds = sorted(f[1] for f in files); med = ds[len(ds) // 2]
     if v[0] == 'd':
-        ok = named * 2 >= len(files) or (len(se) >= 2 and len(se) * 2 >= len(files) and g and g['t'] and g['d']) or (has_cast(sh, blob) and sh['cls'] == 'scripted')
+        ok = named * 2 >= len(files) or (len(se) >= 2 and len(se) * 2 >= len(files) and g and g['t'] and g['d'])
         if ok and sh['cls'] == 'scripted' and med < EPLEN[sh['type']] * 0.7: ok = False
+        tl = clean(title)
         if ok: x['t'] = (sh['title'] + ' - ' + title)[:200] if find(sh, title)[1] < 0 else title
-        elif TAPE2.search(clean(title)) and len(files) <= 6: maybe(x, 'show named in the description of a tape; not confirmed')
+        elif TAPE2.search(tl) and len(files) <= 6 and (airdate(title) or any(1984 <= int(y) <= 2004 for y in YR.findall(title))) and not re.search(r'\b(opening|closing|previews?|trailers?|full vhs|vhs rip|home video)\b', tl): maybe(x, 'show named in the description of a tape; not confirmed')
         else: return rej(c, 'description match not confirmed by files')
     elif v[0] == 'm':
         if named * 2 >= len(files) and (nse * 2 >= len(files) or has_cast(sh, blob)) and len(files) >= 2: pass
@@ -708,9 +738,9 @@ def recheck(x):
     if not sh: return 'show no longer listed'
     t = x['t']
     if t.startswith(sh['title'] + ' - ') and x.get('r') in ('d', 'u', 'e', 'i', 'f'):
-        if sh['full']: return '' if consider(sh, {'identifier': x['i'], 'title': t[len(sh['title']) + 3:], 'description': x.get('ds'), 'subject': x.get('s'), 'collection': x.get('c'), 'date': '' if x.get('ad') else x.get('d')}, x['r']) else 'no longer passes the title rules'
+        if sh['full'] or x['r'] == 'd': return '' if consider(sh, {'identifier': x['i'], 'title': t[len(sh['title']) + 3:], 'description': x.get('ds'), 'subject': x.get('s'), 'collection': x.get('c'), 'date': '' if x.get('ad') else x.get('d')}, x['r']) else 'no longer passes the title rules'
         return 'junk words in the title' if sh['junk'] and sh['junk'].search(clean(t[len(sh['title']) + 3:])) else ''
-    it = {'identifier': x['i'], 'title': t, 'description': x.get('ds'), 'subject': x.get('s'), 'collection': x.get('c'), 'date': '' if x.get('ad') else x.get('d')}
+    it = {'identifier': x['i'], 'title': t, 'description': x.get('ds'), 'subject': x.get('s'), 'collection': x.get('c'), 'date': x.get('d')}
     v = consider(sh, it, x.get('r', 't'))
     if not v: return 'no longer passes the title rules'
     return ''
@@ -729,7 +759,7 @@ def plan():
             st = (prev.get(s['title']) or {}).get('status', 'MISSING')
             return ('missing' in FOCUS and st == 'MISSING') or ('thin' in FOCUS and st in ('MISSING', 'THIN'))
         order = [s for s in order if want(s)]
-    todo = [s for s in order if s['title'] not in GUIDE and (s['cls'] == 'scripted' or s['type'] in ('game', 'talk', 'late', 'soap', 'mag', 'doc', 'cook', 'music', 'other', 'news'))]
+    todo = [s for s in order if (s['title'] not in GUIDE or (GUIDE[s['title']].get('u') != s['until'] and not s['full'])) and (s['cls'] == 'scripted' or s['type'] in ('game', 'talk', 'late', 'soap', 'mag', 'doc', 'cook', 'music', 'other', 'news'))]
     print('have', len(have), 'mine', len(mine), 'shows', len(order), 'guides to fetch', len(todo), flush=True)
     fetch_guides(GUIDE, todo)
     with gzip.open(GP, 'wt', encoding='utf-8') as f: json.dump(GUIDE, f, ensure_ascii=False, separators=(',', ':'))
@@ -796,7 +826,7 @@ def plan():
         if i in seen and seen[i]['rk'] <= r: return
         seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': sh['title'], 'pri': sh['pri'], 'r': 'u' if up else v[1] if v[0] != 'm' else 't', 'rk': r}
         if i in have: seen[i]['held'] = 1
-    with ThreadPoolExecutor(14) as ex:
+    with ThreadPoolExecutor(20) as ex:
         for n, (sh, res, xres) in enumerate(ex.map(one, order)):
             for i, (it, v, nm) in res.items(): add(sh, i, it, v, nm)
             for o, i, it, v, nm in xres:
@@ -893,6 +923,12 @@ def merge():
     res = old + add
     for x in res:
         sh = BYT[x['k']]; x['q'] = sh['q']; x['pri'] = sh['pri']; x['ct'] = sh['ct']
+        f0 = [f[0] for f in x['f']]
+        if trim_seasons(sh, x):
+            if not x['f']: x['drop'] = 1; print('DROP', x['k'], '|', x['i'], '|', x['t'][:80], '| later seasons only')
+            pos = {f[0]: n for n, f in enumerate(x['f'])}
+            x['se'] = [[pos[f0[r[0]]]] + r[1:] for r in x.get('se', []) if r[0] < len(f0) and f0[r[0]] in pos]
+            if not x['se']: x.pop('se')
         if sh['full']:
             f0 = list(x['f']); trim_full(sh, x)
             if not x['f']: x['f'] = f0
