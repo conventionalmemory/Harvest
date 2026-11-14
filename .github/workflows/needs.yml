@@ -1,0 +1,73 @@
+name: Wanted shows harvest
+on:
+  workflow_dispatch:
+    inputs:
+      focus:
+        description: Show titles separated by semicolons, or pri1, pri2, pri3, missing, thin
+        required: false
+        default: ''
+permissions:
+  contents: write
+concurrency:
+  group: needs
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search
+        env:
+          FOCUS: ${{ inputs.focus }}
+        run: MODE=plan python3 harvest/needs.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: needs-cands
+          path: |
+            parts/needs_cands.json.gz
+            parts/needs_guide.json.gz
+          retention-days: 3
+  lookup:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: needs-cands
+          path: parts
+      - name: Look up
+        run: MODE=meta SHARD=${{ matrix.shard }} SHARDS=6 THREADS=16 BUDGET_MIN=320 python3 harvest/needs.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: needs-${{ matrix.shard }}
+          path: parts/needs-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: lookup
+    if: ${{ !cancelled() && needs.lookup.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: needs-*
+          path: parts
+          merge-multiple: true
+      - name: Merge
+        run: ls -la parts; MODE=merge python3 harvest/needs.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/needs.json.gz catalog/needs_report.json harvest/needs_guide.json.gz
+          git commit -q -m "Update wanted shows catalog" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git -c push.negotiate=true pull -q --rebase && git push && break; sleep $((10 + RANDOM % 20)); done
