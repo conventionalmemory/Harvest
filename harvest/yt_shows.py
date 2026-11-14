@@ -313,7 +313,7 @@ def load_shows():
     S[nzk('The Computer Chronicles')]['al'] |= {'computer chronicles'}
     S[nzk('He-Man and the Masters of the Universe')]['al'] |= {'he man', 'he man official'}
     S[nzk('Teenage Mutant Ninja Turtles')]['al'] |= {'tmnt 1987', 'teenage mutant ninja turtles 1987'}
-    for k in ('er', 'doug', 'friends', 'wings', 'cheers', 'coach', 'martin', 'dallas', 'dynasty', 'today', 'nature', 'biography', 'maury', 'geraldo', 'donahue', 'columbo', 'matlock', 'roseanne', 'frasier', 'seinfeld', 'rugrats', 'charmed', 'sliders', 'highlander', 'blossom', 'nova', 'frontline', 'gunsmoke', 'airwolf', 'alf', 'cops', 'qvc', 'gargoyles', 'animaniacs', 'ducktales', 'talespin', 'thundercats', 'macgyver', 'moonlighting', 'baywatch', 'moesha', 'jeopardy'):
+    for k in ('er', 'doug', 'friends', 'wings', 'cheers', 'coach', 'martin', 'dallas', 'dynasty', 'today', 'nature', 'biography', 'maury', 'geraldo', 'donahue', 'columbo', 'matlock', 'roseanne', 'frasier', 'seinfeld', 'rugrats', 'charmed', 'sliders', 'highlander', 'blossom', 'nova', 'frontline', 'gunsmoke', 'airwolf', 'alf', 'cops', 'qvc', 'gargoyles', 'animaniacs', 'ducktales', 'talespin', 'thundercats', 'macgyver', 'moonlighting', 'baywatch', 'moesha', 'jeopardy', 'family matters', 'full house', 'home improvement', 'step by step'):
         if k in S: S[k]['amb'] = 1
     return S
 
@@ -406,7 +406,7 @@ def plan():
                 epq += [t + ' s%02de%02d' % (e[0], e[1]), t + ' season %d episode %d' % (e[0], e[1])]
                 et = nz(str(e[3]))
                 if len(et) >= 5 and not re.match(r'^(episode|part|pilot|show|chapter)\b', et): epq.append(t + ' ' + str(e[3]) + ' full episode')
-        tasks.append({'pri': pri, 'foc': 1 if FOCUS else 0, 'k': k, 'title': t, 'q': s['q'], 'net': s['net'], 'y0': s['y0'], 'y1': s['y1'], 'kind': s['kind'], 'al': sorted(s['al']), 'amb': s.get('amb', 0), 'tier': s['tier'], 'rank': s['rank'], 'have': have, 'need': need, 'eps': eps, 'cov': sorted(se.get(k, set())), 'qs': [q.strip() for q in qs], 'epq': epq})
+        tasks.append({'must': 1 if k in fk else 0, 'pri': pri, 'foc': 1 if FOCUS else 0, 'k': k, 'title': t, 'q': s['q'], 'net': s['net'], 'y0': s['y0'], 'y1': s['y1'], 'kind': s['kind'], 'al': sorted(s['al']), 'amb': s.get('amb', 0), 'tier': s['tier'], 'rank': s['rank'], 'have': have, 'need': need, 'eps': eps, 'cov': sorted(se.get(k, set())), 'qs': [q.strip() for q in qs], 'epq': epq})
     tasks.sort(key=lambda t: (t['pri'], t['tier'], t['rank']))
     os.makedirs(PARTS, exist_ok=True)
     json.dump(tasks, gzip.open(os.path.join(PARTS, 'yt_plan.json.gz'), 'wt', encoding='utf-8'))
@@ -462,6 +462,9 @@ def match(t, c, M):
         if not (n2.startswith(hit + ' ') or n2 == hit or re.search(r'(^| )' + re.escape(hit) + r' (s ?\d|season|series \d|episode|ep \d|\d{1,3}x\d|\d)', n) or re.search(r'[:|\-] *' + re.escape(hit) + r'\b', T.lower())): return None
     if not durok(t, c['dur']): return None
     r = {'se': None, 'ep': '', 'ad': '', 'e': 0}
+    if t.get('must') and t['q'] != 'kids':
+        if 2400 <= c['dur'] <= 3300: r['m'] = 'double length'
+        elif not 1080 <= c['dur'] <= 1900: return None
     m = re.search(r'(?i)\bs(?:eason)?\s*(\d{1,2})\s*[,:._-]?\s*e(?:p(?:isode)?)?\s*\.?\s*(\d{1,3})\b|\b(\d{1,2})x(\d{2})\b', T)
     eps = M.get(t['k'])
     if m and eps is not None:
@@ -486,7 +489,7 @@ def match(t, c, M):
         r['ad'] = d
     elif not r['se']:
         if not t.get('foc') and (t['amb'] or eps is not None and eps['se'] and t['tier'] <= 2): return None
-        if t.get('foc') and eps is not None and eps['se']: r['m'] = 1
+        if t.get('foc') and eps is not None and eps['se']: r['m'] = 'episode not identified'
         if not re.search(r'(?i)full episode|complete episode|\bepisode\s*\d+|\bep\.?\s*\d+|\b(19[89]\d|200[0-4])\b', T): return None
     if t['amb'] and not r['se'] and t['kind'] != 'date' and not t.get('foc'): return None
     y = r['ad'][:4] if r['ad'] else ''
@@ -495,7 +498,44 @@ def match(t, c, M):
         y = m2.group(1) if m2 else ''
     if y and not ('1984' <= y <= '2004') and not (r['ad'] and y < '1984'): return None
     r['e'] = int(y) if y else (t['y0'] if 1984 <= (t['y0'] or 0) <= 2004 else 0)
+    tg = tight(t, T, r['ep'], c.get('ch') or '', 1 if c.get('ver') or c.get('off') or OFFX.search(c.get('ch') or '') else 0)
+    if tg == 'junk': return None
+    if tg == 'maybe' and not r.get('m'): r['m'] = 'title has extra words'
     return r
+
+
+STOPW = set('full episode episodes season series complete entire hd hq tv show the a an and of in on at to with from by for original broadcast uncut unedited commercials commercial classic classics sitcom cartoon cartoons animated animation vhs dvd rip part pt finale premiere pilot nbc abc cbs fox pbs upn wb nick nickelodeon nickelodeons disney disneys espn espns usa tnt tbs syndicated syndication rerun reruns english eng dub dubbed version remastered 1080p 720p 480p 4k s e ep vol volume disc tape aired air date airdate year all new retro vintage rare 80s 90s 1980s 1990s lifetime lifetimes hgtv cnn bbc mtv vh1 hbo discovery channel tlc cable network presents'.split())
+NEXTW = set('season series episode episodes ep full complete tv show the pilot s e vol volume part classic uncut original hd with cartoon sitcom nbc abc cbs fox vhs dvd hawaii'.split())
+MONW = set('january february march april may june july august september october november december jan feb mar apr jun jul aug sep sept oct nov dec monday tuesday wednesday thursday friday saturday sunday'.split())
+JUNKT = re.compile(r"(?i)\b(first time (watching|reaction|seeing|viewing)|for the first time|we watch(ed)?|re-?watch(ed|ing)?|revisited|ruminations|rundown|after ?show|afterbuzz|play ?through|let'?s play|the game|hit (and|&) run|script reading|table read|discuss(es|ed|ing|ion)?|analy[sz](ing|ed|is)|facts about|weird facts|radio|un episodio|joined by|check out|grades|watch ?along|my thoughts|breakdown|deep dive|drinking game|ft\.|feat\.|commercial breaks|road rage|tapped out|nes|snes|ps[1-5]|xbox|arcade|play it through|let'?s watch|live ?stream|sermon|school project|stage production|decoded|reviews|then and now|ranking every|every episode|iceberg|theory|theories)\b")
+JUNKC = re.compile(r"(?i)(react|podcast|gaming|commentary|rewatch|reviews?\b|plays\b|after ?show)")
+
+
+def tight(t, T, ept, ch, off):
+    if t['kind'] == 'date': return ''
+    if JUNKT.search(T) or JUNKC.search(ch or ''): return 'junk'
+    n = ' ' + nz(T) + ' '; hit = ''
+    for a in sorted(t['al'], key=lambda a: -len(a)):
+        if len(a) >= 2 and n.find(' ' + a + ' ') >= 0: hit = a; break
+    if not hit: return ''
+    i = n.find(' ' + hit + ' '); ew = set(nz(ept or '').split())
+    pre = re.sub(r'\b(s ?\d{1,2} ?e ?\d{1,3}|season \d{1,2}|series \d{1,2}|episode \d{1,3}|ep \d{1,3}|\d{1,2}x\d{2,3}|s\d{1,2}|e\d{1,3})\b', ' ', n[:i])
+    pre = [w for w in pre.split() if w not in STOPW and w not in ew and not w.isdigit()]
+    post = n[i + len(hit) + 1:].split()
+    short = len(hit.split()) <= 2 or t.get('amb')
+    raw = re.sub(r"[’'`]", '', T.lower().replace('&', ' and '))
+    m = re.search(r'[^a-z0-9]+'.join(re.escape(w) for w in hit.split()), raw)
+    b4 = raw[:m.start()].rstrip()[-1:] if m else ''; af = raw[m.end():].lstrip()[:1] if m else ''
+    one = len(nzk(hit).split()) == 1 or t.get('amb')
+    if pre:
+        if short and not (b4 and b4 in '|-:•–"(['): return 'junk'
+        if one and t.get('amb') and not off: return 'junk'
+        if not off and (short or len(pre) >= 3): return 'maybe'
+    if t.get('amb') and not off and i > 0 and nzk(n.strip()).find(nzk(hit)) != 0: return 'maybe'
+    if one and post:
+        w = post[0]
+        if not (w in NEXTW or w in MONW or w in ew or w.isdigit() or re.match(r'^(s\d{1,2}(e\d{1,3})?|e\d{1,3}|\d{1,2}x\d{2,3}|19\d\d|200\d)$', w) or (af and af in '|-:•–("[#/,.')): return 'junk'
+    return ''
 
 
 def build_M(tasks):
@@ -537,11 +577,11 @@ def run_search():
         t = byk[k]; r = match(t, c, M)
         if not r: return False
         off, why = stable(c)
-        if r.get('m'): why = 'maybe: episode not identified' + ('; ' + why if why else ''); c = dict(c, maybe=1)
         if not why:
             STAT['unstable'] += 1
             if c['age'] >= 0 and c['age'] < 1 and c.get('views', 0) < 300: return False
             why = 'maybe: up %s years, %d views' % (('%d' % int(c['age'])) if c['age'] >= 0 else '?', c.get('views', 0)); c = dict(c, maybe=1)
+        if r.get('m'): why = 'maybe: ' + r['m'] + '; ' + re.sub(r'^maybe: ', '', why); c = dict(c, maybe=1)
         key = c['vid']
         if key in acc: return True
         acc[key] = dict(c, k=k, r=r, off=off, why=why, src=src)
@@ -643,9 +683,10 @@ def merge():
     M = build_M(tasks); byt = {t['title']: t for t in tasks}; purged = 0
     for it in old:
         t = byt.get(it['k'])
-        if t and not str(it.get('why', '')).startswith('maybe: episode not identified'):
-            r = match(t, {'t': it['t'], 'dur': it['dur'], 'live': 0}, M)
+        if t:
+            r = match(dict(t, foc=1) if str(it.get('why', '')).startswith('maybe: episode not identified') else t, {'t': it['t'], 'dur': it['dur'], 'live': 0, 'ch': it.get('ch'), 'off': it.get('off')}, M)
             if not r: purged += 1; continue
+            if r.get('m') and not it.get('keep'): it['keep'] = 'maybe'; it['why'] = 'maybe: ' + str(r['m']) + '; ' + str(it.get('why', ''))
             if r['ad'] and not it.get('ad') and re.match(r'\d{4}-\d\d-\d\d$', r['ad']): it['ad'] = r['ad']; it['e'] = int(r['ad'][:4])
         ek = (it['k'], tuple(it.get('se') or ()) or it.get('ad') or it['vid'])
         out[ek] = it
