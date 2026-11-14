@@ -751,7 +751,17 @@ EXTRA = [
 ]
 if MODE == 'probe':
     for t in os.environ.get('PROBE', '').split('|'):
+        t, _, hs = t.partition('>')
         b = wiki(t.strip())
+        if hs and b:
+            on = 0
+            for x in b:
+                if not on and x[0] == 'h' and x[2].lower().startswith(hs.strip().lower()): on = 1
+                if on:
+                    on += 1
+                    print('  RAW', x[0], x[2] if x[0] != 'p' else '', '*' if x[0] == 'row' and x[3] else '', (' | '.join(c[:70] for c in x[1]) if x[0] == 'row' else str(x[1 if x[0] == 'p' else 2])[:240])[:420])
+                    if on > 60: break
+            continue
         print('PROBE', t, 'blocks', len(b) if b else b, flush=True)
         n = 0; lim = int(os.environ.get('PROBE_MAX', '170'))
         for x in b or []:
