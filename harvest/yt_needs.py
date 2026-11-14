@@ -361,7 +361,7 @@ def plan():
             for it in json.load(gzip.open(OUT, 'rt', encoding='utf-8')): prev[it['k']] += 1
         except Exception: pass
     done = []
-    if os.path.exists(REP) and not os.environ.get('REDO'):
+    if os.path.exists(REP) and DEEP >= 0:
         try: done = json.load(open(REP, encoding='utf-8')).get('done') or []
         except Exception: done = []
     G = {}
@@ -415,7 +415,7 @@ def plan():
             qs += [bt + ' season %d full episode' % n for n in seas]
             if s['pri'] <= 2: qs += [bt + ' s%02d' % n for n in seas] + [bt + ' season %d episode 1' % n for n in seas]
             if not seas: qs += [bt + ' season 1 episode 1', bt + ' s01e01', bt + ' pilot episode', bt + ' ' + str(s['y0'] or '') + ' episode 1']
-            cap = DEEP or (400 if s['pri'] <= 1 else 150 if s['pri'] == 2 else 40)
+            cap = (DEEP if DEEP > 0 else 0) or (400 if s['pri'] <= 1 else 150 if s['pri'] == 2 else 40)
             pool = [e for e in eps if str(e[2]) <= s['until']]
             if len(pool) > cap:
                 random.seed(s['k']); pool = sorted(random.sample(pool, cap))
@@ -608,6 +608,8 @@ def match(t, c, M):
             if not pos and not nxt: return None, 'position'
             if not pos or not nxt: r['m'] = 'title has extra words'
         elif not pos: r['m'] = 'title has extra words'
+    elif t['strict']:
+        if not pos and strong < 2: return None, 'position'
     elif amb:
         if strong >= 2:
             if not pos and not nxt and amb == 2: r['m'] = 'title has extra words'
@@ -631,8 +633,13 @@ def match(t, c, M):
             elif not pos: r['m'] = 'title has extra words'
             elif G and not off and not r.get('m'): r['m'] = 'episode not identified'
     if t['strict']:
-        if not r['se'] or strong < 1 or r.get('m'): return None, 'strict: episode not confirmed'
         offs = bool(OFFS.match((c.get('ch') or '').strip())) or nzk(c.get('ch') or '') in set(nzk(a) for a in t['al']) or bool(c.get('ver') and OFFX.search(c.get('ch') or '') and not FANC.search(c.get('ch') or ''))
+        bare = not r['se'] and not r.get('m') and not [w for w in re.sub(r'\b(full|episode|episodes|hd|complete|tv|series|show)\b', ' ', pn.replace(' ' + hit + ' ', ' ', 1)).split()]
+        if bare and any(a <= c['dur'] <= b for a, b in t['runtime']) and not FANC.search(c.get('ch') or ''):
+            r['need'] = 'strict'; r['m'] = 'unofficial upload, episode from description'
+            if offs: r['offs'] = 1; r['m'] = 'official channel, episode from description'
+            return r, ''
+        if not r['se'] or strong < 1 or r.get('m'): return None, 'strict: episode not confirmed'
         rest = [w for w in re.sub(SERX, ' ', pn.replace(' ' + hit + ' ', ' ', 1)).split() if w not in STOPW and w not in ew and not w.isdigit() and w not in MONW and len(w) >= 3 and w not in ('remastered', 'restored', 'uncut', 'paramount', 'plus', 'star', 'trek', 'tos', 'tng', 'ds9', 'voy', 'ent', 'tas')]
         inrt = any(a <= c['dur'] <= b for a, b in t['runtime'])
         if not offs:
@@ -684,7 +691,27 @@ def fin(c):
 def enrich(c, t, G):
     ds = c.get('ds') or ''
     r = c['r']
-    if t['strict']: return
+    if t['strict']:
+        if PODG.search(ds) or PODX.search(ds[:400]) and not r.get('offs'): c['drop'] = 'description'; return
+        if r.get('need') != 'strict': return
+        e = None
+        m = SEP.search(ds[:600])
+        if G and m:
+            g = [int(v) for v in m.groups() if v]
+            e = G['se'].get((g[0], g[1]))
+        if G and e is None:
+            hn = ' ' + nz(ds[:400]) + ' '
+            best = None
+            for et, ee in G['ti']:
+                if len(et) >= 5 and hn.find(' ' + et + ' ') >= 0 and (not best or len(et) > len(best[0])): best = (et, ee)
+            if best: e = best[1]
+        if e is None or str(e[2]) > t['until']: c['drop'] = 'strict: no episode in description'; return
+        r['se'] = [e[0], e[1]]; r['ep'] = e[3]; r['ad'] = str(e[2]) if re.match(r'\d{4}-\d\d-\d\d$', str(e[2] or '')) else ''
+        if r['ad']: r['e'] = int(r['ad'][:4])
+        r.pop('need', None); r['src'] = 'episode from description'
+        if r.get('offs'): r.pop('m', None)
+        fin(c)
+        return
     if PODG.search(ds) or PODG.search(c['t']): c['drop'] = 'description'; return
     head = ds[:500]
     y0 = t['hint'] or t['y0'] or 1950; y1 = t['y1'] or 2004
@@ -760,7 +787,7 @@ def run_search():
         t = byk[k]; r, why0 = match(t, c, M)
         if not r:
             rejs[why0] += 1
-            if why0 not in ('noname', 'live') and len(rsamp[why0]) < 400: rsamp[why0].append((t['title'], c['t'], c['dur'] // 60))
+            if why0 not in ('noname', 'live') and len(rsamp[why0]) < 400: rsamp[why0].append((t['title'], c['t'] + ' [' + (c.get('ch') or '')[:24] + ']', c['dur'] // 60))
             return False
         if t['strict']: c = dict(c, offs=1) if r.get('offs') else dict(c, strictu=1)
         off, why = stable(c)
@@ -877,7 +904,8 @@ def run_search():
                 c['ds'] = ds[:700]
                 enrich(c, byk[c['k']], M.get(c['k']))
         if c['r'].get('need') and not c.get('drop'):
-            if (byk[c['k']]['y1'] or 2004) >= 2004: c['drop'] = 'undated'
+            if c['r'].get('need') == 'strict': c['drop'] = 'strict: no description'
+            elif (byk[c['k']]['y1'] or 2004) >= 2004: c['drop'] = 'undated'
             else: c['r'].pop('need')
         time.sleep(0.1 + random.random() * 0.2)
     items.sort(key=lambda c: (0 if c['r'].get('need') else 1 if not (c['r'].get('se') or c['r'].get('ad')) else 2 if c.get('maybe') else 3, c['vid']))
@@ -887,6 +915,7 @@ def run_search():
     dsamp = [c for c in items if c.get('drop') == 'description']
     for c in dsamp[:40]: print('   drop |', c['t'][:70], '|', (c.get('ds') or '')[:110])
     fsamp = [c for c in items if c['r'].get('src')]
+    for c in [c for c in items if str(c.get('drop', '')).startswith('strict')][:30]: print('   sdrop |', c['k'][:20], '|', c['t'][:50], '|', c['ch'][:24], '|', (c.get('ds') or '')[:110])
     for c in fsamp[:40]: print('   fix  |', c['t'][:60], '|', c['r'].get('se'), c['r'].get('ad'), '|', (c.get('ds') or '')[:110])
     items = [c for c in items if not c.get('drop')]
     for c in items: c.pop('ds', None)
@@ -898,7 +927,7 @@ def run_search():
     random.seed(SHARD)
     print('REJECT SAMPLES')
     for why0, L in rsamp.items():
-        for x in random.sample(L, min(len(L), 14 if why0 not in ('duration', 'badword') else 6)): print('  ', why0.ljust(18), '|', x[0][:26], '|', x[2], 'min |', x[1][:90])
+        for x in random.sample(L, min(len(L), 14 if why0 not in ('duration', 'badword') else 6)): print('  ', why0.ljust(18), '|', x[0][:26], '|', x[2], 'min |', x[1][:120])
     os.makedirs(PARTS, exist_ok=True)
     json.dump({'items': items, 'done': sorted(DONE)}, gzip.open(os.path.join(PARTS, 'ytn-%d.json.gz' % SHARD), 'wt', encoding='utf-8'))
 
