@@ -34,6 +34,7 @@ JUNKT = re.compile(r"(?i)\b(web ?series|icons unearthed|gmod|minecraft|roblox|fo
 JUNKC = re.compile(r"(?i)(react|podcast|gaming|gamer|commentary|rewatch|reviews?\b|plays\b|after ?show|longplay|\bfm\b|radio)")
 OFFS = re.compile(r"(?i)^(star trek|star trek official|startrek\.com|paramount( ?\+| plus)?( [a-z]{2,10})?|cbs|cbs all access|pluto tv|paramount pictures|paramount network|showtime|twin peaks|cbs home entertainment)$")
 FANC = re.compile(r"(?i)(trek|geek|nerd|lore|culture|chat|archive|pod|cast\b|review|react|talk|\bfan|sci-?fi|peaks|perfect|unwrapped|pensky|vinesauce|debris|explained|theory|media|critic|watch|commentary|opinion|rant|show\b|live\b|stream|gaming|games?\b)")
+PODX = re.compile(r"(?i)\b(podcasts?|discuss(es|ed|ing|ion)?|reviews?|recaps?|re-?watch(ing)?|our thoughts|we talk|we watch|we cover|we look at|patreon|spotify|apple podcasts|anchor\.fm|commentary|reactions?|reacts?|watch ?along|watch party|join us|this week|in this episode,? (we|i)|hosts?|listen|breakdown|analysis|first time|bedtime|sleep|narrat(ed|ion|or)|audio drama|fan (film|made|production|series)|parody|my take|opinions?|rank(ed|ing)?|live ?stream|chat)\b")
 SOFTJ = re.compile(r"(?i)\b(hours?|hrs?|vs\.?|versus|mix|mega ?mix|convention|panel|reunion|reunite[sd]?|toy|toys|figure|figures|pitch|mod|mods|genesis|sega|nes|snes|arcade|radio|trivia|quiz|theory|theories|the game|revival|cover|theme|edit|ending|opening|credits|preview|intro|outro|shorts?|scenes?|interview|tribute|deleted|review|clips?|moments|parody|german|french|polish|russian|arabic|partial|marathon|remix|highlights|commentary|recap|soundtrack)\b")
 LATEY = re.compile(r'\b(200[5-9]|20[12]\d)\b|\b\d{1,2}[./]\d{1,2}[./](0[5-9]|[12]\d)\b')
 OFFX = re.compile(r"(?i)(official|\bpbs\b|\bnbc\b|\bcbs\b|\babc\b|\bfox\b|warner|paramount|sony pictures|universal|disney|\bmgm\b|lionsgate|shout! ?(studios|factory)|shout ?factory|filmrise|hasbro|mattel|wildbrain|nelvana|9 story|cookie jar|nickelodeon|cartoon network|a&e|history channel|discovery|c-span|associated press|ap archive|\bbbc\b|\bitv\b|britbox|\bhbo\b|showtime|\bmtv\b|comedy central|\bbet\b|national geographic|smithsonian|american archive|library of congress|museum|university|public (television|media|broadcasting)|\bwgbh\b|\bwttw\b|\bwnet\b|\bkqed\b|\bopb\b|buzzr|fremantle|carsey|norman lear|stephen j\. cannell|cannell|peanuts|jim henson|henson|sesame|scholastic|dhx|cinedigm|multicom|mill creek|kino|questar|janson|echo bridge|vision films|grand ole opry|circle|opry|tv land|me-?tv|antenna tv|decades|the film detective|classic media|dreamworks|\bamc\b|ifc|sundance|food network|hgtv|\btlc\b|travel channel|court tv|\bcnn\b|\bespn\b|\bnfl\b|\bnba\b|\bmlb\b|\bnhl\b|\bwwe\b|nascar)")
@@ -239,6 +240,18 @@ def oembed(vid):
     return st
 
 
+def describe(vid):
+    d = inner('next', {'videoId': vid})
+    if not d: return None
+    out = []
+    for a in walk(d, 'attributedDescription', []):
+        if isinstance(a, dict): out.append(str(a.get('content') or ''))
+    for a in walk(d, 'descriptionBodyText', []): out.append(txt(a) if isinstance(a, dict) else '')
+    for a in walk(d, 'description', []):
+        if isinstance(a, dict): out.append(txt(a))
+    return re.sub(r'\s+', ' ', ' '.join(x for x in out if x))[:3000]
+
+
 def base_title(t):
     return re.sub(r'\s+', ' ', re.sub(r'\([^)]*\)', ' ', t)).strip()
 
@@ -375,6 +388,11 @@ def plan():
                 epq += [bt + ' ' + str(e[3]) + ' full episode', bt + ' s%02de%02d' % (e[0], e[1]), bt + ' season %d episode %d' % (e[0], e[1])]
             plq = [bt + ' full episodes', bt + ' episodes'] + [bt + ' season %d' % n for n in seas]
             chq = [bt, 'star trek official', 'paramount plus', 'pluto tv', 'cbs', 'showtime']
+            ab = [a for a in s['al'] if re.search(r' (tng|ds9|tos|tas|voy|ent)$', a)][:1]
+            for a in ab:
+                qs += [a + ' full episode', a + ' full episodes'] + [a + ' season %d full episode' % n for n in seas]
+                epq += [a + ' s%02de%02d' % (e[0], e[1]) for e in pool] + [a + ' ' + str(e[3]) for e in pool]
+            epq += [bt + ' %dx%02d' % (e[0], e[1]) for e in pool]
         elif s['kind'] == 'ep':
             for nm in names:
                 qs += [nm + ' full episode', nm + ' full episodes', nm + ' episode ' + (str(s['y0']) if s['y0'] else ''), nm + ' ' + (nw or 'tv series') + ' ' + (str(s['y0']) if s['y0'] else '')]
@@ -601,7 +619,7 @@ def match(t, c, M):
         rest = [w for w in re.sub(SERX, ' ', pn.replace(' ' + hit + ' ', ' ', 1)).split() if w not in STOPW and w not in ew and not w.isdigit() and w not in MONW and len(w) >= 3 and w not in ('remastered', 'restored', 'uncut', 'paramount', 'plus', 'star', 'trek', 'tos', 'tng', 'ds9', 'voy', 'ent', 'tas')]
         inrt = any(a <= c['dur'] <= b for a, b in t['runtime'])
         if not offs:
-            if rest: return None, 'strict: extra words'
+            if rest or re.match(r'\s*(#?\d+\s*[:.\-]|ep(isode)?\.?\s*#?\d+\s*[:\-])', T, re.I) or re.search(r'(?i)\d\s*(&|and|\+)\s*\d|\bwatch\b', Ts): return None, 'strict: extra words'
             if not inrt: return None, 'strict: runtime'
             if FANC.search(c.get('ch') or ''): return None, 'strict: fan channel'
             r['m'] = 'unofficial upload, runtime matches broadcast length'
@@ -844,6 +862,15 @@ def merge():
         if r['se']: it['se'] = r['se']; it['ep'] = r['ep']
         if c['age'] >= 0: it['agey'] = round(c['age'], 1)
         put(it)
+    stitles = set(t['title'] for t in tasks if t['strict'])
+    chk = [(ek, it) for ek, it in out.items() if it['k'] in stitles][:500]
+    print('DESCRIPTION CHECK', len(chk))
+    for ek, it in chk:
+        ds = describe(it['vid'])
+        time.sleep(0.3)
+        pm = PODX.search(ds or '')
+        print(' ', it['i'], '|', it['k'][:24], '|', it['ch'][:22], '|', it['t'][:50], '|', 'DROP ' + pm.group(0) if pm else 'keep', '|', (ds or 'no description')[:160])
+        if pm: out.pop(ek); rej['description'] += 1
     chn = collections.Counter(x.get('chid') or x['ch'] for x in out.values() if x.get('se') or x.get('ad'))
     promoted = 0
     for it in out.values():
