@@ -747,11 +747,11 @@ def racefind(SC, nt, ys, sr, ctx, net):
                 cc = [e for e in L if mx and ov(e) == mx]
             c += cc; continue
         if sr in (None, '') and (re.search(r' the winston (?!cup|500|open|west|classic|select 500|million)', nt) or re.search(r' winston select (?!500|open)', nt)):
-            cc = [e for e in L if e['k'] in ('the winston', 'the winston select', 'winston select')] or [e for e in L if e['k'].endswith('winston open') or e['k'].endswith('winston select open')]
+            cc = [e for e in L if e['k'] in ('the winston', 'the winston select', 'winston select')] or [dict(e, k='the winston') for e in L if e['k'].endswith('winston open') or e['k'].endswith('winston select open')]
             if cc: c += cc; continue
         ph = re.search(r' (bud shootout|budweiser shootout|busch clash) ', nt)
         if ph and not any((' ' + e['k'] + ' ') in nt for e in L):
-            cc = [e for e in L if ph.group(1) in e['k']]
+            cc = [dict(e, k=ph.group(1)) for e in L if ph.group(1) in e['k']]
             if cc: c += cc; continue
         hits = []
         for e in L:
