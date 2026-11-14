@@ -1,0 +1,3112 @@
+[
+{
+"title": "Today",
+"q": "morning",
+"ct": "morning",
+"run": "1952-",
+"s": [
+"today show",
+"nbc today",
+"nbcs today",
+"today on nbc",
+"weekend today",
+"sunday today"
+],
+"w": [
+"^today",
+"bryant gumbel",
+"jane pauley",
+"katie couric",
+"matt lauer",
+"willard scott",
+"deborah norville"
+],
+"need": "\\b(nbc|today show|today|gumbel|pauley|couric|lauer|norville|roker|shalit)\\b.*(19(8[4-9]|9\\d)|200[0-4])|(19(8[4-9]|9\\d)|200[0-4]).*\\b(nbc|today show|gumbel|pauley|couric|lauer)\\b|\\bnbc\\b",
+"wq": [
+"nbc",
+"gumbel",
+"pauley",
+"couric",
+"lauer",
+"show"
+],
+"open": 1,
+"x": "today tonight|usa today|australia|today in |today.s (special|world)|bbc|radio"
+},
+{
+"title": "Good Morning America",
+"q": "morning",
+"ct": "morning",
+"run": "1975-",
+"s": [
+"good morning america"
+],
+"w": [
+"gma",
+"joan lunden",
+"david hartman",
+"charlie gibson"
+],
+"need": "\\b(abc|good morning|gma|19(8[4-9]|9\\d)|200[0-4])\\b",
+"wq": [
+"abc",
+"morning"
+],
+"open": 1
+},
+{
+"title": "CBS Morning News",
+"q": "morning",
+"ct": "morning",
+"run": "1963-",
+"s": [
+"cbs morning news",
+"cbs early morning news"
+],
+"open": 1
+},
+{
+"title": "The Morning Program",
+"q": "morning",
+"ct": "morning",
+"run": "1987-1987",
+"s": [],
+"w": [
+"morning program"
+],
+"need": "\\b(cbs|1987|mariette hartley|rolland smith)\\b",
+"wq": [
+"cbs",
+"hartley"
+]
+},
+{
+"title": "CBS This Morning",
+"q": "morning",
+"ct": "morning",
+"run": "1987-",
+"s": [
+"cbs this morning"
+],
+"w": [
+"this morning",
+"harry smith",
+"paula zahn",
+"kathleen sullivan"
+],
+"need": "\\bcbs\\b",
+"wq": [
+"cbs"
+],
+"open": 1
+},
+{
+"title": "The Early Show",
+"q": "morning",
+"ct": "morning",
+"run": "1999-",
+"s": [
+"cbs early show",
+"cbs the early show"
+],
+"w": [
+"early show"
+],
+"need": "\\b(cbs|gumbel|jane clayson|harry smith)\\b",
+"wq": [
+"cbs",
+"gumbel"
+],
+"open": 1
+},
+{
+"title": "NBC News at Sunrise",
+"q": "morning",
+"ct": "morning",
+"run": "1983-1999",
+"s": [
+"nbc news at sunrise"
+],
+"w": [
+"news at sunrise"
+]
+},
+{
+"title": "CBS Sunday Morning",
+"q": "morning",
+"ct": "morning",
+"run": "1979-",
+"s": [
+"cbs sunday morning",
+"sunday morning with charles kuralt"
+],
+"w": [
+"sunday morning"
+],
+"need": "\\b(cbs|kuralt|osgood)\\b",
+"wq": [
+"cbs",
+"kuralt",
+"osgood"
+],
+"open": 1
+},
+{
+"title": "ABC World News This Morning",
+"q": "morning",
+"ct": "morning",
+"run": "1982-",
+"s": [
+"world news this morning"
+],
+"open": 1
+},
+{
+"title": "Fox After Breakfast",
+"q": "morning",
+"ct": "morning",
+"run": "1996-1997",
+"s": [
+"fox after breakfast",
+"breakfast time fx"
+]
+},
+{
+"title": "Local morning news",
+"q": "morning",
+"ct": "morning",
+"run": "1984-2004",
+"s": [],
+"w": [
+"morning show",
+"morning news",
+"good morning",
+"daybreak",
+"eyewitness news this morning",
+"am news"
+],
+"need": "(19(8[4-9]|9\\d)|200[0-4])",
+"open": 1,
+"x": "radio|vietnam|good morning (miss|vietnam|britain|australia|scotland)|america"
+},
+{
+"title": "Donahue",
+"q": "talk",
+"ct": "talk",
+"run": "1967-1996",
+"s": [
+"phil donahue show",
+"donahue show"
+],
+"w": [
+"donahue"
+]
+},
+{
+"title": "The Oprah Winfrey Show",
+"q": "talk",
+"ct": "talk",
+"run": "1986-",
+"s": [
+"oprah winfrey show",
+"oprah show"
+],
+"w": [
+"oprah",
+"oprah winfrey"
+],
+"open": 1
+},
+{
+"title": "Geraldo",
+"q": "talk",
+"ct": "talk",
+"run": "1987-1998",
+"s": [
+"geraldo rivera show",
+"geraldo show",
+"geraldo talk show"
+],
+"w": [
+"^geraldo"
+],
+"x": "at large|rivera reports|fox news|rivera live|al capone"
+},
+{
+"title": "Sally Jessy Raphael",
+"q": "talk",
+"ct": "talk",
+"run": "1983-2002",
+"s": [
+"sally jessy raphael",
+"sally jesse raphael",
+"sally jessy",
+"sally jesse"
+]
+},
+{
+"title": "The Joan Rivers Show",
+"q": "talk",
+"ct": "talk",
+"run": "1989-1993",
+"s": [
+"joan rivers show"
+]
+},
+{
+"title": "Live with Regis and Kathie Lee",
+"q": "talk",
+"ct": "talk",
+"run": "1985-2000",
+"s": [
+"regis and kathie lee",
+"regis and kathy lee",
+"live with regis and kathie",
+"morning show with regis"
+]
+},
+{
+"title": "Live with Regis and Kelly",
+"q": "talk",
+"ct": "talk",
+"run": "2001-",
+"s": [
+"regis and kelly",
+"live with regis"
+],
+"open": 1
+},
+{
+"title": "The Montel Williams Show",
+"q": "talk",
+"ct": "talk",
+"run": "1991-",
+"s": [
+"montel williams"
+],
+"w": [
+"montel"
+],
+"open": 1
+},
+{
+"title": "Maury",
+"q": "talk",
+"ct": "talk",
+"run": "1991-",
+"s": [
+"maury povich"
+],
+"w": [
+"^maury"
+],
+"open": 1
+},
+{
+"title": "Jenny Jones",
+"q": "talk",
+"ct": "talk",
+"run": "1991-2003",
+"s": [
+"jenny jones"
+]
+},
+{
+"title": "Ricki Lake",
+"q": "talk",
+"ct": "talk",
+"run": "1993-2004",
+"s": [
+"ricki lake show"
+],
+"w": [
+"ricki lake"
+],
+"x": "hairspray|cry.?baby|serial mom|mrs\\.? winterbourne"
+},
+{
+"title": "The Jerry Springer Show",
+"q": "talk",
+"ct": "talk",
+"run": "1991-",
+"s": [
+"jerry springer"
+],
+"open": 1,
+"x": "opera|ringmaster"
+},
+{
+"title": "The Rosie O'Donnell Show",
+"q": "talk",
+"ct": "talk",
+"run": "1996-2002",
+"s": [
+"rosie odonnell show",
+"rosie o donnell show"
+],
+"w": [
+"rosie odonnell"
+]
+},
+{
+"title": "Leeza",
+"q": "talk",
+"ct": "talk",
+"run": "1993-2000",
+"s": [
+"leeza gibbons"
+],
+"w": [
+"^leeza"
+]
+},
+{
+"title": "The View",
+"q": "talk",
+"ct": "talk",
+"run": "1997-",
+"s": [],
+"w": [
+"^view",
+"the view"
+],
+"need": "\\b(abc|barbara walters|meredith vieira|joy behar|star jones|lisa ling|debbie matenopoulos)\\b",
+"wq": [
+"abc",
+"walters",
+"vieira",
+"behar"
+],
+"open": 1
+},
+{
+"title": "Dr. Phil",
+"q": "talk",
+"ct": "talk",
+"run": "2002-",
+"s": [
+"dr phil"
+],
+"open": 1,
+"s1": 2002
+},
+{
+"title": "The Ellen DeGeneres Show",
+"q": "talk",
+"ct": "talk",
+"run": "2003-",
+"s": [
+"ellen degeneres show"
+],
+"open": 1,
+"s1": 2003
+},
+{
+"title": "The Merv Griffin Show",
+"q": "talk",
+"ct": "talk",
+"run": "1962-1986",
+"s": [
+"merv griffin show"
+],
+"w": [
+"merv griffin"
+],
+"old": 1
+},
+{
+"title": "The Mike Douglas Show",
+"q": "talk",
+"ct": "talk",
+"run": "1961-1982",
+"s": [
+"mike douglas show"
+],
+"old": 1
+},
+{
+"title": "Dinah!",
+"q": "talk",
+"ct": "talk",
+"run": "1974-1981",
+"s": [
+"dinah shore show",
+"dinah and friends"
+],
+"w": [
+"^dinah"
+],
+"old": 1
+},
+{
+"title": "Hour Magazine",
+"q": "talk",
+"ct": "talk",
+"run": "1980-1989",
+"s": [
+"hour magazine"
+]
+},
+{
+"title": "The Home Show",
+"q": "talk",
+"ct": "talk",
+"run": "1988-1994",
+"s": [],
+"w": [
+"home show"
+],
+"need": "\\b(abc|gary collins|robb weller|198[89]|199[0-4])\\b",
+"wq": [
+"abc",
+"collins"
+]
+},
+{
+"title": "The Morton Downey Jr. Show",
+"q": "talk",
+"ct": "talk",
+"run": "1987-1989",
+"s": [
+"morton downey jr",
+"morton downey"
+]
+},
+{
+"title": "The Richard Bey Show",
+"q": "talk",
+"ct": "talk",
+"run": "1987-1996",
+"s": [
+"richard bey"
+]
+},
+{
+"title": "Rolonda",
+"q": "talk",
+"ct": "talk",
+"run": "1994-1997",
+"s": [
+"rolonda watts"
+],
+"w": [
+"^rolonda"
+]
+},
+{
+"title": "The Gordon Elliott Show",
+"q": "talk",
+"ct": "talk",
+"run": "1994-1997",
+"s": [
+"gordon elliott show"
+],
+"w": [
+"gordon elliott"
+]
+},
+{
+"title": "Vicki!",
+"q": "talk",
+"ct": "talk",
+"run": "1992-1994",
+"s": [
+"vicki lawrence show"
+],
+"w": [
+"^vicki"
+],
+"need": "\\b(talk|lawrence|199[2-4])\\b"
+},
+{
+"title": "The Jane Whitney Show",
+"q": "talk",
+"ct": "talk",
+"run": "1992-1994",
+"s": [
+"jane whitney"
+]
+},
+{
+"title": "The Charles Perez Show",
+"q": "talk",
+"ct": "talk",
+"run": "1994-1996",
+"s": [
+"charles perez"
+]
+},
+{
+"title": "Tempestt",
+"q": "talk",
+"ct": "talk",
+"run": "1995-1996",
+"s": [
+"tempestt bledsoe show"
+],
+"w": [
+"^tempestt"
+]
+},
+{
+"title": "Carnie!",
+"q": "talk",
+"ct": "talk",
+"run": "1995-1996",
+"s": [
+"carnie wilson show"
+],
+"w": [
+"^carnie"
+]
+},
+{
+"title": "The Queen Latifah Show",
+"q": "talk",
+"ct": "talk",
+"run": "1999-2001",
+"s": [
+"queen latifah show"
+]
+},
+{
+"title": "The Roseanne Show",
+"q": "talk",
+"ct": "talk",
+"run": "1998-2000",
+"s": [
+"roseanne show"
+]
+},
+{
+"title": "Donny & Marie",
+"q": "talk",
+"ct": "talk",
+"run": "1998-2000",
+"s": [],
+"w": [
+"donny and marie"
+],
+"need": "\\b(talk|199[89]|2000)\\b"
+},
+{
+"title": "The Regis Philbin Show",
+"q": "talk",
+"ct": "talk",
+"run": "1981-1988",
+"s": [
+"regis philbin show"
+]
+},
+{
+"title": "The Bertice Berry Show",
+"q": "talk",
+"ct": "talk",
+"run": "1993-1994",
+"s": [
+"bertice berry"
+]
+},
+{
+"title": "The Les Brown Show",
+"q": "talk",
+"ct": "talk",
+"run": "1993-1994",
+"s": [
+"les brown show"
+]
+},
+{
+"title": "Mark Walberg Show",
+"q": "talk",
+"ct": "talk",
+"run": "1995-1996",
+"s": [
+"mark walberg show"
+]
+},
+{
+"title": "Entertainment Tonight",
+"q": "mag",
+"ct": "mag",
+"run": "1981-",
+"s": [
+"entertainment tonight",
+"entertainment this week"
+],
+"open": 1
+},
+{
+"title": "A Current Affair",
+"q": "mag",
+"ct": "mag",
+"run": "1986-1996",
+"s": [
+"a current affair",
+"current affair"
+],
+"x": "australia|nine network|channel (9|nine)|grimshaw|willesee|jana wendt|ray martin|aca "
+},
+{
+"title": "Inside Edition",
+"q": "mag",
+"ct": "mag",
+"run": "1989-",
+"s": [
+"inside edition"
+],
+"open": 1
+},
+{
+"title": "Hard Copy",
+"q": "mag",
+"ct": "mag",
+"run": "1989-1999",
+"s": [],
+"w": [
+"hard copy"
+]
+},
+{
+"title": "Extra",
+"q": "mag",
+"ct": "mag",
+"run": "1994-",
+"s": [
+"extra the entertainment magazine"
+],
+"w": [
+"^extra"
+],
+"need": "\\b(entertainment magazine|syndicat\\w*|maureen o.?boyle|arthel neville|dave nemeth|leeza)\\b",
+"wq": [
+"entertainment",
+"magazine"
+],
+"open": 1
+},
+{
+"title": "Access Hollywood",
+"q": "mag",
+"ct": "mag",
+"run": "1996-",
+"s": [
+"access hollywood"
+],
+"open": 1
+},
+{
+"title": "PM Magazine",
+"q": "mag",
+"ct": "mag",
+"run": "1976-1991",
+"s": [
+"pm magazine",
+"p m magazine",
+"evening magazine"
+]
+},
+{
+"title": "Lifestyles of the Rich and Famous",
+"q": "mag",
+"ct": "mag",
+"run": "1984-1995",
+"s": [
+"lifestyles of the rich and famous",
+"runaway with the rich and famous"
+]
+},
+{
+"title": "Siskel & Ebert",
+"q": "mag",
+"ct": "mag",
+"run": "1986-1999",
+"s": [
+"siskel and ebert",
+"at the movies with gene siskel",
+"sneak previews"
+],
+"w": [
+"at the movies"
+],
+"need": "\\b(siskel|ebert|rex reed|lyons|medved|dixie whatley|bill harris)\\b",
+"wq": [
+"siskel",
+"ebert",
+"lyons",
+"medved"
+]
+},
+{
+"title": "Ebert & Roeper",
+"q": "mag",
+"ct": "mag",
+"run": "2000-",
+"s": [
+"ebert and roeper"
+],
+"open": 1
+},
+{
+"title": "American Journal",
+"q": "mag",
+"ct": "mag",
+"run": "1993-1998",
+"s": [],
+"w": [
+"american journal"
+],
+"need": "\\b(tv|syndicat\\w*|nancy glass|199[3-8])\\b"
+},
+{
+"title": "Real TV",
+"q": "mag",
+"ct": "mag",
+"run": "1996-2001",
+"s": [],
+"w": [
+"real tv"
+],
+"need": "\\b(episode|syndicat\\w*|199[6-9]|200[01])\\b"
+},
+{
+"title": "Day & Date",
+"q": "mag",
+"ct": "mag",
+"run": "1995-1997",
+"s": [
+"day and date"
+]
+},
+{
+"title": "E! News Daily",
+"q": "mag",
+"ct": "mag",
+"run": "1991-",
+"s": [
+"e news daily",
+"e news"
+],
+"open": 1
+},
+{
+"title": "Ripley's Believe It or Not!",
+"q": "prime",
+"ct": "reality",
+"run": "1982-1986",
+"s": [
+"ripleys believe it or not"
+],
+"x": "2000|dean cain|cartoon"
+},
+{
+"title": "That's Incredible!",
+"q": "prime",
+"ct": "reality",
+"run": "1980-1984",
+"s": [
+"thats incredible"
+],
+"old": 1
+},
+{
+"title": "Real People",
+"q": "prime",
+"ct": "reality",
+"run": "1979-1984",
+"s": [],
+"w": [
+"real people"
+],
+"need": "\\b(nbc|sarah purcell|skip stephenson|episode|19(79|8[0-4]))\\b",
+"old": 1
+},
+{
+"title": "Unsolved Mysteries",
+"q": "prime",
+"ct": "reality",
+"run": "1987-2002",
+"s": [
+"unsolved mysteries"
+]
+},
+{
+"title": "Rescue 911",
+"q": "prime",
+"ct": "reality",
+"run": "1989-1996",
+"s": [
+"rescue 911"
+]
+},
+{
+"title": "America's Most Wanted",
+"q": "prime",
+"ct": "reality",
+"run": "1988-",
+"s": [
+"americas most wanted"
+],
+"open": 1
+},
+{
+"title": "COPS",
+"q": "prime",
+"ct": "reality",
+"run": "1989-",
+"s": [],
+"w": [
+"^cops"
+],
+"need": "\\b(fox|season|episode|s\\d\\de\\d\\d|19(89|9\\d)|200[0-4])\\b",
+"open": 1,
+"s1": 1989,
+"x": "robbers|keystone|cartoon|c\\.o\\.p\\.s"
+},
+{
+"title": "Real Stories of the Highway Patrol",
+"q": "prime",
+"ct": "reality",
+"run": "1993-1999",
+"s": [
+"real stories of the highway patrol"
+]
+},
+{
+"title": "Top Cops",
+"q": "prime",
+"ct": "reality",
+"run": "1990-1993",
+"s": [
+"top cops"
+]
+},
+{
+"title": "Sightings",
+"q": "prime",
+"ct": "reality",
+"run": "1991-1997",
+"s": [],
+"w": [
+"^sightings"
+],
+"need": "\\b(fox|sci.?fi|episode|season|199[1-7])\\b"
+},
+{
+"title": "Days of Our Lives",
+"q": "soap",
+"ct": "soap",
+"run": "1965-",
+"s": [
+"days of our lives"
+],
+"open": 1
+},
+{
+"title": "Another World",
+"q": "soap",
+"ct": "soap",
+"run": "1964-1999",
+"s": [],
+"w": [
+"^another world"
+],
+"need": "\\b(nbc|soap|episodes?|ep|19(8[4-9]|9\\d))\\b",
+"x": "from another|bbc|war"
+},
+{
+"title": "Santa Barbara",
+"q": "soap",
+"ct": "soap",
+"run": "1984-1993",
+"s": [
+"santa barbara soap"
+],
+"w": [
+"^santa barbara"
+],
+"need": "\\b(nbc|soap|episodes?|ep|capwell|19(8[4-9]|9[0-3]))\\b",
+"x": "county|city council|ucsb|parade|fiesta|earthquake|news"
+},
+{
+"title": "Search for Tomorrow",
+"q": "soap",
+"ct": "soap",
+"run": "1951-1986",
+"s": [
+"search for tomorrow"
+]
+},
+{
+"title": "Sunset Beach",
+"q": "soap",
+"ct": "soap",
+"run": "1997-1999",
+"s": [
+"sunset beach"
+]
+},
+{
+"title": "Passions",
+"q": "soap",
+"ct": "soap",
+"run": "1999-",
+"s": [],
+"w": [
+"^passions"
+],
+"need": "\\b(nbc|soap|episodes?|ep|1999|200[0-4])\\b",
+"open": 1
+},
+{
+"title": "Generations",
+"q": "soap",
+"ct": "soap",
+"run": "1989-1991",
+"s": [],
+"w": [
+"^generations"
+],
+"need": "\\b(nbc|soap|19(89|9[01]))\\b",
+"x": "star trek"
+},
+{
+"title": "The Young and the Restless",
+"q": "soap",
+"ct": "soap",
+"run": "1973-",
+"s": [
+"young and the restless"
+],
+"w": [
+"y and r"
+],
+"open": 1
+},
+{
+"title": "The Bold and the Beautiful",
+"q": "soap",
+"ct": "soap",
+"run": "1987-",
+"s": [
+"bold and the beautiful"
+],
+"open": 1
+},
+{
+"title": "As the World Turns",
+"q": "soap",
+"ct": "soap",
+"run": "1956-",
+"s": [
+"as the world turns"
+],
+"open": 1
+},
+{
+"title": "Guiding Light",
+"q": "soap",
+"ct": "soap",
+"run": "1952-",
+"s": [
+"guiding light"
+],
+"open": 1
+},
+{
+"title": "Capitol",
+"q": "soap",
+"ct": "soap",
+"run": "1982-1987",
+"s": [],
+"w": [
+"^capitol"
+],
+"need": "\\b(cbs|soap|episode|ep|198[2-7])\\b",
+"x": "hill|records|state|report|riot"
+},
+{
+"title": "One Life to Live",
+"q": "soap",
+"ct": "soap",
+"run": "1968-",
+"s": [
+"one life to live"
+],
+"open": 1
+},
+{
+"title": "All My Children",
+"q": "soap",
+"ct": "soap",
+"run": "1970-",
+"s": [
+"all my children"
+],
+"open": 1
+},
+{
+"title": "General Hospital",
+"q": "soap",
+"ct": "soap",
+"run": "1963-",
+"s": [
+"general hospital"
+],
+"open": 1
+},
+{
+"title": "Ryan's Hope",
+"q": "soap",
+"ct": "soap",
+"run": "1975-1989",
+"s": [
+"ryans hope"
+]
+},
+{
+"title": "Loving",
+"q": "soap",
+"ct": "soap",
+"run": "1983-1995",
+"s": [],
+"w": [
+"^loving"
+],
+"need": "\\b(abc|soap|episode|ep|19(8[3-9]|9[0-5]))\\b",
+"x": "loving (you|couples|vincent)"
+},
+{
+"title": "Port Charles",
+"q": "soap",
+"ct": "soap",
+"run": "1997-2003",
+"s": [
+"port charles"
+]
+},
+{
+"title": "The Edge of Night",
+"q": "soap",
+"ct": "soap",
+"run": "1956-1984",
+"s": [
+"edge of night"
+],
+"old": 1
+},
+{
+"title": "Nashville Now",
+"q": "music",
+"ct": "country",
+"run": "1983-1993",
+"s": [
+"nashville now"
+]
+},
+{
+"title": "Crook & Chase",
+"q": "music",
+"ct": "country",
+"run": "1986-1999",
+"s": [
+"crook and chase"
+]
+},
+{
+"title": "Hee Haw",
+"q": "music",
+"ct": "country",
+"run": "1969-1993",
+"s": [
+"hee haw"
+]
+},
+{
+"title": "Grand Ole Opry Live",
+"q": "music",
+"ct": "country",
+"run": "1985-2004",
+"s": [
+"grand ole opry live",
+"opry live",
+"opry backstage"
+],
+"w": [
+"grand ole opry"
+]
+},
+{
+"title": "Austin City Limits",
+"q": "music",
+"ct": "country",
+"run": "1976-",
+"s": [
+"austin city limits"
+],
+"open": 1
+},
+{
+"title": "The Statler Brothers Show",
+"q": "music",
+"ct": "country",
+"run": "1991-1998",
+"s": [
+"statler brothers show"
+],
+"w": [
+"statler brothers"
+]
+},
+{
+"title": "Music City Tonight",
+"q": "music",
+"ct": "country",
+"run": "1993-1995",
+"s": [
+"music city tonight"
+]
+},
+{
+"title": "Prime Time Country",
+"q": "music",
+"ct": "country",
+"run": "1996-1999",
+"s": [
+"prime time country",
+"primetime country"
+]
+},
+{
+"title": "CMT",
+"q": "music",
+"ct": "country",
+"run": "1983-2004",
+"s": [
+"country music television",
+"cmt top 20",
+"cmt top 12",
+"cmt countdown",
+"cmt saturday night",
+"cmt most wanted"
+],
+"w": [
+"^cmt",
+"cmt"
+],
+"need": "\\b(countdown|videos?|top (12|20)|block|aircheck|19(8[4-9]|9\\d)|200[0-4])\\b",
+"open": 1
+},
+{
+"title": "TNN",
+"q": "music",
+"ct": "country",
+"run": "1983-2004",
+"s": [
+"the nashville network",
+"nashville network"
+],
+"w": [
+"^tnn",
+"tnn"
+],
+"need": "\\b(aircheck|country|opry|19(8[4-9]|9\\d)|200[0-4])\\b",
+"x": "ecw|wwf|wwe|raw|wrestling|nascar|rollerjam|motor|bass|fishing|outdoors",
+"open": 1
+},
+{
+"title": "CMA Awards",
+"q": "music",
+"ct": "country",
+"run": "1968-",
+"s": [
+"cma awards",
+"country music association awards",
+"country music awards"
+],
+"open": 1
+},
+{
+"title": "ACM Awards",
+"q": "music",
+"ct": "country",
+"run": "1966-",
+"s": [
+"academy of country music awards",
+"acm awards"
+],
+"open": 1
+},
+{
+"title": "TNN Music City News Country Awards",
+"q": "music",
+"ct": "country",
+"run": "1984-2001",
+"s": [
+"music city news"
+]
+},
+{
+"title": "The Ralph Emery Show",
+"q": "music",
+"ct": "country",
+"run": "1984-2004",
+"s": [
+"ralph emery"
+]
+},
+{
+"title": "American Music Shop",
+"q": "music",
+"ct": "country",
+"run": "1990-1993",
+"s": [
+"american music shop"
+]
+},
+{
+"title": "The Texas Connection",
+"q": "music",
+"ct": "country",
+"run": "1991-1994",
+"s": [
+"texas connection"
+]
+},
+{
+"title": "Church Street Station",
+"q": "music",
+"ct": "country",
+"run": "1982-1992",
+"s": [],
+"w": [
+"church street station"
+]
+},
+{
+"title": "Farm Aid",
+"q": "music",
+"ct": "country",
+"run": "1985-2004",
+"s": [
+"farm aid"
+],
+"open": 1
+},
+{
+"title": "Dolly",
+"q": "music",
+"ct": "country",
+"run": "1987-1988",
+"s": [],
+"w": [
+"^dolly"
+],
+"need": "\\b(abc|variety|episode|198[78])\\b"
+},
+{
+"title": "Country Top 20",
+"q": "music",
+"ct": "country",
+"run": "1984-2004",
+"s": [],
+"w": [
+"country countdown",
+"country videos",
+"country music videos",
+"top country"
+],
+"need": "(19(8[4-9]|9\\d)|200[0-4])",
+"open": 1
+},
+{
+"title": "Video Soul",
+"q": "music",
+"ct": "soul",
+"run": "1981-1996",
+"s": [
+"video soul"
+]
+},
+{
+"title": "Rap City",
+"q": "music",
+"ct": "soul",
+"run": "1989-",
+"s": [
+"rap city"
+],
+"open": 1
+},
+{
+"title": "Soul Train",
+"q": "music",
+"ct": "soul",
+"run": "1971-2004",
+"s": [
+"soul train"
+]
+},
+{
+"title": "Showtime at the Apollo",
+"q": "late",
+"ct": "soul",
+"run": "1987-",
+"s": [
+"showtime at the apollo"
+],
+"open": 1
+},
+{
+"title": "ComicView",
+"q": "late",
+"ct": "soul",
+"run": "1992-",
+"s": [
+"comicview",
+"comic view"
+],
+"open": 1
+},
+{
+"title": "Bobby Jones Gospel",
+"q": "music",
+"ct": "soul",
+"run": "1980-",
+"s": [
+"bobby jones gospel"
+],
+"open": 1
+},
+{
+"title": "Teen Summit",
+"q": "music",
+"ct": "soul",
+"run": "1989-2002",
+"s": [
+"teen summit"
+]
+},
+{
+"title": "Video Vibrations",
+"q": "music",
+"ct": "soul",
+"run": "1984-1997",
+"s": [
+"video vibrations"
+]
+},
+{
+"title": "Midnight Love",
+"q": "music",
+"ct": "soul",
+"run": "1985-2004",
+"s": [],
+"w": [
+"midnight love"
+],
+"need": "\\b(bet|videos?|19(8[5-9]|9\\d)|200[0-4])\\b",
+"x": "marvin gaye"
+},
+{
+"title": "BET Tonight",
+"q": "late",
+"ct": "soul",
+"run": "1998-2002",
+"s": [
+"bet tonight"
+]
+},
+{
+"title": "106 & Park",
+"q": "music",
+"ct": "soul",
+"run": "2000-",
+"s": [
+"106 and park"
+],
+"open": 1
+},
+{
+"title": "BET",
+"q": "music",
+"ct": "soul",
+"run": "1984-2004",
+"s": [
+"black entertainment television",
+"planet groove",
+"bet video",
+"bet jazz",
+"bet soundstage"
+],
+"w": [
+"^bet"
+],
+"need": "\\b(aircheck|videos?|block|19(8[4-9]|9\\d)|200[0-4])\\b",
+"open": 1,
+"x": "uncut|awards 20"
+},
+{
+"title": "The People's Court (Wapner)",
+"q": "talk",
+"ct": "court",
+"run": "1981-1993",
+"s": [
+"judge wapner"
+],
+"w": [
+"peoples court"
+],
+"need": "\\b(wapner|llewelyn|198\\d|199[0-3])\\b",
+"wq": [
+"wapner"
+]
+},
+{
+"title": "The People's Court",
+"q": "talk",
+"ct": "court",
+"run": "1997-",
+"s": [
+"peoples court"
+],
+"open": 1
+},
+{
+"title": "Divorce Court",
+"q": "talk",
+"ct": "court",
+"run": "1984-",
+"s": [
+"divorce court"
+],
+"open": 1
+},
+{
+"title": "Judge Judy",
+"q": "talk",
+"ct": "court",
+"run": "1996-",
+"s": [
+"judge judy"
+],
+"open": 1,
+"s1": 1996
+},
+{
+"title": "Judge Joe Brown",
+"q": "talk",
+"ct": "court",
+"run": "1998-",
+"s": [
+"judge joe brown"
+],
+"open": 1,
+"s1": 1998
+},
+{
+"title": "Superior Court",
+"q": "talk",
+"ct": "court",
+"run": "1986-1990",
+"s": [],
+"w": [
+"superior court"
+],
+"need": "\\b(episode|tv show|syndicat\\w*|198[6-9]|1990)\\b",
+"x": "county|hearing|oral argument|trial of|v\\.|vs"
+},
+{
+"title": "Judge Mathis",
+"q": "talk",
+"ct": "court",
+"run": "1999-",
+"s": [
+"judge mathis"
+],
+"open": 1,
+"s1": 1999
+},
+{
+"title": "Judge Mills Lane",
+"q": "talk",
+"ct": "court",
+"run": "1998-2001",
+"s": [
+"judge mills lane"
+]
+},
+{
+"title": "Judge Hatchett",
+"q": "talk",
+"ct": "court",
+"run": "2000-",
+"s": [
+"judge hatchett"
+],
+"open": 1,
+"s1": 2000
+},
+{
+"title": "Texas Justice",
+"q": "talk",
+"ct": "court",
+"run": "2001-2005",
+"s": [
+"texas justice"
+]
+},
+{
+"title": "Judge Wapner's Animal Court",
+"q": "talk",
+"ct": "court",
+"run": "1998-2000",
+"s": [
+"animal court"
+]
+},
+{
+"title": "The Frugal Gourmet",
+"q": "cook",
+"ct": "cooking",
+"run": "1983-1997",
+"s": [
+"frugal gourmet"
+]
+},
+{
+"title": "Julia Child",
+"q": "cook",
+"ct": "cooking",
+"run": "1963-2000",
+"s": [
+"the french chef",
+"julia child and company",
+"julia child and more company",
+"dinner at julias",
+"baking with julia",
+"julia and jacques",
+"in julias kitchen with master chefs",
+"cooking with master chefs"
+],
+"w": [
+"julia child",
+"french chef"
+],
+"need": "\\b(cook\\w*|chef|episode|pbs|season|wgbh)\\b",
+"old": 1
+},
+{
+"title": "Yan Can Cook",
+"q": "cook",
+"ct": "cooking",
+"run": "1982-2004",
+"s": [
+"yan can cook"
+]
+},
+{
+"title": "Great Chefs",
+"q": "cook",
+"ct": "cooking",
+"run": "1982-2004",
+"s": [
+"great chefs of",
+"great chefs great cities"
+],
+"w": [
+"great chefs"
+]
+},
+{
+"title": "Justin Wilson's Louisiana Cookin'",
+"q": "cook",
+"ct": "cooking",
+"run": "1971-1997",
+"s": [
+"justin wilson",
+"louisiana cookin"
+],
+"old": 1
+},
+{
+"title": "Jacques Pepin",
+"q": "cook",
+"ct": "cooking",
+"run": "1982-2004",
+"s": [
+"jacques pepin",
+"todays gourmet"
+]
+},
+{
+"title": "Paul Prudhomme",
+"q": "cook",
+"ct": "cooking",
+"run": "1984-2004",
+"s": [
+"paul prudhomme"
+]
+},
+{
+"title": "Emeril Live",
+"q": "cook",
+"ct": "cooking",
+"run": "1997-2007",
+"s": [
+"emeril live"
+],
+"w": [
+"emeril",
+"emeril lagasse"
+]
+},
+{
+"title": "Essence of Emeril",
+"q": "cook",
+"ct": "cooking",
+"run": "1994-2007",
+"s": [
+"essence of emeril"
+]
+},
+{
+"title": "Good Eats",
+"q": "cook",
+"ct": "cooking",
+"run": "1999-",
+"s": [
+"good eats"
+],
+"open": 1,
+"s1": 1999
+},
+{
+"title": "Iron Chef",
+"q": "cook",
+"ct": "cooking",
+"run": "1993-2004",
+"s": [
+"iron chef"
+],
+"x": "america|gauntlet|showdown|next iron chef|uk|australia"
+},
+{
+"title": "Two Fat Ladies",
+"q": "cook",
+"ct": "cooking",
+"run": "1996-1999",
+"s": [
+"two fat ladies"
+]
+},
+{
+"title": "Molto Mario",
+"q": "cook",
+"ct": "cooking",
+"run": "1996-2004",
+"s": [
+"molto mario"
+]
+},
+{
+"title": "Ready... Set... Cook!",
+"q": "cook",
+"ct": "cooking",
+"run": "1995-2001",
+"s": [
+"ready set cook"
+]
+},
+{
+"title": "How to Boil Water",
+"q": "cook",
+"ct": "cooking",
+"run": "1993-2004",
+"s": [
+"how to boil water"
+]
+},
+{
+"title": "Too Hot Tamales",
+"q": "cook",
+"ct": "cooking",
+"run": "1995-1999",
+"s": [
+"too hot tamales",
+"tamales world tour"
+]
+},
+{
+"title": "Taste",
+"q": "cook",
+"ct": "cooking",
+"run": "1994-2001",
+"s": [],
+"w": [
+"^taste"
+],
+"need": "\\b(rosengarten|food network|tvfn)\\b",
+"wq": [
+"rosengarten",
+"food"
+]
+},
+{
+"title": "Dining Around",
+"q": "cook",
+"ct": "cooking",
+"run": "1993-1999",
+"s": [],
+"w": [
+"dining around"
+],
+"need": "\\b(food network|tvfn|bill boggs|nina griscom|199\\d)\\b"
+},
+{
+"title": "Cooking Live",
+"q": "cook",
+"ct": "cooking",
+"run": "1997-2002",
+"s": [],
+"w": [
+"cooking live"
+],
+"need": "\\b(sara moulton|food network|tvfn)\\b",
+"wq": [
+"moulton",
+"food"
+]
+},
+{
+"title": "East Meets West",
+"q": "cook",
+"ct": "cooking",
+"run": "1998-2003",
+"s": [],
+"w": [
+"east meets west"
+],
+"need": "\\b(ming tsai|food network)\\b",
+"wq": [
+"ming",
+"food"
+]
+},
+{
+"title": "Bobby Flay",
+"q": "cook",
+"ct": "cooking",
+"run": "1994-2004",
+"s": [
+"hot off the grill",
+"grillin and chillin",
+"boy meets grill"
+],
+"w": [
+"bobby flay"
+],
+"need": "(199[4-9]|200[0-4])"
+},
+{
+"title": "Food Network",
+"q": "cook",
+"ct": "cooking",
+"run": "1993-2004",
+"s": [
+"tv food network",
+"tvfn",
+"chef du jour",
+"food 911",
+"a cooks tour",
+"calling all cooks",
+"mario eats italy",
+"saras secrets",
+"food finds",
+"the best of food network",
+"cooking school stories"
+],
+"w": [
+"food network"
+],
+"need": "(199[3-9]|200[0-4])",
+"open": 1
+},
+{
+"title": "30 Minute Meals",
+"q": "cook",
+"ct": "cooking",
+"run": "2001-",
+"s": [
+"30 minute meals"
+],
+"open": 1,
+"s1": 2001
+},
+{
+"title": "Barefoot Contessa",
+"q": "cook",
+"ct": "cooking",
+"run": "2002-",
+"s": [
+"barefoot contessa"
+],
+"open": 1,
+"s1": 2002,
+"x": "1954|ava gardner|bogart"
+},
+{
+"title": "Unwrapped",
+"q": "cook",
+"ct": "cooking",
+"run": "2001-",
+"s": [],
+"w": [
+"^unwrapped"
+],
+"need": "\\b(food network|marc summers|200[1-4])\\b",
+"open": 1,
+"s1": 2001
+},
+{
+"title": "Martha Stewart Living",
+"q": "cook",
+"ct": "home",
+"run": "1993-2004",
+"s": [
+"martha stewart living"
+],
+"w": [
+"martha stewart"
+]
+},
+{
+"title": "The Galloping Gourmet",
+"q": "cook",
+"ct": "cooking",
+"run": "1969-1971",
+"s": [
+"galloping gourmet"
+],
+"old": 1
+},
+{
+"title": "New Southern Cooking",
+"q": "cook",
+"ct": "cooking",
+"run": "1986-1995",
+"s": [
+"new southern cooking",
+"nathalie dupree"
+]
+},
+{
+"title": "Ciao Italia",
+"q": "cook",
+"ct": "cooking",
+"run": "1989-",
+"s": [
+"ciao italia"
+],
+"open": 1
+},
+{
+"title": "America's Test Kitchen",
+"q": "cook",
+"ct": "cooking",
+"run": "2001-",
+"s": [
+"americas test kitchen"
+],
+"open": 1,
+"s1": 2001
+},
+{
+"title": "Madeleine Cooks",
+"q": "cook",
+"ct": "cooking",
+"run": "1984-1991",
+"s": [
+"madeleine cooks",
+"madeleine kamman"
+]
+},
+{
+"title": "Cooking shows",
+"q": "cook",
+"ct": "cooking",
+"run": "1984-2004",
+"s": [
+"pasquales kitchen express",
+"cucina amore",
+"cookin usa",
+"country kitchen",
+"cooking at the academy",
+"the cajun cook",
+"cooking mexican",
+"louisiana kitchen",
+"graham kerr",
+"natural foods cooking",
+"jeff smith"
+],
+"open": 0
+},
+{
+"title": "This Old House",
+"q": "cook",
+"ct": "home",
+"run": "1979-",
+"s": [
+"this old house"
+],
+"open": 1,
+"s1": 1979
+},
+{
+"title": "The New Yankee Workshop",
+"q": "cook",
+"ct": "home",
+"run": "1989-2004",
+"s": [
+"new yankee workshop"
+]
+},
+{
+"title": "Hometime",
+"q": "cook",
+"ct": "home",
+"run": "1986-2004",
+"s": [
+"hometime"
+]
+},
+{
+"title": "The Victory Garden",
+"q": "cook",
+"ct": "home",
+"run": "1975-2004",
+"s": [
+"victory garden"
+],
+"x": "wwii|world war|war"
+},
+{
+"title": "Home Again with Bob Vila",
+"q": "cook",
+"ct": "home",
+"run": "1990-2005",
+"s": [
+"home again with bob vila",
+"bob vilas home again"
+],
+"w": [
+"bob vila"
+]
+},
+{
+"title": "The Joy of Painting",
+"q": "cook",
+"ct": "home",
+"run": "1983-1994",
+"s": [
+"joy of painting"
+],
+"w": [
+"bob ross"
+],
+"need": "\\b(paint\\w*|season|episode)\\b"
+},
+{
+"title": "The Magic of Oil Painting",
+"q": "cook",
+"ct": "home",
+"run": "1974-1982",
+"s": [
+"magic of oil painting"
+],
+"old": 1
+},
+{
+"title": "Trading Spaces",
+"q": "cook",
+"ct": "home",
+"run": "2000-",
+"s": [
+"trading spaces"
+],
+"open": 1,
+"s1": 2000
+},
+{
+"title": "The Woodwright's Shop",
+"q": "cook",
+"ct": "home",
+"run": "1979-",
+"s": [
+"woodwrights shop"
+],
+"open": 1,
+"s1": 1979
+},
+{
+"title": "HGTV",
+"q": "cook",
+"ct": "home",
+"run": "1994-2004",
+"s": [
+"gardening by the yard",
+"decorating cents",
+"designing for the sexes",
+"carol duvall show",
+"homes across america",
+"extreme homes",
+"design on a dime",
+"room by room",
+"house hunters",
+"the furniture guys",
+"furniture to go",
+"furniture on the mend",
+"men in toolbelts",
+"gardeners diary",
+"sewing with nancy"
+],
+"w": [
+"hgtv",
+"home and garden television"
+],
+"need": "(199[4-9]|200[0-4])",
+"open": 1
+},
+{
+"title": "Body Electric",
+"q": "block",
+"ct": "exercise",
+"run": "1984-2004",
+"s": [],
+"w": [
+"body electric"
+],
+"need": "\\b(margaret richard|pbs|exercise|workout|aerobic\\w*|episode|19(8[4-9]|9\\d)|200[0-4])\\b",
+"x": "i sing|whitman|bradbury|rush"
+},
+{
+"title": "Bodies in Motion",
+"q": "block",
+"ct": "exercise",
+"run": "1983-2004",
+"s": [],
+"w": [
+"bodies in motion",
+"gilad"
+],
+"need": "\\b(gilad|espn|workout|aerobic\\w*|bodies in motion|19(8[4-9]|9\\d)|200[0-4])\\b"
+},
+{
+"title": "Denise Austin",
+"q": "block",
+"ct": "exercise",
+"run": "1987-2004",
+"s": [
+"denise austin"
+]
+},
+{
+"title": "BodyShaping",
+"q": "block",
+"ct": "exercise",
+"run": "1988-1998",
+"s": [
+"bodyshaping"
+],
+"w": [
+"body shaping"
+],
+"need": "\\b(espn|19(8[89]|9[0-8]))\\b"
+},
+{
+"title": "Kiana's Flex Appeal",
+"q": "block",
+"ct": "exercise",
+"run": "1992-2000",
+"s": [
+"flex appeal"
+]
+},
+{
+"title": "The 20 Minute Workout",
+"q": "block",
+"ct": "exercise",
+"run": "1983-1985",
+"s": [
+"20 minute workout",
+"twenty minute workout"
+],
+"old": 1
+},
+{
+"title": "Morning Stretch",
+"q": "block",
+"ct": "exercise",
+"run": "1981-1996",
+"s": [],
+"w": [
+"morning stretch"
+],
+"need": "\\b(greggains|exercise|workout|19(8[4-9]|9[0-6]))\\b"
+},
+{
+"title": "Sit and Be Fit",
+"q": "block",
+"ct": "exercise",
+"run": "1987-",
+"s": [
+"sit and be fit"
+],
+"open": 1
+},
+{
+"title": "The Richard Simmons Show",
+"q": "block",
+"ct": "exercise",
+"run": "1980-1984",
+"s": [
+"richard simmons show"
+],
+"old": 1
+},
+{
+"title": "Body by Jake",
+"q": "block",
+"ct": "exercise",
+"run": "1988-2004",
+"s": [
+"body by jake",
+"fitness beach",
+"co ed training",
+"crunch fitness"
+]
+},
+{
+"title": "Aerobics shows",
+"q": "block",
+"ct": "exercise",
+"run": "1984-2004",
+"s": [],
+"w": [
+"aerobics",
+"aerobic workout",
+"exercise show",
+"workout show"
+],
+"need": "\\b(tv|espn|lifetime|pbs|broadcast|aircheck)\\b.*(19(8[4-9]|9\\d)|200[0-4])|(19(8[4-9]|9\\d)|200[0-4]).*\\b(tv|espn|lifetime|pbs|broadcast|aircheck)\\b",
+"open": 1
+},
+{
+"title": "MotorWeek",
+"q": "block",
+"ct": "car",
+"run": "1981-",
+"s": [
+"motorweek",
+"motor week"
+],
+"open": 1,
+"s1": 1981
+},
+{
+"title": "Shadetree Mechanic",
+"q": "block",
+"ct": "car",
+"run": "1992-2004",
+"s": [
+"shadetree mechanic",
+"shade tree mechanic"
+]
+},
+{
+"title": "Car shows",
+"q": "block",
+"ct": "car",
+"run": "1984-2004",
+"s": [
+"horsepower tv",
+"my classic car",
+"motor trend television",
+"motor trend tv",
+"two guys garage",
+"truckin usa",
+"wild about wheels",
+"road test magazine",
+"crank and chrome",
+"trucks tv",
+"popular mechanics for kids",
+"speedvision"
+],
+"open": 1
+},
+{
+"title": "Bill Dance Outdoors",
+"q": "block",
+"ct": "outdoors",
+"run": "1968-",
+"s": [
+"bill dance outdoors"
+],
+"w": [
+"bill dance"
+],
+"need": "\\b(fish\\w*|bass|outdoors|episode|19(8[4-9]|9\\d)|200[0-4])\\b"
+},
+{
+"title": "Fishing with Roland Martin",
+"q": "block",
+"ct": "outdoors",
+"run": "1975-",
+"s": [
+"fishing with roland martin"
+],
+"w": [
+"roland martin"
+],
+"need": "\\b(fish\\w*|bass|outdoors|episode|19(8[4-9]|9\\d)|200[0-4])\\b"
+},
+{
+"title": "The American Sportsman",
+"q": "block",
+"ct": "outdoors",
+"run": "1965-1986",
+"s": [
+"american sportsman"
+],
+"old": 1
+},
+{
+"title": "Fishing shows",
+"q": "block",
+"ct": "outdoors",
+"run": "1984-2004",
+"s": [
+"orlando wilson",
+"hank parker",
+"jimmy houston",
+"fishin hole",
+"bassmasters",
+"bassmaster classic",
+"in fisherman",
+"babe winkelman",
+"virgil ward",
+"buckmasters",
+"realtree outdoors",
+"walkers cay",
+"saltwater journal",
+"tnn outdoors",
+"championship fishing",
+"sportsmans showcase",
+"fly fishing the world",
+"north american outdoors",
+"outdoor life network"
+]
+},
+{
+"title": "Travels in Europe with Rick Steves",
+"q": "block",
+"ct": "travel",
+"run": "1991-1998",
+"s": [
+"travels in europe"
+]
+},
+{
+"title": "Rick Steves' Europe",
+"q": "block",
+"ct": "travel",
+"run": "2000-",
+"s": [
+"rick steves"
+],
+"open": 1,
+"s1": 2000
+},
+{
+"title": "Travel shows",
+"q": "block",
+"ct": "travel",
+"run": "1984-2004",
+"s": [
+"burt wolf",
+"almanac of travel",
+"laura mckenzie",
+"on the road with charles kuralt",
+"smart travels",
+"passport to adventure",
+"great country inns",
+"travel channel",
+"travelers discovery",
+"world of travel",
+"travel magazine"
+],
+"open": 1
+},
+{
+"title": "The 700 Club",
+"q": "block",
+"ct": "religion",
+"run": "1966-",
+"s": [
+"700 club"
+],
+"w": [
+"pat robertson",
+"cbn"
+],
+"need": "\\b(700|cbn|19(8[4-9]|9\\d)|200[0-4])\\b",
+"open": 1
+},
+{
+"title": "PTL Club",
+"q": "block",
+"ct": "religion",
+"run": "1974-1989",
+"s": [
+"ptl club",
+"jim and tammy",
+"jim bakker",
+"tammy faye"
+],
+"w": [
+"^ptl"
+],
+"x": "eyes of tammy|documentary",
+"old": 1
+},
+{
+"title": "Jimmy Swaggart",
+"q": "block",
+"ct": "religion",
+"run": "1975-",
+"s": [
+"jimmy swaggart"
+],
+"open": 1
+},
+{
+"title": "Hour of Power",
+"q": "block",
+"ct": "religion",
+"run": "1970-",
+"s": [
+"hour of power",
+"robert schuller"
+],
+"open": 1
+},
+{
+"title": "Oral Roberts",
+"q": "block",
+"ct": "religion",
+"run": "1955-",
+"s": [
+"oral roberts"
+],
+"x": "basketball|golden eagles|university (vs|at)| vs ",
+"open": 1
+},
+{
+"title": "Old Time Gospel Hour",
+"q": "block",
+"ct": "religion",
+"run": "1956-",
+"s": [
+"old time gospel hour"
+],
+"w": [
+"jerry falwell"
+],
+"need": "\\b(gospel hour|sermon|thomas road|19(8[4-9]|9\\d)|200[0-4])\\b",
+"open": 1
+},
+{
+"title": "Robert Tilton",
+"q": "block",
+"ct": "religion",
+"run": "1981-",
+"s": [
+"robert tilton",
+"success n life"
+],
+"x": "fart|pastor gas"
+},
+{
+"title": "Dr. Gene Scott",
+"q": "block",
+"ct": "religion",
+"run": "1975-",
+"s": [
+"gene scott"
+]
+},
+{
+"title": "Ernest Angley",
+"q": "block",
+"ct": "religion",
+"run": "1972-",
+"s": [
+"ernest angley"
+]
+},
+{
+"title": "Kenneth Copeland",
+"q": "block",
+"ct": "religion",
+"run": "1979-",
+"s": [
+"kenneth copeland",
+"believers voice of victory"
+],
+"open": 1
+},
+{
+"title": "Jack Van Impe Presents",
+"q": "block",
+"ct": "religion",
+"run": "1980-",
+"s": [
+"jack van impe"
+],
+"open": 1
+},
+{
+"title": "Rex Humbard",
+"q": "block",
+"ct": "religion",
+"run": "1952-",
+"s": [
+"rex humbard"
+]
+},
+{
+"title": "Benny Hinn",
+"q": "block",
+"ct": "religion",
+"run": "1990-",
+"s": [
+"benny hinn"
+],
+"open": 1
+},
+{
+"title": "Praise the Lord",
+"q": "block",
+"ct": "religion",
+"run": "1973-",
+"s": [
+"trinity broadcasting"
+],
+"w": [
+"praise the lord",
+"tbn"
+],
+"need": "\\b(tbn|trinity|crouch)\\b",
+"wq": [
+"tbn",
+"trinity",
+"crouch"
+],
+"open": 1
+},
+{
+"title": "The Coral Ridge Hour",
+"q": "block",
+"ct": "religion",
+"run": "1978-",
+"s": [
+"coral ridge hour",
+"d james kennedy"
+],
+"open": 1
+},
+{
+"title": "In Touch with Charles Stanley",
+"q": "block",
+"ct": "religion",
+"run": "1978-",
+"s": [
+"charles stanley"
+],
+"open": 1
+},
+{
+"title": "Billy Graham Crusade",
+"q": "block",
+"ct": "religion",
+"run": "1950-",
+"s": [
+"billy graham crusade"
+],
+"w": [
+"billy graham"
+],
+"need": "\\b(crusade|19(8[4-9]|9\\d)|200[0-4])\\b",
+"open": 1
+},
+{
+"title": "Day of Discovery",
+"q": "block",
+"ct": "religion",
+"run": "1968-",
+"s": [
+"day of discovery"
+],
+"open": 1
+},
+{
+"title": "It Is Written",
+"q": "block",
+"ct": "religion",
+"run": "1956-",
+"s": [
+"it is written"
+],
+"open": 1
+},
+{
+"title": "Lester Sumrall",
+"q": "block",
+"ct": "religion",
+"run": "1970-1996",
+"s": [
+"lester sumrall"
+]
+},
+{
+"title": "John Hagee",
+"q": "block",
+"ct": "religion",
+"run": "1981-",
+"s": [
+"john hagee"
+],
+"open": 1
+},
+{
+"title": "Ever Increasing Faith",
+"q": "block",
+"ct": "religion",
+"run": "1978-",
+"s": [
+"ever increasing faith",
+"frederick k c price",
+"fred price"
+],
+"open": 1
+},
+{
+"title": "Peter Popoff",
+"q": "block",
+"ct": "religion",
+"run": "1980-",
+"s": [
+"peter popoff"
+]
+},
+{
+"title": "The World Tomorrow",
+"q": "block",
+"ct": "religion",
+"run": "1934-1994",
+"s": [
+"garner ted armstrong",
+"herbert w armstrong"
+],
+"w": [
+"world tomorrow"
+],
+"need": "\\b(armstrong|worldwide church|19(8[4-9]|9[0-4]))\\b"
+},
+{
+"title": "Mother Angelica Live",
+"q": "block",
+"ct": "religion",
+"run": "1983-2001",
+"s": [
+"mother angelica"
+],
+"w": [
+"ewtn"
+],
+"need": "(19(8[4-9]|9\\d)|200[0-4])"
+},
+{
+"title": "Televangelists",
+"q": "block",
+"ct": "religion",
+"run": "1984-2004",
+"s": [
+"w v grant",
+"r w schambach",
+"kathryn kuhlman",
+"marilyn hickey",
+"jerry savelle",
+"creflo dollar",
+"t d jakes",
+"joyce meyer",
+"james robison",
+"john ankerberg",
+"mass for shut ins",
+"jimmy and tammy",
+"televangelist"
+],
+"open": 1
+},
+{
+"title": "Local church broadcast",
+"q": "block",
+"ct": "religion",
+"run": "1984-2004",
+"s": [],
+"w": [
+"church service",
+"worship service",
+"baptist church",
+"methodist church",
+"sunday service",
+"sunday morning service",
+"revival service"
+],
+"need": "\\b(tv|broadcast|telecast|televised|channel|aircheck)\\b.*(19(8[4-9]|9\\d)|200[0-4])|(19(8[4-9]|9\\d)|200[0-4]).*\\b(tv|broadcast|telecast|televised|channel|aircheck)\\b",
+"open": 1
+},
+{
+"title": "QVC",
+"q": "block",
+"ct": "shopping",
+"run": "1986-",
+"s": [
+"qvc network",
+"qvc fashion channel"
+],
+"w": [
+"^qvc",
+"qvc"
+],
+"need": "(19(8[6-9]|9\\d)|200[0-4])",
+"open": 1
+},
+{
+"title": "Home Shopping Network",
+"q": "block",
+"ct": "shopping",
+"run": "1985-",
+"s": [
+"home shopping network",
+"home shopping club"
+],
+"w": [
+"^hsn",
+"hsn",
+"home shopping"
+],
+"need": "(19(8[5-9]|9\\d)|200[0-4])",
+"open": 1
+},
+{
+"title": "Shop at Home",
+"q": "block",
+"ct": "shopping",
+"run": "1987-",
+"s": [
+"shop at home network",
+"valuevision",
+"value vision",
+"cable value network"
+],
+"w": [
+"shop at home",
+"cvn",
+"shopping channel",
+"shopping network"
+],
+"need": "(19(8[5-9]|9\\d)|200[0-4])",
+"open": 1
+},
+{
+"title": "The Weather Channel",
+"q": "weather",
+"ct": "weather",
+"run": "1982-",
+"s": [
+"weather channel",
+"local on the 8s",
+"weatherscan"
+],
+"w": [
+"twc",
+"local forecast",
+"tropical update"
+],
+"need": "(19(8[4-9]|9\\d)|200[0-4])",
+"open": 1,
+"x": "emulat|simulat|recreat|remake|mock|fan ?made"
+},
+{
+"title": "WeatherStar",
+"q": "weather",
+"ct": "weather",
+"run": "1982-",
+"s": [
+"weatherstar",
+"weather star",
+"weatherstar 4000",
+"weather star 4000",
+"weatherstar jr",
+"weather star iii"
+],
+"open": 1,
+"x": "emulat|simulat|recreat|remake|mock|fan ?made|\\+"
+},
+{
+"title": "Local weather forecast",
+"q": "weather",
+"ct": "weather",
+"run": "1984-2004",
+"s": [],
+"w": [
+"weather forecast",
+"weather report",
+"weathercast",
+"severe weather",
+"tornado warning",
+"hurricane coverage",
+"weather coverage",
+"storm coverage"
+],
+"need": "(19(8[4-9]|9\\d)|200[0-4])",
+"open": 1,
+"x": "band|jazz|shorter|zawinul|concert"
+},
+{
+"title": "The Tonight Show Starring Johnny Carson",
+"q": "late",
+"ct": "late",
+"run": "1962-1992",
+"s": [
+"tonight show starring johnny carson",
+"tonight show with johnny carson",
+"johnny carson show"
+],
+"w": [
+"tonight show",
+"johnny carson"
+],
+"need": ".",
+"x": "leno|conan|fallon|paar|steve allen|daly",
+"wq": [
+"carson"
+]
+},
+{
+"title": "The Tonight Show with Jay Leno",
+"q": "late",
+"ct": "late",
+"run": "1992-",
+"s": [
+"tonight show with jay leno"
+],
+"w": [
+"jay leno",
+"tonight show"
+],
+"need": "\\b(leno|tonight)\\b",
+"open": 1,
+"x": "carson|conan|fallon|paar"
+},
+{
+"title": "Late Night with David Letterman",
+"q": "late",
+"ct": "late",
+"run": "1982-1993",
+"s": [
+"late night with david letterman"
+],
+"w": [
+"letterman",
+"late night"
+],
+"need": "\\b(letterman|nbc)\\b.*(198[2-9]|199[0-3])|(198[2-9]|199[0-3]).*\\b(letterman|nbc)\\b|late night.*letterman",
+"x": "conan|late show",
+"wq": [
+"letterman"
+]
+},
+{
+"title": "Late Show with David Letterman",
+"q": "late",
+"ct": "late",
+"run": "1993-",
+"s": [
+"late show with david letterman"
+],
+"w": [
+"late show",
+"letterman"
+],
+"need": "\\b(letterman|cbs)\\b",
+"open": 1,
+"x": "joan rivers|arsenio|ross shafer"
+},
+{
+"title": "Late Night with Conan O'Brien",
+"q": "late",
+"ct": "late",
+"run": "1993-",
+"s": [
+"late night with conan"
+],
+"w": [
+"conan obrien"
+],
+"open": 1
+},
+{
+"title": "Friday Night Videos",
+"q": "late",
+"ct": "late",
+"run": "1983-2002",
+"s": [
+"friday night videos"
+],
+"x": "friday night (lights|smackdown|fights|live|football|dinner|funkin|main event)"
+},
+{
+"title": "The Late Show Starring Joan Rivers",
+"q": "late",
+"ct": "late",
+"run": "1986-1988",
+"s": [
+"late show starring joan rivers",
+"the late show fox"
+],
+"w": [
+"late show"
+],
+"need": "\\b(joan rivers|arsenio|ross shafer|fox)\\b"
+},
+{
+"title": "The Arsenio Hall Show",
+"q": "late",
+"ct": "late",
+"run": "1989-1994",
+"s": [
+"arsenio hall show"
+],
+"w": [
+"arsenio"
+]
+},
+{
+"title": "The Pat Sajak Show",
+"q": "late",
+"ct": "late",
+"run": "1989-1990",
+"s": [
+"pat sajak show"
+]
+},
+{
+"title": "Later with Bob Costas",
+"q": "late",
+"ct": "late",
+"run": "1988-1994",
+"s": [
+"later with bob costas"
+]
+},
+{
+"title": "The Late Late Show with Tom Snyder",
+"q": "late",
+"ct": "late",
+"run": "1995-1999",
+"s": [
+"late late show with tom snyder"
+],
+"w": [
+"tom snyder"
+],
+"need": "(199[5-9])"
+},
+{
+"title": "Thicke of the Night",
+"q": "late",
+"ct": "late",
+"run": "1983-1984",
+"s": [
+"thicke of the night"
+],
+"old": 1
+},
+{
+"title": "Into the Night Starring Rick Dees",
+"q": "late",
+"ct": "late",
+"run": "1990-1991",
+"s": [
+"into the night starring rick dees",
+"into the night with rick dees"
+]
+},
+{
+"title": "Politically Incorrect",
+"q": "late",
+"ct": "late",
+"run": "1993-2002",
+"s": [
+"politically incorrect"
+]
+},
+{
+"title": "The Dennis Miller Show",
+"q": "late",
+"ct": "late",
+"run": "1992-1992",
+"s": [
+"dennis miller show"
+]
+},
+{
+"title": "The Chevy Chase Show",
+"q": "late",
+"ct": "late",
+"run": "1993-1993",
+"s": [
+"chevy chase show"
+]
+},
+{
+"title": "Night Flight",
+"q": "late",
+"ct": "late",
+"run": "1981-1996",
+"s": [],
+"w": [
+"night flight"
+],
+"need": "\\b(usa network|usa|episode|vhs|198\\d|199[0-6])\\b",
+"x": "from moscow|bonham|led zeppelin"
+},
+{
+"title": "USA Up All Night",
+"q": "late",
+"ct": "late",
+"run": "1989-1998",
+"s": [
+"usa up all night"
+],
+"w": [
+"up all night"
+],
+"need": "\\b(usa|rhonda shear|gilbert gottfried)\\b",
+"wq": [
+"usa",
+"rhonda",
+"gottfried"
+]
+},
+{
+"title": "Night Tracks",
+"q": "late",
+"ct": "late",
+"run": "1983-1992",
+"s": [
+"night tracks"
+]
+},
+{
+"title": "Saturday Night Live",
+"q": "late",
+"ct": "late",
+"run": "1975-",
+"s": [
+"saturday night live"
+],
+"open": 1,
+"s1": 1975,
+"x": "best of|wrestling"
+},
+{
+"title": "Nightline",
+"q": "news",
+"ct": "overnight",
+"run": "1980-",
+"s": [
+"abc news nightline"
+],
+"w": [
+"nightline"
+],
+"need": "\\b(abc|koppel|19(8[4-9]|9\\d)|200[0-4])\\b",
+"open": 1,
+"x": "fox|bbc|primetime"
+},
+{
+"title": "NBC News Overnight",
+"q": "news",
+"ct": "overnight",
+"run": "1982-1983",
+"s": [
+"nbc news overnight"
+],
+"old": 1
+},
+{
+"title": "CBS News Nightwatch",
+"q": "news",
+"ct": "overnight",
+"run": "1982-1992",
+"s": [
+"cbs news nightwatch",
+"cbs nightwatch"
+],
+"w": [
+"nightwatch"
+],
+"need": "\\b(cbs|charlie rose|19(8[4-9]|9[0-2]))\\b"
+},
+{
+"title": "ABC World News Now",
+"q": "news",
+"ct": "overnight",
+"run": "1992-",
+"s": [
+"world news now"
+],
+"open": 1
+},
+{
+"title": "Up to the Minute",
+"q": "news",
+"ct": "overnight",
+"run": "1992-",
+"s": [
+"cbs up to the minute",
+"cbs news up to the minute"
+],
+"w": [
+"up to the minute"
+],
+"need": "\\bcbs\\b",
+"wq": [
+"cbs"
+],
+"open": 1
+},
+{
+"title": "NBC Nightside",
+"q": "news",
+"ct": "overnight",
+"run": "1991-1998",
+"s": [
+"nbc nightside",
+"nbc news nightside"
+]
+}
+]
