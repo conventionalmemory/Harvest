@@ -612,7 +612,7 @@ def build():
     done = set(e['src'] for e in prev) | set(t for t in gone if t not in REP) | set(pages.get('_missing', {}))
     alljobs = len(jobs); jobs = [j for j in jobs if j[1] not in done]
     print('pages', alljobs, 'kept as parsed', alljobs - len(jobs), 'to parse', len(jobs), 'of them cached', sum(1 for j in jobs if j[1] in pages), 'kept events', len(prev), flush=True)
-    stat = collections.Counter(); zero = []
+    stat = collections.Counter(); zero = []; NEWPG = []
     FB = float(os.environ.get('FETCH_BUDGET_MIN', '150')) * 60
     def run(j):
         b = pages.get(j[1])
@@ -621,9 +621,9 @@ def build():
             time.sleep(random.random() * .4)
             b = wiki(j[1])
             if b == 0: return j, 0
-            if b is None: pages.setdefault('_missing', {})[j[1]] = 1; return j, None
+            if b is None: pages.setdefault('_missing', {})[j[1]] = 1; NEWPG.append(j[1]); return j, None
             b = prune(b)
-            if j[1] in REP: pages[j[1]] = b
+            if j[1] in REP: pages[j[1]] = b; NEWPG.append(j[1])
         if j[0] == 'ser' and j[2] == 'nba': return j, hoops(b, j[3], j[1], j[4])
         if j[0] == 'nfl': return j, nfl_like(b, 'nfl', j[2], j[3], j[1])
         if j[0] == 'nflpo': return j, nflpo(b, j[2], j[1])
@@ -678,10 +678,13 @@ def build():
     for lg, L in sorted(by.items()):
         print('LEAGUE', lg, len(L), 'events', sorted(collections.Counter(e['d'][:4] for e in L).items()))
         for e in random.sample(L, min(8, len(L))): print('   ', json.dumps(e, ensure_ascii=False)[:230])
-    with gzip.open(SCHF, 'wt', encoding='utf-8') as f: json.dump(ev, f, ensure_ascii=False, separators=(',', ':'))
+    with open(SCHF, 'wb') as fb:
+        with gzip.GzipFile(fileobj=fb, mode='wb', mtime=0) as f: f.write(json.dumps(ev, ensure_ascii=False, separators=(',', ':')).encode('utf-8'))
     json.dump(sorted(nopg), open(NOPG, 'w'), ensure_ascii=False)
-    with gzip.open(PGF, 'wt', encoding='utf-8') as f: json.dump(pages, f, ensure_ascii=False, separators=(',', ':'), sort_keys=True)
-    print('page cache', len(pages), 'pages', round(os.path.getsize(PGF) / 1e6, 1), 'MB', flush=True)
+    if NEWPG or not os.path.exists(PGF):
+        with open(PGF, 'wb') as fb:
+            with gzip.GzipFile(fileobj=fb, mode='wb', mtime=0) as f: f.write(json.dumps(pages, ensure_ascii=False, separators=(',', ':'), sort_keys=True).encode('utf-8'))
+    print('page cache', len(pages), 'pages', round(os.path.getsize(PGF) / 1e6, 1), 'MB', 'new this run', len(NEWPG), flush=True)
     return ev
 PSCH = os.path.join(PARTS, 'sportsched.json.gz')
 def load_sched():
@@ -1332,7 +1335,8 @@ if MODE == 'merge':
     random.seed(11)
     for x in random.sample(mine, min(50, len(mine))): print('MINESAMPLE', x['ct'], '|', x.get('ad', '') or x['e'], x.get('st', ''), x.get('net', ''), '|', x.get('ev', '') or x.get('why', ''), '|', x['t'][:70], '|', x['i'][:30], '|', round(sum(f[1] for f in x['f']) / 60), 'min |', x.get('sr', '')[:120])
     res = old + add + mine
-    with gzip.open(OUTF, 'wt', encoding='utf-8') as f: json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
+    with open(OUTF, 'wb') as fb:
+        with gzip.GzipFile(fileobj=fb, mode='wb', mtime=0) as f: f.write(json.dumps(res, ensure_ascii=False, separators=(',', ':')).encode('utf-8'))
     ext = []
     for fn in ('sports.json.gz', 'dated.json.gz'):
         pth = os.path.join(OUT, fn)
@@ -1344,7 +1348,8 @@ if MODE == 'merge':
             row, ev = rowat(SC, lg, d, norm(t))
             net = (row or {}).get('net') or known_net(lg, norm(t), d, d[:4])
             if net or (row and row.get('st')): ext.append({'i': i, 'ad': d, 'ev': ev, 'net': net, 'st': (row or {}).get('st', '')})
-    with gzip.open(os.path.join(OUT, 'sports2_times.json.gz'), 'wt', encoding='utf-8') as f: json.dump(ext, f, ensure_ascii=False, separators=(',', ':'))
+    with open(os.path.join(OUT, 'sports2_times.json.gz'), 'wb') as fb:
+        with gzip.GzipFile(fileobj=fb, mode='wb', mtime=0) as f: f.write(json.dumps(ext, ensure_ascii=False, separators=(',', ':')).encode('utf-8'))
     print('TIMES for already dated sports items', len(ext), 'with st', sum(1 for x in ext if x['st']), 'with net', sum(1 for x in ext if x['net']))
     hrs = lambda L: round(sum(sum(f[1] for f in x['f']) for x in L) / 3600)
     dated = [x for x in res if x.get('ad')]
