@@ -83,7 +83,8 @@ def match(show, title):
         tail = low[i + len(last):] if i >= 0 else 'x'
         if tail.startswith('..') or re.match(r"^['!?.)]*\s*[-–:|(\[#]", tail): return True
     return False
-XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio'}
+XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio', 'microsoftresearch', 'pyvideo', 'ted', 'tedtalks', 'conferences', 'computersandtechvideos', 'redwoodcenter', 'seagl', 'lecturevideos', 'stanford', 'ucberkeley-webcast', 'mit_ocw', 'religious_videos', 'spirituality_videos'}
+X_OFF = r"(conspiracy|epstein|jesuit|\bpope\b|streamer|\bipad\b|\bapp\b|hypervisor|neural network|microsoft research|pycon|\bcrm\b|webinar|sermon|lecture series|city council|county connections|bad movie|no sound|\buk vhs\b|uk dvd|\bpal\b)"
 def keep(x):
     s = BYT.get(x['k'])
     if not s or not ok_title(x['t'], s.get('brit')) or not match(s, x['t']): return False
@@ -94,6 +95,9 @@ def keep(x):
     oy = [int(v) for v in re.findall(r'\d{4}', s.get('original_run', ''))]
     if my and oy and 1900 <= int(my.group(1)) <= 2004 and int(my.group(1)) < oy[0] - 1 and not re.search(r'(?<!\d)(19[6-9]\d|200[0-4])(?!\d)', x['t']): return False
     if set(x.get('c') or []) & XCOL: return False
+    if re.search(X_OFF, (x['t'] + ' ' + x['i']).lower().replace('_', ' ')): return False
+    if re.match(r'^(Microsoft_Research|pyvideo|pycon|SeaGL|Redwood_Center|TED|mcdla|slac)', x['i']): return False
+    if x.get('e') == '' and re.match(r'^(20(0[5-9]|[12]\d))', str(x.get('d') or '')) and not re.search(r'(19[4-9]\d|200[0-4])', x['t'] + ' ' + x.get('ds', '')[:200]) and len(x['f']) < 3 and not s.get('brit'): return False
     if re.match(r'^[a-z]{4,10}-[A-Z]', x['i']) and not re.search(r'(19[4-9]\d|200[0-4])', x['t']): return False
     dy = re.match(r'(\d{4})', str(x.get('d') or ''))
     if x['i'].startswith('youtube-') and dy and int(dy.group(1)) >= 2005 and not re.search(r'(19[4-9]\d|200[0-4])', x['t']): return False

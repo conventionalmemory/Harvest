@@ -70,7 +70,8 @@
 "attenborough",
 "bbc",
 "pbs"
-]
+],
+"chase": true
 },
 {
 "title": "The Trials of Life",
@@ -187,7 +188,8 @@
 "anglia",
 "survival anglia",
 "wildlife"
-]
+],
+"chase": true
 },
 {
 "title": "Wild Discovery",
@@ -329,7 +331,8 @@
 "paramount",
 "wildlife",
 "animals"
-]
+],
+"chase": true
 },
 {
 "title": "Jack Hanna's Animal Adventures",
@@ -350,7 +353,15 @@
 "q": "pub",
 "net": "pbs",
 "original_run": "1995-2000",
-"ct": "nature"
+"ct": "nature",
+"ambiguous": true,
+"req": [
+"pbs",
+"wnet",
+"thirteen",
+"tigress",
+"meridian"
+]
 },
 {
 "title": "The Living Edens",
@@ -475,7 +486,8 @@
 "req": [
 "rob bredl",
 "animal planet"
-]
+],
+"chase": true
 },
 {
 "title": "O'Shea's Big Adventure",
@@ -495,6 +507,12 @@
 "ct": "nature",
 "alt": [
 "Most Extreme"
+],
+"ambiguous": true,
+"req": [
+"animal planet",
+"animals",
+"countdown"
 ]
 },
 {
@@ -553,7 +571,8 @@
 "req": [
 "burke",
 "james burke"
-]
+],
+"chase": true
 },
 {
 "title": "Connections 2",
@@ -563,8 +582,13 @@
 "ct": "science",
 "brit": true,
 "alt": [
-"Connections²",
 "Connections II"
+],
+"ambiguous": true,
+"req": [
+"burke",
+"james burke",
+"tlc"
 ]
 },
 {
@@ -575,9 +599,15 @@
 "ct": "science",
 "brit": true,
 "alt": [
-"Connections³",
 "Connections III"
-]
+],
+"ambiguous": true,
+"req": [
+"burke",
+"james burke",
+"tlc"
+],
+"chase": true
 },
 {
 "title": "The Day the Universe Changed",
@@ -637,7 +667,8 @@
 "pbs",
 "wnet",
 "1984"
-]
+],
+"chase": true
 },
 {
 "title": "The Mind",
@@ -673,7 +704,8 @@
 "pbs",
 "kcet",
 "1991"
-]
+],
+"chase": true
 },
 {
 "title": "The Mechanical Universe",
@@ -891,7 +923,6 @@
 "original_run": "1985-1999",
 "ct": "science",
 "alt": [
-"Beyond Tomorrow",
 "Towards 2000"
 ]
 },
@@ -905,7 +936,8 @@
 "req": [
 "discovery",
 "smithsonian"
-]
+],
+"chase": true
 },
 {
 "title": "Understanding",
@@ -917,7 +949,8 @@
 "req": [
 "tlc",
 "learning channel"
-]
+],
+"chase": true
 },
 {
 "title": "Science Frontiers",
@@ -935,7 +968,8 @@
 "ambiguous": true,
 "req": [
 "discovery"
-]
+],
+"chase": true
 },
 {
 "title": "Frontiers of Flight",
@@ -983,7 +1017,8 @@
 "req": [
 "discovery",
 "tv"
-]
+],
+"chase": true
 },
 {
 "title": "Popular Mechanics for Kids",
@@ -1088,7 +1123,8 @@
 "req": [
 "a&e",
 "bill kurtis"
-]
+],
+"chase": true
 },
 {
 "title": "Mysterious Universe",
@@ -1107,7 +1143,8 @@
 "req": [
 "1987",
 "carl sagan"
-]
+],
+"chase": true
 },
 {
 "title": "3-2-1 Classroom Contact",
@@ -1196,7 +1233,8 @@
 "ambiguous": true,
 "req": [
 "ken burns"
-]
+],
+"chase": true
 },
 {
 "title": "The West",
@@ -1209,7 +1247,8 @@
 "ken burns",
 "stephen ives",
 "pbs"
-]
+],
+"chase": true
 },
 {
 "title": "Lewis & Clark: The Journey of the Corps of Discovery",
@@ -1241,7 +1280,8 @@
 "ambiguous": true,
 "req": [
 "ken burns"
-]
+],
+"chase": true
 },
 {
 "title": "Brooklyn Bridge",
@@ -1252,7 +1292,8 @@
 "ambiguous": true,
 "req": [
 "ken burns"
-]
+],
+"chase": true
 },
 {
 "title": "The Statue of Liberty",
@@ -1263,7 +1304,8 @@
 "ambiguous": true,
 "req": [
 "ken burns"
-]
+],
+"chase": true
 },
 {
 "title": "Huey Long",
@@ -1274,7 +1316,8 @@
 "ambiguous": true,
 "req": [
 "ken burns"
-]
+],
+"chase": true
 },
 {
 "title": "Empire of the Air",
@@ -1373,6 +1416,12 @@
 "brit": true,
 "alt": [
 "Civilisation: A Personal View"
+],
+"ambiguous": true,
+"req": [
+"kenneth clark",
+"bbc",
+"1969"
 ]
 },
 {
@@ -1428,7 +1477,8 @@
 "ambiguous": true,
 "req": [
 "michael wood"
-]
+],
+"chase": true
 },
 {
 "title": "The Prize: The Epic Quest for Oil, Money & Power",
@@ -1451,7 +1501,8 @@
 "pbs",
 "blackside",
 "1993"
-]
+],
+"chase": true
 },
 {
 "title": "Liberty! The American Revolution",
@@ -1468,7 +1519,13 @@
 "q": "pub",
 "net": "pbs",
 "original_run": "1998-1998",
-"ct": "history"
+"ct": "history",
+"ambiguous": true,
+"req": [
+"pbs",
+"wgbh",
+"slavery"
+]
 },
 {
 "title": "New York: A Documentary Film",
@@ -1490,7 +1547,8 @@
 "req": [
 "pbs",
 "2000"
-]
+],
+"chase": true
 },
 {
 "title": "The Irish in America: Long Journey Home",
@@ -1523,7 +1581,8 @@
 "american experience",
 "pbs",
 "1992"
-]
+],
+"chase": true
 },
 {
 "title": "LBJ",
@@ -1534,7 +1593,8 @@
 "ambiguous": true,
 "req": [
 "american experience"
-]
+],
+"chase": true
 },
 {
 "title": "Nixon",
@@ -1545,7 +1605,8 @@
 "ambiguous": true,
 "req": [
 "american experience"
-]
+],
+"chase": true
 },
 {
 "title": "Crucible of Empire",
@@ -1608,7 +1669,8 @@
 "req": [
 "a&e",
 "edwin newman"
-]
+],
+"chase": true
 },
 {
 "title": "Biography",
@@ -1673,17 +1735,15 @@
 "a&e",
 "george c. scott",
 "weapons"
-]
+],
+"chase": true
 },
 {
 "title": "Time Machine with Jack Perkins",
 "q": "pub",
 "net": "aen",
 "original_run": "1992-1995",
-"ct": "history",
-"alt": [
-"Time Machine"
-]
+"ct": "history"
 },
 {
 "title": "Modern Marvels",
@@ -1783,7 +1843,8 @@
 "ambiguous": true,
 "req": [
 "history channel"
-]
+],
+"chase": true
 },
 {
 "title": "The Wild West",
@@ -1796,7 +1857,8 @@
 "1993",
 "warner",
 "jack lemmon"
-]
+],
+"chase": true
 },
 {
 "title": "How the West Was Lost",
@@ -1849,7 +1911,8 @@
 "req": [
 "discovery",
 "weapons"
-]
+],
+"chase": true
 },
 {
 "title": "G.I. Diary",
@@ -1868,8 +1931,7 @@
 "original_run": "1982-1983",
 "ct": "history",
 "alt": [
-"World War II with Walter Cronkite",
-"Air Power"
+"World War II with Walter Cronkite"
 ]
 },
 {
@@ -1880,6 +1942,11 @@
 "ct": "history",
 "alt": [
 "The 20th Century with Walter Cronkite"
+],
+"ambiguous": true,
+"req": [
+"cronkite",
+"cbs"
 ]
 },
 {
@@ -1921,7 +1988,8 @@
 "ambiguous": true,
 "req": [
 "john romer"
-]
+],
+"chase": true
 },
 {
 "title": "Secrets of Lost Empires",
@@ -1946,7 +2014,8 @@
 "ambiguous": true,
 "req": [
 "macaulay"
-]
+],
+"chase": true
 },
 {
 "title": "Cathedral",
@@ -1957,7 +2026,8 @@
 "ambiguous": true,
 "req": [
 "macaulay"
-]
+],
+"chase": true
 },
 {
 "title": "Pyramid",
@@ -1979,7 +2049,8 @@
 "ambiguous": true,
 "req": [
 "macaulay"
-]
+],
+"chase": true
 },
 {
 "title": "Mill Times",
@@ -1990,7 +2061,8 @@
 "ambiguous": true,
 "req": [
 "macaulay"
-]
+],
+"chase": true
 },
 {
 "title": "Building Big",
@@ -2002,7 +2074,8 @@
 "req": [
 "macaulay",
 "pbs"
-]
+],
+"chase": true
 },
 {
 "title": "America's Castles",
@@ -2028,7 +2101,8 @@
 "req": [
 "time-life",
 "sam waterston"
-]
+],
+"chase": true
 },
 {
 "title": "Archaeology",
@@ -2040,7 +2114,8 @@
 "req": [
 "tlc",
 "john rhys-davies"
-]
+],
+"chase": true
 },
 {
 "title": "Ancient Journeys",
@@ -2059,7 +2134,8 @@
 "req": [
 "tlc",
 "donald sutherland"
-]
+],
+"chase": true
 },
 {
 "title": "The Story of Aviation",
@@ -2298,7 +2374,8 @@
 "ambiguous": true,
 "req": [
 "heffner"
-]
+],
+"chase": true
 },
 {
 "title": "Think Tank",
@@ -2309,7 +2386,8 @@
 "ambiguous": true,
 "req": [
 "wattenberg"
-]
+],
+"chase": true
 },
 {
 "title": "Inside Washington",
@@ -2321,7 +2399,8 @@
 "req": [
 "gordon peterson",
 "pbs"
-]
+],
+"chase": true
 },
 {
 "title": "The Kwitny Report",
@@ -2437,7 +2516,8 @@
 "ambiguous": true,
 "req": [
 "abc news"
-]
+],
+"chase": true
 },
 {
 "title": "Day One",
@@ -2487,7 +2567,8 @@
 "req": [
 "nbc news",
 "brokaw"
-]
+],
+"chase": true
 },
 {
 "title": "Real Life with Jane Pauley",
@@ -2516,7 +2597,8 @@
 "req": [
 "nbc",
 "roger mudd"
-]
+],
+"chase": true
 },
 {
 "title": "1986",
@@ -2542,7 +2624,8 @@
 "cbs news",
 "moyers",
 "kuralt"
-]
+],
+"chase": true
 },
 {
 "title": "On the Road with Charles Kuralt",
@@ -2640,7 +2723,8 @@
 "pbs",
 "kbdi",
 "tom weinberg"
-]
+],
+"chase": true
 },
 {
 "title": "Alive from Off Center",
@@ -2684,7 +2768,12 @@
 "q": "pub",
 "net": "pbs",
 "original_run": "1986-2004",
-"ct": "arts"
+"ct": "arts",
+"req": [
+"pbs",
+"american masters",
+"wnet"
+]
 },
 {
 "title": "Live from Lincoln Center",
@@ -2744,7 +2833,8 @@
 "req": [
 "pbs",
 "wttw"
-]
+],
+"chase": true
 },
 {
 "title": "In Performance at the White House",
@@ -2845,7 +2935,8 @@
 "req": [
 "jeremy brett",
 "granada"
-]
+],
+"chase": true
 },
 {
 "title": "Agatha Christie's Poirot",
@@ -2896,7 +2987,8 @@
 "ambiguous": true,
 "req": [
 "helen mirren"
-]
+],
+"chase": true
 },
 {
 "title": "Brideshead Revisited",
@@ -3146,7 +3238,8 @@
 "ambiguous": true,
 "req": [
 "robert hughes"
-]
+],
+"chase": true
 },
 {
 "title": "The Shock of the New",
@@ -3165,7 +3258,12 @@
 "net": "pbs",
 "original_run": "1972-1972",
 "ct": "arts",
-"brit": true
+"brit": true,
+"ambiguous": true,
+"req": [
+"berger",
+"bbc"
+]
 },
 {
 "title": "Voices & Visions",
@@ -3709,7 +3807,8 @@
 "ambiguous": true,
 "req": [
 "frugal gourmet"
-]
+],
+"chase": true
 },
 {
 "title": "America's Test Kitchen",
@@ -3737,7 +3836,8 @@
 ],
 "alt": [
 "Body Electric with Margaret Richard"
-]
+],
+"chase": true
 },
 {
 "title": "Lilias, Yoga and You",
@@ -3774,7 +3874,8 @@
 "req": [
 "pbs",
 "gardening"
-]
+],
+"chase": true
 },
 {
 "title": "Rebecca's Garden",
@@ -3806,7 +3907,8 @@
 "req": [
 "pbs",
 "jack gallagher"
-]
+],
+"chase": true
 },
 {
 "title": "The Wealthy Barber",
@@ -3842,7 +3944,8 @@
 "req": [
 "tv",
 "series"
-]
+],
+"chase": true
 },
 {
 "title": "The Fishin' Hole",
@@ -3917,7 +4020,7 @@
 "ct": "travel",
 "brit": true,
 "alt": [
-"Full Circle"
+"Michael Palin Full Circle"
 ]
 },
 {
@@ -3930,7 +4033,8 @@
 "req": [
 "pbs",
 "wttw"
-]
+],
+"chase": true
 },
 {
 "title": "Travelin' Gourmet",
@@ -3972,14 +4076,27 @@
 "ambiguous": true,
 "req": [
 "travel channel"
-]
+],
+"chase": true
 },
 {
 "title": "Great Scenic Railway Journeys",
 "q": "pub",
 "net": "pbs",
 "original_run": "1996-2004",
-"ct": "travel"
+"ct": "travel",
+"ambiguous": true,
+"req": [
+"pbs",
+"1996",
+"1997",
+"1998",
+"1999",
+"2000",
+"2001",
+"2002",
+"2003"
+]
 },
 {
 "title": "America by Rail",
@@ -3998,6 +4115,12 @@
 "Over California",
 "Over New England",
 "Over Washington"
+],
+"ambiguous": true,
+"req": [
+"pbs",
+"aerial",
+"kcts"
 ]
 },
 {
@@ -4010,7 +4133,8 @@
 "req": [
 "pbs",
 "travel"
-]
+],
+"chase": true
 },
 {
 "title": "The Voyage of the Mimi",
@@ -4079,7 +4203,8 @@
 "ambiguous": true,
 "req": [
 "wayne rostad"
-]
+],
+"chase": true
 },
 {
 "title": "Great Drives",
@@ -4136,7 +4261,8 @@
 "req": [
 "a&e",
 "travel"
-]
+],
+"chase": true
 },
 {
 "title": "Russell Chatham",
@@ -4165,7 +4291,8 @@
 "ambiguous": true,
 "req": [
 "discovery"
-]
+],
+"chase": true
 },
 {
 "title": "World Away",
@@ -4176,7 +4303,8 @@
 "ambiguous": true,
 "req": [
 "discovery"
-]
+],
+"chase": true
 },
 {
 "title": "Discovery Journal",
@@ -4194,7 +4322,8 @@
 "ambiguous": true,
 "req": [
 "discovery"
-]
+],
+"chase": true
 },
 {
 "title": "Intimate Portrait",
@@ -4468,7 +4597,8 @@
 "req": [
 "series",
 "rescue"
-]
+],
+"chase": true
 },
 {
 "title": "How'd They Do That?",
@@ -4507,7 +4637,8 @@
 "ambiguous": true,
 "req": [
 "discovery channel"
-]
+],
+"chase": true
 },
 {
 "title": "Hard Time",
@@ -4518,7 +4649,8 @@
 "ambiguous": true,
 "req": [
 "a&e"
-]
+],
+"chase": true
 },
 {
 "title": "On the Inside",
@@ -4529,7 +4661,8 @@
 "ambiguous": true,
 "req": [
 "discovery"
-]
+],
+"chase": true
 },
 {
 "title": "World's Most Dangerous",
@@ -4540,7 +4673,8 @@
 "ambiguous": true,
 "req": [
 "discovery"
-]
+],
+"chase": true
 },
 {
 "title": "Eco-Challenge",
@@ -4573,7 +4707,8 @@
 "req": [
 "history channel",
 "ermey"
-]
+],
+"chase": true
 },
 {
 "title": "Junkyard Wars",
@@ -4592,7 +4727,8 @@
 "req": [
 "extreme warriors",
 "tnn"
-]
+],
+"chase": true
 },
 {
 "title": "MythBusters",
