@@ -210,6 +210,9 @@ def champ_date(t):
     return d.isoformat(), 'event'
 
 JUNK = re.compile(r"(?i)\b(highlights?|recap|top \d+|best of|mic'?d up|reaction|react|podcast|review|breakdown|analysis|explained|documentary|film study|trailer|promo|preview|press conference|interview|every (touchdown|goal|play)|all (touchdowns|goals)|condensed|in \d+ minutes|mini[- ]?movie|shorts?|simulation|madden|2k\d\d|video game|gameplay|remix|tribute|compilation|countdown|ranking|facts|story of|what happened|the truth|a football life|hard knocks|sound fx|america'?s game|nfl films presents|upscaled|60 ?fps|ai upscale)\b")
+JUNK2 = re.compile(r"(?i)what made|\bbios?\b|\bep\.? ?#?\d+\b.*\b(podcast|show)\b|#\d{1,3}:|presents ?:|fan ?cam|\(radio\)|radio broadcast|radio call|revisited|minute by minute|as it happened|\bchampions\b(?! league)|season in review|year in review|photo opportunit|fundrais|meetings? with|remarks (at|to) (a |an |the )?(briefing|luncheon|reception|dinner|rally)|uncensored footage|retrospective|look back|remembering|anniversary special|behind the scenes|shoot interview|watch ?along|live reaction")
+MAJOR = re.compile(r"(?i)address to the nation|farewell address|state of the union|inaugura|national convention|acceptance speech|debate|challenger|berlin wall|brandenburg|tear down|pointe du hoc|d-day|joint session|oval office|resign|concession|victory speech|news conference|press conference|eulogy|funeral|9/11|september 11|oklahoma city|gulf war|desert storm")
+OFFNAME = re.compile(r"(?i)^(wcw|ecw|wwe.*|nfl.*|nba.*|mlb.*|nhl.*|nascar.*|.*indycar.*|top rank boxing|.*digital network|.*conference|.*athletics|.*sports network|espn.*|abc news|nbc news|cbs news|cnn|fox \d+.*|.* library|ap archive|c-span|nasa.*|olympics|pga tour|usta|wimbledon|.*news \d+|k[a-z]{3}.*|w[a-z]{3}\b.*)$")
 FULLW = re.compile(r"(?i)full (game|match|fight|race|event|show|episode|broadcast|ceremony|telecast|replay|coverage|ppv|pay)|complete (game|broadcast|show|race|fight|telecast|ceremony)|original (broadcast|telecast)|entire (game|show|broadcast)|\b(nbc|cbs|abc|espn|tnt|tbs|fox|cnn|usa network|hbo|ppv) (broadcast|telecast|coverage|feed)\b|with (original )?commercials|\bw/ ?commercials")
 LG = [
  ('nfl', r"\b(nfl|super ?bowl|afc championship|nfc championship|monday night football|wild ?card|divisional playoff|pro bowl|(cowboys|49ers|packers|bears|giants|redskins|steelers|raiders|broncos|dolphins|bills|chiefs|eagles|patriots|jets|vikings|rams|colts|browns|bengals|oilers|titans|saints|falcons|buccaneers|seahawks|chargers|lions|cardinals|jaguars|panthers|ravens|texans) (vs|at|@)\b)", 60),
@@ -411,10 +414,16 @@ def merge():
         if not q: rej['class'] += 1; continue
         if m['dur'] < mn * 60: rej['short'] += 1; continue
         if JUNK.search(t) and not FULLW.search(t): rej['junk'] += 1; continue
-        isoff = 1 if (m['chid'] in offids or r.get('ver')) else 0
+        if JUNK2.search(t): rej['junk2'] += 1; continue
+        if q == 'wrest' and re.search(r'(?i)full match', t) and not re.search(r'(?i)full (event|episode|show|ppv|card)', t): rej['singlematch'] += 1; continue
+        if ct == 'speech' and not MAJOR.search(t): rej['minorspeech'] += 1; continue
+        if m['dur'] > 6 * 3600: rej['toolong'] += 1; continue
+        offn = bool(r.get('ver') and OFFNAME.search(m['author'] or ''))
+        isoff = 1 if (m['chid'] in offids or offn) else 0
         why = ''
         if m['chid'] in offids: why = 'official channel'
-        elif r.get('ver'): why = 'verified channel'
+        elif offn: why = 'rights-holder channel'
+        elif r.get('ver') and yrs >= 3 and vw >= 1500: why = 'verified channel, up about ' + str(yrs) + ' years'
         elif yrs >= 4 and vw >= 1500: why = 'up about ' + str(yrs) + ' years, ' + str(vw) + ' views'
         else: rej['notdurable'] += 1; continue
         ad, src = event_date(t)
