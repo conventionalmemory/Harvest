@@ -126,3 +126,167 @@ def probe():
         print('  loc fail', st, e, body[:200])
 if MODE == 'probe':
     probe(); sys.exit(0)
+MONTHS = {m: i + 1 for i, m in enumerate(['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'])}
+MONTHS.update({k[:3]: v for k, v in list(MONTHS.items())}); MONTHS['sept'] = 9
+def pdate(tx):
+    tx = re.sub(r'<[^>]+>', ' ', str(tx or ''))
+    m = re.search(r'\b(19[89]\d|200[0-4])-(\d\d)-(\d\d)\b', tx)
+    if m and 1 <= int(m.group(2)) <= 12 and 1 <= int(m.group(3)) <= 31: return '%s-%s-%s' % m.groups()
+    m = re.search(r'\b(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]{3,9})\.?,?\s+(19[89]\d|200[0-4])\b', tx)
+    if m and m.group(2).lower() in MONTHS and 1 <= int(m.group(1)) <= 31: return '%s-%02d-%02d' % (m.group(3), MONTHS[m.group(2).lower()], int(m.group(1)))
+    m = re.search(r'\b([A-Za-z]{3,9})\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(19[89]\d|200[0-4])\b', tx)
+    if m and m.group(1).lower() in MONTHS and 1 <= int(m.group(2)) <= 31: return '%s-%02d-%02d' % (m.group(3), MONTHS[m.group(1).lower()], int(m.group(2)))
+    m = re.search(r'\b(\d{1,2})/(\d{1,2})/(19[89]\d|200[0-4])\b', tx)
+    if m and 1 <= int(m.group(1)) <= 12 and 1 <= int(m.group(2)) <= 31: return '%s-%02d-%02d' % (m.group(3), int(m.group(1)), int(m.group(2)))
+    return ''
+def inr(d): return bool(d) and '1984-01-01' <= d <= '2004-12-31'
+def classify(tx):
+    t = tx.lower()
+    for ct, rx in (('launch', r'launch|liftoff|lift-off|landing|countdown'), ('sotu', r'state of the union'), ('inauguration', r'inaugura'), ('debate', r'\bdebate'), ('election', r'election night|convention|campaign'), ('hearing', r'hearing|testimony|committee'), ('press', r'press conference|news conference|press briefing|briefing'), ('speech', r'address|remarks|speech|statement|radio address|toast|announc|signing|ceremony|medal|arrival|visit|meeting|summit|tribute|memorial|funeral|eulogy'), ('mission', r'\bsts[- ]?\d|shuttle|mission|hubble|mir\b|station|spacewalk|eva\b|crew|astronaut|flight'), ('publictv', r'newshour|frontline|pbs|public television')):
+        if re.search(rx, t): return ct
+    return 'doc'
+def canon(t):
+    t = re.sub(r'^File:', '', t); t = re.sub(r'\.(webm|ogv|ogg|mpg|mpeg|mp4|mov)$', '', t, flags=re.I)
+    t = re.sub(r'\s*-?\s*\(?(NARA|NAID|FOIA Case|DVIDS|MT\d+|KSC-[\w-]+)[^)]*\)?', ' ', t)
+    t = re.sub(r'[_]+', ' ', t); t = re.sub(r'\s+', ' ', t).strip(' -:,.')
+    return t.upper()[:80]
+def nasa():
+    out = []; seen = set(); cands = []
+    def page(url):
+        j = jget(url, timeout=60)
+        its = (j or {}).get('collection', {}).get('items') or []
+        for it in its:
+            d0 = (it.get('data') or [{}])[0]
+            if d0.get('nasa_id') and d0['nasa_id'] not in seen and d0.get('media_type') == 'video':
+                seen.add(d0['nasa_id']); cands.append(d0)
+        return len(its), ((j or {}).get('collection', {}).get('metadata') or {}).get('total_hits', 0)
+    for y in range(1984, 2005):
+        for pg in range(1, 40):
+            n, tot = page('https://images-api.nasa.gov/search?media_type=video&year_start=%d&year_end=%d&page_size=100&page=%d' % (y, y, pg))
+            if pg == 1: print('nasa year', y, 'hits', tot, flush=True)
+            if n < 100: break
+    QS = ['launch coverage', 'landing coverage', 'launch day activities', 'KSC-198', 'KSC-199', 'KSC-200', 'STS-41', 'STS-51', 'STS-61', 'STS-26', 'STS-27', 'STS-28', 'STS-29', 'STS-30', 'STS-31', 'STS-32', 'STS-33', 'STS-34', 'STS-35', 'STS-36', 'STS-37', 'STS-38', 'STS-39', 'STS-40', 'STS-42', 'STS-43', 'STS-44', 'STS-45', 'STS-46', 'STS-47', 'STS-48', 'STS-49', 'STS-50', 'STS-52', 'STS-53', 'STS-54', 'STS-55', 'STS-56', 'STS-57', 'STS-58', 'STS-59', 'STS-60', 'STS-62', 'STS-63', 'STS-64', 'STS-65', 'STS-66', 'STS-67', 'STS-68', 'STS-69', 'STS-70', 'STS-71', 'STS-72', 'STS-73', 'STS-74', 'STS-75', 'STS-76', 'STS-77', 'STS-78', 'STS-79', 'STS-80', 'STS-81', 'STS-82', 'STS-83', 'STS-84', 'STS-85', 'STS-86', 'STS-87', 'STS-88', 'STS-89', 'STS-90', 'STS-91', 'STS-92', 'STS-93', 'STS-94', 'STS-95', 'STS-96', 'STS-97', 'STS-98', 'STS-99', 'STS-100', 'STS-101', 'STS-102', 'STS-103', 'STS-104', 'STS-105', 'STS-106', 'STS-107', 'STS-108', 'STS-109', 'STS-110', 'STS-111', 'STS-112', 'STS-113', 'Challenger', 'Columbia', 'Hubble', 'Mir', 'Pathfinder', 'Galileo', 'Magellan', 'Ulysses', 'Cassini', 'Discovery', 'Atlantis', 'Endeavour', 'return to flight', 'rollout', 'Titan', 'Delta', 'Atlas', 'post flight', 'crew press conference', 'mission highlights', 'resource reel', 'year in review']
+    for q in QS:
+        for pg in range(1, 12):
+            n, tot = page('https://images-api.nasa.gov/search?q=%s&media_type=video&page_size=100&page=%d' % (urllib.parse.quote(q), pg))
+            if n < 100: break
+    print('nasa candidates', len(cands), flush=True)
+    pre = []
+    for d0 in cands:
+        tx = ' '.join(str(d0.get(k) or '') for k in ('title', 'nasa_id', 'description'))
+        dc = str(d0.get('date_created') or '')[:10]
+        ad = dc if inr(dc) and not dc.endswith('-01-01') else ''
+        td = pdate(str(d0.get('title') or '') + ' ' + str(d0.get('nasa_id') or ''))
+        if inr(td): ad = td
+        if not ad and inr(dc): ad = pdate(str(d0.get('description') or ''))
+        if not inr(ad): continue
+        pre.append((d0, ad))
+    print('nasa dated in range', len(pre), flush=True)
+    def one(a):
+        d0, ad = a
+        if left() < 600: return None
+        m = jget('https://images-api.nasa.gov/asset/' + urllib.parse.quote(d0['nasa_id']), timeout=40)
+        hs = [x['href'] for x in (m or {}).get('collection', {}).get('items', []) if str(x.get('href', '')).lower().endswith('.mp4')]
+        by = {}
+        for h in hs: by.setdefault(h.rsplit('~', 1)[-1].lower(), h)
+        best = None
+        for key in ('medium.mp4', 'small.mp4', 'orig.mp4', 'large.mp4', 'mobile.mp4'):
+            if key not in by: continue
+            u = urllib.parse.quote(by[key].replace('http://', 'https://'), safe=':/~')
+            d, st, hd = mp4dur(u)
+            if st not in (200, 206) or not d or 'video' not in str(hd.get('content-type')): continue
+            m2 = re.search(r'/(\d+)$', hd.get('content-range', '')); size = int(m2.group(1)) if m2 else 0
+            mbps = size * 8 / d / 1e6 if size else 0
+            if key == 'orig.mp4' and mbps > 8 and ('mobile.mp4' in by or 'large.mp4' in by): continue
+            best = (u, d, key, round(mbps, 1)); break
+        if not best or best[1] < 300: return ('short' if best else 'nofile', None)
+        tx = str(d0.get('title') or '') + ' ' + str(d0.get('description') or '')[:300]
+        return ('ok', {'i': 'nasa:' + d0['nasa_id'], 'src': 'nasa', 'q': 'tech', 't': str(d0.get('title') or d0['nasa_id'])[:160], 'k': canon(str(d0.get('title') or d0['nasa_id'])), 'ad': ad, 'u': [[best[0], round(best[1])]], 'lic': 'NASA media, generally not copyrighted (nasa.gov media usage guidelines)', 'ct': classify(tx), 'ds': str(d0.get('description') or '')[:300], 'var': best[2], 'mbps': best[3], 'fmt': 'mp4'})
+    st = collections.Counter()
+    with ThreadPoolExecutor(8) as ex:
+        for r in ex.map(one, pre):
+            if not r: st['budget'] += 1; continue
+            st[r[0]] += 1
+            if r[1]: out.append(r[1])
+    print('nasa results', dict(st), flush=True)
+    return out
+CUA = {'User-Agent': 'ConventionalMemoryHarvest/1.0 (https://github.com/conventionalmemory/harvest)'}
+def commons():
+    out = []; seen = set(); st = collections.Counter()
+    QS = ['deepcategory:"Videos of Ronald Reagan"', 'deepcategory:"Videos of Bill Clinton"', 'deepcategory:"Videos of George H. W. Bush"', 'deepcategory:"Videos of George W. Bush"', 'deepcategory:"Videos of presidential inaugurations of the United States"', 'deepcategory:"Videos by the Ronald Reagan Presidential Library"', 'incategory:"US National Archives Collection WJC-WHTV: Video Recordings of the White House Television Office (Clinton Administration), 1/20/1993 - 1/20/2001"', '"State of the Union"', '"Space Shuttle"', 'STS launch', 'Challenger', 'Hubble', '"press conference"', '"presidential debate"', '"Democratic National Convention"', '"Republican National Convention"', 'inauguration', '"White House"', '"Reagan" address', '"Clinton" remarks', '"Bush" remarks', '"Gore"', '"Thatcher"', '"Gorbachev"', '"Desert Storm"', '"Gulf War"', '"Berlin Wall"', '"Oklahoma City"', '"September 11"', '"Olympics"', 'NASA 1986', 'NASA 1990', 'NASA 1995', 'NASA 1998', 'NASA 2003', '"Mir"', '"International Space Station"', '"Mars Pathfinder"', '"C-SPAN"', '"news conference"', '"radio address"', '"Department of Defense" 1991', '"Air Force" 1990', '"Navy" 1988', 'hurricane 1992', 'earthquake 1989', '"Mount St. Helens"', 'election 1992', 'election 1996', 'election 2000', 'election 1988', 'election 1984', 'election 2004']
+    for q in QS:
+        if left() < 900: break
+        cont = {}
+        for pg in range(40):
+            url = 'https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=50&gsrsearch=' + urllib.parse.quote('filetype:video ' + q) + '&prop=videoinfo&viprop=url|size|mime|derivatives|extmetadata&viextmetadatafilter=DateTimeOriginal|LicenseShortName|Artist|Credit|ImageDescription' + ''.join('&%s=%s' % (k, urllib.parse.quote(str(v))) for k, v in cont.items())
+            j = jget(url, headers=CUA, timeout=60)
+            time.sleep(0.6)
+            if not j: st['apifail'] += 1; break
+            for p in ((j.get('query') or {}).get('pages') or {}).values():
+                if p['title'] in seen or not p.get('videoinfo'): continue
+                seen.add(p['title']); st['seen'] += 1
+                vi = p['videoinfo'][0]; em = vi.get('extmetadata') or {}
+                dur = vi.get('duration') or 0
+                if dur < 300: st['short'] += 1; continue
+                dv = (em.get('DateTimeOriginal') or {}).get('value', '')
+                desc = re.sub(r'<[^>]+>', ' ', (em.get('ImageDescription') or {}).get('value', ''))
+                ad = pdate(p['title']) or pdate(dv) or pdate(desc[:400])
+                if not inr(ad): st['nodate'] += 1; continue
+                if re.search(r'[\u0400-\u04ff\u4e00-\u9fff\u0600-\u06ff]', p['title'] + desc[:200]): st['foreign'] += 1; continue
+                ds = [d for d in (vi.get('derivatives') or []) if str(d.get('type', '')).startswith('video/webm')]
+                pick = None
+                for key in ('480p.vp9.webm', '360p.vp9.webm', '720p.vp9.webm', '240p.vp9.webm'):
+                    for d in ds:
+                        if d.get('transcodekey') == key or str(d.get('src', '')).endswith(key): pick = d['src']; break
+                    if pick: break
+                fmt = 'webm'
+                if not pick:
+                    if vi.get('mime') in ('video/webm', 'video/mp4') and (vi.get('size') or 0) / max(dur, 1) * 8 / 1e6 < 8: pick = vi['url']; fmt = vi['mime'].split('/')[1]
+                    else: st['noderiv'] += 1; continue
+                tx = p['title'] + ' ' + desc[:300]
+                ct = classify(tx)
+                lic = (em.get('LicenseShortName') or {}).get('value', '')
+                by = re.sub(r'<[^>]+>', '', (em.get('Artist') or {}).get('value', '') or (em.get('Credit') or {}).get('value', ''))[:120]
+                out.append({'i': 'commons:' + p['title'][5:], 'src': 'commons', 'q': 'tech' if ct in ('launch', 'mission') else 'news', 't': re.sub(r'\.(webm|ogv|ogg|mpg|mpeg|mp4|mov)$', '', p['title'][5:], flags=re.I)[:160], 'k': canon(p['title']), 'ad': ad, 'u': [[pick, round(dur)]], 'lic': lic, 'by': by.strip(), 'pg': 'https://commons.wikimedia.org/wiki/' + urllib.parse.quote(p['title'].replace(' ', '_')), 'ct': ct, 'ds': desc.strip()[:300], 'fmt': fmt})
+            cont = j.get('continue') or {}
+            if not cont: break
+        print('commons q', q[:60], 'kept so far', len(out), flush=True)
+    def chk(x):
+        s2, hd, b, fin = req(x['u'][0][0], rng=(0, 1023), headers=CUA, timeout=30)
+        x['_ok'] = s2 in (200, 206) and 'video' in str(hd.get('content-type'))
+        x['_h'] = (s2, hd.get('content-type'), hd.get('accept-ranges'), hd.get('access-control-allow-origin'))
+        return x
+    with ThreadPoolExecutor(4) as ex: out = list(ex.map(chk, out))
+    print('commons header samples', [x['_h'] for x in out[:5]])
+    bad = [x for x in out if not x['_ok']]
+    out = [x for x in out if x['_ok']]
+    for x in out: x.pop('_ok'); x.pop('_h')
+    st['urlfail'] = len(bad)
+    print('commons results', dict(st), flush=True)
+    return out
+items = []
+for name, fn in (('nasa', nasa), ('commons', commons)):
+    if os.environ.get('ONLY') and os.environ['ONLY'] != name: continue
+    try: items += fn()
+    except Exception as e:
+        import traceback; traceback.print_exc(); print('source failed', name, e)
+old = []
+if os.path.exists(OUT):
+    try: old = json.load(gzip.open(OUT, 'rt', encoding='utf-8'))
+    except Exception: old = []
+got = set(x['src'] for x in items)
+by = {x['i']: x for x in old if x.get('src') not in got}
+for x in items: by[x['i']] = x
+final = sorted(by.values(), key=lambda x: (x['ad'], x['i']))
+os.makedirs('catalog', exist_ok=True)
+json.dump(final, gzip.open(OUT, 'wt', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+hrs = lambda L: round(sum(u[1] for x in L for u in x['u']) / 3600)
+print('TOTAL', len(final), 'items', hrs(final), 'hours', 'distinct days', len(set(x['ad'] for x in final)))
+for s in sorted(set(x['src'] for x in final)):
+    L = [x for x in final if x['src'] == s]; print(' source', s, len(L), 'items', hrs(L), 'h', 'fmt', dict(collections.Counter(x.get('fmt') for x in L)))
+print(' per year', sorted(collections.Counter(x['ad'][:4] for x in final).items()))
+print(' per ct', collections.Counter(x['ct'] for x in final).most_common())
+print(' licenses', collections.Counter(x['lic'][:40] for x in final).most_common(8))
+import random
+random.seed(7)
+for x in random.sample(final, min(60, len(final))): print('  ROW', x['ad'], x['src'], x['ct'], round(x['u'][0][1] / 60), 'min |', x['k'][:60], '|', x['u'][0][0][-60:])
