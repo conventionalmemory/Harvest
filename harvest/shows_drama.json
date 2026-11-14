@@ -1469,8 +1469,7 @@
 "first_year": 1987,
 "last_year": 1990,
 "original_run": "1987-1990",
-"q": "prime",
-"ambiguous": true
+"q": "prime"
 },
 {
 "title": "21 Jump Street",
@@ -4013,6 +4012,9 @@
 6,
 "20:00"
 ]
+],
+"alt": [
+"COPS TV"
 ]
 },
 {

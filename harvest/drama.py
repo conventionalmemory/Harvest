@@ -77,8 +77,8 @@ def match(show, title):
         rest = c2[len(sn):].strip()
         if not rest: return True
         rt = rest.split()
-        if re.match(SEPW, rt[0]): return True
-        if any(re.match(r'^(s\d+e?\d*|season|seasons|episode|\d{1,2}x\d+|complete|disc|disk|dvd)$', w) for w in rt[1:4]): return True
+        if re.match(SEPW, rt[0]) and (not sn.isdigit() or strong): return True
+        if not show.get('ambiguous') and any(re.match(r'^(s\d+e?\d*|season|seasons|episode|\d{1,2}x\d+|complete|disc|disk|dvd)$', w) for w in rt[1:4]): return True
         last = sn.split()[-1]; i = low.find(last)
         tail = low[i + len(last):] if i >= 0 else 'x'
         if tail.startswith('..') or re.match(r"^['!?.)]*\s*[-–:|(\[#]", tail): return True
@@ -86,8 +86,20 @@ def match(show, title):
 def subhit(show, subj, title):
     sj = subj if isinstance(subj, list) else re.split(r'[;,]', str(subj or ''))
     names = set([show['n']] + [norm(a) for a in show.get('alt', [])])
+    if show.get('ambiguous') or len(show['n'].split()) < 2 or len(show['n']) < 10: return False
     if not any(norm(v) in names for v in sj): return False
     return bool(re.search(r's\d{1,2}\s?e\s?\d|season \d|episode \d|\b\d{1,2}x\s?\d\d|\bep\.? ?\d', title.lower()))
+for s in SHOWS: s['longer'] = [o['n'] for o in SHOWS if o is not s and len(o['n']) > len(s['n']) and (' ' + s['n'] + ' ') in (' ' + o['n'] + ' ')] + (['svu', 'special victims', 'criminal intent', 'trial by jury'] if s['n'] == 'law and order' else []) + (['miami', 'ny', 'new york'] if s['n'].startswith('csi crime') else [])
+def extra(s, title):
+    nt = ' ' + norm(title) + ' '
+    if any((' ' + o + ' ') in nt for o in s['longer']): return False
+    if re.search(r'(?i)\b(opening (and|&) closing|opening to|closing to|animated|cartoon|anime|trilogy|movie collection|dubbed)\b', title): return False
+    if s['n'] == 'cops' and re.search(r'(?i)case of|c\. ?o\. ?p\. ?s', title): return False
+    if s['last_year'] > 2004:
+        mx = 2004 - s['first_year'] + 1
+        for v in re.findall(r'(?i)\bs(?:eason)?\s?(\d{1,2})(?=\s?e|\b)', title):
+            if int(v) > mx: return False
+    return True
 def yearok(s, title):
     ys = [int(v) for v in re.findall(r'(?<!\d)(19\d\d|20\d\d)(?!\d)', title)]
     if not ys: return True
@@ -100,7 +112,7 @@ def disc(title, cols, blob=''):
 XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio'}
 def keep(x):
     s = BYT.get(x['k'])
-    if not s or not ok_title(x['t']) or not (match(s, x['t']) or subhit(s, x.get('s'), x['t'])) or not yearok(s, x['t']) or re.search(r'(?i)\b(animated|cartoon|anime|trilogy|movie collection)\b', x['t']) or not disc(x['t'], x.get('c'), (x.get('s', '') + ' ' + x.get('ds', '')).lower()): return False
+    if not s or not ok_title(x['t']) or not (match(s, x['t']) or subhit(s, x.get('s'), x['t'])) or not yearok(s, x['t']) or not extra(s, x['t']) or not disc(x['t'], x.get('c'), (x.get('s', '') + ' ' + x.get('ds', '')).lower()): return False
     if set(x.get('c') or []) & XCOL: return False
     if re.match(r'^[a-z]{4,10}-[A-Z]', x['i']) and not re.search(r'(19[4-9]\d|200[0-4])', x['t']): return False
     dy = re.match(r'(\d{4})', str(x.get('d') or ''))
@@ -151,7 +163,7 @@ if MODE == 'plan':
                 cl = it.get('collection'); cl = cl if isinstance(cl, list) else [cl] if cl else []
                 if not ok_title(t): why[k]['title'] += 1; smp[k, 'T'].append(t[:70]); continue
                 if not match(s, t) and not subhit(s, it.get('subject'), t): why[k]['match'] += 1; smp[k, 'M'].append(t[:70]); continue
-                if not yearok(s, t): why[k]['year'] += 1; continue
+                if not yearok(s, t) or not extra(s, t): why[k]['year'] += 1; continue
                 if s.get('ambiguous') and not disc(t, cl): why[k]['disc'] += 1; continue
                 seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': k}; hits[k] += 1
             if k % 100 == 0: print('search', k, len(seen), round((time.time() - T0) / 60, 1), 'min', flush=True)
