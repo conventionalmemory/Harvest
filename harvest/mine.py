@@ -101,7 +101,8 @@ def bad_title(t):
     return bool(re.search(X_FOR, low2) or re.search(X_JUNK, low2) or re.search(X_MOD, low2) or re.search(X_NONUS, low2))
 X_COMP = r"\b(commercial breaks?|commercials?|commericals?|adverts?|ads|promos?|psas?|station ids?|station identifications?|newscast opens?|news opens?|continuity|idents?|trailers from|previews from)\b"
 X_COMP2 = r"\b(bumpers?|sign[- ]?offs?|sign[- ]?ons?|logos?|openings?|closings?|intros?|outros?|credits|clips|highlights?|highlight film|yearbook|bloopers|outtakes|behind the scenes|making of|interviews?|featurette)\b"
-X_HOME = r"\buk (vhs|dvd|pal|betamax|video)\b|\(uk\b|\[vhs\]|\bfull vhs\b|\bvhs\)?\s*$|\(\d{4},? (full )?vhs\)|\b\d{4}\)? vhs\b(?! (tape|recording|rip:|capture|•))|\bofficial .{0,40}video\b|\bteam video\b|\b(dvd ?iso|dvd9|dvd5|ntsc[. ]dvd|pal[. ]dvd|dvdr|laserdisc|ld rip)\b|\bvolume (one|two|three|\d+)\b|\bvol\.? ?\d+\b|\bumatic\b|^\s*youtube:|\brumble\b|\btimcast\b|\bkai\b|boomerang broadcast|\bafn\b|mtv (europe|asia|uk|latin)|european top|\bfinland\b|\bsmeg ups\b|\(canada\)|mtv'?s? uk\b|\bmuch (intimate|music)\b|\bmetv\b|\bseason (1[6-9]|[2-9]\d)\b|\bpointless\b|\bwright stuff\b"
+X_HOME = r"\buk (vhs|dvd|pal|betamax|video)\b|\(uk\b|\b(dvd ?iso|dvd9|dvd5|ntsc[. ]dvd|pal[. ]dvd|dvdr)\b|\bumatic\b|^\s*youtube:|\brumble\b|\btimcast\b|\bkai\b|boomerang broadcast|\bafn\b|mtv (europe|asia|uk|latin)|european top|\bfinland\b|\bsmeg ups\b|\(canada\)|mtv'?s? uk\b|\bmuch (intimate|music)\b|\bmetv\b|\bseason (1[6-9]|[2-9]\d)\b|\bpointless\b|\bwright stuff\b"
+X_HOME2 = r"\[vhs\]|\bfull vhs\b|\bvhs\)?\s*$|\(\d{4},? (full )?vhs\)|\b\d{4}\)? vhs\b(?! (tape|recording|rip:|capture|•))|\bofficial .{0,40}video\b|\bteam video\b|\b(laserdisc|ld rip)\b|\bvolume (one|two|three|\d+)\b|\bvol\.? ?\d+\b"
 X_TAPE = r"\b(vhs tape|vhs rip:|vhs recordings?|tv recordings?|home recordings?|recorded (off|from)|taped (off|from)|off[- ]air|aircheck|air check|with (original )?commercials|w/ ?commercials|commercials included|woc|full broadcast|original broadcast|as aired|as broadcast|tv broadcast|news broadcast|broadcast master|complete tv episode|full episode)\b"
 NETW = r"\b(nbc|cbs|abc|fox|pbs|upn|the wb|hbo|showtime|cinemax|tbs|tnt|wgn|usa network|nickelodeon|nick jr|nick at nite|snick|mtv|vh1|cnn|espn|tnn|cmt|bet|a&e|lifetime|discovery channel|tlc|sci-?fi channel|comedy central|cartoon network|toonami|disney channel|family channel|weather channel|qvc|hsn|court tv|e!|amc|fox family|fox kids|kids'? wb|[wk][a-z]{2,3}-tv|[wk][a-z]{3}-\d{1,2})\b"
 SPORTW = r"\b(nfl|nba|mlb|nhl|ncaa|super bowl|world series|stanley cup|playoffs?|monday night football|final four|rose bowl|orange bowl|sugar bowl|fiesta bowl|cotton bowl|olympics?|heavyweight|indy 500|daytona 500|nascar|winston cup|busch grand national|alcs|nlcs|alds|nlds|afc|nfc|ecf|wcf|ecsf|wcsf|regular season|all[- ]star game)\b"
@@ -267,13 +268,19 @@ def judge(title, desc, subj, col, m):
     if re.search(X_JUNK, (title + ' ' + subj).lower()): return None, 'junk'
     if set(col) & XCOL: return None, 'collection'
     low2 = strip_wc(low)
-    if re.search(X_HOME, low): return None, 'homevideo'
-    if re.search(X_COMP, low2) and not re.search(r'\b(awards?|special|show)\b', low2): return None, 'adcomp'
-    if re.search(X_COMP2, low2) and not re.search(X_TAPE, low) and not re.search(r'\b(awards?|special|show)\b', low2): return None, 'adcomp'
+    soft = ''
+    if re.search(X_HOME, low): return None, 'nonus'
+    if re.search(X_HOME2, low): soft = 'home video release'
+    if re.search(X_COMP, low2) and not re.search(r'\b(awards?|special|show)\b', low2): soft = 'commercial or promo compilation'
+    elif re.search(X_COMP2, low2) and not re.search(X_TAPE, low) and not re.search(r'\b(awards?|special|show)\b', low2): soft = soft or 'clips or extras'
     ys = [int(v) for v in re.findall(r'(?<!\d)(19\d\d|20[0-2]\d)(?!\d)', title)]
-    if ys and not any(1984 <= y <= 2004 for y in ys): return None, 'era'
+    if ys and not any(1984 <= y <= 2004 for y in ys):
+        if max(ys) > 2004: return None, 'era'
+        soft = soft or 'dated before 1984'
     m2 = re.search(r'(?<!\d)(\d{1,2})[-./](\d{1,2})[-./](\d{2})(?!\d)', title)
-    if m2 and not find_date(low) and not (84 <= int(m2.group(3)) or int(m2.group(3)) <= 4) and not any(1984 <= y <= 2004 for y in ys): return None, 'era'
+    if m2 and not find_date(low) and not (84 <= int(m2.group(3)) or int(m2.group(3)) <= 4) and not any(1984 <= y <= 2004 for y in ys):
+        if int(m2.group(3)) <= 30: return None, 'era'
+        soft = soft or 'dated before 1984'
     sh = show_of(title)
     if sh:
         n0 = norm(title); k0 = None
@@ -294,8 +301,8 @@ def judge(title, desc, subj, col, m):
         netyr = bool(re.search(NETW, low) and (find_year(low) or find_date(low)))
         sport = bool(re.search(SPORTW, low) and (re.search(r'\b(vs\.?|v\.?|at|game \d|finals?|all[- ]star)\b', low) or find_date(low)))
         dated = bool(ad and find_date(low) and any(re.search(rx, low) for q, rx in CATS if q in ('game', 'talk', 'late', 'news', 'soap', 'music')))
-        if not (tape or netyr or sport or dated): return None, 'weak'
-    return (sh, ad, e), ''
+        if not (tape or netyr or sport or dated): soft = soft or 'no clear broadcast evidence'
+    return (sh, ad, e, soft), ''
 def meta(it):
     if time.time() - T0 > BUDGET: return None
     j = get('https://archive.org/metadata/' + urllib.parse.quote(it['identifier']))
@@ -314,7 +321,7 @@ def meta(it):
     subj = str(subj)
     r, why = judge(title, desc, subj, col, m)
     if not r: REJ[why] += 1; return None
-    sh, ad, e = r
+    sh, ad, e, soft = r
     groups = {}
     for f in j['files']:
         if not f.get('name', '').lower().endswith('.mp4'): continue
@@ -353,12 +360,14 @@ def rekeep(x):
     if x['i'] in have0: return False
     r, why = judge(x['t'], x.get('ds', ''), x.get('s', ''), x.get('c') or [], {'date': x.get('d'), 'year': x.get('y')})
     if not r: REJ[why] += 1; return False
-    sh, ad, e = r
+    sh, ad, e, soft = r
     if sum(f[1] for f in x['f']) < (600 if sh else 900): REJ['short'] += 1; return False
     x['k'] = sh['title'] if sh else ''; x['net'] = sh['net'] if sh else ''; x['e'] = e
     if ad: x['ad'] = ad
     x['q'] = classify(x['t'], x.get('ds', ''), sh, ad)
-    x['ct'] = 'sportsundated' if (not sh and x['q'] == 'block' and re.search(SPORTW, x['t'].lower())) else 'tape' if not sh else 'mine'
+    x.pop('keep', None); x.pop('why', None)
+    if soft: x['keep'] = 'maybe'; x['why'] = soft
+    x['ct'] = 'adbreak' if soft.startswith('commercial') else 'sportsundated' if (not sh and x['q'] == 'block' and re.search(SPORTW, x['t'].lower())) else 'tape' if not sh else 'mine'
     return True
 old = [x for x in old0 if rekeep(x)]
 print('refiltered existing', len(old0), '->', len(old))
