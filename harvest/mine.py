@@ -281,16 +281,17 @@ def judge(title, desc, subj, col, m):
     if m2 and not find_date(low) and not (84 <= int(m2.group(3)) or int(m2.group(3)) <= 4) and not any(1984 <= y <= 2004 for y in ys):
         if int(m2.group(3)) <= 30: return None, 'era'
         soft = soft or 'dated before 1984'
-    sh = show_of(title)
+    sh = show_of(title); sh0 = None
     if sh:
         n0 = norm(title); k0 = None
         for nm in SK:
             if SHOWS[nm] is sh and nm in n0: k0 = nm; break
         rest = n0.split(k0, 1)[1].strip() if k0 else ''
-        if rest and not re.match(r'(s\d|season|seasons|series|episode|episodes|ep\b|e\d|complete|pilot|disc|tape|vhs|with commercials|woc|nbc|cbs|abc|fox|pbs|on |\d{1,4}\b|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)', rest) and not re.search(r'\b(season \d|episode \d|ep \d|s\d{1,2} ?e\d)', rest) and not re.search(X_TAPE, low) and not find_date(low) and not find_year(low) and not (set(col) & {'classic_tv_1980s', 'classic_tv_1990s', 'classic_tv_2000s'}): sh = None
+        if rest and not re.match(r'(s\d|season|seasons|series|episode|episodes|ep\b|e\d|complete|pilot|disc|tape|vhs|with commercials|woc|nbc|cbs|abc|fox|pbs|on |\d{1,4}\b|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)', rest) and not re.search(r'\b(season \d|episode \d|ep \d|s\d{1,2} ?e\d)', rest) and not re.search(X_TAPE, low) and not find_date(low) and not find_year(low) and not (set(col) & {'classic_tv_1980s', 'classic_tv_1990s', 'classic_tv_2000s'}): sh0 = sh; sh = None; soft = soft or 'show match uncertain'
     ad = find_date(low) or find_date(desc[:300])
     e = int(ad[:4]) if ad else (find_year(low) or find_year(desc[:400]) or find_year(subj))
-    if not e and sh and sh['y1'] >= 1984 and sh['y0'] <= 2004 and sh['y0']: e = max(sh['y0'], 1984)
+    sy = sh or sh0
+    if not e and sy and sy['y1'] >= 1984 and sy['y0'] <= 2004 and sy['y0']: e = max(sy['y0'], 1984)
     if not e: return None, 'noyear'
     my = re.match(r'(\d{4})', str(m.get('date') or m.get('year') or ''))
     tv = bool(re.search(TVW, blob))
@@ -361,7 +362,7 @@ def rekeep(x):
     r, why = judge(x['t'], x.get('ds', ''), x.get('s', ''), x.get('c') or [], {'date': x.get('d'), 'year': x.get('y')})
     if not r: REJ[why] += 1; return False
     sh, ad, e, soft = r
-    if sum(f[1] for f in x['f']) < (600 if sh else 900): REJ['short'] += 1; return False
+    if sum(f[1] for f in x['f']) < 600: REJ['short'] += 1; return False
     x['k'] = sh['title'] if sh else ''; x['net'] = sh['net'] if sh else ''; x['e'] = e
     if ad: x['ad'] = ad
     x['q'] = classify(x['t'], x.get('ds', ''), sh, ad)
