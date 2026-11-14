@@ -548,7 +548,12 @@ def classify(SC, title, ident, dfield, desc):
     if re.search(BADW, nt): return None, 'badword'
     if find_date(title, ident, dfield, desc)[0]: return None, 'dated'
     r, why = resolve(SC, title, desc)
-    if not r: return None, why
+    if not r:
+        if why in ('nosport', 'noyear'): return None, why
+        r0 = sport(title, desc, '1994-06-18') or sport(title, desc, '1994-10-15')
+        ys = [int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)]
+        if not r0 or not ys: return None, why
+        return {'ct': r0[0], 'k': LGK.get(r0[0], 'SPORTS'), 'ad': '', 'ev': '', 'e': ys[0], 'min': 2400, 'net': netof(title, desc), 'keep': 'maybe', 'why': 'day unresolved: ' + str(why)}, None
     return {'ct': r['ct'], 'k': LGK.get(r['ct'], 'SPORTS'), 'ad': r['ad'], 'ev': r['ev'], 'e': int(r['ad'][:4]), 'min': 2400, 'net': r.get('net') or netof(title, desc), 'row': r['row']}, None
 def known():
     have = set()
@@ -604,6 +609,7 @@ if MODE == 'plan':
                     continue
                 seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0}
                 stat[name]['kept'] += 1; stat[name][c['ct']] += 1
+                if c.get('keep'): stat[name]['maybe'] += 1
             print('query', name, dict(stat[name].most_common(8)), 'total', len(seen), round((time.time() - T0) / 60, 1), 'min', flush=True)
     print('UNRESOLVED', why.most_common())
     random.seed(3)
@@ -665,6 +671,7 @@ def meta1(it):
     if len(files) > 12 and c['ct'] != 'sportsdoc': return 'manyfiles'
     r = {'i': it['identifier'], 'q': 'sports', 't': title[:200], 'd': S(m.get('date')), 'y': S(m.get('year')), 'c': cl[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': c['k'], 'e': c['e'], 'net': c['net'], 'ct': c['ct']}
     if c['ad']: r['ad'] = c['ad']; r['as'] = 'sched'; r['ev'] = c['ev']; r['sr'] = json.dumps({k: v for k, v in c['row'].items() if k not in ('hk', 'who')}, ensure_ascii=False)[:200]
+    if c.get('keep'): r['keep'] = c['keep']; r['why'] = c['why']
     if hb: r['hb'] = 1
     return r
 if MODE == 'meta':
@@ -713,4 +720,5 @@ if MODE == 'merge':
     print('networks', collections.Counter(x['net'] for x in res).most_common(12))
     random.seed(7)
     for x in random.sample(dated, min(80, len(dated))): print('SAMPLE', x['ct'], '|', x['ad'], '|', x['ev'], '|', x['t'][:70], '|', x['i'][:30], '|', round(sum(f[1] for f in x['f']) / 60), 'min |', x.get('sr', '')[:150])
+    print('undated kept as maybe', sum(1 for x in res if x.get('keep')), collections.Counter(x.get('why') for x in res if x.get('keep')).most_common(12))
     for x in random.sample([x for x in res if not x.get('ad')], min(15, len(res) - len(dated))): print('DOC', x['e'], '|', x['t'][:80], '|', round(sum(f[1] for f in x['f']) / 60), 'min')
