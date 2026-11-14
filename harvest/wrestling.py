@@ -1,7 +1,7 @@
 import json, gzip, os, re, sys, time, random, glob, collections, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
-UA = {'User-Agent': 'Mozilla/5.0 (retrotv-sources harvester)'}
+UA = {'User-Agent': 'Mozilla/5.0 (catalog harvester)'}
 here = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(here, '..', 'catalog')
 PARTS = os.path.join(here, '..', 'parts')
@@ -176,6 +176,15 @@ def title_ok(t, ident):
     if re.search(r"\b(straight outta|eazy-?e|dr\.? dre|ice cube|n\.w\.a)\b", low): return False
     return True
 
+SHOWW = re.compile(r"\b(raw|nitro|smack ?down|velocity|ptw|snme|wcwsn|wcw sn|hardcore tv|prime ?time|superstars|thunder|sunday night heat|clash|ppv|house show|msg|boston garden|spectrum)\b")
+
+def showdate(t, ident):
+    low = (t + ' ' + ident.replace('-', ' ').replace('_', ' ')).lower()
+    if not SHOWW.search(low): return False
+    tl = (t + ' ').lower()
+    if X.search(tl) or POD.search(tl) or re.search(r"[^\x00-\xff\u2010-\u2027\u2122]", t): return False
+    return any(1984 <= y <= 2004 for y, _, _ in dates((t + ' ' + ident).lower()))
+
 have = set()
 if os.path.exists(RAWF):
     have = set(x['i'] for x in json.load(gzip.open(RAWF, 'rt', encoding='utf-8')))
@@ -197,7 +206,7 @@ def plan():
             if not i or i in seen or i in have: continue
             t = S(it.get('title'))
             loose = why.startswith(('desc', 'uploader', 'wcol', 'extra'))
-            if not title_ok(t, i) and not (loose and not X.search((t + ' ').lower()) and not POD.search((t + ' ').lower()) and not re.search(r"[^\x00-\xff\u2010-\u2027\u2122]", t)): continue
+            if not title_ok(t, i) and not showdate(t, i) and not (loose and not X.search((t + ' ').lower()) and not POD.search((t + ' ').lower()) and not re.search(r"[^\x00-\xff\u2010-\u2027\u2122]", t)): continue
             lowt = (t + ' ' + i).lower()
             ys = years(lowt) + [y for y, _, _ in dates(lowt)]
             my = mania_year(lowt.replace('-', ' ').replace('_', ' '))
@@ -238,10 +247,15 @@ def plan():
         add(scrape('mediatype:movies AND ' + phrases(ps)), 'phrases ' + name)
     add(scrape('mediatype:movies AND description:("world wrestling federation" OR "world championship wrestling" OR "extreme championship wrestling" OR "monday nitro" OR "monday night raw" OR "wrestlemania" OR "wwf superstars" OR "prime time wrestling" OR "wcw saturday night" OR "clash of the champions" OR "coliseum video" OR "american wrestling association" OR "world class championship wrestling" OR "mid-south wrestling" OR "jim crockett promotions" OR "smoky mountain wrestling" OR "pro wrestling" OR "professional wrestling")'), 'desc wrestling')
     add(scrape('mediatype:movies AND (title:(k81 OR "chasing that w" OR "hallo riched" OR msw OR wcwsn OR ptw OR snme) OR description:(k81 OR "chasing that w"))'), 'desc uploaders marks')
-    ups = [u for u, n in UPL.most_common(400) if u and n >= 3]
+    ups = [u for u, n in UPL.most_common(2000) if u and n >= 2]
     print('uploaders', len(ups), flush=True)
-    for k in range(0, len(ups), 20):
-        add(scrape('mediatype:movies AND uploader:(' + ' OR '.join('"%s"' % u.replace('"', '') for u in ups[k:k + 20]) + ')'), 'uploader batch %d' % k)
+    for u in ups:
+        items = scrape('mediatype:movies AND uploader:"%s"' % u.replace('"', ''), pages=8)
+        good = sum(1 for it in items if title_ok(S(it.get('title')), it.get('identifier', '')))
+        trusted = len(items) <= 4000 and good >= 0.5 * max(1, len(items))
+        if trusted:
+            for it in items: it['tr'] = 1
+        add(items, ('uploader ' if trusted else 'strict ') + u.split('@')[0][:6] + ' %d/%d' % (good, len(items)))
     xf = os.path.join(here, 'wrestling_extra.txt')
     if os.path.exists(xf):
         for line in open(xf):
@@ -285,8 +299,10 @@ def meta(it):
     tl = (title + ' ').lower()
     if X.search(tl) or POD.search(tl) or re.search(r"[^\x00-\xff\u2010-\u2027\u2122]", title):
         REJ['title'] += 1; return None
-    if not CORE.search(low) and not CORE.search((subj + ' ' + desc[:500]).lower()):
+    if not it.get('tr') and not CORE.search(low) and not CORE.search((subj + ' ' + desc[:500]).lower()):
         REJ['notwrestling'] += 1; return None
+    if it.get('tr') and not CORE.search(low) and not CORE.search((subj + ' ' + desc[:500]).lower()) and re.search(r"\b(nba|nfl|mlb|nhl|football|basketball|baseball|hockey|boxing|episode|season \d|s\d\de\d\d|movie|film|trailer|commercials?|news|concert|live at)\b", (title + ' ' + subj).lower()):
+        REJ['trustjunk'] += 1; return None
     if POD.search((subj + ' ' + desc[:300]).lower()) and not ERA.search(low):
         REJ['podcast'] += 1; return None
     if re.search(r"\b(video ?game|gameplay|longplay|podcast|backyard|fan ?made|e-?fed|shoot interview)\b", (subj + ' ' + desc[:400]).lower()):
@@ -367,8 +383,23 @@ def merge():
     for x in allx:
         if x['k'].startswith('ppv:'): pv[x['k'][4:]].add(x['e'])
     print('ppv coverage')
+    R = lambda a, b: list(range(a, b + 1))
+    EXP = {'wrestlemania': R(1985, 2004), 'summerslam': R(1988, 2004), 'royal rumble': R(1988, 2004), 'survivor series': R(1987, 2004), 'king of the ring': R(1993, 2002), 'in your house': R(1995, 1999), 'backlash': R(1999, 2004), 'judgment day': [1998] + R(2000, 2004), 'unforgiven': R(1998, 2004), 'no mercy': R(1999, 2004), 'armageddon': [1999, 2000, 2002, 2003, 2004], 'no way out': [1998] + R(2000, 2004), 'vengeance': R(2001, 2004), 'bad blood': [1997, 2003, 2004], 'fully loaded': R(1998, 2000), 'wrestling classic': [1985], 'this tuesday in texas': [1991], 'over the edge': [1998, 1999], 'rock bottom': [1998], "st. valentine's day massacre": [1999], 'invasion': [2001], 'starrcade': R(1984, 2000), 'great american bash': R(1985, 1992) + R(1995, 2000) + [2004], 'bash at the beach': R(1994, 2000), 'halloween havoc': R(1989, 2000), 'superbrawl': R(1991, 2001), 'slamboree': R(1993, 2000), 'fall brawl': R(1993, 2000), 'spring stampede': [1994] + R(1997, 2000), 'uncensored': R(1995, 2000), 'road wild': R(1996, 1999), 'world war 3': R(1995, 1998), 'souled out': R(1997, 2000), 'mayhem': [1999, 2000], 'new blood rising': [2000], 'sin': [2001], 'greed': [2001], 'chi-town rumble': [1989], 'wrestlewar': R(1989, 1992), 'capital combat': [1990], 'beach blast': [1992, 1993], 'crockett cup': R(1986, 1988), 'bunkhouse stampede': [1988], 'battlebowl': [1993], 'clash of the champions': R(1988, 1997), 'barely legal': [1997], 'november to remember': R(1993, 2000), 'heat wave': R(1994, 2000), 'living dangerously': R(1998, 2000), 'guilty as charged': R(1999, 2001), 'anarchy rulz': [1999, 2000], 'hardcore heaven': R(1994, 2000), 'cyberslam': R(1996, 2000), 'wrestlepalooza': [1995, 1997, 1998], 'superclash': [1985, 1986, 1988, 1990], 'wrestlerock': [1986], "saturday night's main event": R(1985, 1992), 'the main event': R(1988, 1991), 'supershow': R(1991, 1993)}
+    fy = my = 0
     for n, _ in PPV:
-        print('  ', n.ljust(30), len([1 for x in allx if x['k'] == 'ppv:' + n]), sorted(y for y in pv.get(n, []) if y))
+        got = sorted(y for y in pv.get(n, []) if y)
+        miss = [y for y in EXP.get(n, []) if y not in got]
+        fy += len(EXP.get(n, [])) - len(miss); my += len(miss)
+        print('  ', n.ljust(30), len([1 for x in allx if x['k'] == 'ppv:' + n]), 'found', got, 'missing', miss)
+    print('ppv event-years found', fy, 'missing', my)
+    wk = collections.defaultdict(collections.Counter)
+    for x in allx:
+        if not x['k'].startswith('ppv:') and x['e']: wk[x['k']][x['e']] += 1
+    print('weekly by year')
+    for k, c in sorted(wk.items(), key=lambda kv: -sum(kv[1].values())):
+        print('  ', k.ljust(30), sum(c.values()), sorted(c.items()))
+    uc = collections.Counter(x.get('u', '').split('@')[0][:6] for x in allx)
+    print('uploader prefixes', uc.most_common(40))
     random.seed(11)
     print('samples')
     for x in random.sample(allx, min(60, len(allx))):
