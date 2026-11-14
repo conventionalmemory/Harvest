@@ -21,7 +21,8 @@ HOLD = [0.0]
 USE_EMBED = [True]
 DEC = json.JSONDecoder()
 GONE = {'private': 'private', 'terminated': 'account terminated', 'copyright': 'removed on a copyright claim', 'uploader': 'removed by the uploader', 'policy': 'removed for a policy violation', 'unavailable': 'unavailable'}
-LIMITED = {'age': 'age-restricted', 'region': 'not available in this country', 'members': 'members only', 'paid': 'paid content', 'login': 'sign-in required'}
+LIMITED = {'age': 'age-restricted', 'region': 'not available in this country', 'members': 'members only', 'paid': 'paid content', 'login': 'sign-in required', 'claim': 'blocked on a copyright claim', 'warning': 'content warning before playback'}
+OLD = os.path.join(PARTS, 'old')
 
 
 def left():
@@ -138,21 +139,22 @@ def parse(html):
     g = re.search(r'"GL":\s*"([A-Z]{2})"', html)
     r = {'st': str(ps.get('status')), 'emb': ps.get('playableInEmbed'), 'why': ' / '.join(seen)[:200], 'gl': g.group(1) if g else ''}
     if ps.get('desktopLegacyAgeGateReason') or 'AGE' in r['st']: r['why'] = (r['why'] + ' / age gate').strip(' /')
+    if 'CONTENT_CHECK' in r['st']: r['why'] = (r['why'] + ' / content_check').strip(' /')
     return r
 
 
-def embed(vid):
+def embed(vid, host='www.youtube.com'):
     for a in range(4):
         if a and left() < 60: break
-        code, body, fin = fetch('https://www.youtube.com/embed/' + vid, ref=True)
-        if code == 200 and 'youtube.com/embed/' in fin:
+        code, body, fin = fetch('https://' + host + '/embed/' + vid, ref=True)
+        if code == 200 and '/embed/' in fin and 'youtube' in fin:
             r = parse(body)
             if r:
                 with LOCK: STAT['embed_read'] += 1
                 return r
             with LOCK: STAT['embed_nostatus'] += 1
             if a >= 1: break
-        elif code in (404, 410) and 'youtube.com/embed/' in fin:
+        elif code in (404, 410) and '/embed/' in fin and 'youtube' in fin:
             with LOCK: STAT['embed_%d' % code] += 1
             return {'st': 'HTTP%d' % code, 'emb': None, 'why': 'This video is unavailable', 'gl': ''}
         with LOCK: STAT['embed_retry'] += 1
@@ -167,7 +169,9 @@ def kind(w):
     if 'private' in w: return 'private'
     if 'terminated' in w or ('account' in w and 'closed' in w): return 'terminated'
     if 'country' in w or 'your location' in w or 'region' in w: return 'region'
+    if 'blocked' in w and ('claim' in w or 'copyright' in w) and 'this website' not in w: return 'claim'
     if 'copyright' in w: return 'copyright'
+    if 'viewer discretion' in w or 'self-harm' in w or 'content_check' in w: return 'warning'
     if 'removed by the uploader' in w or 'removed by the user' in w: return 'uploader'
     if 'violat' in w or 'terms of service' in w or 'community guidelines' in w or 'harassment' in w or 'hate speech' in w: return 'policy'
     if re.search(r'\bage\b|age-restricted|age gate|inappropriate', w): return 'age'
@@ -177,6 +181,11 @@ def kind(w):
     if 'unavailable' in w or 'no longer available' in w or "isn't available" in w or 'not available' in w or 'removed' in w or 'does not exist' in w: return 'unavailable'
     if 'sign in' in w or 'log in' in w: return 'login'
     return ''
+
+
+def owner(em):
+    m = re.search(r'claimed content by (.{1,60}?)\.?(?: /|$)|content from (.{1,60}?), who has blocked', em['why'] if em else '')
+    return ' (%s)' % (m.group(1) or m.group(2)) if m else ''
 
 
 def judge(oe, note, em):
@@ -192,11 +201,11 @@ def judge(oe, note, em):
     if oe in (400, 404): return 'gone', GONE.get(k, 'not found') + tail
     if oe in (401, 403):
         if k in GONE and k != 'unavailable': return 'gone', GONE[k] + tail
-        if k in LIMITED: return 'restricted', LIMITED[k] + tail
+        if k in LIMITED: return 'restricted', LIMITED[k] + owner(em) + tail
         return 'noembed', 'embedding disabled' + tail
     if not em: return 'ok', 'embeddable' + tail
     if st == 'OK' and em['emb'] is not False: return 'ok', 'playable' + tail
-    if k in LIMITED: return 'restricted', LIMITED[k] + tail
+    if k in LIMITED: return 'restricted', LIMITED[k] + owner(em) + tail
     if k == 'embed' or em['emb'] is False:
         m = re.search(r'content from (.{1,60}?), who has blocked it from display', em['why'])
         return 'noembed', ('embedding blocked by the content owner (%s)' % m.group(1) if m else 'not playable in embeds') + tail
@@ -307,6 +316,24 @@ def table(res, title):
     sys.stdout.flush()
 
 
+def hosts(ids):
+    same = collections.Counter(); diff = []
+
+    def both(v):
+        return v, embed(v), embed(v, 'www.youtube-nocookie.com')
+
+    with concurrent.futures.ThreadPoolExecutor(THREADS) as ex:
+        for v, a, b in ex.map(both, ids):
+            if left() < 120: break
+            if not a or not b: same['not read'] += 1; continue
+            ka = (a['st'], a['emb']); kb = (b['st'], b['emb'])
+            same['same ' + a['st'] if ka == kb else 'different'] += 1
+            if ka != kb and len(diff) < 30: diff.append((v, a['st'], a['why'][:70], b['st'], b['why'][:70]))
+    print('== embed page on the main host against the privacy-enhanced host', len(ids), sorted(same.items(), key=lambda x: -x[1]))
+    for x in diff: print('  differs', x)
+    sys.stdout.flush()
+
+
 def load_used():
     ids = []
     for line in gzip.open(USED, 'rt', encoding='utf-8'):
@@ -351,13 +378,36 @@ def probe(sample):
     print('requests', dict(STAT), flush=True)
 
 
+def listed():
+    ids = [v for v in re.split(r'[\s,]+', os.environ.get('IDS', '')) if re.fullmatch(r'[A-Za-z0-9_-]{11}', v)]
+    by = collections.defaultdict(list)
+    if os.path.isdir(OLD):
+        for fn in sorted(os.listdir(OLD)):
+            try: d = json.load(gzip.open(os.path.join(OLD, fn), 'rt', encoding='utf-8'))
+            except Exception: continue
+            for r in d if isinstance(d, list) else []:
+                oe = (r.get('m') or {}).get('oe', r.get('oe')) if isinstance(r, dict) else None
+                v = r.get('vid') if isinstance(r, dict) else None
+                if v and oe in (400, 401, 403, 404) and re.fullmatch(r'[A-Za-z0-9_-]{11}', v): by[oe].append(v)
+        print('earlier lookups: ids not embeddable then', {k: len(set(L)) for k, L in by.items()})
+        random.seed(5)
+        for k in sorted(by):
+            L = sorted(set(by[k])); random.shuffle(L); ids += L[:250]
+    return sorted(set(ids))
+
+
 def plan():
     os.makedirs(PARTS, exist_ok=True)
     ids = load_used()
     total = len(ids)
     scope = os.environ.get('SCOPE', 'all').strip() or 'all'
     prev = load_prev()
-    if scope == 'recheck':
+    L = listed()
+    if (os.environ.get('IDS', '').strip() or os.environ.get('FROM_RUN', '').strip()) and not L:
+        print('nothing to check in the given list'); sys.exit(1)
+    if L:
+        scope = 'list'; ids = L
+    elif scope == 'recheck':
         ids = [v for v in ids if (prev.get(v) or ['new'])[0] != 'ok']
     lim = int(os.environ.get('LIMIT', '0') or 0)
     if lim and len(ids) > lim:
@@ -467,6 +517,16 @@ def merge():
     print('== second opinion', sorted(cross.items(), key=lambda x: -x[1]))
     used = load_used()
     prev = load_prev()
+    if usable and USE_EMBED[0]:
+        random.seed(13)
+        oks = sorted(v for v in used if (res.get(v) or {'s': (prev.get(v) or [''])[0]})['s'] == 'ok')
+        bads = [v for v in ids if res[v]['s'] != 'ok' and res[v].get('oe') == 200]
+        hosts(random.sample(oks, min(150, len(oks))) + bads[:250])
+    if P.get('scope') == 'list':
+        table(res, 'listed ids')
+        print('== listed ids, nothing written')
+        for v in sorted(res, key=lambda v: (res[v]['s'], res[v]['r'], v))[:900]: print('  %-10s %s  %s' % (res[v]['s'], v, res[v]['r'][:190]))
+        return
     out = {}
     kept = 0
     for v in used:

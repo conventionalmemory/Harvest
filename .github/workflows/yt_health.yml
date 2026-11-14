@@ -8,8 +8,15 @@ on:
       limit:
         description: check only this many ids, 0 for all
         default: "0"
+      ids:
+        description: optional video ids separated by commas, checked and printed only
+        default: ""
+      from_run:
+        description: optional id of an earlier lookup run, the ids it found not embeddable are checked and printed only
+        default: ""
 permissions:
   contents: write
+  actions: read
 concurrency:
   group: yt-health
   cancel-in-progress: false
@@ -19,10 +26,21 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        if: ${{ inputs.from_run != '' }}
+        continue-on-error: true
+        with:
+          pattern: yt-[0-9]*
+          path: parts/old
+          merge-multiple: true
+          run-id: ${{ inputs.from_run }}
+          github-token: ${{ github.token }}
       - name: Plan
         env:
           SCOPE: ${{ inputs.scope }}
           LIMIT: ${{ inputs.limit }}
+          IDS: ${{ inputs.ids }}
+          FROM_RUN: ${{ inputs.from_run }}
         run: MODE=plan BUDGET_MIN=15 python3 harvest/yt_health.py
       - uses: actions/upload-artifact@v4
         with:
@@ -71,7 +89,7 @@ jobs:
       - name: Merge
         run: ls -la parts; MODE=merge THREADS=3 GAP=0.3 BUDGET_MIN=90 python3 harvest/yt_health.py
       - name: Commit
-        if: ${{ inputs.limit == '0' || inputs.limit == '' }}
+        if: ${{ (inputs.limit == '0' || inputs.limit == '') && inputs.ids == '' && inputs.from_run == '' }}
         run: |
           git config user.name "Conventional Memory"
           git config user.email "conventionalmemory@users.noreply.github.com"
