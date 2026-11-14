@@ -41,7 +41,7 @@ def norm(s):
     s = s.lower().replace('&', ' and ').replace('’', "'")
     s = re.sub(r"[.'!?,:]", '', s)
     return re.sub(r'[^a-z0-9$/]+', ' ', s).strip()
-def flat(v): return ' '.join(v) if isinstance(v, list) else str(v or '')
+def flat(v): return ' '.join(str(a) for a in v) if isinstance(v, list) else str(v or '')
 def load_have():
     have = set()
     for p in glob.glob(os.path.join(OUT, '*.json.gz')):
@@ -185,7 +185,8 @@ def plan():
                 for it in scrape(qq):
                     i = it.get('identifier')
                     if not i or i in have or i in res: continue
-                    r = consider(sh, it, route)
+                    try: r = consider(sh, it, route)
+                    except Exception as e: print('skip', i, e); r = False
                     if r: res[i] = (it, r)
         return sh, res
     seen = {}; per = collections.Counter(); perd = collections.Counter()
