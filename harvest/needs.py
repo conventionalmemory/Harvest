@@ -596,7 +596,7 @@ def secs(v):
         return float(v)
     except Exception: return 0
 RANK = {'h.264 IA': 0, 'h.264': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
-REJ = collections.Counter()
+REJ = collections.Counter(); NOF = collections.Counter()
 def rej(c, why):
     REJ[why] += 1; REJ[(c['k'], why)] += 1
     if BYT[c['k']]['full'] and why != 'no playable files': print('REJID %s | %s | %s\n' % (c['k'], why, c['identifier']), end='', flush=True)
@@ -654,24 +654,27 @@ def meta(c):
         d = secs(b.get('length') or next((x.get('length') for x in g if x.get('length')), 0)) or lenby.get(key, 0)
         sz = float(b.get('size') or 0)
         if not d and sh['full'] and sz >= 6e7: d = FULLTYP[sh['type']]; est += 1
+        elif not d and sz >= 4e7: d = min(7200, max(1200, sz / 1e6 / 5 * 60)); est += 1
         if d < 240: continue
         if FOREIGN.search(clean(b['name'])): continue
         if sz and sz / 1e6 / (d / 60) > 60: hb += 1; continue
         files.append([b['name'], round(d), b.get('format', '')])
     why0 = ''; whyz = ''
-    if not files and sh['full']:
-        for f in [f for f in j['files'] if f.get('name', '').lower().endswith('.zip') and float(f.get('size') or 0) >= 5e7][:40]:
+    if not files:
+        for f in [f for f in j['files'] if f.get('name', '').lower().endswith('.zip') and float(f.get('size') or 0) >= 5e7][:40 if sh['full'] else 12]:
             for inner, sz in ziplist(c['identifier'], f['name']):
                 if sz and sz < 4e7: continue
-                files.append([f['name'] + '/' + inner, FULLTYP[sh['type']], 'zip ' + inner.rsplit('.', 1)[-1].lower()]); est += 1
+                files.append([f['name'] + '/' + inner, FULLTYP.get(sh['type']) or (min(7200, max(1200, sz / 1e6 / 5 * 60)) if sz else 1800), 'zip ' + inner.rsplit('.', 1)[-1].lower()]); est += 1
         if files: whyz = 'episodes are inside zip archives; running times not listed'
-    if not files and sh['full'] and alt:
+    if not files and alt:
         for f in alt:
-            d = secs(f.get('length') or 0) or (FULLTYP[sh['type']] if float(f.get('size') or 0) >= 6e7 else 0)
+            sz = float(f.get('size') or 0)
+            d = secs(f.get('length') or 0) or ((FULLTYP.get(sh['type']) or min(7200, max(1200, sz / 1e6 / 5 * 60))) if sz >= 6e7 else 0)
             if d >= 240 and not FOREIGN.search(clean(f['name'])): files.append([f['name'], round(d), f.get('format', '')])
         if files: why0 = 'no mp4 files; other video formats only (may not play in a browser)'
     if not files:
-        if sh['full']: print('NOFILES', sh['title'], '|', c['identifier'], '|', flat(m.get('title'))[:60], '|', sorted(collections.Counter(f.get('name', '').rsplit('.', 1)[-1].lower()[:6] for f in j['files']).items()), [(f.get('name', '')[-40:], f.get('format'), f.get('length'), f.get('size')) for f in j['files'] if re.search(r'\.(mp4|m4v|mkv|avi|mpg|mpeg|iso|vob|ts|wmv|flv|rm|zip|rar|7z|ogv|webm|mov)$', f.get('name', '').lower())][:3], flush=True)
+        NOF[sh['title']] += 1
+        if sh['full'] or NOF[sh['title']] <= 3: print('NOFILES', sh['title'], '|', c['identifier'], '|', flat(m.get('title'))[:60], '|', sorted(collections.Counter(f.get('name', '').rsplit('.', 1)[-1].lower()[:6] for f in j['files']).items()), [(f.get('name', '')[-40:], f.get('format'), f.get('length'), f.get('size')) for f in j['files'] if re.search(r'\.(mp4|m4v|mkv|avi|mpg|mpeg|iso|vob|ts|wmv|flv|rm|zip|rar|7z|ogv|webm|mov)$', f.get('name', '').lower())][:3], flush=True)
         return rej(c, 'no mp4 (other video only)' if other else 'no playable files' if not hb else 'bitrate too high')
     if max(f[1] for f in files) < 600: return rej(c, 'under 10 minutes')
     files.sort(key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f[0])])
@@ -688,6 +691,9 @@ def meta(c):
     if trim_seasons(sh, x):
         files = x['f']
         if not files or max(f[1] for f in files) < 600: return rej(c, 'later seasons only')
+    if est and not whyz: x['est'] = est; maybe(x, 'running time not listed; estimated from file size')
+    if why0: x['alt'] = 1; maybe(x, why0)
+    if whyz: x['zip'] = 1; maybe(x, whyz)
     named = sum(1 for f in files if fname(sh, f[0]))
     g = EP.get(sh['title']); se = []; nse = 0
     one = len(files) <= 2
@@ -758,7 +764,7 @@ def plan():
         def want(s):
             if s['title'].lower() in FOCUS or ('pri%d' % s['pri']) in FOCUS or ('full' in FOCUS and s['full']): return True
             st = (prev.get(s['title']) or {}).get('status', 'MISSING')
-            return ('missing' in FOCUS and st == 'MISSING') or ('thin' in FOCUS and st in ('MISSING', 'THIN'))
+            return ('missing' in FOCUS and st == 'MISSING') or ('thin' in FOCUS and st in ('MISSING', 'THIN')) or ('maybe' in FOCUS and st == 'MAYBE')
         order = [s for s in order if want(s)]
     todo = [s for s in order if (s['title'] not in GUIDE or (GUIDE[s['title']].get('u') != s['until'] and not s['full'])) and (s['cls'] == 'scripted' or s['type'] in ('game', 'talk', 'late', 'soap', 'mag', 'doc', 'cook', 'music', 'other', 'news'))]
     print('have', len(have), 'mine', len(mine), 'shows', len(order), 'guides to fetch', len(todo), flush=True)
@@ -840,7 +846,7 @@ def plan():
     if fulls:
         cols = scrape('mediatype:collection AND (title:("star trek") OR title:("deep space nine") OR title:("twin peaks") OR identifier:(*startrek* OR *star-trek* OR *ds9* OR *twinpeaks* OR *twin-peaks*))', 300)
         ncol = 0
-        for col in cols[:60]:
+        for col in [c2 for c2 in cols if not c2['identifier'].startswith(('fav-', 'ArchiveIt'))][:60]:
             ct = flat(col.get('title')); hits = scrape('mediatype:movies AND collection:(%s)' % col['identifier'], 4000); acc = 0
             for it in hits:
                 i = it.get('identifier')
