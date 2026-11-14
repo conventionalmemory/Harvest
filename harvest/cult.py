@@ -92,7 +92,7 @@ def keep(x):
         if not any(r in blob for r in s['req']): return False
     my = re.match(r'(\d{4})', str(x.get('y') or x.get('d') or ''))
     oy = [int(v) for v in re.findall(r'\d{4}', s.get('original_run', ''))]
-    if my and oy and 1900 <= int(my.group(1)) <= 2004 and not (oy[0] - 1 <= int(my.group(1)) <= oy[-1] + 1) and not re.search(r'(?<!\d)(19[6-9]\d|200[0-4])(?!\d)', x['t']): return False
+    if my and oy and 1900 <= int(my.group(1)) <= 2004 and int(my.group(1)) < oy[0] - 1 and not re.search(r'(?<!\d)(19[6-9]\d|200[0-4])(?!\d)', x['t']): return False
     if set(x.get('c') or []) & XCOL: return False
     if re.match(r'^[a-z]{4,10}-[A-Z]', x['i']) and not re.search(r'(19[4-9]\d|200[0-4])', x['t']): return False
     dy = re.match(r'(\d{4})', str(x.get('d') or ''))
