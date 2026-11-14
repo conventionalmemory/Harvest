@@ -77,7 +77,7 @@ def match(show, title):
     return False
 XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio'}
 
-X_MORE = r"\b(annotated|japanese dub|dub|dvd extras?|bonus features?|secret galaxy|surprise|song videos?|banned|edited|i ain.?t afraid|rinse repeat|opening (and|&|to)|closing to|nicktoons broadcast|full broadcast archive|lost city of gold|the movie|marathon|iceberg|explained|ranked|ranking|every episode|top \d+|worst|best of youtube|theory|theories|analysis|essay|lost media|creepypasta|react\w*|unboxing|stream)\b"
+X_MORE = r"\b(dubbing|indonesia|tortugas|gwar|nightmare|warning|annotated|japanese dub|dub|dvd extras?|bonus features?|secret galaxy|surprise|song videos?|banned|edited|i ain.?t afraid|rinse repeat|opening (and|&|to)|closing to|nicktoons broadcast|full broadcast archive|lost city of gold|the movie|marathon|iceberg|explained|ranked|ranking|every episode|top \d+|worst|best of youtube|theory|theories|analysis|essay|lost media|creepypasta|react\w*|unboxing|stream)\b"
 ADS = r"\b(commercials?|bumpers?|promos?|ads?)\b"
 ADOK = r"(with|w/|w|and|\+|&|incl\w*|plus)\s*(original\s+|some\s+|the\s+)?(commercials|bumpers|promos|ads)|commercials included|\bwoc\b|\bblock\b|full (broadcast|tape|recording|episode)"
 def ok_title2(t):
