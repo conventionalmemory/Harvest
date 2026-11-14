@@ -358,6 +358,9 @@ def plan():
                 qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({sep.join(ws) + '*' for sep in ('-', '_', '.', '')})) + ') AND NOT title:("%s")' % ph, 'f'))
                 qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({'*' + sep.join(ws) + '*' for sep in ('-', '_', '')})) + ') AND NOT title:("%s")' % ph, 'f'))
                 if q == sh['q'][0]: qs += [('mediatype:movies AND title:("%s")' % a, 'f') for a in sh.get('alt', [])]
+                if q == sh['q'][0] and FOCUS and sh['title'].lower() in FOCUS and sh['title'] in GUIDE:
+                    ets = sorted({re.sub(r'["\\]', '', nm) for _s, _n, nm, _d in GUIDE[sh['title']] if len([w for w in norm(nm).split() if w not in STOP]) >= 3 and len(nm) >= 12})
+                    qs += [('mediatype:movies AND title:(' + ' OR '.join('"%s"' % e for e in ets[j:j + 20]) + ')', 'f') for j in range(0, len(ets), 20)]
                 qs.append(('"%s"%s AND NOT mediatype:(movies OR audio OR etree OR image OR collection OR account) AND format:(MPEG4 OR "h.264" OR "h.264 IA" OR "512Kb MPEG4" OR Matroska OR QuickTime)' % (ph, extra), 'f'))
             for qq, route in qs:
                 hits = scrape(qq); st = [len(hits), 0, 0, 0]
