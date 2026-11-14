@@ -8,7 +8,8 @@
   "len": "h",
   "net": "fox",
   "q": "prime",
-  "maxs": 15
+  "maxs": 15,
+  "cap": 1
  },
  {
   "title": "Seinfeld",
@@ -16,7 +17,8 @@
   "py": 1989,
   "len": "h",
   "net": "nbc",
-  "q": "prime"
+  "q": "prime",
+  "cap": 1
  },
  {
   "title": "Friends",
@@ -25,7 +27,8 @@
   "len": "h",
   "net": "nbc",
   "q": "prime",
-  "amb": 1
+  "amb": 1,
+  "cap": 1
  },
  {
   "title": "Cheers",
@@ -34,7 +37,8 @@
   "len": "h",
   "net": "nbc",
   "q": "prime",
-  "amb": 1
+  "amb": 1,
+  "cap": 1
  },
  {
   "title": "Home Improvement",
@@ -42,7 +46,8 @@
   "py": 1991,
   "len": "h",
   "net": "abc",
-  "q": "prime"
+  "q": "prime",
+  "cap": 1
  },
  {
   "title": "Wings",
@@ -51,7 +56,8 @@
   "len": "h",
   "net": "nbc",
   "q": "prime",
-  "amb": 1
+  "amb": 1,
+  "cap": 1
  },
  {
   "title": "Frasier",
@@ -77,7 +83,8 @@
   "py": 1988,
   "len": "h",
   "net": "abc",
-  "q": "prime"
+  "q": "prime",
+  "cap": 1
  },
  {
   "title": "The Fresh Prince of Bel-Air",
@@ -113,7 +120,8 @@
   "len": "h",
   "net": "abc",
   "q": "prime",
-  "amb": 1
+  "amb": 1,
+  "cap": 1
  },
  {
   "title": "Boy Meets World",
@@ -277,7 +285,8 @@
   "len": "d",
   "net": "nbc",
   "q": "prime",
-  "amb": 1
+  "amb": 1,
+  "cap": 1
  },
  {
   "title": "NYPD Blue",
@@ -295,7 +304,8 @@
   "py": 1990,
   "len": "d",
   "net": "nbc",
-  "q": "prime"
+  "q": "prime",
+  "xt": "toronto|criminal intent|special victims|\\bsvu\\b|trial by jury|organized crime|\\buk\\b|los angeles"
  },
  {
   "title": "MacGyver",
@@ -317,7 +327,8 @@
   "py": 1980,
   "len": "d",
   "net": "cbs",
-  "q": "prime"
+  "q": "prime",
+  "cap": 1
  },
  {
   "title": "Quantum Leap",
@@ -519,7 +530,8 @@
   "len": "s",
   "net": "nick",
   "q": "kids",
-  "amb": 1
+  "amb": 1,
+  "cap": 1
  },
  {
   "title": "Rocko's Modern Life",
@@ -586,7 +598,8 @@
   "q": "kids",
   "amb": 1,
   "guide": "X-Men: The Animated Series",
-  "xt": "evolution|wolverine and the|anime|\\b97\\b"
+  "xt": "evolution|wolverine and the|anime|\\b97\\b",
+  "cap": 1
  },
  {
   "title": "Spider-Man",
@@ -602,7 +615,8 @@
   "q": "kids",
   "amb": 1,
   "guide": "Spider-Man: The Animated Series",
-  "xt": "unlimited|spectacular|ultimate|amazing friends|1967|1981|new animated"
+  "xt": "unlimited|spectacular|ultimate|amazing friends|1967|1981|new animated",
+  "cap": 1
  },
  {
   "title": "Gargoyles",
@@ -662,7 +676,8 @@
   "len": "h",
   "net": "syn",
   "q": "kids",
-  "xt": "back to the sewer|fast forward|\\b2003\\b|\\b2012\\b|next mutation|rise of"
+  "xt": "back to the sewer|fast forward|\\b2003\\b|\\b2012\\b|next mutation|rise of",
+  "cap": 1
  },
  {
   "title": "He-Man and the Masters of the Universe",
@@ -686,7 +701,8 @@
   "len": "h",
   "net": "syn",
   "q": "kids",
-  "xt": "prime|animated|armada|energon|cybertron|beast|rescue bots|earthspark|headmasters|victory|masterforce"
+  "xt": "prime|animated|armada|energon|cybertron|beast|rescue bots|earthspark|headmasters|victory|masterforce",
+  "cap": 1
  },
  {
   "title": "G.I. Joe: A Real American Hero",
@@ -722,7 +738,8 @@
   "q": "kids",
   "maxs": 7,
   "noad": 1,
-  "xt": "horizons|journeys|sun and moon|\\bxy\\b|black and white|diamond and pearl"
+  "xt": "horizons|journeys|sun and moon|\\bxy\\b|black and white|diamond and pearl",
+  "cap": 1
  },
  {
   "title": "Mummies Alive!",
@@ -764,6 +781,7 @@
   "len": "m",
   "net": "cab",
   "q": "late",
-  "intitle": 1
+  "intitle": 1,
+  "cap": 1
  }
 ]

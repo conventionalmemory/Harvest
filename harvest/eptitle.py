@@ -218,13 +218,18 @@ if MODE == 'plan':
     print('searched', nq, 'of', len(todo), 'candidates', len(cands))
     npk = 0
     def pack(s):
-        if time.time() - T0 > BUDGET or ('P|%d' % s['k']) in done: return s, None
         ctx = ' OR '.join('"' + qs(n) + '"' for n in [s['title']] + s.get('alt', []))
+        if time.time() - T0 > BUDGET: return s, None
+        if ('P|%d' % s['k']) in done:
+            if not s.get('cap') or ('P2|%d' % s['k']) in done: return s, None
+            nar = 'season OR seasons OR complete OR series OR episode OR episodes OR collection OR dvd OR vhs OR s01 OR s02 OR s03 OR s04 OR s05 OR s06 OR s07 OR s08 OR s09 OR s10'
+            return s, scrape('mediatype:movies AND title:(%s) AND (title:(%s) OR subject:(television OR sitcom OR tv OR cartoon OR animation OR %s))' % (ctx, nar, s.get('net') or 'series'), cap=4000) + [{'identifier': '', 'p2': 1}]
         return s, scrape('mediatype:movies AND (title:(%s) OR subject:(%s))' % (ctx, ctx), cap=3000)
     with ThreadPoolExecutor(3) as ex:
         for s, items in ex.map(pack, SHOWS):
             if items is None: continue
-            newdone.append('P|%d' % s['k']); n0 = npk
+            p2 = any(x.get('p2') for x in items); items = [x for x in items if x.get('identifier')]
+            newdone.append(('P2|%d' if p2 else 'P|%d') % s['k']); n0 = npk
             for it in items:
                 i = it['identifier']
                 if i in have: continue
@@ -303,6 +308,7 @@ def meta(it):
     for k, se, ep, name, ad in it['m']:
         s = SHOWS[k]; en = norm(name)
         if (' ' + en + ' ') not in (' ' + nt + ' '): continue
+        if s.get('xt') and re.search(s['xt'], title.lower()): continue
         strong = hasname(s, nt) or hasname(s, nsub)
         weak = hasname(s, ndesc) or (se, ep) in tse
         res = residual(nt, s['names'], en); hit = (se, ep) in tse
@@ -419,6 +425,7 @@ def still_ok(x):
         if verdict == 'maybe': x['keep'] = 'maybe'; x['why'] = why
         return True
     x.pop('keep', None); x.pop('why', None)
+    if BYT[x['k']].get('xt') and re.search(BYT[x['k']]['xt'], x['t'].lower()): return False
     s = BYT[x['k']]; nt = norm(x['t']); en = norm(x['ep']); hit = tuple(x['se']) in ses(nt)
     strong = hasname(s, nt) or hasname(s, norm(str(x.get('s') or '') + ' ' + ' '.join(x.get('c') or []) + ' ' + x['i']))
     sig = [w for w in en.split() if w not in STOP]; dist = len(sig) >= 3 or (len(sig) >= 2 and len(en) >= 16)
