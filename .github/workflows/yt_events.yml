@@ -1,0 +1,64 @@
+name: Event video links
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search
+        run: MODE=plan BUDGET_MIN=170 python3 harvest/yt_events.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yt-cands
+          path: parts/yt_cands.json.gz
+          retention-days: 3
+  lookup:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: yt-cands
+          path: parts
+      - name: Look up videos
+        run: MODE=meta SHARD=${{ matrix.shard }} SHARDS=8 THREADS=5 BUDGET_MIN=180 python3 harvest/yt_events.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yt-${{ matrix.shard }}
+          path: parts/yt-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: lookup
+    if: ${{ !cancelled() && needs.lookup.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: yt-cands
+          path: parts
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: yt-[0-9]*
+          path: parts
+          merge-multiple: true
+      - name: Merge
+        run: ls -la parts; MODE=merge python3 harvest/yt_events.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/yt_events.json.gz
+          git commit -q -m "Update event video links" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git pull -q --rebase && git push && break; sleep $((10 + RANDOM % 30)); done
