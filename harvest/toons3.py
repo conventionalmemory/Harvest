@@ -57,7 +57,7 @@ X_ESSAY = r"\b(secret galaxy|the history of|history of the|the failure of|untold
 BRIT = r'\b(bbc|itv|channel 4|sky one|rte|uk version)\b'
 NAMES = sorted(set(n.lower() for s0 in SHOWS for n in s0['qn']), key=lambda n: -len(n))
 NAMERX = re.compile('|'.join(re.escape(n) for n in NAMES))
-X_ADULT = r"\b(south park|family guy|beavis|butt-?head|duckman|aqua teen|cowboy bebop|trigun|ninja scroll|hentai|amv|abridged|ytp|youtube poop|fandub|fan dub|parody|creepypasta|theory|goanimate|vyond)\b"
+X_ADULT = r"\b(south park|family guy|beavis|butt-?head|duckman|aqua teen|cowboy bebop|trigun|ninja scroll|hentai|amv|abridged|ytp|youtube poop|fandub|fan dub|parody|creepypasta|theory|goanimate|vyond|gets? grounded|grounded|reactions?|let'?s play|nuzlocke|rankings? lists?|fake|recreation|dubs of|was a weird|is how you do|plotagon|scratchpad|fanmade|fan made|fan film|mashup|playing at the same time)\b"
 BLKRX = r"\b(saturday morning|sat\.? ?am cartoons|fox kids|kids'? ?wb|disney afternoon|one saturday morning|cartoon express|toonami|cartoon network|nicktoons|nickelodeon|after ?school cartoons|weekday cartoons|cartoon block|cartoons? with commercials|tnbc|abc kids|cbs kids|nbc saturday|usa cartoon)\b"
 BLKCTX = r"\b(commercials|woc|w/c|vhs|recorded|recording|aired|airing|broadcast|block|bumpers?|tape)\b"
 def blk_ok(t):
@@ -71,7 +71,7 @@ def ok_title(t, brit=False):
     low = NAMERX.sub(' ', low.replace('_', ' '))
     if re.search(X_ESSAY, low): return False
     if brit: low = re.sub(BRIT, ' ', low)
-    if re.search(r'[^\x00-\xff‐-‧™]', t) or re.search(r'[ãõçñ]', low): return False
+    if re.search(r'[^\x00-\xff‐-‧™]', t) or re.search(r'[ãõçñáíóúü¿¡]', low): return False
     if re.search(X_FOR, low) or re.search(X_JUNK, low) or re.search(X_MOD, low): return False
     return True
 EPCTX = r"\b(episodes?|ep\.? ?\d+|seasons?|s\d{1,2}\s?e\d{1,3}|\d{1,2}x\d{2}|tv series|tv show|complete series|the series|pilot|sitcom|with commercials|woc|syndicat\w*)\b"
@@ -218,13 +218,18 @@ if MODE == 'plan':
     EPG = {}
     try: EPG = json.load(gzip.open(os.path.join(OUT, 'epguide.json.gz'), 'rt', encoding='utf-8'))
     except Exception as e: print('no epguide', e)
-    eps = []
+    eps = []; MZ = 0; nper = collections.Counter()
     for k, s0 in enumerate(SHOWS):
         if s0.get('block') or COV[k] + hits[k] * 3 >= 40: continue
         g = None
         for a in s0['qn']:
             g = EPG.get(a.lower()) or EPG.get(norm(a))
             if g: break
+        if not g and MZ < 170 and COV[k] < 15:
+            MZ += 1; time.sleep(0.55)
+            j = get('https://api.tvmaze.com/singlesearch/shows?' + urllib.parse.urlencode({'q': qtitle(s0['qn'][0]), 'embed': 'episodes'}), tries=2)
+            if isinstance(j, dict) and j.get('premiered'):
+                g = {'premiered': j.get('premiered'), 'episodes': [[e.get('season'), e.get('number'), e.get('airdate'), e.get('name')] for e in ((j.get('_embedded') or {}).get('episodes') or [])]}
         if not g or not isinstance(g, dict): continue
         py = str(g.get('premiered') or '')[:4]
         if not py.isdigit() or abs(int(py) - s0['first_year']) > 2: continue
@@ -232,8 +237,10 @@ if MODE == 'plan':
             if len(e) < 4 or not e[3]: continue
             ne = norm(e[3])
             if len(ne) < 12 or len(ne.split()) < 2 or re.match(r'^(episode|part|chapter|pilot) ', ne): continue
+            nper[k] += 1
+            if nper[k] > 90: break
             eps.append((k, e))
-        if len(set(x[0] for x in eps)) >= 70: break
+        if len(set(x[0] for x in eps)) >= 170: break
     print('episode-title lookups', len(eps), 'shows', len(set(x[0] for x in eps)), flush=True)
     def efind(a):
         k, e = a

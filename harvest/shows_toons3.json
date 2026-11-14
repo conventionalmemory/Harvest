@@ -998,6 +998,7 @@
 "original_run": "1999-1999",
 "q": "kids",
 "ct": "weekday",
+"x": "fake|recreation|qubo",
 "strip": [
 [
 1999,
@@ -1767,6 +1768,7 @@
 "original_run": "2002-2004",
 "q": "kids",
 "ct": "cable",
+"x": "rankings?|live action|2019",
 "sat": [
 [
 2002,
@@ -4011,7 +4013,7 @@
 "X-Men TAS",
 "X-Men 1992"
 ],
-"x": "evolution|97|'97|wolverine and|film|movie|anime|2000|origins|apocalypse|days of future past film",
+"x": "evolution|97|'97|wolverine and|film|movie|anime|2000|origins|apocalypse|days of future past film|first class",
 "req": [
 "animated",
 "cartoon",
@@ -5109,7 +5111,7 @@
 "alt": [
 "Winx Club 4Kids"
 ],
-"x": "fate|netflix|nick|rai|italian",
+"x": "fate|netflix|nick|rai|italian|season [2-9]",
 "req": [
 "4kids",
 "season 1",
@@ -5397,7 +5399,7 @@
 "Pokemon Advanced",
 "Pokemon Kids WB"
 ],
-"x": "sun|moon|journeys the series|horizons|xy|black|white|diamond|pearl|go |sword|shield|tcg|trading card|game ?boy|gameplay|rom|theme|movie|film",
+"x": "sun|moon|journeys the series|horizons|xy|black|white|diamond|pearl|go |sword|shield|tcg|trading card|game ?boy|gameplay|rom|theme|movie|film|red|blue|yellow|let'?s play|nuzlocke|master cut|\\b0?[4-9]\\d\\d\\b|\\b[1-9]\\d{3}\\b|anime rg|season (9|1\\d|2\\d)",
 "req": [
 "english",
 "dub",
@@ -7910,7 +7912,7 @@
 "Dragon Ball Z Toonami",
 "Dragonball Z"
 ],
-"x": "kai|super|abridged|japanese|sub|budokai|tenkaichi|kakarot|game|movie|resurrection|battle of gods",
+"x": "kai|super|abridged|japanese|sub|budokai|tenkaichi|kakarot|game|movie|resurrection|battle of gods|\\buk\\b|malaysian|shortened|same time|videoplaytv",
 "req": [
 "dub",
 "english",
@@ -7974,6 +7976,7 @@
 "alt": [
 "Dragonball GT"
 ],
+"x": "big green|blue water|ab groupe",
 "req": [
 "dub",
 "english",
@@ -8424,7 +8427,7 @@
 "alt": [
 "Totally Spies"
 ],
-"x": "season 7|2024",
+"x": "season 7|2024|season 0?[4-7]|weird",
 "sat": [
 [
 2001,
@@ -8595,7 +8598,7 @@
 "alt": [
 "Spongebob Squarepants"
 ],
-"x": "season ([4-9]|1\\d)|movie|musical|kamp|patrick star show|battle for|game|sponge out|sponge on the run",
+"x": "season ([4-9]|1\\d)|movie|musical|kamp|patrick star show|battle for|game|sponge out|sponge on the run|s0?[4-9]e|s1\\de|season (0?[4-9]|1\\d)|s(0[4-9]|1\\d)e|\\bmovie\\b|sponge out|musical",
 "req": [
 "season 1",
 "season 2",
@@ -8880,6 +8883,7 @@
 "original_run": "2000-2004",
 "q": "kids",
 "ct": "cable",
+"x": "grounded|live action|lost city",
 "req": [
 "season 1",
 "season 2",
@@ -8908,6 +8912,7 @@
 "original_run": "1999-2004",
 "q": "kids",
 "ct": "cable",
+"x": "grounded|bulldoze|wrecks|swims|reactions?",
 "sat": [
 [
 2000,
@@ -9910,7 +9915,7 @@
 "original_run": "2000-2004",
 "q": "kids",
 "ct": "cable",
-"x": "gets grounded|goanimate|vyond"
+"x": "gets grounded|goanimate|vyond|grounded"
 },
 {
 "title": "Sagwa, the Chinese Siamese Cat",
@@ -10020,7 +10025,8 @@
 "last_year": 2004,
 "original_run": "1998-2004",
 "q": "kids",
-"ct": "cable"
+"ct": "cable",
+"x": "\\buk\\b"
 },
 {
 "title": "Angelina Ballerina",
@@ -10202,7 +10208,7 @@
 "alt": [
 "Tom & Jerry"
 ],
-"x": "movie|kids|tales|2014|2021|show 20",
+"x": "movie|kids|tales|2014|2021|show 20|dubs of|1440p",
 "req": [
 "tbs",
 "cartoon network",
