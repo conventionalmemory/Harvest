@@ -746,6 +746,13 @@ def racefind(SC, nt, ys, sr, ctx, net):
                 mx = max([ov(e) for e in L] or [0])
                 cc = [e for e in L if mx and ov(e) == mx]
             c += cc; continue
+        if sr in (None, '') and (re.search(r' the winston (?!cup|500|open|west|classic|select 500|million)', nt) or re.search(r' winston select (?!500|open)', nt)):
+            cc = [e for e in L if e['k'] in ('the winston', 'the winston select', 'winston select')] or [e for e in L if e['k'].endswith('winston open') or e['k'].endswith('winston select open')]
+            if cc: c += cc; continue
+        ph = re.search(r' (bud shootout|budweiser shootout|busch clash) ', nt)
+        if ph and not any((' ' + e['k'] + ' ') in nt for e in L):
+            cc = [e for e in L if ph.group(1) in e['k']]
+            if cc: c += cc; continue
         hits = []
         for e in L:
             k = e['k']; kt = k.split()
@@ -901,6 +908,8 @@ def resolve(SC, title, desc='', ctx=''):
             elif re.search(r' (busch north|bgnn|modified|modifieds|southwest tour|winston west|featherlite|dash series|arca|irl|formula one|formula 1|nhra|imsa|trans am|iroc|winter heat|late model|sprint car|world of outlaws) ', tx): return None, 'race_otherseries'
             if sr is not None: break
         c = racefind(SC, nt, ys, sr, norm(desc[:200]), netof(title, ''))
+        ds = sorted(set(e['d'] for e in c))
+        if len(ds) > 1 and (datetime.date.fromisoformat(ds[-1]) - datetime.date.fromisoformat(ds[0])).days <= 3: c = [e for e in c if e['d'] == ds[-1]]
         if not c and not re.search(r' [1-9]\d\dk?s? ', nt) and sr != 'cart': return None, 'race_noname'
         e, why = one(c, 'race')
         if e: return {'ad': e['d'], 'ev': '%s %s' % (e['d'][:4], e['k'].upper()), 'ct': 'racing', 'row': e}, None
@@ -945,8 +954,13 @@ def resolve(SC, title, desc='', ctx=''):
         e, why = one(c, 'oly')
         if e: return {'ad': e['d'], 'ev': '%s %s OLYMPICS %s' % (e['d'][:4], e['s'].upper(), k.upper()), 'ct': 'olympics', 'row': e}, None
         return None, why
-    if lg == 'ncaab' and len(T) == 2 and not re.search(r' (womens|women|nit|hockey|baseball|softball) ', nt):
-        c = [e for e in pairs() if e.get('se') in ys or int(e['d'][:4]) in ys]
+    if lg == 'ncaab' and len(T) >= 2 and not re.search(r' (womens|women|nit|hockey|baseball|softball) ', nt):
+        pc = []
+        for i in range(len(T)):
+            for k in range(i + 1, len(T)):
+                L = [e for a in T[i] for b in T[k] for e in SC.pair.get((lg, frozenset((a, b))), []) if e.get('se') in ys or int(e['d'][:4]) in ys]
+                if L: pc.append(L)
+        c = pc[0] if len(pc) == 1 else []
         rd = next((v for p, v in CBR if re.search(' (' + p + ')', nt)), None)
         if not rd and re.search(r' (midwest|mideast|southeast|east|west|south|regional|region) (semi ?finals?|semis?) ', nt): rd = 'sweet sixteen'
         if not rd and re.search(r' (midwest|mideast|southeast|east|west|south|regional|region) finals? ', nt): rd = 'elite eight'
