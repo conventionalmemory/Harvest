@@ -90,12 +90,19 @@ def hasname(s, blob):
     return any((' ' + n + ' ') in b for n in s['names'])
 X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblada|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|fran[cç]ais|french dub|vf|vostfr|italiano|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|t[uü]rk[cç]e|russian|hindi|tamil|arabic|subtitulado|sub ?esp|audio latino)\b"
 X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|rom ?hack|emulator|pinball|comic book|audiobook|audio book|ebook|podcast|review|reviews|reaction|reacts|commentary|recap|explained|ranking|ranked|top \d+|tier list|analysis|essay|theory|theories|trailer|teaser|promo|promos|bumper|bumpers|clip|clips|scene|scenes|fan ?made|fan ?film|fanfic|amv|parody|remix|ytp|soundtrack|ost|theme song|intro|opening|credits|script|transcript|behind the scenes|bloopers|interview|panel|convention|unboxing|toy|toys|figure|figures|lego|minecraft|roblox)\b"
+X_EDIT = r"\b(fan ?edit|re ?edited|recut|closing to|opening to|opening and closing|vhs opening|promo|trailer|bloopers|outtakes|behind the scenes|interview with|sub|subs|subbed|subtitulado|rus|4k upscale|remaster test|cam rip|master cut|pokeshipping|fan cut|abridged)\b"
+RES_OK = {'season', 'episode', 'ep', 'series', 'part', 'pt', 'tv', 'show', 'complete', 'full', 'hd', 'sd', 'dvd', 'dvdrip', 'vhs', 'vhsrip', 'rip', 'x264', 'x265', 'h264', 'hevc', 'aac', 'mp4', 'mkv', 'avi', '480p', '576p', '720p', '1080p', 'web', 'dl', 'bluray', 'blu', 'ray', 'webrip', 'the', 'a', 'of', 'and', 'with', 'commercials', 'original', 'broadcast', 'aired', 'nbc', 'abc', 'cbs', 'fox', 'wb', 'upn', 'english', 'eng', 'uncut', 'remastered', 'disc', 'disk', 'vol', 'volume', 's', 'e', 'x'}
+def residual(nt, names, en):
+    t = ' ' + nt + ' '
+    for n in sorted(names, key=lambda a: -len(a)): t = t.replace(' ' + n + ' ', ' ')
+    t = t.replace(' ' + en + ' ', ' ')
+    return [w for w in t.split() if w not in RES_OK and not re.fullmatch(r'\d{1,4}|s\d{1,2}e\d{1,3}|s\d{1,2}|e\d{1,3}|\d{1,2}x\d{2}|(19|20)\d\d', w)]
 X_MOD = r"(?<!\d)(20(0[5-9]|[1-3]\d))(?!\d)|\b(reboot|revival|netflix|hulu|disney\+|youtube|tiktok|twitch|livestream)\b"
 def ok_title(t):
     if not t: return False
     low = t.lower() + ' '
     if re.search(r'[^\x00-\xff‐-‧™]', t) or re.search(r'[ãõçñ]', low): return False
-    if re.search(X_FOR, low) or re.search(X_JUNK, low) or re.search(X_MOD, low): return False
+    if re.search(X_FOR, low) or re.search(X_JUNK, low) or re.search(X_MOD, low) or re.search(X_EDIT, low): return False
     return True
 def scrape(q, cap=600):
     out, cursor = [], None
@@ -209,6 +216,27 @@ if MODE == 'plan':
                 hits[s['k']] += 1
             if nq % 500 == 0: print('searched', nq, 'of', len(todo), 'candidates', len(cands), round((time.time() - T0) / 60, 1), 'min', flush=True)
     print('searched', nq, 'of', len(todo), 'candidates', len(cands))
+    npk = 0
+    def pack(s):
+        if time.time() - T0 > BUDGET or ('P|%d' % s['k']) in done: return s, None
+        ctx = ' OR '.join('"' + qs(n) + '"' for n in [s['title']] + s.get('alt', []))
+        return s, scrape('mediatype:movies AND (title:(%s) OR subject:(%s))' % (ctx, ctx), cap=3000)
+    with ThreadPoolExecutor(3) as ex:
+        for s, items in ex.map(pack, SHOWS):
+            if items is None: continue
+            newdone.append('P|%d' % s['k']); n0 = npk
+            for it in items:
+                i = it['identifier']
+                if i in have: continue
+                t = it.get('title'); t = ' '.join(t) if isinstance(t, list) else str(t or '')
+                lang = it.get('language'); lang = ' '.join(lang) if isinstance(lang, list) else str(lang or '')
+                if lang and not re.search(r'(?i)eng|english|^en\b', lang): continue
+                if not ok_title(t): continue
+                c = cands.setdefault(i, {'identifier': i, 'downloads': it.get('downloads') or 0, 'm': []})
+                c.setdefault('pk', [])
+                if s['k'] not in c['pk']: c['pk'].append(s['k']); npk += 1
+            print('pack route', s['title'], 'items', len(items), 'new candidates', npk - n0, flush=True)
+    print('pack candidates', npk, 'total candidates', len(cands))
     print('candidate hits per show', [(SHOWS[k]['title'], n) for k, n in hits.most_common()])
     cl = sorted(cands.values(), key=lambda x: x['identifier'])
     with gzip.open(os.path.join(PARTS, 'eptitle_cands.json.gz'), 'wt', encoding='utf-8') as f:
@@ -268,15 +296,26 @@ def meta(it):
     if re.search(r'\b(podcast|fan ?film|fan ?made|video ?game|gameplay|radio (show|program|broadcast)|old time radio|audio only|audio commentary)\b', blob): return None
     nt = norm(title); nsub = norm(str(subj) + ' ' + ' '.join(col) + ' ' + it['identifier']); ndesc = norm(desc[:1200])
     tse = ses(nt)
+    if it.get('pk'):
+        r = packmeta(it, files, title, nt, nsub, ndesc, m, col, subj, desc)
+        if r or not it.get('m'): return r
     best = None
     for k, se, ep, name, ad in it['m']:
         s = SHOWS[k]; en = norm(name)
         if (' ' + en + ' ') not in (' ' + nt + ' '): continue
         strong = hasname(s, nt) or hasname(s, nsub)
         weak = hasname(s, ndesc) or (se, ep) in tse
+        res = residual(nt, s['names'], en); hit = (se, ep) in tse
+        dist = len([w for w in en.split() if w not in STOP]) >= 3 or (len([w for w in en.split() if w not in STOP]) >= 2 and len(en) >= 16)
         if s.get('amb'):
-            if not strong and not ((se, ep) in tse and hasname(s, ndesc)): continue
+            if not strong and not (hit and hasname(s, ndesc)): continue
+        elif s.get('intitle'):
+            if not hasname(s, nt): continue
         elif not strong and not weak: continue
+        if not hit:
+            if len(res) > (3 if dist else 1): continue
+            if not dist and not strong and not (weak and not res and len(en.split()) >= 2): continue
+            if not dist and len(res) > 0 and not hasname(s, nt): continue
         byname = [f for f in files if (' ' + en + ' ') in (' ' + norm(f[0]) + ' ') and fits(s, f[1])]
         fit = [f for f in files if fits(s, f[1])]
         pick = byname[:1] if byname else fit[:1] if len(fit) == 1 else None
@@ -286,8 +325,41 @@ def meta(it):
     if not best: return None
     sc, s, se, ep, name, ad, pick = best
     return {'i': it['identifier'], 'q': s['q'], 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:300], 'f': pick, 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': int(ad[:4]) if ad[:4].isdigit() and 1984 <= int(ad[:4]) <= 2004 else '', 'net': s['net'], 'ct': 'eptitle', 'se': [se, ep], 'ep': name, 'ad': ad}
+def packmeta(it, files, title, nt, nsub, ndesc, m, col, subj, desc):
+    out = []
+    for k in it.get('pk') or []:
+        s = SHOWS[k]
+        if not (hasname(s, nt) or hasname(s, nsub)): continue
+        if s.get('amb') and not any(re.sub(r'^(the|a) ', '', nt).startswith(re.sub(r'^(the|a) ', '', n) + ' ') or nt == n for n in s['names']): continue
+        eps = EPX.get(k)
+        if eps is None:
+            eps = EPX[k] = eplist(s)
+        if not eps: continue
+        idx = {}
+        for e in eps: idx.setdefault(tuple(e['se']), e)
+        covd = COV.get(k, set()); fe = {}; used = set()
+        for f in files:
+            if not fits(s, f[1]): continue
+            nf = norm(re.sub(r'\.(ia\.)?mp4$', '', f[0].split('/')[-1]))
+            cand = [x for x in ses(nf) if x in idx]
+            e = idx[cand[0]] if len(cand) == 1 else None
+            if not e:
+                best = None
+                for x in eps:
+                    if len(x['n']) >= 6 and (' ' + x['n'] + ' ') in (' ' + nf + ' ') and (best is None or len(x['n']) > len(best['n'])): best = x
+                e = best
+            if not e or tuple(e['se']) in covd or tuple(e['se']) in used: continue
+            used.add(tuple(e['se'])); fe[f[0]] = [e['se'][0], e['se'][1], e['ad'], e['ep']]
+        if not fe: continue
+        keep = [f for f in files if f[0] in fe][:60]
+        fe = {f[0]: fe[f[0]] for f in keep}
+        ys = sorted(int(v[2][:4]) for v in fe.values() if v[2][:4].isdigit())
+        out.append({'i': it['identifier'], 'q': s['q'], 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:300], 'f': keep, 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': ys[0] if ys and 1984 <= ys[0] <= 2004 else '', 'net': s.get('net', ''), 'ct': 'pack', 'fe': fe, 'pk': 1})
+    return max(out, key=lambda x: len(x['fe'])) if out else None
+EPX = {}; COV = {}
 if MODE == 'meta':
     P = json.load(gzip.open(os.path.join(PARTS, 'eptitle_cands.json.gz'), 'rt', encoding='utf-8'))
+    COV = {int(k): set(tuple(v) for v in L) for k, L in (P.get('cov') or {}).items()}
     cands = P['cands'][SHARD::SHARDS]
     print('shard', SHARD, 'of', SHARDS, 'items', len(cands), flush=True)
     res = []
@@ -299,15 +371,30 @@ if MODE == 'meta':
         json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
     print('shard done', len(res)); sys.exit(0)
 BYT = {s['title']: s for s in SHOWS}
-old = [x for x in (loadj(OUTF) or []) if x.get('k') in BYT and ok_title(x['t'])]
+def still_ok(x):
+    if x.get('pk'): return True
+    s = BYT[x['k']]; nt = norm(x['t']); en = norm(x['ep']); hit = tuple(x['se']) in ses(nt)
+    strong = hasname(s, nt) or hasname(s, norm(str(x.get('s') or '') + ' ' + ' '.join(x.get('c') or []) + ' ' + x['i']))
+    sig = [w for w in en.split() if w not in STOP]; dist = len(sig) >= 3 or (len(sig) >= 2 and len(en) >= 16)
+    weak = hasname(s, norm(str(x.get('ds') or '')))
+    if s.get('amb') and not strong and not hit: return False
+    if s.get('intitle') and not hasname(s, nt): return False
+    if hit: return True
+    res = residual(nt, s['names'], en)
+    if len(res) > (3 if dist else 1): return False
+    if not dist and not strong and not (weak and not res and len(en.split()) >= 2): return False
+    if not dist and res and not hasname(s, nt): return False
+    return True
+old = [x for x in (loadj(OUTF) or []) if x.get('k') in BYT and ok_title(x['t']) and still_ok(x)]
 have = set(x['i'] for x in old); add = []
 for p in sorted(glob.glob(os.path.join(PARTS, 'eptitle-*.json.gz'))):
     for x in json.load(gzip.open(p, 'rt', encoding='utf-8')):
         if x['i'] not in have: have.add(x['i']); add.append(x)
 res = old + add
 per = collections.defaultdict(list)
-for x in res: per[(x['k'], x['se'][0], x['se'][1])].append(x)
-keep = set()
+for x in res:
+    if not x.get('pk'): per[(x['k'], x['se'][0], x['se'][1])].append(x)
+keep = set(x['i'] for x in res if x.get('pk'))
 for key, L in per.items():
     L.sort(key=lambda x: -(x.get('dl') or 0))
     for x in L[:3]: keep.add(x['i'])
@@ -323,9 +410,15 @@ print('merged old', len(old), 'added', len(add), 'kept', len(res), 'hours', hrs(
 EP = {s['k']: eplist(s) for s in SHOWS}
 cov = {int(k): set(tuple(v) for v in L) for k, L in (P.get('cov') or {}).items()}
 new = collections.defaultdict(set)
-for x in res: new[BYT[x['k']]['k']].add((x['se'][0], x['se'][1]))
+for x in res:
+    if x.get('pk'):
+        for v in x['fe'].values(): new[BYT[x['k']]['k']].add((v[0], v[1]))
+    else: new[BYT[x['k']]['k']].add((x['se'][0], x['se'][1]))
 table(EP, cov, new)
 print('per show new episodes', sorted(((s['title'], len(new[s['k']])) for s in SHOWS if new[s['k']]), key=lambda a: -a[1]))
 print('air years', sorted(collections.Counter(str(x['e']) for x in res).items()))
 random.seed(11)
-for x in random.sample(res, min(80, len(res))): print('SAMPLE', x['k'], '|', 'S%02dE%02d' % tuple(x['se']), x['ep'][:40], '|', x['t'][:70], '|', x['i'][:36], '|', round(x['f'][0][1] / 60), 'min', '|', x['ad'])
+for x in random.sample(res, min(80, len(res))):
+    if x.get('pk'): print('SAMPLE PACK', x['k'], '|', len(x['fe']), 'episodes', sorted('S%02dE%02d' % (v[0], v[1]) for v in x['fe'].values())[:6], '|', x['t'][:70], '|', x['i'][:36], '|', round(sum(f[1] for f in x['f']) / 60), 'min')
+    else: print('SAMPLE', x['k'], '|', 'S%02dE%02d' % tuple(x['se']), x['ep'][:40], '|', x['t'][:70], '|', x['i'][:36], '|', round(x['f'][0][1] / 60), 'min', '|', x['ad'])
+print('pack items', sum(1 for x in res if x.get('pk')), 'pack episode files', sum(len(x['fe']) for x in res if x.get('pk')))

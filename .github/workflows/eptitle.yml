@@ -33,7 +33,7 @@ jobs:
           name: eptitle-cands
           path: art
       - name: Look up programs
-        run: mkdir -p parts && cp art/parts/eptitle_cands.json.gz parts/ && MODE=meta SHARD=${{ matrix.shard }} SHARDS=6 THREADS=12 BUDGET_MIN=270 python3 harvest/eptitle.py
+        run: mkdir -p parts && cp art/parts/eptitle_cands.json.gz parts/ && cp art/catalog/eptitle_guide.json.gz catalog/ && OFFLINE=1 MODE=meta SHARD=${{ matrix.shard }} SHARDS=6 THREADS=12 BUDGET_MIN=270 python3 harvest/eptitle.py
       - uses: actions/upload-artifact@v4
         with:
           name: eptitle-${{ matrix.shard }}
