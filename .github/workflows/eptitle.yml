@@ -1,0 +1,66 @@
+name: Episode title harvest
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search the archive
+        run: MODE=plan QTHREADS=6 BUDGET_MIN=300 python3 harvest/eptitle.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eptitle-cands
+          path: |
+            parts/eptitle_cands.json.gz
+            catalog/eptitle_guide.json.gz
+          retention-days: 3
+  lookup:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: eptitle-cands
+          path: art
+      - name: Look up programs
+        run: mkdir -p parts && cp art/parts/eptitle_cands.json.gz parts/ && MODE=meta SHARD=${{ matrix.shard }} SHARDS=6 THREADS=12 BUDGET_MIN=270 python3 harvest/eptitle.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eptitle-${{ matrix.shard }}
+          path: parts/eptitle-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: lookup
+    if: ${{ !cancelled() && needs.lookup.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: eptitle-cands
+          path: art
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: eptitle-[0-9]*
+          path: parts
+          merge-multiple: true
+      - name: Merge
+        run: cp art/parts/eptitle_cands.json.gz parts/ && cp art/catalog/eptitle_guide.json.gz catalog/ && ls -la parts && MODE=merge OFFLINE=1 python3 harvest/eptitle.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/eptitle.json.gz catalog/eptitle_guide.json.gz
+          git commit -q -m "Update episode title catalog" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git pull -q --rebase && git push && break; sleep $((15 + RANDOM % 25)); done
