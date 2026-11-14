@@ -211,6 +211,7 @@ def consider(sh, it, route='t'):
     if not year_ok(sh, t) or not season_ok(sh, low): return False
     if MODERN.search(t) and not inrun: return False
     if sh['kind'] in DAILY and not (airdate(t) or any(1984 <= int(y) <= 2004 and sh['first'] <= int(y) <= sh['last'] for y in YR.findall(t))): return False
+    if sh.get('guide') == 2 and sh['title'] in EP and SE1.search(low) and ep_key(sh, low) and dict(EP[sh['title']]['t']).get(ep_key(sh, low)) == file_se(sh, low): return 't'
     strong = bool(seasons(low)) or bool(MULTI.search(low)) or bool(gk)
     if sh.get('strictg') and not (strong or (TAPE2.search(low) and not mod) or (re.search(r'\bfox\b', low) and inrun)): return False
     if gk and not mod and not (generic(sh) and len(sig(sh['q'][0])) <= 1 and head(sh, low) != 2 and not cast and not ep_key(sh, low) and not seg(sh, t)): return 't'
