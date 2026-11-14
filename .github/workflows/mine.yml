@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        shard: [0, 1, 2, 3, 4, 5]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
@@ -31,7 +31,7 @@ jobs:
           name: mine-cands
           path: parts
       - name: Look up items
-        run: MODE=meta SHARD=${{ matrix.shard }} SHARDS=12 THREADS=16 BUDGET_MIN=320 python3 harvest/mine.py
+        run: MODE=meta SHARD=${{ matrix.shard }} SHARDS=6 THREADS=16 BUDGET_MIN=320 python3 harvest/mine.py
       - uses: actions/upload-artifact@v4
         with:
           name: mine-${{ matrix.shard }}
