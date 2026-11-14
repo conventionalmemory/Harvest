@@ -4,18 +4,57 @@ on:
 permissions:
   contents: write
 jobs:
-  ads2:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
-      - name: Harvest
-        run: THREADS=24 BUDGET_MIN=200 python3 harvest/ads2.py
+      - name: Search the archive
+        run: MODE=plan THREADS=24 python3 harvest/ads2.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ads2-cands
+          path: parts/ads2_cands.json.gz
+          retention-days: 3
+  lookup:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: ads2-cands
+          path: parts
+      - name: Look up items
+        run: MODE=meta SHARD=${{ matrix.shard }} SHARDS=6 THREADS=16 BUDGET_MIN=150 python3 harvest/ads2.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ads2-${{ matrix.shard }}
+          path: parts/ads2-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: lookup
+    if: ${{ !cancelled() && needs.lookup.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ads2-[0-9]*
+          path: parts
+          merge-multiple: true
+      - name: Merge
+        run: ls -la parts; MODE=merge python3 harvest/ads2.py
       - name: Commit
-        if: always()
         run: |
           git config user.name "Conventional Memory"
           git config user.email "conventionalmemory@users.noreply.github.com"
-          git add catalog/ads2.json.gz catalog/filler2.json.gz || true
+          git add catalog/ads2.json.gz catalog/filler2.json.gz
           git commit -q -m "Update commercials and promos catalog" || exit 0
           for i in 1 2 3 4 5 6 7 8; do git pull -q --rebase && git push && break; sleep $((10 + RANDOM % 20)); done
