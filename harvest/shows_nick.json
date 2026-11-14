@@ -1,0 +1,1981 @@
+[
+{
+"title": "Salute Your Shorts",
+"ct": "nick",
+"net": "nick",
+"run": "1991-1992",
+"q": "kids",
+"guide": true
+},
+{
+"title": "Hey Dude",
+"ct": "nick",
+"net": "nick",
+"run": "1989-1991",
+"q": "kids",
+"ambiguous": true,
+"guide": true
+},
+{
+"title": "The Adventures of Pete & Pete",
+"ct": "nick",
+"net": "nick",
+"run": "1989-1996",
+"q": "kids",
+"alt": [
+"Adventures of Pete and Pete",
+"Pete & Pete",
+"Pete and Pete"
+],
+"guide": true
+},
+{
+"title": "Clarissa Explains It All",
+"ct": "snick",
+"net": "nick",
+"run": "1991-1994",
+"q": "kids",
+"guide": true
+},
+{
+"title": "Welcome Freshmen",
+"ct": "nick",
+"net": "nick",
+"run": "1991-1993",
+"q": "kids"
+},
+{
+"title": "Fifteen",
+"ct": "nick",
+"net": "nick",
+"run": "1991-1993",
+"q": "kids",
+"alt": [
+"Hillside"
+],
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|hillside|ytv|s\\d+\\s?e\\d+|season|episode"
+},
+{
+"title": "Are You Afraid of the Dark?",
+"ct": "snick",
+"net": "nick",
+"run": "1992-2000",
+"q": "kids",
+"alt": [
+"Are You Afraid of the Dark",
+"AYAOTD"
+],
+"guide": true,
+"priority": 1,
+"episodes": [
+{
+"s": 1,
+"e": 1,
+"name": "The Tale of the Phantom Cab",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 2,
+"name": "The Tale of Laughing in the Dark",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 3,
+"name": "The Tale of the Lonely Ghost",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 4,
+"name": "The Tale of the Twisted Claw",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 5,
+"name": "The Tale of the Hungry Hounds",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 6,
+"name": "The Tale of the Super Specs",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 7,
+"name": "The Tale of the Captured Souls",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 8,
+"name": "The Tale of the Nightly Neighbors",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 9,
+"name": "The Tale of the Sorcerer's Apprentice",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 10,
+"name": "The Tale of Jake and the Leprechaun",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 11,
+"name": "The Tale of the Dark Music",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 12,
+"name": "The Tale of the Prom Queen",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 1,
+"e": 13,
+"name": "The Tale of the Pinball Wizard",
+"airdate": "",
+"year": 1992
+},
+{
+"s": 2,
+"e": 1,
+"name": "The Tale of the Final Wish",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 2,
+"name": "The Tale of the Midnight Madness",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 3,
+"name": "The Tale of Locker 22",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 4,
+"name": "The Tale of the Thirteenth Floor",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 5,
+"name": "The Tale of the Dream Machine",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 6,
+"name": "The Tale of the Dark Dragon",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 7,
+"name": "The Tale of the Whispering Walls",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 8,
+"name": "The Tale of the Frozen Ghost",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 9,
+"name": "The Tale of the Full Moon",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 10,
+"name": "The Tale of the Shiny Red Bicycle",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 11,
+"name": "The Tale of the Magician's Assistant",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 12,
+"name": "The Tale of the Hatching",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 2,
+"e": 13,
+"name": "The Tale of Old Man Corcoran",
+"airdate": "",
+"year": 1993
+},
+{
+"s": 3,
+"e": 1,
+"name": "The Tale of the Midnight Ride",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 2,
+"name": "The Tale of Apartment 214",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 3,
+"name": "The Tale of Watcher's Woods",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 4,
+"name": "The Tale of the Phone Police",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 5,
+"name": "The Tale of the Dollmaker",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 6,
+"name": "The Tale of the Bookish Babysitter",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 7,
+"name": "The Tale of the Carved Stone",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 8,
+"name": "The Tale of the Guardian's Curse",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 9,
+"name": "The Tale of the Curious Camera",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 10,
+"name": "The Tale of the Dream Girl",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 11,
+"name": "The Tale of the Quicksilver",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 12,
+"name": "The Tale of the Crimson Clown",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 3,
+"e": 13,
+"name": "The Tale of the Dangerous Soup",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 1,
+"name": "The Tale of the Renegade Virus",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 2,
+"name": "The Tale of the Long Ago Locket",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 3,
+"name": "The Tale of the Water Demons",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 4,
+"name": "The Tale of Cutter's Treasure Part 1",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 5,
+"name": "The Tale of Cutter's Treasure Part 2",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 6,
+"name": "The Tale of the Quiet Librarian",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 7,
+"name": "The Tale of the Silent Servant",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 8,
+"name": "The Tale of the Room for Rent",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 9,
+"name": "The Tale of the Ghastly Grinner",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 10,
+"name": "The Tale of the Fire Ghost",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 11,
+"name": "The Tale of the Closet Keepers",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 12,
+"name": "The Tale of the Unfinished Painting",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 4,
+"e": 13,
+"name": "The Tale of Train Magic",
+"airdate": "",
+"year": 1994
+},
+{
+"s": 5,
+"e": 1,
+"name": "The Tale of the Dead Man's Float",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 2,
+"name": "The Tale of the Jagged Sign",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 3,
+"name": "The Tale of Station 109.1",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 4,
+"name": "The Tale of the Mystical Mirror",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 5,
+"name": "The Tale of the Chameleons",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 6,
+"name": "The Tale of Prisoners' Past",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 7,
+"name": "The Tale of C7",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 8,
+"name": "The Tale of the Manaha",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 9,
+"name": "The Tale of the Unexpected Visitor",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 10,
+"name": "The Tale of the Vacant Lot",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 11,
+"name": "The Tale of a Door Unlocked",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 12,
+"name": "The Tale of the Night Shift",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 5,
+"e": 13,
+"name": "The Tale of Badge",
+"airdate": "",
+"year": 1995
+},
+{
+"s": 6,
+"e": 1,
+"name": "The Tale of the Forever Game",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 2,
+"name": "The Tale of the Misfortune Cookie",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 3,
+"name": "The Tale of the Virtual Pets",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 4,
+"name": "The Tale of the Zombie Dice",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 5,
+"name": "The Tale of the Gruesome Gourmets",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 6,
+"name": "The Tale of Jake the Snake",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 7,
+"name": "The Tale of the Hunted",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 8,
+"name": "The Tale of the Wisdom Glass",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 9,
+"name": "The Tale of the Walking Shadow",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 10,
+"name": "The Tale of Oblivion",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 11,
+"name": "The Tale of Vampire Town",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 12,
+"name": "The Tale of the Secret Admirer",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 6,
+"e": 13,
+"name": "The Tale of Bigfoot Ridge",
+"airdate": "",
+"year": 1999
+},
+{
+"s": 7,
+"e": 1,
+"name": "The Tale of the Silver Sight Part 1",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 2,
+"name": "The Tale of the Silver Sight Part 2",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 3,
+"name": "The Tale of the Silver Sight Part 3",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 4,
+"name": "The Tale of the Lunar Locusts",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 5,
+"name": "The Tale of the Stone Maiden",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 6,
+"name": "The Tale of Highway 13",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 7,
+"name": "The Tale of the Reanimator",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 8,
+"name": "The Tale of the Time Trap",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 9,
+"name": "The Tale of the Photo Finish",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 10,
+"name": "The Tale of the Last Dance",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 11,
+"name": "The Tale of the Laser Maze",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 12,
+"name": "The Tale of Many Faces",
+"airdate": "",
+"year": 2000
+},
+{
+"s": 7,
+"e": 13,
+"name": "The Tale of the Night Nurse",
+"airdate": "",
+"year": 2000
+}
+]
+},
+{
+"title": "The Secret World of Alex Mack",
+"ct": "snick",
+"net": "nick",
+"run": "1994-1998",
+"q": "kids",
+"alt": [
+"Secret World of Alex Mack",
+"Alex Mack"
+]
+},
+{
+"title": "The Mystery Files of Shelby Woo",
+"ct": "snick",
+"net": "nick",
+"run": "1996-1998",
+"q": "kids",
+"alt": [
+"Mystery Files of Shelby Woo",
+"Shelby Woo"
+]
+},
+{
+"title": "Space Cases",
+"ct": "snick",
+"net": "nick",
+"run": "1996-1997",
+"q": "kids",
+"ambiguous": true
+},
+{
+"title": "My Brother and Me",
+"ct": "nick",
+"net": "nick",
+"run": "1994-1995",
+"q": "kids"
+},
+{
+"title": "Kenan & Kel",
+"ct": "snick",
+"net": "nick",
+"run": "1996-2000",
+"q": "kids",
+"alt": [
+"Kenan and Kel"
+]
+},
+{
+"title": "All That",
+"ct": "snick",
+"net": "nick",
+"run": "1994-2004",
+"q": "kids",
+"ambiguous": true,
+"ms": 9,
+"need": "nickelodeon|nick\\b|snick|s\\d+\\s?e\\d+|season|episode|199\\d|200[0-4]"
+},
+{
+"title": "The Amanda Show",
+"ct": "snick",
+"net": "nick",
+"run": "1999-2002",
+"q": "kids",
+"alt": [
+"Amanda Show"
+]
+},
+{
+"title": "Cousin Skeeter",
+"ct": "nick",
+"net": "nick",
+"run": "1998-2001",
+"q": "kids"
+},
+{
+"title": "100 Deeds for Eddie McDowd",
+"ct": "nick",
+"net": "nick",
+"run": "1999-2002",
+"q": "kids",
+"alt": [
+"Eddie McDowd"
+]
+},
+{
+"title": "The Journey of Allen Strange",
+"ct": "snick",
+"net": "nick",
+"run": "1997-2000",
+"q": "kids",
+"alt": [
+"Journey of Allen Strange",
+"Allen Strange"
+]
+},
+{
+"title": "Animorphs",
+"ct": "nick",
+"net": "nick",
+"run": "1998-1999",
+"q": "kids"
+},
+{
+"title": "Caitlin's Way",
+"ct": "nick",
+"net": "nick",
+"run": "2000-2002",
+"q": "kids",
+"alt": [
+"Caitlins Way"
+]
+},
+{
+"title": "Noah Knows Best",
+"ct": "nick",
+"net": "nick",
+"run": "2000-2000",
+"q": "kids"
+},
+{
+"title": "Taina",
+"ct": "nick",
+"net": "nick",
+"run": "2001-2002",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|s\\d+\\s?e\\d+|season|episode"
+},
+{
+"title": "The Brothers Garcia",
+"ct": "nick",
+"net": "nick",
+"run": "2000-2004",
+"q": "kids",
+"alt": [
+"Brothers Garcia"
+]
+},
+{
+"title": "Drake & Josh",
+"ct": "nick",
+"net": "nick",
+"run": "2004-2004",
+"q": "kids",
+"alt": [
+"Drake and Josh"
+],
+"ms": 2
+},
+{
+"title": "Roundhouse",
+"ct": "snick",
+"net": "nick",
+"run": "1992-1996",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|snick|s\\d+\\s?e\\d+|season|episode|199[2-6]"
+},
+{
+"title": "You Can't Do That on Television",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1990",
+"q": "kids",
+"alt": [
+"You Cant Do That on Television",
+"YCDTOTV"
+]
+},
+{
+"title": "Turkey Television",
+"ct": "nick",
+"net": "nick",
+"run": "1985-1986",
+"q": "kids"
+},
+{
+"title": "Out of Control",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1985",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|dave coulier|198[45]"
+},
+{
+"title": "Mr. Wizard's World",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1990",
+"q": "kids",
+"alt": [
+"Mr Wizards World",
+"Mr. Wizard",
+"Mister Wizard"
+]
+},
+{
+"title": "Nick Rocks",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1989",
+"q": "kids"
+},
+{
+"title": "Don't Just Sit There",
+"ct": "nick",
+"net": "nick",
+"run": "1988-1991",
+"q": "kids",
+"alt": [
+"Dont Just Sit There"
+]
+},
+{
+"title": "Kids' Court",
+"ct": "nick",
+"net": "nick",
+"run": "1988-1989",
+"q": "kids",
+"alt": [
+"Kids Court"
+],
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|198[89]|episode"
+},
+{
+"title": "Total Panic",
+"ct": "nick",
+"net": "nick",
+"run": "1989-1990",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|1989|1990|episode"
+},
+{
+"title": "Weinerville",
+"ct": "nick",
+"net": "nick",
+"run": "1993-1996",
+"q": "kids"
+},
+{
+"title": "Wild & Crazy Kids",
+"ct": "nick",
+"net": "nick",
+"run": "1990-1992",
+"q": "kids",
+"alt": [
+"Wild and Crazy Kids"
+]
+},
+{
+"title": "What Would You Do?",
+"ct": "nick",
+"net": "nick",
+"run": "1991-1993",
+"q": "kids",
+"alt": [
+"What Would You Do"
+],
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|marc summers|199[1-3]"
+},
+{
+"title": "Double Dare",
+"ct": "nick",
+"net": "nick",
+"run": "1986-1993",
+"q": "game",
+"alt": [
+"Double Dare 2000"
+],
+"ambiguous": true
+},
+{
+"title": "Family Double Dare",
+"ct": "nick",
+"net": "nick",
+"run": "1988-1993",
+"q": "game"
+},
+{
+"title": "Super Sloppy Double Dare",
+"ct": "nick",
+"net": "nick",
+"run": "1987-1989",
+"q": "game"
+},
+{
+"title": "Finders Keepers",
+"ct": "nick",
+"net": "nick",
+"run": "1987-1989",
+"q": "game",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|game show|198[789]|episode"
+},
+{
+"title": "Think Fast",
+"ct": "nick",
+"net": "nick",
+"run": "1989-1991",
+"q": "game",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|game show|1989|199[01]"
+},
+{
+"title": "Make the Grade",
+"ct": "nick",
+"net": "nick",
+"run": "1989-1991",
+"q": "game",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|game show|1989|199[01]"
+},
+{
+"title": "Get the Picture",
+"ct": "nick",
+"net": "nick",
+"run": "1991-1993",
+"q": "game",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|game show|199[1-3]"
+},
+{
+"title": "Nick Arcade",
+"ct": "nick",
+"net": "nick",
+"run": "1992-1993",
+"q": "game",
+"alt": [
+"Nickelodeon Arcade"
+]
+},
+{
+"title": "Legends of the Hidden Temple",
+"ct": "nick",
+"net": "nick",
+"run": "1993-1995",
+"q": "game"
+},
+{
+"title": "Nickelodeon GUTS",
+"ct": "nick",
+"net": "nick",
+"run": "1992-1995",
+"q": "game",
+"alt": [
+"Nick GUTS",
+"Global GUTS",
+"Nickelodeon Global GUTS"
+]
+},
+{
+"title": "GUTS",
+"ct": "nick",
+"net": "nick",
+"run": "1992-1995",
+"q": "game",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|aggro crag|199[2-5]|episode|season"
+},
+{
+"title": "Figure It Out",
+"ct": "nick",
+"net": "nick",
+"run": "1997-1999",
+"q": "game",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|summer sanders|199[789]|episode|season"
+},
+{
+"title": "You're On!",
+"ct": "nick",
+"net": "nick",
+"run": "1998-1999",
+"q": "game",
+"alt": [
+"Youre On"
+],
+"ambiguous": true,
+"need": "nickelodeon|nick\\b"
+},
+{
+"title": "Nickelodeon Launch Box",
+"ct": "nick",
+"net": "nick",
+"run": "1991-1996",
+"q": "kids",
+"alt": [
+"Launch Box"
+]
+},
+{
+"title": "Nick News",
+"ct": "nick",
+"net": "nick",
+"run": "1992-2004",
+"q": "kids",
+"alt": [
+"Nick News W/5",
+"Nick News with Linda Ellerbee"
+],
+"ambiguous": true
+},
+{
+"title": "SNICK",
+"ct": "snick",
+"net": "nick",
+"run": "1992-2004",
+"q": "block",
+"need": "block|broadcast|recording|commercials|woc|aircheck|tape|vhs|199\\d|200[0-4]",
+"loose": true
+},
+{
+"title": "Nick in the Afternoon",
+"ct": "nick",
+"net": "nick",
+"run": "1994-1998",
+"q": "block"
+},
+{
+"title": "U-Pick Live",
+"ct": "nick",
+"net": "nick",
+"run": "2002-2004",
+"q": "block",
+"alt": [
+"U Pick Live",
+"Slime Time Live"
+]
+},
+{
+"title": "Nick or Treat",
+"ct": "nick",
+"net": "nick",
+"run": "1985-2002",
+"q": "block"
+},
+{
+"title": "Nickelodeon",
+"ct": "nick",
+"net": "nick",
+"run": "1984-2004",
+"q": "block",
+"alt": [
+"Nick at Nite",
+"Nick Jr",
+"Nicktoons"
+],
+"need": "with (original )?commercials|w/ ?commercials|woc|\\bblock\\b|broadcast|recording|aircheck|full tape|\\bvhs\\b|taped|off[- ]air",
+"loose": true
+},
+{
+"title": "Rugrats",
+"ct": "nick",
+"net": "nick",
+"run": "1991-2004",
+"q": "kids",
+"need": "with (original )?commercials|woc|vhs recording|broadcast"
+},
+{
+"title": "Saved by the Bell",
+"ct": "tween",
+"net": "nbc",
+"run": "1989-1993",
+"q": "kids",
+"ambiguous": true
+},
+{
+"title": "Good Morning, Miss Bliss",
+"ct": "tween",
+"net": "disney",
+"run": "1988-1989",
+"q": "kids",
+"alt": [
+"Good Morning Miss Bliss"
+]
+},
+{
+"title": "Saved by the Bell: The College Years",
+"ct": "tween",
+"net": "nbc",
+"run": "1993-1994",
+"q": "kids",
+"alt": [
+"Saved by the Bell The College Years"
+]
+},
+{
+"title": "Saved by the Bell: The New Class",
+"ct": "tween",
+"net": "nbc",
+"run": "1993-2000",
+"q": "kids",
+"alt": [
+"Saved by the Bell The New Class"
+]
+},
+{
+"title": "California Dreams",
+"ct": "tween",
+"net": "nbc",
+"run": "1992-1997",
+"q": "kids",
+"ambiguous": true
+},
+{
+"title": "Hang Time",
+"ct": "tween",
+"net": "nbc",
+"run": "1995-2000",
+"q": "kids",
+"ambiguous": true,
+"need": "nbc|tnbc|s\\d+\\s?e\\d+|season|episode|199[5-9]|2000"
+},
+{
+"title": "City Guys",
+"ct": "tween",
+"net": "nbc",
+"run": "1997-2001",
+"q": "kids"
+},
+{
+"title": "One World",
+"ct": "tween",
+"net": "nbc",
+"run": "1998-2001",
+"q": "kids",
+"ambiguous": true,
+"need": "nbc|tnbc|s\\d+\\s?e\\d+|season \\d|199[89]|200[01]"
+},
+{
+"title": "Sweet Valley High",
+"ct": "tween",
+"net": "syn",
+"run": "1994-1997",
+"q": "kids"
+},
+{
+"title": "Swans Crossing",
+"ct": "tween",
+"net": "syn",
+"run": "1992-1992",
+"q": "kids"
+},
+{
+"title": "Ghostwriter",
+"ct": "tween",
+"net": "pbs",
+"run": "1992-1995",
+"q": "kids",
+"ambiguous": true
+},
+{
+"title": "The Torkelsons",
+"ct": "tween",
+"net": "nbc",
+"run": "1991-1993",
+"q": "kids",
+"alt": [
+"Torkelsons",
+"Almost Home"
+]
+},
+{
+"title": "Camp Wilder",
+"ct": "tween",
+"net": "abc",
+"run": "1992-1993",
+"q": "kids"
+},
+{
+"title": "Breaker High",
+"ct": "tween",
+"net": "upn",
+"run": "1997-1998",
+"q": "kids"
+},
+{
+"title": "Student Bodies",
+"ct": "tween",
+"net": "syn",
+"run": "1997-1999",
+"q": "kids",
+"ambiguous": true,
+"need": "s\\d+\\s?e\\d+|season|episode|199[789]|tv series"
+},
+{
+"title": "Ready or Not",
+"ct": "tween",
+"net": "disney",
+"run": "1993-1997",
+"q": "kids",
+"ambiguous": true,
+"need": "s\\d+\\s?e\\d+|season|episode|199[3-7]|tv series|disney channel|global"
+},
+{
+"title": "Degrassi Junior High",
+"ct": "tween",
+"net": "pbs",
+"run": "1987-1989",
+"q": "kids"
+},
+{
+"title": "Degrassi High",
+"ct": "tween",
+"net": "pbs",
+"run": "1989-1991",
+"q": "kids"
+},
+{
+"title": "The Kids of Degrassi Street",
+"ct": "tween",
+"net": "pbs",
+"run": "1984-1986",
+"q": "kids",
+"alt": [
+"Kids of Degrassi Street"
+]
+},
+{
+"title": "The All New Mickey Mouse Club",
+"ct": "tween",
+"net": "disney",
+"run": "1989-1994",
+"q": "kids",
+"alt": [
+"All New Mickey Mouse Club",
+"New Mickey Mouse Club",
+"MMC"
+]
+},
+{
+"title": "Kids Incorporated",
+"ct": "tween",
+"net": "disney",
+"run": "1984-1993",
+"q": "kids",
+"alt": [
+"Kids Inc"
+]
+},
+{
+"title": "Adventures in Wonderland",
+"ct": "tween",
+"net": "disney",
+"run": "1992-1995",
+"q": "kids",
+"ambiguous": true
+},
+{
+"title": "Flash Forward",
+"ct": "tween",
+"net": "disney",
+"run": "1996-1997",
+"q": "kids",
+"ambiguous": true,
+"need": "disney|199[67]|s\\d+\\s?e\\d+|episode"
+},
+{
+"title": "The Famous Jett Jackson",
+"ct": "tween",
+"net": "disney",
+"run": "1998-2001",
+"q": "kids",
+"alt": [
+"Famous Jett Jackson",
+"Jett Jackson"
+]
+},
+{
+"title": "Even Stevens",
+"ct": "tween",
+"net": "disney",
+"run": "2000-2003",
+"q": "kids"
+},
+{
+"title": "Lizzie McGuire",
+"ct": "tween",
+"net": "disney",
+"run": "2001-2004",
+"q": "kids"
+},
+{
+"title": "So Weird",
+"ct": "tween",
+"net": "disney",
+"run": "1999-2001",
+"q": "kids",
+"ambiguous": true
+},
+{
+"title": "The Jersey",
+"ct": "tween",
+"net": "disney",
+"run": "1999-2004",
+"q": "kids",
+"ambiguous": true,
+"need": "disney|s\\d+\\s?e\\d+|season \\d|episode"
+},
+{
+"title": "In a Heartbeat",
+"ct": "tween",
+"net": "disney",
+"run": "2000-2001",
+"q": "kids",
+"ambiguous": true,
+"need": "disney|s\\d+\\s?e\\d+|season|episode|200[01]"
+},
+{
+"title": "Bug Juice",
+"ct": "tween",
+"net": "disney",
+"run": "1998-2001",
+"q": "kids",
+"ambiguous": true,
+"need": "disney|s\\d+\\s?e\\d+|season|episode|199[89]|200[01]"
+},
+{
+"title": "Zoom",
+"ct": "tween",
+"net": "pbs",
+"run": "1999-2004",
+"q": "kids",
+"alt": [
+"ZOOM PBS"
+],
+"ambiguous": true,
+"need": "pbs|wgbh|s\\d+\\s?e\\d+|season|episode|1999|200[0-4]"
+},
+{
+"title": "Wishbone",
+"ct": "tween",
+"net": "pbs",
+"run": "1995-1998",
+"q": "kids",
+"ambiguous": true
+},
+{
+"title": "The Baby-Sitters Club",
+"ct": "tween",
+"net": "hbo",
+"run": "1990-1993",
+"q": "kids",
+"alt": [
+"Baby-Sitters Club",
+"Babysitters Club",
+"Baby Sitters Club"
+],
+"ambiguous": true,
+"need": "s\\d+\\s?e\\d+|episode|vhs|tv series|1990|199[0-3]|complete"
+},
+{
+"title": "Big Bad Beetleborgs",
+"ct": "tween",
+"net": "fox",
+"run": "1996-1998",
+"q": "kids",
+"alt": [
+"Beetleborgs",
+"Beetleborgs Metallix"
+]
+},
+{
+"title": "Mighty Morphin Power Rangers",
+"ct": "tween",
+"net": "fox",
+"run": "1993-1996",
+"q": "kids",
+"alt": [
+"Mighty Morphin Alien Rangers",
+"Power Rangers Zeo",
+"Power Rangers Turbo",
+"Power Rangers in Space",
+"Power Rangers Lost Galaxy",
+"Power Rangers Lightspeed Rescue",
+"Power Rangers Time Force",
+"Power Rangers Wild Force",
+"Power Rangers Ninja Storm",
+"Power Rangers Dino Thunder"
+]
+},
+{
+"title": "VR Troopers",
+"ct": "tween",
+"net": "syn",
+"run": "1994-1996",
+"q": "kids"
+},
+{
+"title": "Masked Rider",
+"ct": "tween",
+"net": "fox",
+"run": "1995-1996",
+"q": "kids",
+"alt": [
+"Saban's Masked Rider"
+],
+"ambiguous": true,
+"need": "saban|fox kids|s\\d+\\s?e\\d+|199[56]|episode \\d"
+},
+{
+"title": "Goosebumps",
+"ct": "tween",
+"net": "fox",
+"run": "1995-1998",
+"q": "kids",
+"ambiguous": true,
+"need": "s\\d+\\s?e\\d+|season|episode|vhs|tv series|fox kids|199[5-8]"
+},
+{
+"title": "Bone Chillers",
+"ct": "tween",
+"net": "abc",
+"run": "1996-1996",
+"q": "kids"
+},
+{
+"title": "Eerie, Indiana",
+"ct": "tween",
+"net": "nbc",
+"run": "1991-1992",
+"q": "kids",
+"alt": [
+"Eerie Indiana"
+]
+},
+{
+"title": "Big Wolf on Campus",
+"ct": "tween",
+"net": "fox",
+"run": "1999-2002",
+"q": "kids"
+},
+{
+"title": "The Tomorrow People",
+"ct": "nick",
+"net": "nick",
+"run": "1992-1995",
+"q": "kids",
+"ambiguous": true,
+"need": "199[2-5]|nickelodeon"
+},
+{
+"title": "Ship to Shore",
+"ct": "nick",
+"net": "nick",
+"run": "1994-1996",
+"q": "kids",
+"ambiguous": true,
+"need": "s\\d+\\s?e\\d+|episode|season"
+},
+{
+"title": "The Tribe",
+"ct": "tween",
+"net": "syn",
+"run": "1999-2003",
+"q": "kids",
+"ambiguous": true,
+"need": "s\\d+\\s?e\\d+|series \\d|season \\d"
+},
+{
+"title": "Round the Twist",
+"ct": "tween",
+"net": "fox",
+"run": "1990-2001",
+"q": "kids"
+},
+{
+"title": "Spellbinder",
+"ct": "tween",
+"net": "disney",
+"run": "1995-1997",
+"q": "kids",
+"ambiguous": true,
+"need": "s\\d+\\s?e\\d+|episode \\d|1995|1997"
+},
+{
+"title": "Ocean Girl",
+"ct": "tween",
+"net": "disney",
+"run": "1994-1997",
+"q": "kids"
+},
+{
+"title": "The Odyssey",
+"ct": "tween",
+"net": "syn",
+"run": "1992-1994",
+"q": "kids",
+"ambiguous": true,
+"need": "cbc|s\\d+\\s?e\\d+|199[2-4]"
+},
+{
+"title": "The Zack Files",
+"ct": "tween",
+"net": "fox",
+"run": "2000-2002",
+"q": "kids",
+"alt": [
+"Zack Files"
+]
+},
+{
+"title": "The New Adventures of Beans Baxter",
+"ct": "tween",
+"net": "fox",
+"run": "1987-1988",
+"q": "kids",
+"alt": [
+"Beans Baxter"
+]
+},
+{
+"title": "Just Deal",
+"ct": "tween",
+"net": "nbc",
+"run": "2000-2002",
+"q": "kids",
+"ambiguous": true,
+"need": "nbc|tnbc|s\\d+\\s?e\\d+|episode"
+},
+{
+"title": "Skate",
+"ct": "tween",
+"net": "nbc",
+"run": "2000-2001",
+"q": "kids",
+"alt": [
+"All About Us"
+],
+"ambiguous": true,
+"need": "tnbc"
+},
+{
+"title": "USA High",
+"ct": "tween",
+"net": "usa",
+"run": "1997-1999",
+"q": "kids"
+},
+{
+"title": "Malibu, CA",
+"ct": "tween",
+"net": "syn",
+"run": "1998-2000",
+"q": "kids",
+"alt": [
+"Malibu CA"
+]
+},
+{
+"title": "Running the Halls",
+"ct": "tween",
+"net": "nbc",
+"run": "1993-1993",
+"q": "kids"
+},
+{
+"title": "Name Your Adventure",
+"ct": "tween",
+"net": "nbc",
+"run": "1992-1995",
+"q": "kids"
+},
+{
+"title": "NBA Inside Stuff",
+"ct": "tween",
+"net": "nbc",
+"run": "1990-2004",
+"q": "kids"
+},
+{
+"title": "Scratch",
+"ct": "tween",
+"net": "syn",
+"run": "1991-1992",
+"q": "kids",
+"ambiguous": true,
+"need": "teen|magazine show|1991"
+},
+{
+"title": "Mystic Knights of Tir Na Nog",
+"ct": "tween",
+"net": "fox",
+"run": "1998-1999",
+"q": "kids",
+"alt": [
+"Mystic Knights"
+]
+},
+{
+"title": "Ninja Turtles: The Next Mutation",
+"ct": "tween",
+"net": "fox",
+"run": "1997-1998",
+"q": "kids",
+"alt": [
+"Next Mutation"
+]
+},
+{
+"title": "Superhuman Samurai Syber-Squad",
+"ct": "tween",
+"net": "syn",
+"run": "1994-1995",
+"q": "kids",
+"alt": [
+"Superhuman Samurai Syber Squad"
+]
+},
+{
+"title": "Tattooed Teenage Alien Fighters from Beverly Hills",
+"ct": "tween",
+"net": "usa",
+"run": "1994-1995",
+"q": "kids"
+},
+{
+"title": "The Adventures of Shirley Holmes",
+"ct": "tween",
+"net": "fox",
+"run": "1997-2000",
+"q": "kids",
+"alt": [
+"Shirley Holmes"
+]
+},
+{
+"title": "Smart Guy",
+"ct": "tween",
+"net": "wb",
+"run": "1997-1999",
+"q": "kids"
+},
+{
+"title": "Out of the Box",
+"ct": "tween",
+"net": "disney",
+"run": "1998-2004",
+"q": "kids",
+"ambiguous": true,
+"need": "disney|playhouse"
+},
+{
+"title": "Welcome to Pooh Corner",
+"ct": "tween",
+"net": "disney",
+"run": "1984-1986",
+"q": "kids"
+},
+{
+"title": "Dumbo's Circus",
+"ct": "tween",
+"net": "disney",
+"run": "1985-1986",
+"q": "kids",
+"alt": [
+"Dumbos Circus"
+]
+},
+{
+"title": "Kids' WB",
+"ct": "tween",
+"net": "wb",
+"run": "1995-2004",
+"q": "block",
+"alt": [
+"Kids WB",
+"Fox Kids",
+"TNBC",
+"One Saturday Morning",
+"Disney Afternoon"
+],
+"need": "with (original )?commercials|w/ ?commercials|woc|\\bblock\\b|broadcast|recording|aircheck|full tape|taped|off[- ]air",
+"loose": true
+},
+{
+"title": "Clarissa",
+"ct": "snick",
+"net": "nick",
+"run": "1991-1994",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|snick|s\\d+\\s?e\\d+|explains"
+},
+{
+"title": "Pinwheel",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1990",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|198\\d"
+},
+{
+"title": "Today's Special",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1991",
+"q": "kids",
+"alt": [
+"Todays Special"
+],
+"ambiguous": true,
+"need": "nickelodeon|tvo|198\\d|episode"
+},
+{
+"title": "Eureeka's Castle",
+"ct": "nick",
+"net": "nick",
+"run": "1989-1995",
+"q": "kids",
+"alt": [
+"Eureekas Castle"
+]
+},
+{
+"title": "Special Delivery",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1993",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon"
+},
+{
+"title": "Standby... Lights! Camera! Action!",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1987",
+"q": "kids",
+"alt": [
+"Standby Lights Camera Action"
+]
+},
+{
+"title": "Livewire",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1985",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b"
+},
+{
+"title": "The Third Eye",
+"ct": "nick",
+"net": "nick",
+"run": "1984-1985",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon"
+},
+{
+"title": "Rated K: For Kids by Kids",
+"ct": "nick",
+"net": "nick",
+"run": "1986-1988",
+"q": "kids",
+"alt": [
+"Rated K"
+]
+},
+{
+"title": "Hi Honey, I'm Home!",
+"ct": "nick",
+"net": "nick",
+"run": "1991-1992",
+"q": "kids",
+"alt": [
+"Hi Honey Im Home"
+]
+},
+{
+"title": "Nickelodeon Wild Side Show",
+"ct": "nick",
+"net": "nick",
+"run": "1992-1995",
+"q": "kids",
+"alt": [
+"Wild Side Show"
+]
+},
+{
+"title": "Kablam!",
+"ct": "snick",
+"net": "nick",
+"run": "1996-2000",
+"q": "kids",
+"alt": [
+"KaBlam"
+]
+},
+{
+"title": "The Nick Cannon Show",
+"ct": "snick",
+"net": "nick",
+"run": "2002-2003",
+"q": "kids",
+"alt": [
+"Nick Cannon Show"
+]
+},
+{
+"title": "Romeo!",
+"ct": "nick",
+"net": "nick",
+"run": "2003-2004",
+"q": "kids",
+"ambiguous": true,
+"need": "nickelodeon|nick\\b|lil.? romeo|s\\d+\\s?e\\d+"
+},
+{
+"title": "Unfabulous",
+"ct": "nick",
+"net": "nick",
+"run": "2004-2004",
+"q": "kids",
+"ms": 1
+},
+{
+"title": "Ned's Declassified School Survival Guide",
+"ct": "nick",
+"net": "nick",
+"run": "2004-2004",
+"q": "kids",
+"alt": [
+"Neds Declassified"
+],
+"ms": 1
+},
+{
+"title": "Scaredy Camp",
+"ct": "nick",
+"net": "nick",
+"run": "2002-2003",
+"q": "kids"
+},
+{
+"title": "Slime Time Live",
+"ct": "nick",
+"net": "nick",
+"run": "2000-2003",
+"q": "kids"
+},
+{
+"title": "Global GUTS",
+"ct": "nick",
+"net": "nick",
+"run": "1995-1995",
+"q": "game"
+},
+{
+"title": "Nickelodeon All-Star Challenge",
+"ct": "nick",
+"net": "nick",
+"run": "1994-1994",
+"q": "game"
+},
+{
+"title": "Double Dare 2000",
+"ct": "nick",
+"net": "nick",
+"run": "2000-2000",
+"q": "game"
+}
+]
