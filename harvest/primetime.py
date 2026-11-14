@@ -615,7 +615,7 @@ def merge():
             if not isinstance(x, dict) or x.get('i') in seenr or not x.get('f'): continue
             nt = ' ' + norm(clean(x.get('t', ''))) + ' '
             for sh, qs in keys:
-                if any(q in nt for q in qs) and consider(sh, {'title': x.get('t'), 'collection': x.get('c'), 'subject': x.get('s'), 'description': x.get('ds'), 'date': ''}) == 't':
+                if any(q in nt for q in qs) and (consider(sh, {'title': x.get('t'), 'collection': x.get('c'), 'subject': x.get('s'), 'description': x.get('ds'), 'date': ''}) == 't' or (sh.get('guide') == 2 and (not amb1(sh) or head(sh, x.get('t', '')) == 2 or seg(sh, x.get('t', ''))) and not JUNK.search(clean(x.get('t', ''))) and guide_ok(sh, clean(x['f'][0][0].rsplit('/', 1)[-1] + ' ' + (x.get('t', '') if len(x['f']) <= 2 else ''))))):
                     if sh.get('guide') and sh['title'] in EP:
                         for f in x['f']:
                             w = file_se(sh, f[0]) or (file_se(sh, x.get('t', '')) if len(x['f']) <= 2 else None)
