@@ -142,12 +142,15 @@ def pdate(tx):
 def inr(d): return bool(d) and '1984-01-01' <= d <= '2004-12-31'
 def classify(tx):
     t = tx.lower()
-    for ct, rx in (('launch', r'launch|liftoff|lift-off|landing|countdown'), ('sotu', r'state of the union'), ('inauguration', r'inaugura'), ('debate', r'\bdebate'), ('election', r'election night|convention|campaign'), ('hearing', r'hearing|testimony|committee'), ('press', r'press conference|news conference|press briefing|briefing'), ('speech', r'address|remarks|speech|statement|radio address|toast|announc|signing|ceremony|medal|arrival|visit|meeting|summit|tribute|memorial|funeral|eulogy'), ('mission', r'\bsts[- ]?\d|shuttle|mission|hubble|mir\b|station|spacewalk|eva\b|crew|astronaut|flight'), ('publictv', r'newshour|frontline|pbs|public television')):
+    for ct, rx in (('launch', r'\blaunch|liftoff|lift-off|\blanding\b|countdown'), ('sotu', r'state of the union'), ('inauguration', r'inaugura|swearing[- ]in|oath of office'), ('debate', r'\bdebate'), ('election', r'election night|national convention|campaign|rally|fundrais'), ('hearing', r'hearing|testimony|committee'), ('press', r'press conference|news conference|press briefing|briefing|question[- ]and[- ]answer|interview'), ('mission', r'\bsts[- ]?\d|space shuttle|hubble|\bapollo\b|\bnasa\b|space station|spacewalk|astronaut'), ('speech', r'address|remarks|speech|statement|toast|announc|signing|ceremony|medal|arrival|visit|trip|meeting|summit|tribute|memorial|funeral|eulogy|dinner|reception|lecture|town ?hall|conference|photo')):
         if re.search(rx, t): return ct
     return 'doc'
+USX = re.compile(r"(?i)reagan|\bbush\b|clinton|\bgore\b|quayle|mondale|dukakis|perot|\bdole\b|kerry|cheney|white house|state of the union|\bnasa\b|shuttle|\bsts\b|congress|senate|supreme court|pentagon|united states|\bu\.?s\.?\b|american|presidential|first lady|vice president|oval office|camp david|air force|navy|army|marine")
+NONUS = re.compile(r"(?i)philippin|arroyo|estrada|malaca|bundestag|duma|knesset|parliament of|lok sabha")
 def canon(t):
     t = re.sub(r'^File:', '', t); t = re.sub(r'\.(webm|ogv|ogg|mpg|mpeg|mp4|mov)$', '', t, flags=re.I)
-    t = re.sub(r'\s*-?\s*\(?(NARA|NAID|FOIA Case|DVIDS|MT\d+|KSC-[\w-]+)[^)]*\)?', ' ', t)
+    t = re.sub(r'\s*-\s*NARA\s*-\s*\d+', ' ', t); t = re.sub(r'\(FOIA Case[^)]*\)', ' ', t); t = re.sub(r'^(MT\d+|KSC-[\w-]+)\s+', '', t)
+    t = re.sub(r'^Video Recording of\s+', '', t, flags=re.I)
     t = re.sub(r'[_]+', ' ', t); t = re.sub(r'\s+', ' ', t).strip(' -:,.')
     return t.upper()[:80]
 def nasa():
@@ -213,7 +216,7 @@ def nasa():
 CUA = {'User-Agent': 'ConventionalMemoryHarvest/1.0 (https://github.com/conventionalmemory/harvest)'}
 def commons():
     out = []; seen = set(); st = collections.Counter()
-    QS = ['deepcategory:"Videos of Ronald Reagan"', 'deepcategory:"Videos of Bill Clinton"', 'deepcategory:"Videos of George H. W. Bush"', 'deepcategory:"Videos of George W. Bush"', 'deepcategory:"Videos of presidential inaugurations of the United States"', 'deepcategory:"Videos by the Ronald Reagan Presidential Library"', 'incategory:"US National Archives Collection WJC-WHTV: Video Recordings of the White House Television Office (Clinton Administration), 1/20/1993 - 1/20/2001"', '"State of the Union"', '"Space Shuttle"', 'STS launch', 'Challenger', 'Hubble', '"press conference"', '"presidential debate"', '"Democratic National Convention"', '"Republican National Convention"', 'inauguration', '"White House"', '"Reagan" address', '"Clinton" remarks', '"Bush" remarks', '"Gore"', '"Thatcher"', '"Gorbachev"', '"Desert Storm"', '"Gulf War"', '"Berlin Wall"', '"Oklahoma City"', '"September 11"', '"Olympics"', 'NASA 1986', 'NASA 1990', 'NASA 1995', 'NASA 1998', 'NASA 2003', '"Mir"', '"International Space Station"', '"Mars Pathfinder"', '"C-SPAN"', '"news conference"', '"radio address"', '"Department of Defense" 1991', '"Air Force" 1990', '"Navy" 1988', 'hurricane 1992', 'earthquake 1989', '"Mount St. Helens"', 'election 1992', 'election 1996', 'election 2000', 'election 1988', 'election 1984', 'election 2004']
+    QS = ['deepcategory:"Videos of Ronald Reagan"', 'deepcategory:"Videos of Bill Clinton"', 'deepcategory:"Videos of George H. W. Bush"', 'deepcategory:"Videos of George W. Bush"', 'deepcategory:"Videos of presidential inaugurations of the United States"', 'deepcategory:"Videos by the Ronald Reagan Presidential Library"', 'incategory:"US National Archives Collection WJC-WHTV: Video Recordings of the White House Television Office (Clinton Administration), 1/20/1993 - 1/20/2001"', '"State of the Union"', '"Space Shuttle"', 'STS launch', 'Challenger', 'Hubble', '"press conference"', '"presidential debate"', '"Democratic National Convention"', '"Republican National Convention"', 'inauguration', '"White House"', '"Reagan" address', '"Clinton" remarks', '"Bush" remarks', '"Gore"', '"Thatcher"', '"Gorbachev"', '"Desert Storm"', '"Gulf War"', '"Berlin Wall"', '"Oklahoma City"', '"September 11"', '"Olympics"', 'NASA 1986', 'NASA 1990', 'NASA 1995', 'NASA 1998', 'NASA 2003', '"Mir"', '"International Space Station"', '"Mars Pathfinder"', '"C-SPAN"', '"news conference"', '"radio address"', '"Department of Defense" 1991', '"Air Force" 1990', '"Navy" 1988', 'hurricane 1992', 'earthquake 1989', '"Mount St. Helens"', 'election 1992', 'election 1996', 'election 2000', 'election 1988', 'election 1984', 'election 2004', '"President Reagan"', '"President Clinton"', '"President Bush"', '"Vice President"', '"First Lady"', '"Hillary"', '"Nancy Reagan"', '"Barbara Bush"', '"Pentagon"', '"Senate"', '"Supreme Court"', '"Oval Office"', '"Rose Garden"', '"Camp David"', '"Air Force One"', '"Address to the Nation"', '"radio address" Reagan', '"Reagan-Bush"', '"Clinton-Gore"', '"summit"', '"Geneva"', '"Reykjavik"', '"Moscow"', '"NATO"', '"United Nations"', '"Christmas" White House', '"Thanksgiving" turkey', '"Easter Egg Roll"', '"Medal of Freedom"', '"Medal of Honor"', '"Kennedy Center"', '"Correspondents"', '"Super Bowl" President', '"World Series" President', '"NCAA" President', '"Olympic" President', 'NARA 1984', 'NARA 1985', 'NARA 1986', 'NARA 1987', 'NARA 1988', 'NARA 1989', 'NARA 1990', 'NARA 1991', 'NARA 1992', 'NARA 1993', 'NARA 1994', 'NARA 1995', 'NARA 1996', 'NARA 1997', 'NARA 1998', 'NARA 1999', 'NARA 2000', 'NARA 2001']
     for q in QS:
         if left() < 900: break
         cont = {}
@@ -244,7 +247,9 @@ def commons():
                     if vi.get('mime') in ('video/webm', 'video/mp4') and (vi.get('size') or 0) / max(dur, 1) * 8 / 1e6 < 8: pick = vi['url']; fmt = vi['mime'].split('/')[1]
                     else: st['noderiv'] += 1; continue
                 tx = p['title'] + ' ' + desc[:300]
-                ct = classify(tx)
+                if NONUS.search(tx) or not USX.search(tx): st['nonus'] += 1; continue
+                ct = classify(p['title'])
+                if ct == 'doc': ct = classify(desc[:200])
                 lic = (em.get('LicenseShortName') or {}).get('value', '')
                 by = re.sub(r'<[^>]+>', '', (em.get('Artist') or {}).get('value', '') or (em.get('Credit') or {}).get('value', ''))[:120]
                 out.append({'i': 'commons:' + p['title'][5:], 'src': 'commons', 'q': 'tech' if ct in ('launch', 'mission') else 'news', 't': re.sub(r'\.(webm|ogv|ogg|mpg|mpeg|mp4|mov)$', '', p['title'][5:], flags=re.I)[:160], 'k': canon(p['title']), 'ad': ad, 'u': [[pick, round(dur)]], 'lic': lic, 'by': by.strip(), 'pg': 'https://commons.wikimedia.org/wiki/' + urllib.parse.quote(p['title'].replace(' ', '_')), 'ct': ct, 'ds': desc.strip()[:300], 'fmt': fmt})
@@ -252,13 +257,19 @@ def commons():
             if not cont: break
         print('commons q', q[:60], 'kept so far', len(out), flush=True)
     def chk(x):
-        s2, hd, b, fin = req(x['u'][0][0], rng=(0, 1023), headers=CUA, timeout=30)
+        s2, hd, b, fin = req(x['u'][0][0], rng=(0, 1023), headers=CUA, timeout=30, tries=4)
         x['_ok'] = s2 in (200, 206) and 'video' in str(hd.get('content-type'))
         x['_h'] = (s2, hd.get('content-type'), hd.get('accept-ranges'), hd.get('access-control-allow-origin'))
         return x
-    with ThreadPoolExecutor(4) as ex: out = list(ex.map(chk, out))
+    with ThreadPoolExecutor(3) as ex: out = list(ex.map(chk, out))
+    for rnd in range(2):
+        bad = [x for x in out if not x['_ok']]
+        if not bad: break
+        time.sleep(30)
+        for x in bad: chk(x); time.sleep(1)
     print('commons header samples', [x['_h'] for x in out[:5]])
     bad = [x for x in out if not x['_ok']]
+    print('commons url failures', collections.Counter(str(x['_h'][0]) for x in bad).most_common(5))
     out = [x for x in out if x['_ok']]
     for x in out: x.pop('_ok'); x.pop('_h')
     st['urlfail'] = len(bad)
