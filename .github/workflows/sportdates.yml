@@ -8,6 +8,9 @@ on:
       only:
         description: Stop after the schedule tables
         default: '0'
+      probe:
+        description: Page titles to print parsed rows for
+        default: ''
 permissions:
   contents: write
 jobs:
@@ -16,10 +19,16 @@ jobs:
     timeout-minutes: 170
     steps:
       - uses: actions/checkout@v4
+      - name: Print parsed rows
+        if: ${{ inputs.probe != '' }}
+        env:
+          PROBE: ${{ inputs.probe }}
+        run: MODE=probe python3 harvest/sportdates.py
       - name: Build tables and search the archive
+        if: ${{ inputs.probe == '' }}
         run: MODE=plan REBUILD=${{ inputs.rebuild }} ONLY=${{ inputs.only }} python3 harvest/sportdates.py
       - name: Commit schedule tables
-        if: always()
+        if: ${{ always() && inputs.probe == '' }}
         run: |
           git config user.name "Conventional Memory"
           git config user.email "conventionalmemory@users.noreply.github.com"
@@ -28,7 +37,7 @@ jobs:
           git commit -q -m "Update sports schedule tables" || exit 0
           for i in 1 2 3 4 5 6 7 8; do git pull -q --rebase && git push && break; sleep $((10 + RANDOM % 30)); done
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ always() && inputs.probe == '' }}
         with:
           name: sports2-cands
           path: |
@@ -37,6 +46,7 @@ jobs:
           retention-days: 3
   lookup:
     needs: plan
+    if: ${{ inputs.probe == '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 350
     strategy:

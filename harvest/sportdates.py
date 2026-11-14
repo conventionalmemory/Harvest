@@ -749,6 +749,21 @@ EXTRA = [
  ('weeks', 'title:(week) AND title:(nfl OR football OR ' + ' OR '.join('"%s"' % t if ' ' in t else t for t in D['NFL']) + ')'),
  ('college2', 'title:(' + ' OR '.join('"%s"' % t for t in CFB.values() if len(t) > 4) + ') AND title:(vs OR versus OR at OR bowl OR football)'),
 ]
+if MODE == 'probe':
+    for t in os.environ.get('PROBE', '').split('|'):
+        b = wiki(t.strip())
+        print('PROBE', t, 'blocks', len(b) if b else b, flush=True)
+        n = 0; lim = int(os.environ.get('PROBE_MAX', '170'))
+        for x in b or []:
+            if x[0] == 'h': print('  H%d %s' % (x[1], x[2][:90])); continue
+            txt = ' | '.join(c[:int(os.environ.get('PROBE_CELL', '46'))] for c in x[1]) if x[0] == 'row' else x[1][:200]
+            if x[0] == 'row' and x[3]: print('  HDR t%d %s' % (x[2], txt[:330])); continue
+            if not (RD1.search(txt) or RD2.search(txt) or RD3.search(txt) or RTM0.search(txt) or re.search(NETS, txt.lower())): continue
+            n += 1
+            if n > lim: continue
+            print('  %s %s' % ('ROW t%d' % x[2] if x[0] == 'row' else 'P', txt[:330]))
+        print('  shown', min(n, lim), 'of', n, flush=True)
+    sys.exit(0)
 if MODE == 'plan':
     SC = Sched(load_sched())
     have = known()
