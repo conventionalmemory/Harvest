@@ -1,5 +1,108 @@
 [
 {
+"title": "Star Trek",
+"aka": [
+"Star Trek: The Original Series",
+"Star Trek TOS"
+],
+"type": "drama",
+"net": "nbc",
+"years": [
+1966,
+1969
+],
+"pri": 0
+},
+{
+"title": "Star Trek: Deep Space Nine",
+"aka": [
+"Star Trek DS9",
+"Deep Space Nine",
+"Star Trek: Deep Space 9",
+"Deep Space 9",
+"ST DS9"
+],
+"type": "drama",
+"net": "syn",
+"years": [
+1993,
+1999
+],
+"pri": 0
+},
+{
+"title": "Star Trek: Enterprise",
+"aka": [
+"Star Trek ENT",
+"ST ENT",
+"Enterprise"
+],
+"type": "drama",
+"net": "upn",
+"years": [
+2001,
+2005
+],
+"pri": 0
+},
+{
+"title": "Star Trek: The Animated Series",
+"aka": [
+"Star Trek TAS",
+"Star Trek Animated",
+"Star Trek: The Animated Adventures"
+],
+"type": "kids",
+"net": "nbc",
+"years": [
+1973,
+1974
+],
+"pri": 0
+},
+{
+"title": "Star Trek: The Next Generation",
+"aka": [
+"Star Trek TNG",
+"Star Trek Next Generation",
+"Star Trek Next Gen",
+"ST TNG"
+],
+"type": "drama",
+"net": "syn",
+"years": [
+1987,
+1994
+],
+"pri": 0
+},
+{
+"title": "Star Trek: Voyager",
+"aka": [
+"Star Trek VOY",
+"ST VOY",
+"Voyager"
+],
+"type": "drama",
+"net": "upn",
+"years": [
+1995,
+2001
+],
+"pri": 0
+},
+{
+"title": "Twin Peaks",
+"aka": [],
+"type": "drama",
+"net": "abc",
+"years": [
+1990,
+1991
+],
+"pri": 0
+},
+{
 "title": "106 & Park",
 "aka": [],
 "type": "music",

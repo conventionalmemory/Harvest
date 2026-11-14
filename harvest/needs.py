@@ -43,7 +43,17 @@ TAIL = re.compile(r"^\s*(?:$|[-:|(\[,#]|\b(?:s\s?\d{1,2}\s?e\s?\d{1,3}|s\s?\d{1,
 STOP = {'the', 'a', 'an', 'of', 'and', 'in', 'on', 'to', 'with', 'show', 'by', 'for', 'is', 'it', 'at', 'from', 'md', 'mr', 'tv', 'new'}
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
 RARE = set('adderly aftermash andersonville andromeda arliss arli$$ avonlea backyardigans ballykissangel berrengers bewitched bodyshaping booknotes boomtown bordertown buzzkill carnivale cavanaughs citykids columbo comicview commish counterstrike crosswits cybercops deadwood eastenders elimidate entourage fastlane felicity foofur futurama geraldo gunsmoke halloweentown hometime hornblower housesmart hughleys inquizition inuyasha kissyfur knightwatch kojak lovejoy mannix mathnet matlock moneyline motorweek mousercise mousercize nightingales nightline overhaulin pictionary pinwheel rockumentary rollergames rollerjam rolonda scattergories seaquest smallville sportscenter sportscentury starrcade summerslam superbook supercarrier tattingers tattletales teknoman tekwar thirtysomething thundercats toonheads torkelsons videopolis wildboyz wintuition witchblade wonderworks wrestlemania youthquake jeopardy donahue montel leeza marilu daria sopranos sportsworld speedweek shortstories homeworks ncis mxc flcl wccw quincy riptide dragnet laramie profiler'.split()) | {'muppet show', 'gong show', 'daily show', 'elephant show', 'bozo show', 'sinbad show', 'roseanne show', 'norm show', 'weber show', 'ellen show', 'moxy show', 'today show', 'early show', 'gossip show', 'house md', 'mr t', 'mr president', 'mr sunshine', 'mr personality', 'tv 101', 'owl tv', 'tots tv', 'real tv', 'new detectives', 'new dragnet', 'new lassie', 'new zorro', 'new wilderness'}
-HINTS = {'Tuesday Night Titans': {'drop': ['TNT']}, 'Wonderful World of Disney': {'drop': ['Walt Disney']}}
+TREKJUNK = r"hidden frontier|new voyages|phase (ii|2)\b|of gods and men|star trek[\s:._-]*(continues|odyssey|intrepid|horizon|renegades|axanar|aurora|farragut|picard|discovery|lower decks|strange new worlds|prodigy|short treks|online|beyond(?! the farthest)|into darkness|generations|first contact|insurrection|nemesis|the motion picture|(ii|iii|iv|v|vi|vii|viii|ix|x|2|3|4|5|6|7|8|9|10)\b)|axanar|starship (exeter|farragut)|fan (film|series|production|made)|wrath of khan|search for spock|voyage home|final frontier|undiscovered country|motion picture|25th anniversary|judgment rites|starfleet (command|academy)|elite force|bridge commander|armada|birth of the federation|final unity|klingon honor guard|hidden evil|dominion wars|captain's chair|omnipedia|encyclopedia|technical manual|interactive|cd-?rom|bonus|extras|special features|featurettes?|deleted|trekkies|what we left behind|the captains|chaos on the bridge|center seat|roddenberry|power records|peter pan|audio (drama|book|story|adventure)|read-along|music from|raumschiff|viaje a las estrellas|jornada nas estrelas|patrouille|nouvelle|la s[eé]rie|v\.?f\.?\b|german|french|italian|spanish|dub\b|dubbed|mst3k|cinebinge|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bgame (footage|play|trailer|show)\b|\bexcerpts?\b"
+TREKOTHER = r"next generation|next gen\b|\btng\b|deep space|\bds9\b|voyager|\bvoy\b|\bent\b|animated|\btas\b|star trek[\s:._-]*enterprise(?![\s._-]*incident)|\benterprise[\s._-]*(s\d|season|\d{1,2}x\d)"
+PEAKSJUNK = r"fire walk with me|fwwm|missing pieces|the return|limited event|season (3|three)\b|\bs0?3\b|deleted|log lady|secret diary|autobiography|access guide|festival|twin perfect|explained|georgia coffee|between two worlds|slice of lynch|phenomenon|secrets from another place|postcards from|rewatch|unobscura|\bedit\b|recut|re-cut|murder most foul|missing season|international (version|pilot|ending)|european (version|pilot|ending)|julee cruise|saturday night live|\bsnl\b|bonus|extras|featurettes?|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bgame (footage|play|trailer|show)\b|\bexcerpts?\b"
+HINTS = {'Tuesday Night Titans': {'drop': ['TNT']}, 'Wonderful World of Disney': {'drop': ['Walt Disney']},
+    'Star Trek': {'full': 1, 'fam': 1, 'junk': TREKJUNK + '|' + TREKOTHER, 'self': r"\btos\b|original series", 'ids': ['star-trek-tos', 'startrektos', 'st-tos', 'sttos', 'tos-s0', 'tos_s0', 'star-trek-the-original', 'star-trek-original']},
+    'Star Trek: The Animated Series': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"animated series|\btas\b|star trek[\s:._-]*(the[\s._-]*)?animated|animated adventures", 'ids': ['star-trek-tas', 'startrektas', 'st-tas', 'sttas', 'tas-s0', 'star-trek-animated', 'star-trek-the-animated']},
+    'Star Trek: The Next Generation': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"next generation|next gen\b|\btng\b", 'ids': ['star-trek-tng', 'startrektng', 'st-tng', 'sttng', 'tng-s0', 'tng_s0', 'tng-0', 'tng0', 'star-trek-next-gen', 'star.-trek.-tng', 'star.-trek.-the.-next']},
+    'Star Trek: Deep Space Nine': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"deep space (nine|9)|\bds9\b", 'ids': ['star-trek-ds9', 'startrekds9', 'st-ds9', 'stds9', 'ds9-s0', 'ds9_s0', 'ds9-0', 'ds90', 'deep-space-nine', 'deep-space-9', 'deepspacenine', 'deepspace9', 'star.-trek.-ds9', 'star.-trek.-deep']},
+    'Star Trek: Voyager': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"star trek[\s:._-]*voyager|\bvoy\b|\bvoyager[\s._-]*(s\d|season|\d{1,2}x\d)", 'ids': ['star-trek-voy', 'startrekvoy', 'st-voy', 'stvoy', 'voy-s0', 'voy_s0', 'voyager-s0', 'voyager_s0', 'star.-trek.-voy']},
+    'Star Trek: Enterprise': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'until': '2005-12-31', 'self': r"star trek[\s:._-]*enterprise(?![\s._-]*incident)|\bent\b|\benterprise[\s._-]*(s\d|season|\d{1,2}x\d)", 'ids': ['star-trek-ent', 'startrekent', 'st-ent', 'stent', 'ent-s0', 'ent_s0', 'enterprise-s0', 'enterprise_s0', 'star.-trek.-ent']},
+    'Twin Peaks': {'full': 1, 'pilot0': 1, 'junk': PEAKSJUNK, 'self': r"twin peaks", 'ids': ['twinpeaks', 'twin-peaks', 'twin_peaks', 'twin.-peaks', 'tp-s0']}}
 ADONLY = re.compile(r"\bcommercials?,|\bcommercial (break|block)s?\b|\bcommercials (and|from|during|block|breaks?|only|compilation)\b|\b(open|close|closing|ending|end credits|intro|outro|sign-?off|sign-?on|station id|ident|promo)$")
 ABROAD = re.compile(r"\b(atv|ads|tcn|gtv|qtq|nws|hsv|tvq|sas|ntd|stw|tvw|bcv|nbn|gmv|rtq|tnq|ten|nine|seven)-(\d{1,2})\b|\b(bbc ?[1-4]|bbc one|bbc two|itv[1-4]?|channel 4|channel four|sky one|uk gold|ytv|cbc|ctv|global tv|rte|network ten|nine network|seven network)\b")
 UKOK = {'pbs', 'a&e', 'bravo', 'bbca', 'bbc america', 'comedy'}
@@ -101,6 +111,8 @@ def prep(sh):
     sh['cls'] = 'scripted' if sh['type'] in SCRIPTED else 'event' if sh['type'] in EVENT else 'strip'
     sh['netrx'] = re.compile(r'\b(' + NETRX[sh['net']] + r')\b') if NETRX.get(sh['net']) and sh['net'] != 'syn' else None
     sh['junk'] = re.compile(h['junk']) if h.get('junk') else None
+    sh['full'] = bool(h.get('full')); sh['fam'] = bool(h.get('fam')); sh['pilot0'] = bool(h.get('pilot0')); sh['until'] = h.get('until', '2004-08-31'); sh['ids'] = h.get('ids', [])
+    sh['selfrx'] = re.compile(h['self']) if h.get('self') else None
     q = QMAP.get(sh['type'])
     if not q:
         q = 'prime'
@@ -133,16 +145,19 @@ def scrape(q, cap=20000):
         cursor = j.get('cursor')
         if not cursor: break
     return out
-def load_ids():
-    have = set()
-    for p in glob.glob(os.path.join(OUT, '*.json.gz')):
+def load_ids(rows=None):
+    have = {}
+    for p in sorted(glob.glob(os.path.join(OUT, '*.json.gz'))):
         if p.endswith('needs.json.gz') or p.endswith('movies.json.gz'): continue
         try:
             d = json.load(gzip.open(p, 'rt', encoding='utf-8'))
             if isinstance(d, list):
                 for x in d:
-                    if isinstance(x, dict) and x.get('i'): have.add(x['i'])
-                    elif isinstance(x, list) and x and isinstance(x[0], str): have.add(x[0])
+                    if isinstance(x, dict) and x.get('i'):
+                        f = x.get('f') if isinstance(x.get('f'), list) else []
+                        have[x['i']] = max(have.get(x['i'], 0), len(f))
+                        if rows is not None and f and x.get('t') and isinstance(f[0], list): rows.append(x)
+                    elif isinstance(x, list) and x and isinstance(x[0], str): have.setdefault(x[0], 0)
         except Exception as e: print('skip', p, e)
     return have
 def load_guide(p):
@@ -164,7 +179,7 @@ def fetch_guides(G, todo):
         w = get('https://api.tvmaze.com/shows/%d?embed[]=episodes&embed[]=cast' % best['id']) or {}
         time.sleep(0.6)
         emb = w.get('_embedded') or {}
-        rows = [[e['season'], e['number'], e.get('name') or '', e['airdate']] for e in emb.get('episodes', []) if e.get('number') and e.get('airdate') and e['airdate'] <= '2004-08-31']
+        rows = [[e['season'], e['number'], e.get('name') or '', e['airdate'], e.get('runtime') or 0] for e in emb.get('episodes', []) if e.get('number') and e.get('airdate') and e['airdate'] <= sh['until']]
         cast = []
         for c in emb.get('cast', []):
             n = (c.get('person') or {}).get('name')
@@ -183,10 +198,110 @@ def build_ep():
     for k, g in GUIDE.items():
         rows = g.get('eps') or []
         t = {}
-        for s, n, nm, d in rows:
+        for r in rows:
+            s, n, nm = r[0], r[1], r[2]
             z = norm0(nm)
             if len(z) >= 9 and z not in GENT and len(z.split()) >= 2 and not re.fullmatch(r'(episode|show|part|chapter|week|day) ?#?\d+.*', z): t[z] = (s, n)
-        EP[k] = {'t': sorted(t.items(), key=lambda kv: -len(kv[0])), 'd': {(s, n): d for s, n, nm, d in rows}, 'maxs': max([r[0] for r in rows] or [0]), 'cast': [c.lower() for c in g.get('cast', []) if len(c.split()) >= 2], 'n': len(rows)}
+        EP[k] = {'t': sorted(t.items(), key=lambda kv: -len(kv[0])), 'd': {(r[0], r[1]): r[3] for r in rows}, 'names': {(r[0], r[1]): r[2] for r in rows}, 'maxs': max([r[0] for r in rows] or [0]), 'cast': [c.lower() for c in g.get('cast', []) if len(c.split()) >= 2], 'n': len(rows)}
+        sh = BYT.get(k)
+        if not sh or not sh['full']: continue
+        by = {}
+        for r in rows:
+            nm = r[2]; m = PARTRX.search(nm); part = 0
+            if m:
+                pp = (m.group(1) or m.group(2)).lower(); part = PNUM.get(pp) or int(pp); nm = nm[:m.start()]
+            z = norm0(nm)
+            if z: by.setdefault(z, {})[part] = (r[0], r[1])
+        rts = sorted(r[4] for r in rows if len(r) > 4 and r[4]); typ = rts[len(rts) // 2] if rts else 0
+        split = {}; cur = collections.Counter()
+        for r in rows:
+            cur[r[0]] += 1; split[(r[0], cur[r[0]])] = (r[0], r[1])
+            if typ and len(r) > 4 and r[4] and r[4] >= typ * 1.7: cur[r[0]] += 1; split[(r[0], cur[r[0]])] = (r[0], r[1])
+        smax = collections.Counter()
+        for r in rows: smax[r[0]] = max(smax[r[0]], r[1])
+        eprx = re.compile(r"(?<![a-z0-9])(?:" + '|'.join(r"[\W_]+".join("[.'’]?".join(re.escape(ch) for ch in w) for w in z.split()) for z in sorted(by, key=len, reverse=True) if len(z) >= 4) + r")(?![a-z0-9])") if by else None
+        EP[k].update({'by': by, 'keys': sorted(by, key=len, reverse=True), 'split': split, 'order': [(r[0], r[1]) for r in rows], 'smax': smax, 'eprx': eprx})
+PARTRX = re.compile(r"[\s,:;-]*\(?\b(?:part|pt)\.?\s*(\d|i{1,3}|one|two|three)\)?\s*$|\s*\((\d)\)\s*$", re.I)
+PNUM = {'i': 1, 'ii': 2, 'iii': 3, 'one': 1, 'two': 2, 'three': 3}
+QTAG = re.compile(r"\b(dvd|dvdrip|bluray|blu ray|bdrip|brrip|webrip|web dl|hdtv|sdtv|tvrip|vhsrip|x264|x265|h264|h 264|hevc|xvid|divx|aac|ac3|dts|480p|576p|720p|1080p|2160p|remastered|remaster|upscale|\d{3,4}mb)\b")
+SEM = re.compile(r"\bs(?:eason)?\s?(\d{1,2})[\s._-]{0,3}(?:e|ep|episode)\s?(\d{1,3})(?:(?:\s?[-&+]\s?|\s?and\s?)(?:e|ep)?(\d{1,3})|e(\d{1,3}))?(?!\d)|(?<![a-z0-9])(\d{1,2})x(\d{2,3})(?:\s?[-&+]\s?(\d{2,3}))?(?!\d)")
+FAMORDER = ['Star Trek: The Next Generation', 'Star Trek: Deep Space Nine', 'Star Trek: Voyager', 'Star Trek: Enterprise', 'Star Trek: The Animated Series', 'Star Trek']
+PREFIX = re.compile(r"^(?:(?:star trek|the next generation|next generation|next gen|tng|deep space nine|deep space 9|ds9|voyager|voy|enterprise|ent|the original series|original series|tos|the animated series|animated series|tas|twin peaks|st|the complete series|complete series|season \d+|series \d+|episode \d+|ep \d+|disc \d+|vol \d+|\d+)\s+)+")
+def series_of(sh, path):
+    if not sh['fam']: return [sh]
+    low = re.sub(r'[._]+', ' ', path.lower())
+    for part in (low.rsplit('/', 1)[-1], low):
+        hit = [o for o in (BYT.get(k) for k in FAMORDER) if o and o['selfrx'] and o['selfrx'].search(part)]
+        if hit: return hit
+    return [sh]
+def parse_full(sh, text, dur, ctx):
+    G = EP.get(sh['title'])
+    if not G or 'by' not in G: return []
+    b = re.sub(r'\.(ia\.)?[a-z0-9]{2,4}$', '', text.rsplit('/', 1)[-1], flags=re.I)
+    low = re.sub(r'[._]+', ' ', b.lower().replace('’', "'"))
+    ses = []
+    for m in SEM.finditer(low):
+        if m.group(1): a, b1, b2 = int(m.group(1)), int(m.group(2)), m.group(3) or m.group(4)
+        else: a, b1, b2 = int(m.group(5)), int(m.group(6)), m.group(7)
+        ses.append((a, b1))
+        if b2 and int(b2) == b1 + 1: ses.append((a, b1 + 1))
+    rem = SEM.sub(' ', low)
+    m = QTAG.search(rem)
+    if m and m.start() > 6: rem = rem[:m.start()]
+    z = norm0(rem)
+    z = PREFIX.sub('', z + ' ').strip()
+    tk = G['by'].get(z); more = []
+    if not tk:
+        zz = ' ' + z + ' '
+        for k in G['keys']:
+            if len(k) >= 6 and (' ' + k + ' ') in zz:
+                if not tk: tk = G['by'][k]
+                else: more.append(G['by'][k])
+                zz = zz.replace(' ' + k + ' ', ' | ')
+                if ses: break
+    if tk and more and not ses: return sorted({w for d in [tk] + more for w in d.values()})
+    long = dur >= (2400 if sh['type'] == 'kids' else 4200)
+    valid = [w for w in ses if w in G['d']]
+    if tk:
+        vals = sorted(tk.values())
+        hit = sorted({w for w in valid if w in vals})
+        if hit: return vals if long and len(vals) == 2 else hit
+        pm = re.search(r"(?:part|pt)\s*(\d|i{1,3}|one|two|three)\b|\((\d)\)", rem)
+        if pm:
+            pp = pm.group(1) or pm.group(2); part = PNUM.get(pp) or int(pp)
+            if part in tk: return [tk[part]]
+        if len(vals) == 1 or long: return vals
+        return [vals[0]]
+    if ses and ctx.get('shift') and all(w[0] == 1 for w in ses): ses = [(1, w[1] + 1) for w in ses]; valid = [w for w in ses if w in G['d']]
+    if ses and any(w[0] in ctx.get('split', ()) for w in ses): return sorted({G['split'][w] for w in ses if w in G['split']})
+    if valid: return valid
+    if ses: return sorted({G['split'][w] for w in ses if w in G['split']})
+    if sh['pilot0'] and not ses:
+        if re.search(r'\bpilot\b', low): return [G['order'][0]]
+        am = re.search(r'\b(?:episode|ep|e)\s?#?(\d{1,2})\b', low)
+        if am and int(am.group(1)) < len(G['order']): return [G['order'][int(am.group(1))]]
+    return []
+def tag_full(sh, x):
+    files = x['f']; rows = []
+    ctx = {'shift': False, 'split': set()}
+    if sh['pilot0']: ctx['shift'] = any(re.search(r'\bs0?1\s?e00\b|(?<![a-z0-9])1x00\b', re.sub(r'[._]+', ' ', f[0].lower())) for f in files)
+    G0 = EP.get(sh['title']) or {}
+    if G0.get('smax'):
+        for f in files:
+            for m in SEM.finditer(re.sub(r'[._]+', ' ', f[0].rsplit('/', 1)[-1].lower())):
+                a, b1 = (int(m.group(1)), int(m.group(2))) if m.group(1) else (int(m.group(5)), int(m.group(6)))
+                if G0['smax'].get(a) and b1 > G0['smax'][a]: ctx['split'].add(a)
+    title = x['t'][len(sh['title']) + 3:] if x['t'].startswith(sh['title'] + ' - ') else x['t']
+    for n, f in enumerate(files):
+        for s2 in series_of(sh, f[0]):
+            ws = parse_full(s2, f[0], f[1], ctx if s2 is sh else {})
+            if not ws and len(files) <= 2: ws = parse_full(s2, title, f[1], ctx if s2 is sh else {})
+            G = EP.get(s2['title']) or {}
+            for w in ws:
+                if w in G.get('d', {}): rows.append([n, 'S%02dE%02d' % w, G['d'][w], G['names'][w]] + ([s2['title']] if s2 is not sh else []))
+    if rows: x['se'] = rows
+    else: x.pop('se', None)
+    return rows
 build_ep()
 def ep_title(sh, low):
     g = EP.get(sh['title'])
@@ -240,9 +355,11 @@ def consider(sh, it, route='t'):
         if route == 't': return None
         blob = ' ' + norm(clean(re.sub(r'[-_.]+', ' ', ident)) + ' ' + subj + ' ' + desc) + ' '
         nm = next((x for x in sh['names'] if x['lvl'] <= 1 and (' ' + x['n'] + ' ') in blob), None)
+        if not nm and sh['full'] and sh['selfrx'] and sh['selfrx'].search(low + ' ' + blob): nm = sh['names'][0]
         if not nm: return None
         hd = -1
     rest = strip_names(sh, low)
+    if sh['full'] and (EP.get(sh['title']) or {}).get('eprx'): rest = EP[sh['title']]['eprx'].sub(' ', rest)
     if JUNK.search(rest) or SPIN.search(rest) or MOD2.search(t) or ADONLY.search(low.strip()): return None
     if ABROAD.search(low) and sh['net'] not in UKOK and '(uk)' not in sh['title'].lower(): return None
     if sh['cls'] == 'scripted' and JUNKS.search(rest): return None
@@ -257,7 +374,7 @@ def consider(sh, it, route='t'):
     if ad: ys.append(int(ad[:4]))
     hi = max(y1 + 1, 2004) if not sh['remake'] else y1 + 1
     inrun = any(y0 <= y <= y1 + 1 for y in ys)
-    inera = any(max(y0, 1984) <= y <= min(hi, 2004) for y in ys)
+    inera = any(y0 <= y <= min(hi, 2004) for y in ys)
     if ys and not (inrun or inera): return None
     m = re.match(r'(\d{4})', flat(it.get('date')) or flat(it.get('year')) or '')
     iy = int(m.group(1)) if m else 0
@@ -278,6 +395,7 @@ def consider(sh, it, route='t'):
     if JUNKD.search(desc) and not (cast or ept): return None
     if sh['remake'] and not (inrun or cast or ept or (iy and y0 <= iy <= y1 + 1)): return None
     if route != 't' and hd < 0:
+        if sh['full']: return ('d', route) if not (mod and ys and not inrun) else None
         if route == 'u': return ('y', 'u') if (se or dated or tape) and not mod else ('m', 'show named outside the title only')
         if not (tape or tvcol or se): return None
         if mod and not (inera or inrun): return None
@@ -422,18 +540,34 @@ def meta(c):
     v = consider(sh, it, c.get('r', 't'))
     if not v: return rej(c, 'rejected on full details')
     blob = (desc[:1500] + ' ' + subj).lower()
-    x = {'i': c['identifier'], 'q': sh['q'], 't': title, 'd': flat(m.get('date')), 'y': '', 'c': col[:4], 's': subj[:200], 'ds': desc[:400], 'f': files[:500], 'dl': c.get('downloads') or 0, 'k': sh['title'], 'e': 0, 'net': sh['net'] if sh['net'] != 'syn' else '', 'ct': sh['ct'], 'pri': sh['pri'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
+    x = {'i': c['identifier'], 'q': sh['q'], 't': title, 'd': flat(m.get('date')), 'y': '', 'c': col[:4], 's': subj[:200], 'ds': desc[:400], 'f': files[:1500 if sh['full'] else 500], 'dl': c.get('downloads') or 0, 'k': sh['title'], 'e': 0, 'net': sh['net'] if sh['net'] != 'syn' else '', 'ct': sh['ct'], 'pri': sh['pri'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
+    if c.get('held'): x['sup'] = 1
     named = sum(1 for f in files if fname(sh, f[0]))
     g = EP.get(sh['title']); se = []; nse = 0
     one = len(files) <= 2
+    if sh['full']:
+        if v[0] == 'd' and find(sh, title)[1] < 0: x['t'] = (sh['title'] + ' - ' + title)[:200]
+        ver = {r[0] for r in tag_full(sh, x)}
+        keepf = [f for n, f in enumerate(x['f']) if n in ver or f[1] >= EPLEN[sh['type']] * 0.8]
+        if not keepf: return rej(c, 'no episode-length files')
+        if len(keepf) < len(x['f']): x['f'] = keepf; ver = {r[0] for r in tag_full(sh, x)}
+        files = x['f']; se = x.get('se', []); nse = len(ver)
+        if v[0] == 'd' and not (ver and len(ver) * 2 >= len(files)): return rej(c, 'files do not match the episode guide')
+        if not ver:
+            nm0, hd0 = find(sh, title)
+            if not nm0 or nm0['lvl'] >= 2: return rej(c, 'files do not match the episode guide')
+            maybe(x, 'no file matched the episode guide')
+        elif v[0] == 'm' and len(ver) * 2 < len(files): maybe(x, v[1])
+        stamp(sh, x)
+        return x
     for n, f in enumerate(x['f']):
         b = f[0].rsplit('/', 1)[-1]
         w = file_se(sh, b) or (file_se(sh, strip_names(sh, clean(title))) if one else None)
         if not w: continue
         nse += 1
         if g and g['d']:
-            if w in g['d']: se.append([n, 'S%02dE%02d' % w, g['d'][w]])
-        else: se.append([n, 'S%02dE%02d' % w, ''])
+            if w in g['d']: se.append([n, 'S%02dE%02d' % w, g['d'][w], g['names'][w]])
+        else: se.append([n, 'S%02dE%02d' % w, '', ''])
     if se: x['se'] = se
     ds = sorted(f[1] for f in files); med = ds[len(ds) // 2]
     if v[0] == 'd':
@@ -455,7 +589,8 @@ def recheck(x):
     sh = BYT.get(x.get('k'))
     if not sh: return 'show no longer listed'
     t = x['t']
-    if t.startswith(sh['title'] + ' - ') and x.get('r') in ('d', 'u'): return ''
+    if t.startswith(sh['title'] + ' - ') and x.get('r') in ('d', 'u', 'e', 'i'):
+        return 'junk words in the title' if sh['junk'] and sh['junk'].search(clean(t[len(sh['title']) + 3:])) else ''
     it = {'identifier': x['i'], 'title': t, 'description': x.get('ds'), 'subject': x.get('s'), 'collection': x.get('c'), 'date': '' if x.get('ad') else x.get('d')}
     v = consider(sh, it, x.get('r', 't'))
     if not v: return 'no longer passes the title rules'
@@ -465,12 +600,13 @@ def plan():
     old = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
     have = load_ids(); mine = {x['i'] for x in old}
     order = sorted(SHOWS, key=lambda s: (s['pri'], -len(s['title'])))
+    oldk = collections.Counter(x['k'] for x in old)
     if FOCUS:
         prev = {}
         try: prev = {r['title']: r for r in json.load(open(REPF, encoding='utf-8')).get('shows', [])}
         except Exception: pass
         def want(s):
-            if s['title'].lower() in FOCUS or ('pri%d' % s['pri']) in FOCUS: return True
+            if s['title'].lower() in FOCUS or ('pri%d' % s['pri']) in FOCUS or ('full' in FOCUS and s['full']): return True
             st = (prev.get(s['title']) or {}).get('status', 'MISSING')
             return ('missing' in FOCUS and st == 'MISSING') or ('thin' in FOCUS and st in ('MISSING', 'THIN'))
         order = [s for s in order if want(s)]
@@ -496,13 +632,21 @@ def plan():
                 if len(''.join(ws)) >= 8:
                     qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({sep.join(ws) + '*' for sep in ('-', '_', '.', '')})) + ') AND NOT title:("%s")' % ph, 'i'))
                 qs.append(('mediatype:movies AND "%s" AND NOT title:("%s") AND (collection:(%s) OR title:(vhs OR tape OR commercials OR recorded OR episodes OR season OR complete OR series))' % (ph, ph, TVCOL), 'd'))
+            if nm is sh['names'][0] and sh['ids']: qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(x + '*' for x in sh['ids']) + ')', 'i'))
+            if nm is sh['names'][0] and sh['full']:
+                G = EP.get(sh['title']) or {}
+                tl = sorted({re.sub(r'["\\()\[\]{}:!?*^~/]', ' ', PARTRX.sub('', n2)).strip() for n2 in G.get('names', {}).values()})
+                tl = [t2 for t2 in tl if len(t2) >= 10 and len(t2.split()) >= 2]
+                for b0 in range(0, len(tl), 8): qs.append(('mediatype:movies AND title:(' + ' OR '.join('"%s"' % t2 for t2 in tl[b0:b0 + 8]) + ')', 'e'))
             for qq, route in qs:
-                hits = scrape(qq); st = [len(hits), 0, 0, 0, 0]
+                hits = scrape(qq, 8000 if nm['lvl'] >= 2 else 20000); st = [len(hits), 0, 0, 0, 0]
                 for it in hits:
                     i = it.get('identifier')
                     if not i or i in res: continue
                     if i in mine: st[1] += 1; continue
-                    if i in have: st[2] += 1; continue
+                    if i in have:
+                        st[2] += 1
+                        if not sh['full']: continue
                     try: v = consider(sh, it, 'd' if route == 'i' else route)
                     except Exception as e: print('skip', i, repr(e)); v = None
                     if v:
@@ -516,11 +660,13 @@ def plan():
         r = rank(v, nm)
         if i in seen and seen[i]['rk'] <= r: return
         seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': sh['title'], 'pri': sh['pri'], 'r': 'u' if up else v[1] if v[0] != 'm' else 't', 'rk': r}
-    with ThreadPoolExecutor(6) as ex:
+        if i in have: seen[i]['held'] = 1
+    with ThreadPoolExecutor(14) as ex:
         for n, (sh, res) in enumerate(ex.map(one, order)):
             for i, (it, v, nm) in res.items(): add(sh, i, it, v, nm)
             if n % 50 == 0: print('search', n, len(order), len(seen), round((time.time() - T0) / 60, 1), 'min', flush=True)
-    src = sorted([x for x in old if x.get('nf', 1) >= 4 and x.get('keep') != 'maybe' and x.get('r') != 'u'], key=lambda x: (x.get('pri', 3), -x.get('nf', 1)))[:1200]
+    want = {s['title'] for s in order}
+    src = sorted([x for x in old if x['k'] in want and x.get('nf', 1) >= 4 and x.get('keep') != 'maybe' and x.get('r') != 'u'], key=lambda x: (x.get('pri', 3), -x.get('nf', 1)))[:1200]
     ups = collections.Counter()
     def upl(x):
         j = get('https://archive.org/metadata/' + urllib.parse.quote(x['i']) + '/metadata') or {}
@@ -534,9 +680,10 @@ def plan():
         if len(hits) >= 8000: continue
         for it in hits:
             i = it.get('identifier')
-            if not i or i in seen or i in mine or i in have: continue
+            if not i or i in seen or i in mine: continue
             t = flat(it.get('title'))
             for sh in order:
+                if i in have and not sh['full']: continue
                 nm, hd = find(sh, t)
                 if not nm or hd < 0.5 or nm['lvl'] >= 2: continue
                 try: v = consider(sh, it, 't')
@@ -577,18 +724,57 @@ def run_meta():
 def hours(L): return round(sum(sum(f[1] for f in x['f']) for x in L) / 3600)
 def merge():
     old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
-    other = load_ids(); old = []
+    held = []; other = load_ids(held); old = []
+    def dup(x): return x['i'] in other and not (x.get('sup') and len(x['f']) > other[x['i']])
     for x in old0:
-        why = 'held in another catalog file' if x['i'] in other else recheck(x)
+        why = 'held in another catalog file' if dup(x) else recheck(x)
         if why: print('DROP', x['k'], '|', x['i'], '|', x['t'][:80], '|', why)
         else: old.append(x)
     have = {x['i'] for x in old}; add = []
     for p in sorted(glob.glob(os.path.join(PARTS, 'needs-[0-9]*.json.gz'))):
         for x in json.load(gzip.open(p, 'rt', encoding='utf-8')):
-            if x['i'] not in have and x['i'] not in other: have.add(x['i']); add.append(x)
+            if x['i'] not in have and not dup(x): have.add(x['i']); add.append(x)
     res = old + add
     for x in res:
         sh = BYT[x['k']]; x['q'] = sh['q']; x['pri'] = sh['pri']; x['ct'] = sh['ct']
+        if sh['full']:
+            tag_full(sh, x)
+            if not x.get('se') and not x.get('keep'): maybe(x, 'no file matched the episode guide')
+    fulls = sorted([s for s in SHOWS if s['full']], key=lambda s: -len(s['title']))
+    cov = {s['title']: {'held': {}, 'new': {}} for s in fulls}
+    def credit(x, where):
+        for r in x.get('se', []):
+            k = r[4] if len(r) > 4 else x['k']
+            if k in cov: cov[k][where].setdefault(r[1], []).append(x['i'])
+    for x in res:
+        if BYT[x['k']]['full'] and not x.get('keep'): credit(x, 'new')
+    quick = re.compile('|'.join(sorted({re.escape(nm['n']) for s in fulls for nm in s['names'] if nm['lvl'] <= 1}, key=len, reverse=True)) or 'no full shows')
+    for x in held:
+        t = flat(x.get('t')); low = clean(t)
+        if not quick.search(norm(low)) or NONLAT.search(t) or FOREIGN.search(low): continue
+        for sh in fulls:
+            nm, hd = find(sh, t)
+            if not nm or nm['lvl'] >= 2 or (sh['junk'] and sh['junk'].search(low)) or JUNK.search(strip_names(sh, low)): continue
+            y = {'i': x['i'], 't': t, 'k': sh['title'], 'f': [f for f in x['f'] if isinstance(f, list) and len(f) > 1 and isinstance(f[0], str) and isinstance(f[1], (int, float)) and f[1] >= EPLEN[sh['type']] * 0.8]}
+            if y['f'] and tag_full(sh, y):
+                credit(y, 'held'); print('HELD', sh['title'], '|', x['i'], '|', t[:70], '|', len(x['f']), 'files', len(y['se']), 'episodes')
+            break
+    coverage = {}
+    print('COVERAGE TABLE')
+    for sh in sorted(fulls, key=lambda s: s['title']):
+        g = EP.get(sh['title']) or {}; c = cov[sh['title']]
+        codes = ['S%02dE%02d' % w for w in g.get('order', [])]
+        got = set(c['held']) | set(c['new'])
+        miss = [k for k in codes if k not in got]
+        per = collections.OrderedDict()
+        for k in codes:
+            v = per.setdefault(k[:3], [0, 0]); v[1] += 1; v[0] += k in got
+        coverage[sh['title']] = {'episodes': len(codes), 'held_elsewhere': len(set(c['held']) & set(codes)), 'in_this_file': len(set(c['new']) & set(codes)), 'covered': len(codes) - len(miss), 'seasons': {k: '%d/%d' % tuple(v) for k, v in per.items()}, 'missing': [[k, g['names'][(int(k[1:3]), int(k[4:6]))]] for k in miss]}
+        print('  COVER %-32s episodes %3d held elsewhere %3d here %3d covered %3d missing %3d | %s' % (sh['title'], len(codes), len(set(c['held']) & set(codes)), len(set(c['new']) & set(codes)), len(codes) - len(miss), len(miss), ' '.join('%s %d/%d' % (k, v[0], v[1]) for k, v in per.items())))
+        if not codes: print('  COVER', sh['title'], 'no episode guide loaded')
+        for k in miss: print('    MISSING', sh['title'], k, '|', g['names'][(int(k[1:3]), int(k[4:6]))])
+        only = [k for k in codes if k in c['new'] and k not in c['held']]
+        print('    NEWLY COVERED', sh['title'], len(only), ' '.join(only))
     with gzip.open(OUTF, 'wt', encoding='utf-8') as f: json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
     if GUIDE:
         with gzip.open(GUIDEF, 'wt', encoding='utf-8') as f: json.dump(GUIDE, f, ensure_ascii=False, separators=(',', ':'))
@@ -607,24 +793,27 @@ def merge():
             if not got: loose += sum(1 for f in x['f'] if f[1] >= EPLEN.get(sh['type'], 900) * 0.75)
         n = len(eps) + loose
         ge = g.get('n', 0)
-        if not L: st = 'MISSING'
+        if sh['full'] and ge: st = 'FOUND' if coverage[sh['title']]['covered'] >= ge else 'THIN'
+        elif not L: st = 'MISSING'
         elif not sure: st = 'MAYBE'
         elif sh['cls'] == 'scripted': st = 'FOUND' if n >= max(4, min(20, 0.15 * ge)) else 'THIN'
         else: st = 'FOUND' if n >= 5 else 'THIN'
         rows.append({'title': sh['title'], 'pri': sh['pri'], 'type': sh['type'], 'net': sh['net'], 'years': sh['years'], 'guide_episodes': ge, 'items': len(L), 'maybe': len(L) - len(sure), 'files': sum(len(x['f']) for x in L), 'hours': hours(L), 'episodes': len(eps), 'other_files': loose, 'status': st})
     tot = {}
-    for p in (1, 2, 3):
+    for p in (0, 1, 2, 3):
         R = [r for r in rows if r['pri'] == p]
         tot[str(p)] = {'shows': len(R), **{s.lower(): sum(1 for r in R if r['status'] == s) for s in ('FOUND', 'THIN', 'MAYBE', 'MISSING')}, 'items': sum(r['items'] for r in R), 'hours': sum(r['hours'] for r in R)}
-    json.dump({'updated': time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime()), 'items': len(res), 'hours': hours(res), 'priority': tot, 'shows': rows}, open(REPF, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+    json.dump({'updated': time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime()), 'items': len(res), 'hours': hours(res), 'priority': tot, 'coverage': coverage, 'shows': rows}, open(REPF, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
     print('PRIORITY TABLE')
-    for p in ('1', '2', '3'): print('  pri', p, tot[p])
+    for p in ('0', '1', '2', '3'): print('  pri', p, tot[p])
     print('SHOW TABLE')
     for r in rows: print('  %-7s pri%d %-9s items %4d maybe %4d files %5d hours %5d eps %4d/%-4d other %4d | %s' % (r['status'], r['pri'], r['type'], r['items'], r['maybe'], r['files'], r['hours'], r['episodes'], r['guide_episodes'], r['other_files'], r['title']))
     print('era years', sorted(collections.Counter(str(x['e']) for x in res).items()))
     print('categories', sorted(collections.Counter(x['q'] for x in res).items()))
     print('maybe reasons', collections.Counter(x.get('why') for x in res if x.get('keep')).most_common(12))
     random.seed(len(res))
+    for x in res:
+        if BYT[x['k']]['full']: print('FULL', x['k'], '|', x['i'], '|', x['t'][:70], '|', len(x['f']), 'files', len(x.get('se') or []), 'episodes', '| sup' if x.get('sup') else '|', x.get('why', ''))
     for label, L in (('NEW', add), ('ALL', res), ('MAYBE', [x for x in res if x.get('keep')])):
         for x in random.sample(L, min(60, len(L))): print('SAMPLE', label, x['q'], '|', x['k'], '|', x['t'][:80], '|', x['i'][:40], '|', round(sum(f[1] for f in x['f']) / 60), 'min', '|', len(x['f']), 'files', len(x.get('se') or []), 'eps', '|', x['e'], '|', x.get('why', ''))
 if MODE == 'plan': plan()
