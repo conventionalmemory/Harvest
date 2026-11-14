@@ -13,7 +13,7 @@ TVCOL = 'television OR television_inbox OR classic_tv OR classic_tv_1980s OR cla
 TVSET = set(TVCOL.split(' OR '))
 DISQ = 'title:(season OR seasons OR episode OR episodes OR complete OR series OR sitcom OR nbc OR cbs OR abc OR fox OR upn OR vhs OR commercials OR woc OR "tv show" OR pilot OR finale OR s0* OR s1* OR 1x* OR 2x* OR 3x* OR 4x* OR 5x*) OR subject:(television OR sitcom OR "tv series" OR "tv show" OR nbc OR cbs OR abc OR vhs OR commercials OR "tv")'
 DISC = re.compile(r"\b(s\d{1,2}\s?e\d{1,3}|\d{1,2}x\d{2}|season\s?\d|seasons?|episodes?|ep\.?\s?\d|complete|series|sitcom|nbc|cbs|abc|fox|upn|wb|vhs|commercials|woc|w/o/c|tv show|pilot|finale|syndicat|aired|airing|broadcast|rerun)\b")
-JUNK = re.compile(r"\b(trailers?|teasers?|promos?|bumpers?|opening|intro|theme song|theme|soundtrack|ost|review|reviews|reaction|reacts?|podcast|commentary|interview|interviews|panel|q&a|reunion special 20|behind the scenes|bloopers?|outtakes|gag reel|tribute|fan ?made|fan ?edit|fanvid|amv|parody|recap|explained|analysis|ranking|ranked|top \d+|video essay|documentary about|making of|game|gameplay|walkthrough|playthrough|longplay|ps[1-5]|xbox|nintendo|sega|pinball|slot machine|lego|toy|toys|figure|unboxing|audiobook|audio book|book|novel|comic|magazine|script|screenplay|sermon|church|council|selectmen|committee|town meeting|lecture|seminar|conference|webinar|karaoke|cover|remix|live at|concert|album|mixtape|dj|radio|stream|twitch|youtube|tiktok|remaster(ed)?|upscaled?|ai|deepfake|mock|ytp|compilation of clips|clips?|scene|scenes|moments|highlights|best of youtube|dublado|doblaje|doblada|latino|castellano|espa[nñ]ol|deutsch|german|fran[cç]ais|french|italiano|italian|portugu[eê]s|legendado|subtitulado|vostfr|rus|russian|polish|polski|hindi|arabic|turkish|greek|dutch|svenska|suomi|norsk|dansk|magyar|czech|bbc|itv|channel 4|sky one|uk tv|uk|australia|australian|canada only|sub ita|sub esp|sub|subs|subtitle|subtitles|subbed|indonesia|malay|thai|vietsub|tagalog|historical society|museum|middle school|high school|jr|junior|lions club|talk series|live stream|livestream|discord|socials|tell all|cycle \d+|wrestling|ajpw|njpw|army|racing|paranormal|artist|thomas|tank engine|dora|bond|cupid|translation)\b")
+JUNK = re.compile(r"\b(trailers?|teasers?|promos?|bumpers?|opening|intro|theme song|theme|soundtrack|ost|review|reviews|reaction|reacts?|podcast|commentary|interview|interviews|panel|q&a|reunion special 20|behind the scenes|bloopers?|outtakes|gag reel|tribute|fan ?made|fan ?edit|fanvid|amv|parody|recap|explained|analysis|ranking|ranked|top \d+|video essay|documentary about|making of|game|gameplay|walkthrough|playthrough|longplay|ps[1-5]|xbox|nintendo|sega|pinball|slot machine|lego|toy|toys|figure|unboxing|audiobook|audio book|book|novel|comic|magazine|script|screenplay|sermon|church|council|selectmen|committee|town meeting|lecture|seminar|conference|webinar|karaoke|cover|remix|live at|concert|album|mixtape|dj|radio|stream|twitch|youtube|tiktok|remaster(ed)?|upscaled?|ai|deepfake|mock|ytp|compilation of clips|clips?|scene|scenes|moments|highlights|credits|best of youtube|dublado|doblaje|doblada|latino|castellano|espa[nñ]ol|deutsch|german|fran[cç]ais|french|italiano|italian|portugu[eê]s|legendado|subtitulado|vostfr|rus|russian|polish|polski|hindi|arabic|turkish|greek|dutch|svenska|suomi|norsk|dansk|magyar|czech|bbc|itv|channel 4|sky one|uk tv|uk|australia|australian|canada only|sub ita|sub esp|sub|subs|subtitle|subtitles|subbed|indonesia|malay|thai|vietsub|tagalog|historical society|museum|middle school|high school|jr|junior|lions club|talk series|live stream|livestream|discord|socials|tell all|cycle \d+|wrestling|ajpw|njpw|army|racing|paranormal|artist|thomas|tank engine|dora|bond|cupid|translation)\b")
 NONLAT = re.compile(r'[^\x00-\xff‐-‧™]')
 MODERN = re.compile(r'(?<!\d)(20(0[5-9]|[1-3]\d))(?!\d)')
 YR = re.compile(r'(?<!\d)(19[5-9]\d|20[0-3]\d)(?!\d)')
@@ -84,10 +84,11 @@ for _k, _rows in GUIDE.items():
         if len(_z) >= 8 and _z not in GENT and _z not in _own and len(_z.split()) >= 2: _t[_z] = (_s, _n)
     EP[_k] = {'t': sorted(_t.items(), key=lambda kv: -len(kv[0])), 'd': {(_s, _n): _d for _s, _n, _nm, _d in _rows}, 'maxs': max([r[0] for r in _rows] or [0])}
 SE1 = re.compile(r"\bs(?:eason)?\s?(\d{1,2})[\s._-]{0,3}(?:e|ep|episode)\s?(\d{1,3})\b|\b(\d{1,2})x\s?(\d{1,3})\b")
+def nse(low): return re.sub(r'\bsn\s?(\d{1,2})\s?ep\s?(\d{1,3})\b', r's\1e\2', re.sub(r'\bs(\d{1,2})x(\d{1,3})\b', r's\1e\2', low))
 def file_se(sh, text):
     g = EP.get(sh['title'])
     if not g: return None
-    low = clean(text)
+    low = nse(clean(text))
     m = SE1.search(low)
     if m:
         a, b = (int(m.group(1)), int(m.group(2))) if m.group(1) else (int(m.group(3)), int(m.group(4)))
@@ -142,7 +143,8 @@ def item_year(it):
     m = re.match(r'(\d{4})', flat(it.get('date')) or flat(it.get('year')) or '')
     return int(m.group(1)) if m else 0
 SPIN = re.compile(r"\b(svu|special victims|criminal intent|trial by jury|golden palace|new class|college years|girl meets world|fuller house|the conners|young sheldon|reboot|revival|frasier 2023|animated series)\b")
-FOREIGN = re.compile(r"\b(saison|temporada|staffel|episodio|epis[oó]dio|cap[ií]tulo|folge|parte|piloto|serie tv|vf|fr|ita|lat|pt br|dual audio|dublagem|dub|napisy|lektor|esp|ger|nl|temp|s[eé]rie)\b")
+FORF = re.compile(r'\b(dublado|doblaje|doblada|castellano|latino|legendado|temporada|b[oö]l[uü]m|sezon|cap[ií]tulo|vostfr|lektor|napisy)\b')
+FOREIGN = re.compile(r"\b(sezon|saison|temporada|staffel|episodio|epis[oó]dio|cap[ií]tulo|folge|parte|piloto|serie tv|vf|fr|ita|lat|pt br|dual audio|dublagem|dub|napisy|lektor|esp|ger|nl|temp|s[eé]rie)\b")
 DESCEV = re.compile(r"\b(sitcom|tv series|television series|nbc|cbs|abc|upn|the wb|syndicat\w*|vhs|commercials|laugh track|primetime|prime time)\b")
 JUNKD = re.compile(r"\b(podcast|sermon|city council|board of|town meeting|gameplay|walkthrough|let's play|longplay|reviews?|reaction|public access|community television|community media|pastor|ministry|church|webinar|lecture|school district|chamber of commerce|library|nonprofit|non-profit|fundraiser|workshop|expo|home show|contractor|remodeling tips)\b")
 TAPE = re.compile(r"\b(vhs|betamax|tape|taped|recorded|recording|commercials|woc|broadcast|aired|airing|nbc|cbs|abc|fox|upn|wb|tgif|must see tv|primetime|prime time)\b")
@@ -179,7 +181,8 @@ def verify(sh, x):
     blob = ((x.get('ds') or '') + ' ' + (x.get('s') or '')).lower()
     return has_cast(sh, blob) or bool(DESCEV.search(blob)) or (len(ds) >= 3 and 1080 <= ds[len(ds) // 2] <= 4200)
 def season_ok(sh, low):
-    if sh.get('maxs') and any(n > sh['maxs'] for n in seasons(low)) and not MULTI.search(low): return False
+    mx = sh.get('maxs') or (sh['last'] > 2004 and (EP.get(sh['title']) or {}).get('maxs')) or 0
+    if mx and any(n > mx for n in seasons(low)) and not MULTI.search(low): return False
     return all(start(sh) + n - 1 <= sh['last'] + 1 for n in seasons(low))
 def consider(sh, it, route='t'):
     t = flat(it.get('title')); low = clean(t)
@@ -254,7 +257,7 @@ def named(sh, text):
 def hd2(sh, text):
     return max(head(sh, text), head(dict(sh, q=sh['alt']), text) if sh.get('alt') else 0)
 def fhead(sh, path):
-    return max(hd2(sh, re.sub(r'\.(ia\.)?[a-z0-9]{2,4}$', '', part.lower())) for part in path.split('/'))
+    return max(hd2(sh, nse(clean(re.sub(r'\.(ia\.)?[a-z0-9]{2,4}$', '', part.lower())))) for part in path.split('/'))
 def amb1(sh): return bool(sh.get('amb')) and len(sig(sh['q'][0])) <= 1
 def fcheck(sh, ident, files, real, text):
     g = EP.get(sh['title'])
@@ -309,6 +312,7 @@ def load_old():
     keep, drop = [], []
     for x in json.load(gzip.open(F, 'rt', encoding='utf-8')):
         sh = BYT.get(x.get('k'))
+        if sh and sum(1 for f in x['f'] if FORF.search(clean(f[0]))) * 2 > len(x['f']): drop.append(x); continue
         if sh and x.get('fv'):
             if fv_ok(sh, x): keep.append(x)
             else: drop.append(x)
@@ -504,6 +508,7 @@ def meta(c):
         if BYT[c['k']].get('guide'): print('NOFILES', c['k'], '|', c['identifier'], '|', len(j['files']), sorted(collections.Counter(f.get('name', '').rsplit('.', 1)[-1].lower()[:6] for f in j['files']).items()), [(f.get('name', '')[-40:], f.get('format'), f.get('length'), f.get('size')) for f in j['files'] if f.get('name', '').lower().endswith(('.mp4', '.m4v', '.mkv', '.avi', '.mpg', '.mpeg', '.iso', '.vob', '.ts', '.wmv', '.flv', '.rm', '.zip', '.rar', '.7z'))][:4], flush=True)
         return rej(c, 'nomp4_other' if nomp4 else 'nofiles')
     if sum(f[1] for f in files) < 900: return rej(c, 'short')
+    if sum(1 for f in files if FORF.search(clean(f[0]))) * 2 > len(files): return rej(c, 'foreign-language files')
     files.sort(key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f[0])])
     sh = BYT[c['k']]; fwhy = ''
     if c.get('r') == 'f':
@@ -538,7 +543,7 @@ def tag(sh, x):
     g = EP.get(sh['title'])
     if not g: return
     one = len(x['f']) <= 2; se = []; keep = []; sn = x.get('sn') or one_season(clean(x['t']))
-    loose = amb1(sh) and not (head(sh, x['t']) == 2 or seg(sh, x['t']))
+    loose = amb1(sh) and not (head(sh, x['t']) == 2 or seg(sh, x['t']) or (head(sh, x['t']) == 1 and MULTI.search(clean(x['t']))))
     qs = [norm(q) for q in sh['q']]
     rows = []
     for f in x['f']:
@@ -547,6 +552,15 @@ def tag(sh, x):
             m = re.search(r"(?:\bepisode|\bep|\be)\.?\s?(\d{1,2})\b|^\D{0,3}(\d{1,2})\b", clean(f[0].rsplit('/', 1)[-1]))
             base = norm(clean(f[0].rsplit('/', 1)[-1].rsplit('.', 1)[0]))
             if m and (any(q in base for q in qs) or re.match(r'(s\d{1,2} ?)?(episode|ep|e)? ?\d{1,2}\b', base)): v = (sn, int(m.group(1) or m.group(2)))
+        if not v:
+            base = norm(clean(re.sub(r'\.(ia\.)?[a-z0-9]{2,4}$', '', f[0].rsplit('/', 1)[-1].lower())))
+            for q in qs:
+                m = re.match(r'(\d)(\d\d)\b', base[len(q) + 1:]) if base.startswith(q + ' ') else None
+                if m and (int(m.group(1)), int(m.group(2))) in g['d']: v = (int(m.group(1)), int(m.group(2))); break
+            m = re.fullmatch(r'(?:episode|ep) (\d{1,3})', base); ms = re.search(r'season\s?(\d{1,2})/[^/]*$', f[0].lower())
+            if m and ms and 0 < int(m.group(1)) <= len(g['d']):
+                w = sorted(g['d'])[int(m.group(1)) - 1]
+                if w[0] == int(ms.group(1)): v = w
         if v and loose and fhead(sh, f[0]) < 2 and not ep_key(sh, clean(f[0].rsplit('/', 1)[-1])): v = None
         if sh.get('fjunk') and re.search(sh['fjunk'], clean(f[0])): continue
         if other_show(sh, f[0]): continue
