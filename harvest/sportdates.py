@@ -995,7 +995,8 @@ def resolve(SC, title, desc='', ctx=''):
             elif re.search(r' (winston cup|nextel cup|cup series|nwcs) ', tx): sr = ''
             elif re.search(r' (busch north|bgnn|modified|modifieds|southwest tour|featherlite|dash series|arca|irl|formula one|formula 1|nhra|imsa|trans am|iroc|winter heat|late model|sprint car|world of outlaws) ', tx): return None, 'race_otherseries'
             if sr is not None: break
-        c = racefind(SC, nt, ys, sr, norm(desc[:200]), netof(title, ''))
+        dn = set({'espn2': 'espn', 'wtbs': 'tbs'}.get(v, v) for v in re.findall(NETS, (desc or '')[:200].lower()))
+        c = racefind(SC, nt, ys, sr, norm(desc[:200]), netof(title, '') or (list(dn)[0] if len(dn) == 1 else ''))
         ds = sorted(set(e['d'] for e in c))
         if len(ds) > 1 and (datetime.date.fromisoformat(ds[-1]) - datetime.date.fromisoformat(ds[0])).days <= 3: c = [e for e in c if e['d'] == ds[-1]]
         if not c and not re.search(r' [1-9]\d\dk?s? ', nt) and sr not in ('cart', 'west'): return None, 'race_noname'
