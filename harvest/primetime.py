@@ -312,12 +312,14 @@ def load_old():
     keep, drop = [], []
     for x in json.load(gzip.open(F, 'rt', encoding='utf-8')):
         sh = BYT.get(x.get('k'))
+        if sh and FOCUS and not (sh['title'].lower() in FOCUS or ('guide' in FOCUS and sh.get('guide') == 1) or ('must' in FOCUS and sh.get('must'))): keep.append(x); continue
         if sh and sum(1 for f in x['f'] if FORF.search(clean(f[0]))) * 2 > len(x['f']): drop.append(x); continue
         if sh and x.get('fv'):
             if fv_ok(sh, x): keep.append(x)
             else: drop.append(x)
             continue
         r = sh and consider(sh, {'title': x.get('t'), 'collection': x.get('c'), 'subject': x.get('s'), 'description': x.get('ds'), 'date': '' if x.get('ad') else x.get('d')}, 'd' if x.get('r') == 'd' else 't')
+        if not r and sh and sh.get('guide') and x.get('se') and fv_ok(sh, x) == 'name': r = 't'
         if r in ('b', 'd'): x['r'] = r
         if not r: drop.append(x); continue
         if not post_ok(sh, x): maybe(x, 'files shorter than a normal episode')
@@ -354,6 +356,7 @@ def plan():
                 qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({sep.join(ws) + '*' for sep in ('-', '_', '.', '')})) + ') AND NOT title:("%s")' % ph, 'f'))
                 qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({'*' + sep.join(ws) + '*' for sep in ('-', '_', '')})) + ') AND NOT title:("%s")' % ph, 'f'))
                 if q == sh['q'][0]: qs += [('mediatype:movies AND title:("%s")' % a, 'f') for a in sh.get('alt', [])]
+                qs.append(('"%s"%s AND NOT mediatype:(movies OR audio OR etree OR image OR collection OR account) AND format:(MPEG4 OR "h.264" OR "h.264 IA" OR "512Kb MPEG4" OR Matroska OR QuickTime)' % (ph, extra), 'f'))
             for qq, route in qs:
                 hits = scrape(qq); st = [len(hits), 0, 0, 0]
                 if sh.get('guide'): DIAG[sh['title']].append((route, qq[:150], st))
@@ -391,7 +394,11 @@ def plan():
                 if it.get('pt'): seen[i]['pt'] = it['title']; peri[sh['title']] += 1
                 if r == 't': per[sh['title']] += 1
                 else: perd[sh['title']] += 1
-    ups = collections.defaultdict(set); src = [x for x in keep if BYT[x['k']].get('guide') == 1 and (x.get('fv') or len(x.get('se') or []) >= 5)]
+    cov = collections.defaultdict(set)
+    for x in keep:
+        for r in x.get('se') or []: cov[x['k']].add(r[1])
+    thin = {k for k in EP if len(cov[k]) < 0.5 * max(1, len(EP[k]['d']))}
+    ups = collections.defaultdict(set); src = [x for x in keep if (BYT[x['k']].get('guide') == 1 and (x.get('fv') or len(x.get('se') or []) >= 5)) or (x['k'] in thin and x.get('se') and (not FOCUS or x['k'].lower() in FOCUS))]
     def upl(x):
         j = get('https://archive.org/metadata/' + urllib.parse.quote(x['i']) + '/metadata') or {}
         return x['k'], flat((j.get('result') or {}).get('uploader'))
@@ -406,6 +413,7 @@ def plan():
             if not i or i in seen or i in mine: continue
             for k in sorted(ks):
                 sh = BYT[k]
+                if i in have and sh.get('guide') != 1: continue
                 try: r = fcons(sh, it)
                 except Exception: r = False
                 if r:
@@ -507,7 +515,9 @@ def meta(c):
         if fmts: REJ['fmt ' + ' / '.join(sorted(fmts))[:80]] += 1
         if BYT[c['k']].get('guide'): print('NOFILES', c['k'], '|', c['identifier'], '|', len(j['files']), sorted(collections.Counter(f.get('name', '').rsplit('.', 1)[-1].lower()[:6] for f in j['files']).items()), [(f.get('name', '')[-40:], f.get('format'), f.get('length'), f.get('size')) for f in j['files'] if f.get('name', '').lower().endswith(('.mp4', '.m4v', '.mkv', '.avi', '.mpg', '.mpeg', '.iso', '.vob', '.ts', '.wmv', '.flv', '.rm', '.zip', '.rar', '.7z'))][:4], flush=True)
         return rej(c, 'nomp4_other' if nomp4 else 'nofiles')
-    if sum(f[1] for f in files) < 900: return rej(c, 'short')
+    g0 = EP.get(c['k'])
+    lim = 600 if g0 and c.get('must') and any((file_se(BYT[c['k']], f[0].rsplit('/', 1)[-1]) or (file_se(BYT[c['k']], c.get('pt') or flat(m.get('title'))) if len(files) <= 2 else None)) in g0['d'] for f in files) else 900
+    if sum(f[1] for f in files) < lim: return rej(c, 'short')
     if sum(1 for f in files if FORF.search(clean(f[0]))) * 2 > len(files): return rej(c, 'foreign-language files')
     files.sort(key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f[0])])
     sh = BYT[c['k']]; fwhy = ''
@@ -620,7 +630,7 @@ def merge():
     got2 = collections.defaultdict(set); discs = collections.defaultdict(set)
     R = collections.defaultdict(lambda: [0, 0, 0])
     keys = [(sh, [' ' + norm(q) + ' ' for q in sh['q']]) for sh in SHOWS]
-    seenr = set()
+    seenr = set(); got3 = collections.defaultdict(set); gkeys = [(sh, [' ' + norm(q) + ' ' for q in sh['q']]) for sh in SHOWS if sh['title'] in EP and sh.get('guide')]; gdone = set()
     for p in sorted(glob.glob(os.path.join(OUT, '*.json.gz'))):
         if p.endswith('primetime.json.gz') or p.endswith('ads.json.gz'): continue
         try: rows = json.load(gzip.open(p, 'rt', encoding='utf-8'))
@@ -628,6 +638,14 @@ def merge():
         for x in rows:
             if not isinstance(x, dict) or x.get('i') in seenr or not x.get('f'): continue
             nt = ' ' + norm(clean(x.get('t', ''))) + ' '
+            if x.get('ds') and len(x['f']) <= 2 and x['i'] not in gdone:
+                try: tl = sum(f[1] for f in x['f'] if isinstance(f[1], (int, float)))
+                except Exception: tl = 0
+                if tl >= 2400:
+                    gdone.add(x['i']); zz = nt + norm(clean(x['ds'])) + ' '
+                    for sh, qs in gkeys:
+                        if any(q in zz for q in qs):
+                            for z in desc_eps(sh, {'t': x.get('t', ''), 'f': x['f']}, x['ds']): got3[sh['title']].add(z)
             for sh, qs in keys:
                 if any(q in nt for q in qs) and (consider(sh, {'title': x.get('t'), 'collection': x.get('c'), 'subject': x.get('s'), 'description': x.get('ds'), 'date': ''}) == 't' or (sh.get('guide') == 2 and (not amb1(sh) or head(sh, x.get('t', '')) == 2 or seg(sh, x.get('t', ''))) and not JUNK.search(clean(x.get('t', ''))) and guide_ok(sh, clean(x['f'][0][0].rsplit('/', 1)[-1] + ' ' + (x.get('t', '') if len(x['f']) <= 2 else ''))))):
                     if sh.get('guide') and sh['title'] in EP:
@@ -697,8 +715,8 @@ def merge():
         bys = collections.defaultdict(list)
         for (a, b) in sorted(g['d']): bys[a].append(b)
         for z in got2[k]: got[z] += 0
-        ntp = sum(1 for z in tp if not got[z] and z not in got2[k])
-        for z in tp: got2[k].add(z)
+        ntp = sum(1 for z in tp | got3[k] if not got[z] and z not in got2[k])
+        for z in tp | got3[k]: got2[k].add(z)
         tot = sum(1 for (a, b) in g['d'] if got['S%02dE%02d' % (a, b)])
         both = sum(1 for (a, b) in g['d'] if got['S%02dE%02d' % (a, b)] or 'S%02dE%02d' % (a, b) in got2[k])
         print('== GUIDE', k, 'episodes tagged here', tot, 'with other catalogs and tape descriptions', both, 'only in tape descriptions', ntp, 'of', len(g['d']), 'disc packs for seasons', sorted(discs[k]))

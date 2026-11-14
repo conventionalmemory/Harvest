@@ -59,6 +59,8 @@ jobs:
           path: parts
           merge-multiple: true
       - name: Merge
+        env:
+          FOCUS: ${{ inputs.focus }}
         run: MODE=merge python3 harvest/primetime.py
       - name: Commit
         run: |
