@@ -41,6 +41,19 @@ RD3 = re.compile(r'(?<!\d)((?:19|20)\d\d)-(\d\d)-(\d\d)(?!\d)')
 def iso(y, m, d):
     try: return datetime.date(int(y), int(m), int(d)).isoformat()
     except Exception: return None
+TZO = {'e': 0, 'c': 1, 'm': 2, 'p': 3}
+RTM = re.compile(r'(?<![\d:])(\d{1,2})(?::(\d\d))?\s*([ap])\.?\s?m\.?,?\s*\(?([ecmp])[sd]?t\b', re.I)
+RTM0 = re.compile(r'(?<![\d:])(\d{1,2})(?::(\d\d))?\s*([ap])\.?\s?m\b', re.I)
+def ptime(text, dz=None):
+    m = RTM.search(text); z = m.group(4).lower() if m else dz
+    if not m: m = RTM0.search(text)
+    if not m or not z or not (0 < int(m.group(1)) <= 12) or int(m.group(2) or 0) > 59: return ''
+    h = int(m.group(1)) % 12 + (12 if m.group(3).lower() == 'p' else 0) + TZO[z]
+    return '%02d:%02d' % (h % 24, int(m.group(2) or 0))
+NETS = r'\b(abc|cbs|nbc|fox|espn2|espn|tnt|tbs|tnn|usa|upn|fx|speedvision|speed)\b'
+def pnet(text):
+    m = re.search(NETS, text.lower())
+    return {'espn2': 'espn', 'speedvision': 'speed'}.get(m.group(1), m.group(1)) if m else ''
 def pdate(text, yfn=None):
     m = RD3.search(text)
     if m: return iso(m.group(1), m.group(2), m.group(3))
@@ -138,7 +151,7 @@ def nfl_like(blocks, lg, team, season, src):
             if col(cells, 'opponent') >= 0 and col(cells, 'date') >= 0: hdr = cells; ht = b[2]
             continue
         if not hdr or b[2] != ht or len(cells) < 3: continue
-        io, idt, iw, itv = col(hdr, 'opponent'), col(hdr, 'date'), col(hdr, 'week', 'round', 'game'), col(hdr, 'tv', 'network')
+        io, idt, iw, itv, itm = col(hdr, 'opponent'), col(hdr, 'date'), col(hdr, 'week', 'round', 'game'), col(hdr, 'tv', 'network'), col(hdr, 'time', 'kickoff')
         off = len(cells) - len(hdr)
         def cell(i):
             return cells[i] if 0 <= i < len(cells) else ''
@@ -154,15 +167,19 @@ def nfl_like(blocks, lg, team, season, src):
         if neutral: e['n'] = 1
         if wk.isdigit(): e['wk'] = int(wk)
         elif wk: e['rd'] = wk[:24]
-        tv = cell(itv).lower() if itv >= 0 else ''
-        m = re.search(r'\b(abc|cbs|nbc|fox|espn|tnt|tbs)\b', tv)
-        if m: e['net'] = m.group(1)
+        tv = pnet(cell(itv)) if itv >= 0 else ''
+        if tv: e['net'] = tv
+        if itm >= 0:
+            st = ptime(cell(itm), 'e' if re.search(r'\b(et|est|edt|eastern)\b', hdr[itm].lower()) else None)
+            if st: e['st'] = st
         ev.append(e)
     return ev
 def series(blocks, lg, year, src, ser=''):
-    ev = []; heads = {}; hdr = None; ht = -1; cur = None
+    ev = []; heads = {}; hdr = None; ht = -1; cur = None; nets = set()
     yfn = lambda mo: year
     for b in blocks:
+        if b[0] == 'row' and len(b[1]) == 2 and b[1][0].strip().lower() in ('television', 'tv', 'network', 'networks', 'broadcast', 'tv network'):
+            nets |= set({'espn2': 'espn'}.get(v, v) for v in re.findall(NETS, b[1][1].lower()))
         if b[0] == 'h':
             for k in [k for k in heads if k >= b[1]]: del heads[k]
             heads[b[1]] = b[2]; continue
@@ -191,6 +208,8 @@ def series(blocks, lg, year, src, ser=''):
         if g is None and m: g = int(m.group(1))
         e = {'lg': lg, 'd': d, 'a': rt[0], 'h': rt[1], 'y': year, 'src': src, 'hk': hk[:80]}
         if g: e['g'] = g
+        st = ptime(text)
+        if st: e['st'] = st
         s2 = ser or serof(lg, hk)
         if s2: e['ser'] = s2
         ev.append(e)
@@ -200,6 +219,7 @@ def series(blocks, lg, year, src, ser=''):
         if k in seen:
             if e.get('g') and not seen[k].get('g'): seen[k]['g'] = e['g']
             if e.get('ser') and not seen[k].get('ser'): seen[k]['ser'] = e['ser']
+            if e.get('st') and not seen[k].get('st'): seen[k]['st'] = e['st']
             continue
         seen[k] = e; out.append(e)
     by = collections.defaultdict(list)
@@ -208,6 +228,8 @@ def series(blocks, lg, year, src, ser=''):
         L.sort(key=lambda e: e['d'])
         if len(L) <= 7 and sum(1 for e in L if e.get('g')) < len(L):
             for n, e in enumerate(L): e['g'] = n + 1
+    if len(nets) == 1:
+        for e in out: e['net'] = list(nets)[0]
     return out
 def serof(lg, hk):
     h = hk.lower()
@@ -256,7 +278,7 @@ def boxrec(blocks, name, src):
         if not d or not ('1984' <= d[:4] <= '2004'): continue
         ev.append({'lg': 'boxing', 'd': d, 'a': norm(name).strip(), 'h': norm(cells[io]).strip(), 'src': src})
     return ev
-def races(blocks, year, src):
+def races(blocks, year, src, sr=''):
     ev = []; hdr = None; ht = -1; head = ''
     yfn = lambda mo: year
     for b in blocks:
@@ -267,10 +289,14 @@ def races(blocks, year, src):
                 if col(cells, 'date') >= 0: hdr = cells; ht = b[2]
                 continue
             if hdr and b[2] == ht:
-                idt, ir = col(hdr, 'date'), col(hdr, 'race', 'event')
+                idt, ir, itr, itv = col(hdr, 'date'), col(hdr, 'race', 'event'), col(hdr, 'track', 'venue', 'location', 'site', 'circuit'), col(hdr, 'tv', 'network', 'television')
                 if 0 <= idt < len(cells) and 0 <= ir < len(cells):
                     d = pdate(cells[idt], yfn)
-                    if d and re.search(r'\d{3}|shootout|winston|clash|all.star', cells[ir].lower()): ev.append({'lg': 'racing', 'd': d, 'k': norm(cells[ir]).strip(), 'y': year, 'src': src})
+                    if d and re.search(r'\d{3}|shootout|winston|clash|all.star', cells[ir].lower()):
+                        e = {'lg': 'racing', 'd': d, 'k': norm(cells[ir]).strip(), 'y': year, 'src': src}
+                        if 0 <= itr < len(cells) and itr != ir: e['tr'] = norm(cells[itr]).strip()[:60]
+                        if 0 <= itv < len(cells) and pnet(cells[itv]): e['net'] = pnet(cells[itv])
+                        ev.append(e)
         elif b[0] == 'p' and head and re.search(r'\d{3}\b', head):
             m = re.search(r'\b(?:was|were) (?:held|run|ran|contested|scheduled)[^.]{0,40}?\bon\b', b[1]) or re.search(r'\b(?:held|run) on\b', b[1])
             if m:
@@ -278,6 +304,7 @@ def races(blocks, year, src):
                 if d: ev.append({'lg': 'racing', 'd': d, 'k': norm(head).strip(), 'y': year, 'src': src})
     seen = set(); out = []
     for e in ev:
+        if sr: e['sr'] = sr
         if (e['k'], e['d']) not in seen: seen.add((e['k'], e['d'])); out.append(e)
     return out
 def bowls(blocks, season, src):
@@ -320,7 +347,10 @@ def build():
         jobs.append(('ser', '%d NBA playoffs' % y, 'nba', y, '')); jobs.append(('ser', '%d NBA Finals' % y, 'nba', y, 'finals'))
         jobs.append(('ser', '%d Stanley Cup playoffs' % y, 'nhl', y, '')); jobs.append(('ser', '%d Stanley Cup Finals' % y, 'nhl', y, 'finals'))
         jobs.append(('bowl', '%d–%s NCAA football bowl games' % (y, str(y + 1) if y == 1999 else str(y + 1)[2:]), y))
-        jobs.append(('race', '%d NASCAR Winston Cup Series' % y, y))
+        jobs.append(('race', '%d NASCAR Winston Cup Series' % y, y, ''))
+        jobs.append(('race', '%d NASCAR Busch Series' % y, y, 'busch'))
+        if y >= 1995: jobs.append(('race', '%d NASCAR Craftsman Truck Series' % y, y, 'truck'))
+        if y == 1995: jobs.append(('race', '1995 NASCAR SuperTruck Series', y, 'truck'))
         jobs.append(('info', '%d Major League Baseball All-Star Game' % y, 'mlb', 'all star game', y)); jobs.append(('info', '%d NBA All-Star Game' % y, 'nba', 'all star game', y))
         for k, p in GOLF: jobs.append(('info', p % y, 'golf', k, y))
         for k, p in TENNIS: jobs.append(('info', p % y, 'tennis', k, y))
@@ -329,9 +359,13 @@ def build():
     prev = []
     if os.path.exists(SCHF):
         prev = [e for e in json.load(gzip.open(SCHF, 'rt', encoding='utf-8')) if e.get('src')]
+    kind = {j[1]: j[0] for j in jobs}; old2 = collections.defaultdict(list)
+    for e in prev:
+        if kind.get(e['src']) in ('nfl', 'ser', 'race') and e.get('v') != 2: old2[e['src']].append(e)
+    prev = [e for e in prev if e['src'] not in old2]
     done = set(e['src'] for e in prev) | set(json.load(open(NOPG)) if os.path.exists(NOPG) else [])
     alljobs = len(jobs); jobs = [j for j in jobs if j[1] not in done]
-    print('pages', alljobs, 'already have', alljobs - len(jobs), 'to fetch', len(jobs), 'kept events', len(prev), flush=True)
+    print('pages', alljobs, 'already have', alljobs - len(jobs), 'to fetch', len(jobs), 'refetch for tv and time', len(old2), 'kept events', len(prev), flush=True)
     stat = collections.Counter(); zero = []
     def run(j):
         time.sleep(random.random() * .4)
@@ -342,7 +376,7 @@ def build():
         if j[0] == 'cfb': return j, nfl_like(b, 'ncaaf', j[2], j[3], j[1])
         if j[0] == 'ser': return j, series(b, j[2], j[3], j[1], j[4])
         if j[0] == 'bowl': return j, bowls(b, j[2], j[1])
-        if j[0] == 'race': return j, races(b, j[2], j[1])
+        if j[0] == 'race': return j, races(b, j[2], j[1], j[3])
         if j[0] == 'box': return j, boxrec(b, re.sub(r'\s*\(.*\)', '', j[1]), j[1])
         if j[0] == 'nohit': return j, nohit(b, j[1])
         if j[0] == 'info':
@@ -351,9 +385,12 @@ def build():
     ev = list(prev); nopg = set(json.load(open(NOPG)) if os.path.exists(NOPG) else [])
     with ThreadPoolExecutor(3) as ex:
         for n, (j, r) in enumerate(ex.map(run, jobs)):
-            if r == 0: stat[j[0] + '_failed'] += 1; zero.append('FAILED ' + j[1]); continue
-            if r is None: stat[j[0] + '_missing'] += 1; zero.append('MISSING ' + j[1]); nopg.add(j[1]); continue
+            if r == 0: stat[j[0] + '_failed'] += 1; zero.append('FAILED ' + j[1]); ev += old2.get(j[1], []); continue
+            if r is None: stat[j[0] + '_missing'] += 1; zero.append('MISSING ' + j[1]); nopg.add(j[1]); ev += old2.get(j[1], []); continue
+            if not r and old2.get(j[1]): stat[j[0] + '_zero_kept_old'] += 1; ev += old2[j[1]]; continue
             if not r: stat[j[0] + '_zero'] += 1; zero.append('ZERO ' + j[1]); nopg.add(j[1])
+            if j[0] in ('nfl', 'ser', 'race'):
+                for e in r: e['v'] = 2
             stat[j[0] + '_pages'] += 1; stat[j[0] + '_events'] += len(r); ev += r
             if n % 200 == 0: print('sched', n, len(ev), round((time.time() - T0) / 60, 1), 'min', flush=True)
     for a, z, s, c in OLY:
@@ -365,6 +402,7 @@ def build():
         d = datetime.date.fromisoformat(D['derby'](y))
         ev.append({'lg': 'horse', 'k': 'preakness', 'd': (d + datetime.timedelta(14)).isoformat(), 'y': y}); ev.append({'lg': 'horse', 'k': 'belmont', 'd': (d + datetime.timedelta(35)).isoformat(), 'y': y})
     print('SCHED STATS', sorted(stat.items()))
+    print('TV AND TIME', sorted(collections.Counter(e['lg'] + ('_net' if e.get('net') else '') + ('_st' if e.get('st') else '') for e in ev).items()))
     random.seed(5)
     for z in random.sample(zero, min(60, len(zero))): print(' ', z)
     by = collections.defaultdict(list)
@@ -386,13 +424,16 @@ def load_sched():
 class Sched:
     def __init__(s, ev):
         s.pair = collections.defaultdict(list); s.one = collections.defaultdict(list); s.key = collections.defaultdict(list); s.box = []; s.race = collections.defaultdict(list); s.ser = collections.defaultdict(list)
-        seen = set()
+        seen = {}
         for e in ev:
             lg = e['lg']
             if 'a' in e and lg != 'boxing':
                 k = (lg, e['d'], frozenset((e['a'], e['h'])))
-                if k in seen: continue
-                seen.add(k)
+                if k in seen:
+                    for fk in ('net', 'st'):
+                        if e.get(fk) and not seen[k].get(fk): seen[k][fk] = e[fk]
+                    continue
+                seen[k] = e
                 s.pair[(lg, frozenset((e['a'], e['h'])))].append(e); s.one[(lg, e['a'])].append(e); s.one[(lg, e['h'])].append(e)
                 if e.get('ser'): s.ser[(lg, e['ser'], int(e['d'][:4]))].append(e)
             elif lg == 'boxing': s.box.append(e)
@@ -420,13 +461,14 @@ DOCRX = r' (nfl films|season in review|year in review|greatest games|nfl yearboo
 def resolve(SC, title, desc=''):
     nt = norm(title)
     r = sport(title, desc, '1994-06-18') or sport(title, desc, '1994-10-15')
-    if not r and re.search(r' (?:[a-z]+ ){1,2}(?:300|400|500|600) ', nt) and not re.search(r' (indy|indianapolis|daytona) 500 ', nt): r = ('racing', 'AUTO RACING')
+    if not r and re.search(r' (?:[a-z]+ ){1,2}(?:1[025][05]|[2-6][05]0) ', nt) and re.search(r' (nascar|winston cup|busch|craftsman truck|speedway|raceway) ', nt + norm(desc[:200])) and not re.search(r' (indy|indianapolis|daytona) 500 ', nt): r = ('racing', 'AUTO RACING')
     if not r: return None, 'nosport'
     lg = r[0]
     ys = sorted(set(int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)))
     m = re.search(r' (19[89]\d|200[0-3]) (\d\d) ', nt)
     if m and int(m.group(2)) == (int(m.group(1)) + 1) % 100: ys = sorted(set(ys) | {int(m.group(1)), int(m.group(1)) + 1})
     if not ys: return None, 'noyear'
+    for n, w in enumerate(('one', 'two', 'three', 'four', 'five', 'six', 'seven')): nt = nt.replace(' game ' + w + ' ', ' game %d ' % (n + 1))
     g = re.search(r' (?:game|gm|g) ?(\d)(?: |$)', nt); g = int(g.group(1)) if g else None
     wk = re.search(r' (?:week|wk) ?(\d{1,2}) ', nt); wk = int(wk.group(1)) if wk else None
     mon = re.search(r' (' + MONS + r') ', nt); mon = MON[mon.group(1)[:3]] if mon else None
@@ -503,14 +545,30 @@ def resolve(SC, title, desc=''):
         if e: return {'ad': e['d'], 'ev': '%s BOXING: %s VS %s' % (e['d'][:4], e['a'].upper(), e['h'].upper()), 'ct': 'boxing', 'row': e}, None
         return None, why
     if lg == 'racing':
-        m = re.search(r' ((?:[a-z]+ ){1,3}(?:[2-6]00|400|500|600)) ', nt)
+        if re.search(r' (qualifying|happy hour|practice|pole day|time trials|awards banquet|awards ceremony|rain out|rainout) ', nt): return None, 'race_session'
+        m = re.search(r' ((?:[a-z]+ ){1,3}(?:1[025][05]|[2-6][05]0)k?) ', nt)
         if not m: return None, 'race_noname'
+        nd = nt + norm(desc[:200])
+        sr = None
+        for tx in (nt, nd):
+            if re.search(r' (truck|trucks|supertruck) ', tx): sr = 'truck'
+            elif re.search(r' (busch grand national|busch series|busch gn|bgn|grand national) ', tx): sr = 'busch'
+            elif re.search(r' (winston cup|nextel cup|cup series) ', tx): sr = ''
+            if sr is not None: break
         words = m.group(1).split(); c = []
         for y in ys:
             for n in (3, 2):
                 key = ' '.join(words[-n:]) if len(words) >= n else None
                 cc = [e for e in SC.race.get(y, []) if key and (' ' + key + ' ') in (' ' + e['k'] + ' ')]
+                if sr is not None: cc = [e for e in cc if e.get('sr', '') == sr]
+                elif len(set(e['d'] for e in cc)) > 1: cc = [e for e in cc if not e.get('sr')] or cc
                 if cc: c += cc; break
+        if len(set(e['d'] for e in c)) > 1:
+            c2 = [e for e in c if e.get('tr') and any((' ' + w + ' ') in nt for w in e['tr'].split() if len(w) > 3 and w not in ('speedway', 'international', 'motor', 'raceway', 'superspeedway', 'park', 'motorsports', 'fairgrounds', 'state', 'road', 'course', 'north', 'south', 'city'))]
+            if c2: c = c2
+        if len(set(e['d'] for e in c)) > 1 and mon:
+            c2 = [e for e in c if int(e['d'][5:7]) == mon]
+            if c2: c = c2
         e, why = one(c, 'race')
         if e: return {'ad': e['d'], 'ev': '%s %s' % (e['d'][:4], e['k'].upper()), 'ct': 'racing', 'row': e}, None
         return None, why
@@ -578,7 +636,99 @@ def classify(SC, title, ident, dfield, desc):
         ys = [int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)]
         if not r0 or not ys: return None, why
         return {'ct': r0[0], 'k': LGK.get(r0[0], 'SPORTS'), 'ad': '', 'ev': '', 'e': ys[0], 'min': 2400, 'net': netof(title, desc), 'keep': 'maybe', 'why': 'day unresolved: ' + str(why)}, None
-    return {'ct': r['ct'], 'k': LGK.get(r['ct'], 'SPORTS'), 'ad': r['ad'], 'ev': r['ev'], 'e': int(r['ad'][:4]), 'min': 2400, 'net': r.get('net') or netof(title, desc), 'row': r['row']}, None
+    return {'ct': r['ct'], 'k': LGK.get(r['ct'], 'SPORTS'), 'ad': r['ad'], 'ev': r['ev'], 'e': int(r['ad'][:4]), 'min': 2400, 'net': r['row'].get('net') or r.get('net') or netof(title, desc), 'st': r['row'].get('st', ''), 'row': r['row']}, None
+LTAG = {'nfl': 'nfl', 'nba': 'nba', 'mlb': 'mlb', 'nhl': 'nhl', 'racing': 'nascar', 'ncaaf': 'college football', 'ncaab': 'ncaa basketball'}
+GAMEX = r' (madden|nba live|playstation|ps2|ps3|ps 2|ps 3|xbox|nintendo|how to install|rebuilt mod|video game|gameplay|nba 2k\d*|nhl 2004 rebuilt|tournament of legends) '
+def fdate(nm, ctx):
+    ds = D['dates_in'](nm)
+    if ds: return ds[0][1]
+    d = pdate(nm)
+    if d and '1960' < d < '2006': return d
+    ys = set(re.findall(r'(?<!\d)((?:19|20)\d\d)(?!\d)', nm + ' ' + ctx))
+    for m in re.finditer(r'(?<!\d)((?:19|20)\d\d)[ ./-](\d{1,2})[ ./-](\d{1,2})(?!\d)', nm):
+        d = iso(m.group(1), m.group(2), m.group(3))
+        if d and '1960' < d < '2006': return d
+    for m in re.finditer(r'(?<!\d)(?=(\d{1,2})[ ./-](\d{1,2})[ ./-]((?:19|20)\d\d|\d\d)(?!\d))', nm):
+        y = m.group(3)
+        if len(y) == 2:
+            y = ('19' if int(y) >= 60 else '20') + y
+            if y not in ys: continue
+        d = iso(y, m.group(1), m.group(2))
+        if d and '1960' < d < '2006': return d
+    return None
+def rowat(SC, lg, d, nt):
+    if lg in ('nfl', 'ncaaf', 'mlb', 'nba', 'nhl'):
+        c = [e for t in tfind(lg, nt) for e in SC.one.get((lg, t), []) if e['d'] == d]
+        if c: return c[0], label(c[0], lg)
+    if lg == 'racing':
+        c = [e for e in SC.race.get(int(d[:4]), []) if e['d'] == d]
+        c2 = [e for e in c if (' ' + e['k'] + ' ') in nt]
+        if len(c2) == 1:
+            e = c2[0]; return e, '%s %s' % (d[:4], e['k'].upper())
+    return None, ''
+def minefiles(SC):
+    p = os.path.join(OUT, 'mine.json.gz')
+    if not os.path.exists(p): return [], collections.Counter()
+    out = []; C = collections.Counter()
+    for x in json.load(gzip.open(p, 'rt', encoding='utf-8')):
+        if not isinstance(x, dict) or x.get('ct') != 'sportsundated' or not x.get('f'): continue
+        C['items'] += 1
+        gt = x.get('t') or ''; ctx = gt + ' ' + str(x.get('s') or ''); multi = len(x['f']) > 1
+        gy = sorted(set(int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', norm(gt))))
+        gn = set({'wtbs': 'tbs', 'usa network': 'usa', 'espn2': 'espn'}.get(v, v) for v in re.findall(D['NETRX'], gt.lower()))
+        groups = {}
+        for f in x['f']:
+            C['files'] += 1
+            nm = ' '.join(re.sub(r'\.ia$', '', re.sub(r'\.[A-Za-z0-9]{2,4}$', '', f[0])).replace('_', ' ').split())
+            if not multi or not re.search(r'[A-Za-z]{4}', nm): nm = gt if not multi else nm
+            nt = norm(nm)
+            if re.search(GAMEX, nt) or re.search(GAMEX, norm(gt)): C['x_videogame'] += 1; continue
+            if re.search(BADW, nt): C['x_badword'] += 1; continue
+            r0 = sport(nm, '', '1994-06-18') or sport(nm, '', '1994-10-15') or sport(gt, str(x.get('s') or ''), '1994-06-18') or sport(gt, str(x.get('s') or ''), '1994-10-15')
+            lg = r0[0] if r0 else 'sports'
+            rg = sport(gt, str(x.get('s') or ''), '1994-06-18') or sport(gt, str(x.get('s') or ''), '1994-10-15')
+            cb = 'ncaab' if re.search(r' basketball ', norm(ctx)) else 'ncaaf' if re.search(r' football ', norm(ctx)) else ''
+            if lg in ('ncaaf', 'ncaab') and cb and not re.search(r' (basketball|football|bowl) ', nt): lg = cb
+            ys = [int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)]
+            base = {'ct': lg, 'k': LGK.get(lg, 'SPORTS'), 'e': ys[0] if ys else x.get('e') or (gy[0] if gy else 0), 'net': netof(nm, '') or (list(gn)[0] if len(gn) == 1 else ''), 'nm': nm}
+            if re.search(DOCRX, nt) or (not multi and re.search(DOCRX, norm(gt))):
+                rec = dict(base, ct='sportsdoc', k='SPORTS FILMS'); key = ('doc', nt)
+            else:
+                d = fdate(nm, ctx) or (fdate(x['i'].replace('-', ' ').replace('_', ' '), ctx) if not multi else None)
+                if d:
+                    row, ev = rowat(SC, lg, d, ' ' + nt + ' ')
+                    rec = dict(base, ad=d, ev=ev or nt.strip().upper()[:90], e=int(d[:4]), **{'as': 'fname'})
+                    if row: rec['row'] = row
+                    key = (d, rec['ev'] if row else ' '.join(re.sub(r' (part|pt|disc|tape|cd|dvd) ?\d+( of \d+)? | \d of \d | (1st|2nd|first|second) half ', ' ', nt + ' ').split()))
+                else:
+                    r, why = resolve(SC, nm, gt)
+                    if not r and why == 'nosport' and lg in LTAG: r, why = resolve(SC, nm + ' ' + LTAG[lg], gt)
+                    if not r and why == 'noyear' and len(gy) == 1: r, why = resolve(SC, '%d %s %s' % (gy[0], nm, LTAG.get(lg, '')), gt)
+                    if r:
+                        rec = dict(base, ct=r['ct'], k=LGK.get(r['ct'], 'SPORTS'), ad=r['ad'], ev=r['ev'], e=int(r['ad'][:4]), row=r['row'], **{'as': 'sched'}); key = (r['ad'], r['ev'])
+                    else:
+                        rec = dict(base, keep='maybe', why='day unresolved: ' + str(why))
+                        key = ('', ' '.join(re.sub(r' (part|pt|disc|tape|cd|dvd|vts) ?\d+( \d+)?( of \d+)? | \d of \d | (1st|2nd|first|second) half | \d $', ' ', nt + ' ').split()))
+            if rec.get('row'):
+                if rec['row'].get('net'): rec['net'] = rec['row']['net']
+                if rec['row'].get('st'): rec['st'] = rec['row']['st']
+            if key in groups: groups[key]['f'].append(f)
+            else: rec['f'] = [f]; groups[key] = rec
+        for key, rec in groups.items():
+            tot = sum(f[1] for f in rec['f'])
+            if tot < 1200: C['x_short'] += 1; continue
+            if not rec.get('ad') and rec['ct'] != 'sportsdoc' and tot < 2400: C['x_short_undated'] += 1; continue
+            r = {'i': x['i'], 'q': 'sports', 't': (rec['nm'] if multi else gt)[:200], 'd': x.get('d', ''), 'y': x.get('y', ''), 'c': x.get('c', []), 's': x.get('s', ''), 'ds': (x.get('ds') or '')[:400], 'f': sorted(rec['f'], key=lambda f: f[0]), 'dl': x.get('dl', 0), 'k': rec['k'], 'e': rec['e'], 'net': rec['net'], 'ct': rec['ct'], 'up': x.get('up', ''), 'src': 'mine'}
+            if multi: r['gt'] = gt[:200]
+            if rec.get('ad'):
+                r['ad'] = rec['ad']; r['as'] = rec['as']; r['ev'] = rec['ev']
+                if rec.get('row'): r['sr'] = json.dumps({k: v for k, v in rec['row'].items() if k not in ('hk', 'who')}, ensure_ascii=False)[:200]
+            if rec.get('st'): r['st'] = rec['st']
+            if rec.get('keep'): r['keep'] = rec['keep']; r['why'] = rec['why']
+            C['out_' + ('doc' if rec['ct'] == 'sportsdoc' else rec.get('as') or 'maybe')] += 1
+            if rec.get('keep'): C['why ' + rec['why']] += 1
+            out.append(r)
+    return out, C
 def known():
     have = set()
     for p in glob.glob(os.path.join(OUT, '*.json.gz')):
@@ -695,6 +845,7 @@ def meta1(it):
     if len(files) > 12 and c['ct'] != 'sportsdoc': return 'manyfiles'
     r = {'i': it['identifier'], 'q': 'sports', 't': title[:200], 'd': S(m.get('date')), 'y': S(m.get('year')), 'c': cl[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': c['k'], 'e': c['e'], 'net': c['net'], 'ct': c['ct']}
     if c['ad']: r['ad'] = c['ad']; r['as'] = 'sched'; r['ev'] = c['ev']; r['sr'] = json.dumps({k: v for k, v in c['row'].items() if k not in ('hk', 'who')}, ensure_ascii=False)[:200]
+    if c.get('st'): r['st'] = c['st']
     if c.get('keep'): r['keep'] = c['keep']; r['why'] = c['why']
     if hb: r['hb'] = 1
     return r
@@ -714,14 +865,23 @@ if MODE == 'merge':
     old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
     old = []
     for x in old0:
+        if x.get('src') == 'mine': continue
         c, w = classify(SC, x['t'], x['i'], x.get('d'), x.get('ds'))
-        if c and c['ct'] == x['ct'] and (c['ad'] or '') == x.get('ad', ''): old.append(x)
+        if c and c['ct'] == x['ct'] and (c['ad'] or '') == x.get('ad', ''):
+            if c.get('net'): x['net'] = c['net']
+            if c.get('st'): x['st'] = c['st']
+            old.append(x)
     print('refiltered existing', len(old0), '->', len(old))
     have = set(x['i'] for x in old) | known(); add = []
     for p in sorted(glob.glob(os.path.join(PARTS, 'sports2-*.json.gz'))):
         for x in json.load(gzip.open(p, 'rt', encoding='utf-8')):
             if x['i'] not in have: have.add(x['i']); add.append(x)
-    res = old + add
+    mine, MC = minefiles(SC)
+    print('MINE', sorted(MC.items()))
+    print('MINE identifiers', len(set(x['i'] for x in mine)), 'entries', len(mine), 'dated', sum(1 for x in mine if x.get('ad')), 'days', len(set(x['ad'] for x in mine if x.get('ad'))), 'with st', sum(1 for x in mine if x.get('st')), 'with net', sum(1 for x in mine if x.get('net')))
+    random.seed(11)
+    for x in random.sample(mine, min(50, len(mine))): print('MINESAMPLE', x['ct'], '|', x.get('ad', '') or x['e'], x.get('st', ''), x.get('net', ''), '|', x.get('ev', '') or x.get('why', ''), '|', x['t'][:70], '|', x['i'][:30], '|', round(sum(f[1] for f in x['f']) / 60), 'min |', x.get('sr', '')[:120])
+    res = old + add + mine
     with gzip.open(OUTF, 'wt', encoding='utf-8') as f: json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
     if os.path.exists(PSCH):
         with gzip.open(SCHF, 'wt', encoding='utf-8') as f: json.dump(json.load(gzip.open(PSCH, 'rt', encoding='utf-8')), f, ensure_ascii=False, separators=(',', ':'))
@@ -741,7 +901,7 @@ if MODE == 'merge':
             if isinstance(x, dict) and x.get('q') == 'sports' and x.get('ad'): prev.add(x['ad'])
             elif isinstance(x, list) and len(x) > 2 and re.match(r'\d{4}-\d\d-\d\d$', str(x[2])): prev.add(x[2])
     print('distinct days', len(days), 'new days not in earlier sports sets', len(days - prev), 'earlier days', len(prev))
-    print('networks', collections.Counter(x['net'] for x in res).most_common(12))
+    print('networks', collections.Counter(x['net'] for x in res).most_common(12), 'with start time', sum(1 for x in res if x.get('st')))
     random.seed(7)
     for x in random.sample(dated, min(80, len(dated))): print('SAMPLE', x['ct'], '|', x['ad'], '|', x['ev'], '|', x['t'][:70], '|', x['i'][:30], '|', round(sum(f[1] for f in x['f']) / 60), 'min |', x.get('sr', '')[:150])
     print('undated kept as maybe', sum(1 for x in res if x.get('keep')), collections.Counter(x.get('why') for x in res if x.get('keep')).most_common(12))
