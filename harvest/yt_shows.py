@@ -15,6 +15,8 @@ T0 = time.time()
 FMODE = os.environ.get('FOCUS', '')
 FOCUS = FMODE == '1'
 DATED = FMODE == '2'
+CHAN = os.environ.get('CHANNELS', '') == '1'
+CQ = ['today show', 'today nbc', 'good morning america', 'cbs this morning', 'cbs morning news', 'nightly news', 'world news tonight', 'evening news', 'tonight show', 'letterman', 'conan', 'oprah', 'donahue', 'seinfeld', 'cheers', 'frasier', 'fresh prince', 'friends', 'simpsons', 'wings', 'full episode', 'with commercials']
 RUNS = {'Seinfeld': (1989, 1998, 'NBC'), 'Cheers': (1984, 1993, 'NBC'), 'Frasier': (1993, 2004, 'NBC'), 'Wings': (1990, 1997, 'NBC'), 'The Fresh Prince of Bel-Air': (1990, 1996, 'NBC'), 'Friends': (1994, 2004, 'NBC'), 'The Simpsons': (1989, 2004, 'FOX')}
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 DQ = {'Today': ['today show', 'nbc today show', 'nbc today'], 'Good Morning America': ['good morning america', 'abc good morning america'], 'CBS This Morning': ['cbs this morning'], 'CBS Morning News': ['cbs morning news'], 'The Tonight Show Starring Johnny Carson': ['tonight show johnny carson'], 'Late Night with David Letterman': ['late night with david letterman'], 'Late Show with David Letterman': ['late show with david letterman'], 'The Tonight Show with Jay Leno': ['tonight show jay leno'], "Late Night with Conan O'Brien": ['late night with conan o\'brien'], 'Live with Regis and Kathie Lee': ['live with regis and kathie lee'], 'The Oprah Winfrey Show': ['oprah winfrey show'], 'NBC Nightly News': ['nbc nightly news'], 'ABC World News Tonight': ['abc world news tonight'], 'CBS Evening News': ['cbs evening news']}
@@ -368,7 +370,7 @@ def load_shows():
         add(t, q, net, y0, y1, kind, al, 300 + i, 2)
         S[nzk(t)]['q'] = q; S[nzk(t)]['kind'] = kind
     S[nzk('Today')]['al'] -= {'today'}
-    S[nzk('Today')]['al'] |= {'today show', 'nbc today', 'today on nbc', 'the today show'}
+    S[nzk('Today')]['al'] |= {'today show', 'nbc today', 'today on nbc', 'the today show', 'today nbc', 'nbc news today'}
     S[nzk('Good Morning America')]['al'].discard('gma')
     S[nzk('CBS This Morning')]['al'].discard('cbs morning news')
     S[nzk('The Simpsons')]['smax'] = 15
@@ -582,11 +584,13 @@ def match(t, c, M):
         if not d or not ('1984-01-01' <= d <= '2004-12-31'): return None
         r['ad'] = d
     elif not r['se']:
-        if not t.get('foc') and (t['amb'] or eps is not None and eps['se'] and t['tier'] <= 2): return None
-        if t.get('foc') and eps is not None and eps['se']: r['m'] = 'episode not identified'
+        dok = bool(r['ad'] and eps is not None and eps['ad'] and min(eps['ad']) <= r['ad'])
+        hard = t['amb'] or eps is not None and eps['se'] and t['tier'] <= 2
+        if not t.get('foc') and not dok and hard: return None
+        if (t.get('foc') or dok and hard) and eps is not None and eps['se']: r['m'] = 'episode not identified'
         if (t.get('amb') or t['title'] in RUNS) and t.get('must') and not r['ad'] and not (c.get('ver') or c.get('off')) and not re.search(r'(?i)with (original )?(commercials|ads)|original (broadcast|airing)|\b(nbc|abc|cbs|fox|nick|nickelodeon|pbs)\b.*\b(19[89]\d|200[0-4])\b|\b(19[89]\d|200[0-4])\b.*\b(nbc|abc|cbs|fox|nick|nickelodeon|pbs)\b', T): return None
         if not re.search(r'(?i)full episode|complete episode|\bepisode\s*\d+|\bep\.?\s*\d+|\b(19[89]\d|200[0-4])\b', T): return None
-    if t['amb'] and not r['se'] and t['kind'] != 'date' and not t.get('foc'): return None
+    if t['amb'] and not r['se'] and t['kind'] != 'date' and not t.get('foc') and not r.get('m'): return None
     y = r['ad'][:4] if r['ad'] else ''
     if not y:
         m2 = re.search(r'\b(19[89]\d|200[0-4])\b', T)
@@ -678,8 +682,26 @@ def run_search():
         for j, q in enumerate(t['epq']): jobs.append((t.get('pri', t['tier']) + 0.5, j, t['k'], q, 1))
     jobs.sort(key=lambda x: (x[0], x[1]))
     jobs = [j for n, j in enumerate(jobs) if n % SHARDS == SHARD]
-    print('shard', SHARD, 'queries', len(jobs))
     acc = {}; seen = set(); chan = collections.Counter(); chname = {}; chver = {}
+    cks = {}; cage = {}
+    if CHAN:
+        jobs = []
+        try: old = json.load(gzip.open(OUT, 'rt', encoding='utf-8'))
+        except Exception: old = []
+        cc = collections.Counter(); pr = collections.Counter(); kk = collections.defaultdict(collections.Counter); ag = collections.defaultdict(list)
+        for x in old:
+            if not x.get('chid') or not (x.get('ad') or x.get('se')): continue
+            cc[x['chid']] += 1; chname[x['chid']] = x['ch']; kk[x['chid']][x['k']] += 1
+            if x['q'] in ('morning', 'late', 'news') or x['k'] in RUNS: pr[x['chid']] += 1
+            if x.get('agey') is not None: ag[x['chid']].append(x['agey'])
+            if x.get('off') and str(x.get('why', '')).startswith('verified'): chver[x['chid']] = 1
+        cl = sorted((c for c in cc if cc[c] >= 3 or pr[c]), key=lambda c: (-min(pr[c], 1), -cc[c], c))[:int(os.environ.get('CHMAX', '420'))]
+        cl = [c for n, c in enumerate(cl) if n % SHARDS == SHARD]
+        for c in cl:
+            cks[c] = [k for k, n in kk[c].most_common(6)]
+            a = sorted(ag[c]); cage[c] = a[len(a) // 2] if a else -1
+        print('channel list', len(cl))
+    print('shard', SHARD, 'queries', len(jobs))
     def take(k, c, src):
         t = byk[k]; r = match(t, c, M)
         if not r: return False
@@ -709,14 +731,32 @@ def run_search():
     with ThreadPoolExecutor(THREADS) as ex: list(ex.map(one, jobs))
     print('after queries: accepted', len(acc), 'stat', dict(STAT))
     alidx = sorted(((a, t['k']) for t in tasks for a in t['al'] if len(a) >= 5), key=lambda x: -len(x[0]))
+    aw = collections.defaultdict(list)
+    for a, k in alidx: aw[a.split(' ')[0]].append((a, k))
+    def amatch(n):
+        best = None
+        for w in set(n.split()):
+            for a, k in aw.get(w, ()):
+                if (not best or len(a) > len(best[0])) and n.find(' ' + a + ' ') >= 0: best = (a, k)
+        return best[1] if best else None
     tops = [c for c, n in chan.most_common(400) if c and (n >= 3 or chver.get(c))]
     tops = [c for i, c in enumerate(sorted(tops)) if True][:60]
+    if CHAN: tops = list(cks)
     print('channels to enumerate', len(tops))
     def enum(chid):
         if left() < BUDGET * 0.22: return
-        vs = channel_videos(chid, chname.get(chid, ''))
-        ages = sorted(c['age'] for c in acc.values() if c['chid'] == chid and c['age'] >= 0)
-        med = ages[len(ages) // 2] if ages else -1
+        vs = []
+        if CHAN:
+            sv = set()
+            for q in CQ + cks.get(chid, []):
+                if left() < BUDGET * 0.22: break
+                for c in channel_search(chid, chname.get(chid, ''), q, 3):
+                    if c['vid'] not in sv: sv.add(c['vid']); vs.append(c)
+                time.sleep(0.3 + random.random() * 0.4)
+            with LOCK: STAT['chan_search_videos'] += len(vs)
+        vs += [c for c in channel_videos(chid, chname.get(chid, '')) if not CHAN or c['vid'] not in sv]
+        ages = sorted(c['age'] for c in vs if c['age'] >= 0) or sorted(c['age'] for c in acc.values() if c['chid'] == chid and c['age'] >= 0)
+        med = ages[len(ages) // 2] if ages else cage.get(chid, -1)
         for c in vs:
             if c['age'] < 0: c['age'] = med; c['inh'] = 1
             if chver.get(chid): c['ver'] = 1
@@ -724,11 +764,8 @@ def run_search():
         with LOCK:
             STAT['chan_enum'] += 1; STAT['chan_videos'] += len(vs)
             for c in vs:
-                n = ' ' + nz(c['t']) + ' '
-                for a, k in alidx:
-                    if n.find(' ' + a + ' ') >= 0:
-                        if take(k, c, 'ch'): got += 1
-                        break
+                k = amatch(' ' + nz(c['t']) + ' ')
+                if k and take(k, c, 'ch'): got += 1
         print('  channel', (chname.get(chid, '') or chid)[:40], 'videos', len(vs), 'accepted', got)
     with ThreadPoolExecutor(max(2, THREADS // 2)) as ex: list(ex.map(enum, tops))
     items = list(acc.values())

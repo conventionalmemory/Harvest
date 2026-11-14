@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: full, focus, dated, clean or probe
+        description: full, focus, dated, channels, clean or probe
         default: full
 permissions:
   contents: write
@@ -46,7 +46,7 @@ jobs:
           path: parts
       - run: pip install -q yt-dlp
       - name: Search
-        run: MODE=search SHARD=${{ matrix.shard }} SHARDS=6 THREADS=4 BUDGET_MIN=150 python3 harvest/yt_shows.py
+        run: MODE=search CHANNELS=${{ inputs.mode == 'channels' && '1' || '0' }} SHARD=${{ matrix.shard }} SHARDS=6 THREADS=4 BUDGET_MIN=150 python3 harvest/yt_shows.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
