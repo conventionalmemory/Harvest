@@ -538,6 +538,7 @@ RANK = {'h.264 IA': 0, 'h.264': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
 REJ = collections.Counter()
 def rej(c, why):
     REJ[why] += 1; REJ[(c['k'], why)] += 1
+    if BYT[c['k']]['full'] and why != 'no playable files': print('REJID %s | %s | %s\n' % (c['k'], why, c['identifier']), end='', flush=True)
     return None
 def maybe(x, why):
     if x.get('why') and why in x['why']: return
@@ -574,7 +575,7 @@ def meta(c):
     lang = flat(m.get('language')).lower()
     if lang and not re.search(r'eng|english|^en$', lang): return rej(c, 'lang')
     sh = BYT[c['k']]
-    groups = {}; other = 0
+    groups = {}; other = 0; alt = []
     lenby = {f.get('name'): secs(f.get('length')) for f in j['files'] if secs(f.get('length') or 0) > 0}
     for f in j['files']:
         if f.get('original') and secs(f.get('length') or 0) > 0: lenby.setdefault(f['original'], secs(f['length']))
@@ -583,7 +584,9 @@ def meta(c):
         if n.endswith('.mp4'):
             key = f.get('original') if f.get('source') == 'derivative' else f['name']
             groups.setdefault(key, []).append(f)
-        elif re.search(r'\.(mkv|avi|mpg|mpeg|m4v|mov|ts|vob|iso|ogv|webm|wmv)$', n): other += 1
+        elif re.search(r'\.(mkv|avi|mpg|mpeg|m4v|mov|ts|vob|iso|ogv|webm|wmv)$', n):
+            other += 1
+            if f.get('source') != 'derivative' and re.search(r'\.(mkv|m4v|mov|webm|avi)$', n): alt.append(f)
     files = []; hb = 0; est = 0
     for key, g in groups.items():
         g.sort(key=lambda f: RANK.get(f.get('format', ''), 5)); b = g[0]
@@ -594,6 +597,12 @@ def meta(c):
         if FOREIGN.search(clean(b['name'])): continue
         if sz and sz / 1e6 / (d / 60) > 60: hb += 1; continue
         files.append([b['name'], round(d), b.get('format', '')])
+    why0 = ''
+    if not files and sh['full'] and alt:
+        for f in alt:
+            d = secs(f.get('length') or 0) or (FULLTYP[sh['type']] if float(f.get('size') or 0) >= 6e7 else 0)
+            if d >= 240 and not FOREIGN.search(clean(f['name'])): files.append([f['name'], round(d), f.get('format', '')])
+        if files: why0 = 'no mp4 files; other video formats only (may not play in a browser)'
     if not files:
         if sh['full']: print('NOFILES', sh['title'], '|', c['identifier'], '|', flat(m.get('title'))[:60], '|', sorted(collections.Counter(f.get('name', '').rsplit('.', 1)[-1].lower()[:6] for f in j['files']).items()), [(f.get('name', '')[-40:], f.get('format'), f.get('length'), f.get('size')) for f in j['files'] if re.search(r'\.(mp4|m4v|mkv|avi|mpg|mpeg|iso|vob|ts|wmv|flv|rm|zip|rar|7z|ogv|webm|mov)$', f.get('name', '').lower())][:3], flush=True)
         return rej(c, 'no mp4 (other video only)' if other else 'no playable files' if not hb else 'bitrate too high')
@@ -624,6 +633,8 @@ def meta(c):
             maybe(x, 'no file matched the episode guide')
         elif v[0] == 'm' and len(ver) * 2 < len(files): maybe(x, v[1])
         if est: x['est'] = est; maybe(x, 'running time not listed; usual episode length assumed')
+        if why0: x['alt'] = 1; maybe(x, why0)
+        print('KEPT %s | %s | %d files %d matched | %s\n' % (sh['title'], x['i'], len(x['f']), len(ver), x.get('why', '')), end='', flush=True)
         stamp(sh, x)
         return x
     for n, f in enumerate(x['f']):
@@ -684,8 +695,9 @@ def plan():
     build_ep()
     print('guides', sum(1 for g in GUIDE.values() if g.get('eps')), 'with episodes', sum(1 for g in GUIDE.values() if g.get('miss')), 'not found', flush=True)
     DIAG = collections.defaultdict(list); DREJ = collections.defaultdict(list)
+    fams = [s for s in SHOWS if s['fam']]
     def one(sh):
-        res = {}
+        res = {}; xres = []
         yrs = ' OR '.join(str(y) for y in range(max(sh['y0'], 1980), min(max(sh['y1'] + 1, 2004), 2004) + 1))
         for nm in sh['names']:
             ph = nm['q'].replace('"', '')
@@ -720,9 +732,18 @@ def plan():
                     except Exception as e: print('skip', i, repr(e)); v = None
                     if v:
                         res[i] = (it, v, nm); st[3 if v[0] == 'y' else 4] += 1
-                    elif len(DREJ[sh['title']]) < 400: DREJ[sh['title']].append((it.get('downloads') or 0, route, i, flat(it.get('title'))[:90]))
+                        continue
+                    if sh['fam']:
+                        for o in fams:
+                            if o is sh: continue
+                            try: v = consider(o, it, 'd' if route in ('i', 'e') else route)
+                            except Exception: v = None
+                            if v:
+                                xres.append((o, i, it, v, find(o, flat(it.get('title')))[0] or o['names'][0])); break
+                        if v: continue
+                    if len(DREJ[sh['title']]) < 2000: DREJ[sh['title']].append((it.get('downloads') or 0, route, i, flat(it.get('title'))[:90]))
                 DIAG[sh['title']].append((route, st, qq[:120]))
-        return sh, res
+        return sh, res, xres
     seen = {}; per = collections.Counter()
     def rank(v, nm): return (0 if v[0] == 'y' else 1 if v[0] == 'm' else 2, nm['lvl'], -len(nm['n']))
     def add(sh, i, it, v, nm, up=0):
@@ -731,8 +752,10 @@ def plan():
         seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': sh['title'], 'pri': sh['pri'], 'r': 'u' if up else v[1] if v[0] != 'm' else 't', 'rk': r}
         if i in have: seen[i]['held'] = 1
     with ThreadPoolExecutor(14) as ex:
-        for n, (sh, res) in enumerate(ex.map(one, order)):
+        for n, (sh, res, xres) in enumerate(ex.map(one, order)):
             for i, (it, v, nm) in res.items(): add(sh, i, it, v, nm)
+            for o, i, it, v, nm in xres:
+                if i not in mine: add(o, i, it, v, nm)
             if n % 50 == 0: print('search', n, len(order), len(seen), round((time.time() - T0) / 60, 1), 'min', flush=True)
     want = {s['title'] for s in order}
     src = sorted([x for x in old if x['k'] in want and x.get('nf', 1) >= 4 and x.get('keep') != 'maybe' and x.get('r') != 'u'], key=lambda x: (x.get('pri', 3), -x.get('nf', 1)))[:1200]
@@ -768,7 +791,9 @@ def plan():
         k = sh['title']
         print('PLAN pri%d %-9s cand %5d | %s' % (sh['pri'], sh['type'], per[k], k))
         for route, st, qq in DIAG[k]: print('  Q %s hits %d mine %d elsewhere %d yes %d maybe %d | %s' % ((route,) + tuple(st) + (qq,)))
-        for dl, route, i, t in sorted(set(DREJ[k]), reverse=True)[:6 if sh['pri'] > 1 else 12]: print('  REJ %s %6d | %s | %s' % (route, dl, i[:40], t))
+        for dl, route, i, t in sorted(set(DREJ[k]), key=lambda r: (r[1] != 't', -r[0]))[:150 if sh['full'] else 6 if sh['pri'] > 1 else 12]: print('  REJ %s %6d | %s | %s' % (route, dl, i[:40], t))
+    for c in cands:
+        if BYT[c['k']]['full']: print('CAND', c['k'], '|', c['r'], '| held' if c.get('held') else '|', c['identifier'])
     with gzip.open(CP, 'wt', encoding='utf-8') as f: json.dump(cands, f, separators=(',', ':'))
 def run_meta():
     cands = json.load(gzip.open(CP, 'rt', encoding='utf-8'))[SHARD::SHARDS]
@@ -819,7 +844,7 @@ def merge():
             if k in cov: cov[k][where].setdefault(r[1], []).append(x['i'])
     for x in res:
         if BYT[x['k']]['full'] and not x.get('keep'): credit(x, 'new')
-        elif BYT[x['k']]['full'] and x.get('est') and x.get('why') == 'running time not listed; usual episode length assumed': credit(x, 'est')
+        elif BYT[x['k']]['full'] and (x.get('est') or x.get('alt')) and x.get('se'): credit(x, 'est')
     quick = re.compile('|'.join(sorted({re.escape(nm['n']) for s in fulls for nm in s['names'] if nm['lvl'] <= 1}, key=len, reverse=True)) or 'no full shows')
     for x in held:
         t = flat(x.get('t')); low = clean(t)
@@ -842,10 +867,10 @@ def merge():
         per = collections.OrderedDict()
         for k in codes:
             v = per.setdefault(k[:3], [0, 0]); v[1] += 1; v[0] += k in got
-        coverage[sh['title']] = {'episodes': len(codes), 'held_elsewhere': len(set(c['held']) & set(codes)), 'in_this_file': len(set(c['new']) & set(codes)), 'covered': len(codes) - len(miss), 'seasons': {k: '%d/%d' % tuple(v) for k, v in per.items()}, 'missing': [[k, g['names'][(int(k[1:3]), int(k[4:6]))]] for k in miss], 'missing_but_in_items_without_listed_running_time': soft}
+        coverage[sh['title']] = {'episodes': len(codes), 'held_elsewhere': len(set(c['held']) & set(codes)), 'in_this_file': len(set(c['new']) & set(codes)), 'covered': len(codes) - len(miss), 'seasons': {k: '%d/%d' % tuple(v) for k, v in per.items()}, 'missing': [[k, g['names'][(int(k[1:3]), int(k[4:6]))]] for k in miss], 'missing_but_in_doubtful_items': soft}
         print('  COVER %-32s episodes %3d held elsewhere %3d here %3d covered %3d missing %3d | %s' % (sh['title'], len(codes), len(set(c['held']) & set(codes)), len(set(c['new']) & set(codes)), len(codes) - len(miss), len(miss), ' '.join('%s %d/%d' % (k, v[0], v[1]) for k, v in per.items())))
         if not codes: print('  COVER', sh['title'], 'no episode guide loaded')
-        for k in miss: print('    MISSING', sh['title'], k, '|', g['names'][(int(k[1:3]), int(k[4:6]))], '| in an item without listed running time' if k in soft else '')
+        for k in miss: print('    MISSING', sh['title'], k, '|', g['names'][(int(k[1:3]), int(k[4:6]))], '| only in an item kept as maybe (no running time listed or no mp4)' if k in soft else '')
         only = [k for k in codes if k in c['new'] and k not in c['held']]
         print('    NEWLY COVERED', sh['title'], len(only), ' '.join(only))
     with gzip.open(OUTF, 'wt', encoding='utf-8') as f: json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
