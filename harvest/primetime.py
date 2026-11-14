@@ -185,8 +185,8 @@ def consider(sh, it, route='t'):
     t = flat(it.get('title')); low = clean(t)
     if not t or NONLAT.search(t) or JUNK.search(low) or FOREIGN.search(low) or SPIN.search(low): return False
     if sh.get('junk') and re.search(sh['junk'], low): return False
-    gk = guide_ok(sh, low) if sh.get('guide') else None
-    if gk is False and sh.get('guide') == 1: return False
+    gk = guide_ok(sh, low) if sh.get('guide') == 1 else None
+    if gk is False: return False
     lang = flat(it.get('language')).lower()
     if lang and not re.search(r'eng|english|^en$', lang): return False
     if MOD2.search(t) or re.search(r'\b20(0[5-9]|[12]\d)[01]\d[0-3]\d\b', low) or re.search(r'\b(amiga|atari|commodore|c64|ms-dos|nes|snes|genesis|zx spectrum|b[oö]l[uü]m|tvi|kzk)\b', low): return False
