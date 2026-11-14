@@ -51,6 +51,56 @@ def load_have():
                 have.add(x['i'] if isinstance(x, dict) else x[0])
         except Exception as e: print('skip', p, e)
     return have
+GP = os.path.join(PARTS, 'guide.json'); GH = os.path.join(here, 'guide_primetime.json')
+def norm0(t): return re.sub(r'\s+', ' ', re.sub(r"[^a-z0-9]+", ' ', t.lower().replace("'", ''))).strip()
+def fetch_guides():
+    out = {}
+    for sh in SHOWS:
+        if not sh.get('guide') or sh['title'] in out: continue
+        j = get('https://api.tvmaze.com/search/shows?q=' + urllib.parse.quote(sh['title'])) or []
+        pick = None
+        for r in j:
+            w = r.get('show') or {}
+            py = int((w.get('premiered') or '0000')[:4] or 0)
+            if norm0(w.get('name', '')) == norm0(sh['title']) and abs(py - sh.get('start', sh['first'])) <= 1: pick = w; break
+        if not pick: print('GUIDE none', sh['title']); continue
+        eps = get('https://api.tvmaze.com/shows/%d/episodes' % pick['id']) or []
+        rows = [[e['season'], e['number'], e.get('name') or '', e['airdate']] for e in eps if e.get('number') and e.get('airdate') and e['airdate'] <= '2004-08-31' and e['season'] <= sh.get('maxs', 99)]
+        out[sh['title']] = rows; print('GUIDE', sh['title'], len(rows), 'episodes', flush=True); time.sleep(1)
+    return out
+if MODE == 'plan':
+    GUIDE = fetch_guides()
+    if not GUIDE and os.path.exists(GH): GUIDE = json.load(open(GH, encoding='utf-8'))
+    json.dump(GUIDE, open(GP, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+else:
+    GUIDE = json.load(open(GP, encoding='utf-8')) if os.path.exists(GP) else json.load(open(GH, encoding='utf-8')) if os.path.exists(GH) else {}
+GENT = {'pilot', 'the pilot', 'finale', 'the finale', 'the reunion', 'the wedding', 'the trip', 'the movie', 'the letter', 'the show', 'the party', 'christmas', 'thanksgiving', 'halloween'}
+EP = {}
+for _k, _rows in GUIDE.items():
+    _t = {}
+    for _s, _n, _nm, _d in _rows:
+        _z = norm0(_nm)
+        if len(_z) >= 8 and _z not in GENT and len(_z.split()) >= 2: _t[_z] = (_s, _n)
+    EP[_k] = {'t': sorted(_t.items(), key=lambda kv: -len(kv[0])), 'd': {(_s, _n): _d for _s, _n, _nm, _d in _rows}, 'maxs': max([r[0] for r in _rows] or [0])}
+SE1 = re.compile(r"\bs(?:eason)?\s?(\d{1,2})[\s._-]{0,3}(?:e|ep|episode)\s?(\d{1,3})\b|\b(\d{1,2})x\s?(\d{1,3})\b")
+def file_se(sh, text):
+    g = EP.get(sh['title'])
+    if not g: return None
+    low = clean(text)
+    m = SE1.search(low)
+    if m:
+        a, b = (int(m.group(1)), int(m.group(2))) if m.group(1) else (int(m.group(3)), int(m.group(4)))
+        return (a, b)
+    z = ' ' + norm0(low) + ' '
+    for k, v in g['t']:
+        if ' ' + k + ' ' in z: return v
+    return None
+def guide_ok(sh, low):
+    g = EP.get(sh['title'])
+    if not g: return None
+    se = file_se(sh, low)
+    if se: return (se in g['d'])
+    return None
 BYT = {}
 for _s in SHOWS: BYT.setdefault(_s['title'], _s)
 STOP = {'the', 'a', 'an', 'of', 'and', 'in', 'on', 'to', 'with', 'show', 'by', 'for', 'is', 'it', 'at', 'from', 'md', 'mr'}
@@ -112,15 +162,20 @@ def verify(sh, x):
     blob = ((x.get('ds') or '') + ' ' + (x.get('s') or '')).lower()
     return has_cast(sh, blob) or bool(DESCEV.search(blob)) or (len(ds) >= 3 and 1080 <= ds[len(ds) // 2] <= 4200)
 def season_ok(sh, low):
+    if sh.get('maxs') and any(n > sh['maxs'] for n in seasons(low)) and not MULTI.search(low): return False
     return all(start(sh) + n - 1 <= sh['last'] + 1 for n in seasons(low))
 def consider(sh, it, route='t'):
     t = flat(it.get('title')); low = clean(t)
     if not t or NONLAT.search(t) or JUNK.search(low) or FOREIGN.search(low) or SPIN.search(low): return False
+    if sh.get('junk') and re.search(sh['junk'], low): return False
+    gk = guide_ok(sh, low) if sh.get('guide') else None
+    if gk is False: return False
     lang = flat(it.get('language')).lower()
     if lang and not re.search(r'eng|english|^en$', lang): return False
     if MOD2.search(t): return False
     nt = ' ' + norm(low) + ' '
     intitle = any((' ' + norm(q) + ' ') in nt for q in sh['q'])
+    if not intitle and gk and any(e in low for e in sh.get('extra', [])): intitle = True
     desc = flat(it.get('description')).lower(); subj = flat(it.get('subject')).lower()
     cols = set(it.get('collection') or []) if isinstance(it.get('collection'), list) else {it.get('collection')}
     iy = item_year(it); mod = iy > 2004 and iy > sh['last']
@@ -137,7 +192,9 @@ def consider(sh, it, route='t'):
     if not year_ok(sh, t) or not season_ok(sh, low): return False
     if MODERN.search(t) and not inrun: return False
     if sh['kind'] in DAILY and not (airdate(t) or any(1984 <= int(y) <= 2004 and sh['first'] <= int(y) <= sh['last'] for y in YR.findall(t))): return False
-    strong = bool(seasons(low)) or bool(MULTI.search(low))
+    strong = bool(seasons(low)) or bool(MULTI.search(low)) or bool(gk)
+    if sh.get('strictg') and not (strong or (TAPE2.search(low) and not mod) or (re.search(r'\bfox\b', low) and inrun)): return False
+    if gk and not mod: return 't'
     m = EPN.search(low)
     if m and not seasons(low) and sh['kind'] not in DAILY and sh['kind'] not in ('game', 'reality') and int(m.group(1)) > 30 * (sh['last'] - start(sh) + 1): return False
     weak = bool(DISC.search(low + ' ' + subj)) or bool(cols & TVSET) or bool(inrun) or any(norm(q) in norm(subj) for q in sh['q'])
@@ -181,6 +238,11 @@ def plan():
             if sh.get('must'):
                 extra = ' AND (' + ' OR '.join('"%s"' % c for c in sh['cast'][:4]) + ' OR nbc OR cbs OR abc OR fox OR sitcom)' if len(sig(q)) <= 1 and sh.get('cast') else ''
                 qs.append(('mediatype:movies AND description:("%s")%s AND (collection:(%s) OR title:(vhs OR tape OR commercials OR nbc OR cbs OR abc OR fox OR upn OR wb OR recorded))' % (ph, extra, TVCOL), 'd'))
+            if sh.get('guide') and q == sh['q'][-1] and sh['title'] in EP:
+                core = norm(q)
+                for k, v in EP[sh['title']]['t']:
+                    qs.append(('mediatype:movies AND title:("%s") AND title:("%s")' % (core, k), 't'))
+                if sh.get('extra'): qs += [('mediatype:movies AND title:("%s")' % e, 't') for e in sh['extra']]
             for qq, route in qs:
                 for it in scrape(qq):
                     i = it.get('identifier')
@@ -258,14 +320,31 @@ def meta(c):
     files.sort(key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f[0])])
     sh = BYT[c['k']]
     t = flat(m.get('title'))[:200]; desc = ' '.join(flat(m.get('description')).split())[:400]
-    x = {'i': c['identifier'], 'q': KMAP.get(c['kind'], 'prime'), 't': t, 'd': '', 'y': '', 'c': [], 's': flat(m.get('subject')).replace(' ', ' ')[:200], 'ds': desc, 'f': files[:60], 'dl': c.get('downloads') or 0, 'k': c['k'], 'e': 0, 'net': c['net'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
+    x = {'i': c['identifier'], 'q': KMAP.get(c['kind'], 'prime'), 't': t, 'd': '', 'y': '', 'c': [], 's': flat(m.get('subject')).replace(' ', ' ')[:200], 'ds': desc, 'f': files[:500 if sh.get('guide') else 60], 'dl': c.get('downloads') or 0, 'k': c['k'], 'e': 0, 'net': c['net'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
     col = m.get('collection', []); x['c'] = ([col] if isinstance(col, str) else col)[:4]
     x['d'] = flat(m.get('date'))
     if x['r'] == 'v':
         if not verify(sh, x): return None
         x['r'] = 't'
     if not stamp(sh, x) or not post_ok(sh, x): return None
+    tag(sh, x)
+    if sh.get('guide') and not x['f']: return None
     return x
+def tag(sh, x):
+    g = EP.get(sh['title'])
+    if not g: return
+    one = len(x['f']) <= 2; se = []; keep = []
+    for f in x['f']:
+        v = file_se(sh, f[0]) or (file_se(sh, x['t']) if one else None)
+        if v and v[0] > g['maxs']: continue
+        keep.append(f)
+        if v and v in g['d']: se.append([len(keep) - 1, 'S%02dE%02d' % v, g['d'][v]])
+    x['f'] = keep
+    if se:
+        x['se'] = se; y = int(min(r[2] for r in se)[:4])
+        if 1984 <= y <= 2004 and not x.get('ad'): x['e'] = y; x['y'] = str(y)
+        if len(keep) == 1 and not x.get('ad'): x['ad'] = se[0][2]; x['d'] = se[0][2]
+    else: x.pop('se', None)
 def stamp(sh, x):
     t = x['t']; low = clean(t)
     ad = airdate(t) or airdate((x.get('ds') or '')[:200])
@@ -321,6 +400,9 @@ def merge():
         for x in json.load(gzip.open(p, 'rt', encoding='utf-8')):
             if x['i'] not in have: have.add(x['i']); add.append(x)
     allx = keep + add
+    for x in allx:
+        if BYT[x['k']].get('guide'): tag(BYT[x['k']], x)
+    allx = [x for x in allx if x['f']]
     if not allx: print('nothing to write'); return
     json.dump(allx, gzip.open(F, 'wt', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     hrs = lambda xs: round(sum(sum(f[1] for f in x['f']) for x in xs) / 3600)
@@ -348,6 +430,19 @@ def merge():
         done.add(s['title']); v = T[s['title']]; r = R[s['title']]
         flag = 'FOUND' if v[1] + r[1] >= 20 else 'THIN' if v[1] or v[3] or r[1] else 'MISSING'
         print('MUST', flag, '|', s['title'], '|', s['net'], '|', v[0], '|', v[1], '|', round(v[2] / 3600, 1), '|', v[3], '|', r[0], '|', r[1], '|', round(r[2] / 3600, 1), '|', ' '.join('S%d:%d' % kv for kv in sorted(v[4].items())))
+    for k, g in EP.items():
+        got = collections.Counter()
+        for x in allx:
+            if x['k'] == k:
+                for r in x.get('se', []): got[r[1]] += 1
+        bys = collections.defaultdict(list)
+        for (a, b) in sorted(g['d']): bys[a].append(b)
+        tot = sum(1 for (a, b) in g['d'] if got['S%02dE%02d' % (a, b)])
+        print('== GUIDE', k, 'episodes found', tot, 'of', len(g['d']))
+        for a in sorted(bys):
+            miss = [b for b in bys[a] if not got['S%02dE%02d' % (a, b)]]
+            print('GUIDESEASON', k, 'S%02d' % a, 'FOUND' if not miss else 'PARTIAL' if len(miss) < len(bys[a]) else 'MISSING', len(bys[a]) - len(miss), '/', len(bys[a]), 'missing', ' '.join(str(b) for b in miss))
+    if GUIDE: json.dump(GUIDE, open(GH, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     print('== all shows with items (items files hours tape title)')
     for k, v in sorted(T.items(), key=lambda kv: -kv[1][1]): print('SHOW', v[0], v[1], round(v[2] / 3600, 1), v[3], BYT[k]['net'], BYT[k]['kind'], k)
     for net in ('nbc', 'cbs', 'abc', 'fox', 'wb', 'upn', 'syn'):
