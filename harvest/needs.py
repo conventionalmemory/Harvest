@@ -989,6 +989,18 @@ def merge():
     print('merged old', len(old0), 'kept', len(old), 'added', len(add), 'total', len(res), 'hours', hours(res), 'maybe', sum(1 for x in res if x.get('keep')))
     by = collections.defaultdict(list)
     for x in res: by[x['k']].append(x)
+    nmap = {}
+    for sh in SHOWS:
+        for nm in sh['names']:
+            if nm['lvl'] <= 1 and len(nm['n']) >= 5: nmap.setdefault(nm['n'], sh['title'])
+    HELDN = collections.Counter(); HELDF = collections.Counter()
+    if nmap:
+        bigrx = re.compile(r'(?<![a-z0-9])(?:' + '|'.join(re.escape(k) for k in sorted(nmap, key=len, reverse=True)) + r')(?![a-z0-9])')
+        for x in held:
+            t = flat(x.get('t'))
+            if not t or NONLAT.search(t): continue
+            ks = {nmap[m.group(0)] for m in bigrx.finditer(norm(clean(t)))}
+            for k in ks: HELDN[k] += 1; HELDF[k] += len(x['f'])
     rows = []
     for sh in sorted(SHOWS, key=lambda s: (s['pri'], s['title'])):
         L = by.get(sh['title'], []); sure = [x for x in L if not x.get('keep')]
@@ -1006,16 +1018,17 @@ def merge():
         elif not sure: st = 'MAYBE'
         elif sh['cls'] == 'scripted': st = 'FOUND' if n >= max(4, min(20, 0.15 * ge)) else 'THIN'
         else: st = 'FOUND' if n >= 5 else 'THIN'
-        rows.append({'title': sh['title'], 'pri': sh['pri'], 'type': sh['type'], 'net': sh['net'], 'years': sh['years'], 'guide_episodes': ge, 'items': len(L), 'maybe': len(L) - len(sure), 'files': sum(len(x['f']) for x in L), 'hours': hours(L), 'episodes': len(eps), 'other_files': loose, 'status': st})
+        if st == 'MISSING' and HELDN[sh['title']]: st = 'HELD'
+        rows.append({'title': sh['title'], 'pri': sh['pri'], 'type': sh['type'], 'net': sh['net'], 'years': sh['years'], 'guide_episodes': ge, 'items': len(L), 'maybe': len(L) - len(sure), 'files': sum(len(x['f']) for x in L), 'hours': hours(L), 'episodes': len(eps), 'other_files': loose, 'held_elsewhere_items': HELDN[sh['title']], 'held_elsewhere_files': HELDF[sh['title']], 'status': st})
     tot = {}
     for p in (0, 1, 2, 3):
         R = [r for r in rows if r['pri'] == p]
-        tot[str(p)] = {'shows': len(R), **{s.lower(): sum(1 for r in R if r['status'] == s) for s in ('FOUND', 'THIN', 'MAYBE', 'MISSING')}, 'items': sum(r['items'] for r in R), 'hours': sum(r['hours'] for r in R)}
+        tot[str(p)] = {'shows': len(R), **{s.lower(): sum(1 for r in R if r['status'] == s) for s in ('FOUND', 'THIN', 'MAYBE', 'HELD', 'MISSING')}, 'items': sum(r['items'] for r in R), 'hours': sum(r['hours'] for r in R)}
     json.dump({'updated': time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime()), 'items': len(res), 'hours': hours(res), 'priority': tot, 'coverage': coverage, 'shows': rows}, open(REPF, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
     print('PRIORITY TABLE')
     for p in ('0', '1', '2', '3'): print('  pri', p, tot[p])
     print('SHOW TABLE')
-    for r in rows: print('  %-7s pri%d %-9s items %4d maybe %4d files %5d hours %5d eps %4d/%-4d other %4d | %s' % (r['status'], r['pri'], r['type'], r['items'], r['maybe'], r['files'], r['hours'], r['episodes'], r['guide_episodes'], r['other_files'], r['title']))
+    for r in rows: print('  %-7s pri%d %-9s items %4d maybe %4d files %5d hours %5d eps %4d/%-4d other %4d held elsewhere %4d items | %s' % (r['status'], r['pri'], r['type'], r['items'], r['maybe'], r['files'], r['hours'], r['episodes'], r['guide_episodes'], r['other_files'], r['held_elsewhere_items'], r['title']))
     print('era years', sorted(collections.Counter(str(x['e']) for x in res).items()))
     print('categories', sorted(collections.Counter(x['q'] for x in res).items()))
     print('maybe reasons', collections.Counter(x.get('why') for x in res if x.get('keep')).most_common(12))
