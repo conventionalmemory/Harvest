@@ -98,8 +98,9 @@ def lr_ok(x):
         return yr <= 2005 and (yr >= 1983 or x['k'] in ('The Lawrence Welk Show', 'Nature of Things'))
     if re.search(INR, x['t']): return True
     if x.get('e'): return True
-    if re.search(INR, x.get('ds', '')[:300]) and not re.search(r'(?<!\d)20(0[5-9]|[12]\d)(?!\d)', x.get('ds', '')[:300]): return True
-    return False
+    late = re.search(r'(?<!\d)20(0[5-9]|[12]\d)(?!\d)', x.get('ds', '')[:300] + ' ' + x['t'])
+    if re.search(INR, x.get('ds', '')[:300]) and not late: return True
+    return False if late else 'maybe'
 BRANDS = [('National Geographic Specials', r'national geographic', 'nature', 'pbs'), ('Discovery Channel Specials', r'discovery channel', 'science', 'cab'), ('History Channel Specials', r'history channel', 'history', 'cab'), ('A&E Specials', r'\ba ?(&|and) ?e\b', 'bio', 'cab'), ('The Learning Channel Specials', r'learning channel|\btlc\b', 'science', 'cab'), ('PBS Specials', r'\bpbs\b', 'newsdoc', 'pbs'), ('Jacques Cousteau Specials', r'cousteau', 'nature', 'pbs'), ('Bill Moyers Specials', r'bill moyers|\bmoyers\b', 'newsdoc', 'pbs'), ('Ken Burns Films', r'ken burns', 'history', 'pbs'), ('David Attenborough Specials', r'attenborough', 'nature', 'pbs'), ('Smithsonian World', r'smithsonian', 'history', 'pbs'), ('Time-Life Video', r'time[- ]life', 'history', 'syn'), ('Reader\'s Digest Video', r'reader.?s digest', 'travel', 'syn'), ('IMAX Films', r'\bimax\b', 'nature', 'syn'), ('CBS Reports', r'cbs reports', 'newsdoc', 'cbs'), ('NBC White Paper', r'nbc white paper|nbc news special', 'newsdoc', 'nbc'), ('ABC News Closeup', r'abc news close.?up|abc news special', 'newsdoc', 'abc'), ('Travel Channel Specials', r'travel channel', 'travel', 'cab'), ('Animal Planet Specials', r'animal planet', 'nature', 'cab'), ('TBS National Geographic Explorer', r'\bexplorer\b.*\btbs\b|\btbs\b.*\bexplorer\b', 'nature', 'cab')]
 BRX = [re.compile(b[1]) for b in BRANDS]
 DOCW = r'\b(documentary|special|vhs|video|presents|series|episode|tv|television|broadcast|aired|program|film)\b'
@@ -117,7 +118,11 @@ def brand_ok(x):
     return 1100 <= T <= 6 * 3600
 def keep(x):
     if x.get('br') is not None: return brand_ok(x)
-    if re.search(X_HARD, x['t'].lower()) or not lr_ok(x): return False
+    if re.search(X_HARD, x['t'].lower()): return False
+    lr = lr_ok(x)
+    if not lr: return False
+    if lr == 'maybe': x['keep'] = 'maybe'; x['why'] = 'long-running series, air year not verified'
+    else: x.pop('keep', None); x.pop('why', None)
     s = BYT.get(x['k'])
     if not s or not ok_title(x['t'], s.get('brit')) or not match(s, x['t']): return False
     if s.get('req'):
