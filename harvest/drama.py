@@ -31,7 +31,7 @@ def get(url, tries=4):
 def scrape(q):
     out, cursor = [], None
     while True:
-        u = 'https://archive.org/services/search/v1/scrape?' + urllib.parse.urlencode({'fields': 'identifier,title,date,year,collection,downloads,language', 'q': q, 'count': 5000, **({'cursor': cursor} if cursor else {})})
+        u = 'https://archive.org/services/search/v1/scrape?' + urllib.parse.urlencode({'fields': 'identifier,title,date,year,collection,downloads,language,subject', 'q': q, 'count': 5000, **({'cursor': cursor} if cursor else {})})
         j = get(u)
         if not j: break
         out += [x for x in (j.get('items') or []) if isinstance(x, dict) and x.get('identifier')]; cursor = j.get('cursor')
@@ -56,25 +56,42 @@ def ok_title(t):
     if re.search(X_FOR, low) or re.search(X_JUNK, low) or re.search(X_MOD, low): return False
     return True
 EPCTX = r"\b(episodes?|ep\.? ?\d+|seasons?|s\d{1,2}\s?e\d{1,3}|\d{1,2}x\d{2}|tv series|tv show|complete series|the series|pilot|sitcom|with commercials|woc|syndicat\w*)\b"
-SEPW = r'^(\d+|s\d+e?\d*|ep\d*|e\d+|episodes?|season|seasons|series|complete|pilot|part|pt|vol|volume|disc|tape|vhs|dvd|tv|show|nbc|cbs|abc|fox|pbs|hbo|tbs|wgn|usa|gsn|aande|woc|with|w|19\d\d|200[0-4])$'
+SEPW = r'^(\d+|\d{1,2}x\d*|s|se|s\d+e?\d*|ep\d*|e\d+|episodes?|season|seasons|series|complete|pilot|part|pt|vol|volume|disc|disk|tape|vhs|dvd|tv|show|nbc|cbs|abc|fox|pbs|hbo|tbs|wgn|usa|gsn|aande|woc|with|w|19\d\d|200[0-4])$'
 def match(show, title):
     amb = set(norm(a) for a in show.get('ambalt', []))
     names = [show['n']] + [norm(a) for a in show.get('alt', [])]
+    names += [h.replace(' and ', ' ') for h in names if ' and ' in h]
+    strong = re.search(r's\d{1,2}\s?e\s?\d|season \d|episode \d|\b\d{1,2}x\s?\d\d|\bvhs\b|with commercials|complete series|episodes of', title.lower())
     nt = ' ' + norm(title) + ' '
     c = core(title); low = title.lower()
     for hit in names:
         if (' ' + hit + ' ') not in nt: continue
-        if hit not in amb and (not show.get('ambiguous') or hit != show['n']) and (len(hit.split()) >= 2 or len(hit) >= 9): return True
+        if hit not in amb and (not show.get('ambiguous') or hit != show['n']) and (len(hit.split()) >= 2 or len(hit) >= 9):
+            c0 = re.sub(r'^(the|a) ', '', c); h0 = re.sub(r'^(the|a) ', '', hit)
+            if c0.startswith(h0) or strong: return True
+            continue
+        if strong and re.search(r'vhs tape|with commercials|episodes of', title.lower()) and len(hit) >= 6: return True
         sn = re.sub(r'^(the|a) ', '', hit)
         c2 = c if (c.startswith(sn + ' ') or c == sn) else re.sub(r'^(the|a) ', '', nt.strip())
         if not c2.startswith(sn + ' ') and c2 != sn: continue
         rest = c2[len(sn):].strip()
         if not rest: return True
-        if re.match(SEPW, rest.split()[0]): return True
+        rt = rest.split()
+        if re.match(SEPW, rt[0]): return True
+        if any(re.match(r'^(s\d+e?\d*|season|seasons|episode|\d{1,2}x\d+|complete|disc|disk|dvd)$', w) for w in rt[1:4]): return True
         last = sn.split()[-1]; i = low.find(last)
         tail = low[i + len(last):] if i >= 0 else 'x'
         if tail.startswith('..') or re.match(r"^['!?.)]*\s*[-–:|(\[#]", tail): return True
     return False
+def subhit(show, subj, title):
+    sj = subj if isinstance(subj, list) else re.split(r'[;,]', str(subj or ''))
+    names = set([show['n']] + [norm(a) for a in show.get('alt', [])])
+    if not any(norm(v) in names for v in sj): return False
+    return bool(re.search(r's\d{1,2}\s?e\s?\d|season \d|episode \d|\b\d{1,2}x\s?\d\d|\bep\.? ?\d', title.lower()))
+def yearok(s, title):
+    ys = [int(v) for v in re.findall(r'(?<!\d)(19\d\d|20\d\d)(?!\d)', title)]
+    if not ys: return True
+    return any(s['first_year'] - 1 <= v <= min(s['last_year'], 2004) + 1 or (s['q'] == 'rerun' and 1984 <= v <= 2004) for v in ys)
 def disc(title, cols, blob=''):
     low = title.lower()
     if re.search(EPCTX, low) or re.search(r'(?<!\d)(19[5-9]\d|200[0-4])(?!\d)', low) or re.search(r'\b(disc|dvd|vol(ume)?\.? ?\d|part \d|vhs)\b', low): return True
@@ -83,7 +100,7 @@ def disc(title, cols, blob=''):
 XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio'}
 def keep(x):
     s = BYT.get(x['k'])
-    if not s or not ok_title(x['t']) or not match(s, x['t']) or not disc(x['t'], x.get('c'), (x.get('s', '') + ' ' + x.get('ds', '')).lower()): return False
+    if not s or not ok_title(x['t']) or not (match(s, x['t']) or subhit(s, x.get('s'), x['t'])) or not yearok(s, x['t']) or re.search(r'(?i)\b(animated|cartoon|anime|trilogy|movie collection)\b', x['t']) or not disc(x['t'], x.get('c'), (x.get('s', '') + ' ' + x.get('ds', '')).lower()): return False
     if set(x.get('c') or []) & XCOL: return False
     if re.match(r'^[a-z]{4,10}-[A-Z]', x['i']) and not re.search(r'(19[4-9]\d|200[0-4])', x['t']): return False
     dy = re.match(r'(\d{4})', str(x.get('d') or ''))
@@ -117,7 +134,8 @@ if MODE == 'plan':
     print('known', len(have), 'shows', len(SHOWS), flush=True)
     def find(k):
         s = SHOWS[k]
-        q = 'mediatype:movies AND title:(' + ' OR '.join('"' + qtitle(a) + '"' for a in [s['title']] + s.get('alt', [])) + ')'
+        ph = ' OR '.join('"' + qtitle(a) + '"' for a in [s['title']] + s.get('alt', []))
+        q = 'mediatype:movies AND (title:(' + ph + ') OR subject:(' + ph + '))'
         if s.get('ambiguous') or len(s['n']) < 12: q += ' AND ' + CTXQ
         return k, scrape(q)
     seen = {}; hits = collections.Counter(); raw = collections.Counter(); why = collections.defaultdict(collections.Counter); smp = collections.defaultdict(list)
@@ -132,7 +150,8 @@ if MODE == 'plan':
                 if lang and not re.search(r'(?i)eng|english|^en\b', lang): why[k]['lang'] += 1; continue
                 cl = it.get('collection'); cl = cl if isinstance(cl, list) else [cl] if cl else []
                 if not ok_title(t): why[k]['title'] += 1; smp[k, 'T'].append(t[:70]); continue
-                if not match(s, t): why[k]['match'] += 1; smp[k, 'M'].append(t[:70]); continue
+                if not match(s, t) and not subhit(s, it.get('subject'), t): why[k]['match'] += 1; smp[k, 'M'].append(t[:70]); continue
+                if not yearok(s, t): why[k]['year'] += 1; continue
                 if s.get('ambiguous') and not disc(t, cl): why[k]['disc'] += 1; continue
                 seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': k}; hits[k] += 1
             if k % 100 == 0: print('search', k, len(seen), round((time.time() - T0) / 60, 1), 'min', flush=True)
@@ -207,7 +226,6 @@ def meta(it):
     files.sort(key=lambda f: f[0])
     title = m.get('title', ''); title = ' '.join(title) if isinstance(title, list) else str(title)
     s = SHOWS[it['k']]
-    if not ok_title(title) or not match(s, title): return None
     desc = m.get('description', '')
     if isinstance(desc, list): desc = ' '.join(desc)
     desc = ' '.join(re.sub(r'<[^>]+>', ' ', str(desc)).split())

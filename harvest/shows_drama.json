@@ -2310,24 +2310,6 @@
 "ambiguous": true
 },
 {
-"title": "Marker",
-"net": "upn",
-"first_year": 1995,
-"last_year": 1995,
-"original_run": "1995-1995",
-"q": "prime",
-"ambiguous": true
-},
-{
-"title": "Legend",
-"net": "upn",
-"first_year": 1995,
-"last_year": 1995,
-"original_run": "1995-1995",
-"q": "prime",
-"ambiguous": true
-},
-{
 "title": "The Burning Zone",
 "net": "upn",
 "first_year": 1996,
@@ -3638,15 +3620,6 @@
 "q": "prime"
 },
 {
-"title": "Ed",
-"net": "nbc",
-"first_year": 2000,
-"last_year": 2004,
-"original_run": "2000-2004",
-"q": "prime",
-"ambiguous": true
-},
-{
 "title": "The Fugitive (2000)",
 "net": "cbs",
 "first_year": 2000,
@@ -3854,15 +3827,6 @@
 "first_year": 2003,
 "last_year": 2008,
 "original_run": "2003-2008",
-"q": "prime",
-"ambiguous": true
-},
-{
-"title": "Lost",
-"net": "abc",
-"first_year": 2004,
-"last_year": 2004,
-"original_run": "2004-2004",
 "q": "prime",
 "ambiguous": true
 },
