@@ -240,8 +240,10 @@ def load_old():
         sh = BYT.get(x.get('k'))
         r = sh and consider(sh, {'title': x.get('t'), 'collection': x.get('c'), 'subject': x.get('s'), 'description': x.get('ds'), 'date': '' if x.get('ad') else x.get('d')}, 'd' if x.get('r') == 'd' else 't')
         if r in ('b', 'd'): x['r'] = r
-        if r and post_ok(sh, x) and (r != 'v' or verify(sh, x)): keep.append(x)
-        else: drop.append(x)
+        if not r: drop.append(x); continue
+        if not post_ok(sh, x): maybe(x, 'files shorter than a normal episode')
+        if r == 'v' and not verify(sh, x): maybe(x, 'show match not verified by cast, description or episode lengths')
+        keep.append(x)
     return keep, drop
 def plan():
     have = load_have(); keep, drop = load_old()
@@ -315,14 +317,23 @@ def post_ok(sh, x):
         if sorted(ds)[len(ds) // 2] < 600: return False
         if len(ds) == 1 and ds[0] < 1080: return False
     return True
+REJ = collections.Counter(); REJS = collections.defaultdict(list)
+def rej(c, why):
+    REJ[why] += 1
+    if c.get('must'):
+        REJ[(c['k'], why)] += 1
+        if len(REJS[(c['k'], why)]) < 6: REJS[(c['k'], why)].append(c['identifier'])
+    return None
 def meta(c):
-    if BUDGET and time.time() - T0 > BUDGET: return None
+    if BUDGET and time.time() - T0 > BUDGET: return rej(c, 'budget')
     j = get('https://archive.org/metadata/' + urllib.parse.quote(c['identifier']))
-    if not j or not j.get('files') or j.get('is_dark'): return None
+    if not j or not j.get('files'): return rej(c, 'nometa')
+    if j.get('is_dark'): return rej(c, 'dark')
     m = j.get('metadata', {})
-    if str(m.get('access-restricted-item', '')).lower() == 'true': return None
+    if str(m.get('access-restricted-item', '')).lower() == 'true': return rej(c, 'restricted')
     lang = flat(m.get('language')).lower()
-    if lang and not re.search(r'eng|english|^en$', lang): return None
+    if lang and not re.search(r'eng|english|^en$', lang): return rej(c, 'lang')
+    cap = 60 if c.get('must') else 30; hb = 0; nomp4 = sum(1 for f in j['files'] if re.search(r'\.(mkv|avi|mpg|mpeg|m4v|mov|ts|vob|iso|ogv|webm)$', f.get('name', '').lower()))
     groups = {}
     for f in j['files']:
         if not f.get('name', '').lower().endswith('.mp4'): continue
@@ -335,22 +346,29 @@ def meta(c):
         d = secs(b.get('length') or next((x.get('length') for x in g if x.get('length')), 0))
         if d < 240: continue
         sz = float(b.get('size') or 0)
-        if sz and sz / 1e6 / (d / 60) > 30: continue
+        if sz and sz / 1e6 / (d / 60) > cap: hb += 1; continue
+        if sz and sz / 1e6 / (d / 60) > 30: c['hb'] = 1
         files.append([b['name'], round(d), b.get('format', '')])
-    if not files or sum(f[1] for f in files) < 900: return None
+    if not files: return rej(c, 'bitrate' if hb else 'nomp4_other' if nomp4 else 'nofiles')
+    if sum(f[1] for f in files) < 900: return rej(c, 'short')
     files.sort(key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f[0])])
     sh = BYT[c['k']]
     t = flat(m.get('title'))[:200]; desc = ' '.join(flat(m.get('description')).split())[:400]
     x = {'i': c['identifier'], 'q': KMAP.get(c['kind'], 'prime'), 't': t, 'd': '', 'y': '', 'c': [], 's': flat(m.get('subject')).replace(' ', ' ')[:200], 'ds': desc, 'f': files[:500 if sh.get('guide') else 60], 'dl': c.get('downloads') or 0, 'k': c['k'], 'e': 0, 'net': c['net'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
     col = m.get('collection', []); x['c'] = ([col] if isinstance(col, str) else col)[:4]
     x['d'] = flat(m.get('date'))
+    if c.get('hb'): x['hb'] = 1
     if x['r'] == 'v':
-        if not verify(sh, x): return None
+        if not verify(sh, x): maybe(x, 'show match not verified by cast, description or episode lengths'); rej(c, 'verify_kept')
         x['r'] = 't'
-    if not stamp(sh, x) or not post_ok(sh, x): return None
+    if not stamp(sh, x): return rej(c, 'stamp')
+    if not post_ok(sh, x): maybe(x, 'files shorter than a normal episode'); rej(c, 'postok_kept')
+    allf = list(x['f'])
     tag(sh, x)
-    if sh.get('guide') and not x['f']: return None
+    if sh.get('guide') and not x['f']: x['f'] = allf[:60]; maybe(x, 'no file matched the episode guide'); rej(c, 'tagempty_kept')
     return x
+def maybe(x, why):
+    x['keep'] = 'maybe'; x['why'] = (x.get('why') + '; ' if x.get('why') and why not in x['why'] else '') + why if not (x.get('why') and why in x['why']) else x['why']
 def tag(sh, x):
     g = EP.get(sh['title'])
     if not g: return
@@ -406,6 +424,8 @@ def run_meta():
             if n % 1000 == 0: print('meta', n, len(res), round((time.time() - T0) / 60, 1), flush=True)
     json.dump(res, gzip.open(os.path.join(PARTS, 'pt-%d.json.gz' % SHARD), 'wt', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     print('shard done', len(res))
+    print('REJ', sorted((k, v) for k, v in REJ.items() if isinstance(k, str)))
+    for (k, why), v in sorted(((k, v) for k, v in REJ.items() if not isinstance(k, str)), key=lambda kv: -kv[1])[:120]: print('REJSHOW', v, k[0], '|', k[1], '|', ' '.join(REJS[k]))
 def merge():
     F = os.path.join(OUT, 'primetime.json.gz')
     keep, drop = load_old()
@@ -442,8 +462,11 @@ def merge():
             have.add(x['i']); mine.add(x['i']); add.append(x)
     allx = keep + add
     for x in allx:
-        if BYT[x['k']].get('guide'): tag(BYT[x['k']], x)
+        if BYT[x['k']].get('guide'):
+            f0 = list(x['f']); tag(BYT[x['k']], x)
+            if not x['f'] and f0: x['f'] = f0[:60]; maybe(x, 'no file matched the episode guide')
     allx = [x for x in allx if x['f']]
+    print('kept as maybe', sum(1 for x in allx if x.get('keep') == 'maybe'), sorted(collections.Counter(x.get('why') for x in allx if x.get('keep') == 'maybe').items(), key=lambda kv: -kv[1])[:8])
     if not allx: print('nothing to write'); return
     json.dump(allx, gzip.open(F, 'wt', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     hrs = lambda xs: round(sum(sum(f[1] for f in x['f']) for x in xs) / 3600)
