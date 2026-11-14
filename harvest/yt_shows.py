@@ -99,7 +99,9 @@ EXTRA = [
  ("CBS Evening News", "news", "cbs", 1962, 2030, "date", ["cbs evening news"]),
 ]
 BADT = re.compile(r"(?i)\b(reaction|reacts?|review|recap|clips?|scenes?|best of|moments|compilation|trailer|promo|promos|opening|intro|theme song|bloopers|behind the scenes|interview|explained|top \d+|ranking|ranked|podcast|commentary|tribute|parody|edit|amv|mashup|remix|deleted|ending|outro|credits|teaser|preview|every time|supercut|funniest|highlights|montage|unboxing|gameplay|longplay|walkthrough|speedrun|cover|lyrics|karaoke|shorts?|tiktok|meme|fan ?made|restored in 4k|60 ?fps|upscale[d]?|ai |sub español|subtitulado|latino|dublado|legendado|español|castellano|deutsch|fran[cç]ais|italiano|hindi|tagalog|vostfr|ger sub|napisy|türkçe|عربي|partial|rus eng|eng rus|x264|x265|ac3|learn english|talk \|\||watch ?along|first time watching|breakdown|analysis|retrospective|rewatch)\b")
-DATEX = re.compile(r"(?i)\b(cardiology|today (show )?australia|gmtv|canada am|(?<!with )(?<!w )(?<!w/)(?<!w/ )(?<!original )(?<!some )commercials? (from|aired|during|block)|^commercials)\b")
+BADCH = re.compile(r"(?i)^classic loveline$|speedrun")
+FORX = re.compile(r"(?i)\b(bbc ?[1-4]|bbc one|bbc two|bbc news|itv ?[1-4]?|sky news|tvnz|nine network|seven network|network ten|channel 4 uk|cbbc|citv)\b")
+DATEX = re.compile(r"(?i)\b(cardiology|vsu|australian today|today (show )?australia|gmtv|canada am|(?<!with )(?<!w )(?<!w/)(?<!w/ )(?<!original )(?<!some )commercials? (from|aired|during|block)|^commercials)\b")
 PARTX = re.compile(r"(?i)\b(part|pt\.?)\s*([1-9]|one|two|three)\s*(of|/)\s*\d|\[\s*\d\s*/\s*\d\s*\]|\(\s*\d\s*/\s*\d\s*\)")
 LATEY = re.compile(r'\b(200[5-9]|20[12]\d)\b|\b\d{1,2}[./]\d{1,2}[./](0[5-9]|[12]\d)\b')
 OFFX = re.compile(r"(?i)(official|studios?|television|entertainment|network|pictures|classics|vault|archive|archives|museum|library|university|pbs|nbc|cbs|abc|fox|warner|paramount|sony|universal|disney|mgm|lionsgate|shout|filmrise|hasbro|mattel|wildbrain|nelvana|dhx|9 story|cookie jar|nickelodeon|cartoon network|a&e|history|discovery|c-span|associated press|ap archive)")
@@ -542,6 +544,7 @@ def match(t, c, M):
     T = c['t']; n = nz(T)
     if c['live'] or c['dur'] < 500: return None
     if BADT.search(T) or PARTX.search(T): return None
+    if BADCH.search(c.get('ch') or '') or FORX.search(T): return None
     if re.search(r'[^\x00-\x7f]', re.sub(r'[’‘“”–—…é·•|®™]', '', T)): return None
     hit = None
     for a in sorted(t['al'], key=lambda a: -len(a)):
