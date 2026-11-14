@@ -52,6 +52,7 @@ def scrape(q, cap=60000):
     return out
 X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblada|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|fran[cç]ais|french dub|vf|vostfr|italiano|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|rom[aâ]n[aă]|t[uü]rk[cç]e|русск|hindi|tamil|telugu|urdu|arabic|bahasa|tagalog|sub ?esp|subtitulado|temporada|cap[ií]tulo|episodio|folge|staffel|saison|aflevering|odcinek|uk version|australian version|canadian version|bbc|itv|channel 4|sky one|rte|cbc|ctv|global tv|nine network|seven network|network ten)\b"
 X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|playstation|xbox|rom ?hack|emulator|pinball|board game|comic book|audiobook|audio book|ebook|pdf|soundtrack|ost|theme song|theme music|fan ?made|fan-?edit|fanfilm|fan film|amv|ytp|parody|spoof|abridged|recap|podcast|reaction|commentary track|retrospective|making of|documentary about|radio show|radio broadcast|otr|old time radio|vinyl|cassette|album|sheet music|screenplay|unboxing|slideshow|screensaver|supercut|mashup|remix|karaoke|lyrics|xxx|porn|hentai|nude|bloopers?|outtakes?|trailers?|teaser|tribute|logos?|idents?|audio only|mp3|script|transcript)\b"
+X_ADS = r"\b(commercial breaks?|commercial block|commercial compilation|ad breaks?|promos?|bumpers?|station ids?|radio|fm)\b|commercials?\s*(\(|-|:|from|of)|^\s*commercials"
 X_MOD = r"(?<!\d)(20(0[5-9]|[1-3]\d))(?!\d)|\b(reboot|revival|netflix|hulu|disney\+|paramount\+|hbo max|prime video|youtube|tiktok|twitch|livestream|zoom)\b"
 TAPE = r"\b(vhs|tape|recording|recorded|aircheck|air check|broadcast|commercials|betamax|off.?air|tv|[wk][a-z]{3}(-tv)?)\b"
 XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio', 'tvnews', 'tvarchive', 'TV', 'democracy_now_vid'}
@@ -68,6 +69,7 @@ def ok_title(t, s=None):
     if re.search(r'[^\x00-\xff‐-‧™]', t) or re.search(r'[ãõçñ]', low): return False
     if re.search(X_FOR, low) or re.search(X_JUNK, low) or re.search(X_MOD, low): return False
     if s is not None:
+        if s['ct'] not in ('weather', 'shopping') and re.search(X_ADS, low): return False
         if s['X'] and s['X'].search(low): return False
         if s['ct'] != 'mag' and re.search(r'\b(reviews?|reviewed)\b', low): return False
     return True
@@ -92,6 +94,10 @@ def era(s, title, d, y):
     if inr: return inr[0], 't'
     if [v for v in ys if v != s['a']]: return None, 'x'
     if s.get('s1'):
+        m = re.search(r'(?i)\bseason (\d{1,2})\b|\bs(\d{1,2})\s?e\d{1,3}\b', title) if s.get('half') else None
+        if m:
+            v = s['s1'] + int(next(g for g in m.groups() if g)) // 2
+            return (v, 's') if s['lo'] <= v <= s['hi'] else (None, 'x')
         m = re.search(r'(?i)\bs(\d{1,2})\s?e\d{1,3}\b|\bseason (\d{1,2})\b|(?<!\d)(\d{1,2})x\d{2}(?!\d)', title)
         if m:
             v = s['s1'] + int(next(g for g in m.groups() if g)) - 1
@@ -138,32 +144,36 @@ if MODE == 'plan':
                 print('collections for', s['title'], cols[:20], flush=True)
                 res += [(x, 'c') for x in scrape('mediatype:movies AND collection:(' + ' OR '.join(cols[:20]) + ')', 30000)]
         return k, res
-    seen = {}; hits = collections.Counter(); raw = collections.Counter(); route = collections.Counter()
+    seen = {}; hits = collections.Counter(); raw = collections.Counter(); route = collections.Counter(); WHY = collections.defaultdict(collections.Counter)
+    def why(k, r): WHY[k][r] += 1
     def take(k, it, via):
         s = SHOWS[k]; i = it['identifier']
-        if i in have or i in mine or i in seen: return
+        if i in seen: return
+        if i in have or i in mine: return why(k, 'known')
         t = tstr(it.get('title')); lang = tstr(it.get('language'))
-        if lang and not re.search(r'(?i)eng|english|^en\b', lang): return
+        if lang and not re.search(r'(?i)eng|english|^en\b', lang): return why(k, 'lang')
         col = it.get('collection') or []
         if isinstance(col, str): col = [col]
-        if set(col) & XCOL: return
-        if not ok_title(t, s): return
-        if via in ('t', 'q') and not match(s, t): return
+        if set(col) & XCOL: return why(k, 'col')
+        if not ok_title(t, s): return why(k, 'title')
+        if via in ('t', 'q') and not match(s, t): return why(k, 'nomatch')
         e, how = era(s, t, it.get('date'), it.get('year'))
-        if how == 'x': return
+        if how == 'x': return why(k, 'era')
+        if via == 'x' and how == 'g' and not match(s, t): return why(k, 'undated')
         if via == 'm':
             if match(s, t): via = 't'
-            elif how not in ('t', 'd') or not (re.search(TAPE, t.lower()) or any('vhs' in c.lower() for c in col)): return
+            elif how not in ('t', 'd') or not re.search(r'\b(vhs|tape|recording|recorded|aircheck|air check|off.?air|betamax)\b', t.lower()): return why(k, 'mention')
         seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': k, 'v': via}; hits[k] += 1; route[via] += 1
     with ThreadPoolExecutor(8) as ex:
         for k, res in ex.map(find, range(len(SHOWS))):
             raw[k] = len(res)
             for it, via in res: take(k, it, via)
+            raw[k] += 0
             if k % 25 == 0: print('search', k, len(seen), round((time.time() - T0) / 60, 1), 'min', flush=True)
     for xq in EXTRA:
         k = next((n for n, s in enumerate(SHOWS) if s['title'] == xq['k']), None)
         if k is None: continue
-        res = scrape('mediatype:movies AND (' + xq['q'] + ')', 30000); n0 = hits[k]
+        res = scrape('mediatype:movies AND (' + xq['q'].replace('YQ', YQ) + ')', 30000); n0 = hits[k]; raw[k] += len(res)
         for it in res: take(k, it, xq.get('via', 'q'))
         print('extra', xq['k'], '|', xq['q'][:90], '| raw', len(res), 'kept', hits[k] - n0, flush=True)
     cands = sorted(seen.values(), key=lambda x: x['identifier'])
@@ -172,7 +182,7 @@ if MODE == 'plan':
     for k, n in hits.items(): ct[SHOWS[k]['ct']] += n
     print('candidates per type', sorted(ct.items()))
     print('CANDIDATES PER SHOW')
-    for k, s in enumerate(SHOWS): print('  %5d raw %6d  %s [%s]' % (hits[k], raw[k], s['title'], s['ct']))
+    for k, s in enumerate(SHOWS): print('  %5d raw %6d  %s [%s] %s' % (hits[k], raw[k], s['title'], s['ct'], dict(WHY[k].most_common(5))))
     with gzip.open(os.path.join(PARTS, 'gaps_cands.json.gz'), 'wt', encoding='utf-8') as f:
         json.dump(cands, f, separators=(',', ':'))
     sys.exit(0)
@@ -184,16 +194,23 @@ def secs(v):
             return s
         return float(v)
     except Exception: return 0
-RANK = {'h.264 IA': 0, 'h.264': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
+RANK = {'h.264 IA': 0, 'h.264': 1, 'h.264 HD': 2, 'MPEG4': 3, '512Kb MPEG4': 4}
+LIM = {'weather': 420, 'shopping': 420, 'morning': 600, 'overnight': 600, 'soul': 600}
+REJ = collections.Counter()
 def meta(it):
-    if time.time() - T0 > BUDGET: return None
+    r = meta0(it)
+    if isinstance(r, str): REJ[SHOWS[it['k']]['ct'] + ':' + r] += 1; return None
+    return r
+def meta0(it):
+    if time.time() - T0 > BUDGET: return 'budget'
     j = get('https://archive.org/metadata/' + urllib.parse.quote(it['identifier']))
-    if not j or not j.get('files') or j.get('is_dark'): return None
+    if not j or not j.get('files') or j.get('is_dark'): return 'dark'
     m = j.get('metadata', {})
-    if str(m.get('access-restricted-item', '')).lower() == 'true': return None
-    if str(m.get('mediatype', 'movies')) != 'movies': return None
+    if str(m.get('access-restricted-item', '')).lower() == 'true': return 'restricted'
+    if str(m.get('mediatype', 'movies')) != 'movies': return 'type'
     lang = tstr(m.get('language', ''))
-    if lang and not re.search(r'(?i)eng|english|^en\b', lang): return None
+    if lang and not re.search(r'(?i)eng|english|^en\b', lang): return 'lang'
+    s0 = SHOWS[it['k']]
     groups = {}
     for f in j['files']:
         if not f.get('name', '').lower().endswith('.mp4'): continue
@@ -209,28 +226,30 @@ def meta(it):
         sz = float(b.get('size') or 0)
         if sz and sz / 1e6 / (d / 60) > 30: continue
         files.append([b['name'], round(d), b.get('format', '')])
-    if not files or sum(f[1] for f in files) < 600 or max(f[1] for f in files) < 420: return None
+    if not files: return 'nofile'
+    lim = LIM.get(s0['ct'], 1020)
+    if sum(f[1] for f in files) < lim or max(f[1] for f in files) < lim: return 'short'
     files.sort(key=lambda f: f[0])
     title = tstr(m.get('title', ''))
     s = SHOWS[it['k']]; via = it.get('v', 't')
-    if not ok_title(title, s): return None
-    if via in ('t', 'q') and not match(s, title): return None
+    if not ok_title(title, s): return 'title'
+    if via in ('t', 'q') and not match(s, title): return 'nomatch'
     desc = m.get('description', '')
     if isinstance(desc, list): desc = ' '.join(str(x) for x in desc)
     desc = ' '.join(re.sub(r'<[^>]+>', ' ', str(desc)).split())
     col = m.get('collection', [])
     if isinstance(col, str): col = [col]
-    if set(col) & XCOL: return None
+    if set(col) & XCOL: return 'col'
     subj = m.get('subject', '')
     if isinstance(subj, list): subj = ';'.join(str(x) for x in subj)
     blob = (title + ' ' + str(subj) + ' ' + desc[:500]).lower()
-    if re.search(X_FOR, blob): return None
-    if re.search(r'\b(podcast|fan ?film|fan ?made|video ?game|gameplay|radio (show|program|broadcast)|old time radio|audio only)\b', blob): return None
+    if re.search(X_FOR, blob): return 'foreign'
+    if re.search(r'\b(podcast|fan ?film|fan ?made|video ?game|gameplay|radio (show|program|broadcast)|old time radio|audio only)\b', blob): return 'junk'
     if via == 'm':
         nb = ' ' + norm(str(subj) + ' ' + desc) + ' '
-        if not any((' ' + p + ' ') in nb for p in s['S']): return None
+        if not any((' ' + p + ' ') in nb for p in s['S']): return 'mention'
     e, how = era(s, title, m.get('date'), m.get('year'))
-    if how == 'x': return None
+    if how == 'x': return 'era'
     r = {'i': it['identifier'], 'q': s['q'], 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': e, 'ct': s['ct'], 'v': via}
     if how == 'g': r['g'] = 1
     return r
@@ -244,14 +263,20 @@ if MODE == 'meta':
             if n % 1000 == 0: print('meta', n, len(res), round((time.time() - T0) / 60, 1), 'min', flush=True)
     with gzip.open(os.path.join(PARTS, 'gaps-%d.json.gz' % SHARD), 'wt', encoding='utf-8') as f:
         json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
-    print('shard done', len(res)); sys.exit(0)
+    print('shard done', len(res)); print('REJECTED', sorted(REJ.items())); sys.exit(0)
 def keep(x):
     s = BYT.get(x['k'])
     if not s or not ok_title(x['t'], s): return False
     if x.get('v', 't') in ('t', 'q') and not match(s, x['t']): return False
+    if x.get('v') == 'm' and not re.search(r'\b(vhs|tape|recording|recorded|aircheck|air check|off.?air|betamax)\b', x['t'].lower()): return False
+    if max(f[1] for f in x['f']) < LIM.get(s['ct'], 1020): return False
     return era(s, x['t'], x.get('d'), x.get('y'))[1] != 'x'
 old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
 old = [x for x in old0 if keep(x)]
+for x in old:
+    e, how = era(BYT[x['k']], x['t'], x.get('d'), x.get('y')); x['e'] = e
+    if how == 'g': x['g'] = 1
+    else: x.pop('g', None)
 print('refiltered existing', len(old0), '->', len(old))
 have = set(x['i'] for x in old); add = []
 for p in sorted(glob.glob(os.path.join(PARTS, 'gaps-*.json.gz'))):

@@ -52,7 +52,8 @@
 "abc",
 "morning"
 ],
-"open": 1
+"open": 1,
+"x": "telesine|gma network|kapuso|pinoy|gma 7|gma news"
 },
 {
 "title": "CBS Morning News",
@@ -826,9 +827,12 @@
 "q": "prime",
 "ct": "reality",
 "run": "1987-2002",
-"s": [
+"s": [],
+"x": "red ice|sanxingdui|giants|ancient|ufo files|world war",
+"w": [
 "unsolved mysteries"
-]
+],
+"need": "\\b(robert stack|stack|nbc|cbs|lifetime|season|episode|s\\d{1,2}\\s?e\\d{1,3}|19(8[7-9]|9\\d)|200[0-2]|vhs|full)\\b"
 },
 {
 "title": "Rescue 911",
@@ -837,7 +841,8 @@
 "run": "1989-1996",
 "s": [
 "rescue 911"
-]
+],
+"s1": 1989
 },
 {
 "title": "America's Most Wanted",
@@ -859,7 +864,6 @@
 "^cops"
 ],
 "need": "\\b(fox|season|episode|s\\d\\de\\d\\d|19(89|9\\d)|200[0-4])\\b",
-"open": 1,
 "s1": 1989,
 "x": "robbers|keystone|cartoon|c\\.o\\.p\\.s"
 },
@@ -926,7 +930,8 @@
 "^santa barbara"
 ],
 "need": "\\b(nbc|soap|episodes?|ep|capwell|19(8[4-9]|9[0-3]))\\b",
-"x": "county|city council|ucsb|parade|fiesta|earthquake|news"
+"x": "county|city council|ucsb|parade|fiesta|earthquake|news",
+"s1": 1984
 },
 {
 "title": "Search for Tomorrow",
@@ -944,7 +949,8 @@
 "run": "1997-1999",
 "s": [
 "sunset beach"
-]
+],
+"s1": 1997
 },
 {
 "title": "Passions",
@@ -956,7 +962,7 @@
 "^passions"
 ],
 "need": "\\b(nbc|soap|episodes?|ep|1999|200[0-4])\\b",
-"open": 1
+"s1": 1999
 },
 {
 "title": "Generations",
@@ -968,7 +974,8 @@
 "^generations"
 ],
 "need": "\\b(nbc|soap|19(89|9[01]))\\b",
-"x": "star trek"
+"x": "star trek",
+"s1": 1989
 },
 {
 "title": "The Young and the Restless",
@@ -1053,7 +1060,8 @@
 "s": [
 "general hospital"
 ],
-"open": 1
+"open": 1,
+"x": "blackadder|uk vhs"
 },
 {
 "title": "Ryan's Hope",
@@ -1083,7 +1091,8 @@
 "run": "1997-2003",
 "s": [
 "port charles"
-]
+],
+"s1": 1997
 },
 {
 "title": "The Edge of Night",
@@ -1211,7 +1220,7 @@
 "tnn"
 ],
 "need": "\\b(aircheck|country|opry|19(8[4-9]|9\\d)|200[0-4])\\b",
-"x": "ecw|wwf|wwe|raw|wrestling|nascar|rollerjam|motor|bass|fishing|outdoors",
+"x": "ecw|wwf|wwe|raw|wrestling|nascar|rollerjam|motor|bass|fishing|outdoors|monster jam|rusty wallace|win with|rpm|trucks|tractor|arena",
 "open": 1
 },
 {
@@ -1345,7 +1354,8 @@
 "run": "1971-2004",
 "s": [
 "soul train"
-]
+],
+"s1": 1971
 },
 {
 "title": "Showtime at the Apollo",
@@ -1490,7 +1500,6 @@
 "s": [
 "judge judy"
 ],
-"open": 1,
 "s1": 1996
 },
 {
@@ -1659,7 +1668,8 @@
 "w": [
 "emeril",
 "emeril lagasse"
-]
+],
+"s1": 1997
 },
 {
 "title": "Essence of Emeril",
@@ -1678,7 +1688,6 @@
 "s": [
 "good eats"
 ],
-"open": 1,
 "s1": 1999
 },
 {
@@ -1689,7 +1698,8 @@
 "s": [
 "iron chef"
 ],
-"x": "america|gauntlet|showdown|next iron chef|uk|australia"
+"x": "america|gauntlet|showdown|next iron chef|uk|australia",
+"s1": 1999
 },
 {
 "title": "Two Fat Ladies",
@@ -1698,7 +1708,8 @@
 "run": "1996-1999",
 "s": [
 "two fat ladies"
-]
+],
+"s1": 1996
 },
 {
 "title": "Molto Mario",
@@ -1707,7 +1718,8 @@
 "run": "1996-2004",
 "s": [
 "molto mario"
-]
+],
+"s1": 1996
 },
 {
 "title": "Ready... Set... Cook!",
@@ -2014,7 +2026,9 @@
 "w": [
 "bob ross"
 ],
-"need": "\\b(paint\\w*|season|episode)\\b"
+"need": "\\b(paint\\w*|season|episode)\\b",
+"s1": 1983,
+"half": 1
 },
 {
 "title": "The Magic of Oil Painting",
@@ -2034,7 +2048,6 @@
 "s": [
 "trading spaces"
 ],
-"open": 1,
 "s1": 2000
 },
 {
@@ -2129,8 +2142,10 @@
 "ct": "exercise",
 "run": "1992-2000",
 "s": [
-"flex appeal"
-]
+"kianas flex appeal",
+"kiana tom"
+],
+"w": []
 },
 {
 "title": "The 20 Minute Workout",
@@ -2865,7 +2880,7 @@
 "w": [
 "conan obrien"
 ],
-"open": 1
+"s1": 1993
 },
 {
 "title": "Friday Night Videos",
@@ -2959,9 +2974,12 @@
 "q": "late",
 "ct": "late",
 "run": "1993-2002",
-"s": [
+"s": [],
+"w": [
 "politically incorrect"
-]
+],
+"need": "\\b(maher|abc|comedy central|19(9[3-9])|200[0-2]|episode)\\b",
+"x": "guide to|cartoon|woods"
 },
 {
 "title": "The Dennis Miller Show",
@@ -3108,5 +3126,218 @@
 "nbc nightside",
 "nbc news nightside"
 ]
+},
+{
+"title": "Soul Train Music Awards",
+"q": "music",
+"ct": "soul",
+"run": "1987-2004",
+"s": [
+"soul train music awards",
+"soul train awards",
+"soul train lady of soul"
+],
+"open": 1
+},
+{
+"title": "Ebony/Jet Showcase",
+"q": "mag",
+"ct": "soul",
+"run": "1982-1993",
+"s": [
+"ebony jet showcase",
+"ebony/jet showcase",
+"ebony jet celebrity showcase"
+]
+},
+{
+"title": "Video Music Box",
+"q": "music",
+"ct": "soul",
+"run": "1983-2004",
+"s": [
+"video music box",
+"ralph mcdaniels"
+]
+},
+{
+"title": "The New Dance Show",
+"q": "music",
+"ct": "soul",
+"run": "1988-1996",
+"s": [
+"the new dance show",
+"new dance show",
+"the scene detroit"
+]
+},
+{
+"title": "Yo! MTV Raps",
+"q": "music",
+"ct": "soul",
+"run": "1988-1995",
+"s": [
+"yo mtv raps"
+]
+},
+{
+"title": "Pump It Up!",
+"q": "music",
+"ct": "soul",
+"run": "1989-1992",
+"s": [
+"pump it up with dee barnes"
+],
+"w": [
+"^pump it up"
+],
+"need": "\\b(dee barnes|fox|rap|hip hop|19(89|9[0-2]))\\b"
+},
+{
+"title": "Graffiti Rock",
+"q": "music",
+"ct": "soul",
+"run": "1984-1984",
+"s": [
+"graffiti rock"
+]
+},
+{
+"title": "New York Hot Tracks",
+"q": "music",
+"ct": "soul",
+"run": "1983-1989",
+"s": [
+"new york hot tracks",
+"ny hot tracks"
+]
+},
+{
+"title": "Tony Brown's Journal",
+"q": "talk",
+"ct": "soul",
+"run": "1978-2004",
+"s": [
+"tony browns journal",
+"tony brown s journal"
+]
+},
+{
+"title": "Like It Is",
+"q": "talk",
+"ct": "soul",
+"run": "1968-2004",
+"s": [
+"like it is with gil noble",
+"gil noble"
+],
+"open": 1
+},
+{
+"title": "Apollo Comedy Hour",
+"q": "late",
+"ct": "soul",
+"run": "1992-1995",
+"s": [
+"apollo comedy hour",
+"uptown comedy club"
+]
+},
+{
+"title": "Motown specials",
+"q": "music",
+"ct": "soul",
+"run": "1983-2004",
+"s": [
+"motown 25",
+"motown returns to the apollo",
+"motown 30",
+"motown 40",
+"motown merry christmas",
+"motown on showtime"
+],
+"open": 0
+},
+{
+"title": "BET shows",
+"q": "music",
+"ct": "soul",
+"run": "1984-2004",
+"s": [
+"donnie simpson",
+"video lp",
+"screen scene",
+"bet on jazz",
+"jazz central",
+"lead story",
+"our voices",
+"bet news",
+"caribbean rhythms",
+"cita s world",
+"hits from the street",
+"bobby jones",
+"comic view",
+"bet comicview",
+"heart and soul",
+"planet groove"
+],
+"open": 0,
+"x": "awards 20"
+},
+{
+"title": "Music video shows",
+"q": "music",
+"ct": "soul",
+"run": "1984-2004",
+"s": [
+"hit video usa",
+"hot tracks",
+"the box music",
+"jukebox network",
+"video jukebox",
+"the box 199",
+"friday night videos",
+"night tracks",
+"power play dancin",
+"dance party usa",
+"club mtv",
+"club connect",
+"soul beat",
+"in the mix",
+"midnight star"
+],
+"open": 0
+},
+{
+"title": "Network morning tapes",
+"q": "morning",
+"ct": "morning",
+"run": "1984-2004",
+"s": [],
+"w": [
+"nbc news today",
+"today nbc",
+"abc gma",
+"cbs morning",
+"this morning cbs",
+"morning program",
+"sunrise",
+"early today",
+"early show",
+"world news this morning",
+"cbs morning news",
+"daybreak",
+"wake up",
+"am america",
+"good day",
+"fox and friends",
+"breakfast time",
+"mike and maty",
+"home show",
+"live with regis"
+],
+"need": "(19(8[4-9]|9\\d)|200[0-4])",
+"open": 1,
+"x": "radio|britain|australia|scotland|vietnam|sunrise (earth|semester|ave|at)|records"
 }
 ]

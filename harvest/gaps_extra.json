@@ -1,0 +1,82 @@
+[
+{
+"k": "Network morning tapes",
+"via": "x",
+"q": "title:(morning) AND title:(news OR show OR nbc OR cbs OR abc OR fox OR today OR wake OR live) AND title:(YQ)"
+},
+{
+"k": "Today",
+"via": "q",
+"q": "title:(today) AND title:(nbc OR gumbel OR pauley OR couric OR lauer OR \"today show\") AND title:(YQ)"
+},
+{
+"k": "Good Morning America",
+"via": "q",
+"q": "title:(\"good morning america\" OR gma) AND title:(abc OR YQ OR lunden OR hartman OR gibson)"
+},
+{
+"k": "Network morning tapes",
+"via": "x",
+"q": "subject:(\"morning show\" OR \"morning news\" OR \"today show\" OR \"good morning america\" OR \"cbs this morning\" OR \"morning television\") AND (title:(YQ) OR date:[1984-01-01 TO 2004-12-31])"
+},
+{
+"k": "The Weather Channel",
+"via": "x",
+"q": "title:(weather) AND title:(channel OR forecast OR twc OR doppler OR hurricane OR tornado OR blizzard OR storm OR local OR report OR coverage) AND title:(YQ)"
+},
+{
+"k": "The Weather Channel",
+"via": "x",
+"q": "subject:(\"weather channel\" OR \"the weather channel\" OR twc OR weatherstar OR \"weather star\" OR \"local forecast\" OR \"local on the 8s\") AND (title:(YQ) OR date:[1984-01-01 TO 2004-12-31])"
+},
+{
+"k": "Local weather forecast",
+"via": "x",
+"q": "title:(hurricane OR tornado OR blizzard OR \"winter storm\" OR flood OR \"severe weather\") AND title:(coverage OR news OR live OR wx OR weather OR tv OR vhs) AND title:(YQ)"
+},
+{
+"k": "Cooking shows",
+"via": "x",
+"q": "subject:(\"cooking show\" OR \"cooking shows\" OR \"cooking program\" OR \"tv chef\" OR \"food network\" OR \"pbs cooking\") AND (title:(YQ) OR date:[1984-01-01 TO 2004-12-31])"
+},
+{
+"k": "Cooking shows",
+"via": "x",
+"q": "title:(cooking OR chef OR chefs OR kitchen OR gourmet OR cuisine OR recipes OR baking OR barbecue OR cajun) AND title:(pbs OR vhs OR tv OR episode OR season OR YQ) AND (title:(YQ) OR date:[1984-01-01 TO 2004-12-31])"
+},
+{
+"k": "Food Network",
+"via": "x",
+"q": "title:(\"food network\" OR tvfn OR emeril OR \"iron chef\" OR \"good eats\" OR \"molto mario\" OR \"two fat ladies\" OR \"bobby flay\" OR \"sara moulton\" OR \"ready set cook\" OR \"too hot tamales\" OR \"david rosengarten\" OR \"curtis aikens\" OR \"mario batali\" OR \"ming tsai\" OR \"rachael ray\" OR \"alton brown\")"
+},
+{
+"k": "Cooking shows",
+"via": "x",
+"q": "title:(\"yan can cook\" OR \"martin yan\" OR \"frugal gourmet\" OR \"great chefs\" OR \"justin wilson\" OR \"jacques pepin\" OR \"paul prudhomme\" OR \"galloping gourmet\" OR \"graham kerr\" OR \"nathalie dupree\" OR \"madeleine kamman\" OR \"pierre franey\" OR \"lidia bastianich\" OR \"mary ann esposito\" OR \"ciao italia\" OR \"burt wolf\" OR \"jeff smith\" OR \"marcia adams\" OR \"cooking with master chefs\" OR \"baking with julia\" OR \"dinner at julia\" OR \"americas test kitchen\" OR \"new southern cooking\" OR \"cookin cheap\" OR \"wok with yan\" OR \"dessert circus\")"
+},
+{
+"k": "BET shows",
+"via": "x",
+"q": "title:(bet OR \"black entertainment\") AND title:(video OR soul OR rap OR jazz OR comic OR aircheck OR vhs OR tape OR block OR gospel OR music OR news OR tonight) AND title:(YQ)"
+},
+{
+"k": "BET shows",
+"via": "x",
+"q": "title:(\"video soul\" OR \"donnie simpson\" OR \"rap city\" OR \"teen summit\" OR comicview OR \"comic view\" OR \"bobby jones gospel\" OR \"midnight love\" OR \"video vibrations\" OR \"bet tonight\" OR \"video lp\" OR \"screen scene\" OR \"planet groove\" OR \"bet soundstage\" OR \"jazz central\" OR \"caribbean rhythms\")"
+},
+{
+"k": "Soul Train",
+"via": "q",
+"q": "title:(\"soul train\") AND title:(episode OR season OR full OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR cornelius)"
+},
+{
+"k": "Music video shows",
+"via": "x",
+"q": "subject:(\"soul train\" OR \"video soul\" OR bet OR \"black entertainment television\" OR \"r&b videos\" OR \"rap videos\" OR \"yo mtv raps\" OR \"new jack swing\") AND title:(vhs OR tape OR videos OR block OR mix OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994)"
+},
+{
+"k": "Music video shows",
+"via": "x",
+"q": "title:(\"music videos\" OR \"video block\" OR \"video mix\" OR \"video show\") AND title:(rap OR \"r&b\" OR soul OR \"hip hop\" OR funk OR \"new jack\") AND title:(YQ)"
+}
+]
