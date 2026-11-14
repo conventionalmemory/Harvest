@@ -393,6 +393,12 @@ def merge():
         try: prev = {x['i']: x for x in json.load(gzip.open(OUT, 'rt', encoding='utf-8'))}
         except Exception: prev = {}
     days = have_index(); today = datetime.date.today()
+    for x in list(prev.values()):
+        if x.get('as') == 'event':
+            d, _ = event_date(x['t'])
+            if not d: d, _ = champ_date(x['t'])
+            if d: x['ad'] = d; x['e'] = int(d[:4])
+            else: prev.pop(x['i'], None)
     rej = collections.Counter(); items = dict(prev); samples = []
     for r in rows:
         m = {'oe': r['m']['oe'], 'dur': r['dur'], 'chid': r['chid'], 'author': r['ch'], 'desc': r.get('sn') or ''}; t = r['t']
