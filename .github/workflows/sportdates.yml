@@ -84,6 +84,6 @@ jobs:
         run: |
           git config user.name "Conventional Memory"
           git config user.email "conventionalmemory@users.noreply.github.com"
-          git add catalog/sports2.json.gz
+          git add catalog/sports2.json.gz catalog/sports2_times.json.gz
           git commit -q -m "Update schedule-dated sports catalog" || exit 0
           for i in 1 2 3 4 5 6 7 8; do git pull -q --rebase && git push && break; sleep $((10 + RANDOM % 30)); done

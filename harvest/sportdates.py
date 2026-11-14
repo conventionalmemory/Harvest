@@ -1170,6 +1170,19 @@ if MODE == 'merge':
     for x in random.sample(mine, min(50, len(mine))): print('MINESAMPLE', x['ct'], '|', x.get('ad', '') or x['e'], x.get('st', ''), x.get('net', ''), '|', x.get('ev', '') or x.get('why', ''), '|', x['t'][:70], '|', x['i'][:30], '|', round(sum(f[1] for f in x['f']) / 60), 'min |', x.get('sr', '')[:120])
     res = old + add + mine
     with gzip.open(OUTF, 'wt', encoding='utf-8') as f: json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
+    ext = []
+    for fn in ('sports.json.gz', 'dated.json.gz'):
+        pth = os.path.join(OUT, fn)
+        if not os.path.exists(pth): continue
+        for x in json.load(gzip.open(pth, 'rt', encoding='utf-8')):
+            if isinstance(x, list) and len(x) > 4 and re.match(r'\d{4}-\d\d-\d\d$', str(x[2])): i, t, d, lg = x[0], x[1], x[2], {'ncaa': 'ncaab'}.get(x[4], x[4])
+            elif isinstance(x, dict) and x.get('q') == 'sports' and x.get('ad'): i, t, d, lg = x['i'], x['t'], x['ad'], x.get('ct', '')
+            else: continue
+            row, ev = rowat(SC, lg, d, norm(t))
+            net = (row or {}).get('net') or (SBNET.get(d, '') if ' super bowl ' in norm(t) else '')
+            if row and (net or row.get('st')): ext.append({'i': i, 'ad': d, 'ev': ev, 'net': net, 'st': row.get('st', '')})
+    with gzip.open(os.path.join(OUT, 'sports2_times.json.gz'), 'wt', encoding='utf-8') as f: json.dump(ext, f, ensure_ascii=False, separators=(',', ':'))
+    print('TIMES for already dated sports items', len(ext), 'with st', sum(1 for x in ext if x['st']), 'with net', sum(1 for x in ext if x['net']))
     hrs = lambda L: round(sum(sum(f[1] for f in x['f']) for x in L) / 3600)
     dated = [x for x in res if x.get('ad')]
     print('merged old', len(old), 'added', len(add), 'total', len(res), 'hours', hrs(res), 'dated', len(dated), 'undated', len(res) - len(dated))
