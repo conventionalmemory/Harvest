@@ -78,6 +78,19 @@ def match(show, title):
     return False
 XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio'}
 DATED = ('news', 'talk', 'late', 'mag')
+NAMES = {}
+for s0 in SHOWS:
+    for a0 in [s0['n']] + [norm(b0) for b0 in s0.get('alt', [])]:
+        NAMES.setdefault(a0, s0['title']); NAMES.setdefault(re.sub(r'^(the|a) ', '', a0), s0['title'])
+def tape(title):
+    if title.count('|') < 1 or re.search(X_FOR, title.lower() + ' ') or re.search(X_MOD, title.lower() + ' '): return []
+    if re.search(r'(?i)\b(promo|promos|split screen|credits|commercial break|bumpers?|trailer|fan ?made|youtube)\b', title): return []
+    out = []
+    for seg in title.split('|'):
+        n = re.sub(r' x \d+$', '', norm(seg)).strip()
+        n = re.sub(r'^(the|a) ', '', n)
+        if n in NAMES and NAMES[n] not in out: out.append(NAMES[n])
+    return out
 def yr_ok(s, title):
     ys = [int(v) for v in re.findall(r'(?<!\d)(19[2-9]\d|200[0-4])(?!\d)', title)]
     if any(v < s['years'][0] for v in ys): return False
@@ -91,6 +104,7 @@ def subj_ok(s, subj):
     tags = set(norm(v) for v in (subj or []))
     return bool(tags & set([s['n']] + [norm(a) for a in s.get('alt', [])]))
 def keep(x):
+    if x.get('ct') == 'tape': return bool(tape(x['t']))
     s = BYT.get(x['k'])
     if not s or not ok_title(x['t']) or not (match(s, x['t']) or x.get('via')) or not yr_ok(s, x['t']): return False
     if s['q'] in DATED and not era(s, x['t'], x.get('d'), x.get('y')): return False
@@ -130,6 +144,10 @@ def coverage():
     names.sort(key=lambda p: -len(p[0]['n']))
     for b, x in allitems():
         ids.add(x['i'])
+        if x.get('ct') == 'tape':
+            for k2 in x.get('shows') or []:
+                if k2 in cov: c = cov[k2]; c[0] += 1; c[1] += 1; c[2] += 1500
+            continue
         t = str(x.get('t') or ''); nt = ' ' + norm(t) + ' '; kk = norm(str(x.get('k') or ''))
         for s, ns in names:
             if kk == s['n'] or (any((' ' + h + ' ') in nt for h in ns) and ok_title(t) and match(s, t)):
@@ -153,14 +171,14 @@ if MODE == 'plan':
     print('known', len(have), 'shows', len(SHOWS), 'targets', len(TARGET), flush=True)
     def find(k):
         s = SHOWS[k]
-        if k not in TARGET: return k, []
+        if k not in TARGET: return k, [dict(x, tp=1) for x in scrape('mediatype:movies AND title:("' + qtitle(s['title']) + '")') if '|' in str(x.get('title'))]
         q = 'mediatype:movies AND title:(' + ' OR '.join('"' + qtitle(a) + '"' for a in [s['title']] + s.get('alt', [])) + ')'
         if s.get('ambiguous'): q += ' AND ' + CTXQ
         a = scrape(q)
         q2 = 'mediatype:movies AND subject:(' + ' OR '.join('"' + qtitle(b) + '"' for b in [s['title']] + s.get('alt', [])) + ') AND ' + CTXQ
         ids = set(x['identifier'] for x in a)
         return k, a + [dict(x, via=1) for x in scrape(q2) if x['identifier'] not in ids]
-    seen = {}; hits = collections.Counter(); raw = collections.Counter(); rejs = collections.defaultdict(list)
+    seen = {}; hits = collections.Counter(); raw = collections.Counter(); rejs = collections.defaultdict(list); tapes = [0]
     with ThreadPoolExecutor(10) as ex:
         for k, items in ex.map(find, range(len(SHOWS))):
             s = SHOWS[k]; raw[k] = len(items)
@@ -171,6 +189,10 @@ if MODE == 'plan':
                 lang = it.get('language'); lang = ' '.join(lang) if isinstance(lang, list) else str(lang or '')
                 if lang and not re.search(r'(?i)eng|english|^en\b', lang): continue
                 via = 0
+                if tape(t):
+                    seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': k, 'tp': 1}; tapes[0] += 1
+                    continue
+                if it.get('tp'): continue
                 if not yr_ok(s, t):
                     if len(rejs[k]) < 4: rejs[k].append(t[:60])
                     continue
@@ -201,6 +223,7 @@ if MODE == 'plan':
     print('candidates', len(cands), flush=True)
     print('top candidate shows', [(SHOWS[k]['title'], n) for k, n in hits.most_common(80)])
     print('raw/kept/rejected samples', [(SHOWS[k]['title'], raw[k], hits[k], rejs[k]) for k in sorted(TARGET) if hits[k] < 12])
+    print('tape recordings', tapes[0])
     print('no candidates', [SHOWS[k]['title'] for k in sorted(TARGET) if not hits[k]])
     with gzip.open(os.path.join(PARTS, 'top_cands.json.gz'), 'wt', encoding='utf-8') as f:
         json.dump(cands, f, separators=(',', ':'))
@@ -243,9 +266,11 @@ def meta(it):
     files.sort(key=lambda f: f[0])
     title = m.get('title', ''); title = ' '.join(title) if isinstance(title, list) else str(title)
     s = SHOWS[it['k']]
+    tp = tape(title) if it.get('tp') else []
+    if it.get('tp') and (not tp or sum(f[1] for f in files) < 1200): return None
     subj0 = m.get('subject', '')
     via = 1 if it.get('via') and subj_ok(s, subj0) else 0
-    if not ok_title(title) or not (match(s, title) or via): return None
+    if not tp and (not ok_title(title) or not (match(s, title) or via)): return None
     desc = m.get('description', '')
     if isinstance(desc, list): desc = ' '.join(desc)
     desc = ' '.join(re.sub(r'<[^>]+>', ' ', str(desc)).split())
@@ -257,6 +282,9 @@ def meta(it):
     if re.search(X_FOR, blob): return None
     if re.search(r'\b(podcast|fan ?film|fan ?made|video ?game|gameplay|radio (show|program|broadcast)|old time radio|audio only)\b', blob): return None
     e = era(s, title, m.get('date'), m.get('year'))
+    if tp:
+        md = re.search(r'(?<!\d)((?:19[89]\d|200[0-4])-\d\d-\d\d)(?!\d)', title); my = re.search(r'(?<!\d)(19[89]\d|200[0-4])(?!\d)', title)
+        return {'i': it['identifier'], 'q': 'block', 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': tp[0], 'e': int(my.group(1)) if my else '', 'net': '', 'ct': 'tape', 'shows': tp, 'ad': md.group(1) if md else ''}
     return {'i': it['identifier'], 'q': s['q'], 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': e, 'net': s['net'], 'ct': 'rerun' if s['years'][1] < 1984 else 'top', 'via': via}
 def meta2(it):
     r = meta(it)
@@ -274,7 +302,8 @@ if MODE == 'meta':
     print('shard done', len(res)); sys.exit(0)
 old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
 old = [x for x in old0 if keep(x)]
-for x in old: x['e'] = era(BYT[x['k']], x['t'], x.get('d'), x.get('y'))
+for x in old:
+    if x.get('ct') != 'tape': x['e'] = era(BYT[x['k']], x['t'], x.get('d'), x.get('y'))
 print('refiltered existing', len(old0), '->', len(old))
 have = set(x['i'] for x in old); add = []
 for p in sorted(glob.glob(os.path.join(PARTS, 'top-*.json.gz'))):
@@ -287,7 +316,10 @@ hrs = lambda L: round(sum(sum(f[1] for f in x['f']) for x in L) / 3600)
 print('merged old', len(old), 'added', len(add), 'total', len(res), 'hours', hrs(res))
 cov, _ = coverage()
 table(cov, 'AFTER')
-bs = collections.Counter(x['k'] for x in res)
+bs = collections.Counter(x['k'] for x in res if x.get('ct') != 'tape')
+tp = [x for x in res if x.get('ct') == 'tape']
+print('TAPES', len(tp), 'hours', hrs(tp), 'dated', sum(1 for x in tp if x.get('ad')), 'years', sorted(collections.Counter(str(x['e']) for x in tp).items()))
+print('TAPE SHOWS', collections.Counter(k for x in tp for k in x['shows']).most_common(80))
 print('NEW ITEMS PER SHOW', bs.most_common())
 print('era years', sorted(collections.Counter(str(x['e']) for x in res).items()))
 random.seed(7)
