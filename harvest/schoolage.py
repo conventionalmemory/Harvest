@@ -4,8 +4,15 @@ UA = {'User-Agent': 'Mozilla/5.0 (retrotv-sources harvester)'}
 here = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(here, '..', 'catalog'); os.makedirs(OUT, exist_ok=True)
 THREADS = int(os.environ.get('THREADS', '16'))
-RAWF = os.path.join(OUT, 'raw.json.gz')
-have = set(x['i'] for x in json.load(gzip.open(RAWF, 'rt', encoding='utf-8'))) if os.path.exists(RAWF) else set()
+import glob
+have = set()
+for _p in glob.glob(os.path.join(OUT, '*.json.gz')):
+    if os.path.basename(_p) in ('schoolage.json.gz', 'dates.json.gz', 'epguide.json.gz', 'adsdates.json.gz', 'ads.json.gz'): continue
+    try:
+        for _x in json.load(gzip.open(_p, 'rt', encoding='utf-8')):
+            if isinstance(_x, dict) and 'i' in _x: have.add(_x['i'])
+            elif isinstance(_x, list) and _x and isinstance(_x[0], str): have.add(_x[0])
+    except Exception as _e: print('skip', _p, _e)
 print('existing', len(have), flush=True)
 S = [
 ('ycdtotv', 1986, ["you can't do that on television", "you cant do that on television"], None),
@@ -237,6 +244,68 @@ with ThreadPoolExecutor(8) as ex:
             if it['identifier'] not in seen:
                 seen[it['identifier']] = it; found[tag] += 1
         print('search', tag, n, len(keep), 'total', len(seen), flush=True)
+R2 = [
+("Rugrats", 1991, 2004), ("Rocko's Modern Life", 1993, 1996), ("The Ren & Stimpy Show", 1991, 1996), ("The Angry Beavers", 1997, 2001), ("CatDog", 1998, 2004), ("SpongeBob SquarePants", 1999, 2004), ("Aaahh!!! Real Monsters", 1994, 1997), ("The Fairly OddParents", 2001, 2004), ("The Adventures of Jimmy Neutron", 2002, 2004), ("Invader Zim", 2001, 2003), ("Hey Arnold!", 1996, 2004), ("Doug", 1991, 1999), ("The Wild Thornberrys", 1998, 2004), ("Rocket Power", 1999, 2004), ("KaBlam!", 1996, 2000), ("Clarissa Explains It All", 1991, 1994), ("Salute Your Shorts", 1991, 1992), ("Hey Dude", 1989, 1991), ("The Secret World of Alex Mack", 1994, 1998), ("Kenan & Kel", 1996, 2000), ("The Adventures of Pete & Pete", 1993, 1996), ("Legends of the Hidden Temple", 1993, 1995), ("Nickelodeon GUTS", 1992, 1995), ("Nick Arcade", 1992, 1993), ("Wild & Crazy Kids", 1990, 1992), ("What Would You Do?", 1991, 1993), ("Welcome Freshmen", 1991, 1993), ("The Mystery Files of Shelby Woo", 1996, 1998), ("Space Cases", 1996, 1997), ("Fifteen", 1991, 1993), ("Inspector Gadget", 1984, 1986), ("Danger Mouse", 1984, 1992), ("Count Duckula", 1988, 1993), ("David the Gnome", 1987, 1988), ("Looney Tunes on Nickelodeon", 1988, 1999),
+("DuckTales", 1987, 1990), ("Chip 'n Dale Rescue Rangers", 1989, 1990), ("TaleSpin", 1990, 1991), ("Darkwing Duck", 1991, 1992), ("Goof Troop", 1992, 1993), ("Bonkers", 1993, 1994), ("Gargoyles", 1994, 1997), ("Adventures of the Gummi Bears", 1985, 1991), ("The Wuzzles", 1985, 1985), ("Aladdin", 1994, 1995), ("The Little Mermaid", 1992, 1994), ("Timon & Pumbaa", 1995, 1999), ("Quack Pack", 1996, 1996), ("Mighty Ducks", 1996, 1997), ("Jungle Cubs", 1996, 1998), ("101 Dalmatians: The Series", 1997, 1998), ("Hercules", 1998, 1999), ("Recess", 1997, 2001), ("Pepper Ann", 1997, 2000), ("Teacher's Pet", 2000, 2002), ("The Weekenders", 2000, 2004), ("Lloyd in Space", 2001, 2004), ("Buzz Lightyear of Star Command", 2000, 2001), ("The Legend of Tarzan", 2001, 2003), ("Kim Possible", 2002, 2004), ("The Proud Family", 2001, 2004), ("Lilo & Stitch: The Series", 2003, 2004), ("Even Stevens", 2000, 2003), ("Lizzie McGuire", 2001, 2004), ("That's So Raven", 2003, 2004), ("The Famous Jett Jackson", 1998, 2001), ("So Weird", 1999, 2001), ("Bug Juice", 1998, 2001), ("Kids Incorporated", 1984, 1993), ("Welcome to Pooh Corner", 1984, 1986),
+("Mighty Morphin Power Rangers", 1993, 1996), ("Power Rangers", 1993, 2004), ("VR Troopers", 1994, 1996), ("Masked Rider", 1995, 1996), ("Big Bad Beetleborgs", 1996, 1998), ("Bobby's World", 1990, 1998), ("Eek! The Cat", 1992, 1997), ("Life with Louie", 1995, 1998), ("The Tick", 1994, 1996), ("Goosebumps", 1995, 1998), ("Where on Earth Is Carmen Sandiego?", 1994, 1999), ("The Magic School Bus", 1994, 1997), ("Attack of the Killer Tomatoes", 1990, 1991), ("Peter Pan and the Pirates", 1990, 1991), ("Taz-Mania", 1991, 1995), ("Tiny Toon Adventures", 1990, 1995), ("Animaniacs", 1993, 1998), ("Pinky and the Brain", 1995, 1998), ("Freakazoid!", 1995, 1997), ("The Sylvester & Tweety Mysteries", 1995, 2000), ("Histeria!", 1998, 2000), ("Road Rovers", 1996, 1997), ("Earthworm Jim", 1995, 1996), ("Men in Black: The Series", 1997, 2001), ("Jackie Chan Adventures", 2000, 2004), ("Static Shock", 2000, 2004), ("Sabrina: The Animated Series", 1999, 2000), ("Mummies Alive!", 1997, 1997), ("Big Guy and Rusty the Boy Robot", 1999, 2001), ("Yu-Gi-Oh!", 2001, 2004), ("Cardcaptors", 2000, 2001), ("Digimon", 1999, 2003), ("Monster Rancher", 1999, 2001), ("Medabots", 2001, 2004), ("Beyblade", 2002, 2004), ("Zoids", 2001, 2004),
+("Dexter's Laboratory", 1996, 2003), ("Johnny Bravo", 1997, 2004), ("Cow and Chicken", 1997, 1999), ("I Am Weasel", 1997, 2000), ("The Powerpuff Girls", 1998, 2004), ("Ed, Edd n Eddy", 1999, 2004), ("Courage the Cowardly Dog", 1999, 2002), ("Mike, Lu & Og", 1999, 2001), ("Sheep in the Big City", 2000, 2002), ("Time Squad", 2001, 2003), ("Samurai Jack", 2001, 2004), ("Grim & Evil", 2001, 2004), ("Codename: Kids Next Door", 2002, 2004), ("Whatever Happened to Robot Jones?", 2002, 2003), ("What a Cartoon!", 1995, 1997), ("2 Stupid Dogs", 1993, 1995), ("SWAT Kats", 1993, 1995), ("The Pirates of Dark Water", 1991, 1993), ("Captain Planet and the Planeteers", 1990, 1996), ("The Real Adventures of Jonny Quest", 1996, 1997), ("Space Ghost Coast to Coast", 1994, 2004), ("Cartoon Planet", 1995, 1998), ("Toonami", 1997, 2004), ("Cartoon Network", 1992, 2004),
+("The Real Ghostbusters", 1986, 1991), ("Alvin and the Chipmunks", 1984, 1990), ("Muppet Babies", 1984, 1991), ("Garfield and Friends", 1988, 1994), ("Pee-wee's Playhouse", 1986, 1990), ("Beetlejuice", 1989, 1991), ("The Smurfs", 1984, 1989), ("The Snorks", 1984, 1989), ("Dungeons & Dragons", 1984, 1985), ("Pole Position", 1984, 1984), ("Kidd Video", 1984, 1985), ("The Littles", 1984, 1985), ("Heathcliff", 1984, 1988), ("Punky Brewster", 1985, 1986), ("Hulk Hogan's Rock 'n' Wrestling", 1985, 1986), ("The 13 Ghosts of Scooby-Doo", 1985, 1985), ("A Pup Named Scooby-Doo", 1988, 1991), ("The Flintstone Kids", 1986, 1988), ("Foofur", 1986, 1988), ("Galaxy High", 1986, 1986), ("Teen Wolf", 1986, 1987), ("ALF: The Animated Series", 1987, 1989), ("Dennis the Menace", 1986, 1988), ("The Super Mario Bros. Super Show!", 1989, 1989), ("The Adventures of Super Mario Bros. 3", 1990, 1990), ("Super Mario World", 1991, 1991), ("Captain N: The Game Master", 1989, 1991), ("The Legend of Zelda", 1989, 1989), ("Adventures of Sonic the Hedgehog", 1993, 1993), ("Sonic the Hedgehog", 1993, 1994), ("Back to the Future", 1991, 1992), ("Bill & Ted's Excellent Adventures", 1990, 1991), ("Camp Candy", 1989, 1992), ("Saved by the Bell", 1989, 1993), ("California Dreams", 1992, 1996), ("Hang Time", 1995, 2000), ("City Guys", 1997, 2001), ("One Saturday Morning", 1997, 2002), ("ReBoot", 1994, 2001), ("Bump in the Night", 1994, 1995), ("Free Willy", 1994, 1995), ("The Bugs Bunny & Tweety Show", 1986, 2000), ("Schoolhouse Rock!", 1984, 2001), ("Fat Albert and the Cosby Kids", 1984, 1985), ("CBS Storybreak", 1985, 1998), ("ABC Weekend Special", 1984, 1997), ("Beakman's World", 1992, 1998), ("Bill Nye the Science Guy", 1993, 1998), ("Science Court", 1997, 2000), ("Disney's Doug", 1996, 1999), ("Fox Kids", 1990, 2002), ("Kids' WB", 1995, 2004), ("Saturday morning cartoons", 1984, 2004),
+("Square One TV", 1987, 1994), ("3-2-1 Contact", 1984, 1988), ("Ghostwriter", 1992, 1995), ("Where in the World Is Carmen Sandiego?", 1991, 1995), ("Where in Time Is Carmen Sandiego?", 1996, 1997), ("Wishbone", 1995, 1998), ("Kratts' Creatures", 1996, 1996), ("Zoom", 1999, 2004), ("Reading Rainbow", 1984, 2004), ("Mister Rogers' Neighborhood", 1984, 2001), ("Shining Time Station", 1989, 1995), ("Lamb Chop's Play-Along", 1992, 1995), ("The Puzzle Place", 1995, 1998), ("Storytime", 1992, 1998), ("Newton's Apple", 1984, 1998), ("The Big Comfy Couch", 1995, 2004), ("Captain Kangaroo", 1984, 1993), ("Romper Room", 1984, 1994), ("Zoobilee Zoo", 1986, 1987), ("Eureeka's Castle", 1989, 1995), ("Gullah Gullah Island", 1994, 1998), ("Today's Special", 1984, 1987), ("Sharon, Lois & Bram's Elephant Show", 1984, 1989), ("Wee Sing", 1985, 1996), ("Theodore Tugboat", 1996, 2001), ("Wimzie's House", 1997, 2001), ("Sagwa, the Chinese Siamese Cat", 2001, 2004), ("Tots TV", 1996, 1998), ("The Get Along Gang", 1984, 1986), ("Dumbo's Circus", 1985, 1986), ("Mousercise", 1984, 1996), ("The Busy World of Richard Scarry", 1994, 1997), ("The Adventures of Teddy Ruxpin", 1987, 1987), ("Pound Puppies", 1986, 1989), ("Rainbow Brite", 1984, 1986), ("Jem", 1985, 1988), ("She-Ra: Princess of Power", 1985, 1987), ("Care Bears", 1985, 1988), ("My Little Pony 'n Friends", 1986, 1987), ("Popples", 1986, 1987), ("The Raccoons", 1985, 1992), ("Babar", 1989, 1991), ("The Adventures of Tintin", 1991, 1992), ("Little Lulu", 1995, 1999), ("Madeline", 1989, 2001), ("Anne of Green Gables: The Animated Series", 2001, 2002), ("The Baby-Sitters Club", 1990, 1990), ("Ramona", 1988, 1989), ("Are You Afraid of the Dark?", 1991, 2000), ("Animorphs", 1998, 1999), ("Eerie, Indiana", 1991, 1992), ("The Torkelsons", 1991, 1992), ("Out of the Box", 1998, 2004),
+]
+
+LUMP = {'extra', 'othertoon', 'disneytoon', 'nickcartoon', 'kidsvariety', 'nickblock', 'disneychan', 'cartooncartoon', 'snick', 'muppets', 'stories'}
+def sq(x): return re.sub(r'[^a-z0-9]+', ' ', norm(x).replace('&', ' and ')).strip()
+DISC = re.compile(r"\b(s\d{1,2} ?e\d{1,3}|s\d{1,2}|season \d|seasons? |series \d|episodes?\b|ep \d|eps\b|vol(ume)? ?\d|complete|the series|animated series|tv series|cartoon|tv ?rip|with commercials|w commercials|woc|nickelodeon|nicktoons?|nick jr|disney channel|toon disney|disney afternoon|fox kids|kids wb|cartoon network|toonami|pbs|abc|cbs|nbc|upn|syndicated|saturday morning|\d{1,2}x\d{2}|part \d|disc \d|full episodes?|pilot|marathon|block|aired|broadcast)\b")
+AMB2 = {'Hang Time', 'City Guys', 'Space Cases', 'Free Willy', 'Teen Wolf', 'Bug Juice', 'Time Squad', 'Road Rovers', 'Back to the Future', 'The Little Mermaid', 'Mighty Ducks', 'Care Bears', 'Pole Position', 'Galaxy High', 'Camp Candy', 'Science Court', 'Out of the Box', 'Super Mario World', 'The Legend of Zelda', 'Sonic the Hedgehog', 'Dennis the Menace', 'Dungeons & Dragons', 'The Tick', 'Cartoon Network', 'The Legend of Tarzan', 'Pound Puppies', 'Rainbow Brite', 'Power Rangers', 'Wee Sing', 'Fat Albert and the Cosby Kids'}
+STOPW = {'the', 'a', 'an', 'of', 'and', 'in', 'on', 'is', 'to', 'n', 's', 'show', 'series', 'adventures', 'new'}
+def r2search(sh):
+    title, a, b = sh
+    ph = sq(title); words = [w for w in ph.split() if w not in STOPW]
+    amb = len(words) <= 1 or len(ph) < 9 or title in AMB2
+    squeezed = ph.replace(' and ', ' ').replace(' ', '')
+    alts = {ph}
+    if ph.startswith('the '): alts.add(ph[4:])
+    alts.add(ph.replace(' and ', ' '))
+    qs = ['mediatype:movies AND title:("' + title.replace('"', '').replace('!', '').replace('?', '') + '")', 'mediatype:movies AND subject:("' + title.replace('"', '').replace('!', '').replace('?', '') + '")']
+    if len(squeezed) >= 8:
+        v = {squeezed, ph.replace(' and ', ' ').replace(' ', '-'), ph.replace(' and ', ' ').replace(' ', '_'), ph.replace(' and ', ' ').replace(' ', '.')}
+        if squeezed.startswith('the') and len(squeezed) >= 11: v |= {squeezed[3:], ph[4:].replace(' and ', ' ').replace(' ', '-'), ph[4:].replace(' and ', ' ').replace(' ', '_')}
+        qs.append('mediatype:movies AND identifier:(' + ' OR '.join('*' + x + '*' for x in sorted(v)) + ')')
+    items = []; ids = set()
+    for q in qs:
+        for it in scrape(q):
+            if it['identifier'] not in ids: ids.add(it['identifier']); items.append(it)
+    keep = []
+    for it in items:
+        t = it.get('title')
+        if isinstance(t, list): t = ' '.join(t)
+        low = norm(t); st = ' ' + sq(t) + ' '; idl = re.sub(r'[^a-z0-9]+', '', it['identifier'].lower())
+        if not low or it['identifier'] in have: continue
+        in_t = any((' ' + x + ' ') in st for x in alts)
+        in_i = len(squeezed) >= 8 and squeezed in idl
+        if not (in_t or in_i): continue
+        if (amb or not in_t) and not DISC.search(st): continue
+        if JUNK.search(low) or FOREIGN.search(low) or CODES.search(str(t)) or low.endswith('?') and not title.endswith('?'): continue
+        if re.search(r'\b\d{1,2}[/.-]\d{1,2}[/.-](0[5-9]|1\d|2\d)\b', low): continue
+        lang = it.get('language')
+        if isinstance(lang, list): lang = ' '.join(lang)
+        if lang and not re.search(r'eng|english|^en\b', str(lang).lower()): continue
+        if MODERN.search(low) and not ERA.search(low): continue
+        sm = re.search(r'\b(?:season|s)\s?0?(\d{1,2})\b', st)
+        if sm and int(sm.group(1)) > (2004 - a + 2): continue
+        it['title'] = t; it['k'] = title; it['yr'] = a
+        keep.append(it)
+    return title, len(items), keep
+r2found = collections.Counter(); r2raw = {}
+with ThreadPoolExecutor(8) as ex:
+    for title, n, keep in ex.map(r2search, R2):
+        r2raw[title] = n
+        for it in keep:
+            o = seen.get(it['identifier'])
+            if o is None:
+                seen[it['identifier']] = it; r2found[title] += 1
+            elif o['k'] in LUMP: o['k'] = title
+        print('route2', title, n, len(keep), 'total', len(seen), flush=True)
 cands = list(seen.values())
 print('candidates', len(cands), flush=True)
 def secs(v):
@@ -301,6 +370,9 @@ for it in cands:
     if p:
         p['k'] = it['k']; res.append(p)
     else: todo.append(it)
+_ci = set(it['identifier'] for it in cands)
+for _i, _p in prev.items():
+    if _i not in _ci and _i not in have: res.append(_p)
 print('reused', len(res), 'to look up', len(todo), flush=True)
 cands = todo
 with ThreadPoolExecutor(THREADS) as ex:
@@ -318,6 +390,10 @@ print('SHOW TABLE tag items files hours rawhits kept_after_title')
 for sh in S:
     r = tab[sh[0]]
     print('  %-16s %5d %6d %7.1f %7d %6d %s' % (sh[0], r[0], r[1], r[2] / 3600, rawhits.get(sh[0], 0), found[sh[0]], 'ZERO' if not r[0] else ''))
+print('ROUTE2 TABLE show items files hours rawhits new_candidates flag')
+for sh in R2:
+    r = tab[sh[0]]
+    print('  %-44s %5d %6d %7.1f %7d %6d %s' % (sh[0], r[0], r[1], r[2] / 3600, r2raw.get(sh[0], 0), r2found[sh[0]], 'MISSING' if not r[0] else 'THIN' if r[1] < 15 else 'FOUND'))
 print('TOTAL items', len(res), 'files', sum(len(x['f']) for x in res), 'hours', round(sum(sum(f[1] for f in x['f']) for x in res) / 3600))
 print('ERA YEARS', sorted(collections.Counter(x['e'] for x in res).items()))
 random.seed(7)

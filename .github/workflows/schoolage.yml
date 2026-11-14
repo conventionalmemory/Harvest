@@ -6,7 +6,7 @@ permissions:
 jobs:
   schoolage:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - name: Harvest school-age kids shows
