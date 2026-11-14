@@ -225,9 +225,11 @@ def ok_title(t):
     if re.search(X_ADS, low) and not re.search(OK_ADS, low): return False
     return True
 XCOL = {'community_media', 'podcasts', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio', 'tvarchive', 'tvnews'}
-def classify(title, ident, dfield, desc):
+GEN = r'(dvd transfer|vhs|tape|recording|recorded|untitled|video ?\d+|^\W*[a-z]{0,4}\d+\W*$|home video|off[- ]air|aircheck|betamax|various)'
+def classify(title, ident, dfield, desc, ad=None, src='', sub=False):
     if not ok_title(title): return None
-    ad, src = find_date(title, ident, dfield, desc)
+    sub = bool(ad)
+    if not ad: ad, src = find_date(title, ident, dfield, desc)
     if not ad: return None
     r = late(title, ad)
     if r: return {'q': 'late', 'ct': 'late', 'k': r[0], 'net': r[1], 'ad': ad, 'as': src, 'min': 1200}
@@ -237,6 +239,11 @@ def classify(title, ident, dfield, desc):
     if r: return {'q': 'news', 'ct': 'news_' + r[2], 'k': r[0], 'net': r[1], 'ad': ad, 'as': src, 'min': 600, 'st': r[3]}
     r = sport(title, desc, ad)
     if r: return {'q': 'sports', 'ct': r[0], 'k': r[1], 'net': netof(title, desc), 'ad': ad, 'as': src, 'min': 1200 if r[0] == 'studio' else 1800}
+    if not sub and desc and re.search(GEN, title.lower()):
+        d2 = desc[:220]
+        if ok_title(d2):
+            c = classify(d2, ident, dfield, '', ad, src)
+            if c and c['q'] != 'block': c['via'] = 'desc'; return c
     return None
 def get(url, tries=4):
     for k in range(tries):
@@ -258,7 +265,7 @@ def scrape(q, cap=200000):
     return out
 def T(*a): return 'title:(' + ' OR '.join('"%s"' % x if ' ' in x or "'" in x else x for x in a) + ')'
 GAME = 'title:(vs OR versus OR game OR nfl OR nba OR mlb OR nhl OR football OR basketball OR baseball OR hockey OR playoffs OR playoff OR finals OR championship OR series OR broadcast)'
-QUERIES = [
+Q0 = [
  ('nfl', T('nfl', 'super bowl', 'monday night football', 'afc championship', 'nfc championship', 'pro bowl', 'wild card', 'divisional playoff')),
  ('nfl teams', T('49ers', 'bengals', 'broncos', 'browns', 'buccaneers', 'chargers', 'chiefs', 'colts', 'cowboys', 'dolphins', 'falcons', 'jaguars', 'packers', 'patriots', 'raiders', 'redskins', 'seahawks', 'steelers', 'vikings', 'oilers')),
  ('nfl teams2', T('bears', 'bills', 'cardinals', 'eagles', 'giants', 'jets', 'lions', 'panthers', 'rams', 'ravens', 'saints', 'titans', 'texans') + ' AND ' + GAME),
@@ -290,6 +297,18 @@ QUERIES = [
  ('specials', T('breaking news', 'special report', 'news coverage', 'live coverage', 'news bulletin', 'news special') + ' AND ' + ERA + ' AND ' + NOTV),
  ('shopping', T('qvc', 'hsn', 'home shopping network', 'home shopping club', 'home shopping', 'shop at home', 'valuevision')),
 ]
+DS = 'description:(nfl OR nba OR mlb OR nhl OR ncaa OR football OR basketball OR baseball OR hockey OR boxing OR "super bowl" OR "world series" OR playoffs OR olympics)'
+Q0 += [
+ ('networks', T('espn', 'abc sports', 'cbs sports', 'nbc sports', 'fox sports', 'wide world of sports', 'sportschannel', 'sports') + ' AND ' + ERA),
+ ('games', T('game 1', 'game 2', 'game 3', 'game 4', 'game 5', 'game 6', 'game 7', 'playoffs', 'playoff', 'finals', 'championship game', 'all-star game', 'opening day') + ' AND ' + ERA),
+ ('tapes sports', 'title:(vhs OR tape OR "dvd transfer" OR recording OR aircheck OR betamax) AND ' + DS + ' AND ' + ERA),
+ ('desc sports', 'description:("full game" OR "original broadcast" OR telecast OR "play-by-play" OR "play by play" OR "with commercials") AND ' + DS + ' AND ' + ERA),
+ ('tapes late', 'title:(vhs OR tape OR "dvd transfer" OR recording OR aircheck OR betamax) AND description:("tonight show" OR letterman OR "saturday night live" OR conan OR arsenio OR "daily show" OR "politically incorrect") AND ' + ERA),
+ ('tapes news', 'title:(vhs OR tape OR "dvd transfer" OR recording OR aircheck OR betamax) AND description:(newscast OR "evening news" OR "nightly news" OR "world news tonight" OR "eyewitness news" OR "action news" OR cnn OR "special report" OR "breaking news") AND ' + ERA),
+ ('fighters', T('chavez', 'leonard', 'whitaker', 'hopkins', 'mayweather', 'camacho', 'spinks', 'holmes', 'moorer', 'mosley', 'gatti', 'barrera', 'morales', 'hamed', 'toney', 'tszyu', 'pacquiao', 'klitschko') + ' AND title:(vs OR versus OR boxing OR fight) AND ' + ERA),
+ ('golf2', T('golf', 'tennis', 'pga', 'lpga', 'ryder cup', 'grand slam', 'figure skating', 'gymnastics', 'track and field', 'world cup', 'triple crown', 'iditarod', 'tour de france', 'x games', 'world championships') + ' AND ' + ERA),
+]
+QUERIES = [(n, 'mediatype:movies AND ' + q) for n, q in Q0]
 def known():
     have = set()
     for p in glob.glob(os.path.join(OUT, '*.json.gz')):
@@ -398,6 +417,7 @@ def meta1(it):
     if c['q'] in ('sports', 'late', 'news') and len(files) > 12: return 'manyfiles'
     r = {'i': it['identifier'], 'q': c['q'], 't': title[:200], 'd': S(m.get('date')), 'y': S(m.get('year')), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': c['k'], 'e': int(c['ad'][:4]), 'net': c['net'], 'ct': c['ct'], 'ad': c['ad'], 'as': c['as']}
     if c.get('st'): r['st'] = c['st']
+    if c.get('via'): r['via'] = c['via']
     return r
 def keep(x):
     c = classify(x['t'], x['i'], x.get('d'), x.get('ds'))
