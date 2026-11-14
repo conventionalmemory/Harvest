@@ -172,7 +172,7 @@ def consider(sh, it, route='t'):
     if gk is False: return False
     lang = flat(it.get('language')).lower()
     if lang and not re.search(r'eng|english|^en$', lang): return False
-    if MOD2.search(t): return False
+    if MOD2.search(t) or re.search(r'\b20(0[5-9]|[12]\d)[01]\d[0-3]\d\b', low) or re.search(r'\b(amiga|atari|commodore|c64|ms-dos|nes|snes|genesis|zx spectrum|b[oö]l[uü]m|tvi|kzk)\b', low): return False
     nt = ' ' + norm(low) + ' '
     intitle = any((' ' + norm(q) + ' ') in nt for q in sh['q'])
     if not intitle and gk and any(e in low for e in sh.get('extra', [])): intitle = True
@@ -203,11 +203,13 @@ def consider(sh, it, route='t'):
     if sh['kind'] in DAILY: return 't'
     if not strong and not cast and JUNKD.search(desc + ' ' + low): return False
     tape = bool(TAPE.search(low))
+    single = len(sig(sh['q'][0])) <= 1
     if generic(sh):
+        if single and not st and not cast: return False
         if st and (strong or cast or (weak and (not mod or dev))): return 't'
         if hd and (strong or cast or ((weak or tape) and not mod)): return 't'
         if st and not sh.get('amb') and len(sig(sh['q'][0])) >= 2: return 'v'
-        if not hd and len(low) < 160 and (TAPE2.search(low) or (tape and not mod and (inrun or cast or cols & TVSET))): return 'b'
+        if not hd and (cast or not single) and len(low) < 160 and (TAPE2.search(low) or (tape and not mod and (inrun or cast or cols & TVSET))): return 'b'
         return False
     if strong or cast: return 't'
     if weak and (not mod or dev or st): return 't'
