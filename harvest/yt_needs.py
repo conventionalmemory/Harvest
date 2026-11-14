@@ -262,7 +262,7 @@ def load_shows():
         words = min(len(nzk(a).split()) for a in al) if al else 9
         kind = 'date' if x.get('type') in DATEK else 'ep'
         if x.get('strict'): al |= set(nz(a) for a in x.get('aka') or [])
-        S[k] = {'strict': 1 if x.get('strict') else 0, 'until': x.get('until') or '2004-12-31', 'runtime': x.get('runtime') or [], 'not': [nz(a) for a in x.get('not') or []], 'k': k, 'title': x['title'], 'bt': bt, 'type': x.get('type') or 'other', 'kind': kind, 'q': QMAP.get(x.get('type'), 'prime'), 'net': x.get('net') or '', 'y0': ys[0] if ys else 0, 'y1': ys[-1] if ys else 0, 'hint': int(hint.group(1)) if hint else 0, 'pri': x.get('pri') or 3, 'al': sorted(al), 'amb': 2 if words <= 1 else 1 if words == 2 else 0}
+        S[k] = {'strict': 1 if x.get('strict') else 0, 'until': x.get('until') or '2004-12-31', 'runtime': x.get('runtime') or [], 'not': [nz(a) for a in x.get('not') or []], 'k': k, 'title': x['title'], 'bt': bt, 'type': x.get('type') or 'other', 'kind': kind, 'q': QMAP.get(x.get('type'), 'prime'), 'net': x.get('net') or '', 'y0': ys[0] if ys else 0, 'y1': ys[-1] if ys else 0, 'hint': int(hint.group(1)) if hint else 0, 'pri': 3 if x.get('pri') is None else x['pri'], 'al': sorted(al), 'amb': 2 if words <= 1 else 1 if words == 2 else 0}
         if re.search(r'(?i)wrestl|wwf|\bwcw\b|\bnwa\b|clash of the champions|titans', x['title']): S[k]['q'] = 'wrest'
     return S
 
