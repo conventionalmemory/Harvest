@@ -85,6 +85,7 @@ def event_date(nt):
     ys = re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)
     if len(set(ys)) != 1 or re.search(r' (practice|qualifying|qualifications|time trials|pole day|carb day|bump day|twin 125s?|duels?|busch clash|shootout|preview|pre race|prerace|trials) ', nt): return None
     y = int(ys[0])
+    if y not in DAYT: return None
     if ' daytona 500 ' in nt: return '%d-%s' % (y, DAYT[y])
     if re.search(r' (indy|indianapolis) 500 ', nt): return indy(y)
     if ' kentucky derby ' in nt: return derby(y)
