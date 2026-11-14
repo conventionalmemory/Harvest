@@ -120,7 +120,7 @@ if MODE == 'plan':
         q = 'mediatype:movies AND title:(' + ' OR '.join('"' + qtitle(a) + '"' for a in [s['title']] + s.get('alt', [])) + ')'
         if s.get('ambiguous') or len(s['n']) < 12: q += ' AND ' + CTXQ
         return k, scrape(q)
-    seen = {}; hits = collections.Counter(); raw = collections.Counter(); why = collections.defaultdict(collections.Counter)
+    seen = {}; hits = collections.Counter(); raw = collections.Counter(); why = collections.defaultdict(collections.Counter); smp = collections.defaultdict(list)
     with ThreadPoolExecutor(10) as ex:
         for k, items in ex.map(find, range(len(SHOWS))):
             s = SHOWS[k]; raw[k] = len(items)
@@ -131,8 +131,8 @@ if MODE == 'plan':
                 lang = it.get('language'); lang = ' '.join(lang) if isinstance(lang, list) else str(lang or '')
                 if lang and not re.search(r'(?i)eng|english|^en\b', lang): why[k]['lang'] += 1; continue
                 cl = it.get('collection'); cl = cl if isinstance(cl, list) else [cl] if cl else []
-                if not ok_title(t): why[k]['title'] += 1; continue
-                if not match(s, t): why[k]['match'] += 1; continue
+                if not ok_title(t): why[k]['title'] += 1; smp[k, 'T'].append(t[:70]); continue
+                if not match(s, t): why[k]['match'] += 1; smp[k, 'M'].append(t[:70]); continue
                 if s.get('ambiguous') and not disc(t, cl): why[k]['disc'] += 1; continue
                 seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': k}; hits[k] += 1
             if k % 100 == 0: print('search', k, len(seen), round((time.time() - T0) / 60, 1), 'min', flush=True)
@@ -160,6 +160,10 @@ if MODE == 'plan':
     print('candidates per type', sorted(ct.items()))
     print('top candidate shows', [(SHOWS[k]['title'], n) for k, n in hits.most_common(60)])
     for k, s in enumerate(SHOWS): print('PLAN %-40s raw %5d new %4d %s' % (s['title'][:40], raw[k], hits[k], dict(why[k])))
+    random.seed(3)
+    for k, s in enumerate(SHOWS):
+        for w in 'TM':
+            for t in random.sample(smp[k, w], min(3, len(smp[k, w]))): print('REJ', w, '|', s['title'][:24], '|', t)
     print('no candidates', [s['title'] for k, s in enumerate(SHOWS) if not hits[k]])
     with gzip.open(os.path.join(PARTS, 'drama_cands.json.gz'), 'wt', encoding='utf-8') as f:
         json.dump(cands, f, separators=(',', ':'))
