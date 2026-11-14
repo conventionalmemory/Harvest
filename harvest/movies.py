@@ -30,7 +30,7 @@ MF = os.path.join(OUT, 'movies.json.gz')
 films, seen = [], set()
 if os.path.exists(MF) and os.environ.get('REFRESH') != '1':
     for x in json.load(gzip.open(MF, 'rt', encoding='utf-8')):
-        films.append({k: x[k] for k in ('q', 't', 'd', 'bo', 'sl', 'g', 'r', 'rt', 'ia', 'ias', 'tried') if k in x})
+        films.append({k: x[k] for k in ('q', 't', 'd', 'bo', 'sl', 'g', 'r', 'rt', 'ia', 'ias', 'tried', 'pia') if k in x})
         if x.get('ia'): seen.add(x['q'])
     HAD = set(seen)
     print('reusing film list', len(films), 'previously matched', len(HAD), flush=True)
@@ -163,6 +163,7 @@ def final(sc, tags):
     if 'parts' in tags: sc -= 5
     if 'sd' in tags: sc += 6
     return sc
+TOL = float(os.environ.get('TOL', '0.09'))
 T0 = time.time(); BUDGET = float(os.environ.get('BUDGET', '270')) * 60; REDO = os.environ.get('REDO') == '1'
 def match(f):
     if time.time() - T0 > BUDGET or ((f.get('tried') or f.get('ias')) and not REDO): return f
@@ -174,6 +175,8 @@ def match(f):
     tq = f['t'].replace('"', '')
     for d in search('title:("%s") AND mediatype:movies' % tq, 60): consider(f, d, nts, y, pool)
     live = lambda: [k for k, v in pool.items() if v]
+    if f.get('pia'):
+        for d in search('identifier:"%s"' % f['pia'], 1): consider(f, d, nts, y, pool)
     if len(live()) < 4 and y:
         for d in search('"%s" %d AND mediatype:movies' % (tq, y), 40): consider(f, d, nts, y, pool)
     if not any('tape' in pool[k][1] for k in live()):
@@ -199,9 +202,9 @@ def match(f):
         big = sorted(fs, key=lambda x: -x[1])[0]
         tot = sum(x[1] for x in fs); pick = None
         if rt:
-            if abs(big[1] - rt) <= 0.06 * rt: pick = [big]
+            if abs(big[1] - rt) <= TOL * rt: pick = [big]
             elif 0.78 * rt <= big[1] < 0.94 * rt and ('tv' in tags or 'tape' in tags): pick = [big]; tags.append('short')
-            elif 2 <= len(fs) <= 6 and abs(tot - rt) <= 0.06 * rt and big[1] < 0.9 * rt: pick = fs; tags.append('parts')
+            elif 2 <= len(fs) <= 6 and abs(tot - rt) <= TOL * rt and big[1] < 0.9 * rt: pick = fs; tags.append('parts')
         else:
             if 3600 <= big[1] <= 4 * 3600: pick = [big]
             elif 2 <= len(fs) <= 6 and 3600 <= tot <= 4 * 3600: pick = fs; tags.append('parts')
@@ -218,6 +221,9 @@ with ThreadPoolExecutor(int(os.environ.get('THREADS', '12'))) as ex:
     for n, r in enumerate(ex.map(match, films)):
         res.append(r)
         if n % 250 == 0: print('match', n, sum(1 for x in res if x.get('ia')), flush=True)
+        if n and n % 400 == 0:
+            with gzip.open(os.path.join(OUT, 'movies.json.gz'), 'wt', encoding='utf-8') as fo:
+                json.dump(res + films[n + 1:], fo, ensure_ascii=False, separators=(',', ':'))
 with gzip.open(os.path.join(OUT, 'movies.json.gz'), 'wt', encoding='utf-8') as fo:
     json.dump(res, fo, ensure_ascii=False, separators=(',', ':'))
 print('tried', sum(1 for x in res if x.get('tried')), 'untried', sum(1 for x in res if not x.get('tried')))
