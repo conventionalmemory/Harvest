@@ -80,6 +80,20 @@ CORE = re.compile(r"\b(wwf|wwe|wcw|ecw|wccw|uswa|gwf|msw|wrestl\w*|wrestle ?mani
 POD = re.compile(r"\b(wrestling mayhem show|mat men|reliving the war|wrestling bios|wrestling @random|off topic|observer|newsletter|\bpwi\b|illustrated|bonus content|who killed wcw|dark side of the ring|worst year of our lives|botchamania|wrestling with (?!shadows)|whatculture|cultaholic|watch ?along|retrospective|ranking|top \d+|twitch|brawlhalla|discord|stream(ed|ing)?|\bvod\b|why we fight|wildlife|panda|pancrase|uwfi|shoot wrestling|\bmma\b|\bufc\b|pride fc|k-1|situation update|masters commission|talent show|let'?s watch)\b")
 ERA = re.compile(r"\b(wwf|wcw|nitro|prime ?time wrestling|tuesday night titans|wrestling challenge|superstars of wrestling|in your house|clash of (the )?champions|halloween havoc|super ?brawl|slamboree|fall brawl|spring stampede|uncensored|bash at the beach|souled out|road wild|hog wild|world war (3|iii)|wrestle ?war|chi-?town rumble|capital combat|beach blast|bunkhouse stampede|crockett cup|battle ?bowl|awa|wccw|world class|uswa|smoky mountain|gwf|global wrestling|mid-south|uwf|coliseum video|hardcore tv|ecw on tnn|barely legal|november to remember|heat ?wave|living dangerously|guilty as charged|anarchy rulz|hardcore heaven|cyber ?slam|wrestlepalooza|shotgun saturday|livewire|action zone|all[- ]american wrestling|georgia championship|championship wrestling from florida|mid-atlantic|jim crockett|world championship wrestling|pro wrestling usa|super ?clash|wrestle ?rock|lpwa|poww|gorgeous ladies|tuesday in texas|wrestling classic|valentine'?s day massacre|rock bottom|over the edge|fully loaded|sunday night heat|jakked|new blood rising|power hour|saturday night'?s main event|stampede wrestling|memphis wrestling)\b")
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
+NAMES = re.compile(r"\b(mick foley|cactus jack|undertaker|bret (hitman )?hart|hart foundation|owen hart|roddy piper|shawn michaels|midnight rockers|curt hennig|mr\.? perfect|demolition|ultimate warrior|randy savage|macho man|andre the giant|ricky steamboat|jake roberts|ted dibiase|dusty rhodes|road warriors|legion of doom|four horsemen|arn anderson|sting vs|vader vs|terry funk|von erich|jerry lawler|stone cold|steve austin|triple h|the rock vs|kurt angle|chris jericho|eddie guerrero|rey mysterio|goldberg vs|diamond dallas page|scott hall|kevin nash|razor ramon|yokozuna|british bulldogs?|junkyard dog|sgt\.? slaughter|iron sheik|bobby heenan|gorilla monsoon|rob van dam|sabu vs|tommy dreamer|raven vs|sandman vs|taz vs|dudley boyz|hardy boyz|edge (and|&) christian)\b")
+SUBJW = re.compile(r"\b(wrestl\w*|wwf|wwe|wcw|ecw|wccw|uswa|smw|gwf)\b")
+JUNK = re.compile(r"(holocaust|hitler|z[uü]ndel|david irving|david icke|9/11|conspira|freemason|illuminati|zionis|\bjews?\b|nationalsocial|third ?reich|worldwar|\bwwii\b|globalis|chemtrail|bohemian grove|\bcia\b|\bfbi\b|new world order|mkultra|news & politics|nonprofits & activism|politic|altcensored|flushyourmeds|bill cooper|ron paul|bodybuild|\bwbf\b|jerry springer|puroresu|all japan|new japan|\bajpw\b|\bnjpw\b|germany|catch turnier|vaccin|agenda 21|ukraine|bitcoin|sermon|prophecy)")
+def wok(low, subj, desc):
+    sd = (subj + ' ' + desc[:500]).lower()
+    if JUNK.search(low) or JUNK.search(subj.lower()): return False
+    sl = subj.lower()
+    if re.search(r"puroresu|all japan|new japan|\bajpw\b|\bnjpw\b|joshi|lucha", sl) and not re.search(r"\b(wwf|wwe|wcw|ecw)\b", sl + ' ' + low): return False
+    if sl.startswith('youtube;video') and not re.search(r"(19[89]\d|200[0-4])", low): return False
+    if re.search(r"\b(roh|ring of honor|tna)\b", low) and re.search(r"wrestl|\broh\b|ring of honor|\btna\b", sl): return True
+    c = CORE.search(low)
+    if c and not re.fullmatch(r"n\.?w\.?o", c.group(0)): return True
+    if NAMES.search(low): return bool(SUBJW.search(sd)) or 'collection' in low
+    return bool(SUBJW.search(sd)) and bool(re.search(r"\b(wrestl\w*|wwf|wwe|wcw|ecw|raw|nitro|smackdown|ppv|match|champion\w*|attitude|superstars)\b", low + ' ' + sd))
 ROM = {'i': 1, 'ii': 2, 'iii': 3, 'iv': 4, 'v': 5, 'vi': 6, 'vii': 7, 'viii': 8, 'ix': 9, 'x': 10, 'xi': 11, 'xii': 12, 'xiii': 13, 'xiv': 14, 'xv': 15, 'xvi': 16, 'xvii': 17, 'xviii': 18, 'xix': 19, 'xx': 20, 'x-seven': 17, 'x7': 17, 'x8': 18, 'x-8': 18}
 
 def y2(y):
@@ -299,7 +313,7 @@ def meta(it):
     tl = (title + ' ').lower()
     if X.search(tl) or POD.search(tl) or re.search(r"[^\x00-\xff\u2010-\u2027\u2122]", title):
         REJ['title'] += 1; return None
-    if not it.get('tr') and not CORE.search(low) and not CORE.search((subj + ' ' + desc[:500]).lower()):
+    if not wok(low, subj, desc):
         REJ['notwrestling'] += 1; return None
     if it.get('tr') and not CORE.search(low) and not CORE.search((subj + ' ' + desc[:500]).lower()) and re.search(r"\b(nba|nfl|mlb|nhl|football|basketball|baseball|hockey|boxing|episode|season \d|s\d\de\d\d|movie|film|trailer|commercials?|news|concert|live at)\b", (title + ' ' + subj).lower()):
         REJ['trustjunk'] += 1; return None
@@ -355,12 +369,13 @@ def merge():
     for x in old:
         tl = (x['t'] + ' ').lower(); low = (x['t'] + ' ' + x['i'].replace('-', ' ').replace('_', ' ')).lower()
         if X.search(tl) or POD.search(tl): continue
-        if not CORE.search(low) and not CORE.search((x.get('s', '') + ' ' + x.get('ds', '')).lower()): continue
+        if not wok(low, x.get('s', ''), x.get('ds', '')): continue
         x['k'] = tag(low)[0]; allx.append(x)
     ids = set(x['i'] for x in allx); add = 0
     for p in sorted(glob.glob(os.path.join(PARTS, 'w-*.json.gz'))):
         for x in json.load(gzip.open(p, 'rt', encoding='utf-8')):
             if x['i'] in ids: continue
+            if not wok((x['t'] + ' ' + x['i'].replace('-', ' ').replace('_', ' ')).lower(), x.get('s', ''), x.get('ds', '')): continue
             ids.add(x['i']); allx.append(x); add += 1
     with gzip.open(WF, 'wt', encoding='utf-8') as f:
         json.dump(allx, f, ensure_ascii=False, separators=(',', ':'))
