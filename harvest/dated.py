@@ -98,7 +98,8 @@ def find_date(title, ident, dfield, desc):
     if ev: return ev, 'event'
     if re.search(BADY, tl): return None, ''
     ty = set(int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', tl))
-    def fits(d): return not ty or int(d[:4]) in ty or (int(d[5:7]) <= 2 and int(d[:4]) - 1 in ty)
+    ym = set(m.group(1) + '-' + m.group(2) for m in re.finditer(r'(?<!\d)' + YR + r'[-_.](0[1-9]|1[0-2])(?![\d])', tl))
+    def fits(d): return (not ym or d[:7] in ym) and (not ty or int(d[:4]) in ty or (int(d[5:7]) <= 2 and int(d[:4]) - 1 in ty))
     ds = [d for _, d in dates_in((ident or '').lower()) if fits(d)]
     if ds: return ds[0], 'ident'
     df = str(dfield or '')[:10]
