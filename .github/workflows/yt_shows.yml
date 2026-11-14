@@ -1,0 +1,78 @@
+name: Video episodes harvest
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: full or probe
+        default: full
+permissions:
+  contents: write
+jobs:
+  probe:
+    if: ${{ inputs.mode == 'probe' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q yt-dlp
+      - run: MODE=probe python3 harvest/yt_shows.py
+  plan:
+    if: ${{ inputs.mode != 'probe' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Plan
+        run: MODE=plan python3 harvest/yt_shows.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yt-plan
+          path: parts/yt_plan.json.gz
+          retention-days: 3
+  search:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: yt-plan
+          path: parts
+      - name: Search
+        run: MODE=search SHARD=${{ matrix.shard }} SHARDS=12 THREADS=4 BUDGET_MIN=170 python3 harvest/yt_shows.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yt-${{ matrix.shard }}
+          path: parts/yt-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: [plan, search]
+    if: ${{ !cancelled() && needs.search.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: yt-plan
+          path: parts
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: yt-[0-9]*
+          path: parts
+          merge-multiple: true
+      - name: Merge
+        run: ls -la parts; MODE=merge python3 harvest/yt_shows.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/yt_shows.json.gz
+          git commit -q -m "Update video episodes catalog" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git pull -q --rebase && git push && break; sleep $((10 + RANDOM % 20)); done
