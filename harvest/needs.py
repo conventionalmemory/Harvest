@@ -36,16 +36,16 @@ SE1 = re.compile(r"\bs(?:eason)?\s?(\d{1,2})[\s._-]{0,3}(?:e|ep|episode)\s?(\d{1
 EPN = re.compile(r"\b(?:episode|ep)\.?\s?#?(\d{1,4})\b")
 WORDN = {w: i + 1 for i, w in enumerate('one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen'.split())}
 WORDN.update({w: i + 1 for i, w in enumerate('first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth'.split())})
-MULTI = re.compile(r"\bseasons\b|\b(?:s|season)\s?\d{1,2}\s?(?:-|&|and|to|thru|through)\s?(?:s|season)?\s?\d{1,2}\b|complete series|all episodes|all seasons|entire series|full series|complete collection|the complete|complete show")
+MULTI = re.compile(r"\bseasons\b|\b(?:s|season)\s?\d{1,2}\s?(?:-|&|and|to|thru|through)\s?(?:s|season)?\s?\d{1,2}\b|complete series|all episodes|all seasons|entire series|full series|complete collection|the complete|complete show|\bcomplete\b|\bseason[\s-]*\d")
 SEAS = re.compile(r"\bseason\s?(\d{1,2})\b|\bseason\s(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen)\b|\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth)(?:\sand\sfinal)?\sseason\b|\b(?:s|se)\s?(\d{1,2})\s?(?:e|ep|d|disc)\s?\d{1,3}\b|\bs(\d{1,2})\b|\b(\d{1,2})x\s?\d{2,3}\b")
 LEAD = re.compile(r"^(?:\s*(?:\(?\d{1,4}[-./]\d{1,2}(?:[-./]\d{1,4})?\)?|(?:19|20)\d\d|vhs|beta|tape|dvd|tv|the|classic|nbc|cbs|abc|fox|upn|wb|pbs|hbo|espn|mtv|tnn|tbs|usa|[wk][a-z]{2,3}(?:-tv)?(?:\s?\d{1,2})?)\b[\s\-:,.|]*)*", re.I)
 TAIL = re.compile(r"^\s*(?:$|[-:|(\[,#]|\b(?:s\s?\d{1,2}\s?e\s?\d{1,3}|s\s?\d{1,2}\b|d\s?\d{1,2}\b|\d{1,2}x\s?\d{1,3}|\d{1,4}\b|season|seasons|series|episode|episodes|ep\b|eps\b|the complete|complete|full|sitcom|tv|pilot|finale|premiere|nbc|cbs|abc|fox|upn|wb|pbs|hbo|espn|mtv|tnn|tbs|wgn|usa|vhs|dvd|disc|vol|volume|tape|part|pt|with commercials|w commercials|woc|commercials|on|from|show|special|marathon|block|(?:19[4-9]\d|200[0-4])|\d{1,2}[-./]\d{1,2}[-./]\d{2,4}|january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\b)", re.I)
 STOP = {'the', 'a', 'an', 'of', 'and', 'in', 'on', 'to', 'with', 'show', 'by', 'for', 'is', 'it', 'at', 'from', 'md', 'mr', 'tv', 'new'}
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
 RARE = set('adderly aftermash andersonville andromeda arliss arli$$ avonlea backyardigans ballykissangel berrengers bewitched bodyshaping booknotes boomtown bordertown buzzkill carnivale cavanaughs citykids columbo comicview commish counterstrike crosswits cybercops deadwood eastenders elimidate entourage fastlane felicity foofur futurama geraldo gunsmoke halloweentown hometime hornblower housesmart hughleys inquizition inuyasha kissyfur knightwatch kojak lovejoy mannix mathnet matlock moneyline motorweek mousercise mousercize nightingales nightline overhaulin pictionary pinwheel rockumentary rollergames rollerjam rolonda scattergories seaquest smallville sportscenter sportscentury starrcade summerslam superbook supercarrier tattingers tattletales teknoman tekwar thirtysomething thundercats toonheads torkelsons videopolis wildboyz wintuition witchblade wonderworks wrestlemania youthquake jeopardy donahue montel leeza marilu daria sopranos sportsworld speedweek shortstories homeworks ncis mxc flcl wccw quincy riptide dragnet laramie profiler'.split()) | {'muppet show', 'gong show', 'daily show', 'elephant show', 'bozo show', 'sinbad show', 'roseanne show', 'norm show', 'weber show', 'ellen show', 'moxy show', 'today show', 'early show', 'gossip show', 'house md', 'mr t', 'mr president', 'mr sunshine', 'mr personality', 'tv 101', 'owl tv', 'tots tv', 'real tv', 'new detectives', 'new dragnet', 'new lassie', 'new zorro', 'new wilderness'}
-TREKJUNK = r"hidden frontier|new voyages|phase (ii|2)\b|of gods and men|star trek[\s:._-]*(continues|odyssey|intrepid|horizon|renegades|axanar|aurora|farragut|picard|discovery|lower decks|strange new worlds|prodigy|short treks|online|beyond(?! the farthest)|into darkness|generations|first contact|insurrection|nemesis|the motion picture|(ii|iii|iv|v|vi|vii|viii|ix|x|2|3|4|5|6|7|8|9|10)\b)|axanar|starship (exeter|farragut)|fan (film|series|production|made|cut|edit)|extended cut|wrath of khan|search for spock|voyage home|final frontier|undiscovered country|motion picture|25th anniversary|judgment rites|starfleet (command|academy)|elite force|bridge commander|armada|birth of the federation|final unity|klingon honor guard|hidden evil|dominion wars|captain s chair|captain's chair|omnipedia|encyclopedia|technical manual|interactive|cd ?-?rom|bonus|extras|special features|featurettes?|deleted|trekkies|what we left behind|the captains|captain s summit|chaos on the bridge|center seat|roddenberry|power records|peter pan|audio (drama|book|story|adventure)|read ?-?along|music from|raumschiff|viaje a las estrellas|jornada nas estrelas|patrouille|nouvelle|la s[eé]rie|\bv ?\.?f\b|german|french|italian|spanish|\bdub\b|dubbed|mst3k|cinebinge|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bgame (footage|play|trailer|show)\b|\bexcerpts?\b|stoked|\bsto\b|barbary coast|trivia|my experience|celebration|\bsaga\b|cast on|hack attack|manic episodes|that time|remember when|\bis bad\b|worst|silliest|dumbest|unethical|\b(the|a) \w+ episodes? of\b|final generation|helped lure|footage|\bspecial\b|anniversary|a captain s log|captain's log"
+TREKJUNK = r"hidden frontier|new voyages|phase (ii|2)\b|of gods and men|star trek[\s:._-]*(continues|odyssey|intrepid|horizon|renegades|axanar|aurora|farragut|picard|discovery|lower decks|strange new worlds|prodigy|short treks|online|beyond(?! the farthest)|into darkness|generations|first contact|insurrection|nemesis|the motion picture|(ii|iii|iv|v|vi|vii|viii|ix|x|2|3|4|5|6|7|8|9|10)\b)|axanar|starship (exeter|farragut)|fan (film|series|production|made|cut|edit)|extended cut|wrath of khan|search for spock|voyage home|final frontier|undiscovered country|motion picture|25th anniversary|judgment rites|starfleet (command|academy)|elite force|bridge commander|armada|birth of the federation|final unity|klingon honor guard|hidden evil|dominion wars|captain s chair|captain's chair|omnipedia|encyclopedia|technical manual|interactive|cd ?-?rom|bonus|extras|special features|featurettes?|deleted|trekkies|what we left behind|the captains|captain s summit|chaos on the bridge|center seat|roddenberry|power records|peter pan|audio (drama|book|story|adventure)|read ?-?along|music from|raumschiff|viaje a las estrellas|jornada nas estrelas|patrouille|nouvelle|la s[eé]rie|\bv ?\.?f\b|german|french|italian|spanish|\bdub\b|dubbed|mst3k|cinebinge|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bgame (footage|play|trailer|show)\b|\bexcerpts?\b|stoked|\bsto\b|barbary coast|trivia|my experience|celebration|\bsaga\b|cast on|hack attack|manic episodes|that time|remember when|\bis bad\b|worst|silliest|dumbest|unethical|\b(the|a) \w+ episodes? of\b|final generation|helped lure|footage|\bspecial\b|anniversary|a captain s log|captain's log|workprints?|\bmovies?\b|\bfilms?\b|box ?set|reactions?|\bnova\b"
 TREKOTHER = r"next generation|next gen\b|\btng\b|deep space|\bds9\b|voyager|\bvoy\b|\bent\b|animated|\btas\b|star trek[\s:._-]*enterprise(?![\s._-]*incident)|\benterprise[\s._-]*(s\d|season|\d{1,2}x\d)"
-PEAKSJUNK = r"fire walk with me|fwwm|missing pieces|the return|limited event|season (3|three)\b|\bs0?3\b|deleted|log lady|secret diary|autobiography|access guide|festival|twin perfect|explained|georgia coffee|between two worlds|slice of lynch|phenomenon|secrets from another place|postcards from|rewatch|unobscura|\bedit\b|recut|re ?-?cut|murder most foul|missing season|international (version|pilot|ending)|european (version|pilot|ending)|julee cruise|saturday night live|\bsnl\b|bonus|extras|featurettes?|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bexcerpts?\b|\btapes of\b|\b1992\b"
+PEAKSJUNK = r"fire walk with me|fwwm|missing pieces|the return|limited event|season (3|three)\b|\bs0?3\b|deleted|log lady|secret diary|autobiography|access guide|festival|twin perfect|explained|georgia coffee|between two worlds|slice of lynch|phenomenon|secrets from another place|postcards from|rewatch|unobscura|\bedit\b|recut|re ?-?cut|murder most foul|missing season|international (version|pilot|ending)|european (version|pilot|ending)|julee cruise|saturday night live|\bsnl\b|bonus|extras|featurettes?|\b(video|pc|computer|board|vhs|vcr|card|arcade) game\b|\bexcerpts?\b|\btapes of\b|\b1992\b|workprints?|unaired|mulholland|reactions?"
 HINTS = {'Tuesday Night Titans': {'drop': ['TNT']}, 'Wonderful World of Disney': {'drop': ['Walt Disney']},
     'Star Trek': {'full': 1, 'fam': 1, 'junk': TREKJUNK + '|' + TREKOTHER, 'self': r"\btos\b|original series", 'ev': r"star trek", 'ids': ['star-trek-tos', 'startrektos', 'st-tos', 'sttos', 'tos-s0', 'tos_s0', 'star-trek-the-original', 'star-trek-original'], 'idsub': ['startrek', 'star-trek', 'star_trek', 'star.trek']},
     'Star Trek: The Animated Series': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"animated series|\btas\b|star trek[\s:._-]*(the[\s._-]*)?animated|animated adventures", 'ev': r"star trek", 'ids': ['star-trek-tas', 'startrektas', 'st-tas', 'sttas', 'tas-s0', 'star-trek-animated', 'star-trek-the-animated']},
@@ -54,6 +54,8 @@ HINTS = {'Tuesday Night Titans': {'drop': ['TNT']}, 'Wonderful World of Disney':
     'Star Trek: Voyager': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'self': r"star trek[\s:._-]*voyager|\bvoy\b|\bvoyager[\s._-]*(s\d|season|\d{1,2}x\d)", 'ev': r"star trek|\bvoy\b", 'ids': ['star-trek-voy', 'startrekvoy', 'st-voy', 'stvoy', 'voy-s0', 'voy_s0', 'voyager-s0', 'voyager_s0', 'star.-trek.-voy'], 'idsub': ['voyager-s', 'voyager_s', 'voyagers0', 'stvoy', 'st-voy', 'voy-s', 'voy_s']},
     'Star Trek: Enterprise': {'full': 1, 'fam': 1, 'junk': TREKJUNK, 'until': '2005-12-31', 'self': r"star trek[\s:._-]*enterprise(?![\s._-]*incident)|\bent\b|\benterprise[\s._-]*(s\d|season|\d{1,2}x\d)", 'ev': r"star trek", 'ids': ['star-trek-ent', 'startrekent', 'st-ent', 'stent', 'ent-s0', 'ent_s0', 'enterprise-s0', 'enterprise_s0', 'star.-trek.-ent'], 'idsub': ['enterprise-s', 'enterprise_s', 'enterprises0', 'st-ent', 'ent-s0']},
     'Twin Peaks': {'full': 1, 'pilot0': 1, 'junk': PEAKSJUNK, 'self': r"twin peaks", 'ids': ['twinpeaks', 'twin-peaks', 'twin_peaks', 'twin.-peaks', 'tp-s0'], 'idsub': ['twinpeaks', 'twin-peaks', 'twin_peaks', 'twin.peaks', 'twin.-peaks']}}
+FILMS = re.compile(r"star trek (generations|first contact|insurrection|nemesis|the motion picture|into darkness|beyond|(ii|iii|iv|v|vi|vii|viii|ix|x)\b)|wrath of khan|search for spock|voyage home|final frontier|undiscovered country|\bpg 13\b|\b\dh \d+m\b|fire walk with me|feature film|theatrical")
+REVIEW = re.compile(r"\b(reviews?|reviewed|reviewing|podcasts?|reacts?|reactions?|reactors?|recaps?|riffs?|riffing|rifftrax|mst3k|mistie|commentary|discussion|discuss|discusses|discussing|analysis|video essay|ranking|ranked|watch ?along|rewatch|live ?stream|fan ?films?|fan ?made|fan ?edits?|parody|spoof|music videos?|amv|tribute|trailers?|bloopers|deleted scenes|behind the scenes|making of|documentary|interviews?|convention|panel|gameplay|walkthrough|let's play|longplay|workprints?|bootleg|concert|live at)\b")
 ADONLY = re.compile(r"\bcommercials?,|\bcommercial (break|block)s?\b|\bcommercials (and|from|during|block|breaks?|only|compilation)\b|\b(open|close|closing|ending|end credits|intro|outro|sign-?off|sign-?on|station id|ident|promo)$")
 ABROAD = re.compile(r"\b(atv|ads|tcn|gtv|qtq|nws|hsv|tvq|sas|ntd|stw|tvw|bcv|nbn|gmv|rtq|tnq|ten|nine|seven)-(\d{1,2})\b|\b(bbc ?[1-4]|bbc one|bbc two|itv[1-4]?|channel 4|channel four|sky one|uk gold|ytv|cbc|ctv|global tv|rte|network ten|nine network|seven network)\b")
 UKOK = {'pbs', 'a&e', 'bravo', 'bbca', 'bbc america', 'comedy'}
@@ -234,6 +236,7 @@ def build_ep():
 PARTRX = re.compile(r"[\s,:;-]*\(?\b(?:part|pt)\.?\s*(\d|i{1,3}|one|two|three)\)?\s*$|\s*\((\d)\)\s*$|(?<=[a-z.])\s+(i{1,3})\s*$", re.I)
 FULLMIN = {'drama': 2280, 'kids': 1200, 'sitcom': 1080}
 FULLTYP = {'drama': 2700, 'kids': 1440, 'sitcom': 1320}
+NOISE = set('hd hq full episode episodes ep vhs dvd rip tv version uncut extended remastered widescreen fullscreen english eng part pt season series complete the and for with from star trek rerun broadcast original aired commercials ads woc web tvrip dvdrip bluray'.split())
 SERTOK = {'tng', 'ds9', 'voy', 'tos', 'ent', 'tas', 'generation', 'nine', '9', 'voyager', 'enterprise', 'trek', 'peaks'}
 GUARD = r"(?:^|\s)(?:\d{1,3}|tng|ds9|voy|tos|ent|tas|generation|nine|9|voyager|enterprise|trek|peaks)\s+"
 
@@ -308,13 +311,16 @@ def parse_full(sh, text, dur, ctx):
         if len(vals) == 1 or long: return vals, 't'
         return [vals[0]], 't'
     if ses and ctx.get('shift') and all(w[0] == 1 for w in ses): ses = [(1, w[1] + 1) for w in ses]; valid = [w for w in ses if w in G['d']]
+    zw = {w for w in z.split() if w not in NOISE and not w.isdigit() and len(w) > 2}
+    def fits(out):
+        return not zw or any(zw & set(norm0(G['names'][w]).split()) for w in out)
     if ses and any(w[0] in ctx.get('split', ()) for w in ses):
         out = sorted({G['split'][w] for w in ses if w in G['split']})
-        if out: return out, 'n'
-    if valid: return valid, 'n'
+        if out and fits(out): return out, 'n'
+    if valid: return (valid, 'n') if fits(valid) else ([], '')
     if ses:
         out = sorted({G['split'][w] for w in ses if w in G['split']} | {G['order'][w[1] - 1] for w in ses if w[0] == 1 and w not in G['split'] and 0 < w[1] <= len(G['order'])})
-        if out: return out, 'n'
+        if out and fits(out): return out, 'n'
     if sh['pilot0'] and not ses:
         if re.search(r'\bpilot\b', low): return [G['order'][0]], 't'
         am = re.search(r'\b(?:episode|ep|e)\s?#?(\d{1,2})\b', low)
@@ -338,12 +344,12 @@ def tag_full(sh, x):
             ws, how = parse_full(s2, f[0], f[1], ctx if s2 is sh else {})
             if not ws and len(files) <= 2: ws, how = parse_full(s2, title, f[1], ctx if s2 is sh else {})
             G = EP.get(s2['title']) or {}
-            base = f[0].rsplit('/', 1)[-1]
-            sure = how == 't' or fname(s2, base) or bool(s2['selfrx'] and s2['selfrx'].search(re.sub(r'[._]+', ' ', base.lower())))
+            base = ' ' + norm(clean(re.sub(r'[-_.]+', ' ', f[0].rsplit('/', 1)[-1]))) + ' '
+            sure = how == 't' or any((' ' + nm['n'] + ' ') in base for nm in s2['names'] if nm['lvl'] <= 1) or bool(s2['selfrx'] and s2['selfrx'].search(base))
             for w in ws:
                 if w in G.get('d', {}):
                     rows.append([n, 'S%02dE%02d' % w, G['d'][w], G['names'][w]] + ([s2['title']] if s2 is not sh else [])); hows.append(sure)
-    if rows and not any(hows): rows = []
+    if rows and sum(hows) * 2 < len(hows): rows = [r for r, h in zip(rows, hows) if h]
     if rows: x['se'] = rows
     else: x.pop('se', None)
     return rows
@@ -400,7 +406,13 @@ def consider(sh, it, route='t'):
         if route == 't': return None
         blob = ' ' + norm(clean(re.sub(r'[-_.]+', ' ', ident)) + ' ' + subj + ' ' + desc) + ' '
         nm = next((x for x in sh['names'] if x['lvl'] <= 1 and (' ' + x['n'] + ' ') in blob), None)
-        if not nm and sh['full'] and sh['evrx'].search(low + ' ' + blob): nm = sh['names'][0]
+        if sh['full']:
+            identc = norm(clean(re.sub(r'[-_.]+', ' ', ident)))
+            ok = sh['evrx'].search(low + ' ' + identc) or (sh['selfrx'] and sh['selfrx'].search(subj + ' ' + identc)) or any((' ' + x['n'] + ' ') in (' ' + norm(subj) + ' ' + identc + ' ') for x in sh['names'] if x['lvl'] <= 1)
+            d3 = desc[:300]
+            if not ok and route == 'e': ok = sh['evrx'].search(d3) and re.search(r'\b(episodes?|season|s\d{1,2}\s?e\d{1,2})\b', d3) and not FILMS.search(re.sub(r'[\W_]+', ' ', fold(d3)))
+            if REVIEW.search(d3): ok = False
+            nm = sh['names'][0] if ok else None
         if not nm: return None
         hd = -1
     rest = strip_names(sh, low); rest0 = rest; eptf = False
@@ -409,6 +421,7 @@ def consider(sh, it, route='t'):
         if (EP.get(sh['title']) or {}).get('eprx'):
             eptf = bool(EP[sh['title']]['eprx'].search(fold(rest))); rest = EP[sh['title']]['eprx'].sub(' ', fold(rest))
         if sh['junk'] and sh['junk'].search(re.sub(r'[\W_]+', ' ', fold(low))): return None
+        if REVIEW.search(rest) or REVIEW.search(subj): return None
     if JUNK.search(rest) or SPIN.search(rest) or MOD2.search(t) or ADONLY.search(low.strip()): return None
     if ABROAD.search(low) and sh['net'] not in UKOK and '(uk)' not in sh['title'].lower(): return None
     if sh['cls'] == 'scripted' and JUNKS.search(rest): return None
@@ -453,9 +466,9 @@ def consider(sh, it, route='t'):
         m2 = EPN.search(low)
         if m2 and not ss and int(m2.group(1)) > 32 * (y1 - y0 + 1) + 10: return None
         strong = se or ept or cast
-        if mod and not (strong or inrun): return None
+        if mod and not (strong or inrun): return ('m', 'no episode, year or network evidence') if hd == 2 and lvl <= 1 else None
         if lvl >= 2:
-            if sh['full']: return ('d', 't') if hd >= 0.5 else None
+            if sh['full']: return ('d', 't') if hd >= 0.5 and (sh['evrx'].search(low + ' ' + norm(clean(re.sub(r'[-_.]+', ' ', ident)))) or (se and eptf)) else None
             if (cast or ept) and hd >= 0.5: return ('y', 't')
             if hd == 2 and se and (ctx or dev or inrun): return ('y', 't')
             if hd == 2 and inrun and (ctx or dev): return ('y', 't')
@@ -836,6 +849,9 @@ def merge():
             if not x['f']: x['f'] = f0
             if not x.get('se') and not x.get('keep'): maybe(x, 'no file matched the episode guide')
             if x.get('se') and x.get('why') == 'no file matched the episode guide': x.pop('keep'); x.pop('why')
+            nv = len({r[0] for r in x.get('se', [])})
+            if (not nv and (len(x['f']) >= 3 or x.get('r') != 't')) or (x.get('r') != 't' and nv * 2 < len(x['f'])): x['drop'] = 1; print('DROP', x['k'], '|', x['i'], '|', x['t'][:80], '| files do not match the episode guide')
+    res = [x for x in res if not x.pop('drop', 0)]
     fulls = sorted([s for s in SHOWS if s['full']], key=lambda s: -len(s['title']))
     cov = {s['title']: {'held': {}, 'new': {}, 'est': {}} for s in fulls}
     def credit(x, where):
