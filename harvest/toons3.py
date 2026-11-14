@@ -107,7 +107,15 @@ def keep(x):
     if x.get('via') == 'ep':
         b0 = ' ' + norm(x['t'] + ' ' + x.get('s', '') + ' ' + x.get('ds', '')) + ' '
         if not ok_title(x['t']) or (s.get('x') and re.search(s['x'], x['t'].lower())): return False
-        return any((' ' + h + ' ') in b0 for h in [norm(a) for a in s['qn']])
+        if any((' ' + h + ' ') in b0 for h in [norm(a) for a in s['qn']]):
+            x.pop('keep', None); x.pop('why', None); return True
+        ne = norm(x.get('ep', '')); nt = norm(x['t']); ds = [f[1] for f in x.get('f') or []]
+        if len(ne) < 16 or len(ne.split()) < 3 or ne not in nt or not ds: return False
+        if len((' ' + nt + ' ').replace(' ' + ne + ' ', ' ').split()) > 3: return False
+        if not all(1000 <= d <= 1700 or 2350 <= d <= 3150 for d in ds) or len(ds) > 2: return False
+        if set(x.get('c') or []) & XCOL: return False
+        x['keep'] = 'maybe'; x['why'] = 'episode title and runtime match only'
+        return True
     if not ok_title(x['t'], s.get('brit')) or not match(s, x['t']): return False
     if s.get('ct') == 'anime' or s.get('net') in ('cn',):
         b1 = (x['t'] + ' ' + x.get('s', '') + ' ' + x.get('ds', '')).lower()
@@ -335,7 +343,7 @@ def meta(it):
             m5 = re.search(r'(?<!\d)(198[4-9]|199\d|200[0-4])(?!\d)', title + ' ' + desc[:200])
             e = int(m5.group(1)) if m5 else ''
     extra = {'ad': ad} if ad else {}
-    if it.get('ep'): extra.update({'via': 'ep', 'se': it['ep'][:3], 'ad': str(it['ep'][2] or '')})
+    if it.get('ep'): extra.update({'via': 'ep', 'se': it['ep'][:3], 'ad': str(it['ep'][2] or ''), 'ep': str(it['ep'][3] or '')})
     return {**extra, 'i': it['identifier'], 'q': 'rerun_x' if False else s['q'], 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': e, 'net': net, 'ct': s.get('ct', 'satam'), 'or': orr}
 def meta2(it):
     r = meta(it)
@@ -383,4 +391,5 @@ for x in random.sample(res, min(80, len(res))): print('SAMPLE', x['q'], '|', x['
 print('NETWORK TABLE', sorted(collections.Counter(x.get('net', '') for x in res).items()))
 print('CT TABLE', sorted(collections.Counter(x.get('ct', '') for x in res).items()))
 print('BLOCKS dated', sum(1 for x in res if x['k'] == 'Cartoon block' and x.get('ad')), 'of', sum(1 for x in res if x['k'] == 'Cartoon block'))
-print('EP ROUTE', sum(1 for x in res if x.get('via') == 'ep'))
+print('EP ROUTE', sum(1 for x in res if x.get('via') == 'ep'), 'maybe', sum(1 for x in res if x.get('keep') == 'maybe'))
+for x in [x for x in res if x.get('keep') == 'maybe'][:60]: print('MAYBE', x['k'], '|', x.get('ep'), '|', x['t'][:70], '|', x['i'][:40], '|', [round(f[1] / 60) for f in x['f']][:3])
