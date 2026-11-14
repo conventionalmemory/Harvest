@@ -787,6 +787,7 @@ def resolve(SC, title, desc='', ctx=''):
     if not r: return None, 'nosport'
     lg = r[0]
     if lg == 'ncaaf' and re.search(r' (ncaa championship|ncaa finals?|final four|regional|regionals|region|ncaa tournament|basketball|semi ?finals?|semi|sweet 16|sweet sixteen|elite 8|elite eight|midwest|mideast|southeast|2nd rd|1st rd|second round|first round) ', nt) and not re.search(r' (football|bowl) ', nt): lg = 'ncaab'
+    if lg == 'golf' and ' us open ' in nt and (re.search(MEN, nt) or re.search(WOMEN, nt) or re.search(r' (tennis|qf|sf|quarter ?finals?|semi ?finals?|mens|womens|flushing) ', nt)): lg = 'tennis'
     ys = sorted(set(int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)))
     m = re.search(r' (19[89]\d|200[0-3]) (\d\d) ', nt)
     if m and int(m.group(2)) == (int(m.group(1)) + 1) % 100: ys = [int(m.group(1)) + 1] if lg in ('ncaab', 'nba', 'nhl') else sorted(set(ys) | {int(m.group(1)), int(m.group(1)) + 1})
@@ -851,6 +852,7 @@ def resolve(SC, title, desc='', ctx=''):
         return None, why
     if lg in ('mlb', 'nba', 'nhl'):
         if ' all star ' in nt:
+            if re.search(r' (slam dunk|dunk contest|three point|3 point|rookie|saturday|weekend|skills|legends|home run derby|celebrity|shootout|old timers) ', nt): return None, 'allstar_side'
             for y in ys:
                 L = SC.key.get((lg, 'all star game', y))
                 if L: return {'ad': L[0]['d'], 'ev': '%d %s ALL-STAR GAME' % (y, lg.upper()), 'ct': lg, 'row': L[0]}, None
@@ -903,7 +905,7 @@ def resolve(SC, title, desc='', ctx=''):
         return None, why
     if lg == 'golf':
         k = 'masters' if ' masters ' in nt else 'pga championship' if ' pga championship ' in nt else 'british open' if ' british open ' in nt or ' open championship ' in nt else 'us open golf' if ' us open ' in nt else None
-        if not k or re.search(r' (highlights|preview|practice|par 3|skins|senior|lpga|womens) ', nt): return None, 'golf_nokey'
+        if not k or re.search(r' (highlights|preview|practice|par 3|skins|senior|lpga|womens|vhs|video|film|dvd) ', nt): return None, 'golf_nokey'
         rn = re.search(r' (first|1st|second|2nd|third|3rd|final|fourth|4th) round ', nt) or re.search(r' round (\d) ', nt)
         off = 3
         if rn: off = {'first': 0, '1st': 0, '1': 0, 'second': 1, '2nd': 1, '2': 1, 'third': 2, '3rd': 2, '3': 2}.get(rn.group(1), 3)
@@ -927,6 +929,7 @@ def resolve(SC, title, desc='', ctx=''):
         return None, 'tennis_none'
     if lg == 'olympics':
         k = 'opening ceremony' if re.search(r' opening ceremon', nt) else 'closing ceremony' if re.search(r' closing ceremon', nt) else None
+        if re.search(r' opening ', nt) and re.search(r' closing ', nt): return None, 'oly_both'
         dn = re.search(r' day (\d{1,2}) ', nt)
         if not k and dn and 1 <= int(dn.group(1)) <= 17:
             c = [e for y in ys for e in SC.key.get(('olympics', 'opening ceremony', y), [])]
@@ -987,7 +990,8 @@ def classify(SC, title, ident, dfield, desc):
         r0 = sport(title, desc, '1994-06-18') or sport(title, desc, '1994-10-15')
         ys = [int(v) for v in re.findall(r'(?<!\d)' + YR + r'(?!\d)', nt)]
         if not r0 or not ys: return None, why
-        return {'ct': r0[0], 'k': LGK.get(r0[0], 'SPORTS'), 'ad': '', 'ev': '', 'e': ys[0], 'min': 2400, 'net': netof(title, desc) or known_net(r0[0], nt, '', ys[0]), 'keep': 'maybe', 'why': 'outside 1984-2004' if max(ys) < 1984 else 'day unresolved: ' + str(why)}, None
+        ct0 = 'tennis' if str(why).startswith('tennis') else r0[0]
+        return {'ct': ct0, 'k': LGK.get(ct0, 'SPORTS'), 'ad': '', 'ev': '', 'e': ys[0], 'min': 2400, 'net': netof(title, desc) or known_net(ct0, nt, '', ys[0]), 'keep': 'maybe', 'why': 'outside 1984-2004' if max(ys) < 1984 else 'day unresolved: ' + str(why)}, None
     return {'ct': r['ct'], 'k': LGK.get(r['ct'], 'SPORTS'), 'ad': r['ad'], 'ev': r['ev'], 'e': int(r['ad'][:4]), 'min': 2400, 'net': netof(title, '') or r['row'].get('net') or r.get('net') or netof(title, desc) or known_net(r['ct'], nt, r['ad'], 0), 'st': r['row'].get('st', ''), 'row': r['row']}, None
 LTAG = {'nfl': 'nfl', 'nba': 'nba', 'mlb': 'mlb', 'nhl': 'nhl', 'racing': 'nascar', 'ncaaf': 'college football', 'ncaab': 'ncaa basketball'}
 GAMEX = r' (madden|nba live|playstation|ps2|ps3|ps 2|ps 3|xbox|nintendo|how to install|rebuilt mod|video game|gameplay|nba 2k\d*|nhl 2004 rebuilt|tournament of legends|qb club|quarterback club|nfl 2k\d*|nfl 2 k \d|ncaa football (19|20)\d\d|nascar thunder|nascar heat|tiger woods pga tour|action pc|retro replay|lets just|lets play|going buoy|nfl blitz|nfl gameday|nfl fever|nba jam|nba street|triple play|mvp baseball|high heat|mirror match|historic team tournament|playthrough|longplay|talking dog) '
@@ -1029,7 +1033,7 @@ def known_net(ct, nt, ad, e):
         c = set(v for (yy, ss), v in ONET.items() if yy == y and (not se or ss == se))
         if len(c) == 1: return list(c)[0]
     if ct == 'golf': return 'cbs' if ' masters ' in nt else ('abc' if y <= 1994 else 'nbc') if ' us open ' in nt else ('abc' if y <= 1990 else 'cbs') if ' pga championship ' in nt else 'abc' if re.search(r' (british open|open championship) ', nt) else ''
-    if ct == 'tennis' and re.search(r' finals? ', nt): return 'nbc' if re.search(r' (wimbledon|french open|roland garros) ', nt) else 'cbs' if ' us open ' in nt else ''
+    if ct == 'tennis' and re.search(r' finals? ', nt): return 'nbc' if re.search(r' (wimbledon|french open|roland garros) ', nt) else 'cbs' if ' us open ' in nt else 'espn' if ' australian open ' in nt else ''
     return ''
 FORX = r' (etapa|juego|finales nba|foreign telecasts?|en espanol|radio coverage|radio broadcasts?|radio network|les classiques|narracion|swedish commentary|uk vhs|german commentary|french commentary|spanish commentary|comentarios|relato) '
 SBNET = dict(zip(D['SB'].values(), 'cbs abc nbc cbs abc nbc cbs abc cbs nbc nbc abc nbc fox nbc fox abc cbs fox abc cbs'.split()))
