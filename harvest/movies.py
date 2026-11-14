@@ -154,20 +154,23 @@ def variants(t):
 SEQ = set('2 3 4 5 6 7 8 ii iii iv v vi vii viii part chapter returns'.split())
 SRC = r'^(roosterteeth|patma|bliptv|twitch|tiktok|soundcloud|podcast|g4tv|turner_video|youtube-|twitter)'
 PEOPLE = {}
-def people(qs):
-    for a in range(0, len(qs), 80):
-        q = 'SELECT ?film ?pl ?sl ?k WHERE { VALUES ?film { %s } { ?film wdt:P57 ?p BIND(1 AS ?k) } UNION { ?film wdt:P161 ?p BIND(0 AS ?k) } ?p wikibase:sitelinks ?sl; rdfs:label ?pl FILTER(lang(?pl)="en") }' % ' '.join('wd:' + x for x in qs[a:a + 80])
-        j = get('https://query.wikidata.org/sparql?format=json&query=' + urllib.parse.quote(q), accept='application/sparql-results+json')
+def people(qs, step=30):
+    for a in range(0, len(qs), step):
+        q = 'SELECT ?film ?prop ?pl ?sl WHERE { VALUES ?film { %s } VALUES ?prop { wdt:P57 wdt:P161 } ?film ?prop ?p . ?p wikibase:sitelinks ?sl . ?p rdfs:label ?pl . FILTER(lang(?pl)="en") }' % ' '.join('wd:' + x for x in qs[a:a + step])
+        j = get('https://query.wikidata.org/sparql?format=json&query=' + urllib.parse.quote(q), tries=2, accept='application/sparql-results+json')
+        if j is None and step > 6:
+            people(qs[a:a + step], 6); continue
         tmp = {}
         for r in (j or {}).get('results', {}).get('bindings', []):
             fid = r['film']['value'].rsplit('/', 1)[-1]
             try: sl = int(float(r['sl']['value']))
             except Exception: sl = 0
-            tmp.setdefault(fid, []).append((int(r['k']['value']), sl, r['pl']['value']))
+            tmp.setdefault(fid, []).append((1 if r['prop']['value'].endswith('P57') else 0, sl, r['pl']['value']))
         for fid, v in tmp.items():
             d = sorted([x for x in v if x[0]], key=lambda x: -x[1])[:1]; c = sorted([x for x in v if not x[0]], key=lambda x: -x[1])
             PEOPLE[fid] = [x[2] for x in d + c[:3]], set(w for x in v for w in norm(x[2]).split() if len(w) > 2)
-        time.sleep(1.5)
+        if step > 6 and a % 300 == 0: print('people', a, len(PEOPLE), flush=True)
+        time.sleep(1)
 def idnorm(ident):
     sp = re.sub(r'[_-](19|20)\d{4,6}(_\d+)?$', '', ident)
     sp = re.sub(r'(?<=[a-z])(?=[A-Z])|(?<=[A-Za-z])(?=(19|20)\d\d)|(?<=\d\d\d\d)(?=[A-Za-z])', ' ', sp)
@@ -286,7 +289,7 @@ def final(sc, tags):
     if 'parts' in tags: sc -= 5
     if 'sd' in tags: sc += 6
     return sc
-TOL = float(os.environ.get('TOL', '0.09')); PASS = int(os.environ.get('PASS', '5')); CAP = int(os.environ.get('CAP', '14'))
+TOL = float(os.environ.get('TOL', '0.09')); PASS = int(os.environ.get('PASS', '6')); CAP = int(os.environ.get('CAP', '14'))
 T0 = time.time(); BUDGET = float(os.environ.get('BUDGET', '270')) * 60; REDO = os.environ.get('REDO') == '1'
 for x in films:
     n0 = norm(x['t']); ALLT.add(n0)
@@ -325,7 +328,7 @@ def match(f):
     pk = '(trilogy OR quadrilogy OR anthology OR collection OR "box set" OR "double feature" OR movies OR films)'
     run('"%s" AND %s' % (tq, pk) + mm, 40)
     for x, n, k in [v for v in vs if not v[2]][:1]: run('title:("%s") AND title:%s' % (x.replace('"', ''), pk) + mm, 40)
-    if PASS < 5 or REDO:
+    if os.environ.get('WIDE') == '1':
         for x, n, k in vs[1:6]: run('title:("%s")' % x.replace('"', '') + mm, 60)
         if f.get('pia'): run('identifier:"%s"' % f['pia'], 1)
         if y:
@@ -407,22 +410,30 @@ if MODE == 'merge':
     print('part films', len(by), flush=True)
     work = []
     films = [by.get(x['q'], x) for x in films]
-    flagged = [x for x in films if any('maybe' not in c[3] and suspect(x, c[0]) for c in x.get('ias') or [])]
+    WHY = 'identifier suggests another title'
+    flagged = [x for x in films if any(('maybe' not in c[3] and suspect(x, c[0])) or (len(c) > 4 and str(c[4]).startswith(WHY)) for c in x.get('ias') or [])]
     people([x['q'] for x in flagged])
-    dem = 0
+    print('people for', len(PEOPLE), 'of', len(flagged), flush=True)
+    dem = 0; back = 0
+    def verdict(x, ident):
+        r = suspect(x, ident)
+        return '' if r in ('prefix', 'suffix', 'long') and x['q'] not in PEOPLE else r
     for x in flagged:
         for c in x['ias']:
+            if len(c) > 4 and str(c[4]).startswith(WHY) and not verdict(x, c[0]):
+                c[3].remove('maybe'); c[2] += 25; del c[4:]; back += 1
+                print('RESTORE', x['t'], x['d'][:4], '->', c[0], flush=True)
             if 'maybe' in c[3]: continue
-            r = suspect(x, c[0])
+            r = verdict(x, c[0])
             if r:
-                c[3].append('maybe'); c[2] -= 25; del c[4:]; c.append('identifier suggests another title (%s)' % r); dem += 1
+                c[3].append('maybe'); c[2] -= 25; del c[4:]; c.append(WHY + ' (%s)' % r); dem += 1
                 print('DEMOTE', r, '|', x['t'], x['d'][:4], '->', c[0], flush=True)
         x['ias'].sort(key=lambda c: -c[2])
         sure = [c for c in x['ias'] if 'maybe' not in c[3]]
         x.pop('ia', None); x.pop('keep', None); x.pop('why', None)
         if sure: x['ia'] = [sure[0][0], sure[0][1]]
         else: x['keep'] = 'maybe'; x['why'] = x['ias'][0][4] if len(x['ias'][0]) > 4 else 'doubtful match'
-    print('demoted candidates', dem, 'films flagged', len(flagged), flush=True)
+    print('restored', back, 'demoted candidates', dem, 'films flagged', len(flagged), flush=True)
 elif MODE == 'shard':
     work = sorted([x for x in films if not x.get('ia') or REDO], key=lambda x: (-(x.get('sl') or 0), -(x.get('bo') or 0), x['q']))[SHARD::SHARDS]
     print('shard', SHARD, 'of', SHARDS, 'films', len(work), flush=True)
