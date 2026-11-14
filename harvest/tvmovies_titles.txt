@@ -1,0 +1,725 @@
+The Burning Bed|1984|tvmovie|nbc
+Something About Amelia|1984|tvmovie|abc
+Fatal Vision|1984|miniseries|nbc
+The Dollmaker|1984|tvmovie|abc
+Adam|1983|tvmovie|nbc
+Adam: His Song Continues|1986|tvmovie|nbc
+The Day After|1983|tvmovie|abc
+Special Bulletin|1983|tvmovie|nbc
+Threads|1984|tvmovie|
+Testament|1983|tvmovie|pbs
+V: The Final Battle|1984|miniseries|nbc
+The Thorn Birds|1983|miniseries|abc
+The Winds of War|1983|miniseries|abc
+War and Remembrance|1988|miniseries|abc
+North and South|1985|miniseries|abc
+North and South Book II|1986|miniseries|abc
+Heaven and Hell: North and South Book III|1994|miniseries|abc
+Lonesome Dove|1989|miniseries|cbs
+Return to Lonesome Dove|1993|miniseries|cbs
+Streets of Laredo|1995|miniseries|cbs
+Dead Man's Walk|1996|miniseries|abc
+Shogun|1980|miniseries|nbc
+Roots|1977|miniseries|abc
+Roots: The Next Generations|1979|miniseries|abc
+Roots: The Gift|1988|tvmovie|abc
+Queen|1993|miniseries|cbs
+Amerika|1987|miniseries|abc
+Space|1985|miniseries|cbs
+Centennial|1978|miniseries|nbc
+The Blue and the Gray|1982|miniseries|cbs
+George Washington|1984|miniseries|cbs
+George Washington II: The Forging of a Nation|1986|miniseries|cbs
+Peter the Great|1986|miniseries|nbc
+Anastasia: The Mystery of Anna|1986|miniseries|nbc
+Sins|1986|miniseries|cbs
+Lace|1984|miniseries|abc
+Lace II|1985|miniseries|abc
+Hollywood Wives|1985|miniseries|abc
+If Tomorrow Comes|1986|miniseries|cbs
+Master of the Game|1984|miniseries|cbs
+Mistral's Daughter|1984|miniseries|cbs
+Scruples|1980|miniseries|cbs
+Rage of Angels|1983|miniseries|nbc
+Windmills of the Gods|1988|miniseries|cbs
+The Last Days of Pompeii|1984|miniseries|abc
+A.D.|1985|miniseries|nbc
+Masada|1981|miniseries|abc
+Jesus of Nazareth|1977|miniseries|nbc
+The Bourne Identity|1988|miniseries|abc
+Echoes in the Darkness|1987|miniseries|cbs
+Fatal Vision|1984|miniseries|nbc
+Blind Faith|1990|miniseries|nbc
+Small Sacrifices|1989|miniseries|abc
+In a Child's Name|1991|miniseries|cbs
+A Woman Named Jackie|1991|miniseries|nbc
+The Kennedys of Massachusetts|1990|miniseries|abc
+Kennedy|1983|miniseries|nbc
+Robert Kennedy and His Times|1985|miniseries|cbs
+The Jacksons: An American Dream|1992|miniseries|abc
+Sinatra|1992|miniseries|cbs
+Elvis and Me|1988|miniseries|abc
+Elvis|1979|tvmovie|abc
+Stephen King's It|1990|miniseries|abc
+The Stand|1994|miniseries|abc
+The Tommyknockers|1993|miniseries|abc
+The Langoliers|1995|miniseries|abc
+Stephen King's The Shining|1997|miniseries|abc
+Storm of the Century|1999|miniseries|abc
+Rose Red|2002|miniseries|abc
+Golden Years|1991|miniseries|cbs
+Salem's Lot|1979|miniseries|cbs
+Sometimes They Come Back|1991|tvmovie|cbs
+Quicksilver Highway|1997|tvmovie|fox
+Intensity|1997|miniseries|fox
+Trilogy of Terror|1975|tvmovie|abc
+Trilogy of Terror II|1996|tvmovie|usa
+Dark Night of the Scarecrow|1981|tvmovie|cbs
+Don't Be Afraid of the Dark|1973|tvmovie|abc
+Duel|1971|tvmovie|abc
+The Night Stalker|1972|tvmovie|abc
+The Night Strangler|1973|tvmovie|abc
+Gargoyles|1972|tvmovie|cbs
+Bad Ronald|1974|tvmovie|abc
+The Midnight Hour|1985|tvmovie|abc
+Cast a Deadly Spell|1991|tvmovie|hbo
+Witch Hunt|1994|tvmovie|hbo
+The Haunted|1991|tvmovie|fox
+Grave Secrets: The Legacy of Hilltop Drive|1992|tvmovie|cbs
+The Canterville Ghost|1986|tvmovie|
+The Canterville Ghost|1996|tvmovie|abc
+Buried Alive|1990|tvmovie|usa
+I Saw What You Did|1988|tvmovie|cbs
+When a Stranger Calls Back|1993|tvmovie|showtime
+Psycho IV: The Beginning|1990|tvmovie|showtime
+The Burning Bed|1984|tvmovie|nbc
+An Early Frost|1985|tvmovie|nbc
+The Ryan White Story|1989|tvmovie|abc
+And the Band Played On|1993|tvmovie|hbo
+Brian's Song|1971|tvmovie|abc
+Brian's Song|2001|tvmovie|abc
+Sybil|1976|tvmovie|nbc
+The Best Little Girl in the World|1981|tvmovie|abc
+For the Love of Nancy|1994|tvmovie|abc
+A Killing in a Small Town|1990|tvmovie|cbs
+The Deliberate Stranger|1986|miniseries|nbc
+The Executioner's Song|1982|tvmovie|nbc
+Helter Skelter|1976|miniseries|cbs
+Guyana Tragedy: The Story of Jim Jones|1980|miniseries|cbs
+Out of the Darkness|1985|tvmovie|cbs
+To Catch a Killer|1992|miniseries|
+Citizen X|1995|tvmovie|hbo
+The Positively True Adventures of the Alleged Texas Cheerleader-Murdering Mom|1993|tvmovie|hbo
+Willing to Kill: The Texas Cheerleader Story|1992|tvmovie|abc
+Amy Fisher: My Story|1992|tvmovie|nbc
+The Amy Fisher Story|1993|tvmovie|abc
+Casualties of Love: The Long Island Lolita Story|1993|tvmovie|cbs
+A Cry for Help: The Tracey Thurman Story|1989|tvmovie|nbc
+I Know My First Name Is Steven|1989|miniseries|nbc
+The Preppie Murder|1989|tvmovie|abc
+Honor Thy Father and Mother: The True Story of the Menendez Murders|1994|tvmovie|fox
+Menendez: A Killing in Beverly Hills|1994|miniseries|cbs
+Death of a Cheerleader|1994|tvmovie|nbc
+A Friend to Die For|1994|tvmovie|nbc
+No One Would Tell|1996|tvmovie|nbc
+She Cried No|1996|tvmovie|nbc
+She Fought Alone|1995|tvmovie|nbc
+Fifteen and Pregnant|1998|tvmovie|lifetime
+Mother, May I Sleep with Danger?|1996|tvmovie|nbc
+Co-ed Call Girl|1996|tvmovie|cbs
+Moment of Truth: Stalking Back|1993|tvmovie|nbc
+Shattered Innocence|1988|tvmovie|cbs
+Dying to Belong|1997|tvmovie|nbc
+The Babysitter's Seduction|1996|tvmovie|nbc
+Friends 'Til the End|1997|tvmovie|nbc
+Her Costly Affair|1996|tvmovie|nbc
+A Mother's Justice|1991|tvmovie|nbc
+Not Without My Daughter|1991|feature|
+Without Warning|1994|tvmovie|cbs
+The Day After|1983|tvmovie|abc
+Miracle on Ice|1981|tvmovie|abc
+The Jesse Owens Story|1984|tvmovie|
+The Jericho Mile|1979|tvmovie|abc
+The Terry Fox Story|1983|tvmovie|hbo
+Something for Joey|1977|tvmovie|cbs
+The Boy in the Plastic Bubble|1976|tvmovie|abc
+Dawn: Portrait of a Teenage Runaway|1976|tvmovie|nbc
+Sarah T. - Portrait of a Teenage Alcoholic|1975|tvmovie|nbc
+Born Innocent|1974|tvmovie|nbc
+Go Ask Alice|1973|tvmovie|abc
+The Last Fling|1987|tvmovie|abc
+Babes in Toyland|1986|tvmovie|nbc
+Alice in Wonderland|1985|miniseries|cbs
+Alice in Wonderland|1999|tvmovie|nbc
+Gulliver's Travels|1996|miniseries|nbc
+The Odyssey|1997|miniseries|nbc
+Merlin|1998|miniseries|nbc
+The 10th Kingdom|2000|miniseries|nbc
+Arabian Nights|2000|miniseries|abc
+Jason and the Argonauts|2000|miniseries|nbc
+Noah's Ark|1999|miniseries|nbc
+Cleopatra|1999|miniseries|abc
+Dinotopia|2002|miniseries|abc
+Jack and the Beanstalk: The Real Story|2001|miniseries|cbs
+Snow White: The Fairest of Them All|2001|tvmovie|abc
+The Lost World|2001|tvmovie|
+20,000 Leagues Under the Sea|1997|miniseries|abc
+Journey to the Center of the Earth|1999|miniseries|usa
+Moby Dick|1998|miniseries|usa
+Frank Herbert's Dune|2000|miniseries|scifi
+Children of Dune|2003|miniseries|scifi
+Taken|2002|miniseries|scifi
+Battlestar Galactica|2003|miniseries|scifi
+Earthsea|2004|miniseries|scifi
+The Lost Room|2006|miniseries|scifi
+Band of Brothers|2001|miniseries|hbo
+From the Earth to the Moon|1998|miniseries|hbo
+Angels in America|2003|miniseries|hbo
+The Corner|2000|miniseries|hbo
+Oldest Living Confederate Widow Tells All|1994|miniseries|cbs
+Scarlett|1994|miniseries|cbs
+The Thorn Birds: The Missing Years|1996|miniseries|cbs
+Texas|1994|miniseries|abc
+Wild Palms|1993|miniseries|abc
+Tales of the City|1993|miniseries|pbs
+The Burden of Proof|1992|miniseries|abc
+Drug Wars: The Camarena Story|1990|miniseries|nbc
+Favorite Son|1988|miniseries|nbc
+Noble House|1988|miniseries|nbc
+Shaka Zulu|1986|miniseries|
+On Wings of Eagles|1986|miniseries|nbc
+The Two Mrs. Grenvilles|1987|miniseries|nbc
+I'll Take Manhattan|1987|miniseries|cbs
+Napoleon and Josephine: A Love Story|1987|miniseries|abc
+Nutcracker: Money, Madness and Murder|1987|miniseries|nbc
+Out on a Limb|1987|miniseries|abc
+The Murder of Mary Phagan|1988|miniseries|nbc
+Hemingway|1988|miniseries|
+Around the World in 80 Days|1989|miniseries|nbc
+Cross of Fire|1989|miniseries|nbc
+The Phantom of the Opera|1990|miniseries|nbc
+Voice of the Heart|1989|miniseries|
+Family of Spies|1990|miniseries|cbs
+Love and Hate: The Story of Colin and JoAnn Thatcher|1989|miniseries|
+Separate but Equal|1991|miniseries|abc
+Son of the Morning Star|1991|miniseries|abc
+Love, Lies and Murder|1991|miniseries|nbc
+Cruel Doubt|1992|miniseries|nbc
+Trial: The Price of Passion|1992|miniseries|nbc
+Alex Haley's Queen|1993|miniseries|cbs
+The Fire Next Time|1993|miniseries|cbs
+Murder in the Heartland|1993|miniseries|abc
+Children of the Dust|1995|miniseries|cbs
+Buffalo Girls|1995|miniseries|cbs
+Andersonville|1996|miniseries|tnt
+Gettysburg|1993|feature|tnt
+Ironclads|1991|tvmovie|tnt
+Geronimo|1993|tvmovie|tnt
+The Broken Chain|1993|tvmovie|tnt
+Lakota Woman: Siege at Wounded Knee|1994|tvmovie|tnt
+Crazy Horse|1996|tvmovie|tnt
+Tecumseh: The Last Warrior|1995|tvmovie|tnt
+Riders of the Purple Sage|1996|tvmovie|tnt
+Last Stand at Saber River|1997|tvmovie|tnt
+Rough Riders|1997|miniseries|tnt
+Buffalo Soldiers|1997|tvmovie|tnt
+Purgatory|1999|tvmovie|tnt
+The Virginian|2000|tvmovie|tnt
+Crossfire Trail|2001|tvmovie|tnt
+Monte Walsh|2003|tvmovie|tnt
+Conagher|1991|tvmovie|tnt
+The Sacketts|1979|miniseries|nbc
+The Shadow Riders|1982|tvmovie|cbs
+Louis L'Amour's Down the Long Hills|1986|tvmovie|
+The Quick and the Dead|1987|tvmovie|hbo
+Gunsmoke: Return to Dodge|1987|tvmovie|cbs
+Gunsmoke: The Last Apache|1990|tvmovie|cbs
+Gunsmoke: To the Last Man|1992|tvmovie|cbs
+Gunsmoke: The Long Ride|1993|tvmovie|cbs
+Gunsmoke: One Man's Justice|1994|tvmovie|cbs
+Bonanza: The Next Generation|1988|tvmovie|
+Bonanza: The Return|1993|tvmovie|nbc
+The Gambler|1980|tvmovie|cbs
+Kenny Rogers as The Gambler: The Adventure Continues|1983|tvmovie|cbs
+The Gambler Returns: The Luck of the Draw|1991|tvmovie|nbc
+The Alamo: Thirteen Days to Glory|1987|tvmovie|nbc
+Desperado|1987|tvmovie|nbc
+The Return of Desperado|1988|tvmovie|nbc
+Once Upon a Texas Train|1988|tvmovie|cbs
+Stagecoach|1986|tvmovie|cbs
+Red River|1988|tvmovie|cbs
+The Tracker|1988|tvmovie|hbo
+Columbo: Columbo Goes to the Guillotine|1989|tvmovie|abc
+Columbo: Murder, Smoke and Shadows|1989|tvmovie|abc
+Columbo: Sex and the Married Detective|1989|tvmovie|abc
+Columbo: Grand Deceptions|1989|tvmovie|abc
+Columbo: Murder, a Self Portrait|1989|tvmovie|abc
+Columbo: Columbo Cries Wolf|1990|tvmovie|abc
+Columbo: Agenda for Murder|1990|tvmovie|abc
+Columbo: Rest in Peace, Mrs. Columbo|1990|tvmovie|abc
+Columbo: Uneasy Lies the Crown|1990|tvmovie|abc
+Columbo: Murder in Malibu|1990|tvmovie|abc
+Columbo: Columbo Goes to College|1990|tvmovie|abc
+Columbo: Caution: Murder Can Be Hazardous to Your Health|1991|tvmovie|abc
+Columbo: Columbo and the Murder of a Rock Star|1991|tvmovie|abc
+Columbo: Death Hits the Jackpot|1991|tvmovie|abc
+Columbo: No Time to Die|1992|tvmovie|abc
+Columbo: A Bird in the Hand|1992|tvmovie|abc
+Columbo: It's All in the Game|1993|tvmovie|abc
+Columbo: Butterfly in Shades of Grey|1994|tvmovie|abc
+Columbo: Undercover|1994|tvmovie|abc
+Columbo: Strange Bedfellows|1995|tvmovie|abc
+Columbo: A Trace of Murder|1997|tvmovie|abc
+Columbo: Ashes to Ashes|1998|tvmovie|abc
+Columbo: Murder with Too Many Notes|2001|tvmovie|abc
+Columbo: Columbo Likes the Nightlife|2003|tvmovie|abc
+Perry Mason Returns|1985|tvmovie|nbc
+Perry Mason: The Case of the Notorious Nun|1986|tvmovie|nbc
+Perry Mason: The Case of the Shooting Star|1986|tvmovie|nbc
+Perry Mason: The Case of the Lost Love|1987|tvmovie|nbc
+Perry Mason: The Case of the Sinister Spirit|1987|tvmovie|nbc
+Perry Mason: The Case of the Murdered Madam|1987|tvmovie|nbc
+Perry Mason: The Case of the Scandalous Scoundrel|1987|tvmovie|nbc
+Perry Mason: The Case of the Avenging Ace|1988|tvmovie|nbc
+Perry Mason: The Case of the Lady in the Lake|1988|tvmovie|nbc
+Perry Mason: The Case of the Lethal Lesson|1989|tvmovie|nbc
+Perry Mason: The Case of the Musical Murder|1989|tvmovie|nbc
+Perry Mason: The Case of the All-Star Assassin|1989|tvmovie|nbc
+Perry Mason: The Case of the Poisoned Pen|1990|tvmovie|nbc
+Perry Mason: The Case of the Desperate Deception|1990|tvmovie|nbc
+Perry Mason: The Case of the Silenced Singer|1990|tvmovie|nbc
+Perry Mason: The Case of the Defiant Daughter|1990|tvmovie|nbc
+Perry Mason: The Case of the Ruthless Reporter|1991|tvmovie|nbc
+Perry Mason: The Case of the Maligned Mobster|1991|tvmovie|nbc
+Perry Mason: The Case of the Glass Coffin|1991|tvmovie|nbc
+Perry Mason: The Case of the Fatal Fashion|1991|tvmovie|nbc
+Perry Mason: The Case of the Fatal Framing|1992|tvmovie|nbc
+Perry Mason: The Case of the Reckless Romeo|1992|tvmovie|nbc
+Perry Mason: The Case of the Heartbroken Bride|1992|tvmovie|nbc
+Perry Mason: The Case of the Skin-Deep Scandal|1993|tvmovie|nbc
+Perry Mason: The Case of the Telltale Talk Show Host|1993|tvmovie|nbc
+Perry Mason: The Case of the Killer Kiss|1993|tvmovie|nbc
+Kojak: The Belarus File|1985|tvmovie|cbs
+Kojak: The Price of Justice|1987|tvmovie|cbs
+Kojak: Ariana|1989|tvmovie|abc
+Kojak: Fatal Flaw|1989|tvmovie|abc
+Kojak: Flowers for Matty|1990|tvmovie|abc
+Kojak: It's Always Something|1990|tvmovie|abc
+Kojak: None So Blind|1990|tvmovie|abc
+The Return of the Six Million Dollar Man and the Bionic Woman|1987|tvmovie|nbc
+Bionic Showdown: The Six Million Dollar Man and the Bionic Woman|1989|tvmovie|nbc
+Bionic Ever After?|1994|tvmovie|cbs
+The Incredible Hulk Returns|1988|tvmovie|nbc
+The Trial of the Incredible Hulk|1989|tvmovie|nbc
+The Death of the Incredible Hulk|1990|tvmovie|nbc
+The Return of Mickey Spillane's Mike Hammer|1986|tvmovie|cbs
+Mike Hammer: Murder Takes All|1989|tvmovie|cbs
+Return to Mayberry|1986|tvmovie|nbc
+A Very Brady Christmas|1988|holiday|cbs
+The Brady Girls Get Married|1981|tvmovie|nbc
+Still the Beaver|1983|tvmovie|cbs
+I Dream of Jeannie... Fifteen Years Later|1985|tvmovie|nbc
+I Still Dream of Jeannie|1991|tvmovie|nbc
+Rescue from Gilligan's Island|1978|tvmovie|nbc
+The Harlem Globetrotters on Gilligan's Island|1981|tvmovie|nbc
+The Return of the Man from U.N.C.L.E.|1983|tvmovie|cbs
+Get Smart, Again!|1989|tvmovie|abc
+The Wild Wild West Revisited|1979|tvmovie|cbs
+More Wild Wild West|1980|tvmovie|cbs
+Return of the Beverly Hillbillies|1981|tvmovie|cbs
+Eight Is Enough: A Family Reunion|1987|tvmovie|nbc
+The Facts of Life Goes to Paris|1982|tvmovie|nbc
+The Facts of Life Down Under|1987|tvmovie|nbc
+The Facts of Life Reunion|2001|tvmovie|abc
+Family Ties Vacation|1985|tvmovie|nbc
+Knight Rider 2000|1991|tvmovie|nbc
+Knight Rider 2010|1994|tvmovie|
+Team Knight Rider|1997|tvmovie|
+CHiPs '99|1998|tvmovie|tnt
+The Rockford Files: I Still Love L.A.|1994|tvmovie|cbs
+Hart to Hart Returns|1993|tvmovie|nbc
+Cagney & Lacey: The Return|1994|tvmovie|cbs
+Dallas: The Early Years|1986|tvmovie|cbs
+Dallas: J.R. Returns|1996|tvmovie|cbs
+Dallas: War of the Ewings|1998|tvmovie|cbs
+Dynasty: The Reunion|1991|miniseries|abc
+Knots Landing: Back to the Cul-de-Sac|1997|miniseries|cbs
+The Love Boat: A Valentine Voyage|1990|tvmovie|cbs
+Alien Nation: Dark Horizon|1994|tvmovie|fox
+Alien Nation: Body and Soul|1995|tvmovie|fox
+Alien Nation: Millennium|1996|tvmovie|fox
+Babylon 5: In the Beginning|1998|tvmovie|tnt
+Babylon 5: Thirdspace|1998|tvmovie|tnt
+Babylon 5: A Call to Arms|1999|tvmovie|tnt
+Doctor Who|1996|tvmovie|fox
+Generation X|1996|tvmovie|fox
+Nick Fury: Agent of S.H.I.E.L.D.|1998|tvmovie|fox
+Justice League of America|1997|tvmovie|cbs
+The Flash|1990|tvmovie|cbs
+Captain America|1979|tvmovie|cbs
+Spider-Man|1977|tvmovie|cbs
+Dr. Strange|1978|tvmovie|cbs
+Earth II|1971|tvmovie|abc
+The Questor Tapes|1974|tvmovie|nbc
+Genesis II|1973|tvmovie|cbs
+Planet Earth|1974|tvmovie|abc
+The Martian Chronicles|1980|miniseries|nbc
+The Lathe of Heaven|1980|tvmovie|pbs
+Overdrawn at the Memory Bank|1984|tvmovie|pbs
+Prototype|1983|tvmovie|cbs
+Starflight: The Plane That Couldn't Land|1983|tvmovie|abc
+The Day the Earth Moved|1974|tvmovie|abc
+Condominium|1980|miniseries|
+The Night the Bridge Fell Down|1983|tvmovie|nbc
+Cave-In!|1983|tvmovie|nbc
+Fire!|1977|tvmovie|nbc
+Flood!|1976|tvmovie|nbc
+Hanging by a Thread|1979|tvmovie|nbc
+The Big One: The Great Los Angeles Earthquake|1990|miniseries|nbc
+Asteroid|1997|miniseries|nbc
+Atomic Train|1999|miniseries|nbc
+Aftershock: Earthquake in New York|1999|miniseries|cbs
+Storm of the Century|1999|miniseries|abc
+Y2K|1999|tvmovie|nbc
+Pandora's Clock|1996|miniseries|nbc
+Invasion|1997|miniseries|nbc
+The Beast|1996|miniseries|nbc
+Peter Benchley's Creature|1998|miniseries|abc
+The Stepford Children|1987|tvmovie|nbc
+Revenge of the Stepford Wives|1980|tvmovie|nbc
+Bay Coven|1987|tvmovie|nbc
+The Deliberate Stranger|1986|miniseries|nbc
+Ewoks: The Battle for Endor|1985|kidsfilm|abc
+The Ewok Adventure|1984|kidsfilm|abc
+Caravan of Courage: An Ewok Adventure|1984|kidsfilm|abc
+The Star Wars Holiday Special|1978|holiday|cbs
+The Halloween That Almost Wasn't|1979|holiday|abc
+The Worst Witch|1986|kidsfilm|hbo
+Hocus Pocus|1993|kidsfilm|
+Halloweentown|1998|kidsfilm|disney
+Halloweentown II: Kalabar's Revenge|2001|kidsfilm|disney
+Under Wraps|1997|kidsfilm|disney
+Don't Look Under the Bed|1999|kidsfilm|disney
+Brink!|1998|kidsfilm|disney
+Zenon: Girl of the 21st Century|1999|kidsfilm|disney
+Smart House|1999|kidsfilm|disney
+Johnny Tsunami|1999|kidsfilm|disney
+The Thirteenth Year|1999|kidsfilm|disney
+Genius|1999|kidsfilm|disney
+Up, Up and Away|2000|kidsfilm|disney
+The Color of Friendship|2000|kidsfilm|disney
+Mom's Got a Date with a Vampire|2000|kidsfilm|disney
+Phantom of the Megaplex|2000|kidsfilm|disney
+The Luck of the Irish|2001|kidsfilm|disney
+Motocrossed|2001|kidsfilm|disney
+Cadet Kelly|2002|kidsfilm|disney
+Get a Clue|2002|kidsfilm|disney
+The Cheetah Girls|2003|kidsfilm|disney
+Susie Q|1996|kidsfilm|disney
+Tower of Terror|1997|kidsfilm|abc
+Mr. Boogedy|1986|kidsfilm|abc
+Bride of Boogedy|1987|kidsfilm|abc
+The Parent Trap II|1986|kidsfilm|disney
+Not Quite Human|1987|kidsfilm|disney
+Not Quite Human II|1989|kidsfilm|disney
+Polly|1989|kidsfilm|nbc
+Help Wanted: Kids|1986|kidsfilm|abc
+The Girl Who Spelled Freedom|1986|kidsfilm|abc
+Splash, Too|1988|kidsfilm|abc
+The Absent-Minded Professor|1988|kidsfilm|nbc
+A Mom for Christmas|1990|holiday|nbc
+The Shaggy Dog|1994|kidsfilm|abc
+The Computer Wore Tennis Shoes|1995|kidsfilm|abc
+Escape to Witch Mountain|1995|kidsfilm|abc
+Freaky Friday|1995|kidsfilm|abc
+The Love Bug|1997|kidsfilm|abc
+Rodgers & Hammerstein's Cinderella|1997|kidsfilm|abc
+Annie|1999|kidsfilm|abc
+Geppetto|2000|kidsfilm|abc
+The Wonderful World of Disney|1997|kidsfilm|abc
+Anne of Green Gables|1985|miniseries|pbs
+Anne of Avonlea|1987|miniseries|disney
+Sarah, Plain and Tall|1991|tvmovie|cbs
+Skylark|1993|tvmovie|cbs
+Promise|1986|tvmovie|cbs
+Love Is Never Silent|1985|tvmovie|nbc
+Foxfire|1987|tvmovie|cbs
+The Piano Lesson|1995|tvmovie|cbs
+What the Deaf Man Heard|1997|tvmovie|cbs
+Decoration Day|1990|tvmovie|nbc
+Caroline?|1990|tvmovie|cbs
+O Pioneers!|1992|tvmovie|cbs
+To Dance with the White Dog|1993|tvmovie|cbs
+Breathing Lessons|1994|tvmovie|cbs
+The Tuskegee Airmen|1995|tvmovie|hbo
+Miss Evers' Boys|1997|tvmovie|hbo
+Gia|1998|tvmovie|hbo
+The Rat Pack|1998|tvmovie|hbo
+Pirates of Silicon Valley|1999|tvmovie|tnt
+Introducing Dorothy Dandridge|1999|tvmovie|hbo
+RKO 281|1999|tvmovie|hbo
+61*|2001|tvmovie|hbo
+Conspiracy|2001|tvmovie|hbo
+The Late Shift|1996|tvmovie|hbo
+Barbarians at the Gate|1993|tvmovie|hbo
+Stalin|1992|tvmovie|hbo
+The Josephine Baker Story|1991|tvmovie|hbo
+Murderers Among Us: The Simon Wiesenthal Story|1989|tvmovie|hbo
+Mandela|1987|tvmovie|hbo
+Long Gone|1987|tvmovie|hbo
+The Glitter Dome|1984|tvmovie|hbo
+The Guardian|1984|tvmovie|hbo
+Sakharov|1984|tvmovie|hbo
+By Dawn's Early Light|1990|tvmovie|hbo
+Fatherland|1994|tvmovie|hbo
+Truman|1995|tvmovie|hbo
+Indictment: The McMartin Trial|1995|tvmovie|hbo
+If These Walls Could Talk|1996|tvmovie|hbo
+Path to War|2002|tvmovie|hbo
+Live from Baghdad|2002|tvmovie|hbo
+The Burning Season|1994|tvmovie|hbo
+Body Bags|1993|tvmovie|showtime
+Roswell|1994|tvmovie|showtime
+Rasputin: Dark Servant of Destiny|1996|tvmovie|hbo
+Gotti|1996|tvmovie|hbo
+Don King: Only in America|1997|tvmovie|hbo
+12 Angry Men|1997|tvmovie|showtime
+The Wall|1982|tvmovie|cbs
+Playing for Time|1980|tvmovie|cbs
+Escape from Sobibor|1987|tvmovie|cbs
+Holocaust|1978|miniseries|nbc
+The Diary of Anne Frank|1980|tvmovie|nbc
+Wallenberg: A Hero's Story|1985|miniseries|nbc
+Hitler's SS: Portrait in Evil|1985|tvmovie|nbc
+Inside the Third Reich|1982|miniseries|abc
+The Bunker|1981|tvmovie|cbs
+Ike|1979|miniseries|abc
+The Missiles of October|1974|tvmovie|abc
+The Atlanta Child Murders|1985|miniseries|cbs
+Unnatural Causes|1986|tvmovie|nbc
+The Betty Ford Story|1987|tvmovie|abc
+LBJ: The Early Years|1987|tvmovie|nbc
+The Karen Carpenter Story|1989|tvmovie|cbs
+Rock Hudson|1990|tvmovie|abc
+Liberace|1988|tvmovie|abc
+Liberace: Behind the Music|1988|tvmovie|cbs
+Poor Little Rich Girl: The Barbara Hutton Story|1987|miniseries|nbc
+Liz: The Elizabeth Taylor Story|1995|miniseries|nbc
+Madonna: Innocence Lost|1994|tvmovie|fox
+The Beach Boys: An American Family|2000|miniseries|abc
+Growing Up Brady|2000|tvmovie|nbc
+Behind the Camera: The Unauthorized Story of Three's Company|2003|tvmovie|nbc
+Behind the Camera: The Unauthorized Story of Charlie's Angels|2004|tvmovie|nbc
+Dynasty: The Making of a Guilty Pleasure|2005|tvmovie|abc
+Saved by the Bell: Hawaiian Style|1992|tvmovie|nbc
+Saved by the Bell: Wedding in Las Vegas|1994|tvmovie|nbc
+The Wizard of Speed and Time|1988|feature|
+Double Switch|1987|kidsfilm|abc
+14 Going on 30|1988|kidsfilm|abc
+Earth Star Voyager|1988|kidsfilm|abc
+The Richest Cat in the World|1986|kidsfilm|abc
+Little Spies|1986|kidsfilm|abc
+Fuzzbucket|1986|kidsfilm|abc
+The Christmas Star|1986|holiday|abc
+Hansel and Gretel|1987|kidsfilm|
+The Legend of Sleepy Hollow|1980|tvmovie|nbc
+The Legend of Sleepy Hollow|1999|tvmovie|
+A Christmas Carol|1984|holiday|cbs
+A Christmas Carol|1999|holiday|tnt
+Ebbie|1995|holiday|lifetime
+Ms. Scrooge|1997|holiday|usa
+An American Christmas Carol|1979|holiday|abc
+It Happened One Christmas|1977|holiday|abc
+The Gathering|1977|holiday|abc
+The Homecoming: A Christmas Story|1971|holiday|cbs
+The House Without a Christmas Tree|1972|holiday|cbs
+A Christmas Without Snow|1980|holiday|cbs
+The Christmas Gift|1986|holiday|cbs
+Christmas Comes to Willow Creek|1987|holiday|cbs
+The Night They Saved Christmas|1984|holiday|abc
+The Christmas That Almost Wasn't|1966|holiday|
+Santa Claus: The Movie|1985|holiday|
+Ernest Saves Christmas|1988|holiday|
+Prancer|1989|holiday|
+One Magic Christmas|1985|holiday|
+A Smoky Mountain Christmas|1986|holiday|abc
+The Little Match Girl|1987|holiday|nbc
+Roots: The Gift|1988|holiday|abc
+I'll Be Home for Christmas|1988|holiday|nbc
+The Christmas Wife|1988|holiday|hbo
+Christmas in Connecticut|1992|holiday|tnt
+A Mom for Christmas|1990|holiday|nbc
+Yes Virginia, There Is a Santa Claus|1991|holiday|abc
+The Story Lady|1991|holiday|nbc
+Miracle in the Wilderness|1991|holiday|tnt
+A Christmas Romance|1994|holiday|cbs
+The Christmas Box|1995|holiday|cbs
+Mrs. Santa Claus|1996|holiday|cbs
+Christmas Every Day|1996|holiday|family
+The Christmas List|1997|holiday|family
+Borrowed Hearts|1997|holiday|cbs
+I'll Be Home for Christmas|1998|holiday|
+Like Father, Like Santa|1998|holiday|fox
+The Christmas Wish|1998|holiday|cbs
+Must Be Santa|1999|holiday|
+A Season for Miracles|1999|holiday|cbs
+Santa Who?|2000|holiday|abc
+Once Upon a Christmas|2000|holiday|pax
+Twice Upon a Christmas|2001|holiday|pax
+'Twas the Night|2001|holiday|disney
+The Santa Trap|2002|holiday|pax
+Mr. St. Nick|2002|holiday|abc
+Eloise at Christmastime|2003|holiday|abc
+A Carol Christmas|2003|holiday|hallmark
+The Thanksgiving Promise|1986|holiday|abc
+Thanksgiving Day|1990|holiday|nbc
+The Day the Earth Stood Still|1951|classic|
+Dr. Jekyll and Mr. Hyde|1973|tvmovie|nbc
+Frankenstein: The True Story|1973|miniseries|nbc
+Dracula|1974|tvmovie|cbs
+The Turn of the Screw|1974|tvmovie|abc
+The Night That Panicked America|1975|tvmovie|abc
+The UFO Incident|1975|tvmovie|nbc
+The Dark Secret of Harvest Home|1978|miniseries|nbc
+The Initiation of Sarah|1978|tvmovie|abc
+Summer of Fear|1978|tvmovie|nbc
+Are You in the House Alone?|1978|tvmovie|cbs
+Someone's Watching Me!|1978|tvmovie|nbc
+The Intruder Within|1981|tvmovie|abc
+This House Possessed|1981|tvmovie|abc
+Don't Go to Sleep|1982|tvmovie|abc
+Deadly Lessons|1983|tvmovie|abc
+Invitation to Hell|1984|tvmovie|abc
+Chiller|1985|tvmovie|cbs
+Deadly Messages|1985|tvmovie|abc
+The Deliberate Stranger|1986|miniseries|nbc
+Dark Mansions|1986|tvmovie|abc
+A Stranger Waits|1987|tvmovie|cbs
+Nightmare at Bittercreek|1988|tvmovie|cbs
+Something Is Out There|1988|miniseries|nbc
+The Haunting of Sarah Hardy|1989|tvmovie|usa
+Nick Knight|1989|tvmovie|cbs
+Daughter of Darkness|1990|tvmovie|cbs
+Blood Ties|1991|tvmovie|fox
+Stepfather III|1992|tvmovie|hbo
+Tainted Blood|1993|tvmovie|usa
+Not Like Us|1995|tvmovie|showtime
+The Colony|1995|tvmovie|usa
+Night of the Twisters|1996|tvmovie|family
+Tornado!|1996|tvmovie|fox
+Twister's Revenge|1988|feature|
+Robin Cook's Invasion|1997|miniseries|nbc
+House of Frankenstein|1997|miniseries|nbc
+Vanishing Son|1994|tvmovie|
+Bloodhounds|1996|tvmovie|usa
+The Cover Girl Murders|1993|tvmovie|usa
+Murder by Night|1989|tvmovie|usa
+The China Lake Murders|1990|tvmovie|usa
+Deadly Game|1991|tvmovie|usa
+Duplicates|1992|tvmovie|usa
+Rubdown|1993|tvmovie|usa
+Deadly Whispers|1995|tvmovie|cbs
+Death Benefit|1996|tvmovie|usa
+Perfect Crime|1997|tvmovie|usa
+Sabrina the Teenage Witch|1996|kidsfilm|showtime
+Mother Goose Rock 'n' Rhyme|1990|kidsfilm|disney
+Encino Woman|1996|tvmovie|abc
+Revenge of the Nerds III: The Next Generation|1992|tvmovie|fox
+Revenge of the Nerds IV: Nerds in Love|1994|tvmovie|fox
+Problem Child 3: Junior in Love|1995|tvmovie|nbc
+Weekend at Bernie's|1989|feature|
+National Lampoon's Christmas Vacation 2|2003|holiday|nbc
+Based on an Untrue Story|1993|tvmovie|fox
+Attack of the 5 Ft. 2 In. Women|1994|tvmovie|showtime
+The Positively True Adventures|1993|tvmovie|hbo
+Rodney Dangerfield: It's Not Easy Bein' Me|1986|tvmovie|hbo
+The Ratings Game|1984|tvmovie|showtime
+Tales from the Hollywood Hills|1987|tvmovie|pbs
+The Canterville Ghost|1986|tvmovie|
+Popeye Doyle|1986|tvmovie|nbc
+The Dirty Dozen: Next Mission|1985|tvmovie|nbc
+The Dirty Dozen: The Deadly Mission|1987|tvmovie|nbc
+The Dirty Dozen: The Fatal Mission|1988|tvmovie|nbc
+High Noon, Part II: The Return of Will Kane|1980|tvmovie|cbs
+Butch and Sundance: The Early Days|1979|feature|
+The Jayne Mansfield Story|1980|tvmovie|cbs
+Mae West|1982|tvmovie|abc
+Rita Hayworth: The Love Goddess|1983|tvmovie|cbs
+Grace Kelly|1983|tvmovie|abc
+Marilyn: The Untold Story|1980|tvmovie|abc
+Marilyn & Bobby: Her Final Affair|1993|tvmovie|usa
+Norma Jean & Marilyn|1996|tvmovie|hbo
+James Dean|2001|tvmovie|tnt
+Lucy & Desi: Before the Laughter|1991|tvmovie|cbs
+Bud and Lou|1978|tvmovie|nbc
+The Three Stooges|2000|tvmovie|abc
+Martin and Lewis|2002|tvmovie|cbs
+Gleason|2002|tvmovie|cbs
+The Audrey Hepburn Story|2000|tvmovie|abc
+Life with Judy Garland: Me and My Shadows|2001|miniseries|abc
+The Temptations|1998|miniseries|nbc
+Little Richard|2000|tvmovie|nbc
+Shake, Rattle and Rock!|1994|tvmovie|showtime
+Rock 'n' Roll High School Forever|1991|feature|
+Daydream Believers: The Monkees' Story|2000|tvmovie|vh1
+Two of Us|2000|tvmovie|vh1
+Sweetwater: A True Rock Story|1999|tvmovie|vh1
+Hendrix|2000|tvmovie|showtime
+The Linda McCartney Story|2000|tvmovie|cbs
+Take Me Home: The John Denver Story|2000|tvmovie|cbs
+Selena|1997|feature|
+The Jacksons: An American Dream|1992|miniseries|abc
+The Karen Carpenter Story|1989|tvmovie|cbs
+Dead Ahead: The Exxon Valdez Disaster|1992|tvmovie|hbo
+Challenger|1990|tvmovie|abc
+Apollo 11|1996|tvmovie|family
+The Right Stuff|1983|feature|
+Miracle Landing|1990|tvmovie|cbs
+Crash Landing: The Rescue of Flight 232|1992|tvmovie|abc
+Fire and Rain|1989|tvmovie|usa
+Flight 90: Disaster on the Potomac|1984|tvmovie|nbc
+Tailspin: Behind the Korean Airliner Tragedy|1989|tvmovie|hbo
+Shootdown|1988|tvmovie|nbc
+The Hijacking of the Achille Lauro|1989|tvmovie|nbc
+Voyage of Terror: The Achille Lauro Affair|1990|miniseries|
+Raid on Entebbe|1977|tvmovie|nbc
+Victory at Entebbe|1976|tvmovie|abc
+The Taking of Flight 847: The Uli Derickson Story|1988|tvmovie|nbc
+The Final Days|1989|tvmovie|abc
+Blind Ambition|1979|miniseries|cbs
+Washington: Behind Closed Doors|1977|miniseries|abc
+Eleanor and Franklin|1976|miniseries|abc
+Truman|1995|tvmovie|hbo
+The Day Reagan Was Shot|2001|tvmovie|showtime
+The Reagans|2003|tvmovie|showtime
+DC 9/11: Time of Crisis|2003|tvmovie|showtime
+Saving Jessica Lynch|2003|tvmovie|nbc
+Everybody's Baby: The Rescue of Jessica McClure|1989|tvmovie|abc
+Baby M|1988|miniseries|abc
+Switched at Birth|1991|miniseries|nbc
+A Killing in a Small Town|1990|tvmovie|cbs
+Kids Don't Tell|1985|tvmovie|cbs
+Do You Remember Love|1985|tvmovie|cbs
+Bill|1981|tvmovie|cbs
+Bill: On His Own|1983|tvmovie|cbs
+Who Will Love My Children?|1983|tvmovie|abc
+M.A.D.D.: Mothers Against Drunk Drivers|1983|tvmovie|nbc
+Heartsounds|1984|tvmovie|abc
+Surviving|1985|tvmovie|abc
+Toughlove|1985|tvmovie|abc
+Not My Kid|1985|tvmovie|cbs
+Shattered Spirits|1986|tvmovie|abc
+Nobody's Child|1986|tvmovie|cbs
+God Bless the Child|1988|tvmovie|abc
+The Ann Jillian Story|1988|tvmovie|nbc
+David|1988|tvmovie|abc
+My Name Is Bill W.|1989|tvmovie|abc
+The Last Best Year|1990|tvmovie|abc
+Lucky Day|1991|tvmovie|abc
+Our Sons|1991|tvmovie|abc
+A Child Lost Forever: The Jerry Sherwood Story|1992|tvmovie|nbc
+For Their Own Good|1993|tvmovie|abc
+David's Mother|1994|tvmovie|cbs
+Serving in Silence: The Margarethe Cammermeyer Story|1995|tvmovie|nbc
+A Brother's Promise: The Dan Jansen Story|1996|tvmovie|cbs
+Rudy: The Rudy Giuliani Story|2003|tvmovie|usa
