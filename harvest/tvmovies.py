@@ -21,7 +21,7 @@ for line in open(os.path.join(here, 'tvmovies_titles.txt'), encoding='utf-8'):
     if len(p) < 3 or (p[0], p[1]) in _seen: continue
     _seen.add((p[0], p[1]))
     FILMS.append({'title': p[0], 'year': int(p[1]), 'ct': p[2], 'net': p[3] if len(p) > 3 else '', 'n': norm(p[0])})
-HOSTS = [('Elvira', ["elvira's movie macabre", 'movie macabre', 'elvira mistress of the dark presents']), ('Commander USA', ["commander usa's groovie movies", 'commander usa', 'groovie movies']), ('Joe Bob Briggs', ['monstervision', "joe bob's drive-in theater", 'joe bob briggs drive-in', 'joe bob drive in theater']), ('USA Up All Night', ['usa up all night', 'up all night with rhonda shear', 'up all night with gilbert gottfried']), ('Dr. Paul Bearer', ['dr. paul bearer', 'dr paul bearer', 'creature feature wtog']), ('Count Gore De Vol', ['count gore de vol', 'count gore', 'creature feature wdca']), ('Zacherley', ['zacherley', 'zacherle', 'shock theater zacherley']), ('Son of Ghoul', ['son of ghoul']), ('Big Chuck and Lil John', ['big chuck and lil john', "big chuck and lil' john", 'hoolihan and big chuck']), ('Chiller Theatre', ['chiller theatre', 'chiller theater', 'chilly billy']), ('Creature Features', ['creature features', 'bob wilkins', 'john stanley creature features']), ('Sammy Terry', ['sammy terry', 'nightmare theater']), ('Dr. Shock', ['dr. shock', 'dr shock scream-in', 'mad theater']), ('Sir Graves Ghastly', ['sir graves ghastly']), ('The Ghoul', ['the ghoul show', 'ghoul ron sweed']), ('Morgus', ['morgus the magnificent', 'morgus presents']), ('Dr. Creep', ['dr. creep', 'shock theatre dr creep']), ('Stella', ['saturday night dead', 'stella saturday night dead']), ('Crematia Mortem', ['crematia mortem', "creature feature crematia"]), ('Fritz the Nite Owl', ['fritz the nite owl', 'nite owl theatre']), ('Dr. Madblood', ['doctor madblood', 'dr. madblood']), ('Bowman Body', ['bowman body', 'shock theater bowman']), ('Rhonda Shear', ['rhonda shear']), ('Grampa', ["grampa's monster movies", 'super scary saturday', 'grampa munster tbs']), ('Dr. Gangrene', ['dr. gangrene', 'chiller cinema']), ('Mr. Lobo', ['cinema insomnia']), ('Movie Macabre', ['fright night with seymour', 'seymour fright night', 'larry vincent seymour']), ('Shock Theater', ['shock theater', 'shock theatre']), ('Fright Night', ['fright night wor', 'fright night theater']), ('Thriller Theatre', ['thriller theatre', 'thriller theater']), ('Dialing for Dollars', ['dialing for dollars movie', 'the big money movie', 'money movie']), ('Night Flight', ['night flight usa network movie']), ('Kung Fu Theater', ['kung fu theater', 'kung fu theatre', 'black belt theater', 'black belt theatre', 'drive-in movie wnew']), ('Saturday Nightmares', ['saturday nightmares usa', 'usa saturday nightmares']), ('TNT MonsterVision', ['tnt monstervision', 'monstervision tnt']), ('Mystery Science Theater', [])]
+HOSTS = [('Elvira', ["elvira's movie macabre", 'movie macabre', 'elvira mistress of the dark presents']), ('Commander USA', ["commander usa's groovie movies", 'commander usa', 'groovie movies']), ('Joe Bob Briggs', ['monstervision', "joe bob's drive-in theater", 'joe bob briggs drive-in', 'joe bob drive in theater']), ('USA Up All Night', ['usa up all night', 'up all night with rhonda shear', 'up all night with gilbert gottfried']), ('Dr. Paul Bearer', ['dr. paul bearer', 'dr paul bearer', 'creature feature wtog']), ('Count Gore De Vol', ['count gore de vol', 'count gore', 'creature feature wdca']), ('Zacherley', ['zacherley', 'zacherle', 'shock theater zacherley']), ('Son of Ghoul', ['son of ghoul']), ('Big Chuck and Lil John', ['big chuck and lil john', "big chuck and lil' john", 'hoolihan and big chuck']), ('Chiller Theatre', ['chiller theatre', 'chiller theater', 'chilly billy']), ('Creature Features', ['creature features', 'bob wilkins', 'john stanley creature features']), ('Sammy Terry', ['sammy terry', 'nightmare theater']), ('Dr. Shock', ['dr. shock', 'dr shock scream-in', 'mad theater']), ('Sir Graves Ghastly', ['sir graves ghastly']), ('The Ghoul', ['the ghoul show', 'ghoul ron sweed']), ('Morgus', ['morgus the magnificent', 'morgus presents']), ('Dr. Creep', ['dr. creep', 'shock theatre dr creep']), ('Stella', ['saturday night dead', 'stella saturday night dead']), ('Crematia Mortem', ['crematia mortem', "creature feature crematia"]), ('Fritz the Nite Owl', ['fritz the nite owl', 'nite owl theatre']), ('Dr. Madblood', ['doctor madblood', 'dr. madblood']), ('Bowman Body', ['bowman body', 'shock theater bowman']), ('Rhonda Shear', ['rhonda shear']), ('Grampa', ["grampa's monster movies", 'super scary saturday', 'grampa munster tbs']), ('Dr. Gangrene', ['dr. gangrene', 'chiller cinema']), ('Movie Macabre', ['fright night with seymour', 'seymour fright night', 'larry vincent seymour']), ('Shock Theater', ['shock theater', 'shock theatre']), ('Fright Night', ['fright night wor', 'fright night theater']), ('Thriller Theatre', ['thriller theatre', 'thriller theater']), ('Dialing for Dollars', ['dialing for dollars movie', 'the big money movie', 'money movie']), ('Night Flight', ['night flight usa network movie']), ('Kung Fu Theater', ['kung fu theater', 'kung fu theatre', 'black belt theater', 'black belt theatre', 'drive-in movie wnew']), ('Saturday Nightmares', ['saturday nightmares usa', 'usa saturday nightmares']), ('TNT MonsterVision', ['tnt monstervision', 'monstervision tnt']), ('Mystery Science Theater', [])]
 HOSTS = [h for h in HOSTS if h[1]]
 YRS = ' OR '.join(str(y) for y in range(1984, 2005))
 ROUTES = [
@@ -34,6 +34,8 @@ ROUTES = [
  ('premium', 'title:(hbo OR cinemax OR showtime OR "the movie channel" OR starz OR encore OR "home box office" OR "spotlight" OR "z channel" OR "on tv" OR "select tv" OR prism OR "wht") AND (title:(' + YRS + ' OR 1980 OR 1981 OR 1982 OR 1983 OR vhs OR recording OR recorded OR broadcast OR aired OR airing OR betamax OR tape OR bumper OR bumpers OR intro OR "feature presentation") )'),
  ('tvgen', 'subject:("tv movie" OR "tv movies" OR "made for tv" OR "made-for-tv" OR "made for television" OR "television film" OR "television movie" OR "tv film" OR telefilm OR "movie of the week" OR "abc movie of the week" OR "hallmark hall of fame" OR "disney sunday movie" OR "wonderful world of disney" OR "lifetime movie" OR "lifetime original" OR "usa original" OR "hbo original" OR "showtime original" OR "disney channel original movie" OR "dcom")'),
  ('tvgen', 'title:("tv movie" OR "tv-movie" OR "made for tv" OR "made-for-tv" OR "made for television" OR "television movie" OR "tv film" OR telefilm OR "hallmark hall of fame" OR "disney sunday movie" OR "wonderful world of disney" OR "magical world of disney" OR "lifetime movie" OR "lifetime original" OR "usa world premiere movie" OR "world premiere movie" OR "hbo original" OR "showtime original" OR "disney channel original" OR "disney channel premiere" OR "abc afterschool special" OR "cbs schoolbreak")'),
+('vhs', 'title:("vhs rip" OR vhsrip OR "vhs" OR laserdisc OR "ld rip" OR betamax OR "tv rip" OR tvrip OR "dvd rip" OR dvdrip) AND title:(1980 OR 1981 OR 1982 OR 1983 OR ' + YRS + ') AND NOT title:(episode OR episodes OR season OR series OR commercials OR promo OR trailer OR trailers OR concert OR workout OR wrestling OR wwf OR wcw OR nba OR nfl)'),
+ ('vhs', 'collection:(vhsmovies OR laserdiscs OR betamax OR vhsvault OR vhsrips OR "vhs-rips") AND (subject:(movie OR movies OR film OR "feature film" OR horror OR comedy OR action OR thriller OR drama OR "sci-fi" OR western) OR title:(1980 OR 1981 OR 1982 OR 1983 OR ' + YRS + '))'),
  ('mini', 'title:(miniseries OR "mini-series" OR "mini series" OR "tv miniseries") OR subject:(miniseries OR "mini-series" OR "tv miniseries" OR "television miniseries")'),
 ]
 COLS = ['feature_films', 'SciFi_Horror', 'Film_Noir', 'Comedy_Films', 'moviesandfilms_western', 'Sci-Fi_Horror', 'film_noir', 'publicdomainmovies', 'pd_movies', 'classic_movies', 'classicmovies', 'westerns', 'classic_westerns', 'b_movies', 'drive-in', 'driveinmovies', 'grindhouse', 'kungfumovies', 'martial_arts_films', 'serials', 'movie_serials', 'cinemaserials', 'cliffhanger_serials', 'horrorhosts', 'horror_hosts', 'horrormovies', 'horror_movies', 'scifimovies', 'monstermovies', 'mysterymovies', 'crime_movies', 'war_movies', 'adventure_movies', 'tvmovies', 'tv_movies', 'madefortv', 'madefortvmovies', 'made-for-tv-movies', 'movieoftheweek', 'vhsmovies', 'vhs_movies', 'vhsrips', 'vhs-rips', 'laserdisc', 'laserdiscs', 'laserdisc_archive', 'betamax', 'betamaxarchive', 'tvbroadcastmovies', 'godzilla', 'kaiju', 'abbottandcostello', 'bowery_boys', 'charlie_chan', 'sherlock_holmes_films', 'threestooges', 'east_side_kids', 'roy_rogers', 'gene_autry', 'john_wayne', 'hopalong_cassidy', 'tarzan', 'familyfilms', 'family_films', 'christmasmovies', 'christmas_movies', 'holidaymovies', 'animatedfeatures', 'animated_features']
@@ -55,19 +57,26 @@ def scrape(q, cap=60000, fields='identifier,title,date,year,collection,downloads
         out += [x for x in (j.get('items') or []) if isinstance(x, dict) and x.get('identifier')]; cursor = j.get('cursor')
         if not cursor or len(out) > cap: break
     return out
-X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblad[ao]|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|german|fran[cç]ais|french dub|vf|vostfr|italiano|ita|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|rom[aâ]n[aă]|t[uü]rk[cç]e|turkish|русск|russian|hindi|tamil|telugu|urdu|arabic|bahasa|tagalog|korean|japanese dub|sub ?esp|subtitulad[ao]|pelicula|pel[ií]cula completa|filme|film complet|ganzer film|film completo|em portugu|en espa|completa en|cap[ií]tulo|episodio|folge|staffel|saison|multi ?sub|dual audio)\b"
+X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblad[ao]|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|german|fran[cç]ais|french dub|vf|vostfr|italiano|ita|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|rom[aâ]n[aă]|t[uü]rk[cç]e|turkish|русск|russian|hindi|tamil|telugu|urdu|arabic|bahasa|tagalog|korean|japanese dub|sub ?esp|subtitulad[ao]|pelicula|pel[ií]cula completa|filme|film complet|ganzer film|film completo|em portugu|en espa|completa en|cap[ií]tulo|episodio|folge|staffel|saison|multi ?sub|dual audio|e-?subs?|dv ?d?rip x|hdrip|bollywood|vose|vos|versi[oó]n original|v\.o\.s\.e|sub(titulos|t[ií]tulos|bed|s) (en )?(esp|span)|\w+ de la \w+|\w+ del \w+|\w+ delle \w+|\w+ degli \w+|\w+ y el \w+|\w+ los \w+|\w+ las \w+|\w+ und \w+|\w+ et les? \w+|\w+ sin \w+ |il castello|la calle|la dama|el hombre|la mujer|der \w+ des)\b"
 X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|rom ?hack|emulator|audiobook|audio book|ebook|pdf|soundtrack|ost|score suite|theme song|trailer|trailers|teaser|tv spots?|radio spots?|promo|promos|bloopers?|outtakes?|deleted scenes?|fan ?made|fan-?edit|fanedit|fan cut|fan film|amv|ytp|parody|spoof|abridged|review|reviews|reviewed|recap|podcast|reaction|commentary|rifftrax|riff ?trax|mst3k|mystery science theater|interview|interviews|making of|behind the scenes|featurette|documentary about|video essay|analysis|explained|ranked|lost media|stock footage|screen test|clip|clips|scene|scenes|excerpt|excerpts|highlights|opening to|closing to|opening and closing|previews?|menu|dvd menu|bonus|extras|iso|dvd9|dvd5|remux|2160p|4k|uhd|hdr|1080p|1080i|bluray|blu-ray|blu ray|bdrip|brrip|web-?dl|webrip|hdtv|upscale[d]?|ai upscal\w*|60fps|colorized by|sample)\b"
 X_MOD = r"(?<!\d)(20(0[5-9]|[1-3]\d))(?!\d)|\b(netflix|hulu|disney\+|paramount\+|hbo max|prime video|tiktok|twitch|livestream|zoom)\b"
 XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio', 'silent_films', 'short_films', 'prelinger', 'ephemera', 'home_movies', 'stock_footage', 'adultcdroms', 'animationandcartoons', 'classic_cartoons', 'television_inbox', 'tvnews', 'tvarchive'}
 TAGS = r"(?i)\[[^\]]*\]|\((?!19\d\d\)|200[0-4]\))[^)]*\)|\b(vhs ?rip|vhsrip|vhs|betamax|beta|laserdisc|ld ?rip|dvd ?rip|dvdrip|dvd|tv ?rip|tvrip|xvid|divx|x264|h264|aac|ac3|mp4|avi|mkv|480p|576p|720p|full ?screen|fullscreen|wide ?screen|widescreen|pan (and|&) scan|open matte|uncut|unrated|theatrical( cut| version)?|director'?s cut|extended( cut| version)?|remastered|restored|hq|hd|sd|full movie|full film|full length|complete movie|complete film|the movie|public domain|pd|english|eng|color|colour|b&w|black and white|technicolor|classic|feature film|feature|film|movie|tv movie|made for tv|television movie|miniseries|mini-series|mini series|with (original )?commercials|w/ ?commercials|commercials included|woc|recorded|recording|broadcast|aired|airing|tape|off[- ]air|original)\b"
 def ftitle(t):
     s = re.sub(r'[_.]+', ' ', t)
+    m0 = re.match(r'^\s*(19[2-9]\d|200[0-4])\s*[-–:]\s*([^-–]{2,80})', s)
+    if m0: s = m0.group(2)
+    else:
+        m1 = re.search(r'[\(\[]?\s*(?<!\d)(19[2-9]\d|200[0-4])(?!\d)', s)
+        if m1 and len(norm(s[:m1.start()])) >= 2 and not re.search(r'(?i)\b(hbo|cinemax|showtime|tbs|tnt|usa|wgn|abc|nbc|cbs|fox|presents?|premiere|movie channel|commercials)\b', s[:m1.start()]): s = s[:m1.start()]
+    s = re.sub(r'\b[WK][A-Z]{2,3}(-TV| TV| \d{1,2})\b', ' ', s)
+    s = re.sub(r'(?i)\b(feature presentation|saturday night at the movies|late (late )?movie|afternoon movie|million dollar movie)\b', ' ', s)
     s = re.sub(TAGS, ' ', s)
     s = re.sub(r'\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b', ' ', s)
     s = re.sub(r'(?<!\d)(19[2-9]\d|200[0-4])(?!\d)', ' ', s)
     s = re.sub(r'\(\s*\)|\[\s*\]', ' ', s)
     s = re.sub(r'(?i)\b(feature presentation|saturday night at the movies|late (late )?movie|afternoon movie|million dollar movie)\b', ' ', s)
-    s = re.sub(r"(?i)\b(hbo|cinemax|showtime|the movie channel|starz|encore|tbs|tnt|usa network|usa|wgn|wor|wpix|ktla|kttv|wtbs|amc|tcm|abc|nbc|cbs|fox|upn|the wb|pbs|[wk][a-z]{3}(-tv)?( \d+)?|channel \d+|ch\.? ?\d+|network premiere|broadcast premiere|tv premiere|world premiere|sunday night movie|movie of the week|presents?|superstation|family channel|disney channel|sci-?fi channel)\b", ' ', s)
+    s = re.sub(r"(?i)\b(hbo|cinemax|showtime|the movie channel|starz|encore|tbs|tnt|usa network|usa|wgn|wor|wpix|ktla|kttv|wtbs|amc|tcm|abc|nbc|cbs|fox|upn|the wb|pbs|channel \d+|ch\.? ?\d+|network premiere|broadcast premiere|tv premiere|world premiere|sunday night movie|movie of the week|presents?|superstation|family channel|disney channel|sci-?fi channel)\b", ' ', s)
     s = re.sub(r'\s[-–|:]+\s*$', ' ', re.sub(r'^\s*[-–|:]+\s', ' ', s))
     s = ' '.join(s.split()).strip(' -–|:,.')
     return s
@@ -87,8 +96,7 @@ def film_match(f, title, y):
     my = re.match(r'(\d{4})', str(y or ''))
     if my: ys.append(int(my.group(1)))
     yok = any(abs(v - f['year']) <= 1 for v in ys)
-    if ys and not yok and any(1900 < v <= 2004 for v in ys) and not any(v > 2004 for v in ys):
-        if words < 4: return False
+    if ys and not yok and any(1900 < v <= 2004 for v in ys): return False
     starts = c.startswith(f['n']) or c.startswith('the ' + f['n']) or re.sub(r'^(stephen kings?|alex haleys?|louis lamours?|kenny rogers as|rodgers and hammersteins|frank herberts|robin cooks|peter benchleys) ', '', c).startswith(re.sub(r'^(stephen kings?|alex haleys?|louis lamours?|kenny rogers as|rodgers and hammersteins|frank herberts|robin cooks|peter benchleys) ', '', f['n']))
     if words >= 4: return True
     if not starts: return False
@@ -205,6 +213,10 @@ def bcast_year(title, desc):
     m = re.search(r'(?i)\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.? \d{1,2},? (19[89]\d|200[0-4])', title + ' ' + desc[:300])
     if m: return int(m.group(2))
     return ''
+def fixfiles(files):
+    if len(files) < 2 or len(files) > 12: return files
+    if all(re.search(r'(?i)(part|pt|cd|disc|disk|dvd|tape|reel|side|night|episode|ep|chapter)[ ._-]?\d|[ ._-]\d{1,2}(of\d+)?\.(ia\.)?mp4$|[ ._-][ab]\.(ia\.)?mp4$', f[0]) for f in files): return files
+    return [max(files, key=lambda f: f[1])]
 def meta(it):
     if time.time() - T0 > BUDGET: return None
     j = get('https://archive.org/metadata/' + urllib.parse.quote(it['identifier']))
@@ -247,6 +259,7 @@ def meta(it):
     if re.search(X_FOR, blob[:len(title) + len(str(subj)) + 200]): REJ['foreign'] += 1; return None
     if re.search(r'\b(podcast|fan ?film|fan ?made|fan ?edit|video ?game|gameplay|radio (show|program|broadcast)|old time radio|audio only|silent film|silent movie|home movie|stock footage|newsreel|educational film|industrial film|short film|short subject|cartoon short|music video|concert|sermon|lecture|webinar|trailer compilation|trailers)\b', blob): REJ['kind'] += 1; return None
     r = it['r']
+    files = fixfiles(files)
     tot = sum(f[1] for f in files); longest = max(f[1] for f in files)
     if len(files) > 12 and r != 'list' and r != 'mini': REJ['pack'] += 1; return None
     my = re.match(r'(\d{4})', str(m.get('year') or m.get('date') or ''))
@@ -284,6 +297,13 @@ def meta(it):
             ct = 'miniseries' if re.search(r'miniseries|mini-series|mini series', blob) and tot >= 7200 else 'tvmovie'
             if longest < 3600 and tot < 4200: REJ['short'] += 1; return None
             if not ry: REJ['noyear'] += 1; return None
+        elif r == 'vhs':
+            if not ry: REJ['noyear'] += 1; return None
+            if ry < 1930: REJ['old'] += 1; return None
+            ct = 'classic' if ry < 1984 else 'feature'
+            if longest < 4200 or tot > 4 * 3600 or len(files) > 3: REJ['short'] += 1; return None
+            if re.search(r'(?i)\b(episode|season|series|vol(ume)?\.? ?\d|tape \d|compilation|collection|workout|exercise|concert|live at|music videos?|instructional|how to|training|sermon|wedding|home video|news|commercials?|promo|sports|football|basketball|baseball|wrestling|karaoke|documentary)\b', title + ' ' + str(subj)): REJ['notmovie'] += 1; return None
+            if rec: tv = 1
         elif r == 'rec':
             tv = 1; ct = 'feature'
             if longest < 3600 and tot < 4500: REJ['short'] += 1; return None
@@ -321,8 +341,21 @@ if MODE == 'meta':
         json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
     print('rejects', sorted(REJ.items(), key=lambda x: -x[1]))
     print('shard done', len(res)); sys.exit(0)
+BYF = {}
+for f in FILMS: BYF.setdefault(f['title'], []).append(f)
 def keep(x):
     if not ok_title(x['t']): return False
+    if re.search(X_FOR, (x['t'] + ' ' + x.get('s', '')).lower()): return False
+    if x.get('host') == 'Mr. Lobo': return False
+    if x.get('r') == 'list':
+        if not any(film_match(f, x['t'], x.get('y') or x.get('d')) for f in BYF.get(x['k'], [])): return False
+    else:
+        x['k'] = ftitle(x['t'])[:90]
+        if len(x['k']) < 2: return False
+    x['f'] = fixfiles(x['f'])
+    tot = sum(f[1] for f in x['f'])
+    x['rt'] = round((tot if len(x['f']) <= 12 else max(f[1] for f in x['f'])) / 60)
+    if x.get('r') == 'col' and x['rt'] > 240: return False
     if x.get('ry') and int(x['ry']) > 2004: return False
     if x['ct'] not in ('tvmovie', 'miniseries', 'feature', 'classic', 'hosted', 'premium', 'kidsfilm', 'holiday'): return False
     if x['rt'] < (45 if x['ct'] in ('classic', 'hosted') or x.get('tv') else 60) and x['ct'] != 'miniseries': return False
