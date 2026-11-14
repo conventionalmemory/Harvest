@@ -6,7 +6,6 @@ PARTS = os.path.join(ROOT, 'parts')
 OUT = os.path.join(ROOT, 'catalog', 'yt_events.json.gz')
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 WEB = {'clientName': 'WEB', 'clientVersion': '2.20240726.00.00', 'hl': 'en', 'gl': 'US'}
-EMB = {'clientName': 'WEB_EMBEDDED_PLAYER', 'clientVersion': '1.20240723.01.00', 'hl': 'en', 'gl': 'US'}
 T0 = time.time()
 BUDGET = float(os.environ.get('BUDGET_MIN', '300')) * 60
 STATS = collections.Counter()
@@ -27,6 +26,7 @@ OFFICIAL = {
  'Oscars': ('block', 'awards'), 'TelevisionAcad': ('block', 'awards'), 'RecordingAcademy': ('block', 'awards'), 'goldenglobes': ('block', 'awards'), 'TheTonyAwards': ('block', 'awards'), 'MTV': ('block', 'awards'),
  'macys': ('block', 'parade'), 'RoseParade': ('block', 'parade'), 'farmaid': ('block', 'concert'), 'LiveAid': ('block', 'concert'), 'MDATelethon': ('block', 'telethon'), 'MissAmerica': ('block', 'pageant'),
 }
+ALT = {'TheOpen': 'The Open', 'TopRankBoxing': 'Top Rank Boxing', 'ShowtimeSports': 'SHOWTIME Sports', 'WorldBoxingCouncil': 'World Boxing Council', 'SECNetwork': 'SEC Network', 'BigTenNetwork': 'Big Ten Network', 'NotreDameFootball': 'Notre Dame Football', 'ImpactWrestling': 'TNA Wrestling', 'ReaganFoundation': 'Reagan Foundation', 'ReaganLibrary': 'Reagan Library', 'WJClibrary42': 'Clinton Presidential Library', 'Bush41Library': 'George H.W. Bush Presidential Library', 'MillerCenter': 'Miller Center', 'RecordingAcademy': 'Recording Academy / GRAMMYs', 'TheTonyAwards': 'The Tony Awards', 'AWAWrestling': 'AWA Wrestling'}
 FULL_ENUM = {'WWEVault', 'MLBVault', 'NFLThrowback', 'NASCARClassics', 'AWAWrestling', 'GLOWWrestling', 'ReaganLibrary', 'ReaganFoundation', 'ClintonLibrary42', 'WJClibrary42', 'Bush41Library', 'MillerCenter'}
 
 MONTHS = 'january february march april may june july august september october november december'.split()
@@ -103,7 +103,8 @@ def vr(v, src):
     dur = secs(txt(v.get('lengthText'))) or int(v.get('lengthSeconds') or 0)
     ver = any('VERIFIED' in json.dumps(b) for b in v.get('ownerBadges', []))
     info = txt(v.get('videoInfo'))
-    return {'vid': vid, 't': txt(v.get('title')), 'ch': txt(own), 'chid': chid, 'dur': dur, 'ver': 1 if ver else 0, 'ago': txt(v.get('publishedTimeText')) or info, 'vc': txt(v.get('viewCountText')) or info, 'src': src}
+    sn = ' '.join(txt(x.get('snippetText')) for x in v.get('detailedMetadataSnippets', []))[:400]
+    return {'vid': vid, 't': txt(v.get('title')), 'ch': txt(own), 'chid': chid, 'dur': dur, 'ver': 1 if ver else 0, 'ago': txt(v.get('publishedTimeText')) or info, 'vc': txt(v.get('viewCountText')) or info, 'sn': sn, 'src': src}
 
 def conts(j):
     return [c.get('token') for c in walk(j, 'continuationCommand', []) if c.get('token')]
@@ -125,8 +126,14 @@ def search(q, pages=2, long=True, src=''):
 def resolve(handle):
     h = get('https://www.youtube.com/@' + handle)
     if not h: return None
-    m = re.search(r'"(?:externalId|channelId)":"(UC[\w-]{22})"', h) or re.search(r'channel/(UC[\w-]{22})', h)
+    m = re.search(r'<link rel="canonical" href="https://www\.youtube\.com/channel/(UC[\w-]{22})"', h) or re.search(r'"externalId":"(UC[\w-]{22})"', h)
     return m.group(1) if m else None
+
+def findch(name):
+    j = post('search', {'context': {'client': WEB}, 'query': name, 'params': 'EgIQAg%3D%3D'})
+    for c in walk(j or {}, 'channelRenderer', []):
+        if 'VERIFIED' in json.dumps(c.get('ownerBadges', [])) and norm(txt(c.get('title'))).replace(' ', '') == norm(name).replace(' ', ''): return c.get('channelId')
+    return None
 
 def chsearch(chid, q, handle, pages=2):
     out = []; j = post('browse', {'context': {'client': WEB}, 'browseId': chid, 'params': 'EgZzZWFyY2jyBgQKAloA', 'query': q})
@@ -142,29 +149,9 @@ def chsearch(chid, q, handle, pages=2):
     STATS['chsearches'] += 1
     return out
 
-def uploads(chid, handle, maxpages=120):
-    out = []; j = post('browse', {'context': {'client': WEB}, 'browseId': 'VLUU' + chid[2:]})
-    for p in range(maxpages):
-        if not j: break
-        got = 0
-        for v in walk(j, 'playlistVideoRenderer', []):
-            r = vr(v, 'u:' + handle)
-            if r:
-                r['chid'] = chid; r['ch'] = r['ch'] or handle; out.append(r); got += 1
-        ct = conts(j)
-        if not ct or not got: break
-        j = post('browse', {'context': {'client': WEB}, 'continuation': ct[-1]})
-    STATS['enum'] += 1
-    return out
-
 def oembed(vid):
     st, _ = get('https://www.youtube.com/oembed?format=json&url=' + urllib.parse.quote('https://www.youtube.com/watch?v=' + vid, safe=''), raw=True)
     return st
-
-def player(vid):
-    j = post('player', {'context': {'client': WEB}, 'videoId': vid, 'contentCheckOk': True, 'racyCheckOk': True}, tries=2)
-    e = post('player', {'context': {'client': EMB, 'thirdParty': {'embedUrl': 'https://www.example.org/'}}, 'videoId': vid}, tries=2)
-    return j, e
 
 def norm(s): return re.sub(r'[^a-z0-9]+', ' ', (s or '').lower()).strip()
 
@@ -212,6 +199,15 @@ def event_date(t):
             d = PPV[k].get(ys[0])
             if d: return ys[0] + '-' + d, 'event'
     return None, ''
+
+def champ_date(t):
+    u = (t or '').upper()
+    m = re.search(r'(?<!\d)(19[89]\d|200[0-3])(?:\s*SEASON)?\s+(?:AFC|NFC)\s+(?:CHAMPIONSHIP|TITLE)', u) or re.search(r'(?:AFC|NFC)\s+(?:CHAMPIONSHIP|TITLE)(?: GAME)?\s*\(?(19[89]\d|200[0-3])', u)
+    if not m: return None, ''
+    y = int(m.group(1)); n = y - 1966
+    if n not in SB: return None, ''
+    d = datetime.date.fromisoformat(SB[n]) - datetime.timedelta(days=7 if y in (1990, 1993, 1999, 2001, 2002) else 14)
+    return d.isoformat(), 'event'
 
 JUNK = re.compile(r"(?i)\b(highlights?|recap|top \d+|best of|mic'?d up|reaction|react|podcast|review|breakdown|analysis|explained|documentary|film study|trailer|promo|preview|press conference|interview|every (touchdown|goal|play)|all (touchdowns|goals)|condensed|in \d+ minutes|mini[- ]?movie|shorts?|simulation|madden|2k\d\d|video game|gameplay|remix|tribute|compilation|countdown|ranking|facts|story of|what happened|the truth|a football life|hard knocks|sound fx|america'?s game|nfl films presents|upscaled|60 ?fps|ai upscale)\b")
 FULLW = re.compile(r"(?i)full (game|match|fight|race|event|show|episode|broadcast|ceremony|telecast|replay|coverage|ppv|pay)|complete (game|broadcast|show|race|fight|telecast|ceremony)|original (broadcast|telecast)|entire (game|show|broadcast)|\b(nbc|cbs|abc|espn|tnt|tbs|fox|cnn|usa network|hbo|ppv) (broadcast|telecast|coverage|feed)\b|with (original )?commercials|\bw/ ?commercials")
@@ -312,19 +308,10 @@ def queries():
     return list(dict.fromkeys(Q))
 
 def probe():
-    print('probe search'); r = search('super bowl xxxi full game', pages=1); print(len(r), r[:2])
-    print('probe resolve'); c = resolve('WWEVault'); print(c)
-    if c:
-        u = uploads(c, 'WWEVault', maxpages=2); print('uploads', len(u), u[:2])
-        s = chsearch(c, '1997', 'WWEVault', pages=1); print('chsearch', len(s), s[:2])
-    vid = (r[0]['vid'] if r else 'dQw4w9WgXcQ')
-    print('oembed', oembed(vid)); j, e = player(vid)
-    print('player web', json.dumps((j or {}).get('playabilityStatus'))[:300], list(((j or {}).get('microformat') or {}).get('playerMicroformatRenderer', {}).keys())[:20])
-    print('player emb', json.dumps((e or {}).get('playabilityStatus'))[:300])
-    print('videoDetails', json.dumps({k: v for k, v in ((j or {}).get('videoDetails') or {}).items() if k in ('lengthSeconds', 'viewCount', 'author', 'channelId', 'isLiveContent', 'title')})[:400])
-    h = get('https://www.youtube.com/watch?v=' + vid) or ''
-    print('watch html', len(h), re.findall(r'"(uploadDate|publishDate)":"([^"]+)"', h)[:2], re.findall(r'itemprop="(?:uploadDate|datePublished)" content="([^"]+)"', h)[:2])
-    print(dict(STATS))
+    r = search('super bowl xxxi full game', pages=1); print('probe search', len(r), r[:2])
+    c = resolve('WWEVault'); print('probe resolve', c, findch('WWE Vault'))
+    if c: print('chsearch', chsearch(c, '1997', 'WWEVault', pages=1)[:2])
+    print('oembed', oembed(r[0]['vid'] if r else 'dQw4w9WgXcQ'), dict(STATS))
 
 def plan():
     os.makedirs(PARTS, exist_ok=True)
@@ -337,18 +324,20 @@ def plan():
     with concurrent.futures.ThreadPoolExecutor(8) as ex:
         for h, c in zip(OFFICIAL, ex.map(resolve, OFFICIAL)):
             if c: chids[h] = c
+    for h in [h for h in OFFICIAL if h not in chids]:
+        c = findch(ALT.get(h, h))
+        if c: chids[h] = c
     print('resolved', len(chids), 'of', len(OFFICIAL), 'missing', [h for h in OFFICIAL if h not in chids])
+    print('channels', sorted(chids.items()))
     jobs = []
     for h, c in chids.items():
-        if h in FULL_ENUM: jobs.append(('u', h, c, ''))
-        else:
-            qs = [str(y) for y in range(1984, 2005)] + ['full game', 'full broadcast', 'classic', 'full race', 'full fight', 'full match', 'full show', 'full episode', 'original broadcast']
-            if OFFICIAL[h][0] in ('news', 'block'): qs = [str(y) for y in range(1984, 2005)] + ['full', 'archive', 'coverage', 'address', 'ceremony']
-            for q in qs: jobs.append(('c', h, c, q))
+        qs = [str(y) for y in range(1984, 2005)] + ['full game', 'full broadcast', 'classic', 'full race', 'full fight', 'full match', 'full show', 'full episode', 'original broadcast']
+        if OFFICIAL[h][0] in ('news', 'block'): qs = [str(y) for y in range(1984, 2005)] + ['full', 'archive', 'coverage', 'address', 'ceremony']
+        if h in FULL_ENUM: qs += [a + ' ' + str(y) for y in range(1984, 2005) for a in ('full', 'episode', 'game')] + ['raw', 'nitro', 'thunder', 'smackdown', 'superstars', 'prime time wrestling', 'main event', 'wcw saturday night', 'clash of the champions', 'ecw', 'house show', 'madison square garden', 'boston garden', 'world series', 'all-star game', 'no-hitter', 'playoff', 'super bowl', 'championship']
+        for q in qs: jobs.append(('c', h, c, q))
     def run(j):
         if time.time() - T0 > BUDGET * 0.55: return []
-        if j[0] == 'u': return uploads(j[2], j[1])
-        return chsearch(j[2], j[3], j[1])
+        return chsearch(j[2], j[3], j[1], pages=3)
     with concurrent.futures.ThreadPoolExecutor(6) as ex:
         for j, L in zip(jobs, ex.map(run, jobs)):
             for r in L: r['offh'] = j[1]
@@ -380,30 +369,7 @@ def plan():
 
 def meta_one(r):
     if time.time() - T0 > BUDGET: return None
-    vid = r['vid']; j, e = player(vid)
-    ps = (j or {}).get('playabilityStatus') or {}; pe = (e or {}).get('playabilityStatus') or {}
-    vd = (j or {}).get('videoDetails') or (e or {}).get('videoDetails') or {}
-    mf = ((j or {}).get('microformat') or {}).get('playerMicroformatRenderer') or {}
-    up = (mf.get('uploadDate') or mf.get('publishDate') or '')[:10]
-    desc = vd.get('shortDescription') or txt(mf.get('description')) or ''
-    emb = None
-    if pe.get('status'): emb = pe.get('status') == 'OK'
-    elif ps.get('status') == 'OK' and 'playableInEmbed' in ps: emb = bool(ps.get('playableInEmbed'))
-    oe = oembed(vid)
-    if oe in (401, 403, 404): emb = False
-    elif emb is None and oe == 200: emb = True
-    st = ps.get('status') or pe.get('status') or ''
-    if (not up or not desc) and st != 'OK':
-        h = get('https://www.youtube.com/watch?v=' + vid, tries=1) or ''
-        m = re.search(r'"(?:uploadDate|publishDate)":"(\d{4}-\d\d-\d\d)', h) or re.search(r'itemprop="(?:uploadDate|datePublished)" content="(\d{4}-\d\d-\d\d)', h)
-        if m: up = up or m.group(1)
-        m = re.search(r'"shortDescription":"((?:[^"\\]|\\.)*)"', h)
-        if m and not desc:
-            try: desc = json.loads('"' + m.group(1) + '"')
-            except Exception: pass
-    cn = mf.get('availableCountries')
-    return {'vid': vid, 'st': st, 'pe': pe.get('status') or '', 'reason': (ps.get('reason') or pe.get('reason') or '')[:80], 'emb': emb, 'oe': oe, 'up': up, 'desc': desc[:3000], 'views': int(vd.get('viewCount') or 0), 'dur': int(vd.get('lengthSeconds') or 0) or r['dur'],
-            'live': bool(vd.get('isLiveContent')), 'fam': mf.get('isFamilySafe'), 'us': (None if cn is None else 'US' in cn), 'author': vd.get('author') or r['ch'], 'chid': vd.get('channelId') or r['chid'], 't': vd.get('title') or r['t']}
+    return {'vid': r['vid'], 'oe': oembed(r['vid'])}
 
 def meta():
     S = int(os.environ.get('SHARD', '0')); N = int(os.environ.get('SHARDS', '1'))
@@ -413,7 +379,7 @@ def meta():
     with concurrent.futures.ThreadPoolExecutor(int(os.environ.get('THREADS', '6'))) as ex:
         for r, m in zip(C, ex.map(meta_one, C)):
             if m: r = dict(r); r['m'] = m; out.append(r)
-    c = collections.Counter((r['m']['st'], r['m']['pe'], r['m']['emb'], r['m']['oe']) for r in out)
+    c = collections.Counter(r['m']['oe'] for r in out)
     print('shard', S, len(C), 'done', len(out), c.most_common(12), dict(STATS))
     json.dump(out, gzip.open(os.path.join(PARTS, 'yt-%d.json.gz' % S), 'wt', encoding='utf-8'))
 
@@ -426,15 +392,14 @@ def merge():
     if os.path.exists(OUT):
         try: prev = {x['i']: x for x in json.load(gzip.open(OUT, 'rt', encoding='utf-8'))}
         except Exception: prev = {}
-    days = have_index(); today = datetime.date.today(); old = (today - datetime.timedelta(days=4 * 365)).isoformat()
+    days = have_index(); today = datetime.date.today()
     rej = collections.Counter(); items = dict(prev); samples = []
     for r in rows:
-        m = r['m']; t = m['t'] or r['t']
-        if m['st'] not in ('OK', '') and m['pe'] != 'OK': rej['status:' + m['st']] += 1; continue
-        if m['emb'] is False or m['emb'] is None: rej['noembed'] += 1; continue
-        if m['live'] and m['dur'] == 0: rej['live'] += 1; continue
-        if m['fam'] is False: rej['age'] += 1; continue
-        if m['us'] is False: rej['region'] += 1; continue
+        m = {'oe': r['m']['oe'], 'dur': r['dur'], 'chid': r['chid'], 'author': r['ch'], 'desc': r.get('sn') or ''}; t = r['t']
+        if m['oe'] != 200: rej['noembed:' + str(m['oe'])] += 1; continue
+        ag = re.search(r'(\d+) (year|month|week|day|hour)', r.get('ago') or ''); yrs = int(ag.group(1)) if ag and ag.group(2) == 'year' else 0
+        vw = int(re.sub(r'[^0-9]', '', (r.get('vc') or '').split(' view')[0]) or 0)
+        m['up'] = str(today.year - yrs) if yrs else ''; m['views'] = vw
         hint = OFFICIAL.get(offids.get(m['chid'], ''))
         q, ct, mn = classify(t, hint)
         if not q: rej['class'] += 1; continue
@@ -444,15 +409,15 @@ def merge():
         why = ''
         if m['chid'] in offids: why = 'official channel'
         elif r.get('ver'): why = 'verified channel'
-        elif m['up'] and m['up'] <= old and m['views'] >= 1500: why = 'up since ' + m['up'][:4] + ', ' + str(m['views']) + ' views'
+        elif yrs >= 4 and vw >= 1500: why = 'up about ' + str(yrs) + ' years, ' + str(vw) + ' views'
         else: rej['notdurable'] += 1; continue
         ad, src = event_date(t)
+        if not ad: ad, src = champ_date(t)
         if not ad:
             dt = dates_in(t)
             if dt: ad, src = dt[0][1], 'title'
         if not ad:
             dd = dates_in(m['desc'][:600])
-            dd = [x for x in dd if not m['up'] or x[1] < m['up']]
             if dd: ad, src = dd[0][1], 'desc'
         if not ad: rej['nodate'] += 1; continue
         if not ('1984-01-01' <= ad <= '2004-12-31'): rej['range'] += 1; continue
