@@ -12,7 +12,12 @@ SHARDS = int(os.environ.get('SHARDS', '8'))
 THREADS = int(os.environ.get('THREADS', '4'))
 BUDGET = float(os.environ.get('BUDGET_MIN', '300')) * 60
 T0 = time.time()
-FOCUS = os.environ.get('FOCUS', '') == '1'
+FMODE = os.environ.get('FOCUS', '')
+FOCUS = FMODE == '1'
+DATED = FMODE == '2'
+RUNS = {'Seinfeld': (1989, 1998, 'NBC'), 'Cheers': (1984, 1993, 'NBC'), 'Frasier': (1993, 2004, 'NBC'), 'Wings': (1990, 1997, 'NBC'), 'The Fresh Prince of Bel-Air': (1990, 1996, 'NBC'), 'Friends': (1994, 2004, 'NBC'), 'The Simpsons': (1989, 2004, 'FOX')}
+MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+DQ = {'Today': ['today show', 'nbc today show', 'nbc today'], 'Good Morning America': ['good morning america', 'abc good morning america'], 'CBS This Morning': ['cbs this morning'], 'CBS Morning News': ['cbs morning news'], 'The Tonight Show Starring Johnny Carson': ['tonight show johnny carson'], 'Late Night with David Letterman': ['late night with david letterman'], 'Late Show with David Letterman': ['late show with david letterman'], 'The Tonight Show with Jay Leno': ['tonight show jay leno'], "Late Night with Conan O'Brien": ['late night with conan o\'brien'], 'Live with Regis and Kathie Lee': ['live with regis and kathie lee'], 'The Oprah Winfrey Show': ['oprah winfrey show'], 'NBC Nightly News': ['nbc nightly news'], 'ABC World News Tonight': ['abc world news tonight'], 'CBS Evening News': ['cbs evening news']}
 TOP = ['Seinfeld', 'Cheers', 'Frasier', 'Wings', 'The Fresh Prince of Bel-Air', 'Friends', 'The Simpsons']
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 CTX = {'client': {'clientName': 'WEB', 'clientVersion': '2.20240620.05.00', 'hl': 'en', 'gl': 'US'}}
@@ -30,8 +35,9 @@ EXTRA = [
  ("Late Night with Conan O'Brien", "late", "nbc", 1993, 2009, "date", ["conan o'brien late night", "late night conan"]),
  ("The Arsenio Hall Show", "late", "syn", 1989, 1994, "date", ["arsenio hall show"]),
  ("Today", "morning", "nbc", 1952, 2030, "date", ["today show", "nbc today"]),
- ("Good Morning America", "morning", "abc", 1975, 2030, "date", ["good morning america", "gma"]),
- ("CBS This Morning", "morning", "cbs", 1987, 1999, "date", ["cbs this morning", "cbs morning news"]),
+ ("Good Morning America", "morning", "abc", 1975, 2030, "date", ["good morning america"]),
+ ("CBS This Morning", "morning", "cbs", 1987, 1999, "date", ["cbs this morning"]),
+ ("CBS Morning News", "morning", "cbs", 1982, 2030, "date", ["cbs morning news"]),
  ("Donahue", "talk", "syn", 1970, 1996, "date", ["donahue", "phil donahue show"]),
  ("The Oprah Winfrey Show", "talk", "syn", 1986, 2011, "date", ["oprah winfrey show", "oprah show"]),
  ("Geraldo", "talk", "syn", 1987, 1998, "date", ["geraldo"]),
@@ -305,6 +311,10 @@ def load_shows():
     for i, (t, q, net, y0, y1, kind, al) in enumerate(EXTRA):
         add(t, q, net, y0, y1, kind, al, 300 + i, 2)
         S[nzk(t)]['q'] = q; S[nzk(t)]['kind'] = kind
+    S[nzk('Today')]['al'] -= {'today'}
+    S[nzk('Today')]['al'] |= {'today show', 'nbc today', 'today on nbc', 'the today show'}
+    S[nzk('Good Morning America')]['al'].discard('gma')
+    S[nzk('CBS This Morning')]['al'].discard('cbs morning news')
     S[nzk('The Simpsons')]['smax'] = 15
     S[nzk('Pokémon')]['smax'] = 7
     S[nzk('Pokémon')]['al'] |= {'pokemon'}
@@ -376,16 +386,18 @@ def plan():
     fk = {nzk(x): (0 if x in TOP else 1) for x in MUST + TOP}
     for k, s in S.items():
         if FOCUS and k not in fk: continue
+        if DATED and not (s['kind'] == 'date' or s['title'] in RUNS): continue
         eps = G.get(k, [])
         if s.get('smax'): eps = [e for e in eps if e[0] <= s['smax']]
         eps = [e for e in eps if e[0] and str(e[2])[:4] <= '2004' and (not e[2] or str(e[2])[:4] >= '1960')]
         have = cov.get(k, 0); need = len(eps) or (150 if s['tier'] <= 2 else 40)
         ratio = min(1.0, have / max(1, need))
-        if s['tier'] >= 3 and ratio >= 0.6: continue
+        dk = s['kind'] == 'date' or DATED
+        if s['tier'] >= 3 and ratio >= 0.6 and not dk: continue
         if s['tier'] >= 4 and s['rank'] > 1400 and ratio >= 0.25: continue
         miss = [e for e in eps if (e[0], e[1]) not in se.get(k, set())] if eps else []
-        if eps and not miss and s['tier'] > 1: continue
-        if eps and len(se.get(k, ())) < 5 and have >= len(eps) * 0.8 and s['tier'] > 1: continue
+        if eps and not miss and s['tier'] > 1 and not dk: continue
+        if eps and len(se.get(k, ())) < 5 and have >= len(eps) * 0.8 and s['tier'] > 1 and not dk: continue
         t = s['title']; qs = [t + ' full episode', t + ' full episodes', t + ' season 1 episode 1', t + ' complete episode ' + (str(s['y0']) if s['y0'] else '')]
         if s['kind'] == 'date':
             ys = range(max(1984, s['y0'] or 1984), min(2004, s['y1'] or 2004) + 1)
@@ -406,7 +418,21 @@ def plan():
                 epq += [t + ' s%02de%02d' % (e[0], e[1]), t + ' season %d episode %d' % (e[0], e[1])]
                 et = nz(str(e[3]))
                 if len(et) >= 5 and not re.match(r'^(episode|part|pilot|show|chapter)\b', et): epq.append(t + ' ' + str(e[3]) + ' full episode')
-        tasks.append({'must': 1 if k in fk else 0, 'pri': pri, 'foc': 1 if FOCUS else 0, 'k': k, 'title': t, 'q': s['q'], 'net': s['net'], 'y0': s['y0'], 'y1': s['y1'], 'kind': s['kind'], 'al': sorted(s['al']), 'amb': s.get('amb', 0), 'tier': s['tier'], 'rank': s['rank'], 'have': have, 'need': need, 'eps': eps, 'cov': sorted(se.get(k, set())), 'qs': [q.strip() for q in qs], 'epq': epq})
+        if DATED:
+            epq = []
+            if t in RUNS:
+                y0, y1, nw = RUNS[t]; pri = 0
+                qs = [t + ' with commercials', t + ' original broadcast', t + ' ' + nw + ' original airing']
+                for y in range(y0, y1 + 1):
+                    qs += [t + ' %d with commercials' % y, t + ' %d original broadcast' % y, t + ' ' + nw + ' %d full episode' % y]
+                    epq += [t + ' ' + mo + ' %d' % y for mo in MONTHS]
+            else:
+                ys = range(max(1984, s['y0'] or 1984), min(2004, s['y1'] or 2004) + 1)
+                pri = 0 if s['q'] == 'morning' else 1 if t in DQ else 2
+                if t in DQ:
+                    qs = [a + ' %d' % y for a in DQ[t] for y in ys] + [a + ' %d full' % y for a in DQ[t][:1] for y in ys]
+                    epq = [a + ' ' + mo + ' %d' % y for a in DQ[t] for y in ys for mo in MONTHS]
+        tasks.append({'must': 1 if k in fk else 0, 'pri': pri, 'foc': 1 if FOCUS or (DATED and t in RUNS) else 0, 'k': k, 'title': t, 'q': s['q'], 'net': s['net'], 'y0': s['y0'], 'y1': s['y1'], 'kind': s['kind'], 'al': sorted(s['al']), 'amb': s.get('amb', 0), 'tier': s['tier'], 'rank': s['rank'], 'have': have, 'need': need, 'eps': eps, 'cov': sorted(se.get(k, set())), 'qs': [q.strip() for q in qs], 'epq': epq})
     tasks.sort(key=lambda t: (t['pri'], t['tier'], t['rank']))
     os.makedirs(PARTS, exist_ok=True)
     json.dump(tasks, gzip.open(os.path.join(PARTS, 'yt_plan.json.gz'), 'wt', encoding='utf-8'))
@@ -446,13 +472,21 @@ def durok(t, d):
     return 1140 <= d <= 1900 or 2280 <= d <= 3720
 
 
+def bytitle(eps, n, hit):
+    rest = (' ' + n + ' ').replace(' ' + hit + ' ', ' ', 1)
+    best = None
+    for et, e in eps['ti']:
+        if ((' ' + rest + ' ').find(' ' + et + ' ') >= 0 or (' ' + n + ' ').find(' ' + et + ' ') >= 0) and (not best or len(et) > len(best[0])): best = (et, e)
+    return best[1] if best else None
+
+
 def match(t, c, M):
     T = c['t']; n = nz(T)
     if c['live'] or c['dur'] < 500: return None
     if BADT.search(T) or PARTX.search(T): return None
     if re.search(r'[^\x00-\x7f]', re.sub(r'[’‘“”–—…é·•|®™]', '', T)): return None
     hit = None
-    for a in t['al']:
+    for a in sorted(t['al'], key=lambda a: -len(a)):
         if len(a) < 2: continue
         if (' ' + n + ' ').find(' ' + a + ' ') >= 0: hit = a; break
     if not hit: return None
@@ -465,23 +499,26 @@ def match(t, c, M):
     if t.get('must') and t['q'] != 'kids':
         if 2400 <= c['dur'] <= 3300: r['m'] = 'double length'
         elif not 1080 <= c['dur'] <= 1900: return None
-    m = re.search(r'(?i)\bs(?:eason)?\s*(\d{1,2})\s*[,:._-]?\s*e(?:p(?:isode)?)?\s*\.?\s*(\d{1,3})\b|\b(\d{1,2})x(\d{2})\b', T)
+    m = re.search(r'(?i)\bs(?:eason)?\s*(\d{1,2})\s*[,:._|(-]?\s*\(?e(?:p(?:isode)?)?\s*\.?\s*(\d{1,3})\b|\b(\d{1,2})x(\d{2})\b', T)
     eps = M.get(t['k'])
     if m and eps is not None:
         g = [int(v) for v in m.groups() if v]
         e = eps['se'].get((g[0], g[1]))
+        if e and len(nz(str(e[3]))) >= 4 and (' ' + n + ' ').find(' ' + nz(str(e[3])) + ' ') < 0:
+            b = bytitle(eps, n, hit)
+            if b: e = b
         if e: r['se'] = [e[0], e[1]]; r['ep'] = e[3]; r['ad'] = str(e[2] or '')
         elif eps['se']: return None
         else: r['se'] = g[:2]
     elif eps is not None and eps['ti']:
-        rest = (' ' + n + ' ').replace(' ' + hit + ' ', ' ', 1)
-        best = None
-        for et, e in eps['ti']:
-            if (' ' + rest + ' ').find(' ' + et + ' ') >= 0 and (not best or len(et) > len(best[0])): best = (et, e)
-        if best: e = best[1]; r['se'] = [e[0], e[1]]; r['ep'] = e[3]; r['ad'] = str(e[2] or '')
+        e = bytitle(eps, n, hit)
+        if e: r['se'] = [e[0], e[1]]; r['ep'] = e[3]; r['ad'] = str(e[2] or '')
     if not r['ad'] and t['kind'] != 'date':
         d0 = pdate(T)
-        if d0 and '1960-01-01' <= d0 <= '2004-12-31': r['ad'] = d0
+        if d0 and '1960-01-01' <= d0 <= '2004-12-31':
+            r['ad'] = d0
+            e = eps['ad'].get(d0) if eps is not None and not r['se'] else None
+            if e: r['se'] = [e[0], e[1]]; r['ep'] = e[3]
         elif d0 and d0 > '2004-12-31': return None
     if t['kind'] == 'date':
         d = pdate(T)
@@ -490,6 +527,7 @@ def match(t, c, M):
     elif not r['se']:
         if not t.get('foc') and (t['amb'] or eps is not None and eps['se'] and t['tier'] <= 2): return None
         if t.get('foc') and eps is not None and eps['se']: r['m'] = 'episode not identified'
+        if (t.get('amb') or t['title'] in RUNS) and t.get('must') and not r['ad'] and not (c.get('ver') or c.get('off')) and not re.search(r'(?i)with (original )?(commercials|ads)|original (broadcast|airing)|\b(nbc|abc|cbs|fox|nick|nickelodeon|pbs)\b.*\b(19[89]\d|200[0-4])\b|\b(19[89]\d|200[0-4])\b.*\b(nbc|abc|cbs|fox|nick|nickelodeon|pbs)\b', T): return None
         if not re.search(r'(?i)full episode|complete episode|\bepisode\s*\d+|\bep\.?\s*\d+|\b(19[89]\d|200[0-4])\b', T): return None
     if t['amb'] and not r['se'] and t['kind'] != 'date' and not t.get('foc'): return None
     y = r['ad'][:4] if r['ad'] else ''
@@ -507,13 +545,18 @@ def match(t, c, M):
 STOPW = set('full episode episodes season series complete entire hd hq tv show the a an and of in on at to with from by for original broadcast uncut unedited commercials commercial classic classics sitcom cartoon cartoons animated animation vhs dvd rip part pt finale premiere pilot nbc abc cbs fox pbs upn wb nick nickelodeon nickelodeons disney disneys espn espns usa tnt tbs syndicated syndication rerun reruns english eng dub dubbed version remastered 1080p 720p 480p 4k s e ep vol volume disc tape aired air date airdate year all new retro vintage rare 80s 90s 1980s 1990s lifetime lifetimes hgtv cnn bbc mtv vh1 hbo discovery channel tlc cable network presents'.split())
 NEXTW = set('season series episode episodes ep full complete tv show the pilot s e vol volume part classic uncut original hd with cartoon sitcom nbc abc cbs fox vhs dvd hawaii'.split())
 MONW = set('january february march april may june july august september october november december jan feb mar apr jun jul aug sep sept oct nov dec monday tuesday wednesday thursday friday saturday sunday'.split())
-JUNKT = re.compile(r"(?i)\b(first time (watching|reaction|seeing|viewing)|for the first time|we watch(ed)?|re-?watch(ed|ing)?|revisited|ruminations|rundown|after ?show|afterbuzz|play ?through|let'?s play|the game|hit (and|&) run|script reading|table read|discuss(es|ed|ing|ion)?|analy[sz](ing|ed|is)|facts about|weird facts|radio|un episodio|joined by|check out|grades|watch ?along|my thoughts|breakdown|deep dive|drinking game|ft\.|feat\.|commercial breaks|road rage|tapped out|nes|snes|ps[1-5]|xbox|arcade|play it through|let'?s watch|live ?stream|sermon|school project|stage production|decoded|reviews|then and now|ranking every|every episode|iceberg|theory|theories)\b")
+JUNKT = re.compile(r"(?i)\b(web ?series|icons unearthed|mystery dungeon|studio tour|search for reptar|gmod|minecraft|roblox|fortnite|playstation|nintendo|game ?boy|n64|gamecube|dreamcast|pc game|video ?game|first time (watching|reaction|seeing|viewing)|for the first time|we watch(ed)?|re-?watch(ed|ing)?|revisited|ruminations|rundown|after ?show|afterbuzz|play ?through|let'?s play|the game|hit (and|&) run|script reading|table read|discuss(es|ed|ing|ion)?|analy[sz](ing|ed|is)|facts about|weird facts|radio|un episodio|joined by|check out|grades|watch ?along|my thoughts|breakdown|deep dive|drinking game|ft\.|feat\.|(?<!no )commercial breaks|road rage|tapped out|nes|snes|ps[1-5]|xbox|arcade|play it through|let'?s watch|live ?stream|sermon|school project|stage production|decoded|reviews|then and now|ranking every|every episode|iceberg|theory|theories)\b")
+JUNKM = re.compile(r"(?i)\b(facts|secrets|cast update|then (and|&|vs\.?) now|where are they now|still alive|tournament|watch(es|ing) every|watches|inside looks?|notes about nothing|featurette|making of|beginner|guide|reboot|revival|reunion|reunite[sd]?|sandbox|ep(isode)?\.? ?\d+ ?[:\-] ?(the )?(seinfeld|cheers|frasier|friends|wings|simpsons|rugrats|roseanne|doug)\b)\b")
 JUNKC = re.compile(r"(?i)(react|podcast|gaming|commentary|rewatch|reviews?\b|plays\b|after ?show)")
 
 
 def tight(t, T, ept, ch, off):
     if t['kind'] == 'date': return ''
     if JUNKT.search(T) or JUNKC.search(ch or ''): return 'junk'
+    strict = t.get('must') and (t.get('amb') or t['title'] in RUNS)
+    if strict:
+        jm = JUNKM.search(T)
+        if jm and not set(nz(jm.group(0)).split()) & set(nz(ept or '').split()): return 'junk'
     n = ' ' + nz(T) + ' '; hit = ''
     for a in sorted(t['al'], key=lambda a: -len(a)):
         if len(a) >= 2 and n.find(' ' + a + ' ') >= 0: hit = a; break
@@ -527,14 +570,20 @@ def tight(t, T, ept, ch, off):
     m = re.search(r'[^a-z0-9]+'.join(re.escape(w) for w in hit.split()), raw)
     b4 = raw[:m.start()].rstrip()[-1:] if m else ''; af = raw[m.end():].lstrip()[:1] if m else ''
     one = len(nzk(hit).split()) == 1 or t.get('amb')
+    if not off and not t.get('amb') and nzk(ch or '') and nzk(ch or '') in (t['k'], nzk(hit)): off = 1
+    if strict and ept:
+        sig = set(w for w in ew if len(w) >= 3 and w not in STOPW)
+        ws = [w for w in re.sub(r'\b(s ?\d{1,2} ?e ?\d{1,3}|season \d{1,2}|series \d{1,2}|episode \d{1,3}|ep \d{1,3}|\d{1,2}x\d{2,3}|s\d{1,2}|e\d{1,3})\b', ' ', n.replace(' ' + hit + ' ', ' ', 1)).split() if w not in STOPW and not w.isdigit()]
+        if sig and not (sig & set(ws)) and len(ws) >= 2: return 'junk'
     if pre:
+        if strict and not off: return 'junk'
         if short and not (b4 and b4 in '|-:•–"(['): return 'junk'
         if one and t.get('amb') and not off: return 'junk'
         if not off and (short or len(pre) >= 3): return 'maybe'
     if t.get('amb') and not off and i > 0 and nzk(n.strip()).find(nzk(hit)) != 0: return 'maybe'
     if one and post:
         w = post[0]
-        if not (w in NEXTW or w in MONW or w in ew or w.isdigit() or re.match(r'^(s\d{1,2}(e\d{1,3})?|e\d{1,3}|\d{1,2}x\d{2,3}|19\d\d|200\d)$', w) or (af and af in '|-:•–("[#/,.')): return 'junk'
+        if not (w in NEXTW or w in MONW or w in ew or w.isdigit() or re.match(r'^(s\d{1,2}(e\d{1,3})?|e\d{1,3}|\d{1,2}x\d{2,3}|19\d\d|200\d)$', w) or (af and af in ('|-:•–("[#/' if t.get('amb') else '|-:•–("[#/,.'))): return 'junk'
     return ''
 
 
@@ -542,13 +591,14 @@ def build_M(tasks):
     M = {}
     for t in tasks:
         eps = t['eps']
-        if not eps: M[t['k']] = None if t['kind'] == 'date' else {'se': {}, 'ti': []}; continue
+        if not eps: M[t['k']] = None if t['kind'] == 'date' else {'se': {}, 'ti': [], 'ad': {}}; continue
         cnt = collections.Counter(nz(str(e[3])) for e in eps)
         ti = []
         for e in eps:
             et = nz(str(e[3]))
             if len(et) >= 7 and cnt[et] == 1 and (len(et.split()) >= 2 or t.get('foc')) and not re.match(r'^(episode|part|pilot|show|chapter) ', et): ti.append((et, e))
-        M[t['k']] = {'se': {(e[0], e[1]): e for e in eps}, 'ti': ti}
+        dc = collections.Counter(str(e[2]) for e in eps)
+        M[t['k']] = {'se': {(e[0], e[1]): e for e in eps}, 'ti': ti, 'ad': {} if t['kind'] == 'date' else {str(e[2]): e for e in eps if re.match(r'\d{4}-\d\d-\d\d$', str(e[2])) and dc[str(e[2])] == 1}}
     return M
 
 
@@ -688,11 +738,26 @@ def merge():
             if not r: purged += 1; continue
             if r.get('m') and not it.get('keep'): it['keep'] = 'maybe'; it['why'] = 'maybe: ' + str(r['m']) + '; ' + str(it.get('why', ''))
             if r['ad'] and not it.get('ad') and re.match(r'\d{4}-\d\d-\d\d$', r['ad']): it['ad'] = r['ad']; it['e'] = int(r['ad'][:4])
+            if r['se'] and not it.get('se'):
+                it['se'] = r['se']; it['ep'] = r['ep']
+                if str(it.get('why', '')).startswith('maybe: episode not identified'):
+                    w = re.sub(r'^maybe: episode not identified(; )?', '', it['why'])
+                    if w and not w.startswith('maybe') and not re.match(r'up [0-3] years', w): it['why'] = w; it.pop('keep', None)
+                    else: it['why'] = 'maybe: ' + re.sub(r'^maybe: ', '', w or 'upload age unknown')
         ek = (it['k'], tuple(it.get('se') or ()) or it.get('ad') or it['vid'])
+        if ek in out and (out[ek].get('off', 0), 0 if out[ek].get('keep') else 1, out[ek].get('views', 0)) >= (it.get('off', 0), 0 if it.get('keep') else 1, it.get('views', 0)): continue
         out[ek] = it
     print('purged from previous', purged)
     for ek, (sc, it) in new.items():
         if ek not in out or (it['off'], 0 if it.get('keep') else 1, it['views']) > (out[ek].get('off', 0), 0 if out[ek].get('keep') else 1, out[ek].get('views', 0)): out[ek] = it
+    chn = collections.Counter(x.get('chid') or x['ch'] for x in out.values() if x.get('se') or x.get('ad'))
+    promoted = 0
+    for it in out.values():
+        m = re.match(r'maybe: up (\d+) years, (\d+) views$', str(it.get('why', '')))
+        n = chn[it.get('chid') or it['ch']]
+        if it.get('keep') == 'maybe' and m and int(m.group(1)) >= 4 and int(m.group(2)) >= 150 and n >= 5 and (it.get('se') or it.get('ad')):
+            it.pop('keep'); it['why'] = 'up %s years, %s views, channel with %d similar uploads' % (m.group(1), m.group(2), n); promoted += 1
+    print('promoted by channel history', promoted)
     items = sorted(out.values(), key=lambda x: (x['k'], x.get('se') or [0, 0], x.get('ad') or ''))
     json.dump(items, gzip.open(OUT, 'wt', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     print('candidates', len(cand), 'rejected', dict(rej), 'previous', len(old), 'total', len(items), 'hours', round(sum(x['dur'] for x in items) / 3600))
