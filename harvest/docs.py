@@ -97,7 +97,7 @@ def keep(x):
     if set(x.get('c') or []) & XCOL: return False
     if re.search(X_OFF, (x['t'] + ' ' + x['i']).lower().replace('_', ' ')): return False
     if re.match(r'^(Microsoft_Research|pyvideo|pycon|SeaGL|Redwood_Center|TED|mcdla|slac)', x['i']): return False
-    if x.get('e') == '' and re.match(r'^(20(0[5-9]|[12]\d))', str(x.get('d') or '')) and not re.search(r'(19[4-9]\d|200[0-4])', x['t'] + ' ' + x.get('ds', '')[:200]) and len(x['f']) < 3 and not s.get('brit'): return False
+    if x.get('e') == '' and re.match(r'^(20(0[5-9]|[12]\d))', str(x.get('d') or '')) and not re.search(r'(19[4-9]\d|200[0-4])', x['t'] + ' ' + x.get('ds', '')[:200]) and len(x['f']) < 3 and not s.get('brit') and s.get('ambiguous'): return False
     if re.match(r'^[a-z]{4,10}-[A-Z]', x['i']) and not re.search(r'(19[4-9]\d|200[0-4])', x['t']): return False
     dy = re.match(r'(\d{4})', str(x.get('d') or ''))
     if x['i'].startswith('youtube-') and dy and int(dy.group(1)) >= 2005 and not re.search(r'(19[4-9]\d|200[0-4])', x['t']): return False
