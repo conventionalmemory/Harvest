@@ -740,7 +740,7 @@ def plan():
                     if i in mine: st[1] += 1; continue
                     if i in have:
                         st[2] += 1
-                        if not sh['full']: continue
+                        if not (sh['full'] or have[i] in (30, 60)): continue
                     try: v = consider(sh, it, 'd' if route == 'i' else route)
                     except Exception as e: print('skip', i, repr(e)); v = None
                     if v:
@@ -788,7 +788,7 @@ def plan():
             if not i or i in seen or i in mine: continue
             t = flat(it.get('title'))
             for sh in order:
-                if i in have and not sh['full']: continue
+                if i in have and not (sh['full'] or have[i] in (30, 60)): continue
                 nm, hd = find(sh, t)
                 if not nm or hd < 0.5 or nm['lvl'] >= 2: continue
                 try: v = consider(sh, it, 't')
@@ -832,7 +832,7 @@ def hours(L): return round(sum(sum(f[1] for f in x['f']) for x in L) / 3600)
 def merge():
     old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
     held = []; other = load_ids(held); old = []
-    def dup(x): return x['i'] in other and not (x.get('sup') and len(x['f']) > other[x['i']] and x.get('se'))
+    def dup(x): return x['i'] in other and not (x.get('sup') and len(x['f']) > other[x['i']] and (x.get('se') or not BYT[x['k']]['full']))
     for x in old0:
         why = 'held in another catalog file' if dup(x) else recheck(x)
         if why: print('DROP', x['k'], '|', x['i'], '|', x['t'][:80], '|', why)
