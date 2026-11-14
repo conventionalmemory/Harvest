@@ -30,7 +30,7 @@ MF = os.path.join(OUT, 'movies.json.gz')
 films, seen = [], set()
 if os.path.exists(MF) and os.environ.get('REFRESH') != '1':
     for x in json.load(gzip.open(MF, 'rt', encoding='utf-8')):
-        films.append({k: x[k] for k in ('q', 't', 'd', 'bo', 'sl', 'g', 'r', 'rt', 'ia', 'ias', 'tried', 'pia') if k in x})
+        films.append({k: x[k] for k in ('q', 't', 'd', 'bo', 'sl', 'g', 'r', 'rt', 'ia', 'ias', 'tried', 'pia', 'keep', 'why') if k in x})
         if x.get('ia'): seen.add(x['q'])
     HAD = set(seen)
     print('reusing film list', len(films), 'previously matched', len(HAD), flush=True)
@@ -163,11 +163,11 @@ def final(sc, tags):
     if 'parts' in tags: sc -= 5
     if 'sd' in tags: sc += 6
     return sc
-TOL = float(os.environ.get('TOL', '0.09'))
+TOL = float(os.environ.get('TOL', '0.09')); PASS = int(os.environ.get('PASS', '3')); CAP = int(os.environ.get('CAP', '14'))
 T0 = time.time(); BUDGET = float(os.environ.get('BUDGET', '270')) * 60; REDO = os.environ.get('REDO') == '1'
 def match(f):
-    if time.time() - T0 > BUDGET or ((f.get('tried') or f.get('ias')) and not REDO): return f
-    f['tried'] = 1
+    if time.time() - T0 > BUDGET or (((f.get('tried') or 0) >= PASS or (f.get('ias') and len(f['ias']) < 5)) and not REDO): return f
+    f['tried'] = PASS
     nts = [norm(v) for v in variants(f['t'])]
     if len(nts[0]) < 2: return f
     y = int(f['d'][:4]) if f['d'][:4].isdigit() else 0
@@ -188,7 +188,7 @@ def match(f):
     order = sorted(live(), key=lambda k: -final(pool[k][0], pool[k][1]))
     rt = (f.get('rt') or 0) * 60
     out = []
-    for ident in order[:9]:
+    for ident in order[:CAP + 6]:
         r = files_of(ident)
         if r == 'foreign': CNT['foreign'] += 1; continue
         if not r: continue
@@ -208,13 +208,22 @@ def match(f):
         else:
             if 3600 <= big[1] <= 4 * 3600: pick = [big]
             elif 2 <= len(fs) <= 6 and 3600 <= tot <= 4 * 3600: pick = fs; tags.append('parts')
+        why = ''
+        if not pick and rt and 2400 <= big[1] and abs(big[1] - rt) <= 0.25 * rt: pick = [big]; tags.append('maybe'); why = 'runtime %d min vs listed %d' % (round(big[1] / 60), round(rt / 60))
         if not pick: continue
-        out.append([ident, pick, final(sc, tags), tags])
-        if len(out) >= 6: break
+        c = [ident, pick, final(sc, tags) - (25 if why else 0), tags]
+        if why: c.append(why)
+        out.append(c)
+        if len(out) >= CAP: break
     out.sort(key=lambda c: -c[2])
+    if not out: return f
     f.pop('ias', None); f.pop('ia', None)
+    f.pop('keep', None); f.pop('why', None)
     if out:
-        f['ias'] = out; f['ia'] = [out[0][0], out[0][1]]
+        f['ias'] = out
+        sure = [c for c in out if 'maybe' not in c[3]]
+        if sure: f['ia'] = [sure[0][0], sure[0][1]]
+        else: f['keep'] = 'maybe'; f['why'] = out[0][4] if len(out[0]) > 4 else 'doubtful match'
     return f
 res = []
 with ThreadPoolExecutor(int(os.environ.get('THREADS', '12'))) as ex:
@@ -230,14 +239,14 @@ print('tried', sum(1 for x in res if x.get('tried')), 'untried', sum(1 for x in 
 have = [x for x in res if x.get('ias')]
 top = lambda x: x['ias'][0][3]
 print('films total', len(res))
-print('with any candidate', len(have))
+print('with any candidate', len(have), 'sure', sum(1 for x in have if x.get('ia')), 'maybe only', sum(1 for x in have if not x.get('ia')))
 print('tape/LD chosen', sum(1 for x in have if 'tape' in top(x) and 'hd' not in top(x)))
 print('dvd chosen', sum(1 for x in have if 'dvd' in top(x) and 'tape' not in top(x) and 'hd' not in top(x)))
 print('hd only', sum(1 for x in have if all('hd' in c[3] for c in x['ias'])))
 print('hd chosen', sum(1 for x in have if 'hd' in top(x)))
 print('plain sd chosen', sum(1 for x in have if not set(top(x)) & {'tape', 'dvd', 'hd'}))
 print('foreign rejected', CNT['foreign'])
-print('candidates per film', {k: sum(1 for x in have if len(x['ias']) == k) for k in range(1, 7)})
+print('candidates per film', {k: sum(1 for x in have if len(x['ias']) == k) for k in range(1, 15)})
 if HAD is not None:
     print('newly matched', sum(1 for x in have if x['q'] not in HAD), 'lost', sum(1 for x in res if x['q'] in HAD and not x.get('ia')))
 import random
