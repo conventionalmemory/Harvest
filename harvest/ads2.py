@@ -81,7 +81,7 @@ QF = [
 ]
 NOTAD = re.compile(r"\b(radio|podcast|print ad|magazine ad|newspaper|billboard|jingle only|audio only|soundtrack|behind the scenes|making of|outtakes?|bloopers?|banned|uncensored|nsfw|review|reaction|ranking|top \d+|history of|documentary|analysis|explained|commentary|interview|lecture|presentation|slideshow|gameplay|longplay|walkthrough|pilot|episode|full movie|full show)\b", re.I)
 COMP = re.compile(r"\b(compilation|collection|mega|ultimate|marathon|hours? of|\d+ ?hours?|\d+ ?hrs?|volume|vol\.?|part \d+|block|blocks|break|breaks|reel|tape|montage|mix|pack|bundle|various|assorted|misc|lot of|\d{2,} commercials)\b", re.I)
-MODW = re.compile(r"\b(covid|coronavirus|pandemic|vaping|vape|iphone|ipad|android|smartphone|podcast|zoom|facebook|twitter|instagram|tiktok|youtube channel|livestream|webinar|4k|1080p|uhd|streaming|netflix|hulu|obamacare|bitcoin|crypto|uber|lyft|hashtag|selfie|drone|census 20\d\d|fentanyl|opioid|e-cig|face mask|social distanc|vaccin)\b|#\w", re.I)
+MODW = re.compile(r"\b(covid|coronavirus|pandemic|vaping|vape|iphone|ipad|android|smartphone|podcast|facebook|twitter|instagram|tiktok|youtube channel|livestream|webinar|streaming|netflix|hulu|obamacare|bitcoin|crypto|uber|lyft|hashtag|selfie|drone|census 20\d\d|fentanyl|opioid|e-cig|face mask|social distanc|vaccin|blu-?ray|hd dvd|ispot|i spot\.tv|macbook|google|chrome|wii|xbox 360|xbox one|ps[345]|playstation [345]|nintendo switch|3ds|obama|romney|mccain|biden|bernie sanders|hillary|lego city|web ad|webisode|kickstarter|patreon|gofundme|web-a-thon|cannabis|lost media|woke|ai dub|ai coke|ai commercial)\b|#[a-z]\w\w+", re.I)
 RETRO = re.compile(r"\b(vhs|betamax|80'?s|90'?s|eighties|nineties|retro|vintage|classic|old school|aircheck|off[- ]air|[wk][a-z]{2,3}-tv|[wk][a-z]{3} ?\d{1,2})\b", re.I)
 ADT = re.compile(r'\b(commercials?|ads?|adverts?|advertisements?|tv spots?|spots?|promos?|bumpers?|psa|idents?|station id)\b', re.I)
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
@@ -154,13 +154,16 @@ QX = [
 ]
 for k in range(0, len(CALLS), 60):
     QX.append(('stationid', 'title:(' + ' OR '.join(CALLS[k:k + 60]) + ') AND title:(id OR ids OR ident OR idents OR legal OR promo OR promos OR "sign off" OR "sign-off" OR signoff OR "sign on" OR "sign-on" OR signon OR bumper OR bumpers OR "station break" OR "news open" OR "news intro" OR psa OR "editorial" OR "image campaign" OR jingle OR "hello" OR "turn to" OR "come home")'))
+for k in range(0, len(CALLS), 60):
+    QX.append(('stn', 'title:(' + ' OR '.join(CALLS[k:k + 60]) + ') AND title:(' + Y8 + ' OR ' + Y9 + ')'))
 QE = [('e84', 'title:(' + YE + ') AND (description:(commercial OR commercials OR "tv spot" OR advertisement OR "tv ad") OR subject:(commercial OR commercials OR advertising OR advertisement OR ads OR "tv ads"))')]
 for k in range(0, len(BR), 20):
     QE.append(('eb%d' % (k // 20), 'title:(' + YE + ') AND title:(' + ' OR '.join('"%s"' % b for b in BR[k:k + 20]) + ')'))
+THIN = ('promo', 'bumper', 'kidint', 'psa', 'stationid', 'newsbrk', 'signoff', 'moviech')
 KIDN = r"nickelodeon|nick jr|nick at nite|nicktoons|snick|cartoon network|toonami|cartoon cartoon|fox kids|kids'? ?wb|disney afternoon|one saturday morning|saturday morning|pbs kids|tnbc|cartoon express|toon disney|zoog|playhouse disney|boomerang|noggin"
 MOVN = r"hbo|showtime|cinemax|the movie channel|starz|encore|feature presentation"
 KW = [
- ('signoff', re.compile(r"\bsign[- ]?(off|on)s?\b|\bsign(ing|s) (off|on)\b|\bnational anthem\b|\bsermonette\b|\btest pattern\b|\bcolor bars\b|\bbroadcast day\b|\bhigh flight\b|\boff the air\b|\bfinal (broadcast|minutes)\b", re.I)),
+ ('signoff', re.compile(r"\bsign[- ]?offs?\b|\bsign-on\b|\bsignon\b|\bsign(ing|s) off\b|\bnational[- ]anthem\b|\bsermonette\b|\btest pattern\b|\bbroadcast day\b|\bhigh flight\b", re.I)),
  ('stationid', re.compile(r"\b(?i:station (id|ids|ident|idents|identification|identifications|promo|promos)|legal ids?|(channel|affiliate|local) ids?)\b|\b[WK][A-Z]{2,3}(-TV)?( TV)?( Channel)?[- ]?\d{0,2} (ID|IDs|Ident|Idents)\b")),
  ('psa', re.compile(r"\bpsas?\b|\bpublic service\b|\bad council\b|\bthe more you know\b|\bone to grow on\b|\bcbs cares\b|\bmcgruff\b|\bbrain on drugs\b|\bdrug[- ]free\b|\bsmokey (the )?bear\b|\bwoodsy\b|\bcrash test dumm\w+\b|\bbuckle up\b|\bjust say no\b|\banti[- ](drug|smoking|drugs)\b|\bdrunk driving\b|\btime for timer\b|\bbod squad\b", re.I)),
  ('newsbrk', re.compile(r"\bnews ?(casts?)? (opens?|opening|intros?|teases?|teasers?|breaks?|updates?|promos?|briefs?|themes?|close)\b|\bnews ?(break|brief)s?\b|\bspecial report\b", re.I)),
@@ -174,9 +177,16 @@ def kind(t):
     for k, r in KW:
         if r.search(t): return k
     return ''
-NETRX = [('NBC', r'nbc'), ('CBS', r'cbs'), ('ABC', r'abc'), ('Fox', r'fox(?! kids| family)'), ('UPN', r'upn'), ('The WB', r"(the )?wb|kids'? ?wb"), ('PBS', r'pbs'), ('Nickelodeon', r'nickelodeon|nick jr\.?|nick at nite|nicktoons|snick'), ('MTV', r'mtv'), ('VH1', r'vh-?1'), ('Cartoon Network', r'cartoon network|toonami|adult swim'), ('Disney Channel', r'disney channel|toon disney|zoog disney|playhouse disney'), ('Fox Kids', r'fox kids'), ('Fox Family', r'fox family|family channel'), ('USA', r'usa network|usa cartoon express'), ('TBS', r'w?tbs|superstation'), ('TNT', r'tnt'), ('WGN', r'wgn'), ('HBO', r'hbo'), ('Showtime', r'showtime'), ('Cinemax', r'cinemax'), ('ESPN', r'espn2?'), ('CNN', r'cnn|headline news'), ('TNN', r'tnn|nashville network'), ('Lifetime', r'lifetime'), ('Comedy Central', r'comedy central|ha!'), ('Sci-Fi Channel', r'sci-?fi channel'), ('Discovery', r'discovery channel'), ('TLC', r'tlc|learning channel'), ('BET', r'bet'), ('The Weather Channel', r'weather channel'), ('AMC', r'amc'), ('TV Land', r'tv land'), ('A&E', r'a&e'), ('Syndication', r'syndicated|syndication')]
+def kind2(t, tag):
+    k = kind(t)
+    if k: return k
+    net, st = netst(t)
+    if re.search(r'\bIDs?\b', t) and (net or st): return 'stationid' if st else 'bumper'
+    if (net or st) and tag in THIN: return tag
+    return ''
+NETRX = [('NBC', r'nbc'), ('CBS', r'cbs'), ('ABC', r'abc'), ('Fox', r'fox(?! kids| family)'), ('UPN', r'upn'), ('The WB', r"(the )?wb|kids'? ?wb"), ('PBS', r'pbs'), ('Nickelodeon', r'nickelodeon|nick jr\.?|nick at nite|nicktoons|snick'), ('MTV', r'mtv'), ('VH1', r'vh-?1'), ('Cartoon Network', r'cartoon network|toonami|adult swim'), ('Disney Channel', r'disney channel|toon disney|zoog disney|playhouse disney'), ('Fox Kids', r'fox kids'), ('Fox Family', r'fox family|family channel'), ('USA', r'usa network|usa cartoon express'), ('TBS', r'w?tbs|superstation'), ('TNT', r'tnt'), ('WGN', r'wgn'), ('HBO', r'hbo'), ('Showtime', r'showtime'), ('Cinemax', r'cinemax'), ('ESPN', r'espn2?'), ('CNN', r'cnn|headline news'), ('TNN', r'tnn|nashville network'), ('Lifetime', r'lifetime'), ('Comedy Central', r'comedy central|ha!'), ('Sci-Fi Channel', r'sci-?fi channel'), ('Discovery', r'discovery channel'), ('TLC', r'tlc|learning channel'), ('BET', r'bet'), ('The Weather Channel', r'weather channel'), ('AMC', r'amc'), ('TV Land', r'tv land'), ('A&E', r'a&e'), ('PAX', r'pax( tv)?'), ('History Channel', r'history channel'), ('Z Channel', r'z channel'), ('Court TV', r'court tv'), ('FX', r'fx'), ('Animal Planet', r'animal planet'), ('Food Network', r'food network'), ('HGTV', r'hgtv'), ('MSNBC', r'msnbc'), ('CNBC', r'cnbc'), ('C-SPAN', r'c-span'), ('Bravo', r'bravo'), ('Travel Channel', r'travel channel'), ('E!', r'e! entertainment'), ('Odyssey', r'odyssey channel|odyssey network'), ('TV Guide Channel', r'prevue|tv guide channel'), ('Syndication', r'syndicated|syndication')]
 NETRX = [(n, re.compile(r'(?<![\w&])(' + r + r')(?![\w&])', re.I)) for n, r in NETRX]
-CALLRX = re.compile(r"(?<![\w'])([WK][A-Z]{3}|[WK][A-Z]{2})(?:-(?:TV|DT|LP|CA|\d{1,2})\b| ?-? ?(?:TV|Channel|Ch\.?|NewsCenter|News|Eyewitness|Action|Newswatch) ?\d{0,2}\b| \d{1,2}\b)")
+CALLRX = re.compile(r"(?<![\w'])([WK][A-Z]{3}|[WK][A-Z]{2})(?:-(?:TV|DT|LP|CA|\d{1,2})\b| ?-? ?(?:TV|Channel|Ch\.?|NewsCenter|News|Eyewitness|Action|Newswatch|ID|IDs|Ident|Idents|Sign[- ]?[Oo]ff|Sign[- ]?[Oo]n|Promo|Promos|Station) ?\d{0,2}\b| \d{1,2}\b)")
 CALLSET = set(c.upper() for c in CALLS)
 def netst(t):
     net = next((n for n, r in NETRX if r.search(t)), '')
@@ -199,16 +209,39 @@ def exact(t):
     m = re.search(r'\b(\d{1,2})(?:st|nd|rd|th)? (jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?,? (198[4-9]|199\d|200[0-4])\b', t, re.I)
     if m: return '%s-%02d-%02d' % (m.group(3), MON[m.group(2).lower()], int(m.group(1)))
     return ''
-JUNK = re.compile(r"\b(tv-?dx|dx-?tv|teleclub|eurosport|avslutning|sendeschluss|sendestart|testbild|nightcore|anthem of (?!the united states|america|the usa|the u\.s)\w+|himno|hino nacional|comerciales|comercial|comerciais|propagandas?|reklam\w*|publicit\w+|werbung|pubblicit\w+|hindi|tamil|telugu|zee tv|belarus\w*|ukrain\w*|albania\w*|morocc\w*|benin|romania\w*|bulgaria\w*|serbia\w*|croatia\w*|sloven\w+|slovak\w*|austria\w*|switzerland|iran\w*|iraq\w*|egypt\w*|nigeria\w*|kenya\w*|south africa\w*|pakistan\w*|bangladesh\w*|sri lanka\w*|screen ?record\w*|screencast|test upload|test video)\b", re.I)
-JUNKF = re.compile(r"\b(mixtape|dj set|music video|lyric video|karaoke|amv|vlog|unboxing|speedrun|fnaf|roblox|sermon(?!ette)|church service|city council|board meeting|school board|commission meeting|town hall|press conference|webcast|vice news|shoot interview|fictional|alternate history)\b", re.I)
+JUNK = re.compile(r"\b(citv|cbbc|cbeebies|atv home|teletoon|treehouse tv|u\.k|tv-?dx|dx-?tv|teleclub|eurosport|avslutning|sendeschluss|sendestart|testbild|nightcore|anthem of (?!the united states|america|the usa|the u\.s)\w+|himno|hino nacional|comerciales|comercial|comerciais|propagandas?|reklam\w*|publicit\w+|werbung|pubblicit\w+|hindi|tamil|telugu|zee tv|belarus\w*|ukrain\w*|albania\w*|morocc\w*|benin|romania\w*|bulgaria\w*|serbia\w*|croatia\w*|sloven\w+|slovak\w*|austria\w*|switzerland|iran\w*|iraq\w*|egypt\w*|nigeria\w*|kenya\w*|south africa\w*|pakistan\w*|bangladesh\w*|sri lanka\w*|screen ?record\w*|screencast|test upload|test video)\b", re.I)
+JUNKF = re.compile(r"\b(mixtape|dj set|music video|lyric video|karaoke|amv|vlog|unboxing|speedrun|fnaf|roblox|sermon(?!ette)|church service|city council|board meeting|school board|commission meeting|town hall|press conference|webcast|vice news|shoot interview|fictional|alternate history|promo only|promo cd|promo single|promotional film|election promo|astra|creative commons|cc-by\S*|license bumper|copyright bumper|rating classification|go ?animate|xtranormal|wrapper offline|vyond|my version|analog|dtv|digital transition|check it)\b", re.I)
+OUTY = re.compile(r"(?<![\d$#])(19[0-7]\d|198[0-3]|200[5-9]|20[1-3]\d)(?!\d|'?s)|\b(19)?[4-7]0'?s\b|\b20[12]0'?s\b|(?<![\d.:])(0?[1-9]|1[0-2])[/-](0?[1-9]|[12]\d|3[01])[/-](0[5-9]|[12]\d|[4-7]\d|8[0-3])(?!\d)", re.I)
+PSAB = re.compile(r"\b(mcgruff|the more you know|one to grow on|cbs cares|brain on drugs|drug[- ]free america|smokey (the )?bear|woodsy|crash test dumm\w+|just say no|time for timer|bod squad|schoolhouse rock|ad council)\b", re.I)
+RET2 = re.compile(r"\b(vhs|betamax|(19)?80'?s|(19)?90'?s|eighties|nineties|retro|vintage|old school|aircheck|off[- ]air|[wk][a-z]{2,3}-tv)\b", re.I)
+BENIGN = re.compile(r"\b(irish spring|french'?s|french (fries|toast|vanilla|onion|dressing|bread)|italian (dressing|restaurant|sausage|bread|kitchen)|mexican pizza|canada dry|swiss miss|german chocolate|turkish taffy|greek yogurt|china (coast|beach)|sky(?! ?(tv|one|news|sports|movies)))\b", re.I)
+def foreign(t):
+    return bool(FOREIGN.search(BENIGN.sub(' ', t)))
+VCOL = re.compile(r'^(vhs|saturdaymorning|tvcommercials|computercommercials|television$|television_inbox|airchecks|flemishdog|splitscreenarchive|gameshows|musictelevision)', re.I)
+ERAB = re.compile(r"\b(atari|colecovision|intellivision|betamax|cabbage patch|teddy ruxpin|new coke|spuds|max headroom|zayre|crazy eddie|super nintendo|snes|sega genesis|game boy|nintendo 64|n64|dreamcast|tamagotchi|furby|windows 9[58]|america online|aol|prodigy|compuserve|pager|kay ?bee|montgomery ward|woolworth|caldor|bradlees|ames|service merchandise|circuit city|blockbuster|hollywood video|columbia house|k-tel|crystal pepsi|surge|zima|squeezit|ecto cooler|dunkaroos|micro machines|he-man|g\.?i\.? joe|thundercats|ninja turtles|power rangers|pogs|oldsmobile|plymouth|pontiac|saturn|geo|joe isuzu|california raisins|noid|energizer bunny|wassup|pets\.com|10-10-\d+|1-800-collect|mci|psychic friends|thighmaster|soloflex)\b", re.I)
+def outside(t):
+    return bool(OUTY.search(t)) and not YR.search(t)
+def era(t, col, k):
+    v = next((c for c in col if VCOL.search(c)), '')
+    if v: return 'collection ' + v
+    if RET2.search(t): return 'retro wording'
+    if k in THIN:
+        net, st = netst(t)
+        if st: return 'station ' + st
+        if net: return 'network ' + net
+        if k == 'psa' and PSAB.search(t): return 'period campaign'
+    elif ERAB.search(t): return 'period brand'
+    return ''
 WRES = re.compile(r"\b(wrestl\w+|wwf|wwe|wcw|ecw|nwa)\b", re.I)
 USHINT = re.compile(r"\b(nbc|cbs|abc|fox|pbs|upn|wb|nickelodeon|hbo|mtv|usa|american|u\.s\.)\b|\b[WK][A-Z]{2,3}(-TV)?\b")
 def junk(t, q):
     if JUNK.search(t) or JUNKF.search(t): return True
-    if NONUS.search(t) or FOREIGN.search(t): return True
+    if NONUS.search(t) or foreign(t): return True
     if WRES.search(t) and not netst(t)[0]: return True
+    if re.search(r'\bradio\b|\b(fm|am) ?\d', t, re.I) and not netst(t)[1]: return True
+    if MODW.search(t) or outside(t): return True
     if re.search(r'\bclose-? ?downs?\b', t, re.I) and not netst(t)[1]: return True
-    if q == 'signoff' and re.search(r'\bnational anthem\b', t, re.I) and not re.search(r'sign|star[- ]spangled|united states|usa|u\.s\.|america|[WK][A-Z]{2,3}', t): return True
+    if q == 'signoff' and re.search(r'\bnational[- ]anthem\b', t, re.I) and not re.search(r'sign|star[- ]spangled|united states|usa|u\.s\.|america|[WK][A-Z]{2,3}', t): return True
     return False
 seen = {}
 def take(tag, items):
@@ -216,7 +249,7 @@ def take(tag, items):
     for it in items:
         i = it['identifier']; t = str(it.get('title') or '')
         if i in have or i in mine or i in seen: continue
-        if BAD.search(t) or FOREIGN.search(t) or AUS.search(t) or NONUS.search(t): continue
+        if BAD.search(t) or foreign(t) or AUS.search(t) or NONUS.search(t): continue
         if re.search(r'[^\x00-\xff‐-‧™]', t): continue
         if re.search(r'(?<!\d)20(0[5-9]|[1-3]\d)(?!\d)', t): continue
         if JUNK.search(t): continue
@@ -249,7 +282,32 @@ def colscan():
     print('route collections', len(cols), [(c, cc[c]) for c in cols[:40]], flush=True)
     print('route uploaders', len(ups), [n for u, n in uu.most_common(40)], flush=True)
     return cols, ups
+def fixrow(r):
+    d = r[3]
+    if d and not ('1984' <= d[:4] <= '2004'): return None
+    if NONUS.search(r[4]) or JUNK.search(r[4]) or MODW.search(r[4]) or outside(r[4]) or foreign(r[4]): return None
+    if len(r) > 6 and not d and not (RET2.search(r[4]) or ERAB.search(r[4]) or 'collection' in str(r[7]) or 'decade' in str(r[7])): return None
+    if d and len(d) < 7:
+        nd, _, _ = when(r[4], '', '', '')
+        if nd[:4] == d[:4] and len(nd) >= 7: r = r[:3] + [nd] + r[4:]
+    return r
+def fixfl(x):
+    if not ((x.get('d') and '1984' <= x['d'][:4] <= '2004') or (not x.get('d') and x.get('dec'))): return None
+    if junk(x['t'], x['q']): return None
+    k = kind2(x['t'], x['q']) if x['q'] in THIN else kind(x['t'])
+    if x['q'] in THIN + ('holiday',) and k: x['q'] = k
+    elif x['q'] in ('promo', 'bumper', 'stationid', 'signoff'): return None
+    if x.get('keep') and not x.get('d') and x['q'] in THIN and not era(x['t'], x.get('c') or [], x['q']) and 'decade' not in str(x.get('why')) and not re.search(r"\b(19)?[89]0'?s\b|eighties|nineties", x['t'] + ' ' + x.get('ds', '')[:200], re.I): return None
+    if x['q'] == 'signoff' and not x.get('d') and not netst(x['t'])[1]: return None
+    net, st = netst(x['t']); dt = exact(x['t'])
+    if net: x['net'] = net
+    if st: x['st'] = st
+    if dt and (not x.get('d') or dt[:4] == x['d'][:4]): x['dt'] = dt
+    return x
 def plan():
+    global mine
+    mine = set(r[0] for r in oldads if fixrow(list(r))) | set(x['i'] for x in oldfl if fixfl(dict(x)))
+    print('own after cleaning', len(mine), flush=True)
     if oldads:
         cols, ups = colscan()
         for k, c in enumerate(cols):
@@ -280,7 +338,7 @@ def plan():
         m = YR.search(t)
         if m: s += 4
         if m and int(m.group(1)) <= 1991: s += 4
-        if it['q'] in ('promo', 'bumper', 'stationid', 'signoff', 'psa', 'kidint', 'moviech', 'newsbrk'): s += 5
+        if it['q'] in THIN + ('stn',): s += 5
         elif it['q'] not in ('ad', 'adc'): s += 1
         if it.get('x'): s += 3
         if exact(t): s += 2
@@ -317,8 +375,8 @@ def meta(c):
     if isinstance(subj, list): subj = ';'.join(subj)
     title = str(m.get('title', ''))
     blob = title + ' ' + str(subj) + ' ' + desc[:300]
-    if BAD.search(blob) or FOREIGN.search(title + ' ' + str(subj)) or AUS.search(title): rej['badforeign'] += 1; return None
-    if FOREIGN.search(desc[:300]) and not re.search(r'\b(nbc|cbs|abc|fox|pbs|upn|the wb|nickelodeon|cartoon network|mtv|hbo|[wk][a-z]{3}(-tv)?)\b', title, re.I): rej['foreigndesc'] += 1; return None
+    if BAD.search(blob) or foreign(title + ' ' + str(subj)) or AUS.search(title): rej['badforeign'] += 1; return None
+    if foreign(desc[:300]) and not re.search(r'\b(nbc|cbs|abc|fox|pbs|upn|the wb|nickelodeon|cartoon network|mtv|hbo|[wk][a-z]{3}(-tv)?)\b', title, re.I): rej['foreigndesc'] += 1; return None
     if re.search(r'(?<!\d)20(0[5-9]|[1-3]\d)(?!\d)', title): rej['modern'] += 1; return None
     groups = {}
     for f in j['files']:
@@ -341,9 +399,11 @@ def meta(c):
     if isinstance(col, str): col = [col]
     up = str(m.get('uploader', '') or m.get('creator', ''))[:40]
     tag = it['q']
-    k = kind(title)
-    if tag in ('promo', 'bumper', 'kidint', 'psa', 'stationid', 'newsbrk', 'signoff', 'moviech', 'holiday') and k: tag = k
-    elif tag in ('ad', 'adc') and k and not ADWORD.search(title): tag = k
+    k = kind2(title, tag) if tag in THIN + ('stn',) else kind(title)
+    if tag in THIN + ('holiday', 'stn') and k: tag = k
+    elif tag in THIN + ('stn',): rej['nokind'] += 1; return None
+    elif tag in ('ad', 'adc') and k and (not ADWORD.search(title) or k in ('psa', 'stationid', 'signoff')): tag = k
+    if MODW.search(title) or outside(title): rej['outside'] += 1; return None
     if JUNK.search(title) or (tag not in ('ad', 'adc') and junk(title, tag)): rej['junk'] += 1; return None
     hasad = bool(ADT.search(title))
     maybe = ''
@@ -352,10 +412,13 @@ def meta(c):
         for v in (m.get('date'), m.get('year')):
             mm = re.match(r'(\d{4})', str(v or ''))
             if mm: my = max(my, int(mm.group(1)))
-        if MODW.search(title) or MODW.search(desc[:200]): rej['modernword'] += 1; return None
+        if MODW.search(desc[:200]): rej['modernword'] += 1; return None
+        ev = era(title, col, tag) or ('decade wording' if dec else '')
+        if not ev and (tag in THIN or tag in ('ad', 'adc')): rej['noera'] += 1; return None
+        if tag == 'signoff' and not netst(title)[1]: rej['noera'] += 1; return None
         if 0 < my < 1984 and not dec: rej['pre84'] += 1; return None
         if tag not in ('ad', 'adc') and my >= 2005 and not (dec or RETRO.search(title)): rej['moderndate'] += 1; return None
-        maybe = 'no date in title or description' + ('; item date %d' % my if my else '')
+        maybe = 'no date in title or description' + ('; item date %d' % my if my else '') + ('; ' + ev if ev else '')
         if not dec: dec = '80s' if re.search(r'\b(atari|colecovision|intellivision|betamax|cabbage patch|teddy ruxpin|new coke|spuds|max headroom|zayre|crazy eddie)\b', title, re.I) else '90s'
     net, st = netst(title); dt = exact(title)
     if dt and ds and dt[:4] != ds[:4]: dt = ''
@@ -380,6 +443,7 @@ def meta(c):
             rows = []
             for f in singles[:400]:
                 stem = re.sub(r'\.(ia\.)?mp4$', '', f[0].split('/')[-1]); stem = re.sub(r'[_]+', ' ', stem)
+                if NOTAD.search(stem) or JUNK.search(stem) or MODW.search(stem) or outside(stem): continue
                 fd, fdec, _ = when(stem, '', '', '')
                 rows.append([it['identifier'], f[0], f[1], fd or ds, (stem if len(stem) > 12 else title[:80] + ' - ' + stem)[:120], fdec or dec] + (['maybe', maybe] if maybe and not fd else []))
             return ('ad', rows)
@@ -421,26 +485,21 @@ if MODE == 'merge':
     print('rejected', dict(tot), flush=True)
 else:
     ads, fl = look([[c['identifier'], c['q'], c.get('downloads') or 0] for c in plan()], 0)
-def fixrow(r):
-    d = r[3]
-    if d and not ('1984' <= d[:4] <= '2004'): return None
-    if NONUS.search(r[4]) or JUNK.search(r[4]): return None
-    if d and len(d) < 7:
-        nd, _, _ = when(r[4], '', '', '')
-        if nd[:4] == d[:4] and len(nd) >= 7: r = r[:3] + [nd] + r[4:]
-    return r
-def fixfl(x):
-    if not ((x.get('d') and '1984' <= x['d'][:4] <= '2004') or (not x.get('d') and x.get('dec'))): return None
-    if junk(x['t'], x['q']): return None
-    k = kind(x['t'])
-    if x['q'] in ('promo', 'bumper', 'kidint', 'psa', 'stationid', 'newsbrk', 'signoff', 'moviech', 'holiday') and k: x['q'] = k
-    net, st = netst(x['t']); dt = exact(x['t'])
-    if net: x['net'] = net
-    if st: x['st'] = st
-    if dt and (not x.get('d') or dt[:4] == x['d'][:4]): x['dt'] = dt
-    return x
+byid = collections.defaultdict(list)
+for r in oldads + ads: byid[r[0]].append(r)
+moved = []
+for i, rs in byid.items():
+    ks = set((kind(r[4]) if (not ADWORD.search(r[4]) or kind(r[4]) in ('psa', 'stationid', 'signoff')) else '') for r in rs)
+    if len(ks) != 1 or '' in ks or len(set(r[1] for r in rs)) != len(rs): continue
+    r = rs[0]
+    x = {'i': i, 't': r[4] if len(rs) == 1 else re.sub(r' - [^-]*$', '', r[4]), 'd': r[3], 'y': r[3][:4], 'c': [], 's': '', 'ds': '', 'dl': 0, 'dec': r[5] if len(r) > 5 else '', 'src': 't' if r[3] else '', 'q': ks.pop(), 'f': [[z[1], z[2], 'h.264 IA' if z[1].endswith('.ia.mp4') else 'h.264'] for z in rs]}
+    if len(r) > 6: x['keep'] = 'maybe'; x['why'] = str(r[7]) + '; collection' if 'collection' in str(r[7]) else str(r[7])
+    moved.append(x)
+mv = set(x['i'] for x in moved)
+print('moved from single commercials to interstitials', len(moved), collections.Counter(x['q'] for x in moved).most_common(), flush=True)
+oldads = [r for r in oldads if r[0] not in mv]; ads = [r for r in ads if r[0] not in mv]
 got = set(); allfl = []
-for x in oldfl + [{k: v for k, v in x.items() if k != 'u'} for x in fl]:
+for x in oldfl + moved + [{k: v for k, v in x.items() if k != 'u'} for x in fl]:
     x = fixfl(x)
     if x and x['i'] not in got: got.add(x['i']); allfl.append(x)
 adk = set(); dd = []
