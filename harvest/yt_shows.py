@@ -97,6 +97,7 @@ EXTRA = [
  ("CBS Evening News", "news", "cbs", 1962, 2030, "date", ["cbs evening news"]),
 ]
 BADT = re.compile(r"(?i)\b(reaction|reacts?|review|recap|clips?|scenes?|best of|moments|compilation|trailer|promo|promos|opening|intro|theme song|bloopers|behind the scenes|interview|explained|top \d+|ranking|ranked|podcast|commentary|tribute|parody|edit|amv|mashup|remix|deleted|ending|outro|credits|teaser|preview|every time|supercut|funniest|highlights|montage|unboxing|gameplay|longplay|walkthrough|speedrun|cover|lyrics|karaoke|shorts?|tiktok|meme|fan ?made|restored in 4k|60 ?fps|upscale[d]?|ai |sub español|subtitulado|latino|dublado|legendado|español|castellano|deutsch|fran[cç]ais|italiano|hindi|tagalog|vostfr|ger sub|napisy|türkçe|عربي|partial|rus eng|eng rus|x264|x265|ac3|learn english|talk \|\||watch ?along|first time watching|breakdown|analysis|retrospective|rewatch)\b")
+DATEX = re.compile(r"(?i)\b(cardiology|today (show )?australia|gmtv|canada am|(?<!with )(?<!w )(?<!w/)(?<!w/ )(?<!original )(?<!some )commercials? (from|aired|during|block)|^commercials)\b")
 PARTX = re.compile(r"(?i)\b(part|pt\.?)\s*([1-9]|one|two|three)\s*(of|/)\s*\d|\[\s*\d\s*/\s*\d\s*\]|\(\s*\d\s*/\s*\d\s*\)")
 LATEY = re.compile(r'\b(200[5-9]|20[12]\d)\b|\b\d{1,2}[./]\d{1,2}[./](0[5-9]|[12]\d)\b')
 OFFX = re.compile(r"(?i)(official|studios?|television|entertainment|network|pictures|classics|vault|archive|archives|museum|library|university|pbs|nbc|cbs|abc|fox|warner|paramount|sony|universal|disney|mgm|lionsgate|shout|filmrise|hasbro|mattel|wildbrain|nelvana|dhx|9 story|cookie jar|nickelodeon|cartoon network|a&e|history|discovery|c-span|associated press|ap archive)")
@@ -137,9 +138,9 @@ def http(url, data=None, headers=None, tries=4, timeout=25):
     return last if isinstance(last, int) else 0, b''
 
 
-def inner(ep, body):
+def inner(ep, body, tries=4):
     b = dict(body); b['context'] = CTX
-    st, raw = http('https://www.youtube.com/youtubei/v1/' + ep + '?prettyPrint=false', json.dumps(b).encode(), {'Content-Type': 'application/json', 'Origin': 'https://www.youtube.com', 'X-YouTube-Client-Name': '1', 'X-YouTube-Client-Version': CTX['client']['clientVersion']})
+    st, raw = http('https://www.youtube.com/youtubei/v1/' + ep + '?prettyPrint=false', json.dumps(b).encode(), {'Content-Type': 'application/json', 'Origin': 'https://www.youtube.com', 'X-YouTube-Client-Name': '1', 'X-YouTube-Client-Version': CTX['client']['clientVersion']}, tries)
     with LOCK: STAT['inner_' + ep.split('/')[0] + '_' + str(st)] += 1
     if st != 200: return None
     try: return json.loads(raw)
@@ -198,6 +199,49 @@ def vr_to(v):
     return {'vid': vid, 't': txt(v.get('title')), 'ch': txt(ow), 'chid': chid, 'dur': secs(txt(v.get('lengthText'))), 'views': views(txt(v.get('viewCountText'))), 'age': age_years(txt(v.get('publishedTimeText'))), 'ver': 1 if 'VERIFIED' in badges.upper() else 0, 'live': 1 if live else 0}
 
 
+def strs(o, out):
+    if isinstance(o, dict):
+        for v in o.values(): strs(v, out)
+    elif isinstance(o, list):
+        for v in o: strs(v, out)
+    elif isinstance(o, str): out.append(o)
+    return out
+
+
+def lk_to(v, chid, ch):
+    vid = v.get('contentId')
+    if not vid or v.get('contentType') not in (None, 'LOCKUP_CONTENT_TYPE_VIDEO'): return None
+    md = (v.get('metadata') or {}).get('lockupMetadataViewModel') or {}
+    ss = strs(v, [])
+    dur = 0; vw = 0; age = -1
+    for x in ss:
+        if not dur and re.match(r'^\d{1,2}(:\d\d){1,2}$', x): dur = secs(x)
+        if not vw and re.match(r'^[\d,.]+[KMB]? views?$', x): vw = views(x)
+        if age < 0 and re.search(r'\d+ (year|month|week|day|hour|minute)s? ago', x): age = age_years(x)
+    return {'vid': vid, 't': txt((md.get('title') or {}).get('content') or ''), 'ch': ch, 'chid': chid, 'dur': dur, 'views': vw, 'age': age, 'ver': 0, 'live': 1 if 'LIVE' in ss else 0}
+
+
+def channel_search(chid, ch, q, pages=3):
+    out = []; seen = set()
+    d = inner('browse', {'browseId': chid, 'params': 'EgZzZWFyY2jyBgQKAloA', 'query': q})
+    for _ in range(pages):
+        if not d: break
+        got = 0
+        for v in walk(d, 'videoRenderer', []):
+            x = vr_to(v)
+            if x and x['vid'] not in seen:
+                x['ch'] = x['ch'] or ch; x['chid'] = x['chid'] or chid
+                seen.add(x['vid']); out.append(x); got += 1
+        for v in walk(d, 'lockupViewModel', []):
+            x = lk_to(v, chid, ch)
+            if x and x['vid'] not in seen: seen.add(x['vid']); out.append(x); got += 1
+        tk = [c.get('token') for c in walk(d, 'continuationCommand', []) if c.get('token')]
+        if not tk or not got or left() < 120: break
+        time.sleep(0.3 + random.random() * 0.5)
+        d = inner('browse', {'continuation': tk[-1]})
+    return out
+
+
 def search(q, pages=2, params='EgQQARgC'):
     out = []
     d = inner('search', {'query': q, 'params': params})
@@ -214,17 +258,25 @@ def search(q, pages=2, params='EgQQARgC'):
 
 
 def channel_flat(chid, ch):
-    out = []
-    try:
-        import yt_dlp
-        with yt_dlp.YoutubeDL({'quiet': True, 'no_warnings': True, 'extract_flat': True, 'skip_download': True, 'playlistend': 6000}) as y:
-            r = y.extract_info('https://www.youtube.com/channel/' + chid + '/videos', download=False)
-        for e in (r or {}).get('entries') or []:
-            if not e or not e.get('id'): continue
-            out.append({'vid': e['id'], 't': e.get('title') or '', 'ch': ch or (r.get('channel') or ''), 'chid': chid, 'dur': int(e.get('duration') or 0), 'views': int(e.get('view_count') or 0), 'age': -1, 'ver': 1 if r.get('channel_is_verified') else 0, 'live': 1 if e.get('live_status') in ('is_live', 'is_upcoming') else 0})
-    except Exception as ex:
-        with LOCK: STAT['flatfail'] += 1
-    return out
+    box = []
+    def work():
+        out = []
+        try:
+            import yt_dlp
+            with yt_dlp.YoutubeDL({'quiet': True, 'no_warnings': True, 'extract_flat': True, 'skip_download': True, 'playlistend': 3000, 'socket_timeout': 20, 'retries': 2, 'extractor_retries': 1}) as y:
+                r = y.extract_info('https://www.youtube.com/channel/' + chid + '/videos', download=False)
+            for e in (r or {}).get('entries') or []:
+                if not e or not e.get('id'): continue
+                out.append({'vid': e['id'], 't': e.get('title') or '', 'ch': ch or (r.get('channel') or ''), 'chid': chid, 'dur': int(e.get('duration') or 0), 'views': int(e.get('view_count') or 0), 'age': -1, 'ver': 1 if r.get('channel_is_verified') else 0, 'live': 1 if e.get('live_status') in ('is_live', 'is_upcoming') else 0})
+        except Exception as ex:
+            with LOCK: STAT['flatfail'] += 1
+        box.append(out)
+    th = threading.Thread(target=work, daemon=True)
+    th.start(); th.join(300)
+    if not box:
+        with LOCK: STAT['flatslow'] += 1
+        return []
+    return box[0]
 
 
 def channel_videos(chid, ch, maxpages=40):
@@ -241,6 +293,9 @@ def channel_videos(chid, ch, maxpages=40):
             if x:
                 x['ch'] = x['ch'] or ch; x['chid'] = x['chid'] or chid; x['ver'] = x['ver'] or ver
                 out.append(x); got += 1
+        for v in walk(d, 'lockupViewModel', []):
+            x = lk_to(v, chid, ch)
+            if x: x['ver'] = ver; out.append(x); got += 1
         tk = [c.get('token') for c in walk(d, 'continuationCommand', []) if c.get('token')]
         if not tk or not got or left() < 120: break
         time.sleep(0.3 + random.random() * 0.5)
@@ -254,7 +309,8 @@ def oembed(vid):
 
 
 def player(vid):
-    d = inner('player', {'videoId': vid})
+    if STAT['inner_player_403'] > 40 and STAT['inner_player_403'] > STAT['inner_player_200']: return {}
+    d = inner('player', {'videoId': vid}, 1)
     if not d: return {}
     ps = d.get('playabilityStatus') or {}
     vd = d.get('videoDetails') or {}
@@ -521,6 +577,7 @@ def match(t, c, M):
             if e: r['se'] = [e[0], e[1]]; r['ep'] = e[3]
         elif d0 and d0 > '2004-12-31': return None
     if t['kind'] == 'date':
+        if DATEX.search(T): return None
         d = pdate(T)
         if not d or not ('1984-01-01' <= d <= '2004-12-31'): return None
         r['ad'] = d
@@ -545,8 +602,8 @@ def match(t, c, M):
 STOPW = set('full episode episodes season series complete entire hd hq tv show the a an and of in on at to with from by for original broadcast uncut unedited commercials commercial classic classics sitcom cartoon cartoons animated animation vhs dvd rip part pt finale premiere pilot nbc abc cbs fox pbs upn wb nick nickelodeon nickelodeons disney disneys espn espns usa tnt tbs syndicated syndication rerun reruns english eng dub dubbed version remastered 1080p 720p 480p 4k s e ep vol volume disc tape aired air date airdate year all new retro vintage rare 80s 90s 1980s 1990s lifetime lifetimes hgtv cnn bbc mtv vh1 hbo discovery channel tlc cable network presents'.split())
 NEXTW = set('season series episode episodes ep full complete tv show the pilot s e vol volume part classic uncut original hd with cartoon sitcom nbc abc cbs fox vhs dvd hawaii'.split())
 MONW = set('january february march april may june july august september october november december jan feb mar apr jun jul aug sep sept oct nov dec monday tuesday wednesday thursday friday saturday sunday'.split())
-JUNKT = re.compile(r"(?i)\b(web ?series|icons unearthed|mystery dungeon|studio tour|search for reptar|gmod|minecraft|roblox|fortnite|playstation|nintendo|game ?boy|n64|gamecube|dreamcast|pc game|video ?game|first time (watching|reaction|seeing|viewing)|for the first time|we watch(ed)?|re-?watch(ed|ing)?|revisited|ruminations|rundown|after ?show|afterbuzz|play ?through|let'?s play|the game|hit (and|&) run|script reading|table read|discuss(es|ed|ing|ion)?|analy[sz](ing|ed|is)|facts about|weird facts|radio|un episodio|joined by|check out|grades|watch ?along|my thoughts|breakdown|deep dive|drinking game|ft\.|feat\.|(?<!no )commercial breaks|road rage|tapped out|nes|snes|ps[1-5]|xbox|arcade|play it through|let'?s watch|live ?stream|sermon|school project|stage production|decoded|reviews|then and now|ranking every|every episode|iceberg|theory|theories)\b")
-JUNKM = re.compile(r"(?i)\b(facts|secrets|cast update|then (and|&|vs\.?) now|where are they now|still alive|tournament|watch(es|ing) every|watches|inside looks?|notes about nothing|featurette|making of|beginner|guide|reboot|revival|reunion|reunite[sd]?|sandbox|ep(isode)?\.? ?\d+ ?[:\-] ?(the )?(seinfeld|cheers|frasier|friends|wings|simpsons|rugrats|roseanne|doug)\b)\b")
+JUNKT = re.compile(r"(?i)\b(web ?series|speedrun\w*|any ?%|(?<!with )(?<!w )(?<!w/)(?<!w/ )(?<!original )(?<!some )(?<!nbc )(?<!abc )(?<!cbs )(?<!fox )commercials? (aired|during|block|breaks? compilation)|bumpers|icons unearthed|mystery dungeon|studio tour|search for reptar|gmod|minecraft|roblox|fortnite|playstation|nintendo|game ?boy|n64|gamecube|dreamcast|pc game|video ?game|first time (watching|reaction|seeing|viewing)|for the first time|we watch(ed)?|re-?watch(ed|ing)?|revisited|ruminations|rundown|after ?show|afterbuzz|play ?through|let'?s play|the game|hit (and|&) run|script reading|table read|discuss(es|ed|ing|ion)?|analy[sz](ing|ed|is)|facts about|weird facts|radio|un episodio|joined by|check out|grades|watch ?along|my thoughts|breakdown|deep dive|drinking game|ft\.|feat\.|(?<!no )commercial breaks|road rage|tapped out|nes|snes|ps[1-5]|xbox|arcade|play it through|let'?s watch|live ?stream|sermon|school project|stage production|decoded|reviews|then and now|ranking every|every episode|iceberg|theory|theories)\b")
+JUNKM = re.compile(r"(?i)\b((?<!with )(?<!w/ )(?<!w )(?<!original )(?<!and )commercials|facts|secrets|cast update|then (and|&|vs\.?) now|where are they now|still alive|tournament|watch(es|ing) every|watches|inside looks?|notes about nothing|featurette|making of|beginner|guide|reboot|revival|reunion|reunite[sd]?|sandbox|ep(isode)?\.? ?\d+ ?[:\-] ?(the )?(seinfeld|cheers|frasier|friends|wings|simpsons|rugrats|roseanne|doug)\b)\b")
 JUNKC = re.compile(r"(?i)(react|podcast|gaming|commentary|rewatch|reviews?\b|plays\b|after ?show)")
 
 
@@ -558,7 +615,7 @@ def tight(t, T, ept, ch, off):
         jm = JUNKM.search(T)
         if jm and not set(nz(jm.group(0)).split()) & set(nz(ept or '').split()): return 'junk'
     n = ' ' + nz(T) + ' '; hit = ''
-    for a in sorted(t['al'], key=lambda a: -len(a)):
+    for a in sorted(t['al'], key=lambda a: (0 if strict and t['k'] in a else 1, -len(a))):
         if len(a) >= 2 and n.find(' ' + a + ' ') >= 0: hit = a; break
     if not hit: return ''
     i = n.find(' ' + hit + ' '); ew = set(nz(ept or '').split())
@@ -802,6 +859,24 @@ def probe():
     if res and res[0]['chid']:
         vs = channel_videos(res[0]['chid'], res[0]['ch'], 3)
         print('  channel videos', len(vs)); [print('  ', c) for c in vs[:4]]
+    for chid, q in (('UCBR8-60-B28hp2BmDPdntcQ', 'today'),) + tuple((x, 'today show') for x in os.environ.get('PROBE_CH', 'UC4LibjxwJ2SIwpGSUo41yOQ,UCn6Dg8imByAYiCTO10WybzQ').split(',') if x):
+        d = inner('browse', {'browseId': chid, 'params': 'EgZ2aWRlb3PyBgQKAjoA'})
+        ks = collections.Counter()
+        def keys(o):
+            if isinstance(o, dict):
+                for k, v in o.items():
+                    if k.endswith(('Renderer', 'ViewModel')): ks[k] += 1
+                    keys(v)
+            elif isinstance(o, list):
+                for v in o: keys(v)
+        keys(d or {})
+        print('  videos tab', chid, 'keys', ks.most_common(12))
+        lk = walk(d or {}, 'lockupViewModel', [])
+        if lk: print('  lockup sample', json.dumps(lk[0])[:1500])
+        vs = channel_videos(chid, '', 2)
+        print('  channel_videos', len(vs), vs[:3])
+        cs = channel_search(chid, '', q, 2)
+        print('  channel_search', q, len(cs)); [print('    ', c) for c in cs[:6]]
     print('== oembed / player')
     for c in res[:4]:
         print('  ', c['vid'], 'oembed', oembed(c['vid']), 'player', player(c['vid']))
@@ -812,5 +887,8 @@ def probe():
 
 if MODE == 'probe': probe()
 elif MODE == 'plan': plan()
-elif MODE == 'search': run_search()
+elif MODE == 'search':
+    run_search()
+    sys.stdout.flush()
+    os._exit(0)
 elif MODE == 'merge': merge()
