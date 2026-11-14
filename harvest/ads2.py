@@ -81,7 +81,7 @@ QF = [
 ]
 NOTAD = re.compile(r"\b(radio|podcast|print ad|magazine ad|newspaper|billboard|jingle only|audio only|soundtrack|behind the scenes|making of|outtakes?|bloopers?|banned|uncensored|nsfw|review|reaction|ranking|top \d+|history of|documentary|analysis|explained|commentary|interview|lecture|presentation|slideshow|gameplay|longplay|walkthrough|pilot|episode|full movie|full show)\b", re.I)
 COMP = re.compile(r"\b(compilation|collection|mega|ultimate|marathon|hours? of|\d+ ?hours?|\d+ ?hrs?|volume|vol\.?|part \d+|block|blocks|break|breaks|reel|tape|montage|mix|pack|bundle|various|assorted|misc|lot of|\d{2,} commercials)\b", re.I)
-MODW = re.compile(r"\b(covid|coronavirus|pandemic|vaping|vape|iphone|ipad|android|smartphone|podcast|facebook|twitter|instagram|tiktok|youtube channel|livestream|webinar|streaming|netflix|hulu|obamacare|bitcoin|crypto|uber|lyft|hashtag|selfie|drone|census 20\d\d|fentanyl|opioid|e-cig|face mask|social distanc|vaccin|blu-?ray|hd dvd|ispot|i spot\.tv|macbook|google|chrome|wii|xbox 360|xbox one|ps[345]|playstation [345]|nintendo switch|3ds|obama|romney|mccain|biden|bernie sanders|hillary|lego city|web ad|webisode|kickstarter|patreon|gofundme|web-a-thon|cannabis|lost media|woke|ai dub|ai coke|ai commercial)\b|#[a-z]\w\w+", re.I)
+MODW = re.compile(r"\b(covid|coronavirus|pandemic|vaping|vape|iphone|ipad|android|smartphone|podcast|facebook|twitter|instagram|tiktok|youtube channel|livestream|webinar|streaming|netflix|hulu|obamacare|bitcoin|crypto|uber|lyft|hashtag|selfie|drone|census 20\d\d|fentanyl|opioid|e-cig|face mask|social distanc|vaccin|blu-?ray|hd dvd|ispot|i spot\.tv|macbook|google|chrome|wii|xbox 360|xbox one|ps[345]|playstation [345]|nintendo switch|3ds|obama|romney|mccain|biden|bernie sanders|hillary|lego city|web ad|webisode|kickstarter|patreon|gofundme|web-a-thon|cannabis|lost media|woke|ai dub|ai coke|ai commercial|eharmony|closing logos|launch trailer|preorder|pre-order|funny or die|videoplayback|dailymotion)\b|#[a-z]\w\w+", re.I)
 RETRO = re.compile(r"\b(vhs|betamax|80'?s|90'?s|eighties|nineties|retro|vintage|classic|old school|aircheck|off[- ]air|[wk][a-z]{2,3}-tv|[wk][a-z]{3} ?\d{1,2})\b", re.I)
 ADT = re.compile(r'\b(commercials?|ads?|adverts?|advertisements?|tv spots?|spots?|promos?|bumpers?|psa|idents?|station id)\b', re.I)
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
@@ -169,13 +169,14 @@ KW = [
  ('newsbrk', re.compile(r"\bnews ?(casts?)? (opens?|opening|intros?|teases?|teasers?|breaks?|updates?|promos?|briefs?|themes?|close)\b|\bnews ?(break|brief)s?\b|\bspecial report\b", re.I)),
  ('moviech', re.compile(r"\b(" + MOVN + r")\b.*\b(intros?|opening|opens?|promos?|bumpers?|idents?|next on|coming|tonight|presentation|preview|this month)\b|\bfeature presentation\b", re.I)),
  ('kidint', re.compile(r"\b(" + KIDN + r")\b.*\b(bumpers?|promos?|idents?|ids?|interstitials?|shorts?|be right back|up next|coming up|station break|commercial break)\b|\b(bumpers?|promos?|idents?|interstitials?)\b.*\b(" + KIDN + r")\b", re.I)),
+ ('vidstore', re.compile(r"\b(dvd|vhs|home video|videocassette|video)( \w+)? (trailer |release )?(promo|preview)s?\b|\bvideo (promo|trailer)\b|\btrailer promo\b", re.I)),
  ('bumper', re.compile(r"\bbumpers?\b|\bidents?\b|\binterstitials?\b|\bbe right back\b|\bstation break\b|\bnetwork ids?\b|\bup next\b|\bnow back to\b", re.I)),
  ('promo', re.compile(r"\bpromos?\b|\bfall (preview|lineup|campaign|season)\b|\bimage campaign\b|\btonight on\b|\bcoming up\b|\bnext week on\b|\bthis (week|fall) on\b|\bmust see tv\b|\btgif\b|\bseason premiere\b|\bseries premiere\b|\bsneak preview\b|\bworld premiere\b|\blineup\b|\bstay tuned\b", re.I)),
 ]
 ADWORD = re.compile(r'\b(commercials?|adverts?|advertisements?|tv spots?|tv ads?|ads)\b', re.I)
 def kind(t):
     for k, r in KW:
-        if r.search(t): return k
+        if r.search(t): return 'promo' if k == 'vidstore' and netst(t)[1] else k
     return ''
 def kind2(t, tag):
     k = kind(t)
@@ -184,7 +185,7 @@ def kind2(t, tag):
     if re.search(r'\bIDs?\b', t) and (net or st): return 'stationid' if st else 'bumper'
     if (net or st) and tag in THIN: return tag
     return ''
-NETRX = [('NBC', r'nbc'), ('CBS', r'cbs'), ('ABC', r'abc'), ('Fox', r'fox(?! kids| family)'), ('UPN', r'upn'), ('The WB', r"(the )?wb|kids'? ?wb"), ('PBS', r'pbs'), ('Nickelodeon', r'nickelodeon|nick jr\.?|nick at nite|nicktoons|snick'), ('MTV', r'mtv'), ('VH1', r'vh-?1'), ('Cartoon Network', r'cartoon network|toonami|adult swim'), ('Disney Channel', r'disney channel|toon disney|zoog disney|playhouse disney'), ('Fox Kids', r'fox kids'), ('Fox Family', r'fox family|family channel'), ('USA', r'usa network|usa cartoon express'), ('TBS', r'w?tbs|superstation'), ('TNT', r'tnt'), ('WGN', r'wgn'), ('HBO', r'hbo'), ('Showtime', r'showtime'), ('Cinemax', r'cinemax'), ('ESPN', r'espn2?'), ('CNN', r'cnn|headline news'), ('TNN', r'tnn|nashville network'), ('Lifetime', r'lifetime'), ('Comedy Central', r'comedy central|ha!'), ('Sci-Fi Channel', r'sci-?fi channel'), ('Discovery', r'discovery channel'), ('TLC', r'tlc|learning channel'), ('BET', r'bet'), ('The Weather Channel', r'weather channel'), ('AMC', r'amc'), ('TV Land', r'tv land'), ('A&E', r'a&e'), ('PAX', r'pax( tv)?'), ('History Channel', r'history channel'), ('Z Channel', r'z channel'), ('Court TV', r'court tv'), ('FX', r'fx'), ('Animal Planet', r'animal planet'), ('Food Network', r'food network'), ('HGTV', r'hgtv'), ('MSNBC', r'msnbc'), ('CNBC', r'cnbc'), ('C-SPAN', r'c-span'), ('Bravo', r'bravo'), ('Travel Channel', r'travel channel'), ('E!', r'e! entertainment'), ('Odyssey', r'odyssey channel|odyssey network'), ('TV Guide Channel', r'prevue|tv guide channel'), ('Syndication', r'syndicated|syndication')]
+NETRX = [('NBC', r'nbc'), ('CBS', r'cbs'), ('ABC', r'abc'), ('Fox', r'fox(?! kids| family)'), ('UPN', r'upn'), ('The WB', r"(the )?wb|kids'? ?wb"), ('PBS', r'pbs'), ('Nickelodeon', r'nickelodeon|nick jr\.?|nick at nite|nicktoons|snick'), ('MTV', r'mtv'), ('VH1', r'vh-?1'), ('Cartoon Network', r'cartoon network|toonami|adult swim'), ('Disney Channel', r'disney channel|toon disney|zoog disney|playhouse disney'), ('Fox Kids', r'fox kids'), ('Fox Family', r'fox family|family channel'), ('USA', r'usa network|usa cartoon express'), ('TBS', r'w?tbs|superstation'), ('TNT', r'tnt'), ('WGN', r'wgn'), ('HBO', r'hbo'), ('Showtime', r'showtime'), ('Cinemax', r'cinemax'), ('ESPN', r'espn2?'), ('CNN', r'cnn|headline news'), ('TNN', r'tnn|nashville network'), ('Lifetime', r'lifetime'), ('Comedy Central', r'comedy central|ha!'), ('Sci-Fi Channel', r'sci-?fi channel'), ('Discovery', r'discovery channel'), ('TLC', r'tlc|learning channel'), ('BET', r'bet'), ('The Weather Channel', r'weather channel'), ('AMC', r'amc'), ('TV Land', r'tv land'), ('A&E', r'a&e'), ('PAX', r'pax( tv)?'), ('G4', r'g4tv\.com|g4|techtv|zdtv'), ('History Channel', r'history channel'), ('Z Channel', r'z channel'), ('Court TV', r'court tv'), ('FX', r'fx'), ('Animal Planet', r'animal planet'), ('Food Network', r'food network'), ('HGTV', r'hgtv'), ('MSNBC', r'msnbc'), ('CNBC', r'cnbc'), ('C-SPAN', r'c-span'), ('Bravo', r'bravo'), ('Travel Channel', r'travel channel'), ('E!', r'e! entertainment'), ('Odyssey', r'odyssey channel|odyssey network'), ('TV Guide Channel', r'prevue|tv guide channel'), ('Syndication', r'syndicated|syndication')]
 NETRX = [(n, re.compile(r'(?<![\w&])(' + r + r')(?![\w&])', re.I)) for n, r in NETRX]
 CALLRX = re.compile(r"(?<![\w'])([WK][A-Z]{3}|[WK][A-Z]{2})(?:-(?:TV|DT|LP|CA|\d{1,2})\b| ?-? ?(?:TV|Channel|Ch\.?|NewsCenter|News|Eyewitness|Action|Newswatch|ID|IDs|Ident|Idents|Sign[- ]?[Oo]ff|Sign[- ]?[Oo]n|Promo|Promos|Station) ?\d{0,2}\b| \d{1,2}\b)")
 CALLSET = set(c.upper() for c in CALLS)
@@ -210,7 +211,7 @@ def exact(t):
     if m: return '%s-%02d-%02d' % (m.group(3), MON[m.group(2).lower()], int(m.group(1)))
     return ''
 JUNK = re.compile(r"\b(citv|cbbc|cbeebies|atv home|teletoon|treehouse tv|u\.k|tv-?dx|dx-?tv|teleclub|eurosport|avslutning|sendeschluss|sendestart|testbild|nightcore|anthem of (?!the united states|america|the usa|the u\.s)\w+|himno|hino nacional|comerciales|comercial|comerciais|propagandas?|reklam\w*|publicit\w+|werbung|pubblicit\w+|hindi|tamil|telugu|zee tv|belarus\w*|ukrain\w*|albania\w*|morocc\w*|benin|romania\w*|bulgaria\w*|serbia\w*|croatia\w*|sloven\w+|slovak\w*|austria\w*|switzerland|iran\w*|iraq\w*|egypt\w*|nigeria\w*|kenya\w*|south africa\w*|pakistan\w*|bangladesh\w*|sri lanka\w*|screen ?record\w*|screencast|test upload|test video)\b", re.I)
-JUNKF = re.compile(r"\b(mixtape|dj set|music video|lyric video|karaoke|amv|vlog|unboxing|speedrun|fnaf|roblox|sermon(?!ette)|church service|city council|board meeting|school board|commission meeting|town hall|press conference|webcast|vice news|shoot interview|fictional|alternate history|promo only|promo cd|promo single|promotional film|election promo|astra|creative commons|cc-by\S*|license bumper|copyright bumper|rating classification|go ?animate|xtranormal|wrapper offline|vyond|my version|analog|dtv|digital transition|check it)\b", re.I)
+JUNKF = re.compile(r"\b(mixtape|dj set|music video|lyric video|karaoke|amv|vlog|unboxing|speedrun|fnaf|roblox|sermon(?!ette)|church service|city council|board meeting|school board|commission meeting|town hall|press conference|webcast|vice news|shoot interview|fictional|alternate history|promo only|promo cd|promo single|promotional film|election promo|astra|creative commons|cc-by\S*|license bumper|copyright bumper|rating classification|go ?animate|xtranormal|wrapper offline|vyond|my version|analog|dtv|digital transition|check it|megamix|remix|club edit|interstitial (lung|cystitis)|outtakes)\b", re.I)
 OUTY = re.compile(r"(?<![\d$#])(19[0-7]\d|198[0-3]|200[5-9]|20[1-3]\d)(?!\d|'?s)|\b(19)?[4-7]0'?s\b|\b20[12]0'?s\b|(?<![\d.:])(0?[1-9]|1[0-2])[/-](0?[1-9]|[12]\d|3[01])[/-](0[5-9]|[12]\d|[4-7]\d|8[0-3])(?!\d)", re.I)
 PSAB = re.compile(r"\b(mcgruff|the more you know|one to grow on|cbs cares|brain on drugs|drug[- ]free america|smokey (the )?bear|woodsy|crash test dumm\w+|just say no|time for timer|bod squad|schoolhouse rock|ad council)\b", re.I)
 RET2 = re.compile(r"\b(vhs|betamax|(19)?80'?s|(19)?90'?s|eighties|nineties|retro|vintage|old school|aircheck|off[- ]air|[wk][a-z]{2,3}-tv)\b", re.I)
@@ -222,7 +223,7 @@ ERAB = re.compile(r"\b(atari|colecovision|intellivision|betamax|cabbage patch|te
 def outside(t):
     return bool(OUTY.search(t)) and not YR.search(t)
 def era(t, col, k):
-    v = next((c for c in col if VCOL.search(c)), '')
+    v = next((c for c in col if VCOL.search(c) and (k in THIN or c != 'television')), '')
     if v: return 'collection ' + v
     if RET2.search(t): return 'retro wording'
     if k in THIN:
@@ -240,6 +241,8 @@ def junk(t, q):
     if WRES.search(t) and not netst(t)[0]: return True
     if re.search(r'\bradio\b|\b(fm|am) ?\d', t, re.I) and not netst(t)[1]: return True
     if MODW.search(t) or outside(t): return True
+    if re.search(r'\(wb promo\)', t, re.I): return True
+    if q == 'psa' and re.search(r'\bnews\b|newscenter|today show|this morn|nightline|newsday|first news', t, re.I): return True
     if re.search(r'\bclose-? ?downs?\b', t, re.I) and not netst(t)[1]: return True
     if q == 'signoff' and re.search(r'\bnational[- ]anthem\b', t, re.I) and not re.search(r'sign|star[- ]spangled|united states|usa|u\.s\.|america|[WK][A-Z]{2,3}', t): return True
     return False
@@ -266,7 +269,7 @@ for y in list(range(1984, 1990)) + list(range(2001, 2005)):
 QA += FT
 GEN = re.compile(r'^(opensource|community|fav-|folksoundomy|additional_collections|deemphasizedmovies|movies$|television$|youtubearchive|vintage_?software|opensource_media|stream_only|podcasts|audio)', re.I)
 def colscan():
-    ids = sorted(set(r[0] for r in oldads)); random.seed(11); random.shuffle(ids); ids = ids[:1500]
+    ids = sorted(set(r[0] for r in oldads if r[3])); random.seed(11); random.shuffle(ids); ids = ids[:1500]
     ids += sorted(set(x['i'] for x in oldfl if x['q'] in ('promo', 'bumper', 'stationid', 'signoff', 'psa', 'kidint', 'moviech', 'newsbrk')))
     cc = collections.Counter(); uu = collections.Counter()
     def one(i):
@@ -278,7 +281,7 @@ def colscan():
         for cs, u in ex.map(one, ids):
             cc.update(cs)
             if u: uu[u] += 1
-    cols = [c for c, n in cc.most_common(90) if n >= 4]; ups = [u for u, n in uu.most_common(160) if n >= 3]
+    cols = [c for c, n in cc.most_common(45) if n >= 4]; ups = [u for u, n in uu.most_common(90) if n >= 3]
     print('route collections', len(cols), [(c, cc[c]) for c in cols[:40]], flush=True)
     print('route uploaders', len(ups), [n for u, n in uu.most_common(40)], flush=True)
     return cols, ups
@@ -303,6 +306,7 @@ def fixfl(x):
     if net: x['net'] = net
     if st: x['st'] = st
     if dt and (not x.get('d') or dt[:4] == x['d'][:4]): x['dt'] = dt
+    if x['q'] in ('promo', 'bumper') and not net and not st and not x.get('keep'): x['keep'] = 'maybe'; x['why'] = 'no network or station in title'
     return x
 def plan():
     global mine
@@ -311,10 +315,10 @@ def plan():
     if oldads:
         cols, ups = colscan()
         for k, c in enumerate(cols):
-            items = scrape('collection:"%s" AND mediatype:movies' % c, 60000)
+            items = scrape('collection:"%s" AND mediatype:movies' % c, 30000)
             print('ad col', c, 'hits', len(items), 'new', take('adc', items), 'total', len(seen), flush=True)
         for k, u in enumerate(ups):
-            items = scrape('uploader:"%s" AND mediatype:movies' % u, 60000)
+            items = scrape('uploader:"%s" AND mediatype:movies' % u, 30000)
             print('ad up', k, 'hits', len(items), 'new', take('adc', items), 'total', len(seen), flush=True)
     for k, (tag, q) in enumerate(QX):
         items = scrape('(' + q + ') AND mediatype:movies')
