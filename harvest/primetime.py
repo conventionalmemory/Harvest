@@ -334,22 +334,33 @@ def meta(c):
     lang = flat(m.get('language')).lower()
     if lang and not re.search(r'eng|english|^en$', lang): return rej(c, 'lang')
     cap = 60 if c.get('must') else 30; hb = 0; nomp4 = sum(1 for f in j['files'] if re.search(r'\.(mkv|avi|mpg|mpeg|m4v|mov|ts|vob|iso|ogv|webm)$', f.get('name', '').lower()))
-    groups = {}
+    groups = {}; alt = {}; fmts = collections.Counter()
     for f in j['files']:
-        if not f.get('name', '').lower().endswith('.mp4'): continue
-        key = f.get('original') if f.get('source') == 'derivative' else f['name']
-        groups.setdefault(key, []).append(f)
-    files = []
+        n = f.get('name', '').lower()
+        if n.endswith(('.mp4', '.m4v')):
+            key = f.get('original') if f.get('source') == 'derivative' else f['name']
+            groups.setdefault(key, []).append(f); fmts[f.get('format', '')] += 1
+        elif n.endswith(('.mkv', '.mov', '.webm')) and f.get('source') != 'derivative': alt[f['name']] = f
+    files = []; hbf = []
     for key, g in groups.items():
-        g.sort(key=lambda f: RANK.get(f.get('format', ''), 9)); b = g[0]
-        if RANK.get(b.get('format', ''), 9) == 9: continue
+        g.sort(key=lambda f: RANK.get(f.get('format', ''), 5)); b = g[0]
         d = secs(b.get('length') or next((x.get('length') for x in g if x.get('length')), 0))
         if d < 240: continue
         sz = float(b.get('size') or 0)
-        if sz and sz / 1e6 / (d / 60) > cap: hb += 1; continue
+        if sz and sz / 1e6 / (d / 60) > cap: hbf.append([b['name'], round(d), b.get('format', '')]); continue
         if sz and sz / 1e6 / (d / 60) > 30: c['hb'] = 1
         files.append([b['name'], round(d), b.get('format', '')])
-    if not files: return rej(c, 'bitrate' if hb else 'nomp4_other' if nomp4 else 'nofiles')
+    why = ''
+    if not files and hbf: files = hbf; c['hb'] = 2; why = 'very high bitrate files only'
+    if not files and alt:
+        for n, f in alt.items():
+            if n in groups: continue
+            d = secs(f.get('length') or 0)
+            if d >= 240: files.append([n, round(d), f.get('format', '')])
+        if files: why = 'no mp4; mkv/mov/webm originals only (may not play in every browser)'
+    if not files:
+        if fmts: REJ['fmt ' + ' / '.join(sorted(fmts))[:80]] += 1
+        return rej(c, 'nomp4_other' if nomp4 else 'nofiles')
     if sum(f[1] for f in files) < 900: return rej(c, 'short')
     files.sort(key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f[0])])
     sh = BYT[c['k']]
@@ -357,7 +368,8 @@ def meta(c):
     x = {'i': c['identifier'], 'q': KMAP.get(c['kind'], 'prime'), 't': t, 'd': '', 'y': '', 'c': [], 's': flat(m.get('subject')).replace(' ', ' ')[:200], 'ds': desc, 'f': files[:500 if sh.get('guide') else 60], 'dl': c.get('downloads') or 0, 'k': c['k'], 'e': 0, 'net': c['net'], 'ad': '', 'r': c.get('r', 't'), 'nf': len(files)}
     col = m.get('collection', []); x['c'] = ([col] if isinstance(col, str) else col)[:4]
     x['d'] = flat(m.get('date'))
-    if c.get('hb'): x['hb'] = 1
+    if c.get('hb'): x['hb'] = c['hb']
+    if why: maybe(x, why)
     if x['r'] == 'v':
         if not verify(sh, x): maybe(x, 'show match not verified by cast, description or episode lengths'); rej(c, 'verify_kept')
         x['r'] = 't'
@@ -425,7 +437,7 @@ def run_meta():
     json.dump(res, gzip.open(os.path.join(PARTS, 'pt-%d.json.gz' % SHARD), 'wt', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     print('shard done', len(res))
     print('REJ', sorted((k, v) for k, v in REJ.items() if isinstance(k, str)))
-    for (k, why), v in sorted(((k, v) for k, v in REJ.items() if not isinstance(k, str)), key=lambda kv: -kv[1])[:120]: print('REJSHOW', v, k[0], '|', k[1], '|', ' '.join(REJS[k]))
+    for k, v in sorted(((k, v) for k, v in REJ.items() if not isinstance(k, str)), key=lambda kv: -kv[1])[:160]: print('REJSHOW', v, k[0], '|', k[1], '|', ' '.join(REJS[k]))
 def merge():
     F = os.path.join(OUT, 'primetime.json.gz')
     keep, drop = load_old()
