@@ -12,6 +12,8 @@ SHARDS = int(os.environ.get('SHARDS', '8'))
 THREADS = int(os.environ.get('THREADS', '4'))
 BUDGET = float(os.environ.get('BUDGET_MIN', '300')) * 60
 T0 = time.time()
+FOCUS = os.environ.get('FOCUS', '') == '1'
+TOP = ['Seinfeld', 'Cheers', 'Frasier', 'Wings', 'The Fresh Prince of Bel-Air', 'Friends', 'The Simpsons']
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 CTX = {'client': {'clientName': 'WEB', 'clientVersion': '2.20240620.05.00', 'hl': 'en', 'gl': 'US'}}
 TODAY = datetime.date.today()
@@ -371,7 +373,9 @@ def coverage(S):
 def plan():
     S = load_shows(); G = load_guides(S); cov, se = coverage(S)
     tasks = []
+    fk = {nzk(x): (0 if x in TOP else 1) for x in MUST + TOP}
     for k, s in S.items():
+        if FOCUS and k not in fk: continue
         eps = G.get(k, [])
         if s.get('smax'): eps = [e for e in eps if e[0] <= s['smax']]
         eps = [e for e in eps if e[0] and str(e[2])[:4] <= '2004' and (not e[2] or str(e[2])[:4] >= '1960')]
@@ -395,8 +399,15 @@ def plan():
             for e in miss[:700]:
                 et = nz(str(e[3]))
                 if len(et) >= 6 and not re.match(r'^(episode|part|pilot|show|chapter)\b', et): epq.append(t + ' ' + str(e[3]))
-        tasks.append({'k': k, 'title': t, 'q': s['q'], 'net': s['net'], 'y0': s['y0'], 'y1': s['y1'], 'kind': s['kind'], 'al': sorted(s['al']), 'amb': s.get('amb', 0), 'tier': s['tier'], 'rank': s['rank'], 'have': have, 'need': need, 'eps': eps, 'cov': sorted(se.get(k, set())), 'qs': [q.strip() for q in qs], 'epq': epq})
-    tasks.sort(key=lambda t: (t['tier'], t['rank']))
+        pri = s['tier']
+        if FOCUS:
+            pri = fk[k]; qs = [t + ' full episode', t + ' full episodes'] + [t + ' season ' + str(n) + ' full episode' for n in sorted(set(e[0] for e in eps))]; epq = []
+            for e in miss[:900]:
+                epq += [t + ' s%02de%02d' % (e[0], e[1]), t + ' season %d episode %d' % (e[0], e[1])]
+                et = nz(str(e[3]))
+                if len(et) >= 5 and not re.match(r'^(episode|part|pilot|show|chapter)\b', et): epq.append(t + ' ' + str(e[3]) + ' full episode')
+        tasks.append({'pri': pri, 'foc': 1 if FOCUS else 0, 'k': k, 'title': t, 'q': s['q'], 'net': s['net'], 'y0': s['y0'], 'y1': s['y1'], 'kind': s['kind'], 'al': sorted(s['al']), 'amb': s.get('amb', 0), 'tier': s['tier'], 'rank': s['rank'], 'have': have, 'need': need, 'eps': eps, 'cov': sorted(se.get(k, set())), 'qs': [q.strip() for q in qs], 'epq': epq})
+    tasks.sort(key=lambda t: (t['pri'], t['tier'], t['rank']))
     os.makedirs(PARTS, exist_ok=True)
     json.dump(tasks, gzip.open(os.path.join(PARTS, 'yt_plan.json.gz'), 'wt', encoding='utf-8'))
     print('shows in lists', len(S), 'guides', len(G), 'tasks', len(tasks), 'queries', sum(len(t['qs']) + len(t['epq']) for t in tasks))
@@ -474,9 +485,10 @@ def match(t, c, M):
         if not d or not ('1984-01-01' <= d <= '2004-12-31'): return None
         r['ad'] = d
     elif not r['se']:
-        if t['amb'] or eps is not None and eps['se'] and t['tier'] <= 2: return None
+        if not t.get('foc') and (t['amb'] or eps is not None and eps['se'] and t['tier'] <= 2): return None
+        if t.get('foc') and eps is not None and eps['se']: r['m'] = 1
         if not re.search(r'(?i)full episode|complete episode|\bepisode\s*\d+|\bep\.?\s*\d+|\b(19[89]\d|200[0-4])\b', T): return None
-    if t['amb'] and not r['se'] and t['kind'] != 'date': return None
+    if t['amb'] and not r['se'] and t['kind'] != 'date' and not t.get('foc'): return None
     y = r['ad'][:4] if r['ad'] else ''
     if not y:
         m2 = re.search(r'\b(19[89]\d|200[0-4])\b', T)
@@ -495,7 +507,7 @@ def build_M(tasks):
         ti = []
         for e in eps:
             et = nz(str(e[3]))
-            if len(et) >= 7 and cnt[et] == 1 and len(et.split()) >= 2 and not re.match(r'^(episode|part|pilot|show|chapter) ', et): ti.append((et, e))
+            if len(et) >= 7 and cnt[et] == 1 and (len(et.split()) >= 2 or t.get('foc')) and not re.match(r'^(episode|part|pilot|show|chapter) ', et): ti.append((et, e))
         M[t['k']] = {'se': {(e[0], e[1]): e for e in eps}, 'ti': ti}
     return M
 
@@ -515,8 +527,8 @@ def run_search():
     byk = {t['k']: t for t in tasks}
     jobs = []
     for i, t in enumerate(tasks):
-        for j, q in enumerate(t['qs']): jobs.append((t['tier'], j, t['k'], q, 2))
-        for j, q in enumerate(t['epq']): jobs.append((t['tier'] + 0.5, j, t['k'], q, 1))
+        for j, q in enumerate(t['qs']): jobs.append((t.get('pri', t['tier']), j, t['k'], q, 2))
+        for j, q in enumerate(t['epq']): jobs.append((t.get('pri', t['tier']) + 0.5, j, t['k'], q, 1))
     jobs.sort(key=lambda x: (x[0], x[1]))
     jobs = [j for n, j in enumerate(jobs) if n % SHARDS == SHARD]
     print('shard', SHARD, 'queries', len(jobs))
@@ -525,6 +537,7 @@ def run_search():
         t = byk[k]; r = match(t, c, M)
         if not r: return False
         off, why = stable(c)
+        if r.get('m'): why = 'maybe: episode not identified' + ('; ' + why if why else ''); c = dict(c, maybe=1)
         if not why:
             STAT['unstable'] += 1
             if c['age'] >= 0 and c['age'] < 1 and c.get('views', 0) < 300: return False
@@ -630,7 +643,7 @@ def merge():
     M = build_M(tasks); byt = {t['title']: t for t in tasks}; purged = 0
     for it in old:
         t = byt.get(it['k'])
-        if t:
+        if t and not str(it.get('why', '')).startswith('maybe: episode not identified'):
             r = match(t, {'t': it['t'], 'dur': it['dur'], 'live': 0}, M)
             if not r: purged += 1; continue
             if r['ad'] and not it.get('ad') and re.match(r'\d{4}-\d\d-\d\d$', r['ad']): it['ad'] = r['ad']; it['e'] = int(r['ad'][:4])

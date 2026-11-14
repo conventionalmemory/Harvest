@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: full or probe
+        description: full, focus or probe
         default: full
 permissions:
   contents: write
@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Plan
-        run: MODE=plan python3 harvest/yt_shows.py
+        run: MODE=plan FOCUS=${{ inputs.mode == 'focus' && '1' || '0' }} python3 harvest/yt_shows.py
       - uses: actions/upload-artifact@v4
         with:
           name: yt-plan
@@ -74,6 +74,11 @@ jobs:
         run: |
           git config user.name "Conventional Memory"
           git config user.email "conventionalmemory@users.noreply.github.com"
-          git add catalog/yt_shows.json.gz
-          git commit -q -m "Update video episodes catalog" || exit 0
-          for i in 1 2 3 4 5 6 7 8; do git pull -q --rebase && git push && break; sleep $((10 + RANDOM % 20)); done
+          cp catalog/yt_shows.json.gz /tmp/yt_shows.json.gz
+          for i in 1 2 3 4 5 6 7 8; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/yt_shows.json.gz catalog/yt_shows.json.gz && git add catalog/yt_shows.json.gz || { sleep $((10 + RANDOM % 20)); continue; }
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update video episodes catalog" && git push origin HEAD:main && exit 0
+            sleep $((10 + RANDOM % 20))
+          done
+          exit 1
