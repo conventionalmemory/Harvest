@@ -581,10 +581,13 @@ if MODE == 'plan':
     Q = [(n, 'mediatype:movies AND ' + q) for n, q in D['Q0'] if n in SPORTQ] + [(n, 'mediatype:movies AND ' + q) for n, q in EXTRA]
     print('known', len(have), 'queries', len(Q), flush=True)
     seen = {}; stat = collections.defaultdict(collections.Counter); why = collections.Counter(); ex_why = collections.defaultdict(list)
-    def run(k): return k, scrape(Q[k][1])
+    PB = float(os.environ.get('PLAN_BUDGET_MIN', '140')) * 60
+    def run(k): return k, (scrape(Q[k][1]) if time.time() - T0 < PB else None)
     with ThreadPoolExecutor(6) as ex:
         for k, items in ex.map(run, range(len(Q))):
-            name = Q[k][0]; stat[name]['raw'] = len(items)
+            name = Q[k][0]
+            if items is None: stat[name]['skipped_budget'] = 1; print('query', name, 'skipped: time budget', flush=True); continue
+            stat[name]['raw'] = len(items)
             for it in items:
                 i = it['identifier']
                 if i in have or i in seen: stat[name]['x_have'] += 1; continue
