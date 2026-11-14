@@ -77,6 +77,8 @@ QF = [
 ]
 NOTAD = re.compile(r"\b(radio|podcast|print ad|magazine ad|newspaper|billboard|jingle only|audio only|soundtrack|behind the scenes|making of|outtakes?|bloopers?|banned|uncensored|nsfw|review|reaction|ranking|top \d+|history of|documentary|analysis|explained|commentary|interview|lecture|presentation|slideshow|gameplay|longplay|walkthrough|pilot|episode|full movie|full show)\b", re.I)
 COMP = re.compile(r"\b(compilation|collection|mega|ultimate|marathon|hours? of|\d+ ?hours?|\d+ ?hrs?|volume|vol\.?|part \d+|block|blocks|break|breaks|reel|tape|montage|mix|pack|bundle|various|assorted|misc|lot of|\d{2,} commercials)\b", re.I)
+MODW = re.compile(r"\b(covid|coronavirus|pandemic|vaping|vape|iphone|ipad|android|smartphone|podcast|zoom|facebook|twitter|instagram|tiktok|youtube channel|livestream|webinar|4k|1080p|uhd|streaming|netflix|hulu|obamacare|bitcoin|crypto|uber|lyft|hashtag|selfie|drone|census 20\d\d|fentanyl|opioid|e-cig|face mask|social distanc|vaccin)\b|#\w", re.I)
+RETRO = re.compile(r"\b(vhs|betamax|80'?s|90'?s|eighties|nineties|retro|vintage|classic|old school|aircheck|off[- ]air|[wk][a-z]{2,3}-tv|[wk][a-z]{3} ?\d{1,2})\b", re.I)
 ADT = re.compile(r'\b(commercials?|ads?|adverts?|advertisements?|tv spots?|spots?|promos?|bumpers?|psa|idents?|station id)\b', re.I)
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
 YR = re.compile(r'(?<![\d$#])(198[4-9]|199\d|200[0-4])(?!\d)')
@@ -231,36 +233,45 @@ def meta(it):
     if isinstance(col, str): col = [col]
     up = str(m.get('uploader', '') or m.get('creator', ''))[:40]
     tag = it['q']
+    maybe = ''
+    if not ds:
+        my = 0
+        for v in (m.get('date'), m.get('year')):
+            mm = re.match(r'(\d{4})', str(v or ''))
+            if mm: my = max(my, int(mm.group(1)))
+        if MODW.search(title) or MODW.search(desc[:200]): rej['modernword'] += 1; return None
+        if 0 < my < 1984 and not dec: rej['pre84'] += 1; return None
+        if tag not in ('ad', 'adc') and my >= 2005 and not (dec or RETRO.search(title)): rej['moderndate'] += 1; return None
+        maybe = 'no date in title or description' + ('; item date %d' % my if my else '')
+        if not dec: dec = '80s' if re.search(r'\b(atari|colecovision|intellivision|betamax|cabbage patch|teddy ruxpin|new coke|spuds|max headroom|zayre|crazy eddie)\b', title, re.I) else '90s'
     base = {'i': it['identifier'], 't': title[:200], 'd': ds, 'y': ds[:4], 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:300], 'dl': it.get('downloads') or 0, 'u': up, 'dec': dec, 'src': src}
+    if maybe: base['keep'] = 'maybe'; base['why'] = maybe
     if tag == 'adc' and not ADT.search(title): rej['colnotad'] += 1; return None
     if tag in ('ad', 'adc'):
         if NOTAD.search(title): rej['notad'] += 1; return None
         if NONUS.search(title): rej['nonus'] += 1; return None
-        if not ds and not dec: rej['undated'] += 1; return None
         singles = [f for f in files if 5 <= f[1] <= 125]
         if len(files) == 1 and singles:
             if COMP.search(title) and files[0][1] > 70: rej['compshort'] += 1; return None
-            return ('ad', [[it['identifier'], files[0][0], files[0][1], ds, title[:120], dec]])
+            return ('ad', [[it['identifier'], files[0][0], files[0][1], ds, title[:120], dec] + (['maybe', maybe] if maybe else [])])
         if len(files) > 1 and len(singles) >= max(2, len(files) * .8) and len(files) <= 400:
             rows = []
             for f in singles[:400]:
                 stem = re.sub(r'\.(ia\.)?mp4$', '', f[0].split('/')[-1]); stem = re.sub(r'[_]+', ' ', stem)
                 fd, fdec, _ = when(stem, '', '', '')
-                rows.append([it['identifier'], f[0], f[1], fd or ds, (stem if len(stem) > 12 else title[:80] + ' - ' + stem)[:120], fdec or dec])
+                rows.append([it['identifier'], f[0], f[1], fd or ds, (stem if len(stem) > 12 else title[:80] + ' - ' + stem)[:120], fdec or dec] + (['maybe', maybe] if maybe and not fd else []))
             return ('ad', rows)
         if tag == 'ad' and len(files) <= 3 and 126 <= tot <= 900:
             base.update(q='adbreak', f=files); return ('fl', base)
         rej['adlen'] += 1; return None
     if tag == 'adbreak':
         if not (120 <= tot <= 900) or len(files) > 4: rej['breaklen'] += 1; return None
-        if not ds and not dec: rej['undated'] += 1; return None
         base.update(q='adbreak', f=files); return ('fl', base)
     lim = 3600 if tag in ('cablefill', 'weather', 'signoff') else 900
     if tot > lim and len(files) == 1: rej['long'] += 1; return None
     if len(files) > 1:
         files = [f for f in files if f[1] <= 600][:60]
         if not files: rej['long'] += 1; return None
-    if not ds and not dec: rej['undated'] += 1; return None
     base.update(q=tag, f=files); return ('fl', base)
 ads, fl = [], []
 with ThreadPoolExecutor(THREADS) as ex:
@@ -286,13 +297,13 @@ with gzip.open(FLF, 'wt', encoding='utf-8') as f: json.dump(allfl, f, ensure_asc
 print('ads rows new', len(ads), 'total', len(allads), 'items', len(set(r[0] for r in allads)), '| filler new', len(fl), 'total', len(allfl))
 by = collections.Counter(); bm = collections.Counter(); bd = collections.Counter()
 for r in allads:
-    y = r[3][:4] if r[3] else ('dec:' + (r[5] if len(r) > 5 else ''))
+    y = r[3][:4] if r[3] else ('dec:' + (r[5] if len(r) > 5 else '') + (' maybe' if len(r) > 6 else ''))
     by[y] += 1
     if len(r[3]) >= 7: bm[r[3][:4]] += 1
 print('ADS YEAR rows with_month')
 for k in sorted(by): print(' ', k, by[k], bm.get(k, 0))
 ft = collections.defaultdict(lambda: collections.Counter())
-for x in allfl: ft[x['q']][x.get('y') or ('dec:' + x.get('dec', '')) or '?'] += 1
+for x in allfl: ft[x['q']][x.get('y') or ('dec:' + x.get('dec', '') + ('?' if x.get('keep') else '')) or '?'] += 1
 print('FILLER TYPE total | per year')
 for k in sorted(ft, key=lambda k: -sum(ft[k].values())): print(' ', k, sum(ft[k].values()), '|', ' '.join('%s:%d' % (y, n) for y, n in sorted(ft[k].items())))
 random.seed(7)
