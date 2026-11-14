@@ -249,9 +249,7 @@
 "title": "MTV Rockumentary",
 "ct": "mtv",
 "run": "1989-1996",
-"alt": [
-"Rockumentary"
-],
+"alt": [],
 "net": "mtv",
 "q": [
 "description:(\"MTV Rockumentary\" OR \"Rockumentary\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"

@@ -43,14 +43,14 @@ def scrape(q):
         if not cursor or len(out) > 40000: break
     return out
 X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblada|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|fran[cç]ais|french dub|vf|vostfr|italiano|ita|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|rom[aâ]n[aă]|t[uü]rk[cç]e|русск|hindi|tamil|telugu|urdu|arabic|bahasa|tagalog|sub ?esp|subtitulado|temporada|cap[ií]tulo|episodio|folge|staffel|saison|aflevering|odcinek|uk version|australian version|canadian version|bbc|itv|channel 4|sky one|rte)\b"
-X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|playstation|xbox|rom ?hack|emulator|pinball|audiobook|ebook|pdf|podcast|reaction|reacts?|review|reviews|reviewed|recap|fan ?made|fan-?edit|fan film|amv|ytp|parody|spoof|karaoke|lyrics|lyric video|cover version|remix|mashup|mixtape|dj mix|dj set|full album|audio only|audio|radio show|radio broadcast|fm radio|vinyl|cassette|sheet music|tab|tutorial|lesson|how to|unboxing|slideshow|screensaver|wallpaper|test|sample|promos|bumpers|idents|ids|commercials only|commercial compilation|ad break|logo history|ident history|documentary about|retrospective|tribute band|fancam|bootleg audio|soundboard|xxx|porn|adult|hentai|nude|beavis|butt-?head|liquid television|jackass|real world|road rules|daria|celebrity deathmatch|aeon flux|cribs|punk'?d|osbournes|pimp my ride|jersey shore|teen mom|the hills|laguna beach|ridiculousness|catfish|top of the pops|totp|muchmusic|much music|much more music|mtv europe|mtv uk|mtv asia|mtv latino|mtv latin america|mtv brasil|mtv brazil|mtv japan|mtv india|mtv italia|mtv germany|mtv base|mtv russia|mtv nordic|mtv australia|mtv canada|mtv espa[nñ]a|mtv france|mtv polska|viva|the chart show|smash hits|rage abc|countdown abc|mtv classic|european|europe|australian feed|ac[uú]stico|completo|commercial breaks?|commercials -|commercials from|rock in rio|rockpalast|musikladen|formel eins|sanremo|eurovision)\b"
+X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|playstation|xbox|rom ?hack|emulator|pinball|audiobook|ebook|pdf|podcast|reaction|reacts?|review|reviews|reviewed|recap|fan ?made|fan-?edit|fan film|amv|ytp|parody|spoof|karaoke|lyrics|lyric video|cover version|remix|mashup|mixtape|dj mix|dj set|full album|audio only|audio|radio show|radio broadcast|fm radio|vinyl|cassette|sheet music|tab|tutorial|lesson|how to|unboxing|slideshow|screensaver|wallpaper|test|sample|promos|bumpers|idents|ids|commercials only|commercial compilation|ad break|logo history|ident history|documentary about|retrospective|tribute band|fancam|bootleg audio|soundboard|xxx|porn|adult|hentai|nude|beavis|butt-?head|liquid television|jackass|real world|road rules|daria|celebrity deathmatch|aeon flux|cribs|punk'?d|osbournes|pimp my ride|jersey shore|teen mom|the hills|laguna beach|ridiculousness|catfish|top of the pops|totp|muchmusic|much music|much more music|mtv europe|mtv uk|mtv asia|mtv latino|mtv latin america|mtv brasil|mtv brazil|mtv japan|mtv india|mtv italia|mtv germany|mtv base|mtv russia|mtv nordic|mtv australia|mtv canada|mtv espa[nñ]a|mtv france|mtv polska|viva|the chart show|smash hits|rage abc|countdown abc|mtv classic|vh1 classic|ads|commercial block|dvd collection|vcd|european|europe|australian feed|ac[uú]stico|completo|commercial breaks?|commercials -|commercials from|rock in rio|rockpalast|musikladen|formel eins|sanremo|eurovision)\b"
 X_MOD = r"(?<!\d)(20(0[5-9]|[1-3]\d))(?!\d)|\b(netflix|hulu|tiktok|twitch|livestream|zoom|vevo|spotify|pluto tv|mtv classic 20\d\d)\b"
 def ok_title(t):
     if not t: return False
     low = t.lower() + ' '
     if re.search(r'(?<!\d)\d{1,2}[./-]\d{1,2}[./-](19)?(7\d|8[0-3])(?!\d)|(?<!\d)(19(7\d|8[0-3]))[./ -]\d{1,2}[./ -]\d{1,2}(?!\d)', low) or (re.search(r'(?<!\d)19(6\d|7\d|8[0-3])(?!\d)', low) and not re.search(r'(?<!\d)(19(8[4-9]|9\d)|200[0-4])(?!\d)', low)): return False
     if re.search(r'[^\x00-\xff\u2010-\u2027\u2122]', t) or re.search(r'[ãõçñ]', low): return False
-    if re.search(X_FOR, low) or re.search(X_JUNK, low) or re.search(X_MOD, low): return False
+    if re.search(X_FOR, low) or re.search(X_JUNK, low) or re.search(X_MOD, low) or re.search(r'\bcommercials? ?[-+,(]|^commercials?\b|\b(1080p|2160p|4k) ?\d*$', low.strip()): return False
     return True
 def which(text, only=None):
     nt = ' ' + norm(text) + ' '; low = text.lower()
@@ -90,6 +90,7 @@ def era(s, title, d, y, desc=''):
     m = re.search(r"(?<!\d)'?(8[4-9]|9\d)(?!\d)", title)
     if m and lo <= 1900 + int(m.group(1)) <= hi and re.search(r"'\d\d|\b(mtv|vh1|awards|vma)\b", title.lower()): return 1900 + int(m.group(1))
     if oy and len(oy) > 1 and oy[0] >= 1984 and oy[-1] - oy[0] <= 2: return oy[0]
+    if s['ct'] == 'concert': return ''
     ys = [int(v) for v in re.findall(r'^(19[89]\d|200[0-4])', str(d or '')[:4])] + [int(v) for v in re.findall(r'^(19[89]\d|200[0-4])', str(y or '')[:4])]
     ys = [v for v in ys if lo <= v <= hi]
     return ys[0] if ys else ''
@@ -197,14 +198,19 @@ def meta0(it):
     if re.search(X_FOR, blob): return 'foreign'
     if re.search(r'\b(podcast|fan ?made|video ?game|gameplay|radio (show|program|broadcast)|audio only|mtv europe|mtv uk|muchmusic|top of the pops)\b', blob): return None
     if set(col) & {'podcasts', 'audio', 'opensource_audio', 'radioprograms', 'community_media', 'newsandpublicaffairs'}: return None
-    k = which(title)
-    if k is None and it.get('l') and (SHOWS[it['k']]['title'] in BLOB or (sum(f[1] for f in files) >= 1200 and re.search(r'\b(vhs|betamax|recorded|recording|aircheck|with commercials|broadcast|taped|tape|aired)\b', blob))): k = which(title + ' ' + str(subj) + ' ' + desc[:300], it['k'])
+    k = which(title); via = ''
+    if k is None and it.get('l'):
+        sk = SHOWS[it['k']]['title']
+        if sk in BLOB: k = which(title + ' ' + str(subj), it['k'])
+        elif sk != 'The Box' and sum(f[1] for f in files) >= 1200 and re.search(r'\b(vhs|betamax|recorded|recording|aircheck|with commercials|broadcast|taped|tape|aired)\b', blob):
+            k = which(title + ' ' + str(subj) + ' ' + desc[:300], it['k']); via = 'desc'
     if k is None: REJ[(SHOWS[it['k']]['title'], 'nomatch')] += 1; return None
     s = SHOWS[k]
     dy = re.match(r'(\d{4})', str(m.get('date') or ''))
     e = era(s, title, m.get('date'), m.get('year'), desc)
     if it['identifier'].startswith('youtube-') and not re.search(r'(19[89]\d|200[0-4])', title) and not e: return 'undated-yt'
     r = {'i': it['identifier'], 'q': 'music', 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': e, 'net': s.get('net', ''), 'ct': s['ct']}
+    if via: r['via'] = via
     ad = airdate(title) or airdate(desc[:200])
     if ad: r['ad'] = ad
     return r
@@ -224,11 +230,16 @@ if MODE == 'meta':
     print('shard done', len(res))
     print('REJECT', sorted(((k[0], k[1], n) for k, n in REJ.items()), key=lambda x: -x[2])[:80]); sys.exit(0)
 old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
-old = [x for x in old0 if keep(x) and which(x['t'] + ' ' + x.get('s', '') + ' ' + x.get('ds', '')[:300]) is not None]
-for x in old:
+old = []
+for x in old0:
+    if not keep(x): continue
     k = which(x['t'])
-    if k is None: k = which(x['t'] + ' ' + x.get('s', '') + ' ' + x.get('ds', '')[:300])
+    if k is None: k = which(x['t'] + ' ' + x.get('s', ''))
+    if k is not None and SHOWS[k]['title'] not in BLOB and which(x['t']) is None: k = None
+    if k is None and x.get('via') == 'desc': k = which(x['t'] + ' ' + x.get('s', '') + ' ' + x.get('ds', '')[:300])
+    if k is None: continue
     sh = SHOWS[k]; x['k'] = sh['title']; x['ct'] = sh['ct']; x['net'] = sh.get('net', ''); x['e'] = era(sh, x['t'], x.get('d'), x.get('y'), x.get('ds', ''))
+    old.append(x)
 print('refiltered existing', len(old0), '->', len(old))
 have = set(x['i'] for x in old) | known(); add = []
 for p in sorted(glob.glob(os.path.join(PARTS, 'musictv-*.json.gz'))):
