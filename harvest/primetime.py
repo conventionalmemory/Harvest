@@ -78,10 +78,10 @@ else:
 GENT = {'pilot', 'the pilot', 'finale', 'the finale', 'the reunion', 'the wedding', 'the trip', 'the movie', 'the letter', 'the show', 'the party', 'christmas', 'thanksgiving', 'halloween'}
 EP = {}
 for _k, _rows in GUIDE.items():
-    _t = {}
+    _t = {}; _own = {norm0(q) for s in SHOWS if s['title'] == _k for q in s['q']}
     for _s, _n, _nm, _d in _rows:
         _z = norm0(_nm)
-        if len(_z) >= 8 and _z not in GENT and len(_z.split()) >= 2: _t[_z] = (_s, _n)
+        if len(_z) >= 8 and _z not in GENT and _z not in _own and len(_z.split()) >= 2: _t[_z] = (_s, _n)
     EP[_k] = {'t': sorted(_t.items(), key=lambda kv: -len(kv[0])), 'd': {(_s, _n): _d for _s, _n, _nm, _d in _rows}, 'maxs': max([r[0] for r in _rows] or [0])}
 SE1 = re.compile(r"\bs(?:eason)?\s?(\d{1,2})[\s._-]{0,3}(?:e|ep|episode)\s?(\d{1,3})\b|\b(\d{1,2})x\s?(\d{1,3})\b")
 def file_se(sh, text):
@@ -257,7 +257,7 @@ def fhead(sh, path):
 def amb1(sh): return bool(sh.get('amb')) and len(sig(sh['q'][0])) <= 1
 def fcheck(sh, ident, files, real, text):
     g = EP.get(sh['title'])
-    if not g: return None
+    if not g or re.search(r'serieslan|latino|dublado|castellano', ident.lower()): return None
     one = len(files) <= 2; hit = []
     for f in files:
         b = clean(f[0].rsplit('/', 1)[-1])
@@ -279,6 +279,29 @@ def fv_ok(sh, x):
     if sh.get('junk') and re.search(sh['junk'], clean(t)): return None
     if t.startswith(sh['title'] + ' - '): t = t[len(sh['title']) + 3:]
     return fcheck(sh, x['i'], x['f'], t, (x.get('ds') or '') + ' ' + (x.get('s') or ''))
+OTHN = sorted({norm(q) for s in SHOWS for q in s['q'] if len(norm(q)) >= 4}, key=len, reverse=True)
+OTHR = re.compile(r'^(?:the )?(' + '|'.join(re.escape(o) for o in OTHN) + r') (?:s\d|season \d|\d{1,2}x\d)')
+def other_show(sh, name):
+    m = OTHR.match(norm(clean(name.rsplit('/', 1)[-1])))
+    return bool(m) and m.group(1) not in {norm(q) for q in sh['q']} and not any(norm(q).startswith(m.group(1)) for q in sh['q'])
+def desc_eps(sh, x, d):
+    g = EP.get(sh['title'])
+    if not g: return []
+    t = x['t']; z = ' ' + norm0(clean(t + ' . ' + d)) + ' '
+    tight = head(sh, t) == 2 and not re.search(r'[|/;]', t)
+    names = [norm0(q) for q in sh['q']]; out = set()
+    for k, v in g['t']:
+        p = z.find(' ' + k + ' ')
+        while p >= 0:
+            nx = z[p + len(k) + 2:].split(' ')[0]
+            if not re.fullmatch(r'[ivx]+|\d{1,2}', nx or '-') and (tight or any(n in z[max(0, p - 120):p] for n in names)): out.add(v); break
+            p = z.find(' ' + k + ' ', p + 1)
+    if tight:
+        for m in SE1.finditer(clean(t + ' . ' + d)):
+            v = (int(m.group(1)), int(m.group(2))) if m.group(1) else (int(m.group(3)), int(m.group(4)))
+            if v in g['d']: out.add(v)
+    if len(out) > sum(f[1] for f in x['f']) / 1200 + 1: return []
+    return ['S%02dE%02d' % v for v in sorted(out)]
 def load_old():
     F = os.path.join(OUT, 'primetime.json.gz')
     if not os.path.exists(F): return [], []
@@ -321,7 +344,7 @@ def plan():
                 qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(x + '*' for x in sorted(set(pre))) + ')', 'i'))
             if sh.get('guide'):
                 ws = norm(q).split()
-                extra = ' AND (' + ' OR '.join('"%s"' % c for c in sh['cast'][:5]) + ' OR season OR episode OR episodes OR sitcom OR ' + sh['net'] + ')' if len(sig(q)) <= 1 and sh.get('cast') else ''
+                extra = ' AND (' + ' OR '.join('"%s"' % c for c in sh['cast'][:5]) + (' OR season OR episode OR episodes OR sitcom OR ' + sh['net'] if sh['guide'] == 1 else '') + ')' if len(sig(q)) <= 1 and sh.get('cast') else ''
                 qs.append(('mediatype:movies AND "%s"%s AND NOT title:("%s")' % (ph, extra, ph), 'f'))
                 qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({sep.join(ws) + '*' for sep in ('-', '_', '.', '')})) + ') AND NOT title:("%s")' % ph, 'f'))
                 qs.append(('mediatype:movies AND identifier:(' + ' OR '.join(sorted({'*' + sep.join(ws) + '*' for sep in ('-', '_', '')})) + ') AND NOT title:("%s")' % ph, 'f'))
@@ -390,7 +413,7 @@ def plan():
     nrf = 0
     for x in keep:
         sh = BYT[x['k']]
-        if (sh.get('must') or sh.get('guide')) and x['i'] not in seen and 60 <= len(x['f']) < min(x.get('nf') or 9999, 500):
+        if (sh.get('must') or sh.get('guide')) and x['i'] not in seen and (60 <= len(x['f']) < min(x.get('nf') or 9999, 500) or (sh['title'] in EP and len(x['f']) <= 2 and not x.get('se') and not x.get('epx') and sum(f[1] for f in x['f']) >= 2400)):
             seen[x['i']] = {'identifier': x['i'], 'downloads': x.get('dl') or 0, 'k': sh['title'], 'net': sh['net'], 'kind': sh['kind'], 'first': sh['first'], 'last': sh['last'], 'must': 1 if sh.get('must') else 0, 'r': x.get('r', 't'), 'rf': 1}; nrf += 1
     print('refresh', nrf, flush=True)
     c = sorted(seen.values(), key=lambda x: (-x['must'], x['r'] != 't', -x['downloads']))
@@ -504,6 +527,9 @@ def meta(c):
     allf = list(x['f'])
     tag(sh, x)
     if sh.get('guide') and not x['f']: x['f'] = allf[:60]; maybe(x, 'no file matched the episode guide'); rej(c, 'tagempty_kept')
+    if sh.get('guide') and len(x['f']) <= 2 and not x.get('se'):
+        eps = desc_eps(sh, x, ' '.join(flat(m.get('description')).split())[:6000]); x['epx'] = 1
+        if eps: x['eps'] = eps
     return x
 def maybe(x, why):
     x['keep'] = 'maybe'; x['why'] = (x.get('why') + '; ' if x.get('why') and why not in x['why'] else '') + why if not (x.get('why') and why in x['why']) else x['why']
@@ -522,6 +548,7 @@ def tag(sh, x):
             if m and (any(q in base for q in qs) or re.match(r'(s\d{1,2} ?)?(episode|ep|e)? ?\d{1,2}\b', base)): v = (sn, int(m.group(1) or m.group(2)))
         if v and loose and fhead(sh, f[0]) < 2 and not ep_key(sh, clean(f[0].rsplit('/', 1)[-1])): v = None
         if sh.get('fjunk') and re.search(sh['fjunk'], clean(f[0])): continue
+        if other_show(sh, f[0]): continue
         rows.append((f, v))
     anyv = any(v and v in g['d'] for f, v in rows)
     for f, v in rows:
@@ -596,6 +623,9 @@ def merge():
                     break
     for p in sorted(glob.glob(os.path.join(PARTS, 'pt-*.json.gz'))):
         for x in json.load(gzip.open(p, 'rt', encoding='utf-8')):
+            if x['i'] in old and x.get('epx') and not keep[old[x['i']]].get('epx'):
+                keep[old[x['i']]]['epx'] = 1
+                if x.get('eps'): keep[old[x['i']]]['eps'] = x['eps']
             if x['i'] in old and len(x['f']) > len(keep[old[x['i']]]['f']):
                 o = keep[old[x['i']]]
                 for kk in ('t', 'r', 'sup', 'fv'):
@@ -643,17 +673,20 @@ def merge():
         flag = 'FOUND' if v[1] + r[1] >= 20 else 'THIN' if v[1] or v[3] or r[1] else 'MISSING'
         print('MUST', flag, '|', s['title'], '|', s['net'], '|', v[0], '|', v[1], '|', round(v[2] / 3600, 1), '|', v[3], '|', r[0], '|', r[1], '|', round(r[2] / 3600, 1), '|', ' '.join('S%d:%d' % kv for kv in sorted(v[4].items())))
     for k, g in EP.items():
-        got = collections.Counter()
+        got = collections.Counter(); tp = set()
         for x in allx:
             if x['k'] == k:
                 for r in x.get('se', []): got[r[1]] += 1
+                tp.update(x.get('eps') or [])
                 if x.get('sn') and not x.get('se') and any(f[1] >= 3600 for f in x['f']): discs[k].add(x['sn'])
         bys = collections.defaultdict(list)
         for (a, b) in sorted(g['d']): bys[a].append(b)
         for z in got2[k]: got[z] += 0
+        ntp = sum(1 for z in tp if not got[z] and z not in got2[k])
+        for z in tp: got2[k].add(z)
         tot = sum(1 for (a, b) in g['d'] if got['S%02dE%02d' % (a, b)])
         both = sum(1 for (a, b) in g['d'] if got['S%02dE%02d' % (a, b)] or 'S%02dE%02d' % (a, b) in got2[k])
-        print('== GUIDE', k, 'episodes tagged here', tot, 'with other catalogs', both, 'of', len(g['d']), 'disc packs for seasons', sorted(discs[k]))
+        print('== GUIDE', k, 'episodes tagged here', tot, 'with other catalogs and tape descriptions', both, 'only in tape descriptions', ntp, 'of', len(g['d']), 'disc packs for seasons', sorted(discs[k]))
         for a in sorted(bys):
             miss = [b for b in bys[a] if not got['S%02dE%02d' % (a, b)] and 'S%02dE%02d' % (a, b) not in got2[k]]
             print('GUIDESEASON', k, 'S%02d' % a, 'FOUND' if not miss else 'PARTIAL' if len(miss) < len(bys[a]) else 'DISCS' if a in discs[k] else 'MISSING', len(bys[a]) - len(miss), '/', len(bys[a]), 'missing', ' '.join(str(b) for b in miss))
