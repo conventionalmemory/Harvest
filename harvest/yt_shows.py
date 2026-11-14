@@ -88,8 +88,9 @@ EXTRA = [
  ("ABC World News Tonight", "news", "abc", 1978, 2030, "date", ["world news tonight"]),
  ("CBS Evening News", "news", "cbs", 1962, 2030, "date", ["cbs evening news"]),
 ]
-BADT = re.compile(r"(?i)\b(reaction|reacts?|review|recap|clips?|scenes?|best of|moments|compilation|trailer|promo|promos|opening|intro|theme song|bloopers|behind the scenes|interview|explained|top \d+|ranking|ranked|podcast|commentary|tribute|parody|edit|amv|mashup|remix|deleted|ending|outro|credits|teaser|preview|every time|supercut|funniest|highlights|montage|unboxing|gameplay|longplay|walkthrough|speedrun|cover|lyrics|karaoke|shorts?|tiktok|meme|fan ?made|restored in 4k|60 ?fps|upscale[d]?|ai |sub español|subtitulado|latino|dublado|legendado|español|castellano|deutsch|fran[cç]ais|italiano|hindi|tagalog|vostfr|ger sub|napisy|türkçe|عربي)\b")
+BADT = re.compile(r"(?i)\b(reaction|reacts?|review|recap|clips?|scenes?|best of|moments|compilation|trailer|promo|promos|opening|intro|theme song|bloopers|behind the scenes|interview|explained|top \d+|ranking|ranked|podcast|commentary|tribute|parody|edit|amv|mashup|remix|deleted|ending|outro|credits|teaser|preview|every time|supercut|funniest|highlights|montage|unboxing|gameplay|longplay|walkthrough|speedrun|cover|lyrics|karaoke|shorts?|tiktok|meme|fan ?made|restored in 4k|60 ?fps|upscale[d]?|ai |sub español|subtitulado|latino|dublado|legendado|español|castellano|deutsch|fran[cç]ais|italiano|hindi|tagalog|vostfr|ger sub|napisy|türkçe|عربي|partial|rus eng|eng rus|x264|x265|ac3|learn english|talk \|\||watch ?along|first time watching|breakdown|analysis|retrospective|rewatch)\b")
 PARTX = re.compile(r"(?i)\b(part|pt\.?)\s*([1-9]|one|two|three)\s*(of|/)\s*\d|\[\s*\d\s*/\s*\d\s*\]|\(\s*\d\s*/\s*\d\s*\)")
+LATEY = re.compile(r'\b(200[5-9]|20[12]\d)\b|\b\d{1,2}[./]\d{1,2}[./](0[5-9]|[12]\d)\b')
 OFFX = re.compile(r"(?i)(official|studios?|television|entertainment|network|pictures|classics|vault|archive|archives|museum|library|university|pbs|nbc|cbs|abc|fox|warner|paramount|sony|universal|disney|mgm|lionsgate|shout|filmrise|hasbro|mattel|wildbrain|nelvana|dhx|9 story|cookie jar|nickelodeon|cartoon network|a&e|history|discovery|c-span|associated press|ap archive)")
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
 
@@ -416,6 +417,8 @@ def pdate(s):
     if m: return '%s-%02d-%02d' % (m.group(3), MON[m.group(1)], int(m.group(2)))
     m = re.search(r'\b(\d{1,2})(?:st|nd|rd|th)?\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?,?\s+(19[5-9]\d|200\d)\b', s)
     if m: return '%s-%02d-%02d' % (m.group(3), MON[m.group(2)], int(m.group(1)))
+    m = re.search(r'air ?date:?\s+(\d{1,2}) (\d{1,2}) ([5-9]\d|0[0-4])\b', s)
+    if m and 1 <= int(m.group(1)) <= 12 and 1 <= int(m.group(2)) <= 31: return '%s-%02d-%02d' % (('19' if m.group(3)[0] in '56789' else '20') + m.group(3), int(m.group(1)), int(m.group(2)))
     return ''
 
 
@@ -442,6 +445,10 @@ def match(t, c, M):
         if len(a) < 2: continue
         if (' ' + n + ' ').find(' ' + a + ' ') >= 0: hit = a; break
     if not hit: return None
+    if LATEY.search(T) and not re.search(r'\b(19[5-9]\d|200[0-4])\b', T): return None
+    if ' ' not in hit and len(hit) <= 11:
+        n2 = re.sub(r'^the ', '', n)
+        if not (n2.startswith(hit + ' ') or n2 == hit or re.search(r'(^| )' + re.escape(hit) + r' (s ?\d|season|series \d|episode|ep \d|\d{1,3}x\d|\d)', n) or re.search(r'[:|\-] *' + re.escape(hit) + r'\b', T.lower())): return None
     if not durok(t, c['dur']): return None
     r = {'se': None, 'ep': '', 'ad': '', 'e': 0}
     m = re.search(r'(?i)\bs(?:eason)?\s*(\d{1,2})\s*[,:._-]?\s*e(?:p(?:isode)?)?\s*\.?\s*(\d{1,3})\b|\b(\d{1,2})x(\d{2})\b', T)
@@ -458,6 +465,10 @@ def match(t, c, M):
         for et, e in eps['ti']:
             if (' ' + rest + ' ').find(' ' + et + ' ') >= 0 and (not best or len(et) > len(best[0])): best = (et, e)
         if best: e = best[1]; r['se'] = [e[0], e[1]]; r['ep'] = e[3]; r['ad'] = str(e[2] or '')
+    if not r['ad'] and t['kind'] != 'date':
+        d0 = pdate(T)
+        if d0 and '1960-01-01' <= d0 <= '2004-12-31': r['ad'] = d0
+        elif d0 and d0 > '2004-12-31': return None
     if t['kind'] == 'date':
         d = pdate(T)
         if not d or not ('1984-01-01' <= d <= '2004-12-31'): return None
@@ -514,7 +525,10 @@ def run_search():
         t = byk[k]; r = match(t, c, M)
         if not r: return False
         off, why = stable(c)
-        if not why: STAT['unstable'] += 1; return False
+        if not why:
+            STAT['unstable'] += 1
+            if c['age'] >= 0 and c['age'] < 1 and c.get('views', 0) < 300: return False
+            why = 'maybe: up %s years, %d views' % (('%d' % int(c['age'])) if c['age'] >= 0 else '?', c.get('views', 0)); c = dict(c, maybe=1)
         key = c['vid']
         if key in acc: return True
         acc[key] = dict(c, k=k, r=r, off=off, why=why, src=src)
@@ -561,7 +575,7 @@ def run_search():
     best = {}
     for c in items:
         r = c['r']; ek = (c['k'], tuple(r['se']) if r['se'] else (r['ad'] or c['vid']))
-        sc = (c['off'] * 3 + (1 if c['age'] >= 4 else 0) + min(2, c['views'] / 5e5), c['dur'])
+        sc = (c['off'] * 3 + (0 if c.get('maybe') else 2) + (1 if c['age'] >= 4 else 0) + min(2, c['views'] / 5e5), c['dur'])
         if ek not in best or sc > best[ek][0]: best[ek] = (sc, c)
     items = [v[1] for v in best.values()]
     print('distinct episodes', len(items))
@@ -606,17 +620,25 @@ def merge():
         ad = r['ad'] if re.match(r'\d{4}-\d\d-\d\d$', r['ad'] or '') else ''
         if ad and not c['off'] and r['se'] and not ('1960-01-01' <= ad <= '2004-12-31'): rej['range'] += 1; continue
         it = {'i': 'yt:' + c['vid'], 'vid': c['vid'], 't': c['t'], 'ch': c['ch'], 'chid': c['chid'], 'off': c['off'], 'dur': dur, 'up': up, 'views': pl.get('views') or c['views'], 'q': 'rerun' if t['q'] == 'prime' and (t['y1'] and t['y1'] < 1984) else t['q'], 'k': t['title'], 'ad': ad, 'e': int(ad[:4]) if ad else r['e'], 'net': t['net'], 'ct': 'yt', 'why': c['why']}
+        if c.get('maybe'): it['keep'] = 'maybe'
         if r['se']: it['se'] = r['se']; it['ep'] = r['ep']
         if not up and c['age'] >= 0: it['agey'] = round(c['age'], 1)
         ek = (it['k'], tuple(it.get('se') or ()) or it['ad'] or it['vid'])
-        sc = (it['off'], it['views'])
+        sc = (it['off'], 0 if it.get('keep') else 1, it['views'])
         if ek not in new or sc > new[ek][0]: new[ek] = (sc, it)
     out = {}
+    M = build_M(tasks); byt = {t['title']: t for t in tasks}; purged = 0
     for it in old:
+        t = byt.get(it['k'])
+        if t:
+            r = match(t, {'t': it['t'], 'dur': it['dur'], 'live': 0}, M)
+            if not r: purged += 1; continue
+            if r['ad'] and not it.get('ad') and re.match(r'\d{4}-\d\d-\d\d$', r['ad']): it['ad'] = r['ad']; it['e'] = int(r['ad'][:4])
         ek = (it['k'], tuple(it.get('se') or ()) or it.get('ad') or it['vid'])
         out[ek] = it
+    print('purged from previous', purged)
     for ek, (sc, it) in new.items():
-        if ek not in out or (it['off'], it['views']) > (out[ek].get('off', 0), out[ek].get('views', 0)): out[ek] = it
+        if ek not in out or (it['off'], 0 if it.get('keep') else 1, it['views']) > (out[ek].get('off', 0), 0 if out[ek].get('keep') else 1, out[ek].get('views', 0)): out[ek] = it
     items = sorted(out.values(), key=lambda x: (x['k'], x.get('se') or [0, 0], x.get('ad') or ''))
     json.dump(items, gzip.open(OUT, 'wt', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     print('candidates', len(cand), 'rejected', dict(rej), 'previous', len(old), 'total', len(items), 'hours', round(sum(x['dur'] for x in items) / 3600))

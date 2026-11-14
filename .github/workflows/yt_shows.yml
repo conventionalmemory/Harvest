@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        shard: [0, 1, 2, 3, 4, 5]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
@@ -45,7 +45,7 @@ jobs:
           path: parts
       - run: pip install -q yt-dlp
       - name: Search
-        run: MODE=search SHARD=${{ matrix.shard }} SHARDS=12 THREADS=4 BUDGET_MIN=170 python3 harvest/yt_shows.py
+        run: MODE=search SHARD=${{ matrix.shard }} SHARDS=6 THREADS=4 BUDGET_MIN=150 python3 harvest/yt_shows.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
