@@ -8762,12 +8762,6 @@
 ]
 },
 {
-"title": "Cartoon Sushi",
-"q": "late",
-"net": "mtv",
-"original_run": "1997-1998"
-},
-{
 "title": "The Andy Dick Show",
 "q": "late",
 "net": "mtv",
@@ -9325,8 +9319,11 @@
 "q": "pub",
 "net": "pbs",
 "original_run": "1994-1994",
-"alt": [
-"Future Quest"
+"ambiguous": true,
+"req": [
+"pbs",
+"1994",
+"jeff goldblum"
 ]
 },
 {
