@@ -56,7 +56,7 @@ QA.append(('hol', 'title:(commercial OR commercials OR ad OR ads OR spot) AND ti
 QA.append(('subj', 'subject:("commercials" OR "tv commercials" OR "television commercials" OR "vintage commercials" OR "80s commercials" OR "90s commercials" OR "retro commercials" OR "classic commercials" OR "old commercials" OR "tv ads" OR "tv spots" OR "commercial" OR "advertising")'))
 for k in range(0, len(BR), 14):
     QA.append(('br%d' % (k // 14), 'title:(commercial OR commercials OR ad OR ads OR spot OR advert OR promo) AND title:(' + ' OR '.join('"%s"' % b for b in BR[k:k + 14]) + ')'))
-NETS = ['nbc', 'cbs', 'abc', 'fox', 'upn', '"the wb"', '"kids wb"', '"fox kids"', 'pbs', 'nickelodeon', '"nick at nite"', '"nick jr"', 'snick', 'mtv', 'vh1', '"cartoon network"', 'toonami', '"adult swim"', '"disney channel"', '"toon disney"', 'usa', 'tbs', 'tnt', 'wgn', 'hbo', 'showtime', 'cinemax', 'espn', 'cnn', 'tnn', 'lifetime', '"comedy central"', '"sci-fi channel"', '"family channel"', '"fox family"', 'a&e', 'discovery', 'tlc', 'bet', '"the box"', '"weather channel"', 'amc', 'tcm', '"tv land"', 'boomerang', 'noggin', 'zdtv', 'techtv', 'g4']
+NETS = ['nbc', 'cbs', 'abc', 'fox', 'upn', '"the wb"', '"kids wb"', '"fox kids"', 'pbs', 'nickelodeon', '"nick at nite"', '"nick jr"', 'snick', 'mtv', 'vh1', '"cartoon network"', 'toonami', '"adult swim"', '"disney channel"', '"toon disney"', 'usa', 'tbs', 'tnt', 'wgn', 'hbo', 'showtime', 'cinemax', 'espn', 'cnn', 'tnn', 'lifetime', '"comedy central"', '"sci-fi channel"', '"family channel"', '"fox family"', 'discovery', 'tlc', 'bet', '"the box"', '"weather channel"', 'amc', 'tcm', '"tv land"', 'boomerang', 'noggin', 'zdtv', 'techtv', 'g4']
 QF = [
  ('promo', 'title:(promo OR promos OR "fall preview" OR "fall lineup" OR "fall campaign" OR "image campaign" OR "must see tv" OR tgif OR "coming up next" OR "tonight on" OR "this fall" OR "sweeps" OR "movie of the week" OR "world premiere movie" OR "season premiere" OR "series premiere" OR "next week on" OR "stay tuned") AND title:(' + ' OR '.join(NETS) + ')'),
  ('bumper', 'title:(bumper OR bumpers OR ident OR idents OR interstitial OR interstitials OR "be right back" OR "now back to" OR "we\'ll be right back" OR "station break" OR "commercial bumper" OR "act break" OR "up next") AND title:(' + ' OR '.join(NETS) + ')'),
@@ -77,8 +77,10 @@ QF = [
 ]
 NOTAD = re.compile(r"\b(radio|podcast|print ad|magazine ad|newspaper|billboard|jingle only|audio only|soundtrack|behind the scenes|making of|outtakes?|bloopers?|banned|uncensored|nsfw|review|reaction|ranking|top \d+|history of|documentary|analysis|explained|commentary|interview|lecture|presentation|slideshow|gameplay|longplay|walkthrough|pilot|episode|full movie|full show)\b", re.I)
 COMP = re.compile(r"\b(compilation|collection|mega|ultimate|marathon|hours? of|\d+ ?hours?|\d+ ?hrs?|volume|vol\.?|part \d+|block|blocks|break|breaks|reel|tape|montage|mix|pack|bundle|various|assorted|misc|lot of|\d{2,} commercials)\b", re.I)
+ADT = re.compile(r'\b(commercials?|ads?|adverts?|advertisements?|tv spots?|spots?|promos?|bumpers?|psa|idents?|station id)\b', re.I)
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
-YR = re.compile(r'(?<![\d$#])(19[89]\d|200[0-4])(?!\d)')
+YR = re.compile(r'(?<![\d$#])(198[4-9]|199\d|200[0-4])(?!\d)')
+NONUS = re.compile(r'\((jp|uk|eu|pal|au|de|fr|es|it|br|kr)\)|\b(japan|japanese|emirates|boston pizza|tim hortons|canadian tire|jamaica|d&g|philippines|pinoy|india|bollywood)\b', re.I)
 def when(title, desc, date, year):
     t = title + ' '
     y = None; src = ''
@@ -92,7 +94,7 @@ def when(title, desc, date, year):
         if m and not re.search(r'(upload|posted|digitiz|transfer|captur|rip)\w* (on|in)? ?' + m.group(1), desc[:240], re.I): y = int(m.group(1)); src = 'd'
     if not y:
         for v in (date, year):
-            m = re.match(r'(19[89]\d|200[0-4])', str(v or ''))
+            m = re.match(r'(198[4-9]|199\d|200[0-4])', str(v or ''))
             if m and 1984 <= int(m.group(1)) <= 2004: y = int(m.group(1)); src = 'm'; break
     dec = ''
     if not y:
@@ -105,6 +107,9 @@ def when(title, desc, date, year):
     blob = (t + ' ' + desc[:240]).lower()
     m = re.search(r'\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?,? (\d{1,2},? )?' + str(y), blob) or re.search(r'\b' + str(y) + r'[ ,/-]+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)', blob)
     if m: mo = MON[m.group(1)]
+    if not mo:
+        m = re.search(r'(?<!\d)' + str(y) + r'[-_.](0[1-9]|1[0-2])[-_.](\d\d)(?!\d)', blob)
+        if m: mo = int(m.group(1))
     if not mo:
         m = re.search(r'(?<!\d)(\d{1,2})[/.-](\d{1,2})[/.-](' + str(y) + '|' + str(y)[2:] + r')(?!\d)', blob)
         if m and 1 <= int(m.group(1)) <= 12: mo = int(m.group(1))
@@ -125,11 +130,40 @@ def take(tag, items):
     for it in items:
         i = it['identifier']; t = str(it.get('title') or '')
         if i in have or i in mine or i in seen: continue
-        if BAD.search(t) or FOREIGN.search(t) or AUS.search(t): continue
+        if BAD.search(t) or FOREIGN.search(t) or AUS.search(t) or NONUS.search(t): continue
         if re.search(r'[^\x00-\xff‐-‧™]', t): continue
         if re.search(r'(?<!\d)20(0[5-9]|[1-3]\d)(?!\d)', t): continue
         it['q'] = tag; seen[i] = it; n += 1
     return n
+FT = []
+for y in list(range(1984, 1990)) + list(range(2001, 2005)):
+    FT.append(('ft%d' % y, '("%d commercial" OR "%d commercials" OR "commercial %d" OR "commercials %d" OR "%d tv commercial" OR "%d tv ad" OR "%d ad" OR "commercials from %d" OR "aired %d" OR "%d tv spot")' % ((y,) * 10)))
+QA += FT
+GEN = re.compile(r'^(opensource|community|fav-|folksoundomy|additional_collections|deemphasizedmovies|movies$|television$|youtubearchive|vintage_?software|opensource_media|stream_only|podcasts|audio)', re.I)
+def colscan():
+    ids = sorted(set(r[0] for r in oldads)); random.seed(11); random.shuffle(ids); ids = ids[:2500]
+    cc = collections.Counter(); uu = collections.Counter()
+    def one(i):
+        j = get('https://archive.org/metadata/' + urllib.parse.quote(i) + '/metadata')
+        m = (j or {}).get('result') or {}
+        c = m.get('collection', []); c = [c] if isinstance(c, str) else c
+        return [x for x in c if not GEN.search(x)], str(m.get('uploader') or '')
+    with ThreadPoolExecutor(THREADS) as ex:
+        for cs, u in ex.map(one, ids):
+            cc.update(cs)
+            if u: uu[u] += 1
+    cols = [c for c, n in cc.most_common(60) if n >= 8]; ups = [u for u, n in uu.most_common(80) if n >= 8]
+    print('route collections', len(cols), [(c, cc[c]) for c in cols[:40]], flush=True)
+    print('route uploaders', len(ups), [n for u, n in uu.most_common(40)], flush=True)
+    return cols, ups
+if oldads:
+    cols, ups = colscan()
+    for k, c in enumerate(cols):
+        items = scrape('collection:"%s" AND mediatype:movies' % c, 40000)
+        print('ad col', c, 'hits', len(items), 'new', take('adc', items), 'total', len(seen), flush=True)
+    for k, u in enumerate(ups):
+        items = scrape('uploader:"%s" AND mediatype:movies' % u, 40000)
+        print('ad up', k, 'hits', len(items), 'new', take('adc', items), 'total', len(seen), flush=True)
 for tag, q in QA:
     items = scrape('(' + q + ') AND mediatype:movies')
     print('ad', tag, 'hits', len(items), 'new', take('ad', items), 'total', len(seen), flush=True)
@@ -143,7 +177,7 @@ def pri(it):
     if YR.search(t): s += 4
     m = YR.search(t)
     if m and (int(m.group(1)) <= 1988 or int(m.group(1)) >= 2001): s += 3
-    if it['q'] != 'ad': s += 2
+    if it['q'] not in ('ad', 'adc'): s += 2
     return -s, -(it.get('downloads') or 0)
 cands.sort(key=pri); cands = cands[:MAXC]
 print('candidates', len(cands), flush=True)
@@ -198,8 +232,10 @@ def meta(it):
     up = str(m.get('uploader', '') or m.get('creator', ''))[:40]
     tag = it['q']
     base = {'i': it['identifier'], 't': title[:200], 'd': ds, 'y': ds[:4], 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:300], 'dl': it.get('downloads') or 0, 'u': up, 'dec': dec, 'src': src}
-    if tag == 'ad':
+    if tag == 'adc' and not ADT.search(title): rej['colnotad'] += 1; return None
+    if tag in ('ad', 'adc'):
         if NOTAD.search(title): rej['notad'] += 1; return None
+        if NONUS.search(title): rej['nonus'] += 1; return None
         if not ds and not dec: rej['undated'] += 1; return None
         singles = [f for f in files if 5 <= f[1] <= 125]
         if len(files) == 1 and singles:
@@ -207,12 +243,12 @@ def meta(it):
             return ('ad', [[it['identifier'], files[0][0], files[0][1], ds, title[:120], dec]])
         if len(files) > 1 and len(singles) >= max(2, len(files) * .8) and len(files) <= 400:
             rows = []
-            for f in singles[:200]:
+            for f in singles[:400]:
                 stem = re.sub(r'\.(ia\.)?mp4$', '', f[0].split('/')[-1]); stem = re.sub(r'[_]+', ' ', stem)
                 fd, fdec, _ = when(stem, '', '', '')
                 rows.append([it['identifier'], f[0], f[1], fd or ds, (stem if len(stem) > 12 else title[:80] + ' - ' + stem)[:120], fdec or dec])
             return ('ad', rows)
-        if len(files) <= 3 and 126 <= tot <= 900:
+        if tag == 'ad' and len(files) <= 3 and 126 <= tot <= 900:
             base.update(q='adbreak', f=files); return ('fl', base)
         rej['adlen'] += 1; return None
     if tag == 'adbreak':
@@ -224,7 +260,7 @@ def meta(it):
     if len(files) > 1:
         files = [f for f in files if f[1] <= 600][:60]
         if not files: rej['long'] += 1; return None
-    if tag == 'trailer' and not ds: rej['undated'] += 1; return None
+    if not ds and not dec: rej['undated'] += 1; return None
     base.update(q=tag, f=files); return ('fl', base)
 ads, fl = [], []
 with ThreadPoolExecutor(THREADS) as ex:
@@ -234,8 +270,17 @@ with ThreadPoolExecutor(THREADS) as ex:
             else: fl.append(r[1])
         if n % 4000 == 0: print('meta', n, len(ads), len(fl), round((time.time() - T0) / 60, 1), 'min', flush=True)
 print('rejected', dict(rej), flush=True)
-allads = oldads + ads
-allfl = oldfl + [{k: v for k, v in x.items() if k != 'u'} for x in fl]
+def fixrow(r):
+    d = r[3]
+    if d and not ('1984' <= d[:4] <= '2004'): return None
+    if NONUS.search(r[4]): return None
+    if d and len(d) < 7:
+        nd, _, _ = when(r[4], '', '', '')
+        if nd[:4] == d[:4] and len(nd) >= 7: r = r[:3] + [nd] + r[4:]
+    return r
+allads = [x for x in (fixrow(r) for r in oldads + ads) if x]
+allfl = [x for x in oldfl + [{k: v for k, v in x.items() if k != 'u'} for x in fl] if (x.get('d') and '1984' <= x['d'][:4] <= '2004') or (not x.get('d') and x.get('dec'))]
+print('purged ads', len(oldads) + len(ads) - len(allads), 'filler', len(oldfl) + len(fl) - len(allfl), flush=True)
 with gzip.open(ADF, 'wt', encoding='utf-8') as f: json.dump(allads, f, ensure_ascii=False, separators=(',', ':'))
 with gzip.open(FLF, 'wt', encoding='utf-8') as f: json.dump(allfl, f, ensure_ascii=False, separators=(',', ':'))
 print('ads rows new', len(ads), 'total', len(allads), 'items', len(set(r[0] for r in allads)), '| filler new', len(fl), 'total', len(allfl))
@@ -250,9 +295,6 @@ ft = collections.defaultdict(lambda: collections.Counter())
 for x in allfl: ft[x['q']][x.get('y') or ('dec:' + x.get('dec', '')) or '?'] += 1
 print('FILLER TYPE total | per year')
 for k in sorted(ft, key=lambda k: -sum(ft[k].values())): print(' ', k, sum(ft[k].values()), '|', ' '.join('%s:%d' % (y, n) for y, n in sorted(ft[k].items())))
-ups = collections.Counter(x.get('u', '') for x in fl)
-print('UPLOADERS (filler, hashed)')
-for u, n in ups.most_common(10): print(' ', n, hash(u) % 100000)
 random.seed(7)
 print('SAMPLE ADS')
 for r in random.sample(ads, min(80, len(ads))): print(' ', r[3] or r[5], '|', round(r[2]), 's |', r[4][:90])
