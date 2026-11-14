@@ -64,6 +64,7 @@ XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensou
 TAGS = r"(?i)\[[^\]]*\]|\((?!19\d\d\)|200[0-4]\))[^)]*\)|\b(vhs ?rip|vhsrip|vhs|betamax|beta|laserdisc|ld ?rip|dvd ?rip|dvdrip|dvd|tv ?rip|tvrip|xvid|divx|x264|h264|aac|ac3|mp4|avi|mkv|480p|576p|720p|full ?screen|fullscreen|wide ?screen|widescreen|pan (and|&) scan|open matte|uncut|unrated|theatrical( cut| version)?|director'?s cut|extended( cut| version)?|remastered|restored|hq|hd|sd|full movie|full film|full length|complete movie|complete film|the movie|public domain|pd|english|eng|color|colour|b&w|black and white|technicolor|classic|feature film|feature|film|movie|tv movie|made for tv|television movie|miniseries|mini-series|mini series|with (original )?commercials|w/ ?commercials|commercials included|woc|recorded|recording|broadcast|aired|airing|tape|off[- ]air|original)\b"
 def ftitle(t):
     s = re.sub(r'[_.]+', ' ', t)
+    s = re.sub(r'(?i)^\s*(full|complete)\s+(vhs|movie|film|tape|feature)?\s*[:\-–]\s*', '', s)
     m0 = re.match(r'^\s*(19[2-9]\d|200[0-4])\s*[-–:]\s*([^-–]{2,80})', s)
     if m0: s = m0.group(2)
     else:
@@ -82,6 +83,8 @@ def ftitle(t):
     return s
 def ok_title(t):
     if not t: return False
+    if re.search(r"(?i)\b(e ?subs?|esubs|hindi|bollywood|dv ?d ?rip xvi ?d|x ?rg|ddr|tmb|desi|yeh |hai\b| ka | ki | ke |dil |pyaar|pyar|ishq|kabhi|zindagi|dulhan|mohabbat|jackanory|bbc ?(one|two|1|2)|itv|channel 4|uk vhs|uk tv|pal vhs|cbbc|cbeebies)\b", t): return False
+    if re.search(r'^\s*(19|20)\d\d\s*-\s*[^-]+\s-\s[^-]+\s-\s', t) or re.search(r'(?i)\b(vose|vos|v\.?o\.?s\.?e|subtitulad[ao]|sub esp|subt\.?)\b|\s-\s(ve|vo)\s*$', t): return False
     low = t.lower() + ' '
     low = re.sub(r'(with|w/|w|incl\.?|including|original) ?(original |the )?(commercials?|ads)|commercials included', ' ', low)
     if re.search(r'[^\x00-\xff‐-‧™]', t) or re.search(r'[ãõçñ]', low): return False
