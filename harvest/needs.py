@@ -171,7 +171,8 @@ def scrape(q, cap=20000):
         u = 'https://archive.org/services/search/v1/scrape?' + urllib.parse.urlencode({'fields': 'identifier,title,date,year,collection,downloads,subject,language,description', 'q': q, 'count': 2000, **({'cursor': cursor} if cursor else {})})
         j = get(u)
         if not j: break
-        for it in j.get('items', []):
+        for it in j.get('items') or []:
+            if not isinstance(it, dict) or not it.get('identifier'): continue
             it['description'] = ' '.join(flat(it.get('description')).split())[:800]
             out.append(it)
         cursor = j.get('cursor')
@@ -795,7 +796,9 @@ def plan():
                 if sh['evq']:
                     for b0 in range(0, len(ta), 10): qs.append(('mediatype:movies AND (' + ' OR '.join('"%s"' % t2 for t2 in ta[b0:b0 + 10]) + ') AND (' + sh['evq'] + ')', 'f'))
             for qq, route in qs:
-                hits = scrape(qq, 8000 if nm['lvl'] >= 2 else 20000); st = [len(hits), 0, 0, 0, 0]
+                try: hits = scrape(qq, 8000 if nm['lvl'] >= 2 else 20000)
+                except Exception as e: print('search error', repr(e), qq[:100], flush=True); hits = []
+                st = [len(hits), 0, 0, 0, 0]
                 for it in hits:
                     i = it.get('identifier')
                     if not i or i in res: continue
