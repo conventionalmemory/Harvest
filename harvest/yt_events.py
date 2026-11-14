@@ -202,9 +202,9 @@ def event_date(t):
 
 def champ_date(t):
     u = (t or '').upper()
-    m = re.search(r'(?<!\d)(19[89]\d|200[0-3])(?:\s*SEASON)?\s+(?:AFC|NFC)\s+(?:CHAMPIONSHIP|TITLE)', u) or re.search(r'(?:AFC|NFC)\s+(?:CHAMPIONSHIP|TITLE)(?: GAME)?\s*\(?(19[89]\d|200[0-3])', u)
+    m = re.search(r'(?<!\d)(198[4-9]|199\d|200[0-3])(?:\s*SEASON)?\s+(?:AFC|NFC)\s+(?:CHAMPIONSHIP|TITLE)', u) or re.search(r'(?:AFC|NFC)\s+(?:CHAMPIONSHIP|TITLE)(?: GAME)?\s*\(?(19[89]\d|200[0-3])', u)
     if not m: return None, ''
-    y = int(m.group(1)); n = y - 1966
+    y = int(m.group(1)); n = y - 1965
     if n not in SB: return None, ''
     d = datetime.date.fromisoformat(SB[n]) - datetime.timedelta(days=7 if y in (1990, 1993, 1999, 2001, 2002) else 14)
     return d.isoformat(), 'event'
