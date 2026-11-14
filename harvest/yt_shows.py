@@ -15,7 +15,8 @@ T0 = time.time()
 FMODE = os.environ.get('FOCUS', '')
 FOCUS = FMODE == '1'
 DATED = FMODE == '2'
-CHAN = os.environ.get('CHANNELS', '') == '1'
+CHAN = os.environ.get('CHANNELS', '') in ('1', '2')
+DEEP = os.environ.get('CHANNELS', '') == '2'
 CQ = ['today show', 'today nbc', 'good morning america', 'cbs this morning', 'cbs morning news', 'nightly news', 'world news tonight', 'evening news', 'tonight show', 'letterman', 'conan', 'oprah', 'donahue', 'seinfeld', 'cheers', 'frasier', 'fresh prince', 'friends', 'simpsons', 'wings', 'full episode', 'with commercials']
 RUNS = {'Seinfeld': (1989, 1998, 'NBC'), 'Cheers': (1984, 1993, 'NBC'), 'Frasier': (1993, 2004, 'NBC'), 'Wings': (1990, 1997, 'NBC'), 'The Fresh Prince of Bel-Air': (1990, 1996, 'NBC'), 'Friends': (1994, 2004, 'NBC'), 'The Simpsons': (1989, 2004, 'FOX')}
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
@@ -261,13 +262,13 @@ def search(q, pages=2, params='EgQQARgC'):
     return out
 
 
-def channel_flat(chid, ch):
+def channel_flat(chid, ch, limit=3000, cap=300):
     box = []
     def work():
         out = []
         try:
             import yt_dlp
-            with yt_dlp.YoutubeDL({'quiet': True, 'no_warnings': True, 'extract_flat': True, 'skip_download': True, 'playlistend': 3000, 'socket_timeout': 20, 'retries': 2, 'extractor_retries': 1}) as y:
+            with yt_dlp.YoutubeDL({'quiet': True, 'no_warnings': True, 'extract_flat': True, 'skip_download': True, 'playlistend': limit, 'socket_timeout': 20, 'retries': 2, 'extractor_retries': 1}) as y:
                 r = y.extract_info('https://www.youtube.com/channel/' + chid + '/videos', download=False)
             for e in (r or {}).get('entries') or []:
                 if not e or not e.get('id'): continue
@@ -276,15 +277,15 @@ def channel_flat(chid, ch):
             with LOCK: STAT['flatfail'] += 1
         box.append(out)
     th = threading.Thread(target=work, daemon=True)
-    th.start(); th.join(300)
+    th.start(); th.join(cap)
     if not box:
         with LOCK: STAT['flatslow'] += 1
         return []
     return box[0]
 
 
-def channel_videos(chid, ch, maxpages=40):
-    out = channel_flat(chid, ch)
+def channel_videos(chid, ch, maxpages=40, limit=3000, cap=300):
+    out = channel_flat(chid, ch, limit, cap)
     if out: return out
     d = inner('browse', {'browseId': chid, 'params': 'EgZ2aWRlb3PyBgQKAjoA'})
     ver = 0
@@ -698,11 +699,27 @@ def run_search():
             if x['q'] in ('morning', 'late', 'news') or x['k'] in RUNS: pr[x['chid']] += 1
             if x.get('agey') is not None: ag[x['chid']].append(x['agey'])
             if x.get('off') and str(x.get('why', '')).startswith('verified'): chver[x['chid']] = 1
-        cl = sorted((c for c in cc if cc[c] >= 3 or pr[c]), key=lambda c: (-min(pr[c], 1), -cc[c], c))[:int(os.environ.get('CHMAX', '420'))]
+        if DEEP:
+            dq = collections.Counter()
+            for x in old:
+                if x.get('chid') and x.get('ad') and x['q'] in ('morning', 'late', 'news', 'talk'): dq[x['chid']] += 1
+            cl = [c for c, n in dq.most_common(int(os.environ.get('CHMAX', '48'))) if n >= 8]
+        else:
+            cl = sorted((c for c in cc if cc[c] >= 3 or pr[c]), key=lambda c: (-min(pr[c], 1), -cc[c], c))[:int(os.environ.get('CHMAX', '420'))]
         cl = [c for n, c in enumerate(cl) if n % SHARDS == SHARD]
+        byt = {t['title']: t for t in tasks}
         for c in cl:
             cks[c] = [k for k, n in kk[c].most_common(6)]
+            if DEEP:
+                yq = []
+                for k, n in kk[c].most_common(12):
+                    t = byt.get(k)
+                    if not t or t['kind'] != 'date': continue
+                    al = DQ.get(k, [t['title']])[0]
+                    yq += [al + ' %d' % y for y in range(max(1984, t['y0'] or 1984), min(2004, t['y1'] or 2004) + 1)]
+                cks[c] = cks[c] + yq
             a = sorted(ag[c]); cage[c] = a[len(a) // 2] if a else -1
+        print('channel list', len(cl), 'channel queries', sum(len(v) for v in cks.values()))
         print('channel list', len(cl))
     print('shard', SHARD, 'queries', len(jobs))
     def take(k, c, src):
@@ -753,11 +770,11 @@ def run_search():
             sv = set()
             for q in CQ + cks.get(chid, []):
                 if left() < BUDGET * 0.22: break
-                for c in channel_search(chid, chname.get(chid, ''), q, 3):
+                for c in channel_search(chid, chname.get(chid, ''), q, 2 if DEEP and re.search(r' \d{4}$', q) else 3):
                     if c['vid'] not in sv: sv.add(c['vid']); vs.append(c)
                 time.sleep(0.3 + random.random() * 0.4)
             with LOCK: STAT['chan_search_videos'] += len(vs)
-        vs += [c for c in channel_videos(chid, chname.get(chid, '')) if not CHAN or c['vid'] not in sv]
+        vs += [c for c in (channel_videos(chid, chname.get(chid, ''), 40, 20000, 1500) if DEEP else channel_videos(chid, chname.get(chid, ''))) if not CHAN or c['vid'] not in sv]
         ages = sorted(c['age'] for c in vs if c['age'] >= 0) or sorted(c['age'] for c in acc.values() if c['chid'] == chid and c['age'] >= 0)
         med = ages[len(ages) // 2] if ages else cage.get(chid, -1)
         for c in vs:
