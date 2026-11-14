@@ -38,15 +38,15 @@ def scrape(q):
         out += [x for x in (j.get('items') or []) if isinstance(x, dict) and x.get('identifier')]; cursor = j.get('cursor')
         if not cursor or len(out) > 40000: break
     return out
-X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblada|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|fran[cç]ais|french dub|vf|vostfr|italiano|ita|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|rom[aâ]n[aă]|t[uü]rk[cç]e|русск|hindi|tamil|telugu|urdu|arabic|bahasa|tagalog|sub ?esp|subtitulado|temporada|cap[ií]tulo|episodio|folge|staffel|saison|aflevering|odcinek|uk version|australian version|canadian version|bbc|itv|channel 4|sky one|rte)\b"
-X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|nes|snes|sega|genesis|playstation|ps[1-5]|xbox|game ?boy|dos game|pc game|cd-?rom|rom ?hack|emulator|pinball|board game|comic book|comics? scans?|novel|audiobook|audio book|ebook|pdf|soundtrack|ost|theme song|theme music|themes?|intro|intros|opening credits|closing credits|credits|bumper|bumpers|promo|promos|trailer|trailers|teaser|commercial|commercials|ad|ads|bloopers?|outtakes?|fan ?made|fan-?edit|fanfilm|fan film|amv|ytp|parody|spoof|abridged|review|reviews|reviewed|recap|podcast|reaction|commentary track|interview|panel|convention|comic-?con|q&a|tribute|retrospective|making of|behind the scenes|documentary about|radio|radio show|otr|old time radio|lp|vinyl|cassette|album|sheet music|script|screenplay|toys?|unboxing|figure|model kit|slideshow|screensaver|wallpaper|test|sample|clip|clips|scene|scenes|excerpt|highlights|supercut|compilation of|mashup|remix|music video|karaoke|cover|lyrics|predict\w*|predictions?|top \d+|ranked|ranking|explained|theory|theories|tier list|deleted scenes?|reunion|cast of|analysis|essay|iceberg|creepypasta|lost episode|bootleg|drawing|how to draw|fan art|cosplay|meme|memes|edit|edits|shorts|xxx|porn|adult|hentai|nude)\b"
+X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblada|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|fran[cç]ais|french dub|vf|vostfr|italiano|ita|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|rom[aâ]n[aă]|t[uü]rk[cç]e|русск|hindi|tamil|telugu|urdu|arabic|bahasa|tagalog|sub ?esp|subtitulado|temporada|cap[ií]tulo|episodio|folge|staffel|saison|aflevering|odcinek|mandarin|cantonese|korean dub|japanese dub|dubbed|dub|uk dvd|pal|uk version|australian version|canadian version|bbc|itv|channel 4|sky one|rte)\b"
+X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|nes|snes|sega|genesis|playstation|ps[1-5]|xbox|game ?boy|dos game|pc game|cd-?rom|rom ?hack|emulator|pinball|board game|comic book|comics? scans?|novel|audiobook|audio book|ebook|pdf|soundtrack|ost|theme song|theme music|themes?|intro|intros|opening credits|closing credits|credits|bumper|bumpers|promo|promos|trailer|trailers|teaser|commercial|commercials|ad|ads|bloopers?|outtakes?|fan ?made|fan-?edit|fanfilm|fan film|amv|ytp|parody|spoof|abridged|review|reviews|reviewed|recap|podcast|reaction|commentary track|interview|panel|convention|comic-?con|q&a|tribute|retrospective|making of|behind the scenes|documentary about|radio|radio show|otr|old time radio|lp|vinyl|cassette|album|sheet music|script|screenplay|toys?|unboxing|figure|model kit|slideshow|screensaver|wallpaper|test|sample|clip|clips|scene|scenes|excerpt|highlights|supercut|compilation of|mashup|remix|music video|karaoke|cover|lyrics|special features|bonus features|recreated|recreation|reconstruction|walkthrough|runescape|san andreas|minecraft|roblox|gmod|sims|lego|pooh's adventures|poohs adventures|adventures of|bigger,? longer|banned|predict\w*|predictions?|top \d+|ranked|ranking|explained|theory|theories|tier list|deleted scenes?|reunion|cast of|analysis|essay|iceberg|creepypasta|lost episode|bootleg|drawing|how to draw|fan art|cosplay|meme|memes|edit|edits|shorts|xxx|porn|adult|hentai|nude)\b"
 X_MOD = r"(?<!\d)(20(0[5-9]|[1-3]\d))(?!\d)|\b(reboot|revival|remastered in|netflix|hulu|disney\+|paramount\+|hbo max|prime video|youtube|tiktok|twitch|livestream|zoom)\b"
 CTXT = r"\b(episodes?|ep\.?|season|series|s\d{1,2}\s?e\d{1,3}|\d{1,2}x\d{2}|tv|television|vhs|betamax|broadcast|aired|airing|syndicat\w*|with commercials|woc|complete|pilot|part \d|19[4-9]\d|200[0-4]|nbc|cbs|abc|fox|pbs|hbo|tbs|wgn|usa network|nick at nite|tv land|a&e|discovery|sci-?fi|comedy central|cnn|espn|tnn|cmt|bet|mtv|vh1|qvc|hsn|lifetime|family channel)\b"
 CTXQ = '(subject:(tv OR television OR "tv show" OR "tv series" OR sitcom OR episode OR episodes OR series OR vhs OR broadcast OR "classic tv") OR title:(episode OR episodes OR season OR tv OR series OR vhs OR complete OR pilot OR s01 OR s02 OR s03 OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(classic_tv OR television OR classic_tv_1950s OR classic_tv_1960s OR classic_tv_1970s OR classic_tv_1980s OR classic_tv_1990s OR vhsvault OR vhstvshows OR television_inbox))'
 def core(t):
     s = norm(t)
     for _ in range(4):
-        s2 = re.sub(r'^(the|a|new|all new|classic|vhs|tv|dvd|beta|tape|recording|\d{1,4}|[wk][a-z]{2,3}( tv)?( \d+)?|nbc|cbs|abc|fox|pbs|hbo|tbs|wgn|usa|tnn|cmt|bet|mtv|vh1|cnn|espn|a and e|lifetime|discovery) ', '', s)
+        s2 = re.sub(r'^(the|a|new|all new|classic|vhs|tv|dvd|beta|tape|recording|s|ep|e|season|episode|\d{1,4}|[wk][a-z]{2,3}( tv)?( \d+)?|nbc|cbs|abc|fox|pbs|hbo|tbs|wgn|usa|tnn|cmt|bet|mtv|vh1|cnn|espn|a and e|lifetime|discovery) ', '', s)
         if s2 == s: break
         s = s2
     return s
@@ -65,7 +65,7 @@ def match(show, title):
     c = core(title); low = title.lower()
     for hit in names:
         if (' ' + hit + ' ') not in nt: continue
-        if hit not in amb and (not show.get('ambiguous') or hit != show['n']) and (len(hit.split()) >= 2 or len(hit) >= 9) and re.search(EPCTX, low + ' '): return True
+        if hit not in amb and (not show.get('ambiguous') or hit != show['n']) and (len(hit.split()) >= 2 or len(hit) >= 9) and re.search(EPCTX, low + ' ') and (c.startswith(re.sub(r'^(the|a) ', '', hit) + ' ') or c == re.sub(r'^(the|a) ', '', hit) or re.search(r'\b(woc|with commercials|w/ ?commercials)\b', low)): return True
         sn = re.sub(r'^(the|a) ', '', hit)
         c2 = c if (c.startswith(sn + ' ') or c == sn) else re.sub(r'^(the|a) ', '', nt.strip())
         if not c2.startswith(sn + ' ') and c2 != sn: continue
@@ -77,13 +77,23 @@ def match(show, title):
         if tail.startswith('..') or re.match(r"^['!?.)]*\s*[-–:|(\[#]", tail): return True
     return False
 XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio'}
+DATED = ('news', 'talk', 'late', 'mag')
+def yr_ok(s, title):
+    ys = [int(v) for v in re.findall(r'(?<!\d)(19[2-9]\d|200[0-4])(?!\d)', title)]
+    if any(v < s['years'][0] for v in ys): return False
+    m = re.search(r'(?i)\bseason\s*(\d{1,2})\b|\bs(\d{1,2})\s?e\d', title)
+    if m:
+        n = int(m.group(1) or m.group(2))
+        if n and (s['years'][0] + n - 1 > 2004 or n > s['years'][1] - s['years'][0] + 2): return False
+    return True
 def subj_ok(s, subj):
     if isinstance(subj, str): subj = re.split(r'[;,]', subj)
     tags = set(norm(v) for v in (subj or []))
     return bool(tags & set([s['n']] + [norm(a) for a in s.get('alt', [])]))
 def keep(x):
     s = BYT.get(x['k'])
-    if not s or not ok_title(x['t']) or not (match(s, x['t']) or x.get('via')): return False
+    if not s or not ok_title(x['t']) or not (match(s, x['t']) or x.get('via')) or not yr_ok(s, x['t']): return False
+    if s['q'] in DATED and not era(s, x['t'], x.get('d'), x.get('y')): return False
     if set(x.get('c') or []) & XCOL: return False
     if re.match(r'^[a-z]{4,10}-[A-Z]', x['i']) and not re.search(r'(19[4-9]\d|200[0-4])', x['t']): return False
     dy = re.match(r'(\d{4})', str(x.get('d') or ''))
@@ -161,6 +171,9 @@ if MODE == 'plan':
                 lang = it.get('language'); lang = ' '.join(lang) if isinstance(lang, list) else str(lang or '')
                 if lang and not re.search(r'(?i)eng|english|^en\b', lang): continue
                 via = 0
+                if not yr_ok(s, t):
+                    if len(rejs[k]) < 4: rejs[k].append(t[:60])
+                    continue
                 if not ok_title(t) or not match(s, t):
                     if it.get('via') and ok_title(t) and subj_ok(s, it.get('subject')) and re.search(EPCTX, t.lower() + ' '): via = 1
                     else:
