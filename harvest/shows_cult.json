@@ -1,0 +1,6747 @@
+[
+{
+"title": "Max Headroom",
+"q": "prime",
+"net": "abc",
+"original_run": "1987-1988",
+"slots": [
+[
+1987,
+1987,
+"abc",
+2,
+"22:00"
+],
+[
+1987,
+1988,
+"abc",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Sledge Hammer!",
+"q": "prime",
+"net": "abc",
+"original_run": "1986-1988",
+"alt": [
+"Sledge Hammer"
+],
+"slots": [
+[
+1986,
+1987,
+"abc",
+5,
+"21:30"
+],
+[
+1987,
+1988,
+"abc",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Police Squad!",
+"q": "rerun",
+"net": "abc",
+"original_run": "1982-1982",
+"alt": [
+"Police Squad"
+]
+},
+{
+"title": "Misfits of Science",
+"q": "prime",
+"net": "nbc",
+"original_run": "1985-1986",
+"slots": [
+[
+1985,
+1986,
+"nbc",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Automan",
+"q": "prime",
+"net": "abc",
+"original_run": "1983-1984"
+},
+{
+"title": "Manimal",
+"q": "prime",
+"net": "nbc",
+"original_run": "1983-1983"
+},
+{
+"title": "Street Hawk",
+"q": "prime",
+"net": "abc",
+"original_run": "1985-1985",
+"slots": [
+[
+1985,
+1985,
+"abc",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "The Highwayman",
+"q": "prime",
+"net": "nbc",
+"original_run": "1987-1988",
+"ambiguous": true,
+"req": [
+"1987",
+"1988",
+"sam jones",
+"nbc"
+]
+},
+{
+"title": "Werewolf",
+"q": "prime",
+"net": "fox",
+"original_run": "1987-1988",
+"ambiguous": true,
+"req": [
+"1987",
+"1988",
+"fox",
+"eric cord"
+]
+},
+{
+"title": "Friday the 13th: The Series",
+"q": "prime",
+"net": "syn",
+"original_run": "1987-1990",
+"alt": [
+"Friday the 13th The Series",
+"Friday's Curse"
+]
+},
+{
+"title": "Freddy's Nightmares",
+"q": "prime",
+"net": "syn",
+"original_run": "1988-1990",
+"alt": [
+"Freddys Nightmares"
+]
+},
+{
+"title": "Monsters",
+"q": "prime",
+"net": "syn",
+"original_run": "1988-1991",
+"ambiguous": true,
+"req": [
+"1988",
+"1989",
+"1990",
+"1991",
+"tv series",
+"laurel"
+]
+},
+{
+"title": "Tales from the Darkside",
+"q": "prime",
+"net": "syn",
+"original_run": "1983-1988"
+},
+{
+"title": "War of the Worlds",
+"q": "prime",
+"net": "syn",
+"original_run": "1988-1990",
+"ambiguous": true,
+"req": [
+"1988",
+"1989",
+"1990",
+"tv series",
+"the series"
+]
+},
+{
+"title": "Captain Power and the Soldiers of the Future",
+"q": "kids",
+"net": "syn",
+"original_run": "1987-1988",
+"alt": [
+"Captain Power"
+]
+},
+{
+"title": "Probe",
+"q": "prime",
+"net": "abc",
+"original_run": "1988-1988",
+"ambiguous": true,
+"req": [
+"1988",
+"asimov",
+"parker stevenson"
+]
+},
+{
+"title": "Alien Nation",
+"q": "prime",
+"net": "fox",
+"original_run": "1989-1990",
+"ambiguous": true,
+"req": [
+"1989",
+"1990",
+"tv series",
+"the series",
+"s01"
+],
+"slots": [
+[
+1989,
+1990,
+"fox",
+1,
+"21:00"
+]
+]
+},
+{
+"title": "The Flash",
+"q": "prime",
+"net": "cbs",
+"original_run": "1990-1991",
+"ambiguous": true,
+"req": [
+"1990",
+"1991",
+"john wesley shipp"
+],
+"slots": [
+[
+1990,
+1991,
+"cbs",
+4,
+"20:30"
+]
+]
+},
+{
+"title": "Eerie, Indiana",
+"q": "kids",
+"net": "nbc",
+"original_run": "1991-1992",
+"alt": [
+"Eerie Indiana"
+],
+"slots": [
+[
+1991,
+1992,
+"nbc",
+0,
+"19:30"
+]
+]
+},
+{
+"title": "Parker Lewis Can't Lose",
+"q": "prime",
+"net": "fox",
+"original_run": "1990-1993",
+"alt": [
+"Parker Lewis"
+],
+"slots": [
+[
+1990,
+1991,
+"fox",
+0,
+"19:30"
+]
+]
+},
+{
+"title": "Get a Life",
+"q": "prime",
+"net": "fox",
+"original_run": "1990-1992",
+"ambiguous": true,
+"req": [
+"1990",
+"1991",
+"1992",
+"chris elliott",
+"s01",
+"s02"
+],
+"slots": [
+[
+1990,
+1991,
+"fox",
+0,
+"20:30"
+]
+]
+},
+{
+"title": "The Adventures of Pete & Pete",
+"q": "kids",
+"net": "nick",
+"original_run": "1993-1996",
+"alt": [
+"Adventures of Pete and Pete",
+"Pete & Pete",
+"Pete and Pete"
+]
+},
+{
+"title": "Salute Your Shorts",
+"q": "kids",
+"net": "nick",
+"original_run": "1991-1992"
+},
+{
+"title": "Hey Dude",
+"q": "kids",
+"net": "nick",
+"original_run": "1989-1991"
+},
+{
+"title": "Are You Afraid of the Dark?",
+"q": "kids",
+"net": "nick",
+"original_run": "1992-2000",
+"alt": [
+"Are You Afraid of the Dark"
+],
+"slots": [
+[
+1992,
+1996,
+"nick",
+6,
+"21:30"
+]
+]
+},
+{
+"title": "Clarissa Explains It All",
+"q": "kids",
+"net": "nick",
+"original_run": "1991-1994",
+"slots": [
+[
+1992,
+1994,
+"nick",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "Roundhouse",
+"q": "kids",
+"net": "nick",
+"original_run": "1992-1996",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"snick",
+"1992",
+"1993",
+"1994",
+"1995"
+],
+"slots": [
+[
+1992,
+1994,
+"nick",
+6,
+"20:30"
+]
+]
+},
+{
+"title": "Weinerville",
+"q": "kids",
+"net": "nick",
+"original_run": "1993-1997"
+},
+{
+"title": "Space Ghost Coast to Coast",
+"q": "late",
+"net": "cartoon",
+"original_run": "1994-2004"
+},
+{
+"title": "The Maxx",
+"q": "late",
+"net": "mtv",
+"original_run": "1995-1995",
+"ambiguous": true,
+"req": [
+"mtv",
+"1995",
+"oddities"
+]
+},
+{
+"title": "Aeon Flux",
+"q": "late",
+"net": "mtv",
+"original_run": "1991-1995",
+"alt": [
+"Æon Flux"
+],
+"ambiguous": true,
+"req": [
+"mtv",
+"1991",
+"1995",
+"animated",
+"liquid television"
+]
+},
+{
+"title": "Liquid Television",
+"q": "late",
+"net": "mtv",
+"original_run": "1991-1994"
+},
+{
+"title": "The Head",
+"q": "late",
+"net": "mtv",
+"original_run": "1994-1996",
+"ambiguous": true,
+"req": [
+"mtv",
+"oddities"
+]
+},
+{
+"title": "Duckman",
+"q": "late",
+"net": "usa",
+"original_run": "1994-1997"
+},
+{
+"title": "The Critic",
+"q": "prime",
+"net": "abc",
+"original_run": "1994-1995",
+"ambiguous": true,
+"req": [
+"1994",
+"1995",
+"jon lovitz",
+"jay sherman",
+"s01",
+"s02"
+]
+},
+{
+"title": "The Tick",
+"q": "kids",
+"net": "fox",
+"original_run": "1994-1996",
+"ambiguous": true,
+"req": [
+"1994",
+"1995",
+"1996",
+"2001",
+"animated",
+"s01",
+"s02",
+"s03"
+]
+},
+{
+"title": "Freakazoid!",
+"q": "kids",
+"net": "wb",
+"original_run": "1995-1997",
+"alt": [
+"Freakazoid"
+]
+},
+{
+"title": "Earthworm Jim",
+"q": "kids",
+"net": "wb",
+"original_run": "1995-1996",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1995",
+"1996",
+"s01",
+"s02"
+]
+},
+{
+"title": "Mighty Max",
+"q": "kids",
+"net": "syn",
+"original_run": "1993-1994",
+"ambiguous": true,
+"req": [
+"1993",
+"1994",
+"animated",
+"cartoon",
+"s01",
+"s02"
+]
+},
+{
+"title": "Exosquad",
+"q": "kids",
+"net": "syn",
+"original_run": "1993-1994",
+"alt": [
+"Exo Squad",
+"ExoSquad"
+]
+},
+{
+"title": "The Pirates of Dark Water",
+"q": "kids",
+"net": "abc",
+"original_run": "1991-1993",
+"alt": [
+"Pirates of Dark Water"
+]
+},
+{
+"title": "SWAT Kats: The Radical Squadron",
+"q": "kids",
+"net": "tbs",
+"original_run": "1993-1994",
+"alt": [
+"SWAT Kats"
+]
+},
+{
+"title": "ReBoot",
+"q": "kids",
+"net": "abc",
+"original_run": "1994-2001",
+"ambiguous": true,
+"req": [
+"1994",
+"1995",
+"1996",
+"mainframe",
+"s01",
+"s02",
+"s03",
+"season"
+]
+},
+{
+"title": "Beast Wars: Transformers",
+"q": "kids",
+"net": "syn",
+"original_run": "1996-1999",
+"alt": [
+"Beast Wars"
+]
+},
+{
+"title": "The Adventures of Brisco County, Jr.",
+"q": "prime",
+"net": "fox",
+"original_run": "1993-1994",
+"alt": [
+"Brisco County Jr",
+"Adventures of Brisco County"
+],
+"slots": [
+[
+1993,
+1994,
+"fox",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "American Gothic",
+"q": "prime",
+"net": "cbs",
+"original_run": "1995-1996",
+"ambiguous": true,
+"req": [
+"1995",
+"1996",
+"gary cole",
+"s01"
+],
+"slots": [
+[
+1995,
+1996,
+"cbs",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "Nowhere Man",
+"q": "prime",
+"net": "upn",
+"original_run": "1995-1996",
+"ambiguous": true,
+"req": [
+"1995",
+"1996",
+"bruce greenwood",
+"s01",
+"upn"
+],
+"slots": [
+[
+1995,
+1996,
+"upn",
+1,
+"21:00"
+]
+]
+},
+{
+"title": "VR.5",
+"q": "prime",
+"net": "fox",
+"original_run": "1995-1995",
+"alt": [
+"VR5"
+],
+"slots": [
+[
+1995,
+1995,
+"fox",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Earth 2",
+"q": "prime",
+"net": "nbc",
+"original_run": "1994-1995",
+"ambiguous": true,
+"req": [
+"1994",
+"1995",
+"s01",
+"nbc",
+"tv series"
+],
+"slots": [
+[
+1994,
+1995,
+"nbc",
+0,
+"19:00"
+]
+]
+},
+{
+"title": "Space: Above and Beyond",
+"q": "prime",
+"net": "fox",
+"original_run": "1995-1996",
+"alt": [
+"Space Above and Beyond"
+],
+"slots": [
+[
+1995,
+1996,
+"fox",
+0,
+"19:00"
+]
+]
+},
+{
+"title": "Dark Skies",
+"q": "prime",
+"net": "nbc",
+"original_run": "1996-1997",
+"ambiguous": true,
+"req": [
+"1996",
+"1997",
+"s01",
+"nbc",
+"tv series"
+],
+"slots": [
+[
+1996,
+1997,
+"nbc",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "Strange Luck",
+"q": "prime",
+"net": "fox",
+"original_run": "1995-1996",
+"slots": [
+[
+1995,
+1996,
+"fox",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Profit",
+"q": "prime",
+"net": "fox",
+"original_run": "1996-1996",
+"ambiguous": true,
+"req": [
+"1996",
+"adrian pasdar",
+"fox"
+],
+"slots": [
+[
+1996,
+1996,
+"fox",
+1,
+"21:00"
+]
+]
+},
+{
+"title": "Brimstone",
+"q": "prime",
+"net": "fox",
+"original_run": "1998-1999",
+"ambiguous": true,
+"req": [
+"1998",
+"1999",
+"peter horton",
+"fox",
+"s01"
+]
+},
+{
+"title": "Harsh Realm",
+"q": "prime",
+"net": "fox",
+"original_run": "1999-2000"
+},
+{
+"title": "Freaks and Geeks",
+"q": "prime",
+"net": "nbc",
+"original_run": "1999-2000",
+"slots": [
+[
+1999,
+1999,
+"nbc",
+6,
+"20:00"
+],
+[
+2000,
+2000,
+"nbc",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Undeclared",
+"q": "prime",
+"net": "fox",
+"original_run": "2001-2002",
+"ambiguous": true,
+"req": [
+"2001",
+"2002",
+"s01",
+"fox",
+"apatow"
+]
+},
+{
+"title": "My So-Called Life",
+"q": "prime",
+"net": "abc",
+"original_run": "1994-1995",
+"alt": [
+"My So Called Life"
+],
+"slots": [
+[
+1994,
+1995,
+"abc",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Action",
+"q": "prime",
+"net": "fox",
+"original_run": "1999-1999",
+"ambiguous": true,
+"req": [
+"jay mohr",
+"1999 fox"
+]
+},
+{
+"title": "The Ben Stiller Show",
+"q": "prime",
+"net": "fox",
+"original_run": "1992-1993",
+"alt": [
+"Ben Stiller Show"
+]
+},
+{
+"title": "The Edge",
+"q": "prime",
+"net": "fox",
+"original_run": "1992-1993",
+"ambiguous": true,
+"req": [
+"1992",
+"1993",
+"fox sketch",
+"julie brown",
+"jennifer aniston"
+]
+},
+{
+"title": "The State",
+"q": "late",
+"net": "mtv",
+"original_run": "1993-1995",
+"ambiguous": true,
+"req": [
+"mtv",
+"1993",
+"1994",
+"1995",
+"sketch"
+]
+},
+{
+"title": "Upright Citizens Brigade",
+"q": "late",
+"net": "comedy",
+"original_run": "1998-2000",
+"ambiguous": true,
+"req": [
+"1998",
+"1999",
+"2000",
+"s01",
+"s02",
+"s03",
+"comedy central"
+]
+},
+{
+"title": "Strangers with Candy",
+"q": "late",
+"net": "comedy",
+"original_run": "1999-2000"
+},
+{
+"title": "Dr. Katz, Professional Therapist",
+"q": "late",
+"net": "comedy",
+"original_run": "1995-1999",
+"alt": [
+"Dr Katz Professional Therapist",
+"Dr. Katz",
+"Dr Katz"
+]
+},
+{
+"title": "Home Movies",
+"q": "late",
+"net": "upn",
+"original_run": "1999-2004",
+"ambiguous": true,
+"req": [
+"brendon small",
+"adult swim",
+"s01",
+"s02",
+"s03",
+"s04",
+"1999",
+"2001"
+]
+},
+{
+"title": "Mission Hill",
+"q": "late",
+"net": "wb",
+"original_run": "1999-2002"
+},
+{
+"title": "Clerks: The Animated Series",
+"q": "late",
+"net": "abc",
+"original_run": "2000-2000",
+"alt": [
+"Clerks The Animated Series",
+"Clerks Animated"
+]
+},
+{
+"title": "Greg the Bunny",
+"q": "prime",
+"net": "fox",
+"original_run": "2002-2002"
+},
+{
+"title": "Andy Richter Controls the Universe",
+"q": "prime",
+"net": "fox",
+"original_run": "2002-2003"
+},
+{
+"title": "Wonderfalls",
+"q": "prime",
+"net": "fox",
+"original_run": "2004-2004",
+"slots": [
+[
+2004,
+2004,
+"fox",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Firefly",
+"q": "prime",
+"net": "fox",
+"original_run": "2002-2003",
+"ambiguous": true,
+"req": [
+"2002",
+"s01",
+"whedon",
+"serenity",
+"fox"
+],
+"slots": [
+[
+2002,
+2002,
+"fox",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Mystery Science Theater 3000",
+"q": "late",
+"net": "comedy",
+"original_run": "1988-1999",
+"alt": [
+"MST3K"
+]
+},
+{
+"title": "Night Flight",
+"q": "late",
+"net": "usa",
+"original_run": "1981-1988",
+"ambiguous": true,
+"req": [
+"usa network",
+"1984",
+"1985",
+"1986",
+"1987",
+"1988",
+"usa"
+]
+},
+{
+"title": "USA Up All Night",
+"q": "late",
+"net": "usa",
+"original_run": "1989-1998",
+"alt": [
+"Up All Night with Rhonda Shear",
+"Up All Night with Gilbert Gottfried"
+],
+"slots": [
+[
+1989,
+1998,
+"usa",
+5,
+"23:00"
+],
+[
+1989,
+1998,
+"usa",
+6,
+"23:00"
+]
+]
+},
+{
+"title": "MonsterVision",
+"q": "late",
+"net": "tnt",
+"original_run": "1991-2000",
+"alt": [
+"Monstervision",
+"Joe Bob's Drive-In Theater",
+"Joe Bob's Drive In Theater",
+"Joe Bob Briggs"
+],
+"slots": [
+[
+1996,
+2000,
+"tnt",
+6,
+"23:00"
+]
+]
+},
+{
+"title": "Elvira's Movie Macabre",
+"q": "late",
+"net": "syn",
+"original_run": "1981-1986",
+"alt": [
+"Elviras Movie Macabre",
+"Movie Macabre"
+]
+},
+{
+"title": "Commander USA's Groovie Movies",
+"q": "late",
+"net": "usa",
+"original_run": "1985-1989",
+"alt": [
+"Commander USA"
+]
+},
+{
+"title": "Creature Feature",
+"q": "late",
+"net": "syn",
+"original_run": "1984-2004",
+"alt": [
+"Creature Features",
+"Count Gore De Vol",
+"Count Gore",
+"Chiller Theatre",
+"Chiller Theater",
+"Shock Theater",
+"Dr. Paul Bearer",
+"Sammy Terry",
+"Big Chuck and Lil John",
+"The Ghoul",
+"Dr. Creep",
+"Zacherley",
+"Bob Wilkins",
+"Grampa's Monster Movies",
+"Morgus the Magnificent",
+"Sir Graves Ghastly",
+"Fright Night with Larry Vincent"
+],
+"ambiguous": true,
+"req": [
+"1984",
+"1985",
+"1986",
+"1987",
+"1988",
+"1989",
+"199",
+"200",
+"host",
+"wor",
+"kplr",
+"ktvu",
+"wgn",
+"aircheck",
+"with commercials"
+]
+},
+{
+"title": "Son of Svengoolie",
+"q": "late",
+"net": "syn",
+"original_run": "1979-1986",
+"alt": [
+"Svengoolie"
+]
+},
+{
+"title": "Kung Fu Theater",
+"q": "block",
+"net": "syn",
+"original_run": "1981-1995",
+"alt": [
+"Kung Fu Theatre",
+"Black Belt Theater",
+"Black Belt Theatre",
+"Drive-In Movie WNEW",
+"Martial Arts Theater"
+]
+},
+{
+"title": "Saturday TV Funhouse",
+"q": "late",
+"net": "comedy",
+"original_run": "2000-2001",
+"alt": [
+"TV Funhouse"
+]
+},
+{
+"title": "Remote Control",
+"q": "game",
+"net": "mtv",
+"original_run": "1987-1990",
+"ambiguous": true,
+"req": [
+"mtv",
+"ken ober",
+"1987",
+"1988",
+"1989",
+"1990"
+]
+},
+{
+"title": "Double Dare",
+"q": "game",
+"net": "nick",
+"original_run": "1986-1993",
+"alt": [
+"Family Double Dare",
+"Super Sloppy Double Dare",
+"Double Dare 2000"
+],
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"marc summers",
+"1986",
+"1987",
+"1988",
+"1989",
+"199",
+"family",
+"super sloppy"
+]
+},
+{
+"title": "Nick Arcade",
+"q": "game",
+"net": "nick",
+"original_run": "1992-1993",
+"alt": [
+"Nickelodeon Arcade"
+]
+},
+{
+"title": "Legends of the Hidden Temple",
+"q": "game",
+"net": "nick",
+"original_run": "1993-1995"
+},
+{
+"title": "Nickelodeon GUTS",
+"q": "game",
+"net": "nick",
+"original_run": "1992-1995",
+"alt": [
+"Nickelodeon Guts",
+"Global GUTS",
+"Global Guts"
+]
+},
+{
+"title": "Starcade",
+"q": "game",
+"net": "tbs",
+"original_run": "1982-1984"
+},
+{
+"title": "Video Power",
+"q": "kids",
+"net": "syn",
+"original_run": "1990-1992",
+"ambiguous": true,
+"req": [
+"1990",
+"1991",
+"1992",
+"johnny arcade",
+"power team"
+]
+},
+{
+"title": "American Gladiators",
+"q": "game",
+"net": "syn",
+"original_run": "1989-1996",
+"ambiguous": true,
+"req": [
+"1989",
+"199",
+"s01",
+"s02",
+"s03",
+"s04",
+"s05",
+"s06",
+"s07",
+"season"
+]
+},
+{
+"title": "Battle Dome",
+"q": "game",
+"net": "syn",
+"original_run": "1999-2001",
+"alt": [
+"Battledome"
+],
+"ambiguous": true,
+"req": [
+"1999",
+"2000",
+"2001",
+"syndicated"
+]
+},
+{
+"title": "RollerGames",
+"q": "game",
+"net": "syn",
+"original_run": "1989-1990",
+"alt": [
+"Roller Games",
+"Rollergames"
+]
+},
+{
+"title": "BattleBots",
+"q": "game",
+"net": "comedy",
+"original_run": "2000-2002",
+"alt": [
+"Battlebots"
+],
+"ambiguous": true,
+"req": [
+"comedy central",
+"2000",
+"2001",
+"2002",
+"season 1",
+"season 2",
+"season 3",
+"season 4",
+"season 5"
+]
+},
+{
+"title": "Robot Wars: Extreme Warriors",
+"q": "game",
+"net": "tnn",
+"original_run": "2001-2002",
+"alt": [
+"Robot Wars Extreme Warriors"
+],
+"brit": true
+},
+{
+"title": "Junkyard Wars",
+"q": "game",
+"net": "tlc",
+"original_run": "2000-2003",
+"alt": [
+"Scrapheap Challenge US"
+],
+"brit": true
+},
+{
+"title": "Beakman's World",
+"q": "kids",
+"net": "cbs",
+"original_run": "1992-1997",
+"alt": [
+"Beakmans World"
+]
+},
+{
+"title": "Bill Nye the Science Guy",
+"q": "kids",
+"net": "pbs",
+"original_run": "1993-1998",
+"alt": [
+"Bill Nye The Science Guy"
+]
+},
+{
+"title": "Square One TV",
+"q": "kids",
+"net": "pbs",
+"original_run": "1987-1992",
+"alt": [
+"Square One Television",
+"Square One"
+],
+"ambiguous": true,
+"req": [
+"pbs",
+"mathnet",
+"1987",
+"1988",
+"1989",
+"199"
+]
+},
+{
+"title": "3-2-1 Contact",
+"q": "kids",
+"net": "pbs",
+"original_run": "1980-1988",
+"alt": [
+"3 2 1 Contact",
+"321 Contact"
+]
+},
+{
+"title": "Ghostwriter",
+"q": "kids",
+"net": "pbs",
+"original_run": "1992-1995",
+"ambiguous": true,
+"req": [
+"pbs",
+"1992",
+"1993",
+"1994",
+"1995",
+"ctw",
+"s01",
+"s02",
+"s03"
+]
+},
+{
+"title": "Wishbone",
+"q": "kids",
+"net": "pbs",
+"original_run": "1995-1998",
+"ambiguous": true,
+"req": [
+"pbs",
+"1995",
+"1996",
+"1997",
+"1998",
+"dog",
+"s01",
+"s02"
+]
+},
+{
+"title": "Mathnet",
+"q": "kids",
+"net": "pbs",
+"original_run": "1987-1992"
+},
+{
+"title": "Zoobilee Zoo",
+"q": "kids",
+"net": "syn",
+"original_run": "1986-1987"
+},
+{
+"title": "Kidd Video",
+"q": "kids",
+"net": "nbc",
+"original_run": "1984-1985"
+},
+{
+"title": "Pee-wee's Playhouse",
+"q": "kids",
+"net": "cbs",
+"original_run": "1986-1990",
+"alt": [
+"Pee Wee's Playhouse",
+"Pee-Wees Playhouse",
+"Pee Wees Playhouse"
+]
+},
+{
+"title": "The Weird Al Show",
+"q": "kids",
+"net": "cbs",
+"original_run": "1997-1997",
+"alt": [
+"Weird Al Show"
+]
+},
+{
+"title": "Hulk Hogan's Rock 'n' Wrestling",
+"q": "kids",
+"net": "cbs",
+"original_run": "1985-1986",
+"alt": [
+"Hulk Hogan's Rock n Wrestling",
+"Rock n Wrestling",
+"Rock 'n' Wrestling"
+]
+},
+{
+"title": "Captain N: The Game Master",
+"q": "kids",
+"net": "nbc",
+"original_run": "1989-1991",
+"alt": [
+"Captain N The Game Master",
+"Captain N"
+]
+},
+{
+"title": "The Super Mario Bros. Super Show!",
+"q": "kids",
+"net": "syn",
+"original_run": "1989-1989",
+"alt": [
+"Super Mario Bros Super Show",
+"Super Mario Bros. Super Show"
+]
+},
+{
+"title": "The Legend of Zelda",
+"q": "kids",
+"net": "syn",
+"original_run": "1989-1989",
+"ambiguous": true,
+"req": [
+"1989",
+"animated",
+"cartoon",
+"dic",
+"tv series"
+]
+},
+{
+"title": "Garbage Pail Kids",
+"q": "kids",
+"net": "cbs",
+"original_run": "1987-1987",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1987",
+"1988",
+"tv series"
+]
+},
+{
+"title": "The Tom Green Show",
+"q": "late",
+"net": "mtv",
+"original_run": "1999-2000",
+"alt": [
+"Tom Green Show"
+]
+},
+{
+"title": "The Jon Stewart Show",
+"q": "late",
+"net": "mtv",
+"original_run": "1993-1995",
+"alt": [
+"Jon Stewart Show"
+]
+},
+{
+"title": "The Chevy Chase Show",
+"q": "late",
+"net": "fox",
+"original_run": "1993-1993",
+"alt": [
+"Chevy Chase Show"
+]
+},
+{
+"title": "The Magic Hour",
+"q": "late",
+"net": "syn",
+"original_run": "1998-1998",
+"ambiguous": true,
+"req": [
+"magic johnson",
+"1998"
+]
+},
+{
+"title": "Thicke of the Night",
+"q": "late",
+"net": "syn",
+"original_run": "1983-1984"
+},
+{
+"title": "Night Stand with Dick Dietrick",
+"q": "late",
+"net": "syn",
+"original_run": "1995-1997",
+"alt": [
+"Night Stand"
+],
+"ambiguous": true,
+"req": [
+"dick dietrick",
+"1995",
+"1996",
+"1997"
+]
+},
+{
+"title": "Later with Bob Costas",
+"q": "late",
+"net": "nbc",
+"original_run": "1988-1994",
+"alt": [
+"Later With Bob Costas"
+],
+"slots": [
+[
+1988,
+1994,
+"nbc",
+1,
+"01:35"
+]
+]
+},
+{
+"title": "In Search of...",
+"q": "rerun",
+"net": "syn",
+"original_run": "1977-1982",
+"alt": [
+"In Search Of"
+],
+"ambiguous": true,
+"req": [
+"nimoy",
+"1976",
+"1977",
+"1978",
+"1979",
+"198",
+"s01",
+"s02",
+"s03",
+"s04",
+"s05",
+"s06",
+"season"
+]
+},
+{
+"title": "Ripley's Believe It or Not!",
+"q": "prime",
+"net": "abc",
+"original_run": "1982-1986",
+"alt": [
+"Ripley's Believe It or Not",
+"Ripleys Believe It or Not"
+],
+"ambiguous": true,
+"req": [
+"1982",
+"1983",
+"1984",
+"1985",
+"1986",
+"2000",
+"2001",
+"2002",
+"2003",
+"jack palance",
+"dean cain",
+"tbs"
+]
+},
+{
+"title": "That's Incredible!",
+"q": "prime",
+"net": "abc",
+"original_run": "1980-1984",
+"alt": [
+"Thats Incredible"
+]
+},
+{
+"title": "Real People",
+"q": "prime",
+"net": "nbc",
+"original_run": "1979-1984",
+"ambiguous": true,
+"req": [
+"nbc",
+"1979",
+"198",
+"sarah purcell"
+]
+},
+{
+"title": "Beyond 2000",
+"q": "pub",
+"net": "discovery",
+"original_run": "1985-1999"
+},
+{
+"title": "Sightings",
+"q": "prime",
+"net": "fox",
+"original_run": "1991-1997",
+"ambiguous": true,
+"req": [
+"1991",
+"1992",
+"1993",
+"1994",
+"1995",
+"1996",
+"1997",
+"s0",
+"fox",
+"sci-fi"
+]
+},
+{
+"title": "Encounters: The Hidden Truth",
+"q": "prime",
+"net": "fox",
+"original_run": "1994-1995",
+"alt": [
+"Encounters The Hidden Truth"
+]
+},
+{
+"title": "Tales from the Crypt",
+"q": "late",
+"net": "hbo",
+"original_run": "1989-1996"
+},
+{
+"title": "Tales of the Unexpected",
+"q": "rerun",
+"net": "syn",
+"original_run": "1979-1988",
+"ambiguous": true,
+"req": [
+"roald dahl",
+"s0",
+"197",
+"198",
+"series"
+],
+"brit": true
+},
+{
+"title": "The Twilight Zone",
+"q": "prime",
+"net": "cbs",
+"original_run": "1985-1989",
+"alt": [
+"The New Twilight Zone",
+"Twilight Zone 1985"
+],
+"ambiguous": true,
+"req": [
+"1985",
+"1986",
+"1987",
+"1988",
+"1989",
+"new twilight zone"
+],
+"slots": [
+[
+1985,
+1986,
+"cbs",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "The Outer Limits",
+"q": "prime",
+"net": "syn",
+"original_run": "1995-2002",
+"alt": [
+"Outer Limits 1995",
+"The New Outer Limits"
+],
+"ambiguous": true,
+"req": [
+"1995",
+"1996",
+"1997",
+"1998",
+"1999",
+"2000",
+"2001",
+"2002",
+"new outer limits"
+]
+},
+{
+"title": "Amazing Stories",
+"q": "prime",
+"net": "nbc",
+"original_run": "1985-1987",
+"ambiguous": true,
+"req": [
+"1985",
+"1986",
+"1987",
+"spielberg",
+"s01",
+"s02",
+"nbc"
+],
+"slots": [
+[
+1985,
+1986,
+"nbc",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Night Gallery",
+"q": "rerun",
+"net": "nbc",
+"original_run": "1970-1973",
+"alt": [
+"Rod Serling's Night Gallery"
+]
+},
+{
+"title": "Kolchak: The Night Stalker",
+"q": "rerun",
+"net": "abc",
+"original_run": "1974-1975",
+"alt": [
+"Kolchak The Night Stalker",
+"Kolchak"
+]
+},
+{
+"title": "The Prisoner",
+"q": "rerun",
+"net": "pbs",
+"original_run": "1967-1968",
+"ambiguous": true,
+"req": [
+"1967",
+"1968",
+"mcgoohan",
+"number six"
+],
+"brit": true
+},
+{
+"title": "Red Dwarf",
+"q": "rerun",
+"net": "pbs",
+"original_run": "1988-1999",
+"ambiguous": true,
+"req": [
+"s0",
+"series",
+"season",
+"198",
+"199"
+],
+"brit": true
+},
+{
+"title": "Monty Python's Flying Circus",
+"q": "rerun",
+"net": "pbs",
+"original_run": "1969-1974",
+"alt": [
+"Monty Pythons Flying Circus"
+],
+"brit": true
+},
+{
+"title": "The Benny Hill Show",
+"q": "rerun",
+"net": "syn",
+"original_run": "1969-1989",
+"alt": [
+"Benny Hill Show",
+"Benny Hill"
+],
+"brit": true
+},
+{
+"title": "Fawlty Towers",
+"q": "rerun",
+"net": "pbs",
+"original_run": "1975-1979",
+"brit": true
+},
+{
+"title": "Are You Being Served?",
+"q": "rerun",
+"net": "pbs",
+"original_run": "1972-1985",
+"alt": [
+"Are You Being Served"
+],
+"brit": true
+},
+{
+"title": "The Young Ones",
+"q": "late",
+"net": "mtv",
+"original_run": "1982-1984",
+"ambiguous": true,
+"req": [
+"rik mayall",
+"mtv",
+"1982",
+"1984",
+"s01",
+"s02",
+"series"
+],
+"brit": true
+},
+{
+"title": "The Kids in the Hall",
+"q": "late",
+"net": "cbs",
+"original_run": "1989-1995",
+"alt": [
+"Kids in the Hall"
+]
+},
+{
+"title": "Blackadder",
+"q": "rerun",
+"net": "pbs",
+"original_run": "1983-1989",
+"alt": [
+"Black Adder",
+"The Black Adder"
+],
+"brit": true
+},
+{
+"title": "The Hitchhiker's Guide to the Galaxy",
+"q": "rerun",
+"net": "pbs",
+"original_run": "1981-1981",
+"ambiguous": true,
+"req": [
+"1981",
+"tv series",
+"bbc tv",
+"episode"
+],
+"brit": true
+},
+{
+"title": "Robotech",
+"q": "kids",
+"net": "syn",
+"original_run": "1985-1985",
+"ambiguous": true,
+"req": [
+"1985",
+"macross saga",
+"masters",
+"new generation",
+"episode",
+"ep"
+]
+},
+{
+"title": "Voltron: Defender of the Universe",
+"q": "kids",
+"net": "syn",
+"original_run": "1984-1985",
+"alt": [
+"Voltron Defender of the Universe",
+"Voltron"
+],
+"ambiguous": true,
+"req": [
+"1984",
+"1985",
+"defender",
+"lion",
+"vehicle",
+"episode",
+"ep"
+]
+},
+{
+"title": "Star Blazers",
+"q": "kids",
+"net": "syn",
+"original_run": "1979-1984"
+},
+{
+"title": "Speed Racer",
+"q": "rerun",
+"net": "syn",
+"original_run": "1967-1968",
+"ambiguous": true,
+"req": [
+"1967",
+"1968",
+"episode",
+"ep",
+"s01",
+"classic"
+]
+},
+{
+"title": "Sailor Moon",
+"q": "kids",
+"net": "syn",
+"original_run": "1995-2000",
+"ambiguous": true,
+"req": [
+"dic",
+"english dub",
+"dub",
+"1995",
+"toonami",
+"s01",
+"s02"
+]
+},
+{
+"title": "Dragon Ball Z",
+"q": "kids",
+"net": "syn",
+"original_run": "1996-2003",
+"ambiguous": true,
+"req": [
+"toonami",
+"ocean dub",
+"funimation",
+"1996",
+"1997",
+"1998",
+"1999",
+"200",
+"saga"
+]
+},
+{
+"title": "Ronin Warriors",
+"q": "kids",
+"net": "syn",
+"original_run": "1995-1996"
+},
+{
+"title": "Samurai Pizza Cats",
+"q": "kids",
+"net": "syn",
+"original_run": "1991-1991"
+},
+{
+"title": "Toonami",
+"q": "kids",
+"net": "cartoon",
+"original_run": "1997-2004",
+"alt": [
+"Toonami Midnight Run",
+"Toonami Rising Sun"
+],
+"ambiguous": true,
+"req": [
+"1997",
+"1998",
+"1999",
+"2000",
+"2001",
+"2002",
+"2003",
+"2004",
+"broadcast",
+"block",
+"with commercials",
+"bumpers"
+]
+},
+{
+"title": "Adult Swim",
+"q": "late",
+"net": "cartoon",
+"original_run": "2001-2004",
+"ambiguous": true,
+"req": [
+"2001",
+"2002",
+"2003",
+"2004"
+]
+},
+{
+"title": "Cartoon Planet",
+"q": "kids",
+"net": "tbs",
+"original_run": "1995-1998"
+},
+{
+"title": "Battle of the Planets",
+"q": "rerun",
+"net": "syn",
+"original_run": "1978-1980"
+},
+{
+"title": "G-Force: Guardians of Space",
+"q": "kids",
+"net": "tbs",
+"original_run": "1986-1987",
+"alt": [
+"G-Force Guardians of Space"
+]
+},
+{
+"title": "Tranzor Z",
+"q": "kids",
+"net": "syn",
+"original_run": "1985-1985"
+},
+{
+"title": "Saber Rider and the Star Sheriffs",
+"q": "kids",
+"net": "syn",
+"original_run": "1987-1988",
+"alt": [
+"Saber Rider"
+]
+},
+{
+"title": "Teknoman",
+"q": "kids",
+"net": "upn",
+"original_run": "1995-1996"
+},
+{
+"title": "Gundam Wing",
+"q": "kids",
+"net": "cartoon",
+"original_run": "2000-2000",
+"alt": [
+"Mobile Suit Gundam Wing"
+],
+"ambiguous": true,
+"req": [
+"toonami",
+"dub",
+"english",
+"2000"
+]
+},
+{
+"title": "Cowboy Bebop",
+"q": "late",
+"net": "cartoon",
+"original_run": "2001-2004",
+"ambiguous": true,
+"req": [
+"adult swim",
+"dub",
+"english",
+"2001"
+]
+},
+{
+"title": "Tenchi Muyo!",
+"q": "kids",
+"net": "cartoon",
+"original_run": "2000-2002",
+"alt": [
+"Tenchi Muyo"
+],
+"ambiguous": true,
+"req": [
+"toonami",
+"dub",
+"english"
+]
+},
+{
+"title": "Outlaw Star",
+"q": "kids",
+"net": "cartoon",
+"original_run": "2001-2002",
+"ambiguous": true,
+"req": [
+"toonami",
+"dub",
+"english"
+]
+},
+{
+"title": "The Big O",
+"q": "late",
+"net": "cartoon",
+"original_run": "2001-2003",
+"alt": [
+"Big O"
+],
+"ambiguous": true,
+"req": [
+"toonami",
+"adult swim",
+"dub",
+"english"
+]
+},
+{
+"title": "Thundarr the Barbarian",
+"q": "rerun",
+"net": "abc",
+"original_run": "1980-1981"
+},
+{
+"title": "Dungeons & Dragons",
+"q": "kids",
+"net": "cbs",
+"original_run": "1983-1985",
+"alt": [
+"Dungeons and Dragons"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1983",
+"1984",
+"1985",
+"s01",
+"s02",
+"s03"
+]
+},
+{
+"title": "The Real Ghostbusters",
+"q": "kids",
+"net": "abc",
+"original_run": "1986-1991",
+"alt": [
+"Real Ghostbusters"
+]
+},
+{
+"title": "Bionic Six",
+"q": "kids",
+"net": "syn",
+"original_run": "1987-1987"
+},
+{
+"title": "Inhumanoids",
+"q": "kids",
+"net": "syn",
+"original_run": "1986-1986"
+},
+{
+"title": "Visionaries: Knights of the Magical Light",
+"q": "kids",
+"net": "syn",
+"original_run": "1987-1987",
+"alt": [
+"Visionaries Knights of the Magical Light"
+]
+},
+{
+"title": "Spiral Zone",
+"q": "kids",
+"net": "syn",
+"original_run": "1987-1987"
+},
+{
+"title": "Dino-Riders",
+"q": "kids",
+"net": "syn",
+"original_run": "1988-1988",
+"alt": [
+"Dino Riders",
+"Dinoriders"
+]
+},
+{
+"title": "C.O.P.S.",
+"q": "kids",
+"net": "syn",
+"original_run": "1988-1989",
+"alt": [
+"COPS animated",
+"C.O.P.S"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1988",
+"central organization"
+]
+},
+{
+"title": "BraveStarr",
+"q": "kids",
+"net": "syn",
+"original_run": "1987-1988",
+"alt": [
+"Bravestarr"
+]
+},
+{
+"title": "Galaxy Rangers",
+"q": "kids",
+"net": "syn",
+"original_run": "1986-1986",
+"alt": [
+"The Adventures of the Galaxy Rangers",
+"Adventures of the Galaxy Rangers"
+]
+},
+{
+"title": "Silverhawks",
+"q": "kids",
+"net": "syn",
+"original_run": "1986-1986",
+"alt": [
+"SilverHawks"
+]
+},
+{
+"title": "Jayce and the Wheeled Warriors",
+"q": "kids",
+"net": "syn",
+"original_run": "1985-1985"
+},
+{
+"title": "M.A.S.K.",
+"q": "kids",
+"net": "syn",
+"original_run": "1985-1986",
+"alt": [
+"MASK cartoon"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1985",
+"1986",
+"s01",
+"s02",
+"episode"
+]
+},
+{
+"title": "Centurions",
+"q": "kids",
+"net": "syn",
+"original_run": "1986-1986",
+"alt": [
+"The Centurions"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1986",
+"power xtreme",
+"episode"
+]
+},
+{
+"title": "Defenders of the Earth",
+"q": "kids",
+"net": "syn",
+"original_run": "1986-1987"
+},
+{
+"title": "Starcom: The U.S. Space Force",
+"q": "kids",
+"net": "syn",
+"original_run": "1987-1987",
+"alt": [
+"Starcom"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1987",
+"space force"
+]
+},
+{
+"title": "The Mysterious Cities of Gold",
+"q": "kids",
+"net": "nick",
+"original_run": "1986-1990",
+"alt": [
+"Mysterious Cities of Gold"
+]
+},
+{
+"title": "Belle and Sebastian",
+"q": "kids",
+"net": "nick",
+"original_run": "1984-1990",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"anime",
+"animated",
+"dub"
+]
+},
+{
+"title": "The Adventures of the Little Koala",
+"q": "kids",
+"net": "nick",
+"original_run": "1987-1993",
+"alt": [
+"Adventures of the Little Koala"
+]
+},
+{
+"title": "Danger Mouse",
+"q": "kids",
+"net": "nick",
+"original_run": "1984-1987",
+"ambiguous": true,
+"req": [
+"1981",
+"198",
+"nickelodeon",
+"s0",
+"series",
+"episode",
+"classic"
+],
+"brit": true
+},
+{
+"title": "Count Duckula",
+"q": "kids",
+"net": "nick",
+"original_run": "1988-1993",
+"brit": true
+},
+{
+"title": "You Can't Do That on Television",
+"q": "kids",
+"net": "nick",
+"original_run": "1981-1990",
+"alt": [
+"You Cant Do That on Television"
+]
+},
+{
+"title": "Out of Control",
+"q": "kids",
+"net": "nick",
+"original_run": "1984-1985",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"dave coulier"
+]
+},
+{
+"title": "Mr. Wizard's World",
+"q": "kids",
+"net": "nick",
+"original_run": "1983-1990",
+"alt": [
+"Mr Wizards World",
+"Mr. Wizard"
+]
+},
+{
+"title": "Turkey Television",
+"q": "kids",
+"net": "nick",
+"original_run": "1985-1986"
+},
+{
+"title": "Nick Rocks",
+"q": "kids",
+"net": "nick",
+"original_run": "1984-1989"
+},
+{
+"title": "Welcome Freshmen",
+"q": "kids",
+"net": "nick",
+"original_run": "1991-1993"
+},
+{
+"title": "Fifteen",
+"q": "kids",
+"net": "nick",
+"original_run": "1991-1993",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"hillside"
+]
+},
+{
+"title": "The Secret World of Alex Mack",
+"q": "kids",
+"net": "nick",
+"original_run": "1994-1998",
+"alt": [
+"Secret World of Alex Mack"
+]
+},
+{
+"title": "Space Cases",
+"q": "kids",
+"net": "nick",
+"original_run": "1996-1997",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"1996",
+"1997"
+]
+},
+{
+"title": "The Mystery Files of Shelby Woo",
+"q": "kids",
+"net": "nick",
+"original_run": "1996-1998",
+"alt": [
+"Mystery Files of Shelby Woo"
+]
+},
+{
+"title": "KaBlam!",
+"q": "kids",
+"net": "nick",
+"original_run": "1996-2000",
+"alt": [
+"Kablam"
+]
+},
+{
+"title": "Action League Now!",
+"q": "kids",
+"net": "nick",
+"original_run": "1996-2002",
+"alt": [
+"Action League Now"
+]
+},
+{
+"title": "The Angry Beavers",
+"q": "kids",
+"net": "nick",
+"original_run": "1997-2001",
+"alt": [
+"Angry Beavers"
+]
+},
+{
+"title": "Aaahh!!! Real Monsters",
+"q": "kids",
+"net": "nick",
+"original_run": "1994-1997",
+"alt": [
+"Aaahh Real Monsters",
+"Real Monsters"
+]
+},
+{
+"title": "Invader Zim",
+"q": "kids",
+"net": "nick",
+"original_run": "2001-2003"
+},
+{
+"title": "What Would You Do?",
+"q": "game",
+"net": "nick",
+"original_run": "1991-1993",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"marc summers"
+]
+},
+{
+"title": "Wild & Crazy Kids",
+"q": "game",
+"net": "nick",
+"original_run": "1990-1992",
+"alt": [
+"Wild and Crazy Kids"
+]
+},
+{
+"title": "Finders Keepers",
+"q": "game",
+"net": "nick",
+"original_run": "1987-1989",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"1987",
+"1988",
+"1989",
+"wesley eure"
+]
+},
+{
+"title": "Think Fast",
+"q": "game",
+"net": "nick",
+"original_run": "1989-1991",
+"ambiguous": true,
+"req": [
+"nickelodeon"
+]
+},
+{
+"title": "Fun House",
+"q": "game",
+"net": "syn",
+"original_run": "1988-1991",
+"ambiguous": true,
+"req": [
+"j.d. roth",
+"jd roth",
+"1988",
+"1989",
+"1990",
+"1991",
+"fox"
+]
+},
+{
+"title": "Pictionary",
+"q": "game",
+"net": "syn",
+"original_run": "1989-1989",
+"ambiguous": true,
+"req": [
+"1989",
+"kids",
+"brian robbins"
+]
+},
+{
+"title": "Where in the World Is Carmen Sandiego?",
+"q": "game",
+"net": "pbs",
+"original_run": "1991-1995",
+"alt": [
+"Where in the World is Carmen Sandiego",
+"Where in Time Is Carmen Sandiego?"
+]
+},
+{
+"title": "Supermarket Sweep",
+"q": "game",
+"net": "lifetime",
+"original_run": "1990-1995",
+"ambiguous": true,
+"req": [
+"1990",
+"1991",
+"1992",
+"1993",
+"1994",
+"1995",
+"david ruprecht",
+"lifetime"
+]
+},
+{
+"title": "Shop 'til You Drop",
+"q": "game",
+"net": "lifetime",
+"original_run": "1991-1994",
+"alt": [
+"Shop Til You Drop"
+]
+},
+{
+"title": "Studs",
+"q": "late",
+"net": "fox",
+"original_run": "1991-1993",
+"ambiguous": true,
+"req": [
+"1991",
+"1992",
+"1993",
+"mark decarlo",
+"dating"
+]
+},
+{
+"title": "Love Connection",
+"q": "game",
+"net": "syn",
+"original_run": "1983-1994",
+"ambiguous": true,
+"req": [
+"chuck woolery",
+"198",
+"199"
+]
+},
+{
+"title": "The Gong Show",
+"q": "rerun",
+"net": "syn",
+"original_run": "1976-1989",
+"alt": [
+"Gong Show"
+],
+"ambiguous": true,
+"req": [
+"chuck barris",
+"1976",
+"1977",
+"1978",
+"1988",
+"1989",
+"197"
+]
+},
+{
+"title": "Win Ben Stein's Money",
+"q": "game",
+"net": "comedy",
+"original_run": "1997-2003",
+"alt": [
+"Win Ben Steins Money"
+]
+},
+{
+"title": "Singled Out",
+"q": "game",
+"net": "mtv",
+"original_run": "1995-1998",
+"ambiguous": true,
+"req": [
+"mtv",
+"jenny mccarthy",
+"chris hardwick"
+]
+},
+{
+"title": "The Joe Schmo Show",
+"q": "prime",
+"net": "spike",
+"original_run": "2003-2004",
+"alt": [
+"Joe Schmo Show"
+]
+},
+{
+"title": "Space Ghost",
+"q": "rerun",
+"net": "cartoon",
+"original_run": "1966-1968",
+"ambiguous": true,
+"req": [
+"1966",
+"hanna-barbera",
+"dino boy"
+]
+},
+{
+"title": "The Brak Show",
+"q": "late",
+"net": "cartoon",
+"original_run": "2000-2003",
+"alt": [
+"Brak Show"
+]
+},
+{
+"title": "Sealab 2021",
+"q": "late",
+"net": "cartoon",
+"original_run": "2000-2004"
+},
+{
+"title": "Harvey Birdman, Attorney at Law",
+"q": "late",
+"net": "cartoon",
+"original_run": "2000-2004",
+"alt": [
+"Harvey Birdman"
+]
+},
+{
+"title": "Aqua Teen Hunger Force",
+"q": "late",
+"net": "cartoon",
+"original_run": "2000-2004"
+},
+{
+"title": "The Oblongs",
+"q": "late",
+"net": "wb",
+"original_run": "2001-2002",
+"alt": [
+"Oblongs"
+]
+},
+{
+"title": "God, the Devil and Bob",
+"q": "prime",
+"net": "nbc",
+"original_run": "2000-2000",
+"alt": [
+"God the Devil and Bob"
+]
+},
+{
+"title": "Baby Blues",
+"q": "prime",
+"net": "wb",
+"original_run": "2000-2002",
+"ambiguous": true,
+"req": [
+"animated",
+"wb",
+"2000"
+]
+},
+{
+"title": "Dilbert",
+"q": "prime",
+"net": "upn",
+"original_run": "1999-2000",
+"ambiguous": true,
+"req": [
+"animated",
+"tv series",
+"upn",
+"1999",
+"2000",
+"s01",
+"s02"
+]
+},
+{
+"title": "The PJs",
+"q": "prime",
+"net": "fox",
+"original_run": "1999-2001",
+"alt": [
+"PJs"
+],
+"ambiguous": true,
+"req": [
+"eddie murphy",
+"animated",
+"s01",
+"s02",
+"s03"
+]
+},
+{
+"title": "Family Dog",
+"q": "prime",
+"net": "cbs",
+"original_run": "1993-1993",
+"ambiguous": true,
+"req": [
+"1993",
+"animated",
+"tim burton",
+"amazing stories"
+]
+},
+{
+"title": "Fish Police",
+"q": "prime",
+"net": "cbs",
+"original_run": "1992-1992"
+},
+{
+"title": "Capitol Critters",
+"q": "prime",
+"net": "abc",
+"original_run": "1992-1992"
+},
+{
+"title": "The Ren & Stimpy Show",
+"q": "kids",
+"net": "nick",
+"original_run": "1991-1995",
+"alt": [
+"Ren & Stimpy",
+"Ren and Stimpy"
+],
+"slots": [
+[
+1992,
+1994,
+"nick",
+6,
+"21:00"
+]
+]
+},
+{
+"title": "Beavis and Butt-Head",
+"q": "late",
+"net": "mtv",
+"original_run": "1993-1997",
+"alt": [
+"Beavis and Butthead",
+"Beavis & Butt-Head"
+]
+},
+{
+"title": "Daria",
+"q": "late",
+"net": "mtv",
+"original_run": "1997-2002",
+"ambiguous": true,
+"req": [
+"mtv",
+"s01",
+"s02",
+"s03",
+"s04",
+"s05",
+"season",
+"1997",
+"1998",
+"1999",
+"2000",
+"2001"
+]
+},
+{
+"title": "Celebrity Deathmatch",
+"q": "late",
+"net": "mtv",
+"original_run": "1998-2002"
+},
+{
+"title": "Downtown",
+"q": "late",
+"net": "mtv",
+"original_run": "1999-1999",
+"ambiguous": true,
+"req": [
+"mtv",
+"animated",
+"1999"
+]
+},
+{
+"title": "Undergrads",
+"q": "late",
+"net": "mtv",
+"original_run": "2001-2001",
+"ambiguous": true,
+"req": [
+"mtv",
+"animated",
+"2001"
+]
+},
+{
+"title": "Clone High",
+"q": "late",
+"net": "mtv",
+"original_run": "2002-2003"
+},
+{
+"title": "Jackass",
+"q": "late",
+"net": "mtv",
+"original_run": "2000-2002",
+"ambiguous": true,
+"req": [
+"mtv",
+"s01",
+"s02",
+"s03",
+"season",
+"2000",
+"2001",
+"2002"
+]
+},
+{
+"title": "The Real World",
+"q": "prime",
+"net": "mtv",
+"original_run": "1992-2004",
+"alt": [
+"Real World"
+],
+"ambiguous": true,
+"req": [
+"mtv",
+"new york",
+"los angeles",
+"san francisco",
+"london",
+"miami",
+"boston",
+"seattle",
+"hawaii",
+"1992",
+"1993",
+"1994"
+]
+},
+{
+"title": "Buzzkill",
+"q": "late",
+"net": "mtv",
+"original_run": "1996-1996",
+"ambiguous": true,
+"req": [
+"mtv"
+]
+},
+{
+"title": "Austin Stories",
+"q": "late",
+"net": "mtv",
+"original_run": "1997-1998"
+},
+{
+"title": "Viva Variety",
+"q": "late",
+"net": "comedy",
+"original_run": "1997-1999"
+},
+{
+"title": "Exit 57",
+"q": "late",
+"net": "comedy",
+"original_run": "1995-1996"
+},
+{
+"title": "Mr. Show with Bob and David",
+"q": "late",
+"net": "hbo",
+"original_run": "1995-1998",
+"alt": [
+"Mr. Show"
+]
+},
+{
+"title": "The Vacant Lot",
+"q": "late",
+"net": "comedy",
+"original_run": "1993-1994",
+"alt": [
+"Vacant Lot"
+],
+"ambiguous": true,
+"req": [
+"1993",
+"sketch",
+"comedy central"
+]
+},
+{
+"title": "Almost Live!",
+"q": "late",
+"net": "syn",
+"original_run": "1984-1999",
+"alt": [
+"Almost Live"
+],
+"ambiguous": true,
+"req": [
+"king",
+"seattle",
+"1984",
+"1985",
+"1986",
+"1987",
+"1988",
+"1989",
+"199"
+]
+},
+{
+"title": "The Dana Carvey Show",
+"q": "prime",
+"net": "abc",
+"original_run": "1996-1996",
+"alt": [
+"Dana Carvey Show"
+]
+},
+{
+"title": "The Idiot Box",
+"q": "late",
+"net": "mtv",
+"original_run": "1991-1991",
+"alt": [
+"Idiot Box"
+],
+"ambiguous": true,
+"req": [
+"mtv",
+"alex winter"
+]
+},
+{
+"title": "Short Attention Span Theater",
+"q": "late",
+"net": "comedy",
+"original_run": "1989-1994"
+},
+{
+"title": "Comic Strip Live",
+"q": "late",
+"net": "fox",
+"original_run": "1989-1994"
+},
+{
+"title": "An Evening at the Improv",
+"q": "late",
+"net": "aande",
+"original_run": "1982-1996",
+"alt": [
+"Evening at the Improv"
+]
+},
+{
+"title": "Caroline's Comedy Hour",
+"q": "late",
+"net": "aande",
+"original_run": "1989-1995",
+"alt": [
+"Carolines Comedy Hour"
+]
+},
+{
+"title": "Stand-Up Spotlight",
+"q": "late",
+"net": "vh1",
+"original_run": "1988-1992",
+"alt": [
+"Stand Up Spotlight"
+]
+},
+{
+"title": "London Underground",
+"q": "late",
+"net": "comedy",
+"original_run": "1991-1992",
+"ambiguous": true,
+"req": [
+"comedy central",
+"comedy"
+]
+},
+{
+"title": "Comics Only",
+"q": "late",
+"net": "comedy",
+"original_run": "1991-1993"
+},
+{
+"title": "Night After Night with Allan Havey",
+"q": "late",
+"net": "comedy",
+"original_run": "1989-1992",
+"alt": [
+"Night After Night"
+],
+"ambiguous": true,
+"req": [
+"allan havey"
+]
+},
+{
+"title": "The Higgins Boys and Gruber",
+"q": "late",
+"net": "comedy",
+"original_run": "1989-1991",
+"alt": [
+"Higgins Boys and Gruber"
+]
+},
+{
+"title": "Fridays",
+"q": "late",
+"net": "abc",
+"original_run": "1980-1982",
+"ambiguous": true,
+"req": [
+"abc",
+"1980",
+"1981",
+"1982",
+"sketch",
+"michael richards"
+]
+},
+{
+"title": "SCTV",
+"q": "late",
+"net": "nbc",
+"original_run": "1976-1984",
+"alt": [
+"SCTV Network 90",
+"SCTV Network",
+"Second City Television"
+]
+},
+{
+"title": "Not Necessarily the News",
+"q": "late",
+"net": "hbo",
+"original_run": "1983-1990"
+},
+{
+"title": "The New Show",
+"q": "late",
+"net": "nbc",
+"original_run": "1984-1984",
+"ambiguous": true,
+"req": [
+"1984",
+"lorne michaels"
+]
+},
+{
+"title": "TV 101",
+"q": "prime",
+"net": "cbs",
+"original_run": "1988-1989"
+},
+{
+"title": "Square Pegs",
+"q": "prime",
+"net": "cbs",
+"original_run": "1982-1983"
+},
+{
+"title": "It's Garry Shandling's Show",
+"q": "prime",
+"net": "fox",
+"original_run": "1986-1990",
+"alt": [
+"Its Garry Shandlings Show"
+]
+},
+{
+"title": "The Days and Nights of Molly Dodd",
+"q": "prime",
+"net": "nbc",
+"original_run": "1987-1991",
+"alt": [
+"Days and Nights of Molly Dodd"
+]
+},
+{
+"title": "Frank's Place",
+"q": "prime",
+"net": "cbs",
+"original_run": "1987-1988",
+"alt": [
+"Franks Place"
+]
+},
+{
+"title": "Hooperman",
+"q": "prime",
+"net": "abc",
+"original_run": "1987-1989"
+},
+{
+"title": "The Slap Maxwell Story",
+"q": "prime",
+"net": "abc",
+"original_run": "1987-1988",
+"alt": [
+"Slap Maxwell Story"
+]
+},
+{
+"title": "Buffalo Bill",
+"q": "prime",
+"net": "nbc",
+"original_run": "1983-1984",
+"ambiguous": true,
+"req": [
+"dabney coleman",
+"1983",
+"1984",
+"nbc",
+"sitcom"
+]
+},
+{
+"title": "Open All Night",
+"q": "prime",
+"net": "abc",
+"original_run": "1981-1982",
+"ambiguous": true,
+"req": [
+"1981",
+"1982",
+"abc",
+"sitcom"
+]
+},
+{
+"title": "The Duck Factory",
+"q": "prime",
+"net": "nbc",
+"original_run": "1984-1984",
+"alt": [
+"Duck Factory"
+]
+},
+{
+"title": "Voyagers!",
+"q": "prime",
+"net": "nbc",
+"original_run": "1982-1983",
+"alt": [
+"Voyagers"
+],
+"ambiguous": true,
+"req": [
+"1982",
+"1983",
+"jon-erik hexum",
+"phineas bogg",
+"nbc"
+]
+},
+{
+"title": "The Powers of Matthew Star",
+"q": "prime",
+"net": "nbc",
+"original_run": "1982-1983",
+"alt": [
+"Powers of Matthew Star"
+]
+},
+{
+"title": "Tales of the Gold Monkey",
+"q": "prime",
+"net": "abc",
+"original_run": "1982-1983"
+},
+{
+"title": "Bring 'Em Back Alive",
+"q": "prime",
+"net": "cbs",
+"original_run": "1982-1983",
+"alt": [
+"Bring Em Back Alive"
+]
+},
+{
+"title": "The Greatest American Hero",
+"q": "prime",
+"net": "abc",
+"original_run": "1981-1983",
+"alt": [
+"Greatest American Hero"
+],
+"slots": [
+[
+1981,
+1982,
+"abc",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Wizards and Warriors",
+"q": "prime",
+"net": "cbs",
+"original_run": "1983-1983",
+"ambiguous": true,
+"req": [
+"1983",
+"cbs",
+"jeff conaway"
+]
+},
+{
+"title": "The Phoenix",
+"q": "prime",
+"net": "abc",
+"original_run": "1982-1982",
+"ambiguous": true,
+"req": [
+"1981",
+"1982",
+"judson scott",
+"abc"
+]
+},
+{
+"title": "Otherworld",
+"q": "prime",
+"net": "cbs",
+"original_run": "1985-1985",
+"ambiguous": true,
+"req": [
+"1985",
+"cbs",
+"tv series"
+]
+},
+{
+"title": "V: The Series",
+"q": "prime",
+"net": "nbc",
+"original_run": "1984-1985",
+"alt": [
+"V The Series"
+],
+"slots": [
+[
+1984,
+1985,
+"nbc",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Blue Thunder",
+"q": "prime",
+"net": "abc",
+"original_run": "1984-1984",
+"ambiguous": true,
+"req": [
+"tv series",
+"1984 abc",
+"james farentino",
+"the series"
+]
+},
+{
+"title": "Cover Up",
+"q": "prime",
+"net": "cbs",
+"original_run": "1984-1985",
+"ambiguous": true,
+"req": [
+"1984",
+"1985",
+"cbs",
+"jennifer o'neill"
+]
+},
+{
+"title": "Hardcastle and McCormick",
+"q": "prime",
+"net": "abc",
+"original_run": "1983-1986",
+"alt": [
+"Hardcastle & McCormick"
+]
+},
+{
+"title": "Riptide",
+"q": "prime",
+"net": "nbc",
+"original_run": "1984-1986",
+"ambiguous": true,
+"req": [
+"1984",
+"1985",
+"1986",
+"nbc",
+"s01",
+"s02",
+"s03",
+"perry king"
+]
+},
+{
+"title": "The Master",
+"q": "prime",
+"net": "nbc",
+"original_run": "1984-1984",
+"ambiguous": true,
+"req": [
+"1984",
+"lee van cleef",
+"ninja"
+]
+},
+{
+"title": "Crazy Like a Fox",
+"q": "prime",
+"net": "cbs",
+"original_run": "1984-1986"
+},
+{
+"title": "Stingray",
+"q": "prime",
+"net": "nbc",
+"original_run": "1985-1987",
+"ambiguous": true,
+"req": [
+"1985",
+"1986",
+"1987",
+"nick mancuso",
+"nbc"
+]
+},
+{
+"title": "The Wizard",
+"q": "prime",
+"net": "cbs",
+"original_run": "1986-1987",
+"ambiguous": true,
+"req": [
+"1986",
+"1987",
+"david rappaport",
+"cbs"
+]
+},
+{
+"title": "Outlaws",
+"q": "prime",
+"net": "cbs",
+"original_run": "1986-1987",
+"ambiguous": true,
+"req": [
+"1986",
+"1987",
+"rod taylor",
+"cbs"
+]
+},
+{
+"title": "Starman",
+"q": "prime",
+"net": "abc",
+"original_run": "1986-1987",
+"ambiguous": true,
+"req": [
+"1986",
+"1987",
+"tv series",
+"robert hays",
+"the series"
+]
+},
+{
+"title": "Sidekicks",
+"q": "prime",
+"net": "abc",
+"original_run": "1986-1987",
+"ambiguous": true,
+"req": [
+"1986",
+"1987",
+"ernie reyes",
+"abc"
+]
+},
+{
+"title": "The Charmings",
+"q": "prime",
+"net": "abc",
+"original_run": "1987-1988",
+"alt": [
+"Charmings"
+]
+},
+{
+"title": "Once a Hero",
+"q": "prime",
+"net": "abc",
+"original_run": "1987-1987"
+},
+{
+"title": "Something Is Out There",
+"q": "prime",
+"net": "nbc",
+"original_run": "1988-1988"
+},
+{
+"title": "Hard Time on Planet Earth",
+"q": "prime",
+"net": "cbs",
+"original_run": "1989-1989"
+},
+{
+"title": "The Adventures of Superboy",
+"q": "prime",
+"net": "syn",
+"original_run": "1988-1992",
+"alt": [
+"Superboy"
+],
+"ambiguous": true,
+"req": [
+"1988",
+"1989",
+"1990",
+"1991",
+"1992",
+"tv series",
+"s01",
+"s02",
+"s03",
+"s04",
+"john haymes newton",
+"gerard christopher"
+]
+},
+{
+"title": "Swamp Thing",
+"q": "prime",
+"net": "usa",
+"original_run": "1990-1993",
+"ambiguous": true,
+"req": [
+"tv series",
+"the series",
+"1990",
+"1991",
+"1992",
+"1993",
+"usa network",
+"s01",
+"s02",
+"s03"
+]
+},
+{
+"title": "She-Wolf of London",
+"q": "prime",
+"net": "syn",
+"original_run": "1990-1991",
+"alt": [
+"She Wolf of London",
+"Love and Curses"
+]
+},
+{
+"title": "Dracula: The Series",
+"q": "prime",
+"net": "syn",
+"original_run": "1990-1991",
+"alt": [
+"Dracula The Series"
+]
+},
+{
+"title": "Forever Knight",
+"q": "late",
+"net": "cbs",
+"original_run": "1992-1996"
+},
+{
+"title": "Kindred: The Embraced",
+"q": "prime",
+"net": "fox",
+"original_run": "1996-1996",
+"alt": [
+"Kindred The Embraced"
+]
+},
+{
+"title": "Nightmare Cafe",
+"q": "prime",
+"net": "nbc",
+"original_run": "1992-1992",
+"alt": [
+"Nightmare Café"
+]
+},
+{
+"title": "Beyond Reality",
+"q": "prime",
+"net": "usa",
+"original_run": "1991-1993",
+"ambiguous": true,
+"req": [
+"1991",
+"1992",
+"1993",
+"usa network",
+"shari belafonte"
+]
+},
+{
+"title": "The Hitchhiker",
+"q": "late",
+"net": "hbo",
+"original_run": "1983-1991",
+"alt": [
+"Hitchhiker"
+],
+"ambiguous": true,
+"req": [
+"hbo",
+"usa network",
+"1983",
+"1984",
+"1985",
+"1986",
+"1987",
+"1989",
+"1990",
+"page fletcher",
+"s0"
+]
+},
+{
+"title": "The Ray Bradbury Theater",
+"q": "prime",
+"net": "usa",
+"original_run": "1985-1992",
+"alt": [
+"Ray Bradbury Theater",
+"Ray Bradbury Theatre"
+]
+},
+{
+"title": "Alfred Hitchcock Presents",
+"q": "prime",
+"net": "nbc",
+"original_run": "1985-1989",
+"ambiguous": true,
+"req": [
+"1985",
+"1986",
+"1987",
+"1988",
+"1989",
+"new alfred hitchcock"
+],
+"slots": [
+[
+1985,
+1986,
+"nbc",
+0,
+"20:30"
+]
+]
+},
+{
+"title": "Darkroom",
+"q": "prime",
+"net": "abc",
+"original_run": "1981-1982",
+"ambiguous": true,
+"req": [
+"1981",
+"1982",
+"james coburn",
+"abc"
+]
+},
+{
+"title": "The Burning Zone",
+"q": "prime",
+"net": "upn",
+"original_run": "1996-1997",
+"alt": [
+"Burning Zone"
+]
+},
+{
+"title": "Sliders",
+"q": "prime",
+"net": "fox",
+"original_run": "1995-2000",
+"ambiguous": true,
+"req": [
+"1995",
+"1996",
+"1997",
+"1998",
+"1999",
+"2000",
+"s01",
+"s02",
+"s03",
+"s04",
+"s05",
+"season"
+],
+"slots": [
+[
+1996,
+1997,
+"fox",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "M.A.N.T.I.S.",
+"q": "prime",
+"net": "fox",
+"original_run": "1994-1995",
+"alt": [
+"MANTIS"
+],
+"ambiguous": true,
+"req": [
+"1994",
+"1995",
+"carl lumbly",
+"fox"
+],
+"slots": [
+[
+1994,
+1995,
+"fox",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Viper",
+"q": "prime",
+"net": "nbc",
+"original_run": "1994-1999",
+"ambiguous": true,
+"req": [
+"1994",
+"1996",
+"1997",
+"1998",
+"tv series",
+"s01",
+"s02",
+"s03",
+"s04",
+"defender"
+]
+},
+{
+"title": "TekWar",
+"q": "prime",
+"net": "usa",
+"original_run": "1994-1996",
+"alt": [
+"Tek War"
+]
+},
+{
+"title": "Time Trax",
+"q": "prime",
+"net": "pten",
+"original_run": "1993-1994"
+},
+{
+"title": "Babylon 5",
+"q": "prime",
+"net": "pten",
+"original_run": "1994-1998"
+},
+{
+"title": "Space Precinct",
+"q": "prime",
+"net": "syn",
+"original_run": "1994-1995",
+"brit": true
+},
+{
+"title": "Mann & Machine",
+"q": "prime",
+"net": "nbc",
+"original_run": "1992-1992",
+"alt": [
+"Mann and Machine"
+]
+},
+{
+"title": "The Sentinel",
+"q": "prime",
+"net": "upn",
+"original_run": "1996-1999",
+"ambiguous": true,
+"req": [
+"1996",
+"1997",
+"1998",
+"1999",
+"upn",
+"s01",
+"s02",
+"s03",
+"s04",
+"richard burgi"
+]
+},
+{
+"title": "Seven Days",
+"q": "prime",
+"net": "upn",
+"original_run": "1998-2001",
+"ambiguous": true,
+"req": [
+"upn",
+"1998",
+"1999",
+"2000",
+"2001",
+"s01",
+"s02",
+"s03",
+"jonathan lapaglia"
+]
+},
+{
+"title": "The Lone Gunmen",
+"q": "prime",
+"net": "fox",
+"original_run": "2001-2001",
+"alt": [
+"Lone Gunmen"
+]
+},
+{
+"title": "Millennium",
+"q": "prime",
+"net": "fox",
+"original_run": "1996-1999",
+"ambiguous": true,
+"req": [
+"1996",
+"1997",
+"1998",
+"1999",
+"lance henriksen",
+"frank black",
+"s01",
+"s02",
+"s03"
+],
+"slots": [
+[
+1996,
+1999,
+"fox",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Now and Again",
+"q": "prime",
+"net": "cbs",
+"original_run": "1999-2000",
+"ambiguous": true,
+"req": [
+"1999",
+"2000",
+"cbs",
+"eric close"
+]
+},
+{
+"title": "Cupid",
+"q": "prime",
+"net": "abc",
+"original_run": "1998-1999",
+"ambiguous": true,
+"req": [
+"1998",
+"1999",
+"jeremy piven",
+"abc"
+]
+},
+{
+"title": "Sports Night",
+"q": "prime",
+"net": "abc",
+"original_run": "1998-2000",
+"slots": [
+[
+1998,
+1999,
+"abc",
+2,
+"21:30"
+]
+]
+},
+{
+"title": "Maximum Bob",
+"q": "prime",
+"net": "abc",
+"original_run": "1998-1998"
+},
+{
+"title": "EZ Streets",
+"q": "prime",
+"net": "cbs",
+"original_run": "1996-1997"
+},
+{
+"title": "Murder One",
+"q": "prime",
+"net": "abc",
+"original_run": "1995-1997",
+"ambiguous": true,
+"req": [
+"1995",
+"1996",
+"1997",
+"abc",
+"s01",
+"s02"
+]
+},
+{
+"title": "Twin Peaks",
+"q": "prime",
+"net": "abc",
+"original_run": "1990-1991",
+"ambiguous": true,
+"req": [
+"1990",
+"1991",
+"s01",
+"s02",
+"abc",
+"season 1",
+"season 2"
+],
+"slots": [
+[
+1990,
+1990,
+"abc",
+4,
+"21:00"
+],
+[
+1990,
+1991,
+"abc",
+6,
+"22:00"
+]
+]
+},
+{
+"title": "On the Air",
+"q": "prime",
+"net": "abc",
+"original_run": "1992-1992",
+"ambiguous": true,
+"req": [
+"david lynch",
+"1992"
+]
+},
+{
+"title": "Wild Palms",
+"q": "prime",
+"net": "abc",
+"original_run": "1993-1993"
+},
+{
+"title": "The Kingdom",
+"q": "late",
+"net": "syn",
+"original_run": "1994-1997",
+"ambiguous": true,
+"req": [
+"lars von trier",
+"riget"
+],
+"brit": true
+},
+{
+"title": "Cop Rock",
+"q": "prime",
+"net": "abc",
+"original_run": "1990-1990",
+"slots": [
+[
+1990,
+1990,
+"abc",
+3,
+"22:00"
+]
+]
+},
+{
+"title": "The Famous Teddy Z",
+"q": "prime",
+"net": "cbs",
+"original_run": "1989-1990",
+"alt": [
+"Famous Teddy Z"
+]
+},
+{
+"title": "Flying Blind",
+"q": "prime",
+"net": "fox",
+"original_run": "1992-1993",
+"ambiguous": true,
+"req": [
+"1992",
+"1993",
+"fox",
+"tea leoni"
+]
+},
+{
+"title": "Herman's Head",
+"q": "prime",
+"net": "fox",
+"original_run": "1991-1994",
+"alt": [
+"Hermans Head"
+]
+},
+{
+"title": "Woops!",
+"q": "prime",
+"net": "fox",
+"original_run": "1992-1992",
+"alt": [
+"Woops"
+],
+"ambiguous": true,
+"req": [
+"1992",
+"fox"
+]
+},
+{
+"title": "Good Grief",
+"q": "prime",
+"net": "fox",
+"original_run": "1990-1991",
+"ambiguous": true,
+"req": [
+"1990",
+"1991",
+"howie mandel",
+"fox"
+]
+},
+{
+"title": "Bakersfield P.D.",
+"q": "prime",
+"net": "fox",
+"original_run": "1993-1994",
+"alt": [
+"Bakersfield PD"
+]
+},
+{
+"title": "The Mommies",
+"q": "prime",
+"net": "nbc",
+"original_run": "1993-1995"
+},
+{
+"title": "Nurses",
+"q": "prime",
+"net": "nbc",
+"original_run": "1991-1994",
+"ambiguous": true,
+"req": [
+"1991",
+"1992",
+"1993",
+"1994",
+"nbc",
+"sitcom"
+]
+},
+{
+"title": "The Torkelsons",
+"q": "prime",
+"net": "nbc",
+"original_run": "1991-1993",
+"alt": [
+"Torkelsons",
+"Almost Home"
+],
+"ambiguous": true,
+"req": [
+"torkelsons",
+"1991",
+"1992",
+"1993"
+]
+},
+{
+"title": "Dinosaurs",
+"q": "prime",
+"net": "abc",
+"original_run": "1991-1994",
+"ambiguous": true,
+"req": [
+"1991",
+"1992",
+"1993",
+"1994",
+"henson",
+"sitcom",
+"s01",
+"s02",
+"s03",
+"s04",
+"abc"
+],
+"slots": [
+[
+1991,
+1991,
+"abc",
+5,
+"20:30"
+],
+[
+1991,
+1993,
+"abc",
+3,
+"20:00"
+],
+[
+1993,
+1994,
+"abc",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Out of This World",
+"q": "prime",
+"net": "syn",
+"original_run": "1987-1991",
+"ambiguous": true,
+"req": [
+"1987",
+"1988",
+"1989",
+"1990",
+"1991",
+"evie",
+"maureen flannigan",
+"sitcom"
+]
+},
+{
+"title": "Small Wonder",
+"q": "prime",
+"net": "syn",
+"original_run": "1985-1989",
+"ambiguous": true,
+"req": [
+"1985",
+"1986",
+"1987",
+"1988",
+"1989",
+"vicki",
+"sitcom",
+"s01",
+"s02",
+"s03",
+"s04"
+]
+},
+{
+"title": "Mr. Belvedere",
+"q": "prime",
+"net": "abc",
+"original_run": "1985-1990",
+"alt": [
+"Mr Belvedere"
+]
+},
+{
+"title": "Charles in Charge",
+"q": "prime",
+"net": "syn",
+"original_run": "1984-1990"
+},
+{
+"title": "Throb",
+"q": "prime",
+"net": "syn",
+"original_run": "1986-1988",
+"ambiguous": true,
+"req": [
+"1986",
+"1987",
+"1988",
+"diana canova",
+"sitcom"
+]
+},
+{
+"title": "The New Adventures of Beans Baxter",
+"q": "prime",
+"net": "fox",
+"original_run": "1987-1987",
+"alt": [
+"New Adventures of Beans Baxter",
+"Beans Baxter"
+]
+},
+{
+"title": "Women in Prison",
+"q": "prime",
+"net": "fox",
+"original_run": "1987-1988",
+"ambiguous": true,
+"req": [
+"1987",
+"1988",
+"fox",
+"sitcom"
+]
+},
+{
+"title": "Second Chance",
+"q": "prime",
+"net": "fox",
+"original_run": "1987-1988",
+"alt": [
+"Boys Will Be Boys"
+],
+"ambiguous": true,
+"req": [
+"1987",
+"1988",
+"fox",
+"matthew perry"
+]
+},
+{
+"title": "The Tracey Ullman Show",
+"q": "prime",
+"net": "fox",
+"original_run": "1987-1990",
+"alt": [
+"Tracey Ullman Show"
+]
+},
+{
+"title": "Duet",
+"q": "prime",
+"net": "fox",
+"original_run": "1987-1989",
+"ambiguous": true,
+"req": [
+"1987",
+"1988",
+"1989",
+"fox",
+"sitcom"
+]
+},
+{
+"title": "Open House",
+"q": "prime",
+"net": "fox",
+"original_run": "1989-1990",
+"ambiguous": true,
+"req": [
+"1989",
+"1990",
+"fox",
+"sitcom",
+"alison laplaca"
+]
+},
+{
+"title": "Married... with Children",
+"q": "prime",
+"net": "fox",
+"original_run": "1987-1997",
+"slots": [
+[
+1987,
+1989,
+"fox",
+0,
+"20:00"
+],
+[
+1989,
+1996,
+"fox",
+0,
+"21:00"
+]
+]
+},
+{
+"title": "Babes",
+"q": "prime",
+"net": "fox",
+"original_run": "1990-1991",
+"ambiguous": true,
+"req": [
+"1990",
+"1991",
+"fox",
+"sitcom"
+]
+},
+{
+"title": "Drexell's Class",
+"q": "prime",
+"net": "fox",
+"original_run": "1991-1992",
+"alt": [
+"Drexells Class"
+]
+},
+{
+"title": "Down the Shore",
+"q": "prime",
+"net": "fox",
+"original_run": "1992-1993"
+},
+{
+"title": "Shaky Ground",
+"q": "prime",
+"net": "fox",
+"original_run": "1992-1993"
+},
+{
+"title": "Great Scott!",
+"q": "prime",
+"net": "fox",
+"original_run": "1992-1992",
+"alt": [
+"Great Scott"
+],
+"ambiguous": true,
+"req": [
+"1992",
+"tobey maguire",
+"fox"
+]
+},
+{
+"title": "Hi Honey, I'm Home!",
+"q": "prime",
+"net": "abc",
+"original_run": "1991-1992",
+"alt": [
+"Hi Honey I'm Home"
+]
+},
+{
+"title": "Camp Wilder",
+"q": "prime",
+"net": "abc",
+"original_run": "1992-1993"
+},
+{
+"title": "Teen Angel",
+"q": "prime",
+"net": "abc",
+"original_run": "1997-1998",
+"ambiguous": true,
+"req": [
+"1997",
+"1998",
+"abc",
+"tgif"
+]
+},
+{
+"title": "You Wish",
+"q": "prime",
+"net": "abc",
+"original_run": "1997-1998",
+"ambiguous": true,
+"req": [
+"1997",
+"1998",
+"abc",
+"tgif",
+"genie"
+]
+},
+{
+"title": "Two of a Kind",
+"q": "prime",
+"net": "abc",
+"original_run": "1998-1999",
+"ambiguous": true,
+"req": [
+"olsen",
+"1998",
+"1999",
+"abc",
+"tgif"
+]
+},
+{
+"title": "Aliens in the Family",
+"q": "prime",
+"net": "abc",
+"original_run": "1996-1996"
+},
+{
+"title": "Homeboys in Outer Space",
+"q": "prime",
+"net": "upn",
+"original_run": "1996-1997"
+},
+{
+"title": "The Secret Diary of Desmond Pfeiffer",
+"q": "prime",
+"net": "upn",
+"original_run": "1998-1998",
+"alt": [
+"Secret Diary of Desmond Pfeiffer"
+]
+},
+{
+"title": "Shasta McNasty",
+"q": "prime",
+"net": "upn",
+"original_run": "1999-2000"
+},
+{
+"title": "Clueless",
+"q": "prime",
+"net": "abc",
+"original_run": "1996-1999",
+"ambiguous": true,
+"req": [
+"tv series",
+"1996",
+"1997",
+"1998",
+"1999",
+"s01",
+"s02",
+"s03",
+"rachel blanchard"
+]
+},
+{
+"title": "Weird Science",
+"q": "prime",
+"net": "usa",
+"original_run": "1994-1998",
+"ambiguous": true,
+"req": [
+"tv series",
+"1994",
+"1995",
+"1996",
+"1997",
+"1998",
+"usa network",
+"s01",
+"s02",
+"s03",
+"s04",
+"s05"
+]
+},
+{
+"title": "Swans Crossing",
+"q": "kids",
+"net": "syn",
+"original_run": "1992-1992"
+},
+{
+"title": "California Dreams",
+"q": "kids",
+"net": "nbc",
+"original_run": "1992-1996"
+},
+{
+"title": "Hang Time",
+"q": "kids",
+"net": "nbc",
+"original_run": "1995-2000",
+"ambiguous": true,
+"req": [
+"nbc",
+"tnbc",
+"1995",
+"1996",
+"1997",
+"1998",
+"1999",
+"2000"
+]
+},
+{
+"title": "City Guys",
+"q": "kids",
+"net": "nbc",
+"original_run": "1997-2001"
+},
+{
+"title": "Saved by the Bell: The New Class",
+"q": "kids",
+"net": "nbc",
+"original_run": "1993-2000",
+"alt": [
+"Saved by the Bell The New Class"
+]
+},
+{
+"title": "Good Morning, Miss Bliss",
+"q": "kids",
+"net": "disney",
+"original_run": "1988-1989",
+"alt": [
+"Good Morning Miss Bliss"
+]
+},
+{
+"title": "Kids Incorporated",
+"q": "kids",
+"net": "disney",
+"original_run": "1984-1993",
+"alt": [
+"Kids Inc"
+]
+},
+{
+"title": "The All New Mickey Mouse Club",
+"q": "kids",
+"net": "disney",
+"original_run": "1989-1994",
+"alt": [
+"All New Mickey Mouse Club",
+"MMC"
+],
+"ambiguous": true,
+"req": [
+"1989",
+"1990",
+"1991",
+"1992",
+"1993",
+"1994",
+"disney channel"
+]
+},
+{
+"title": "Dumbo's Circus",
+"q": "kids",
+"net": "disney",
+"original_run": "1985-1986",
+"alt": [
+"Dumbos Circus"
+]
+},
+{
+"title": "Welcome to Pooh Corner",
+"q": "kids",
+"net": "disney",
+"original_run": "1983-1986"
+},
+{
+"title": "Adventures in Wonderland",
+"q": "kids",
+"net": "disney",
+"original_run": "1992-1995",
+"ambiguous": true,
+"req": [
+"disney",
+"1992",
+"1993",
+"1994",
+"1995"
+]
+},
+{
+"title": "Under the Umbrella Tree",
+"q": "kids",
+"net": "disney",
+"original_run": "1986-1993"
+},
+{
+"title": "Today's Special",
+"q": "kids",
+"net": "nick",
+"original_run": "1981-1987",
+"alt": [
+"Todays Special"
+],
+"ambiguous": true,
+"req": [
+"tvo",
+"jeff",
+"jodie",
+"nickelodeon",
+"198"
+]
+},
+{
+"title": "Pinwheel",
+"q": "kids",
+"net": "nick",
+"original_run": "1977-1990",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"198"
+]
+},
+{
+"title": "Eureeka's Castle",
+"q": "kids",
+"net": "nick",
+"original_run": "1989-1995",
+"alt": [
+"Eureekas Castle"
+]
+},
+{
+"title": "The Elephant Show",
+"q": "kids",
+"net": "nick",
+"original_run": "1984-1988",
+"alt": [
+"Sharon Lois & Bram's Elephant Show",
+"Sharon Lois and Bram"
+]
+},
+{
+"title": "Fred Penner's Place",
+"q": "kids",
+"net": "nick",
+"original_run": "1985-1997",
+"alt": [
+"Fred Penners Place"
+]
+},
+{
+"title": "The Great Space Coaster",
+"q": "kids",
+"net": "syn",
+"original_run": "1981-1986",
+"alt": [
+"Great Space Coaster"
+]
+},
+{
+"title": "Hot Fudge",
+"q": "kids",
+"net": "syn",
+"original_run": "1976-1980",
+"ambiguous": true,
+"req": [
+"1976",
+"1977",
+"1978",
+"1979",
+"1980",
+"puppets",
+"detroit"
+]
+},
+{
+"title": "The Bozo Show",
+"q": "kids",
+"net": "wgn",
+"original_run": "1984-2001",
+"alt": [
+"Bozo Show",
+"Bozo's Circus",
+"Bozo Super Sunday Show",
+"Bozo the Clown"
+],
+"ambiguous": true,
+"req": [
+"wgn",
+"1984",
+"1985",
+"1986",
+"1987",
+"1988",
+"1989",
+"199",
+"2000",
+"2001"
+]
+},
+{
+"title": "Romper Room",
+"q": "kids",
+"net": "syn",
+"original_run": "1953-1994",
+"alt": [
+"Romper Room and Friends"
+]
+},
+{
+"title": "Captain Kangaroo",
+"q": "kids",
+"net": "cbs",
+"original_run": "1955-1984",
+"ambiguous": true,
+"req": [
+"197",
+"198",
+"cbs",
+"pbs"
+]
+},
+{
+"title": "The Uncle Floyd Show",
+"q": "late",
+"net": "syn",
+"original_run": "1974-1998",
+"alt": [
+"Uncle Floyd Show",
+"Uncle Floyd"
+]
+},
+{
+"title": "Wonderama",
+"q": "kids",
+"net": "syn",
+"original_run": "1955-1986"
+},
+{
+"title": "Hatchy Milatchy",
+"q": "kids",
+"net": "syn",
+"original_run": "1960-1990"
+},
+{
+"title": "Ramblin' Rod",
+"q": "kids",
+"net": "syn",
+"original_run": "1964-1997",
+"alt": [
+"Ramblin Rod"
+]
+},
+{
+"title": "J.P. Patches",
+"q": "kids",
+"net": "syn",
+"original_run": "1958-1981",
+"alt": [
+"JP Patches"
+]
+},
+{
+"title": "Captain Noah and His Magical Ark",
+"q": "kids",
+"net": "syn",
+"original_run": "1967-1994",
+"alt": [
+"Captain Noah"
+]
+},
+{
+"title": "Kidsongs",
+"q": "kids",
+"net": "syn",
+"original_run": "1987-1998",
+"alt": [
+"The Kidsongs TV Show",
+"Kidsongs Television Show"
+]
+},
+{
+"title": "Zoom",
+"q": "kids",
+"net": "pbs",
+"original_run": "1999-2004",
+"ambiguous": true,
+"req": [
+"pbs",
+"wgbh",
+"1999",
+"2000",
+"2001",
+"2002",
+"2003",
+"2004"
+]
+},
+{
+"title": "The Electric Company",
+"q": "rerun",
+"net": "pbs",
+"original_run": "1971-1977",
+"alt": [
+"Electric Company"
+],
+"ambiguous": true,
+"req": [
+"1971",
+"1972",
+"1973",
+"1974",
+"1975",
+"1976",
+"1977",
+"pbs",
+"ctw"
+]
+},
+{
+"title": "Reading Rainbow",
+"q": "kids",
+"net": "pbs",
+"original_run": "1983-2004"
+},
+{
+"title": "Newton's Apple",
+"q": "pub",
+"net": "pbs",
+"original_run": "1983-1998",
+"alt": [
+"Newtons Apple"
+]
+},
+{
+"title": "The Voyage of the Mimi",
+"q": "kids",
+"net": "pbs",
+"original_run": "1984-1988",
+"alt": [
+"Voyage of the Mimi"
+]
+},
+{
+"title": "Read All About It!",
+"q": "kids",
+"net": "pbs",
+"original_run": "1979-1983",
+"alt": [
+"Read All About It"
+],
+"ambiguous": true,
+"req": [
+"tvo",
+"1979",
+"198",
+"coach house"
+]
+},
+{
+"title": "Tomes & Talismans",
+"q": "kids",
+"net": "pbs",
+"original_run": "1986-1986",
+"alt": [
+"Tomes and Talismans"
+]
+},
+{
+"title": "The Letter People",
+"q": "kids",
+"net": "pbs",
+"original_run": "1974-1976",
+"alt": [
+"Letter People"
+]
+},
+{
+"title": "Inside/Out",
+"q": "kids",
+"net": "pbs",
+"original_run": "1972-1973",
+"ambiguous": true,
+"req": [
+"ait",
+"1972",
+"1973",
+"agency for instructional"
+]
+},
+{
+"title": "The Secret City",
+"q": "kids",
+"net": "pbs",
+"original_run": "1986-1989",
+"ambiguous": true,
+"req": [
+"commander mark",
+"draw"
+]
+},
+{
+"title": "Commander Mark",
+"q": "kids",
+"net": "pbs",
+"original_run": "1986-1989",
+"alt": [
+"Mark Kistler's Imagination Station",
+"Imagination Station"
+]
+},
+{
+"title": "The Joy of Painting",
+"q": "pub",
+"net": "pbs",
+"original_run": "1983-1994",
+"alt": [
+"Joy of Painting",
+"Bob Ross"
+],
+"ambiguous": true,
+"req": [
+"bob ross",
+"joy of painting"
+]
+},
+{
+"title": "Vegetable Soup",
+"q": "kids",
+"net": "pbs",
+"original_run": "1975-1978",
+"ambiguous": true,
+"req": [
+"1975",
+"1976",
+"1977",
+"1978",
+"pbs"
+]
+},
+{
+"title": "Slim Goodbody",
+"q": "kids",
+"net": "pbs",
+"original_run": "1980-1986",
+"alt": [
+"Inside Story with Slim Goodbody",
+"The Adventures of Slim Goodbody"
+]
+},
+{
+"title": "Powerhouse",
+"q": "kids",
+"net": "pbs",
+"original_run": "1982-1983",
+"ambiguous": true,
+"req": [
+"pbs",
+"1982",
+"1983"
+]
+},
+{
+"title": "Wild Kingdom",
+"q": "rerun",
+"net": "syn",
+"original_run": "1963-1988",
+"alt": [
+"Mutual of Omaha's Wild Kingdom"
+],
+"ambiguous": true,
+"req": [
+"mutual of omaha",
+"marlin perkins"
+]
+},
+{
+"title": "The Undersea World of Jacques Cousteau",
+"q": "rerun",
+"net": "syn",
+"original_run": "1968-1976",
+"alt": [
+"Undersea World of Jacques Cousteau"
+]
+},
+{
+"title": "Cosmos",
+"q": "pub",
+"net": "pbs",
+"original_run": "1980-1980",
+"alt": [
+"Cosmos: A Personal Voyage",
+"Cosmos A Personal Voyage"
+],
+"ambiguous": true,
+"req": [
+"carl sagan",
+"1980",
+"personal voyage"
+]
+},
+{
+"title": "Connections",
+"q": "pub",
+"net": "pbs",
+"original_run": "1978-1979",
+"ambiguous": true,
+"req": [
+"james burke",
+"1978",
+"1979"
+],
+"brit": true
+},
+{
+"title": "The Day the Universe Changed",
+"q": "pub",
+"net": "pbs",
+"original_run": "1985-1985",
+"alt": [
+"Day the Universe Changed"
+],
+"brit": true
+},
+{
+"title": "The Mechanical Universe",
+"q": "pub",
+"net": "pbs",
+"original_run": "1985-1986",
+"alt": [
+"Mechanical Universe"
+]
+},
+{
+"title": "The Power of Myth",
+"q": "pub",
+"net": "pbs",
+"original_run": "1988-1988",
+"alt": [
+"Joseph Campbell and the Power of Myth"
+]
+},
+{
+"title": "The Civil War",
+"q": "pub",
+"net": "pbs",
+"original_run": "1990-1990",
+"ambiguous": true,
+"req": [
+"ken burns",
+"1990"
+]
+},
+{
+"title": "The Computer Chronicles",
+"q": "pub",
+"net": "pbs",
+"original_run": "1983-2002",
+"alt": [
+"Computer Chronicles"
+]
+},
+{
+"title": "Bits and Bytes",
+"q": "pub",
+"net": "pbs",
+"original_run": "1983-1984",
+"ambiguous": true,
+"req": [
+"tvo",
+"1983",
+"1984",
+"luba goy",
+"billy van"
+]
+},
+{
+"title": "Siskel & Ebert",
+"q": "late",
+"net": "syn",
+"original_run": "1986-1999",
+"alt": [
+"Siskel and Ebert",
+"At the Movies with Siskel"
+]
+},
+{
+"title": "Dr. Demento",
+"q": "late",
+"net": "syn",
+"original_run": "1984-1992",
+"ambiguous": true,
+"req": [
+"tv",
+"video",
+"mtv"
+]
+},
+{
+"title": "Night Tracks",
+"q": "late",
+"net": "tbs",
+"original_run": "1983-1992"
+},
+{
+"title": "Hollywood Squares",
+"q": "game",
+"net": "syn",
+"original_run": "1986-1989",
+"alt": [
+"The New Hollywood Squares"
+],
+"ambiguous": true,
+"req": [
+"1986",
+"1987",
+"1988",
+"1989",
+"john davidson"
+]
+},
+{
+"title": "Liar's Club",
+"q": "game",
+"net": "syn",
+"original_run": "1976-1989",
+"alt": [
+"Liars Club"
+]
+},
+{
+"title": "Bumper Stumpers",
+"q": "game",
+"net": "usa",
+"original_run": "1987-1990"
+},
+{
+"title": "Jackpot!",
+"q": "game",
+"net": "usa",
+"original_run": "1985-1988",
+"alt": [
+"Jackpot"
+],
+"ambiguous": true,
+"req": [
+"mike darrow",
+"usa network",
+"1985",
+"1986",
+"1987",
+"1988"
+]
+},
+{
+"title": "Chain Reaction",
+"q": "game",
+"net": "usa",
+"original_run": "1986-1991",
+"ambiguous": true,
+"req": [
+"1986",
+"1987",
+"1988",
+"1989",
+"1990",
+"1991",
+"geoff edwards",
+"usa network"
+]
+},
+{
+"title": "Hot Potato",
+"q": "game",
+"net": "nbc",
+"original_run": "1984-1984",
+"ambiguous": true,
+"req": [
+"bill cullen",
+"1984"
+]
+},
+{
+"title": "Scrabble",
+"q": "game",
+"net": "nbc",
+"original_run": "1984-1990",
+"ambiguous": true,
+"req": [
+"chuck woolery",
+"1984",
+"1985",
+"1986",
+"1987",
+"1988",
+"1989",
+"1990",
+"1993"
+]
+},
+{
+"title": "Sale of the Century",
+"q": "game",
+"net": "nbc",
+"original_run": "1983-1989",
+"ambiguous": true,
+"req": [
+"jim perry",
+"1983",
+"1984",
+"1985",
+"1986",
+"1987",
+"1988",
+"1989"
+]
+},
+{
+"title": "Classic Concentration",
+"q": "game",
+"net": "nbc",
+"original_run": "1987-1991"
+},
+{
+"title": "Trump Card",
+"q": "game",
+"net": "syn",
+"original_run": "1990-1991",
+"ambiguous": true,
+"req": [
+"1990",
+"1991",
+"jimmy cefalo"
+]
+},
+{
+"title": "The Challengers",
+"q": "game",
+"net": "syn",
+"original_run": "1990-1991",
+"ambiguous": true,
+"req": [
+"dick clark",
+"1990",
+"1991"
+]
+},
+{
+"title": "Monopoly",
+"q": "game",
+"net": "abc",
+"original_run": "1990-1990",
+"ambiguous": true,
+"req": [
+"1990",
+"mike reilly",
+"game show"
+]
+},
+{
+"title": "Scattergories",
+"q": "game",
+"net": "nbc",
+"original_run": "1993-1993",
+"ambiguous": true,
+"req": [
+"dick clark",
+"1993",
+"game show"
+]
+},
+{
+"title": "Debt",
+"q": "game",
+"net": "lifetime",
+"original_run": "1996-1998",
+"ambiguous": true,
+"req": [
+"wink martindale",
+"lifetime"
+]
+},
+{
+"title": "Idiot Savants",
+"q": "game",
+"net": "mtv",
+"original_run": "1996-1997"
+},
+{
+"title": "Make the Grade",
+"q": "game",
+"net": "nick",
+"original_run": "1989-1990",
+"ambiguous": true,
+"req": [
+"nickelodeon"
+]
+},
+{
+"title": "Get the Picture",
+"q": "game",
+"net": "nick",
+"original_run": "1991-1991",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"mike o'malley"
+]
+},
+{
+"title": "Figure It Out",
+"q": "game",
+"net": "nick",
+"original_run": "1997-1999",
+"ambiguous": true,
+"req": [
+"nickelodeon",
+"summer sanders"
+]
+},
+{
+"title": "Masters of the Maze",
+"q": "game",
+"net": "family",
+"original_run": "1994-1996"
+},
+{
+"title": "Knights and Warriors",
+"q": "game",
+"net": "syn",
+"original_run": "1992-1993",
+"ambiguous": true,
+"req": [
+"1992",
+"1993",
+"game show"
+]
+},
+{
+"title": "Scavengers",
+"q": "game",
+"net": "syn",
+"original_run": "1994-1995",
+"ambiguous": true,
+"req": [
+"1994",
+"1995",
+"game show"
+]
+},
+{
+"title": "Thunder in Paradise",
+"q": "prime",
+"net": "syn",
+"original_run": "1994-1994"
+},
+{
+"title": "Acapulco H.E.A.T.",
+"q": "prime",
+"net": "syn",
+"original_run": "1993-1999",
+"alt": [
+"Acapulco HEAT"
+]
+},
+{
+"title": "Pointman",
+"q": "prime",
+"net": "pten",
+"original_run": "1995-1995",
+"ambiguous": true,
+"req": [
+"jack scalia",
+"1995"
+]
+},
+{
+"title": "Lightning Force",
+"q": "prime",
+"net": "syn",
+"original_run": "1991-1992"
+},
+{
+"title": "Super Force",
+"q": "prime",
+"net": "syn",
+"original_run": "1990-1992",
+"ambiguous": true,
+"req": [
+"1990",
+"1991",
+"1992",
+"ken olandt"
+]
+},
+{
+"title": "Tarzan: The Epic Adventures",
+"q": "prime",
+"net": "syn",
+"original_run": "1996-1997",
+"alt": [
+"Tarzan The Epic Adventures"
+]
+},
+{
+"title": "The Adventures of Sinbad",
+"q": "prime",
+"net": "syn",
+"original_run": "1996-1998",
+"alt": [
+"Adventures of Sinbad"
+]
+},
+{
+"title": "Conan the Adventurer",
+"q": "prime",
+"net": "syn",
+"original_run": "1997-1998",
+"ambiguous": true,
+"req": [
+"1997",
+"1998",
+"ralf moeller",
+"live action"
+]
+},
+{
+"title": "BeastMaster",
+"q": "prime",
+"net": "syn",
+"original_run": "1999-2002",
+"alt": [
+"Beastmaster"
+],
+"ambiguous": true,
+"req": [
+"tv series",
+"1999",
+"2000",
+"2001",
+"2002",
+"s01",
+"s02",
+"s03",
+"daniel goddard"
+]
+},
+{
+"title": "Cleopatra 2525",
+"q": "prime",
+"net": "syn",
+"original_run": "2000-2001"
+},
+{
+"title": "Jack of All Trades",
+"q": "prime",
+"net": "syn",
+"original_run": "2000-2000",
+"ambiguous": true,
+"req": [
+"bruce campbell",
+"2000"
+]
+},
+{
+"title": "Sheena",
+"q": "prime",
+"net": "syn",
+"original_run": "2000-2002",
+"ambiguous": true,
+"req": [
+"gena lee nolin",
+"2000",
+"2001",
+"2002",
+"tv series"
+]
+},
+{
+"title": "Relic Hunter",
+"q": "prime",
+"net": "syn",
+"original_run": "1999-2002"
+},
+{
+"title": "The Lost World",
+"q": "prime",
+"net": "syn",
+"original_run": "1999-2002",
+"alt": [
+"Sir Arthur Conan Doyle's The Lost World"
+],
+"ambiguous": true,
+"req": [
+"1999",
+"2000",
+"2001",
+"2002",
+"tv series",
+"s01",
+"s02",
+"s03"
+]
+},
+{
+"title": "Earth: Final Conflict",
+"q": "prime",
+"net": "syn",
+"original_run": "1997-2002",
+"alt": [
+"Earth Final Conflict"
+]
+},
+{
+"title": "Psi Factor: Chronicles of the Paranormal",
+"q": "prime",
+"net": "syn",
+"original_run": "1996-2000",
+"alt": [
+"Psi Factor"
+]
+},
+{
+"title": "Poltergeist: The Legacy",
+"q": "prime",
+"net": "syn",
+"original_run": "1996-1999",
+"alt": [
+"Poltergeist The Legacy"
+]
+},
+{
+"title": "The Crow: Stairway to Heaven",
+"q": "prime",
+"net": "syn",
+"original_run": "1998-1999",
+"alt": [
+"The Crow Stairway to Heaven"
+]
+},
+{
+"title": "Night Man",
+"q": "prime",
+"net": "syn",
+"original_run": "1997-1999",
+"alt": [
+"NightMan"
+],
+"ambiguous": true,
+"req": [
+"1997",
+"1998",
+"1999",
+"matt mccolm",
+"tv series"
+]
+},
+{
+"title": "Team Knight Rider",
+"q": "prime",
+"net": "syn",
+"original_run": "1997-1998"
+},
+{
+"title": "Mortal Kombat: Conquest",
+"q": "prime",
+"net": "syn",
+"original_run": "1998-1999",
+"alt": [
+"Mortal Kombat Conquest"
+]
+},
+{
+"title": "RoboCop: The Series",
+"q": "prime",
+"net": "syn",
+"original_run": "1994-1994",
+"alt": [
+"RoboCop The Series"
+]
+},
+{
+"title": "Kung Fu: The Legend Continues",
+"q": "prime",
+"net": "pten",
+"original_run": "1993-1997",
+"alt": [
+"Kung Fu The Legend Continues"
+]
+},
+{
+"title": "Lexx",
+"q": "late",
+"net": "scifi",
+"original_run": "1997-2002",
+"ambiguous": true,
+"req": [
+"s01",
+"s02",
+"s03",
+"s04",
+"season",
+"1997",
+"1998",
+"1999",
+"2000",
+"2001",
+"2002"
+]
+},
+{
+"title": "Farscape",
+"q": "prime",
+"net": "scifi",
+"original_run": "1999-2003"
+},
+{
+"title": "The Invisible Man",
+"q": "prime",
+"net": "scifi",
+"original_run": "2000-2002",
+"ambiguous": true,
+"req": [
+"2000",
+"2001",
+"2002",
+"vincent ventresca",
+"sci-fi channel",
+"s01",
+"s02"
+]
+},
+{
+"title": "First Wave",
+"q": "prime",
+"net": "scifi",
+"original_run": "1998-2001",
+"ambiguous": true,
+"req": [
+"1998",
+"1999",
+"2000",
+"2001",
+"cade foster",
+"s01",
+"s02",
+"s03"
+]
+},
+{
+"title": "Good vs Evil",
+"q": "prime",
+"net": "usa",
+"original_run": "1999-2000",
+"alt": [
+"G vs E",
+"G vs. E"
+]
+},
+{
+"title": "The Chronicle",
+"q": "prime",
+"net": "scifi",
+"original_run": "2001-2002",
+"ambiguous": true,
+"req": [
+"2001",
+"2002",
+"sci-fi channel",
+"news from the edge"
+]
+},
+{
+"title": "Special Unit 2",
+"q": "prime",
+"net": "upn",
+"original_run": "2001-2002"
+},
+{
+"title": "FreakyLinks",
+"q": "prime",
+"net": "fox",
+"original_run": "2000-2001",
+"alt": [
+"Freakylinks"
+]
+},
+{
+"title": "Strange World",
+"q": "prime",
+"net": "abc",
+"original_run": "1999-1999",
+"ambiguous": true,
+"req": [
+"1999",
+"abc",
+"tim guinee"
+]
+},
+{
+"title": "Prey",
+"q": "prime",
+"net": "abc",
+"original_run": "1998-1998",
+"ambiguous": true,
+"req": [
+"1998",
+"debra messing",
+"abc"
+]
+},
+{
+"title": "The Visitor",
+"q": "prime",
+"net": "fox",
+"original_run": "1997-1998",
+"ambiguous": true,
+"req": [
+"1997",
+"1998",
+"john corbett",
+"fox"
+]
+},
+{
+"title": "Roar",
+"q": "prime",
+"net": "fox",
+"original_run": "1997-1997",
+"ambiguous": true,
+"req": [
+"1997",
+"heath ledger",
+"fox"
+]
+},
+{
+"title": "Sleepwalkers",
+"q": "prime",
+"net": "nbc",
+"original_run": "1997-1998",
+"ambiguous": true,
+"req": [
+"1997",
+"1998",
+"nbc",
+"tv series"
+]
+},
+{
+"title": "The Others",
+"q": "prime",
+"net": "nbc",
+"original_run": "2000-2000",
+"ambiguous": true,
+"req": [
+"2000",
+"nbc",
+"tv series"
+]
+},
+{
+"title": "Cleghorne!",
+"q": "prime",
+"net": "wb",
+"original_run": "1995-1995"
+},
+{
+"title": "Birds of Prey",
+"q": "prime",
+"net": "wb",
+"original_run": "2002-2003",
+"ambiguous": true,
+"req": [
+"2002",
+"2003",
+"wb",
+"tv series",
+"dina meyer"
+]
+},
+{
+"title": "Tru Calling",
+"q": "prime",
+"net": "fox",
+"original_run": "2003-2004"
+},
+{
+"title": "Keen Eddie",
+"q": "prime",
+"net": "fox",
+"original_run": "2003-2004"
+},
+{
+"title": "Karen Sisco",
+"q": "prime",
+"net": "abc",
+"original_run": "2003-2004"
+},
+{
+"title": "Robbery Homicide Division",
+"q": "prime",
+"net": "cbs",
+"original_run": "2002-2003"
+},
+{
+"title": "Boomtown",
+"q": "prime",
+"net": "nbc",
+"original_run": "2002-2003",
+"ambiguous": true,
+"req": [
+"2002",
+"2003",
+"nbc",
+"donnie wahlberg",
+"s01",
+"s02"
+]
+},
+{
+"title": "John Doe",
+"q": "prime",
+"net": "fox",
+"original_run": "2002-2003",
+"ambiguous": true,
+"req": [
+"2002",
+"2003",
+"dominic purcell",
+"fox",
+"s01"
+]
+},
+{
+"title": "Push, Nevada",
+"q": "prime",
+"net": "abc",
+"original_run": "2002-2002",
+"alt": [
+"Push Nevada"
+]
+},
+{
+"title": "Miracles",
+"q": "prime",
+"net": "abc",
+"original_run": "2003-2003",
+"ambiguous": true,
+"req": [
+"2003",
+"skeet ulrich",
+"abc"
+]
+},
+{
+"title": "Carnivàle",
+"q": "prime",
+"net": "hbo",
+"original_run": "2003-2004",
+"alt": [
+"Carnivale"
+]
+},
+{
+"title": "The Unnaturals",
+"q": "late",
+"net": "comedy",
+"original_run": "1989-1991"
+},
+{
+"title": "Ed Grimley",
+"q": "kids",
+"net": "nbc",
+"original_run": "1988-1988",
+"alt": [
+"The Completely Mental Misadventures of Ed Grimley",
+"Completely Mental Misadventures of Ed Grimley"
+]
+},
+{
+"title": "Camp Candy",
+"q": "kids",
+"net": "nbc",
+"original_run": "1989-1992"
+},
+{
+"title": "Wish Kid",
+"q": "kids",
+"net": "nbc",
+"original_run": "1991-1991"
+},
+{
+"title": "ProStars",
+"q": "kids",
+"net": "nbc",
+"original_run": "1991-1991",
+"alt": [
+"Pro Stars"
+]
+},
+{
+"title": "Hammerman",
+"q": "kids",
+"net": "abc",
+"original_run": "1991-1991"
+},
+{
+"title": "Kid 'n Play",
+"q": "kids",
+"net": "nbc",
+"original_run": "1990-1990",
+"alt": [
+"Kid n Play"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1990"
+]
+},
+{
+"title": "New Kids on the Block",
+"q": "kids",
+"net": "abc",
+"original_run": "1990-1990",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1990"
+]
+},
+{
+"title": "Mister T",
+"q": "kids",
+"net": "nbc",
+"original_run": "1983-1985",
+"alt": [
+"Mr. T cartoon"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"ruby-spears",
+"1983"
+]
+},
+{
+"title": "Chuck Norris: Karate Kommandos",
+"q": "kids",
+"net": "syn",
+"original_run": "1986-1986",
+"alt": [
+"Karate Kommandos"
+]
+},
+{
+"title": "Rambo: The Force of Freedom",
+"q": "kids",
+"net": "syn",
+"original_run": "1986-1986",
+"alt": [
+"Rambo The Force of Freedom"
+]
+},
+{
+"title": "The Karate Kid",
+"q": "kids",
+"net": "nbc",
+"original_run": "1989-1989",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1989"
+]
+},
+{
+"title": "Police Academy: The Animated Series",
+"q": "kids",
+"net": "syn",
+"original_run": "1988-1989",
+"alt": [
+"Police Academy The Animated Series"
+]
+},
+{
+"title": "Beetlejuice",
+"q": "kids",
+"net": "abc",
+"original_run": "1989-1991",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1989",
+"1990",
+"1991",
+"s01",
+"s02",
+"s03",
+"s04"
+]
+},
+{
+"title": "The Real Adventures of Jonny Quest",
+"q": "kids",
+"net": "cartoon",
+"original_run": "1996-1997",
+"alt": [
+"Real Adventures of Jonny Quest"
+]
+},
+{
+"title": "Back to the Future: The Animated Series",
+"q": "kids",
+"net": "cbs",
+"original_run": "1991-1992",
+"alt": [
+"Back to the Future The Animated Series"
+]
+},
+{
+"title": "Bill & Ted's Excellent Adventures",
+"q": "kids",
+"net": "cbs",
+"original_run": "1990-1991",
+"alt": [
+"Bill and Ted's Excellent Adventures"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1990",
+"1991",
+"tv series"
+]
+},
+{
+"title": "Attack of the Killer Tomatoes",
+"q": "kids",
+"net": "fox",
+"original_run": "1990-1991",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1990",
+"1991",
+"fox kids"
+]
+},
+{
+"title": "Toxic Crusaders",
+"q": "kids",
+"net": "syn",
+"original_run": "1991-1991"
+},
+{
+"title": "Little Shop",
+"q": "kids",
+"net": "fox",
+"original_run": "1991-1991",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"fox kids"
+]
+},
+{
+"title": "Peter Pan and the Pirates",
+"q": "kids",
+"net": "fox",
+"original_run": "1990-1991",
+"alt": [
+"Fox's Peter Pan and the Pirates"
+]
+},
+{
+"title": "Zazoo U",
+"q": "kids",
+"net": "fox",
+"original_run": "1990-1991"
+},
+{
+"title": "Bobby's World",
+"q": "kids",
+"net": "fox",
+"original_run": "1990-1998",
+"alt": [
+"Bobbys World"
+]
+},
+{
+"title": "Eek! The Cat",
+"q": "kids",
+"net": "fox",
+"original_run": "1992-1997",
+"alt": [
+"Eek the Cat",
+"Eek! Stravaganza",
+"Eekstravaganza"
+]
+},
+{
+"title": "Life with Louie",
+"q": "kids",
+"net": "fox",
+"original_run": "1995-1998"
+},
+{
+"title": "Bump in the Night",
+"q": "kids",
+"net": "abc",
+"original_run": "1994-1995"
+},
+{
+"title": "Cro",
+"q": "kids",
+"net": "abc",
+"original_run": "1993-1994",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"ctw",
+"1993",
+"1994"
+]
+},
+{
+"title": "Dog City",
+"q": "kids",
+"net": "fox",
+"original_run": "1992-1994",
+"ambiguous": true,
+"req": [
+"henson",
+"animated",
+"1992",
+"1993",
+"1994",
+"fox kids"
+]
+},
+{
+"title": "Wild West C.O.W.-Boys of Moo Mesa",
+"q": "kids",
+"net": "abc",
+"original_run": "1992-1993",
+"alt": [
+"Cowboys of Moo Mesa",
+"C.O.W.-Boys of Moo Mesa"
+]
+},
+{
+"title": "Biker Mice from Mars",
+"q": "kids",
+"net": "syn",
+"original_run": "1993-1996"
+},
+{
+"title": "Street Sharks",
+"q": "kids",
+"net": "syn",
+"original_run": "1994-1997"
+},
+{
+"title": "Extreme Dinosaurs",
+"q": "kids",
+"net": "syn",
+"original_run": "1997-1997"
+},
+{
+"title": "Mummies Alive!",
+"q": "kids",
+"net": "syn",
+"original_run": "1997-1997",
+"alt": [
+"Mummies Alive"
+]
+},
+{
+"title": "Skeleton Warriors",
+"q": "kids",
+"net": "cbs",
+"original_run": "1994-1994"
+},
+{
+"title": "Double Dragon",
+"q": "kids",
+"net": "syn",
+"original_run": "1993-1994",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1993",
+"1994",
+"tv series"
+]
+},
+{
+"title": "Street Fighter",
+"q": "kids",
+"net": "usa",
+"original_run": "1995-1997",
+"ambiguous": true,
+"req": [
+"animated series",
+"cartoon",
+"usa network",
+"1995",
+"1996"
+]
+},
+{
+"title": "Mortal Kombat: Defenders of the Realm",
+"q": "kids",
+"net": "usa",
+"original_run": "1996-1996",
+"alt": [
+"Mortal Kombat Defenders of the Realm"
+]
+},
+{
+"title": "Darkstalkers",
+"q": "kids",
+"net": "syn",
+"original_run": "1995-1995",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1995"
+]
+},
+{
+"title": "Mega Man",
+"q": "kids",
+"net": "syn",
+"original_run": "1994-1995",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"ruby-spears",
+"1994",
+"1995",
+"tv series"
+]
+},
+{
+"title": "Sonic the Hedgehog",
+"q": "kids",
+"net": "abc",
+"original_run": "1993-1994",
+"alt": [
+"Sonic SatAM",
+"Adventures of Sonic the Hedgehog"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"satam",
+"1993",
+"1994",
+"dic",
+"s01",
+"s02",
+"adventures of"
+]
+},
+{
+"title": "The Adventures of Super Mario Bros. 3",
+"q": "kids",
+"net": "nbc",
+"original_run": "1990-1990",
+"alt": [
+"Adventures of Super Mario Bros 3",
+"Super Mario World cartoon"
+]
+},
+{
+"title": "Wing Commander Academy",
+"q": "kids",
+"net": "usa",
+"original_run": "1996-1996"
+},
+{
+"title": "Savage Dragon",
+"q": "kids",
+"net": "usa",
+"original_run": "1995-1996",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"usa network"
+]
+},
+{
+"title": "WildC.A.T.s",
+"q": "kids",
+"net": "cbs",
+"original_run": "1994-1995",
+"alt": [
+"WildCATs",
+"Wild C.A.T.s"
+]
+},
+{
+"title": "Ultraforce",
+"q": "kids",
+"net": "syn",
+"original_run": "1995-1995"
+},
+{
+"title": "Phantom 2040",
+"q": "kids",
+"net": "syn",
+"original_run": "1994-1996"
+},
+{
+"title": "Cadillacs and Dinosaurs",
+"q": "kids",
+"net": "cbs",
+"original_run": "1993-1994",
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1993",
+"1994"
+]
+},
+{
+"title": "Gargoyles",
+"q": "kids",
+"net": "syn",
+"original_run": "1994-1997",
+"ambiguous": true,
+"req": [
+"disney",
+"animated",
+"1994",
+"1995",
+"1996",
+"s01",
+"s02",
+"s03",
+"goliath"
+]
+},
+{
+"title": "The Mighty Ducks",
+"q": "kids",
+"net": "abc",
+"original_run": "1996-1997",
+"alt": [
+"Mighty Ducks The Animated Series"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"cartoon",
+"1996",
+"1997"
+]
+},
+{
+"title": "Road Rovers",
+"q": "kids",
+"net": "wb",
+"original_run": "1996-1997"
+},
+{
+"title": "Pinky, Elmyra & the Brain",
+"q": "kids",
+"net": "wb",
+"original_run": "1998-1999",
+"alt": [
+"Pinky Elmyra and the Brain"
+]
+},
+{
+"title": "Histeria!",
+"q": "kids",
+"net": "wb",
+"original_run": "1998-2000",
+"alt": [
+"Histeria"
+]
+},
+{
+"title": "Detention",
+"q": "kids",
+"net": "wb",
+"original_run": "1999-2000",
+"ambiguous": true,
+"req": [
+"animated",
+"kids wb",
+"1999"
+]
+},
+{
+"title": "The Wacky World of Tex Avery",
+"q": "kids",
+"net": "syn",
+"original_run": "1997-1997",
+"alt": [
+"Wacky World of Tex Avery"
+]
+},
+{
+"title": "The Twisted Tales of Felix the Cat",
+"q": "kids",
+"net": "cbs",
+"original_run": "1995-1997",
+"alt": [
+"Twisted Tales of Felix the Cat"
+]
+},
+{
+"title": "The Shnookums & Meat Funny Cartoon Show",
+"q": "kids",
+"net": "syn",
+"original_run": "1995-1995",
+"alt": [
+"Shnookums and Meat"
+]
+},
+{
+"title": "Santo Bugito",
+"q": "kids",
+"net": "cbs",
+"original_run": "1995-1996"
+},
+{
+"title": "Project G.e.e.K.e.R.",
+"q": "kids",
+"net": "cbs",
+"original_run": "1996-1996",
+"alt": [
+"Project Geeker"
+]
+},
+{
+"title": "The Mask: Animated Series",
+"q": "kids",
+"net": "cbs",
+"original_run": "1995-1997",
+"alt": [
+"The Mask Animated Series"
+]
+},
+{
+"title": "Men in Black: The Series",
+"q": "kids",
+"net": "wb",
+"original_run": "1997-2001",
+"alt": [
+"Men in Black The Series"
+]
+},
+{
+"title": "Godzilla: The Series",
+"q": "kids",
+"net": "fox",
+"original_run": "1998-2000",
+"alt": [
+"Godzilla The Series"
+]
+},
+{
+"title": "Big Guy and Rusty the Boy Robot",
+"q": "kids",
+"net": "fox",
+"original_run": "1999-2001"
+},
+{
+"title": "The Zeta Project",
+"q": "kids",
+"net": "wb",
+"original_run": "2001-2002",
+"alt": [
+"Zeta Project"
+]
+},
+{
+"title": "Static Shock",
+"q": "kids",
+"net": "wb",
+"original_run": "2000-2004"
+},
+{
+"title": "Roswell Conspiracies",
+"q": "kids",
+"net": "syn",
+"original_run": "1999-2000",
+"alt": [
+"Roswell Conspiracies: Aliens, Myths and Legends"
+]
+},
+{
+"title": "Spicy City",
+"q": "late",
+"net": "hbo",
+"original_run": "1997-1997"
+},
+{
+"title": "Todd McFarlane's Spawn",
+"q": "late",
+"net": "hbo",
+"original_run": "1997-1999",
+"alt": [
+"Spawn animated"
+],
+"ambiguous": true,
+"req": [
+"animated",
+"hbo",
+"1997",
+"1998",
+"1999"
+]
+},
+{
+"title": "Tales from the Cryptkeeper",
+"q": "kids",
+"net": "abc",
+"original_run": "1993-1994"
+},
+{
+"title": "Goosebumps",
+"q": "kids",
+"net": "fox",
+"original_run": "1995-1998",
+"ambiguous": true,
+"req": [
+"1995",
+"1996",
+"1997",
+"1998",
+"tv series",
+"s01",
+"s02",
+"s03",
+"s04",
+"fox kids"
+]
+},
+{
+"title": "Bone Chillers",
+"q": "kids",
+"net": "abc",
+"original_run": "1996-1996"
+},
+{
+"title": "The Secret World of Og",
+"q": "kids",
+"net": "abc",
+"original_run": "1983-1983"
+},
+{
+"title": "ABC Weekend Special",
+"q": "kids",
+"net": "abc",
+"original_run": "1977-1997",
+"alt": [
+"ABC Weekend Specials"
+]
+},
+{
+"title": "CBS Storybreak",
+"q": "kids",
+"net": "cbs",
+"original_run": "1985-1989"
+},
+{
+"title": "ABC Afterschool Special",
+"q": "block",
+"net": "abc",
+"original_run": "1972-1997",
+"alt": [
+"ABC Afterschool Specials",
+"Afterschool Special"
+]
+},
+{
+"title": "CBS Schoolbreak Special",
+"q": "block",
+"net": "cbs",
+"original_run": "1984-1996"
+},
+{
+"title": "Wonderworks",
+"q": "pub",
+"net": "pbs",
+"original_run": "1984-1992",
+"alt": [
+"WonderWorks"
+]
+},
+{
+"title": "Faerie Tale Theatre",
+"q": "prime",
+"net": "showtime",
+"original_run": "1982-1987",
+"alt": [
+"Shelley Duvall's Faerie Tale Theatre",
+"Faerie Tale Theater"
+]
+},
+{
+"title": "Shelley Duvall's Tall Tales & Legends",
+"q": "prime",
+"net": "showtime",
+"original_run": "1985-1987",
+"alt": [
+"Tall Tales and Legends",
+"Tall Tales & Legends"
+]
+},
+{
+"title": "The Storyteller",
+"q": "prime",
+"net": "nbc",
+"original_run": "1987-1988",
+"alt": [
+"Jim Henson's The Storyteller",
+"Jim Henson's Storyteller"
+]
+},
+{
+"title": "The Jim Henson Hour",
+"q": "prime",
+"net": "nbc",
+"original_run": "1989-1989",
+"alt": [
+"Jim Henson Hour"
+]
+},
+{
+"title": "Fraggle Rock",
+"q": "kids",
+"net": "hbo",
+"original_run": "1983-1987"
+},
+{
+"title": "Muppets Tonight",
+"q": "prime",
+"net": "abc",
+"original_run": "1996-1998"
+}
+]
