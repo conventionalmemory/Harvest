@@ -1,0 +1,10427 @@
+[
+{
+"title": "The Littles",
+"net": "abc",
+"first_year": 1983,
+"last_year": 1985,
+"original_run": "1983-1985",
+"q": "kids",
+"ct": "satam",
+"req": [
+"cartoon",
+"animated",
+"dic",
+"episode",
+"abc",
+"1983",
+"1984"
+],
+"sat": [
+[
+1984,
+1985,
+"abc"
+]
+]
+},
+{
+"title": "Mighty Orbots",
+"net": "abc",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1984,
+1985,
+"abc"
+]
+]
+},
+{
+"title": "Turbo Teen",
+"net": "abc",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1984,
+1985,
+"abc"
+]
+]
+},
+{
+"title": "Dragon's Lair",
+"net": "abc",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Dragons Lair"
+],
+"req": [
+"cartoon",
+"animated",
+"ruby",
+"episode",
+"abc",
+"series"
+],
+"sat": [
+[
+1984,
+1985,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Rubik, the Amazing Cube",
+"net": "abc",
+"first_year": 1983,
+"last_year": 1984,
+"original_run": "1983-1984",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Rubik the Amazing Cube"
+],
+"sat": [
+[
+1984,
+1985,
+"abc"
+]
+]
+},
+{
+"title": "The 13 Ghosts of Scooby-Doo",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"13 Ghosts of Scooby Doo"
+],
+"sat": [
+[
+1985,
+1986,
+"abc"
+]
+]
+},
+{
+"title": "The New Scooby-Doo Mysteries",
+"net": "abc",
+"first_year": 1983,
+"last_year": 1985,
+"original_run": "1983-1985",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"New Scooby Doo Mysteries",
+"New Scooby and Scrappy-Doo Show"
+],
+"sat": [
+[
+1984,
+1985,
+"abc"
+]
+]
+},
+{
+"title": "Star Wars: Droids",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Droids The Adventures of R2-D2 and C-3PO",
+"Star Wars Droids"
+],
+"sat": [
+[
+1985,
+1986,
+"abc"
+]
+]
+},
+{
+"title": "Star Wars: Ewoks",
+"net": "abc",
+"first_year": 1985,
+"last_year": 1987,
+"original_run": "1985-1987",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Ewoks animated",
+"Ewoks cartoon"
+],
+"sat": [
+[
+1985,
+1987,
+"abc"
+]
+]
+},
+{
+"title": "The Bugs Bunny & Tweety Show",
+"net": "abc",
+"first_year": 1986,
+"last_year": 2000,
+"original_run": "1986-2000",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Bugs Bunny and Tweety Show",
+"Bugs Bunny/Looney Tunes Comedy Hour"
+],
+"sat": [
+[
+1985,
+2000,
+"abc"
+]
+]
+},
+{
+"title": "The Flintstone Kids",
+"net": "abc",
+"first_year": 1986,
+"last_year": 1988,
+"original_run": "1986-1988",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Flintstone Kids"
+],
+"sat": [
+[
+1986,
+1988,
+"abc"
+]
+]
+},
+{
+"title": "The Real Ghostbusters",
+"net": "abc",
+"first_year": 1986,
+"last_year": 1991,
+"original_run": "1986-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Real Ghostbusters",
+"Slimer! and the Real Ghostbusters"
+],
+"sat": [
+[
+1986,
+1991,
+"abc"
+]
+],
+"strip": [
+[
+1987,
+1989,
+"syn"
+]
+]
+},
+{
+"title": "Pound Puppies",
+"net": "abc",
+"first_year": 1986,
+"last_year": 1988,
+"original_run": "1986-1988",
+"q": "kids",
+"ct": "satam",
+"x": "2010|hub",
+"req": [
+"cartoon",
+"animated",
+"hanna",
+"episode",
+"abc",
+"1986",
+"1987",
+"season"
+],
+"sat": [
+[
+1986,
+1988,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "The Care Bears Family",
+"net": "abc",
+"first_year": 1986,
+"last_year": 1988,
+"original_run": "1986-1988",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Care Bears Family"
+],
+"sat": [
+[
+1986,
+1988,
+"abc"
+]
+]
+},
+{
+"title": "The Care Bears",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1985,
+"original_run": "1985-1985",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Care Bears"
+],
+"x": "welcome to care|unlock|adventures in care|2002|2007|2012|cgi",
+"req": [
+"cartoon",
+"animated",
+"dic",
+"episode",
+"1985",
+"series",
+"vhs"
+],
+"ambiguous": true
+},
+{
+"title": "Little Clowns of Happytown",
+"net": "abc",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1987,
+1988,
+"abc"
+]
+]
+},
+{
+"title": "Little Wizards",
+"net": "abc",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1987,
+1988,
+"abc"
+]
+]
+},
+{
+"title": "My Pet Monster",
+"net": "abc",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1987,
+1988,
+"abc"
+]
+]
+},
+{
+"title": "The New Adventures of Winnie the Pooh",
+"net": "abc",
+"first_year": 1988,
+"last_year": 1991,
+"original_run": "1988-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"New Adventures of Winnie the Pooh"
+],
+"sat": [
+[
+1988,
+1993,
+"abc"
+]
+]
+},
+{
+"title": "A Pup Named Scooby-Doo",
+"net": "abc",
+"first_year": 1988,
+"last_year": 1991,
+"original_run": "1988-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Pup Named Scooby Doo"
+],
+"sat": [
+[
+1988,
+1993,
+"abc"
+]
+]
+},
+{
+"title": "The New Adventures of Beany and Cecil",
+"net": "abc",
+"first_year": 1988,
+"last_year": 1988,
+"original_run": "1988-1988",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Beany and Cecil 1988"
+],
+"sat": [
+[
+1988,
+1988,
+"abc"
+]
+]
+},
+{
+"title": "Beetlejuice",
+"net": "abc",
+"first_year": 1989,
+"last_year": 1991,
+"original_run": "1989-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Beetlejuice animated",
+"Beetlejuice cartoon",
+"Beetlejuice the animated series"
+],
+"x": "1988 film|burton film|musical|sequel",
+"req": [
+"animated",
+"cartoon",
+"episode",
+"season",
+"series",
+"abc",
+"fox kids",
+"nelvana"
+],
+"sat": [
+[
+1989,
+1991,
+"abc"
+]
+],
+"strip": [
+[
+1991,
+1992,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "The Wizard of Oz",
+"net": "abc",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Wizard of Oz animated series",
+"Wizard of Oz cartoon 1990"
+],
+"req": [
+"dic",
+"1990",
+"animated series",
+"cartoon series"
+],
+"sat": [
+[
+1990,
+1991,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "New Kids on the Block",
+"net": "abc",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"New Kids on the Block cartoon",
+"New Kids on the Block animated"
+],
+"req": [
+"cartoon",
+"animated",
+"dic",
+"episode"
+],
+"sat": [
+[
+1990,
+1991,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Little Rosey",
+"net": "abc",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1990,
+1991,
+"abc"
+]
+]
+},
+{
+"title": "Hammerman",
+"net": "abc",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1991,
+1992,
+"abc"
+]
+]
+},
+{
+"title": "The Pirates of Dark Water",
+"net": "abc",
+"first_year": 1991,
+"last_year": 1993,
+"original_run": "1991-1993",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Pirates of Dark Water"
+],
+"sat": [
+[
+1991,
+1992,
+"abc"
+]
+],
+"strip": [
+[
+1992,
+1993,
+"syn"
+]
+]
+},
+{
+"title": "Darkwing Duck",
+"net": "syn",
+"first_year": 1991,
+"last_year": 1992,
+"original_run": "1991-1992",
+"q": "kids",
+"ct": "weekday",
+"sat": [
+[
+1991,
+1993,
+"abc"
+]
+],
+"slots": [
+[
+1991,
+1992,
+"syn",
+1,
+"16:30"
+],
+[
+1991,
+1992,
+"syn",
+2,
+"16:30"
+],
+[
+1991,
+1992,
+"syn",
+3,
+"16:30"
+],
+[
+1991,
+1992,
+"syn",
+4,
+"16:30"
+],
+[
+1991,
+1992,
+"syn",
+5,
+"16:30"
+],
+[
+1992,
+1993,
+"syn",
+1,
+"16:00"
+],
+[
+1992,
+1993,
+"syn",
+2,
+"16:00"
+],
+[
+1992,
+1993,
+"syn",
+3,
+"16:00"
+],
+[
+1992,
+1993,
+"syn",
+4,
+"16:00"
+],
+[
+1992,
+1993,
+"syn",
+5,
+"16:00"
+],
+[
+1993,
+1994,
+"syn",
+1,
+"15:30"
+],
+[
+1993,
+1994,
+"syn",
+2,
+"15:30"
+],
+[
+1993,
+1994,
+"syn",
+3,
+"15:30"
+],
+[
+1993,
+1994,
+"syn",
+4,
+"15:30"
+],
+[
+1993,
+1994,
+"syn",
+5,
+"15:30"
+],
+[
+1994,
+1995,
+"syn",
+1,
+"15:00"
+],
+[
+1994,
+1995,
+"syn",
+2,
+"15:00"
+],
+[
+1994,
+1995,
+"syn",
+3,
+"15:00"
+],
+[
+1994,
+1995,
+"syn",
+4,
+"15:00"
+],
+[
+1994,
+1995,
+"syn",
+5,
+"15:00"
+]
+]
+},
+{
+"title": "Goof Troop",
+"net": "syn",
+"first_year": 1992,
+"last_year": 1993,
+"original_run": "1992-1993",
+"q": "kids",
+"ct": "weekday",
+"sat": [
+[
+1992,
+1993,
+"abc"
+]
+],
+"slots": [
+[
+1992,
+1993,
+"syn",
+1,
+"16:30"
+],
+[
+1992,
+1993,
+"syn",
+2,
+"16:30"
+],
+[
+1992,
+1993,
+"syn",
+3,
+"16:30"
+],
+[
+1992,
+1993,
+"syn",
+4,
+"16:30"
+],
+[
+1992,
+1993,
+"syn",
+5,
+"16:30"
+],
+[
+1993,
+1994,
+"syn",
+1,
+"16:00"
+],
+[
+1993,
+1994,
+"syn",
+2,
+"16:00"
+],
+[
+1993,
+1994,
+"syn",
+3,
+"16:00"
+],
+[
+1993,
+1994,
+"syn",
+4,
+"16:00"
+],
+[
+1993,
+1994,
+"syn",
+5,
+"16:00"
+],
+[
+1994,
+1995,
+"syn",
+1,
+"15:30"
+],
+[
+1994,
+1995,
+"syn",
+2,
+"15:30"
+],
+[
+1994,
+1995,
+"syn",
+3,
+"15:30"
+],
+[
+1994,
+1995,
+"syn",
+4,
+"15:30"
+],
+[
+1994,
+1995,
+"syn",
+5,
+"15:30"
+],
+[
+1995,
+1996,
+"syn",
+1,
+"15:00"
+],
+[
+1995,
+1996,
+"syn",
+2,
+"15:00"
+],
+[
+1995,
+1996,
+"syn",
+3,
+"15:00"
+],
+[
+1995,
+1996,
+"syn",
+4,
+"15:00"
+],
+[
+1995,
+1996,
+"syn",
+5,
+"15:00"
+]
+]
+},
+{
+"title": "Wild West C.O.W.-Boys of Moo Mesa",
+"net": "abc",
+"first_year": 1992,
+"last_year": 1993,
+"original_run": "1992-1993",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Cowboys of Moo Mesa",
+"C.O.W.-Boys of Moo Mesa",
+"COW Boys of Moo Mesa"
+],
+"sat": [
+[
+1992,
+1994,
+"abc"
+]
+]
+},
+{
+"title": "The Addams Family",
+"net": "abc",
+"first_year": 1992,
+"last_year": 1993,
+"original_run": "1992-1993",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Addams Family animated",
+"Addams Family cartoon 1992"
+],
+"req": [
+"animated",
+"cartoon",
+"1992",
+"hanna"
+],
+"sat": [
+[
+1992,
+1995,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Sonic the Hedgehog",
+"net": "abc",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Sonic SatAM",
+"Sonic the Hedgehog SatAM"
+],
+"x": "sonic x|boom|prime|mania|ova|movie|underground|adventures of sonic|frontiers|generations|forces|unleashed|colors|comic|archie",
+"req": [
+"satam",
+"sat am",
+"1993",
+"abc",
+"episode",
+"season",
+"dic",
+"cartoon",
+"animated",
+"tv series"
+],
+"sat": [
+[
+1993,
+1995,
+"abc"
+]
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "Adventures of Sonic the Hedgehog",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1993,
+"original_run": "1993-1993",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1993,
+1994,
+"syn"
+]
+]
+},
+{
+"title": "Sonic Underground",
+"net": "syn",
+"first_year": 1999,
+"last_year": 1999,
+"original_run": "1999-1999",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1999,
+2000,
+"syn"
+]
+]
+},
+{
+"title": "CRO",
+"net": "abc",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Cro cartoon",
+"Cro animated"
+],
+"req": [
+"cartoon",
+"animated",
+"children's television workshop",
+"ctw",
+"episode",
+"abc"
+],
+"sat": [
+[
+1993,
+1995,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Tales from the Cryptkeeper",
+"net": "abc",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1993,
+1995,
+"abc"
+]
+]
+},
+{
+"title": "Free Willy",
+"net": "abc",
+"first_year": 1994,
+"last_year": 1994,
+"original_run": "1994-1994",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Free Willy animated",
+"Free Willy cartoon",
+"Free Willy the animated series"
+],
+"x": "free willy [234]|1993 film|keiko|soundtrack|escape from",
+"req": [
+"animated",
+"cartoon",
+"series",
+"episode",
+"abc",
+"nelvana"
+],
+"sat": [
+[
+1994,
+1995,
+"abc"
+]
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "ReBoot",
+"net": "abc",
+"first_year": 1994,
+"last_year": 2001,
+"original_run": "1994-2001",
+"q": "kids",
+"ct": "satam",
+"x": "guardian code|camp|computer reboot|how to",
+"req": [
+"mainframe",
+"episode",
+"season",
+"bob",
+"megabyte",
+"cartoon",
+"animated",
+"series",
+"abc",
+"1994",
+"enzo"
+],
+"sat": [
+[
+1994,
+1996,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Bump in the Night",
+"net": "abc",
+"first_year": 1994,
+"last_year": 1995,
+"original_run": "1994-1995",
+"q": "kids",
+"ct": "satam",
+"req": [
+"squishington",
+"mr bumpy",
+"claymation",
+"episode",
+"abc",
+"cartoon"
+],
+"sat": [
+[
+1994,
+1996,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "The New Adventures of Madeline",
+"net": "abc",
+"first_year": 1995,
+"last_year": 1995,
+"original_run": "1995-1995",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"New Adventures of Madeline"
+],
+"sat": [
+[
+1995,
+1996,
+"abc"
+]
+]
+},
+{
+"title": "Madeline",
+"net": "fam",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Madeline cartoon",
+"Madeline animated"
+],
+"x": "kahn|peyroux|mccann|albright|1998 film|mcdormand|live action|podcast|madeline's madeline",
+"req": [
+"dic",
+"cinar",
+"episode",
+"season",
+"cartoon",
+"animated",
+"bemelmans",
+"christopher plummer",
+"family channel",
+"series",
+"vhs"
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "Dumb and Dumber",
+"net": "abc",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Dumb and Dumber animated",
+"Dumb and Dumber cartoon",
+"Dumb and Dumber the animated series"
+],
+"req": [
+"animated",
+"cartoon",
+"series",
+"episode",
+"abc",
+"hanna"
+],
+"sat": [
+[
+1995,
+1996,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "What-a-Mess",
+"net": "abc",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"What a Mess"
+],
+"req": [
+"cartoon",
+"animated",
+"dic",
+"episode",
+"frank muir"
+],
+"sat": [
+[
+1995,
+1996,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Mighty Ducks",
+"net": "abc",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Mighty Ducks animated series",
+"Mighty Ducks the animated series"
+],
+"req": [
+"animated",
+"cartoon",
+"series",
+"episode",
+"wildwing"
+],
+"sat": [
+[
+1996,
+1997,
+"abc"
+]
+],
+"strip": [
+[
+1996,
+1997,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Gargoyles",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1997,
+"original_run": "1994-1997",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Gargoyles The Goliath Chronicles"
+],
+"req": [
+"disney",
+"goliath",
+"episode",
+"season",
+"animated",
+"cartoon",
+"series"
+],
+"sat": [
+[
+1996,
+1997,
+"abc"
+]
+],
+"ambiguous": true,
+"slots": [
+[
+1995,
+1996,
+"syn",
+1,
+"16:30"
+],
+[
+1995,
+1996,
+"syn",
+2,
+"16:30"
+],
+[
+1995,
+1996,
+"syn",
+3,
+"16:30"
+],
+[
+1995,
+1996,
+"syn",
+4,
+"16:30"
+],
+[
+1995,
+1996,
+"syn",
+5,
+"16:30"
+],
+[
+1996,
+1997,
+"syn",
+1,
+"15:30"
+],
+[
+1996,
+1997,
+"syn",
+2,
+"15:30"
+],
+[
+1996,
+1997,
+"syn",
+3,
+"15:30"
+],
+[
+1996,
+1997,
+"syn",
+4,
+"15:30"
+],
+[
+1996,
+1997,
+"syn",
+5,
+"15:30"
+]
+]
+},
+{
+"title": "Jungle Cubs",
+"net": "abc",
+"first_year": 1996,
+"last_year": 1998,
+"original_run": "1996-1998",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1996,
+1998,
+"abc"
+]
+]
+},
+{
+"title": "Brand Spanking New! Doug",
+"net": "abc",
+"first_year": 1996,
+"last_year": 1999,
+"original_run": "1996-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Brand Spanking New Doug",
+"Disney's Doug"
+],
+"sat": [
+[
+1996,
+2001,
+"abc"
+]
+]
+},
+{
+"title": "Nightmare Ned",
+"net": "abc",
+"first_year": 1997,
+"last_year": 1997,
+"original_run": "1997-1997",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1997,
+1997,
+"abc"
+]
+]
+},
+{
+"title": "Recess",
+"net": "abc",
+"first_year": 1997,
+"last_year": 2001,
+"original_run": "1997-2001",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Disney's Recess"
+],
+"x": "recess monkey|school recess|recess therapy|playground",
+"req": [
+"disney",
+"episode",
+"season",
+"cartoon",
+"animated",
+"t.j.",
+"tj detweiler",
+"one saturday morning",
+"series"
+],
+"sat": [
+[
+1997,
+2004,
+"abc"
+],
+[
+1999,
+2003,
+"upn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Pepper Ann",
+"net": "abc",
+"first_year": 1997,
+"last_year": 2000,
+"original_run": "1997-2000",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1997,
+2001,
+"abc"
+],
+[
+1999,
+2001,
+"upn"
+]
+]
+},
+{
+"title": "101 Dalmatians: The Series",
+"net": "abc",
+"first_year": 1997,
+"last_year": 1998,
+"original_run": "1997-1998",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"101 Dalmatians The Series"
+],
+"sat": [
+[
+1997,
+1999,
+"abc"
+]
+],
+"strip": [
+[
+1997,
+1998,
+"syn"
+]
+]
+},
+{
+"title": "Science Court",
+"net": "abc",
+"first_year": 1997,
+"last_year": 2000,
+"original_run": "1997-2000",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Squigglevision"
+],
+"sat": [
+[
+1997,
+2000,
+"abc"
+]
+]
+},
+{
+"title": "Hercules: The Animated Series",
+"net": "abc",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Hercules The Animated Series",
+"Disney's Hercules series"
+],
+"sat": [
+[
+1998,
+1999,
+"abc"
+],
+[
+1999,
+2001,
+"upn"
+]
+],
+"strip": [
+[
+1998,
+1999,
+"syn"
+]
+]
+},
+{
+"title": "Mickey Mouse Works",
+"net": "abc",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1999,
+2000,
+"abc"
+]
+]
+},
+{
+"title": "The Weekenders",
+"net": "abc",
+"first_year": 2000,
+"last_year": 2004,
+"original_run": "2000-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Weekenders"
+],
+"sat": [
+[
+2000,
+2002,
+"abc"
+],
+[
+2001,
+2002,
+"upn"
+]
+]
+},
+{
+"title": "Teacher's Pet",
+"net": "abc",
+"first_year": 2000,
+"last_year": 2002,
+"original_run": "2000-2002",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Teachers Pet"
+],
+"req": [
+"disney",
+"cartoon",
+"animated",
+"spot",
+"episode",
+"series"
+],
+"sat": [
+[
+2000,
+2002,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Buzz Lightyear of Star Command",
+"net": "abc",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+2000,
+2001,
+"abc"
+],
+[
+2000,
+2001,
+"upn"
+]
+]
+},
+{
+"title": "Sabrina: The Animated Series",
+"net": "abc",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Sabrina The Animated Series"
+],
+"sat": [
+[
+1999,
+2001,
+"abc"
+],
+[
+1999,
+2002,
+"upn"
+]
+]
+},
+{
+"title": "House of Mouse",
+"net": "abc",
+"first_year": 2001,
+"last_year": 2003,
+"original_run": "2001-2003",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Disney's House of Mouse"
+],
+"sat": [
+[
+2001,
+2002,
+"abc"
+]
+]
+},
+{
+"title": "Lloyd in Space",
+"net": "abc",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+2001,
+2002,
+"abc"
+]
+]
+},
+{
+"title": "Teamo Supremo",
+"net": "abc",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+2002,
+2003,
+"abc"
+]
+]
+},
+{
+"title": "Fillmore!",
+"net": "abc",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Fillmore"
+],
+"req": [
+"disney",
+"cartoon",
+"animated",
+"safety patrol",
+"episode",
+"series"
+],
+"sat": [
+[
+2002,
+2004,
+"abc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Kim Possible",
+"net": "disney",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "cable",
+"sat": [
+[
+2002,
+2004,
+"abc"
+]
+]
+},
+{
+"title": "The Proud Family",
+"net": "disney",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Proud Family"
+],
+"x": "louder and prouder",
+"sat": [
+[
+2002,
+2004,
+"abc"
+]
+]
+},
+{
+"title": "Lilo & Stitch: The Series",
+"net": "disney",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Lilo and Stitch The Series"
+],
+"sat": [
+[
+2003,
+2004,
+"abc"
+]
+]
+},
+{
+"title": "The Legend of Tarzan",
+"net": "upn",
+"first_year": 2001,
+"last_year": 2003,
+"original_run": "2001-2003",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Legend of Tarzan"
+],
+"req": [
+"disney",
+"animated",
+"cartoon",
+"series",
+"episode"
+],
+"sat": [
+[
+2001,
+2003,
+"upn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Saturday Supercade",
+"net": "cbs",
+"first_year": 1983,
+"last_year": 1985,
+"original_run": "1983-1985",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1984,
+1985,
+"cbs"
+]
+]
+},
+{
+"title": "Dungeons & Dragons",
+"net": "cbs",
+"first_year": 1983,
+"last_year": 1985,
+"original_run": "1983-1985",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Dungeons and Dragons cartoon",
+"Dungeons and Dragons animated"
+],
+"x": "actual play|campaign|session|podcast|critical role|dm|gameplay|rpg|module|5e|honor among|movie",
+"req": [
+"cartoon",
+"animated",
+"animated series",
+"1983",
+"cbs",
+"hank",
+"venger",
+"uni",
+"episode"
+],
+"sat": [
+[
+1984,
+1986,
+"cbs"
+]
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "The Charlie Brown and Snoopy Show",
+"net": "cbs",
+"first_year": 1983,
+"last_year": 1985,
+"original_run": "1983-1985",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Charlie Brown and Snoopy Show"
+],
+"sat": [
+[
+1984,
+1986,
+"cbs"
+]
+]
+},
+{
+"title": "Muppet Babies",
+"net": "cbs",
+"first_year": 1984,
+"last_year": 1991,
+"original_run": "1984-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Jim Henson's Muppet Babies"
+],
+"x": "2018|disney junior",
+"sat": [
+[
+1984,
+1992,
+"cbs"
+]
+],
+"slots": [
+[
+1984,
+1991,
+"cbs",
+6,
+"09:00"
+]
+],
+"slots_approx": true
+},
+{
+"title": "Pole Position",
+"net": "cbs",
+"first_year": 1984,
+"last_year": 1984,
+"original_run": "1984-1984",
+"q": "kids",
+"ct": "satam",
+"req": [
+"cartoon",
+"animated",
+"dic",
+"episode",
+"cbs"
+],
+"sat": [
+[
+1984,
+1985,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "The Get Along Gang",
+"net": "cbs",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Get Along Gang"
+],
+"sat": [
+[
+1984,
+1986,
+"cbs"
+]
+]
+},
+{
+"title": "Hulk Hogan's Rock 'n' Wrestling",
+"net": "cbs",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Hulk Hogan's Rock n Wrestling",
+"Rock n Wrestling cartoon"
+],
+"sat": [
+[
+1985,
+1987,
+"cbs"
+]
+]
+},
+{
+"title": "The Berenstain Bears",
+"net": "cbs",
+"first_year": 1985,
+"last_year": 1987,
+"original_run": "1985-1987",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Berenstain Bears Show",
+"Berenstain Bears"
+],
+"req": [
+"cartoon",
+"animated",
+"episode",
+"season",
+"series",
+"cbs",
+"1985",
+"vhs",
+"show"
+],
+"sat": [
+[
+1985,
+1987,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "The Wuzzles",
+"net": "cbs",
+"first_year": 1985,
+"last_year": 1985,
+"original_run": "1985-1985",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Wuzzles",
+"Disney's Wuzzles"
+],
+"sat": [
+[
+1985,
+1986,
+"cbs"
+],
+[
+1986,
+1987,
+"abc"
+]
+]
+},
+{
+"title": "Wildfire",
+"net": "cbs",
+"first_year": 1986,
+"last_year": 1986,
+"original_run": "1986-1986",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Wildfire cartoon",
+"Wildfire animated"
+],
+"req": [
+"cartoon",
+"animated",
+"hanna",
+"1986",
+"princess sara",
+"episode"
+],
+"sat": [
+[
+1986,
+1987,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Galaxy High",
+"net": "cbs",
+"first_year": 1986,
+"last_year": 1986,
+"original_run": "1986-1986",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Galaxy High School"
+],
+"sat": [
+[
+1986,
+1988,
+"cbs"
+]
+]
+},
+{
+"title": "Teen Wolf",
+"net": "cbs",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Teen Wolf animated",
+"Teen Wolf cartoon",
+"Teen Wolf the animated series"
+],
+"x": "mtv|2011|michael j|teen wolf too|the movie|tyler|season [3-6]",
+"req": [
+"animated",
+"cartoon",
+"1986",
+"cbs",
+"southern star"
+],
+"sat": [
+[
+1986,
+1989,
+"cbs"
+]
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "Mighty Mouse: The New Adventures",
+"net": "cbs",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Mighty Mouse The New Adventures",
+"New Adventures of Mighty Mouse"
+],
+"sat": [
+[
+1987,
+1989,
+"cbs"
+]
+]
+},
+{
+"title": "Popeye and Son",
+"net": "cbs",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1987,
+1988,
+"cbs"
+]
+]
+},
+{
+"title": "Dennis the Menace",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1988,
+"original_run": "1986-1988",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Dennis the Menace cartoon",
+"Dennis the Menace animated"
+],
+"x": "1959|jay north|1993 film|live action|uk",
+"req": [
+"dic",
+"cartoon",
+"animated",
+"1986",
+"episode"
+],
+"sat": [
+[
+1988,
+1988,
+"cbs"
+]
+],
+"strip": [
+[
+1986,
+1988,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Garfield and Friends",
+"net": "cbs",
+"first_year": 1988,
+"last_year": 1994,
+"original_run": "1988-1994",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Garfield & Friends"
+],
+"sat": [
+[
+1988,
+1995,
+"cbs"
+]
+],
+"slots": [
+[
+1989,
+1994,
+"cbs",
+6,
+"10:00"
+]
+],
+"slots_approx": true
+},
+{
+"title": "Superman (1988)",
+"net": "cbs",
+"first_year": 1988,
+"last_year": 1988,
+"original_run": "1988-1988",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Superman Ruby-Spears",
+"Superman 1988 animated series"
+],
+"sat": [
+[
+1988,
+1989,
+"cbs"
+]
+]
+},
+{
+"title": "The Adventures of Raggedy Ann and Andy",
+"net": "cbs",
+"first_year": 1988,
+"last_year": 1990,
+"original_run": "1988-1990",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Adventures of Raggedy Ann & Andy"
+],
+"sat": [
+[
+1988,
+1991,
+"cbs"
+]
+]
+},
+{
+"title": "Dink, the Little Dinosaur",
+"net": "cbs",
+"first_year": 1989,
+"last_year": 1990,
+"original_run": "1989-1990",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Dink the Little Dinosaur"
+],
+"sat": [
+[
+1989,
+1991,
+"cbs"
+]
+]
+},
+{
+"title": "The California Raisin Show",
+"net": "cbs",
+"first_year": 1989,
+"last_year": 1989,
+"original_run": "1989-1989",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"California Raisin Show",
+"California Raisins Show"
+],
+"sat": [
+[
+1989,
+1990,
+"cbs"
+]
+]
+},
+{
+"title": "Rude Dog and the Dweebs",
+"net": "cbs",
+"first_year": 1989,
+"last_year": 1989,
+"original_run": "1989-1989",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1989,
+1990,
+"cbs"
+]
+]
+},
+{
+"title": "Teenage Mutant Ninja Turtles",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1996,
+"original_run": "1987-1996",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"TMNT 1987",
+"Ninja Turtles 1987"
+],
+"x": "2003|2012|rise of|mutant mayhem|next mutation|movie|film|live|coming out of their shells|tour|comic",
+"sat": [
+[
+1990,
+1997,
+"cbs"
+]
+],
+"strip": [
+[
+1988,
+1993,
+"syn"
+]
+]
+},
+{
+"title": "Bill & Ted's Excellent Adventures",
+"net": "cbs",
+"first_year": 1990,
+"last_year": 1991,
+"original_run": "1990-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Bill and Ted's Excellent Adventures"
+],
+"x": "bogus journey|face the music",
+"req": [
+"animated",
+"cartoon",
+"series",
+"episode",
+"hanna",
+"dic"
+],
+"sat": [
+[
+1990,
+1991,
+"cbs"
+],
+[
+1991,
+1992,
+"fox"
+]
+]
+},
+{
+"title": "Mother Goose and Grimm",
+"net": "cbs",
+"first_year": 1991,
+"last_year": 1992,
+"original_run": "1991-1992",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Grimmy"
+],
+"sat": [
+[
+1991,
+1993,
+"cbs"
+]
+]
+},
+{
+"title": "Where's Waldo?",
+"net": "cbs",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Wheres Waldo"
+],
+"x": "2019",
+"req": [
+"cartoon",
+"animated",
+"dic",
+"episode",
+"cbs",
+"1991",
+"series"
+],
+"sat": [
+[
+1991,
+1992,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Back to the Future: The Animated Series",
+"net": "cbs",
+"first_year": 1991,
+"last_year": 1992,
+"original_run": "1991-1992",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Back to the Future The Animated Series",
+"Back to the Future animated"
+],
+"sat": [
+[
+1991,
+1993,
+"cbs"
+]
+]
+},
+{
+"title": "The Little Mermaid (TV series)",
+"net": "cbs",
+"first_year": 1992,
+"last_year": 1994,
+"original_run": "1992-1994",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Little Mermaid series",
+"Little Mermaid TV series",
+"Disney's The Little Mermaid series"
+],
+"sat": [
+[
+1992,
+1995,
+"cbs"
+]
+]
+},
+{
+"title": "Raw Toonage",
+"net": "cbs",
+"first_year": 1992,
+"last_year": 1992,
+"original_run": "1992-1992",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1992,
+1993,
+"cbs"
+]
+]
+},
+{
+"title": "Fievel's American Tails",
+"net": "cbs",
+"first_year": 1992,
+"last_year": 1992,
+"original_run": "1992-1992",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Fievels American Tails"
+],
+"sat": [
+[
+1992,
+1993,
+"cbs"
+]
+]
+},
+{
+"title": "Marsupilami",
+"net": "cbs",
+"first_year": 1993,
+"last_year": 1993,
+"original_run": "1993-1993",
+"q": "kids",
+"ct": "satam",
+"req": [
+"disney",
+"cartoon",
+"animated",
+"episode",
+"cbs",
+"1993"
+],
+"sat": [
+[
+1993,
+1994,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Cadillacs and Dinosaurs",
+"net": "cbs",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "kids",
+"ct": "satam",
+"req": [
+"cartoon",
+"animated",
+"nelvana",
+"episode",
+"series",
+"cbs"
+],
+"sat": [
+[
+1993,
+1994,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Conan and the Young Warriors",
+"net": "cbs",
+"first_year": 1994,
+"last_year": 1994,
+"original_run": "1994-1994",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1994,
+1994,
+"cbs"
+]
+]
+},
+{
+"title": "Beethoven: The Animated Series",
+"net": "cbs",
+"first_year": 1994,
+"last_year": 1994,
+"original_run": "1994-1994",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Beethoven The Animated Series",
+"Beethoven cartoon"
+],
+"sat": [
+[
+1994,
+1995,
+"cbs"
+]
+]
+},
+{
+"title": "WildC.A.T.s",
+"net": "cbs",
+"first_year": 1994,
+"last_year": 1995,
+"original_run": "1994-1995",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Wildcats animated",
+"WildCATs cartoon"
+],
+"req": [
+"animated",
+"cartoon",
+"nelvana",
+"jim lee",
+"episode",
+"cbs"
+],
+"sat": [
+[
+1994,
+1995,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Skeleton Warriors",
+"net": "cbs",
+"first_year": 1994,
+"last_year": 1994,
+"original_run": "1994-1994",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1994,
+1995,
+"cbs"
+]
+]
+},
+{
+"title": "Aladdin: The Series",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1995,
+"original_run": "1994-1995",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Aladdin The Series",
+"Aladdin TV series",
+"Disney's Aladdin series"
+],
+"sat": [
+[
+1994,
+1996,
+"cbs"
+]
+],
+"slots": [
+[
+1994,
+1995,
+"syn",
+1,
+"16:30"
+],
+[
+1994,
+1995,
+"syn",
+2,
+"16:30"
+],
+[
+1994,
+1995,
+"syn",
+3,
+"16:30"
+],
+[
+1994,
+1995,
+"syn",
+4,
+"16:30"
+],
+[
+1994,
+1995,
+"syn",
+5,
+"16:30"
+],
+[
+1995,
+1996,
+"syn",
+1,
+"16:00"
+],
+[
+1995,
+1996,
+"syn",
+2,
+"16:00"
+],
+[
+1995,
+1996,
+"syn",
+3,
+"16:00"
+],
+[
+1995,
+1996,
+"syn",
+4,
+"16:00"
+],
+[
+1995,
+1996,
+"syn",
+5,
+"16:00"
+],
+[
+1996,
+1997,
+"syn",
+1,
+"16:00"
+],
+[
+1996,
+1997,
+"syn",
+2,
+"16:00"
+],
+[
+1996,
+1997,
+"syn",
+3,
+"16:00"
+],
+[
+1996,
+1997,
+"syn",
+4,
+"16:00"
+],
+[
+1996,
+1997,
+"syn",
+5,
+"16:00"
+]
+]
+},
+{
+"title": "Timon & Pumbaa",
+"net": "syn",
+"first_year": 1995,
+"last_year": 1999,
+"original_run": "1995-1999",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Timon and Pumbaa",
+"The Lion King's Timon & Pumbaa"
+],
+"sat": [
+[
+1995,
+1997,
+"cbs"
+]
+],
+"strip": [
+[
+1995,
+1996,
+"syn"
+]
+]
+},
+{
+"title": "The Mask: Animated Series",
+"net": "cbs",
+"first_year": 1995,
+"last_year": 1997,
+"original_run": "1995-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Mask Animated Series",
+"The Mask The Animated Series",
+"The Mask cartoon"
+],
+"sat": [
+[
+1995,
+1997,
+"cbs"
+]
+]
+},
+{
+"title": "Santo Bugito",
+"net": "cbs",
+"first_year": 1995,
+"last_year": 1995,
+"original_run": "1995-1995",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1995,
+1996,
+"cbs"
+]
+]
+},
+{
+"title": "Ace Ventura: Pet Detective (animated)",
+"net": "cbs",
+"first_year": 1995,
+"last_year": 1997,
+"original_run": "1995-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Ace Ventura animated",
+"Ace Ventura Pet Detective animated series",
+"Ace Ventura cartoon"
+],
+"sat": [
+[
+1995,
+1997,
+"cbs"
+]
+]
+},
+{
+"title": "The Twisted Tales of Felix the Cat",
+"net": "cbs",
+"first_year": 1995,
+"last_year": 1997,
+"original_run": "1995-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Twisted Tales of Felix the Cat"
+],
+"sat": [
+[
+1995,
+1997,
+"cbs"
+]
+]
+},
+{
+"title": "Project G.e.e.K.e.R.",
+"net": "cbs",
+"first_year": 1996,
+"last_year": 1996,
+"original_run": "1996-1996",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Project Geeker"
+],
+"sat": [
+[
+1996,
+1997,
+"cbs"
+]
+]
+},
+{
+"title": "Anatole",
+"net": "cbs",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "kids",
+"ct": "satam",
+"req": [
+"nelvana",
+"cartoon",
+"animated",
+"mouse",
+"episode",
+"cbs"
+],
+"sat": [
+[
+1998,
+2000,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Birdz",
+"net": "cbs",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "kids",
+"ct": "satam",
+"req": [
+"nelvana",
+"cartoon",
+"animated",
+"episode",
+"cbs"
+],
+"sat": [
+[
+1998,
+1999,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Flying Rhino Junior High",
+"net": "cbs",
+"first_year": 1998,
+"last_year": 2000,
+"original_run": "1998-2000",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1998,
+2000,
+"cbs"
+]
+]
+},
+{
+"title": "Mythic Warriors: Guardians of the Legend",
+"net": "cbs",
+"first_year": 1998,
+"last_year": 2000,
+"original_run": "1998-2000",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Mythic Warriors"
+],
+"sat": [
+[
+1998,
+2000,
+"cbs"
+]
+]
+},
+{
+"title": "Rescue Heroes",
+"net": "cbs",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1999,
+2000,
+"cbs"
+],
+[
+2001,
+2002,
+"wb"
+]
+]
+},
+{
+"title": "Franklin",
+"net": "cbs",
+"first_year": 1997,
+"last_year": 2004,
+"original_run": "1997-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Franklin the Turtle"
+],
+"x": "templeton|roosevelt|benjamin|aretha|bash",
+"req": [
+"turtle",
+"nelvana",
+"cartoon",
+"animated",
+"episode",
+"nick jr",
+"season"
+],
+"sat": [
+[
+1998,
+2002,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Hey Arnold!",
+"net": "nick",
+"first_year": 1996,
+"last_year": 2004,
+"original_run": "1996-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Hey Arnold"
+],
+"sat": [
+[
+2002,
+2004,
+"cbs"
+]
+]
+},
+{
+"title": "As Told by Ginger",
+"net": "nick",
+"first_year": 2000,
+"last_year": 2004,
+"original_run": "2000-2004",
+"q": "kids",
+"ct": "cable",
+"sat": [
+[
+2002,
+2004,
+"cbs"
+]
+]
+},
+{
+"title": "ChalkZone",
+"net": "nick",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Chalk Zone"
+],
+"sat": [
+[
+2003,
+2004,
+"cbs"
+]
+]
+},
+{
+"title": "All Grown Up!",
+"net": "nick",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"All Grown Up"
+],
+"req": [
+"rugrats",
+"nickelodeon",
+"nick",
+"cartoon",
+"animated",
+"episode"
+],
+"sat": [
+[
+2003,
+2004,
+"cbs"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Smurfs",
+"net": "nbc",
+"first_year": 1981,
+"last_year": 1989,
+"original_run": "1981-1989",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Smurfs"
+],
+"x": "2021|lost village|the movie|2011|2013|live action",
+"req": [
+"hanna",
+"cartoon",
+"animated",
+"episode",
+"season",
+"nbc",
+"198",
+"series"
+],
+"sat": [
+[
+1984,
+1990,
+"nbc"
+]
+],
+"ambiguous": true,
+"slots": [
+[
+1984,
+1988,
+"nbc",
+6,
+"08:30"
+]
+],
+"slots_approx": true
+},
+{
+"title": "Alvin and the Chipmunks",
+"net": "nbc",
+"first_year": 1983,
+"last_year": 1990,
+"original_run": "1983-1990",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Alvin & the Chipmunks",
+"The Chipmunks Go to the Movies"
+],
+"x": "alvinnn|2007|squeakquel|chipwrecked|road chip|movie",
+"req": [
+"ruby",
+"cartoon",
+"animated",
+"episode",
+"season",
+"nbc",
+"198",
+"series",
+"dic",
+"murakami"
+],
+"sat": [
+[
+1984,
+1991,
+"nbc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Mister T",
+"net": "nbc",
+"first_year": 1983,
+"last_year": 1985,
+"original_run": "1983-1985",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Mister T cartoon",
+"Mr. T cartoon",
+"Mister T animated"
+],
+"sat": [
+[
+1984,
+1986,
+"nbc"
+]
+]
+},
+{
+"title": "Snorks",
+"net": "nbc",
+"first_year": 1984,
+"last_year": 1988,
+"original_run": "1984-1988",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Snorks"
+],
+"sat": [
+[
+1984,
+1986,
+"nbc"
+]
+],
+"strip": [
+[
+1987,
+1989,
+"syn"
+]
+]
+},
+{
+"title": "Kidd Video",
+"net": "nbc",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1984,
+1987,
+"nbc"
+]
+]
+},
+{
+"title": "Pink Panther and Sons",
+"net": "nbc",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1984,
+1985,
+"nbc"
+],
+[
+1986,
+1986,
+"abc"
+]
+]
+},
+{
+"title": "Disney's Adventures of the Gummi Bears",
+"net": "nbc",
+"first_year": 1985,
+"last_year": 1991,
+"original_run": "1985-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Adventures of the Gummi Bears",
+"Gummi Bears"
+],
+"sat": [
+[
+1985,
+1989,
+"nbc"
+],
+[
+1989,
+1990,
+"abc"
+]
+],
+"slots": [
+[
+1990,
+1991,
+"syn",
+1,
+"15:00"
+],
+[
+1990,
+1991,
+"syn",
+2,
+"15:00"
+],
+[
+1990,
+1991,
+"syn",
+3,
+"15:00"
+],
+[
+1990,
+1991,
+"syn",
+4,
+"15:00"
+],
+[
+1990,
+1991,
+"syn",
+5,
+"15:00"
+]
+]
+},
+{
+"title": "It's Punky Brewster",
+"net": "nbc",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Its Punky Brewster",
+"Punky Brewster animated",
+"Punky Brewster cartoon"
+],
+"sat": [
+[
+1985,
+1987,
+"nbc"
+]
+]
+},
+{
+"title": "Foofur",
+"net": "nbc",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "kids",
+"ct": "satam",
+"req": [
+"cartoon",
+"animated",
+"hanna",
+"episode",
+"season",
+"nbc",
+"1986",
+"1987",
+"series",
+"dog"
+],
+"sat": [
+[
+1986,
+1988,
+"nbc"
+]
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "Lazer Tag Academy",
+"net": "nbc",
+"first_year": 1986,
+"last_year": 1986,
+"original_run": "1986-1986",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1986,
+1987,
+"nbc"
+]
+]
+},
+{
+"title": "Kissyfur",
+"net": "nbc",
+"first_year": 1986,
+"last_year": 1988,
+"original_run": "1986-1988",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1986,
+1990,
+"nbc"
+]
+]
+},
+{
+"title": "The New Archies",
+"net": "nbc",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"New Archies"
+],
+"sat": [
+[
+1987,
+1989,
+"nbc"
+]
+]
+},
+{
+"title": "Fraggle Rock: The Animated Series",
+"net": "nbc",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Fraggle Rock The Animated Series",
+"Fraggle Rock animated"
+],
+"sat": [
+[
+1987,
+1988,
+"nbc"
+]
+]
+},
+{
+"title": "ALF: The Animated Series",
+"net": "nbc",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"ALF The Animated Series",
+"ALF animated"
+],
+"sat": [
+[
+1987,
+1989,
+"nbc"
+]
+]
+},
+{
+"title": "ALF Tales",
+"net": "nbc",
+"first_year": 1988,
+"last_year": 1989,
+"original_run": "1988-1989",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1988,
+1990,
+"nbc"
+]
+]
+},
+{
+"title": "The Completely Mental Misadventures of Ed Grimley",
+"net": "nbc",
+"first_year": 1988,
+"last_year": 1988,
+"original_run": "1988-1988",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Completely Mental Misadventures of Ed Grimley",
+"Ed Grimley cartoon"
+],
+"sat": [
+[
+1988,
+1989,
+"nbc"
+]
+]
+},
+{
+"title": "Camp Candy",
+"net": "nbc",
+"first_year": 1989,
+"last_year": 1992,
+"original_run": "1989-1992",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1989,
+1991,
+"nbc"
+]
+]
+},
+{
+"title": "Captain N: The Game Master",
+"net": "nbc",
+"first_year": 1989,
+"last_year": 1991,
+"original_run": "1989-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Captain N The Game Master",
+"Captain N"
+],
+"sat": [
+[
+1989,
+1992,
+"nbc"
+]
+]
+},
+{
+"title": "The Karate Kid (animated)",
+"net": "nbc",
+"first_year": 1989,
+"last_year": 1989,
+"original_run": "1989-1989",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Karate Kid animated series",
+"Karate Kid cartoon"
+],
+"sat": [
+[
+1989,
+1990,
+"nbc"
+]
+]
+},
+{
+"title": "The Adventures of Super Mario Bros. 3",
+"net": "nbc",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Adventures of Super Mario Bros 3",
+"Super Mario Bros 3 cartoon"
+],
+"sat": [
+[
+1990,
+1991,
+"nbc"
+]
+]
+},
+{
+"title": "Kid 'n Play (animated)",
+"net": "nbc",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Kid n Play cartoon",
+"Kid 'n Play animated"
+],
+"sat": [
+[
+1990,
+1991,
+"nbc"
+]
+]
+},
+{
+"title": "Gravedale High",
+"net": "nbc",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1990,
+1991,
+"nbc"
+]
+]
+},
+{
+"title": "Super Mario World (TV series)",
+"net": "nbc",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Super Mario World cartoon",
+"Super Mario World animated series"
+],
+"sat": [
+[
+1991,
+1992,
+"nbc"
+]
+]
+},
+{
+"title": "ProStars",
+"net": "nbc",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "satam",
+"req": [
+"cartoon",
+"animated",
+"jordan",
+"gretzky",
+"bo jackson",
+"dic",
+"nbc"
+],
+"sat": [
+[
+1991,
+1992,
+"nbc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Wish Kid",
+"net": "nbc",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1991,
+1992,
+"nbc"
+]
+]
+},
+{
+"title": "Space Cats",
+"net": "nbc",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "satam",
+"req": [
+"cartoon",
+"animated",
+"paul fusco",
+"nbc",
+"1991",
+"episode"
+],
+"sat": [
+[
+1991,
+1992,
+"nbc"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Yo Yogi!",
+"net": "nbc",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Yo Yogi"
+],
+"sat": [
+[
+1991,
+1992,
+"nbc"
+]
+]
+},
+{
+"title": "Bobby's World",
+"net": "fox",
+"first_year": 1990,
+"last_year": 1998,
+"original_run": "1990-1998",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Bobbys World"
+],
+"sat": [
+[
+1990,
+1998,
+"fox"
+]
+]
+},
+{
+"title": "Tom & Jerry Kids",
+"net": "fox",
+"first_year": 1990,
+"last_year": 1993,
+"original_run": "1990-1993",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Tom and Jerry Kids",
+"Tom & Jerry Kids Show"
+],
+"sat": [
+[
+1990,
+1994,
+"fox"
+]
+]
+},
+{
+"title": "Zazoo U",
+"net": "fox",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1990,
+1991,
+"fox"
+]
+]
+},
+{
+"title": "Attack of the Killer Tomatoes (animated)",
+"net": "fox",
+"first_year": 1990,
+"last_year": 1991,
+"original_run": "1990-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Attack of the Killer Tomatoes animated series",
+"Attack of the Killer Tomatoes cartoon"
+],
+"sat": [
+[
+1990,
+1992,
+"fox"
+]
+]
+},
+{
+"title": "Piggsburg Pigs!",
+"net": "fox",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Piggsburg Pigs"
+],
+"sat": [
+[
+1990,
+1991,
+"fox"
+]
+]
+},
+{
+"title": "Peter Pan and the Pirates",
+"net": "fox",
+"first_year": 1990,
+"last_year": 1991,
+"original_run": "1990-1991",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Peter Pan & the Pirates",
+"Fox's Peter Pan and the Pirates"
+],
+"strip": [
+[
+1990,
+1992,
+"fox"
+]
+]
+},
+{
+"title": "Taz-Mania",
+"net": "fox",
+"first_year": 1991,
+"last_year": 1995,
+"original_run": "1991-1995",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Tazmania",
+"Taz Mania"
+],
+"req": [
+"warner",
+"cartoon",
+"animated",
+"episode",
+"season",
+"fox",
+"taz"
+],
+"sat": [
+[
+1991,
+1996,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Little Shop",
+"net": "fox",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Little Shop cartoon",
+"Little Shop animated"
+],
+"req": [
+"cartoon",
+"animated",
+"fox kids",
+"1991"
+],
+"sat": [
+[
+1991,
+1992,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Tiny Toon Adventures",
+"net": "syn",
+"first_year": 1990,
+"last_year": 1992,
+"original_run": "1990-1992",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Tiny Toons"
+],
+"x": "looniversity|reboot",
+"sat": [
+[
+1992,
+1995,
+"fox"
+]
+],
+"strip": [
+[
+1990,
+1992,
+"syn"
+],
+[
+1992,
+1995,
+"fox"
+]
+]
+},
+{
+"title": "Batman: The Animated Series",
+"net": "fox",
+"first_year": 1992,
+"last_year": 1995,
+"original_run": "1992-1995",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Batman The Animated Series",
+"Batman TAS",
+"The Adventures of Batman & Robin"
+],
+"sat": [
+[
+1992,
+1997,
+"fox"
+]
+],
+"slots": [
+[
+1992,
+1994,
+"fox",
+1,
+"16:30"
+],
+[
+1992,
+1994,
+"fox",
+2,
+"16:30"
+],
+[
+1992,
+1994,
+"fox",
+3,
+"16:30"
+],
+[
+1992,
+1994,
+"fox",
+4,
+"16:30"
+],
+[
+1992,
+1994,
+"fox",
+5,
+"16:30"
+]
+],
+"slots_approx": true
+},
+{
+"title": "X-Men",
+"net": "fox",
+"first_year": 1992,
+"last_year": 1997,
+"original_run": "1992-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"X-Men The Animated Series",
+"X-Men TAS",
+"X-Men 1992"
+],
+"x": "evolution|97|'97|wolverine and|film|movie|anime|2000|origins|apocalypse|days of future past film",
+"req": [
+"animated",
+"cartoon",
+"1992",
+"fox kids",
+"episode",
+"season",
+"series",
+"saban"
+],
+"sat": [
+[
+1992,
+1998,
+"fox"
+]
+],
+"ambiguous": true,
+"slots": [
+[
+1993,
+1997,
+"fox",
+6,
+"11:00"
+]
+],
+"slots_approx": true
+},
+{
+"title": "Eek! The Cat",
+"net": "fox",
+"first_year": 1992,
+"last_year": 1997,
+"original_run": "1992-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Eek the Cat",
+"Eek! Stravaganza",
+"Eek Stravaganza"
+],
+"sat": [
+[
+1992,
+1997,
+"fox"
+]
+]
+},
+{
+"title": "Super Dave: Daredevil for Hire",
+"net": "fox",
+"first_year": 1992,
+"last_year": 1992,
+"original_run": "1992-1992",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Super Dave Daredevil for Hire"
+],
+"sat": [
+[
+1992,
+1993,
+"fox"
+]
+]
+},
+{
+"title": "Dog City",
+"net": "fox",
+"first_year": 1992,
+"last_year": 1994,
+"original_run": "1992-1994",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Jim Henson's Dog City"
+],
+"req": [
+"henson",
+"cartoon",
+"animated",
+"fox",
+"episode",
+"ace hart"
+],
+"sat": [
+[
+1992,
+1995,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Animaniacs",
+"net": "fox",
+"first_year": 1993,
+"last_year": 1998,
+"original_run": "1993-1998",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Steven Spielberg Presents Animaniacs"
+],
+"x": "2020|hulu|reboot",
+"sat": [
+[
+1993,
+1995,
+"fox"
+],
+[
+1995,
+1999,
+"wb"
+]
+],
+"slots": [
+[
+1993,
+1995,
+"fox",
+1,
+"16:00"
+],
+[
+1993,
+1995,
+"fox",
+2,
+"16:00"
+],
+[
+1993,
+1995,
+"fox",
+3,
+"16:00"
+],
+[
+1993,
+1995,
+"fox",
+4,
+"16:00"
+],
+[
+1993,
+1995,
+"fox",
+5,
+"16:00"
+]
+],
+"slots_approx": true
+},
+{
+"title": "Droopy, Master Detective",
+"net": "fox",
+"first_year": 1993,
+"last_year": 1993,
+"original_run": "1993-1993",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Droopy Master Detective"
+],
+"sat": [
+[
+1993,
+1994,
+"fox"
+]
+]
+},
+{
+"title": "The Tick",
+"net": "fox",
+"first_year": 1994,
+"last_year": 1996,
+"original_run": "1994-1996",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Tick animated",
+"The Tick cartoon",
+"The Tick 1994"
+],
+"x": "2001|2016|2017|amazon|warburton|live action|serafinowicz",
+"req": [
+"animated",
+"cartoon",
+"1994",
+"fox kids",
+"episode",
+"season",
+"series",
+"arthur"
+],
+"sat": [
+[
+1994,
+1997,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Spider-Man (1994)",
+"net": "fox",
+"first_year": 1994,
+"last_year": 1998,
+"original_run": "1994-1998",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Spider-Man The Animated Series",
+"Spider-Man TAS",
+"Spider-Man 1994"
+],
+"sat": [
+[
+1995,
+1998,
+"fox"
+]
+]
+},
+{
+"title": "Where on Earth Is Carmen Sandiego?",
+"net": "fox",
+"first_year": 1994,
+"last_year": 1998,
+"original_run": "1994-1998",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Where on Earth Is Carmen Sandiego"
+],
+"sat": [
+[
+1994,
+1998,
+"fox"
+]
+]
+},
+{
+"title": "Life with Louie",
+"net": "fox",
+"first_year": 1994,
+"last_year": 1998,
+"original_run": "1994-1998",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1995,
+1998,
+"fox"
+]
+]
+},
+{
+"title": "The Spooktacular New Adventures of Casper",
+"net": "fox",
+"first_year": 1996,
+"last_year": 1998,
+"original_run": "1996-1998",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Spooktacular New Adventures of Casper"
+],
+"sat": [
+[
+1996,
+1998,
+"fox"
+]
+]
+},
+{
+"title": "C Bear and Jamal",
+"net": "fox",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"C-Bear and Jamal"
+],
+"sat": [
+[
+1996,
+1998,
+"fox"
+]
+]
+},
+{
+"title": "The Adventures of Sam & Max: Freelance Police",
+"net": "fox",
+"first_year": 1997,
+"last_year": 1998,
+"original_run": "1997-1998",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Sam & Max Freelance Police animated",
+"Sam and Max Freelance Police cartoon",
+"Adventures of Sam & Max"
+],
+"x": "telltale|save the world|hit the road|devil's playhouse",
+"sat": [
+[
+1997,
+1998,
+"fox"
+]
+]
+},
+{
+"title": "Space Goofs",
+"net": "fox",
+"first_year": 1997,
+"last_year": 1997,
+"original_run": "1997-1997",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1997,
+1998,
+"fox"
+]
+]
+},
+{
+"title": "Ned's Newt",
+"net": "fox",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Neds Newt"
+],
+"sat": [
+[
+1998,
+1999,
+"fox"
+]
+]
+},
+{
+"title": "Silver Surfer",
+"net": "fox",
+"first_year": 1998,
+"last_year": 1998,
+"original_run": "1998-1998",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Silver Surfer animated",
+"Silver Surfer The Animated Series",
+"Silver Surfer 1998"
+],
+"req": [
+"animated",
+"cartoon",
+"1998",
+"fox kids",
+"episode",
+"series"
+],
+"sat": [
+[
+1998,
+1998,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Toonsylvania",
+"net": "fox",
+"first_year": 1998,
+"last_year": 1998,
+"original_run": "1998-1998",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1998,
+1999,
+"fox"
+]
+]
+},
+{
+"title": "Mad Jack the Pirate",
+"net": "fox",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1998,
+1999,
+"fox"
+]
+]
+},
+{
+"title": "The Secret Files of the Spy Dogs",
+"net": "fox",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Secret Files of the Spy Dogs",
+"Spy Dogs"
+],
+"sat": [
+[
+1998,
+1999,
+"fox"
+]
+]
+},
+{
+"title": "Godzilla: The Series",
+"net": "fox",
+"first_year": 1998,
+"last_year": 2000,
+"original_run": "1998-2000",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Godzilla The Series"
+],
+"sat": [
+[
+1998,
+2000,
+"fox"
+]
+]
+},
+{
+"title": "The Mr. Potato Head Show",
+"net": "fox",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Mr. Potato Head Show"
+],
+"sat": [
+[
+1998,
+1999,
+"fox"
+]
+]
+},
+{
+"title": "The Magician",
+"net": "fox",
+"first_year": 1999,
+"last_year": 1999,
+"original_run": "1999-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Magician animated",
+"The Magician cartoon"
+],
+"req": [
+"cartoon",
+"animated",
+"ace cooper",
+"fox kids",
+"gaumont"
+],
+"sat": [
+[
+1999,
+2000,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "The New Woody Woodpecker Show",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"New Woody Woodpecker Show"
+],
+"sat": [
+[
+1999,
+2002,
+"fox"
+]
+]
+},
+{
+"title": "Spider-Man Unlimited",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1999,
+2001,
+"fox"
+]
+]
+},
+{
+"title": "The Avengers: United They Stand",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Avengers United They Stand"
+],
+"sat": [
+[
+1999,
+2000,
+"fox"
+]
+]
+},
+{
+"title": "Beast Machines: Transformers",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Beast Machines"
+],
+"sat": [
+[
+1999,
+2000,
+"fox"
+]
+]
+},
+{
+"title": "Big Guy and Rusty the Boy Robot",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1999,
+2001,
+"fox"
+]
+]
+},
+{
+"title": "Xyber 9: New Dawn",
+"net": "fox",
+"first_year": 1999,
+"last_year": 1999,
+"original_run": "1999-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Xyber 9"
+],
+"sat": [
+[
+1999,
+1999,
+"fox"
+]
+]
+},
+{
+"title": "Sherlock Holmes in the 22nd Century",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1999,
+2001,
+"fox"
+]
+]
+},
+{
+"title": "Digimon: Digital Monsters",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2003,
+"original_run": "1999-2003",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Digimon Adventure English dub",
+"Digimon Digital Monsters",
+"Digimon Tamers English",
+"Digimon Frontier English"
+],
+"req": [
+"english",
+"dub",
+"fox kids",
+"digital monsters",
+"season"
+],
+"sat": [
+[
+1999,
+2002,
+"fox"
+]
+],
+"strip": [
+[
+1999,
+2002,
+"fox"
+]
+]
+},
+{
+"title": "NASCAR Racers",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1999,
+2001,
+"fox"
+]
+]
+},
+{
+"title": "Monster Rancher",
+"net": "fox",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Monster Rancher anime",
+"Monster Rancher English dub"
+],
+"req": [
+"anime",
+"cartoon",
+"animated",
+"episode",
+"english",
+"fox kids",
+"season",
+"genki"
+],
+"sat": [
+[
+1999,
+2001,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Action Man (2000)",
+"net": "fox",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Action Man 2000 animated",
+"Action Man cartoon 2000"
+],
+"sat": [
+[
+2000,
+2001,
+"fox"
+]
+]
+},
+{
+"title": "Flint the Time Detective",
+"net": "fox",
+"first_year": 2000,
+"last_year": 2000,
+"original_run": "2000-2000",
+"q": "kids",
+"ct": "anime",
+"sat": [
+[
+2000,
+2001,
+"fox"
+]
+]
+},
+{
+"title": "Dinozaurs",
+"net": "fox",
+"first_year": 2000,
+"last_year": 2000,
+"original_run": "2000-2000",
+"q": "kids",
+"ct": "anime",
+"sat": [
+[
+2000,
+2001,
+"fox"
+]
+]
+},
+{
+"title": "Kong: The Animated Series",
+"net": "fox",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Kong The Animated Series"
+],
+"strip": [
+[
+2000,
+2001,
+"fox"
+]
+]
+},
+{
+"title": "The Vision of Escaflowne",
+"net": "fox",
+"first_year": 2000,
+"last_year": 2000,
+"original_run": "2000-2000",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Escaflowne Fox Kids",
+"Escaflowne English dub"
+],
+"req": [
+"english",
+"dub",
+"fox kids",
+"bandai"
+],
+"sat": [
+[
+2000,
+2000,
+"fox"
+]
+]
+},
+{
+"title": "Medabots",
+"net": "fox",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Medabots English dub"
+],
+"x": "game boy|gba|classics",
+"req": [
+"english",
+"dub",
+"episode",
+"season",
+"fox kids",
+"nelvana",
+"anime"
+],
+"sat": [
+[
+2001,
+2002,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Transformers: Robots in Disguise (2001)",
+"net": "fox",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Transformers Robots in Disguise 2001",
+"Transformers RID 2001"
+],
+"sat": [
+[
+2001,
+2002,
+"fox"
+]
+]
+},
+{
+"title": "Mon Colle Knights",
+"net": "fox",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "anime",
+"sat": [
+[
+2001,
+2002,
+"fox"
+]
+]
+},
+{
+"title": "The Ripping Friends",
+"net": "fox",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Ripping Friends"
+],
+"sat": [
+[
+2001,
+2002,
+"fox"
+]
+]
+},
+{
+"title": "Alienators: Evolution Continues",
+"net": "fox",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Alienators Evolution Continues"
+],
+"sat": [
+[
+2001,
+2002,
+"fox"
+]
+]
+},
+{
+"title": "Kirby: Right Back at Ya!",
+"net": "fox",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Kirby Right Back at Ya"
+],
+"sat": [
+[
+2002,
+2004,
+"fox"
+]
+]
+},
+{
+"title": "Ultimate Muscle",
+"net": "fox",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Ultimate Muscle The Kinnikuman Legacy"
+],
+"sat": [
+[
+2002,
+2004,
+"fox"
+]
+]
+},
+{
+"title": "Fighting Foodons",
+"net": "fox",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "kids",
+"ct": "anime",
+"sat": [
+[
+2002,
+2003,
+"fox"
+]
+]
+},
+{
+"title": "Stargate Infinity",
+"net": "fox",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+2002,
+2003,
+"fox"
+]
+]
+},
+{
+"title": "Sonic X",
+"net": "fox",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Sonic X English dub"
+],
+"x": "japanese|sub|comic|archie",
+"req": [
+"english",
+"dub",
+"4kids",
+"episode",
+"season",
+"fox"
+],
+"sat": [
+[
+2003,
+2004,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Shaman King",
+"net": "fox",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Shaman King 4Kids",
+"Shaman King English dub 2003"
+],
+"x": "2021|netflix|manga|sub",
+"req": [
+"4kids",
+"english dub",
+"2003",
+"fox box",
+"foxbox"
+],
+"sat": [
+[
+2003,
+2004,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Teenage Mutant Ninja Turtles (2003)",
+"net": "fox",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"TMNT 2003",
+"Ninja Turtles 2003"
+],
+"sat": [
+[
+2003,
+2004,
+"fox"
+]
+]
+},
+{
+"title": "The Cramp Twins",
+"net": "fox",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Cramp Twins"
+],
+"sat": [
+[
+2003,
+2004,
+"fox"
+]
+]
+},
+{
+"title": "Winx Club",
+"net": "fox",
+"first_year": 2004,
+"last_year": 2004,
+"original_run": "2004-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Winx Club 4Kids"
+],
+"x": "fate|netflix|nick|rai|italian",
+"req": [
+"4kids",
+"season 1",
+"english",
+"2004",
+"episode"
+],
+"sat": [
+[
+2004,
+2004,
+"fox"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Pinky and the Brain",
+"net": "wb",
+"first_year": 1995,
+"last_year": 1998,
+"original_run": "1995-1998",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Pinky & the Brain"
+],
+"x": "2020",
+"sat": [
+[
+1995,
+1999,
+"wb"
+]
+]
+},
+{
+"title": "Freakazoid!",
+"net": "wb",
+"first_year": 1995,
+"last_year": 1997,
+"original_run": "1995-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Freakazoid"
+],
+"sat": [
+[
+1995,
+1997,
+"wb"
+]
+]
+},
+{
+"title": "The Sylvester & Tweety Mysteries",
+"net": "wb",
+"first_year": 1995,
+"last_year": 2000,
+"original_run": "1995-2000",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Sylvester and Tweety Mysteries",
+"Sylvester & Tweety Mysteries"
+],
+"sat": [
+[
+1995,
+2000,
+"wb"
+]
+]
+},
+{
+"title": "Earthworm Jim",
+"net": "wb",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Earthworm Jim animated",
+"Earthworm Jim cartoon"
+],
+"req": [
+"animated",
+"cartoon",
+"episode",
+"season",
+"series",
+"kids wb",
+"universal"
+],
+"sat": [
+[
+1995,
+1996,
+"wb"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Superman: The Animated Series",
+"net": "wb",
+"first_year": 1996,
+"last_year": 2000,
+"original_run": "1996-2000",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Superman The Animated Series",
+"Superman TAS"
+],
+"sat": [
+[
+1996,
+2000,
+"wb"
+]
+]
+},
+{
+"title": "Road Rovers",
+"net": "wb",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1996,
+1997,
+"wb"
+]
+]
+},
+{
+"title": "Waynehead",
+"net": "wb",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1996,
+1997,
+"wb"
+]
+]
+},
+{
+"title": "The New Batman Adventures",
+"net": "wb",
+"first_year": 1997,
+"last_year": 1999,
+"original_run": "1997-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"New Batman Adventures",
+"The New Batman/Superman Adventures"
+],
+"sat": [
+[
+1997,
+2000,
+"wb"
+]
+]
+},
+{
+"title": "Men in Black: The Series",
+"net": "wb",
+"first_year": 1997,
+"last_year": 2001,
+"original_run": "1997-2001",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Men in Black The Series",
+"Men in Black The Animated Series"
+],
+"sat": [
+[
+1997,
+2001,
+"wb"
+]
+]
+},
+{
+"title": "Channel Umptee-3",
+"net": "wb",
+"first_year": 1997,
+"last_year": 1998,
+"original_run": "1997-1998",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Channel Umptee 3"
+],
+"sat": [
+[
+1997,
+1998,
+"wb"
+]
+]
+},
+{
+"title": "Histeria!",
+"net": "wb",
+"first_year": 1998,
+"last_year": 2000,
+"original_run": "1998-2000",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Histeria"
+],
+"req": [
+"warner",
+"cartoon",
+"animated",
+"kids wb",
+"episode",
+"father time"
+],
+"sat": [
+[
+1998,
+2000,
+"wb"
+]
+],
+"strip": [
+[
+1998,
+2000,
+"wb"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Pinky, Elmyra & the Brain",
+"net": "wb",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Pinky Elmyra and the Brain"
+],
+"sat": [
+[
+1998,
+1999,
+"wb"
+]
+]
+},
+{
+"title": "Pokémon",
+"net": "wb",
+"first_year": 1998,
+"last_year": 2004,
+"original_run": "1998-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Pokemon Indigo League",
+"Pokemon Orange Islands",
+"Pokemon Johto Journeys",
+"Pokemon Johto League Champions",
+"Pokemon Master Quest",
+"Pokemon Advanced",
+"Pokemon Kids WB"
+],
+"x": "sun|moon|journeys the series|horizons|xy|black|white|diamond|pearl|go |sword|shield|tcg|trading card|game ?boy|gameplay|rom|theme|movie|film",
+"req": [
+"english",
+"dub",
+"4kids",
+"kids wb",
+"season",
+"indigo",
+"johto",
+"orange",
+"advanced",
+"episode"
+],
+"sat": [
+[
+1999,
+2004,
+"wb"
+]
+],
+"strip": [
+[
+1998,
+1999,
+"syn"
+],
+[
+1999,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "Batman Beyond",
+"net": "wb",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1999,
+2001,
+"wb"
+]
+]
+},
+{
+"title": "Detention",
+"net": "wb",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "kids",
+"ct": "satam",
+"req": [
+"kids wb",
+"cartoon",
+"animated",
+"shareena",
+"episode"
+],
+"sat": [
+[
+1999,
+2000,
+"wb"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Max Steel",
+"net": "wb",
+"first_year": 2000,
+"last_year": 2002,
+"original_run": "2000-2002",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Max Steel 2000"
+],
+"x": "2013|2016|film",
+"req": [
+"2000",
+"animated",
+"cartoon",
+"cgi",
+"episode",
+"kids wb",
+"season"
+],
+"sat": [
+[
+2000,
+2001,
+"wb"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Cardcaptors",
+"net": "wb",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Card Captors"
+],
+"x": "sakura clear card|japanese|sub",
+"sat": [
+[
+2000,
+2001,
+"wb"
+]
+]
+},
+{
+"title": "Jackie Chan Adventures",
+"net": "wb",
+"first_year": 2000,
+"last_year": 2004,
+"original_run": "2000-2004",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+2000,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "Static Shock",
+"net": "wb",
+"first_year": 2000,
+"last_year": 2004,
+"original_run": "2000-2004",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+2000,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "X-Men: Evolution",
+"net": "wb",
+"first_year": 2000,
+"last_year": 2003,
+"original_run": "2000-2003",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"X-Men Evolution"
+],
+"sat": [
+[
+2000,
+2003,
+"wb"
+]
+]
+},
+{
+"title": "Generation O!",
+"net": "wb",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Generation O"
+],
+"sat": [
+[
+2000,
+2001,
+"wb"
+]
+]
+},
+{
+"title": "The Zeta Project",
+"net": "wb",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Zeta Project"
+],
+"sat": [
+[
+2001,
+2002,
+"wb"
+]
+]
+},
+{
+"title": "Yu-Gi-Oh!",
+"net": "wb",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Yu-Gi-Oh Duel Monsters English",
+"Yu-Gi-Oh 4Kids",
+"Yugioh Duel Monsters dub"
+],
+"x": "gx|5d|zexal|arc-v|vrains|sevens|go rush|abridged|capsule|duel links|master duel|tcg|card|gameplay|japanese|sub|season zero",
+"req": [
+"english",
+"dub",
+"4kids",
+"kids wb",
+"season",
+"episode",
+"duel monsters"
+],
+"sat": [
+[
+2001,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "The Mummy: The Animated Series",
+"net": "wb",
+"first_year": 2001,
+"last_year": 2003,
+"original_run": "2001-2003",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Mummy The Animated Series",
+"The Mummy animated"
+],
+"sat": [
+[
+2001,
+2003,
+"wb"
+]
+]
+},
+{
+"title": "Phantom Investigators",
+"net": "wb",
+"first_year": 2002,
+"last_year": 2002,
+"original_run": "2002-2002",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+2002,
+2002,
+"wb"
+]
+]
+},
+{
+"title": "¡Mucha Lucha!",
+"net": "wb",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Mucha Lucha"
+],
+"sat": [
+[
+2002,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "Ozzy & Drix",
+"net": "wb",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Ozzy and Drix"
+],
+"sat": [
+[
+2002,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "What's New, Scooby-Doo?",
+"net": "wb",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Whats New Scooby-Doo",
+"What's New Scooby Doo"
+],
+"sat": [
+[
+2002,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "Xiaolin Showdown",
+"net": "wb",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+2003,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "MegaMan NT Warrior",
+"net": "wb",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Mega Man NT Warrior"
+],
+"sat": [
+[
+2003,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "The Batman",
+"net": "wb",
+"first_year": 2004,
+"last_year": 2004,
+"original_run": "2004-2004",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Batman 2004",
+"The Batman animated 2004"
+],
+"x": "2022|pattinson|film|movie",
+"req": [
+"2004",
+"kids wb",
+"animated series",
+"season 1"
+],
+"sat": [
+[
+2004,
+2004,
+"wb"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Teen Titans",
+"net": "cn",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Teen Titans 2003"
+],
+"x": "go!|go |titans go|judas|comic",
+"req": [
+"2003",
+"cartoon network",
+"episode",
+"season",
+"animated"
+],
+"sat": [
+[
+2003,
+2004,
+"wb"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Space Strikers",
+"net": "upn",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1995,
+1996,
+"upn"
+]
+]
+},
+{
+"title": "Teknoman",
+"net": "upn",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "kids",
+"ct": "anime",
+"sat": [
+[
+1995,
+1996,
+"upn"
+]
+]
+},
+{
+"title": "The Mouse and the Monster",
+"net": "upn",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Mouse and the Monster"
+],
+"sat": [
+[
+1996,
+1997,
+"upn"
+]
+]
+},
+{
+"title": "Jumanji: The Animated Series",
+"net": "upn",
+"first_year": 1996,
+"last_year": 1999,
+"original_run": "1996-1999",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Jumanji The Animated Series",
+"Jumanji animated",
+"Jumanji cartoon"
+],
+"sat": [
+[
+1996,
+1999,
+"upn"
+]
+]
+},
+{
+"title": "The Incredible Hulk (1996)",
+"net": "upn",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"The Incredible Hulk 1996",
+"Incredible Hulk animated 1996",
+"The Incredible Hulk and She-Hulk"
+],
+"sat": [
+[
+1996,
+1998,
+"upn"
+]
+]
+},
+{
+"title": "Bureau of Alien Detectors",
+"net": "upn",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "satam",
+"sat": [
+[
+1996,
+1997,
+"upn"
+]
+]
+},
+{
+"title": "DuckTales",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1990,
+"original_run": "1987-1990",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Duck Tales"
+],
+"x": "2017|reboot",
+"slots": [
+[
+1987,
+1990,
+"syn",
+1,
+"16:00"
+],
+[
+1987,
+1990,
+"syn",
+2,
+"16:00"
+],
+[
+1987,
+1990,
+"syn",
+3,
+"16:00"
+],
+[
+1987,
+1990,
+"syn",
+4,
+"16:00"
+],
+[
+1987,
+1990,
+"syn",
+5,
+"16:00"
+],
+[
+1990,
+1991,
+"syn",
+1,
+"15:30"
+],
+[
+1990,
+1991,
+"syn",
+2,
+"15:30"
+],
+[
+1990,
+1991,
+"syn",
+3,
+"15:30"
+],
+[
+1990,
+1991,
+"syn",
+4,
+"15:30"
+],
+[
+1990,
+1991,
+"syn",
+5,
+"15:30"
+],
+[
+1991,
+1992,
+"syn",
+1,
+"15:00"
+],
+[
+1991,
+1992,
+"syn",
+2,
+"15:00"
+],
+[
+1991,
+1992,
+"syn",
+3,
+"15:00"
+],
+[
+1991,
+1992,
+"syn",
+4,
+"15:00"
+],
+[
+1991,
+1992,
+"syn",
+5,
+"15:00"
+]
+],
+"slots_approx": true
+},
+{
+"title": "Chip 'n Dale Rescue Rangers",
+"net": "syn",
+"first_year": 1989,
+"last_year": 1990,
+"original_run": "1989-1990",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Chip n Dale Rescue Rangers",
+"Chip and Dale Rescue Rangers",
+"Chip 'n' Dale Rescue Rangers",
+"Rescue Rangers"
+],
+"x": "2022|film|movie|nes|capcom|longplay",
+"slots": [
+[
+1989,
+1990,
+"syn",
+1,
+"15:30"
+],
+[
+1989,
+1990,
+"syn",
+2,
+"15:30"
+],
+[
+1989,
+1990,
+"syn",
+3,
+"15:30"
+],
+[
+1989,
+1990,
+"syn",
+4,
+"15:30"
+],
+[
+1989,
+1990,
+"syn",
+5,
+"15:30"
+],
+[
+1990,
+1991,
+"syn",
+1,
+"16:00"
+],
+[
+1990,
+1991,
+"syn",
+2,
+"16:00"
+],
+[
+1990,
+1991,
+"syn",
+3,
+"16:00"
+],
+[
+1990,
+1991,
+"syn",
+4,
+"16:00"
+],
+[
+1990,
+1991,
+"syn",
+5,
+"16:00"
+],
+[
+1991,
+1992,
+"syn",
+1,
+"15:30"
+],
+[
+1991,
+1992,
+"syn",
+2,
+"15:30"
+],
+[
+1991,
+1992,
+"syn",
+3,
+"15:30"
+],
+[
+1991,
+1992,
+"syn",
+4,
+"15:30"
+],
+[
+1991,
+1992,
+"syn",
+5,
+"15:30"
+],
+[
+1992,
+1993,
+"syn",
+1,
+"15:00"
+],
+[
+1992,
+1993,
+"syn",
+2,
+"15:00"
+],
+[
+1992,
+1993,
+"syn",
+3,
+"15:00"
+],
+[
+1992,
+1993,
+"syn",
+4,
+"15:00"
+],
+[
+1992,
+1993,
+"syn",
+5,
+"15:00"
+]
+],
+"slots_approx": true
+},
+{
+"title": "TaleSpin",
+"net": "syn",
+"first_year": 1990,
+"last_year": 1991,
+"original_run": "1990-1991",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Tale Spin"
+],
+"slots": [
+[
+1990,
+1991,
+"syn",
+1,
+"16:30"
+],
+[
+1990,
+1991,
+"syn",
+2,
+"16:30"
+],
+[
+1990,
+1991,
+"syn",
+3,
+"16:30"
+],
+[
+1990,
+1991,
+"syn",
+4,
+"16:30"
+],
+[
+1990,
+1991,
+"syn",
+5,
+"16:30"
+],
+[
+1991,
+1992,
+"syn",
+1,
+"16:00"
+],
+[
+1991,
+1992,
+"syn",
+2,
+"16:00"
+],
+[
+1991,
+1992,
+"syn",
+3,
+"16:00"
+],
+[
+1991,
+1992,
+"syn",
+4,
+"16:00"
+],
+[
+1991,
+1992,
+"syn",
+5,
+"16:00"
+],
+[
+1992,
+1993,
+"syn",
+1,
+"15:30"
+],
+[
+1992,
+1993,
+"syn",
+2,
+"15:30"
+],
+[
+1992,
+1993,
+"syn",
+3,
+"15:30"
+],
+[
+1992,
+1993,
+"syn",
+4,
+"15:30"
+],
+[
+1992,
+1993,
+"syn",
+5,
+"15:30"
+],
+[
+1993,
+1994,
+"syn",
+1,
+"15:00"
+],
+[
+1993,
+1994,
+"syn",
+2,
+"15:00"
+],
+[
+1993,
+1994,
+"syn",
+3,
+"15:00"
+],
+[
+1993,
+1994,
+"syn",
+4,
+"15:00"
+],
+[
+1993,
+1994,
+"syn",
+5,
+"15:00"
+]
+]
+},
+{
+"title": "Bonkers",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Disney's Bonkers"
+],
+"req": [
+"disney",
+"cartoon",
+"animated",
+"bobcat",
+"episode",
+"series"
+],
+"ambiguous": true,
+"slots": [
+[
+1993,
+1994,
+"syn",
+1,
+"16:30"
+],
+[
+1993,
+1994,
+"syn",
+2,
+"16:30"
+],
+[
+1993,
+1994,
+"syn",
+3,
+"16:30"
+],
+[
+1993,
+1994,
+"syn",
+4,
+"16:30"
+],
+[
+1993,
+1994,
+"syn",
+5,
+"16:30"
+],
+[
+1994,
+1995,
+"syn",
+1,
+"16:00"
+],
+[
+1994,
+1995,
+"syn",
+2,
+"16:00"
+],
+[
+1994,
+1995,
+"syn",
+3,
+"16:00"
+],
+[
+1994,
+1995,
+"syn",
+4,
+"16:00"
+],
+[
+1994,
+1995,
+"syn",
+5,
+"16:00"
+],
+[
+1995,
+1996,
+"syn",
+1,
+"15:30"
+],
+[
+1995,
+1996,
+"syn",
+2,
+"15:30"
+],
+[
+1995,
+1996,
+"syn",
+3,
+"15:30"
+],
+[
+1995,
+1996,
+"syn",
+4,
+"15:30"
+],
+[
+1995,
+1996,
+"syn",
+5,
+"15:30"
+]
+]
+},
+{
+"title": "The Shnookums & Meat Funny Cartoon Show",
+"net": "syn",
+"first_year": 1995,
+"last_year": 1995,
+"original_run": "1995-1995",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Shnookums and Meat"
+],
+"strip": [
+[
+1995,
+1995,
+"syn"
+]
+]
+},
+{
+"title": "Quack Pack",
+"net": "syn",
+"first_year": 1996,
+"last_year": 1996,
+"original_run": "1996-1996",
+"q": "kids",
+"ct": "weekday",
+"slots": [
+[
+1996,
+1997,
+"syn",
+1,
+"16:30"
+],
+[
+1996,
+1997,
+"syn",
+2,
+"16:30"
+],
+[
+1996,
+1997,
+"syn",
+3,
+"16:30"
+],
+[
+1996,
+1997,
+"syn",
+4,
+"16:30"
+],
+[
+1996,
+1997,
+"syn",
+5,
+"16:30"
+]
+]
+},
+{
+"title": "He-Man and the Masters of the Universe",
+"net": "syn",
+"first_year": 1983,
+"last_year": 1985,
+"original_run": "1983-1985",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"He-Man and the Masters of the Universe 1983"
+],
+"x": "2002|2021|revelation|revolution|motion picture|1987 film|200x",
+"strip": [
+[
+1984,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "She-Ra: Princess of Power",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1987,
+"original_run": "1985-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"She-Ra Princess of Power"
+],
+"x": "princesses of power|2018|netflix",
+"strip": [
+[
+1985,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "G.I. Joe: A Real American Hero",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1991,
+"original_run": "1985-1991",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"GI Joe A Real American Hero",
+"G.I. Joe Sunbow",
+"GI Joe 1985"
+],
+"x": "renegades|sigma|resolute|extreme|rise of cobra|retaliation|snake eyes film",
+"strip": [
+[
+1985,
+1992,
+"syn"
+]
+]
+},
+{
+"title": "The Transformers",
+"net": "syn",
+"first_year": 1984,
+"last_year": 1987,
+"original_run": "1984-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Transformers Generation 1",
+"Transformers G1",
+"The Transformers 1984"
+],
+"x": "armada|energon|cybertron|prime|animated 2007|bay|film|movie|rescue bots|cyberverse|earthspark|beast|robots in disguise|war for|victory|masterforce|headmasters|zone",
+"req": [
+"g1",
+"generation 1",
+"1984",
+"1985",
+"1986",
+"sunbow",
+"season",
+"episode",
+"cartoon",
+"animated"
+],
+"sat": [
+[
+1984,
+1985,
+"syn"
+]
+],
+"strip": [
+[
+1985,
+1988,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "ThunderCats",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1989,
+"original_run": "1985-1989",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Thundercats"
+],
+"x": "2011|roar",
+"strip": [
+[
+1985,
+1990,
+"syn"
+]
+]
+},
+{
+"title": "SilverHawks",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1986,
+"original_run": "1986-1986",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Silver Hawks"
+],
+"strip": [
+[
+1986,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "Voltron: Defender of the Universe",
+"net": "syn",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Voltron Defender of the Universe",
+"Voltron 1984",
+"Lion Voltron",
+"Vehicle Voltron"
+],
+"x": "legendary defender|force|third dimension|netflix",
+"strip": [
+[
+1984,
+1987,
+"syn"
+]
+]
+},
+{
+"title": "Robotech",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1985,
+"original_run": "1985-1985",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Robotech Macross Saga",
+"Robotech The Masters",
+"Robotech New Generation"
+],
+"x": "shadow chronicles|love live alive|rpg|battlecry|invasion|crystal dreams|comic|novel",
+"strip": [
+[
+1985,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "M.A.S.K.",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"MASK cartoon",
+"M.A.S.K. animated",
+"MASK 1985"
+],
+"req": [
+"cartoon",
+"animated",
+"dic",
+"1985",
+"kenner",
+"matt trakker",
+"episode"
+],
+"strip": [
+[
+1985,
+1987,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Jem",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1988,
+"original_run": "1985-1988",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Jem and the Holograms"
+],
+"x": "2015|film|movie",
+"req": [
+"holograms",
+"sunbow",
+"cartoon",
+"animated",
+"episode",
+"season"
+],
+"strip": [
+[
+1986,
+1989,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Inspector Gadget",
+"net": "syn",
+"first_year": 1983,
+"last_year": 1986,
+"original_run": "1983-1986",
+"q": "kids",
+"ct": "weekday",
+"x": "1999 film|2015|gadget 2|field trip|gadgetinis|gadget boy",
+"strip": [
+[
+1983,
+1990,
+"syn"
+]
+]
+},
+{
+"title": "Heathcliff",
+"net": "syn",
+"first_year": 1984,
+"last_year": 1987,
+"original_run": "1984-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Heathcliff and the Catillac Cats",
+"Heathcliff & the Catillac Cats"
+],
+"req": [
+"catillac",
+"dic",
+"cartoon",
+"animated",
+"episode",
+"season"
+],
+"strip": [
+[
+1984,
+1988,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Challenge of the GoBots",
+"net": "syn",
+"first_year": 1984,
+"last_year": 1985,
+"original_run": "1984-1985",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Challenge of the Go-Bots",
+"GoBots"
+],
+"strip": [
+[
+1984,
+1986,
+"syn"
+]
+]
+},
+{
+"title": "Rainbow Brite",
+"net": "syn",
+"first_year": 1984,
+"last_year": 1986,
+"original_run": "1984-1986",
+"q": "kids",
+"ct": "weekday",
+"x": "2014|reboot"
+},
+{
+"title": "My Little Pony 'n Friends",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"My Little Pony and Friends",
+"My Little Pony n Friends",
+"My Little Pony 1986"
+],
+"x": "friendship is magic|equestria|g4|g5|new generation|tales|make your mark",
+"strip": [
+[
+1986,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "Jayce and the Wheeled Warriors",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1985,
+"original_run": "1985-1985",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1985,
+1986,
+"syn"
+]
+]
+},
+{
+"title": "The Adventures of the Galaxy Rangers",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1986,
+"original_run": "1986-1986",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Adventures of the Galaxy Rangers",
+"Galaxy Rangers"
+],
+"strip": [
+[
+1986,
+1987,
+"syn"
+]
+]
+},
+{
+"title": "The Centurions",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1986,
+"original_run": "1986-1986",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Centurions cartoon",
+"Centurions Power Xtreme"
+],
+"req": [
+"cartoon",
+"animated",
+"ruby",
+"power xtreme",
+"episode",
+"1986"
+],
+"strip": [
+[
+1986,
+1987,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Defenders of the Earth",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1986,
+1987,
+"syn"
+]
+]
+},
+{
+"title": "Rambo: The Force of Freedom",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1986,
+"original_run": "1986-1986",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Rambo The Force of Freedom",
+"Rambo cartoon",
+"Rambo animated"
+],
+"strip": [
+[
+1986,
+1987,
+"syn"
+]
+]
+},
+{
+"title": "Ghostbusters (Filmation)",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1986,
+"original_run": "1986-1986",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Filmation's Ghostbusters",
+"Filmation Ghostbusters"
+],
+"strip": [
+[
+1986,
+1987,
+"syn"
+]
+]
+},
+{
+"title": "BraveStarr",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Brave Starr"
+],
+"strip": [
+[
+1987,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "Dinosaucers",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1987,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "Sky Commanders",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "Visionaries: Knights of the Magical Light",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Visionaries Knights of the Magical Light",
+"Visionaries cartoon"
+],
+"strip": [
+[
+1987,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "Bionic Six",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1987,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "Spiral Zone",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1987,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "The Comic Strip",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"TigerSharks",
+"Karate Kat",
+"Street Frogs",
+"Mini-Monsters"
+],
+"req": [
+"rankin",
+"tigersharks",
+"karate kat",
+"street frogs",
+"mini-monsters",
+"1987 cartoon"
+],
+"strip": [
+[
+1987,
+1988,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Saber Rider and the Star Sheriffs",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1988,
+"original_run": "1987-1988",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Saber Rider & the Star Sheriffs"
+],
+"strip": [
+[
+1987,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "Starcom: The U.S. Space Force",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Starcom The US Space Force",
+"Starcom"
+],
+"req": [
+"space force",
+"dic",
+"cartoon",
+"animated",
+"episode",
+"1987"
+],
+"ambiguous": true
+},
+{
+"title": "Lady Lovely Locks and the Pixietails",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Lady Lovely Locks"
+]
+},
+{
+"title": "Maxie's World",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Maxies World"
+]
+},
+{
+"title": "Beverly Hills Teens",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1987,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "C.O.P.S.",
+"net": "syn",
+"first_year": 1988,
+"last_year": 1989,
+"original_run": "1988-1989",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"COPS cartoon",
+"C.O.P.S. animated",
+"C.O.P.S. Central Organization of Police Specialists",
+"CyberCOPS"
+],
+"req": [
+"central organization",
+"dic",
+"cartoon",
+"animated",
+"bulletproof",
+"empire city"
+],
+"strip": [
+[
+1988,
+1989,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Denver, the Last Dinosaur",
+"net": "syn",
+"first_year": 1988,
+"last_year": 1988,
+"original_run": "1988-1988",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Denver the Last Dinosaur"
+],
+"x": "2018",
+"strip": [
+[
+1988,
+1990,
+"syn"
+]
+]
+},
+{
+"title": "The Super Mario Bros. Super Show!",
+"net": "syn",
+"first_year": 1989,
+"last_year": 1989,
+"original_run": "1989-1989",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Super Mario Bros Super Show"
+],
+"strip": [
+[
+1989,
+1991,
+"syn"
+]
+]
+},
+{
+"title": "The Legend of Zelda (animated)",
+"net": "syn",
+"first_year": 1989,
+"last_year": 1989,
+"original_run": "1989-1989",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"The Legend of Zelda cartoon",
+"Legend of Zelda animated series",
+"Legend of Zelda 1989 cartoon"
+],
+"strip": [
+[
+1989,
+1990,
+"syn"
+]
+]
+},
+{
+"title": "Police Academy: The Animated Series",
+"net": "syn",
+"first_year": 1988,
+"last_year": 1989,
+"original_run": "1988-1989",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Police Academy The Animated Series",
+"Police Academy The Series animated",
+"Police Academy cartoon"
+],
+"strip": [
+[
+1988,
+1990,
+"syn"
+]
+]
+},
+{
+"title": "RoboCop: The Animated Series",
+"net": "syn",
+"first_year": 1988,
+"last_year": 1988,
+"original_run": "1988-1988",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"RoboCop The Animated Series",
+"RoboCop cartoon 1988"
+]
+},
+{
+"title": "Ring Raiders",
+"net": "syn",
+"first_year": 1989,
+"last_year": 1989,
+"original_run": "1989-1989",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "Captain Planet and the Planeteers",
+"net": "tbs",
+"first_year": 1990,
+"last_year": 1996,
+"original_run": "1990-1996",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Captain Planet",
+"The New Adventures of Captain Planet"
+],
+"sat": [
+[
+1990,
+1996,
+"tbs"
+]
+],
+"strip": [
+[
+1990,
+1996,
+"syn"
+]
+]
+},
+{
+"title": "Widget the World Watcher",
+"net": "syn",
+"first_year": 1990,
+"last_year": 1992,
+"original_run": "1990-1992",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Widget"
+],
+"req": [
+"world watcher",
+"cartoon",
+"animated",
+"zodiac"
+],
+"strip": [
+[
+1990,
+1992,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Toxic Crusaders",
+"net": "syn",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "James Bond Jr.",
+"net": "syn",
+"first_year": 1991,
+"last_year": 1992,
+"original_run": "1991-1992",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"James Bond Jr"
+],
+"strip": [
+[
+1991,
+1992,
+"syn"
+]
+]
+},
+{
+"title": "Bucky O'Hare and the Toad Wars",
+"net": "syn",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Bucky O'Hare"
+]
+},
+{
+"title": "Mr. Bogus",
+"net": "syn",
+"first_year": 1991,
+"last_year": 1993,
+"original_run": "1991-1993",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Mr Bogus"
+]
+},
+{
+"title": "Swamp Thing (animated)",
+"net": "syn",
+"first_year": 1991,
+"last_year": 1991,
+"original_run": "1991-1991",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Swamp Thing animated series",
+"Swamp Thing cartoon 1991"
+]
+},
+{
+"title": "Stunt Dawgs",
+"net": "syn",
+"first_year": 1992,
+"last_year": 1993,
+"original_run": "1992-1993",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "King Arthur and the Knights of Justice",
+"net": "syn",
+"first_year": 1992,
+"last_year": 1993,
+"original_run": "1992-1993",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "Conan the Adventurer",
+"net": "syn",
+"first_year": 1992,
+"last_year": 1993,
+"original_run": "1992-1993",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Conan the Adventurer animated",
+"Conan the Adventurer cartoon"
+],
+"x": "1997|ralf|live action",
+"req": [
+"animated",
+"cartoon",
+"1992",
+"sunbow",
+"episode"
+],
+"strip": [
+[
+1993,
+1994,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Mighty Max",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "kids",
+"ct": "weekday",
+"req": [
+"cartoon",
+"animated",
+"episode",
+"season",
+"virgil",
+"norman",
+"skullmaster",
+"series"
+],
+"strip": [
+[
+1993,
+1995,
+"syn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Exosquad",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1995,
+"original_run": "1993-1995",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Exo-Squad"
+],
+"strip": [
+[
+1994,
+1995,
+"syn"
+]
+]
+},
+{
+"title": "Biker Mice from Mars",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1996,
+"original_run": "1993-1996",
+"q": "kids",
+"ct": "weekday",
+"x": "2006",
+"strip": [
+[
+1993,
+1996,
+"syn"
+]
+]
+},
+{
+"title": "Double Dragon (animated)",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Double Dragon animated series",
+"Double Dragon cartoon"
+]
+},
+{
+"title": "The Pink Panther (1993)",
+"net": "syn",
+"first_year": 1993,
+"last_year": 1995,
+"original_run": "1993-1995",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"The Pink Panther 1993",
+"Pink Panther 1993 series"
+],
+"strip": [
+[
+1993,
+1995,
+"syn"
+]
+]
+},
+{
+"title": "Mutant League",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1996,
+"original_run": "1994-1996",
+"q": "kids",
+"ct": "weekday",
+"req": [
+"cartoon",
+"animated",
+"episode",
+"series",
+"bones justice"
+],
+"ambiguous": true
+},
+{
+"title": "Street Sharks",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1997,
+"original_run": "1994-1997",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1995,
+1997,
+"syn"
+]
+]
+},
+{
+"title": "Highlander: The Animated Series",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1996,
+"original_run": "1994-1996",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Highlander The Animated Series"
+]
+},
+{
+"title": "Phantom 2040",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1996,
+"original_run": "1994-1996",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "Skysurfer Strike Force",
+"net": "syn",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "Iron Man (1994)",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1996,
+"original_run": "1994-1996",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Iron Man The Animated Series",
+"Iron Man 1994",
+"Marvel Action Hour Iron Man"
+]
+},
+{
+"title": "Fantastic Four (1994)",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1996,
+"original_run": "1994-1996",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Fantastic Four The Animated Series",
+"Fantastic Four 1994",
+"Marvel Action Hour Fantastic Four"
+]
+},
+{
+"title": "Beast Wars: Transformers",
+"net": "syn",
+"first_year": 1996,
+"last_year": 1999,
+"original_run": "1996-1999",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Beast Wars Transformers",
+"Beast Wars"
+],
+"x": "second|neo|japanese|ii",
+"strip": [
+[
+1996,
+1999,
+"syn"
+]
+]
+},
+{
+"title": "Extreme Ghostbusters",
+"net": "syn",
+"first_year": 1997,
+"last_year": 1997,
+"original_run": "1997-1997",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1997,
+1998,
+"syn"
+]
+]
+},
+{
+"title": "Mummies Alive!",
+"net": "syn",
+"first_year": 1997,
+"last_year": 1997,
+"original_run": "1997-1997",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Mummies Alive"
+],
+"strip": [
+[
+1997,
+1998,
+"syn"
+]
+]
+},
+{
+"title": "Extreme Dinosaurs",
+"net": "syn",
+"first_year": 1997,
+"last_year": 1997,
+"original_run": "1997-1997",
+"q": "kids",
+"ct": "weekday",
+"strip": [
+[
+1997,
+1998,
+"syn"
+]
+]
+},
+{
+"title": "Captain Simian & the Space Monkeys",
+"net": "syn",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Captain Simian and the Space Monkeys"
+]
+},
+{
+"title": "Pocket Dragon Adventures",
+"net": "syn",
+"first_year": 1998,
+"last_year": 1998,
+"original_run": "1998-1998",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "Voltron: The Third Dimension",
+"net": "syn",
+"first_year": 1998,
+"last_year": 2000,
+"original_run": "1998-2000",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Voltron The Third Dimension"
+]
+},
+{
+"title": "Roughnecks: Starship Troopers Chronicles",
+"net": "syn",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Roughnecks Starship Troopers Chronicles",
+"Roughnecks The Starship Troopers Chronicles"
+]
+},
+{
+"title": "Roswell Conspiracies: Aliens, Myths and Legends",
+"net": "syn",
+"first_year": 1999,
+"last_year": 2000,
+"original_run": "1999-2000",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Roswell Conspiracies"
+]
+},
+{
+"title": "Sailor Moon",
+"net": "syn",
+"first_year": 1995,
+"last_year": 2000,
+"original_run": "1995-2000",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Sailor Moon DiC",
+"Sailor Moon English dub",
+"Sailor Moon R dub",
+"Sailor Moon S dub",
+"Sailor Moon SuperS dub"
+],
+"x": "crystal|eternal|cosmos|viz|sub|japanese|musical|live action|pgsm|abridged",
+"req": [
+"dic",
+"dub",
+"english",
+"cloverway",
+"toonami",
+"season",
+"episode"
+],
+"strip": [
+[
+1995,
+1996,
+"syn"
+],
+[
+1997,
+1998,
+"usa"
+],
+[
+1998,
+2001,
+"cn"
+]
+]
+},
+{
+"title": "Dragon Ball Z",
+"net": "syn",
+"first_year": 1996,
+"last_year": 2003,
+"original_run": "1996-2003",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"DBZ Ocean dub",
+"Dragon Ball Z Funimation",
+"Dragon Ball Z Toonami",
+"Dragonball Z"
+],
+"x": "kai|super|abridged|japanese|sub|budokai|tenkaichi|kakarot|game|movie|resurrection|battle of gods",
+"req": [
+"dub",
+"english",
+"ocean",
+"funimation",
+"toonami",
+"season",
+"saga",
+"episode"
+],
+"strip": [
+[
+1996,
+1998,
+"syn"
+],
+[
+1998,
+2003,
+"cn"
+]
+]
+},
+{
+"title": "Dragon Ball",
+"net": "cn",
+"first_year": 2001,
+"last_year": 2003,
+"original_run": "2001-2003",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Dragon Ball English dub",
+"Dragonball Toonami"
+],
+"x": "dragon ball z|dbz|super|gt|kai|abridged|daima|japanese|sub",
+"req": [
+"english dub",
+"toonami",
+"funimation",
+"season",
+"saga"
+],
+"strip": [
+[
+2001,
+2003,
+"cn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Dragon Ball GT",
+"net": "cn",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Dragonball GT"
+],
+"req": [
+"dub",
+"english",
+"funimation",
+"toonami",
+"season",
+"saga",
+"episode"
+],
+"strip": [
+[
+2003,
+2004,
+"cn"
+]
+]
+},
+{
+"title": "Ronin Warriors",
+"net": "syn",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "kids",
+"ct": "anime",
+"strip": [
+[
+1995,
+1996,
+"syn"
+],
+[
+1999,
+1999,
+"cn"
+]
+]
+},
+{
+"title": "Samurai Pizza Cats",
+"net": "syn",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "anime",
+"strip": [
+[
+1996,
+1997,
+"syn"
+]
+]
+},
+{
+"title": "Star Blazers",
+"net": "syn",
+"first_year": 1979,
+"last_year": 1984,
+"original_run": "1979-1984",
+"q": "kids",
+"ct": "anime",
+"x": "2199|2202|2205|rebel"
+},
+{
+"title": "Speed Racer",
+"net": "syn",
+"first_year": 1967,
+"last_year": 1968,
+"original_run": "1967-1968",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Speed Racer 1967 English"
+],
+"x": "2008|film|next generation|speed racer x",
+"req": [
+"english",
+"dub",
+"1967",
+"episode",
+"season",
+"classic",
+"trans-lux"
+],
+"ambiguous": true
+},
+{
+"title": "Battle of the Planets",
+"net": "syn",
+"first_year": 1978,
+"last_year": 1980,
+"original_run": "1978-1980",
+"q": "kids",
+"ct": "anime"
+},
+{
+"title": "G-Force: Guardians of Space",
+"net": "tbs",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"G-Force Guardians of Space"
+]
+},
+{
+"title": "Captain Harlock and the Queen of a Thousand Years",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "kids",
+"ct": "anime"
+},
+{
+"title": "Tranzor Z",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1985,
+"original_run": "1985-1985",
+"q": "kids",
+"ct": "anime"
+},
+{
+"title": "Macron 1",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "kids",
+"ct": "anime"
+},
+{
+"title": "Thunderbirds 2086",
+"net": "syn",
+"first_year": 1983,
+"last_year": 1986,
+"original_run": "1983-1986",
+"q": "kids",
+"ct": "anime"
+},
+{
+"title": "Mobile Suit Gundam Wing",
+"net": "cn",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Gundam Wing"
+],
+"req": [
+"dub",
+"english",
+"toonami",
+"episode",
+"season"
+],
+"strip": [
+[
+2000,
+2001,
+"cn"
+]
+]
+},
+{
+"title": "Mobile Fighter G Gundam",
+"net": "cn",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"G Gundam"
+],
+"req": [
+"dub",
+"english",
+"toonami",
+"episode"
+],
+"strip": [
+[
+2002,
+2003,
+"cn"
+]
+]
+},
+{
+"title": "Tenchi Muyo!",
+"net": "cn",
+"first_year": 2000,
+"last_year": 2002,
+"original_run": "2000-2002",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Tenchi Muyo",
+"Tenchi Universe",
+"Tenchi in Tokyo"
+],
+"req": [
+"dub",
+"english",
+"toonami",
+"episode"
+],
+"strip": [
+[
+2000,
+2002,
+"cn"
+]
+]
+},
+{
+"title": "Outlaw Star",
+"net": "cn",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "anime",
+"req": [
+"dub",
+"english",
+"toonami",
+"episode"
+],
+"strip": [
+[
+2001,
+2002,
+"cn"
+]
+]
+},
+{
+"title": "Yu Yu Hakusho",
+"net": "cn",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"YuYu Hakusho"
+],
+"x": "netflix|live action|2023",
+"req": [
+"dub",
+"english",
+"toonami",
+"funimation",
+"episode",
+"season"
+],
+"strip": [
+[
+2003,
+2004,
+"cn"
+]
+]
+},
+{
+"title": "Rurouni Kenshin",
+"net": "cn",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "anime",
+"x": "2023|live action|film",
+"req": [
+"dub",
+"english",
+"toonami",
+"episode"
+],
+"strip": [
+[
+2003,
+2004,
+"cn"
+]
+]
+},
+{
+"title": "Zoids: Chaotic Century",
+"net": "cn",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Zoids Chaotic Century",
+"Zoids New Century",
+"Zoids New Century Zero"
+],
+"strip": [
+[
+2001,
+2002,
+"cn"
+]
+]
+},
+{
+"title": "Hamtaro",
+"net": "cn",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Hamtaro English dub"
+],
+"x": "japanese|sub|ham-ham|game boy|gba",
+"req": [
+"dub",
+"english",
+"episode",
+"season",
+"cartoon network"
+],
+"strip": [
+[
+2002,
+2004,
+"cn"
+]
+],
+"ambiguous": true
+},
+{
+"title": "The Big O",
+"net": "cn",
+"first_year": 2001,
+"last_year": 2003,
+"original_run": "2001-2003",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Big O"
+],
+"req": [
+"dub",
+"english",
+"toonami",
+"adult swim",
+"episode"
+]
+},
+{
+"title": "Cyborg 009 (2001)",
+"net": "cn",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Cyborg 009 The Cyborg Soldier",
+"Cyborg 009 2001"
+],
+"req": [
+"dub",
+"english",
+"toonami"
+]
+},
+{
+"title": "Astro Boy (2003)",
+"net": "wb",
+"first_year": 2004,
+"last_year": 2004,
+"original_run": "2004-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Astro Boy 2003"
+],
+"sat": [
+[
+2004,
+2004,
+"wb"
+]
+]
+},
+{
+"title": "Beyblade",
+"net": "fam",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Beyblade V-Force",
+"Beyblade G-Revolution",
+"Beyblade 2002"
+],
+"x": "burst|metal|shogun|beyblade x|masters|fury|fusion|tournament|battle|unboxing|toy|review|zero-g",
+"req": [
+"english",
+"dub",
+"v-force",
+"g-revolution",
+"g revolution",
+"2002",
+"2003",
+"season 1",
+"season 2",
+"season 3",
+"abc family",
+"nelvana",
+"episode"
+],
+"sat": [
+[
+2002,
+2004,
+"fam"
+]
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "Totally Spies!",
+"net": "fam",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Totally Spies"
+],
+"x": "season 7|2024",
+"sat": [
+[
+2001,
+2003,
+"fam"
+]
+]
+},
+{
+"title": "Tokyo Pig",
+"net": "fam",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "kids",
+"ct": "anime"
+},
+{
+"title": "Doug",
+"net": "nick",
+"first_year": 1991,
+"last_year": 1994,
+"original_run": "1991-1994",
+"q": "kids",
+"ct": "cable",
+"req": [
+"nickelodeon",
+"nick",
+"funnie",
+"cartoon",
+"animated",
+"episode",
+"season",
+"jumbo"
+],
+"ambiguous": true
+},
+{
+"title": "Rugrats",
+"net": "nick",
+"first_year": 1991,
+"last_year": 2004,
+"original_run": "1991-2004",
+"q": "kids",
+"ct": "cable",
+"x": "2021|reboot|all grown|movie|in paris|go wild|theory|creepypasta",
+"sat": [
+[
+2002,
+2004,
+"cbs"
+]
+]
+},
+{
+"title": "The Ren & Stimpy Show",
+"net": "nick",
+"first_year": 1991,
+"last_year": 1996,
+"original_run": "1991-1996",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Ren and Stimpy Show",
+"Ren & Stimpy"
+],
+"x": "adult party"
+},
+{
+"title": "Rocko's Modern Life",
+"net": "nick",
+"first_year": 1993,
+"last_year": 1996,
+"original_run": "1993-1996",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Rockos Modern Life"
+],
+"x": "static cling"
+},
+{
+"title": "Aaahh!!! Real Monsters",
+"net": "nick",
+"first_year": 1994,
+"last_year": 1997,
+"original_run": "1994-1997",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Aaahh Real Monsters",
+"Aaahh!!! Real Monsters",
+"Real Monsters"
+]
+},
+{
+"title": "KaBlam!",
+"net": "nick",
+"first_year": 1996,
+"last_year": 2000,
+"original_run": "1996-2000",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Kablam"
+]
+},
+{
+"title": "The Angry Beavers",
+"net": "nick",
+"first_year": 1997,
+"last_year": 2001,
+"original_run": "1997-2001",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Angry Beavers"
+]
+},
+{
+"title": "CatDog",
+"net": "nick",
+"first_year": 1998,
+"last_year": 2004,
+"original_run": "1998-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Cat Dog"
+],
+"x": "review|theory|lost media",
+"req": [
+"nickelodeon",
+"nick",
+"cartoon",
+"animated",
+"episode",
+"season",
+"nicktoon",
+"series",
+"1998",
+"1999",
+"peter hannan"
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "The Wild Thornberrys",
+"net": "nick",
+"first_year": 1998,
+"last_year": 2004,
+"original_run": "1998-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Wild Thornberrys"
+]
+},
+{
+"title": "SpongeBob SquarePants",
+"net": "nick",
+"first_year": 1999,
+"last_year": 2004,
+"original_run": "1999-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Spongebob Squarepants"
+],
+"x": "season ([4-9]|1\\d)|movie|musical|kamp|patrick star show|battle for|game|sponge out|sponge on the run",
+"req": [
+"season 1",
+"season 2",
+"season 3",
+"1999",
+"2000",
+"2001",
+"2002",
+"2003",
+"2004",
+"vhs",
+"nick"
+]
+},
+{
+"title": "Rocket Power",
+"net": "nick",
+"first_year": 1999,
+"last_year": 2004,
+"original_run": "1999-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "The Fairly OddParents",
+"net": "nick",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Fairly OddParents",
+"Fairly Odd Parents"
+],
+"x": "fairly odder|new wish|live action|season ([5-9]|10)",
+"req": [
+"season 1",
+"season 2",
+"season 3",
+"season 4",
+"2001",
+"2002",
+"2003",
+"2004",
+"nick",
+"episode"
+]
+},
+{
+"title": "Invader Zim",
+"net": "nick",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "cable",
+"x": "florpus"
+},
+{
+"title": "The Adventures of Jimmy Neutron: Boy Genius",
+"net": "nick",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Adventures of Jimmy Neutron Boy Genius",
+"Jimmy Neutron"
+]
+},
+{
+"title": "My Life as a Teenage Robot",
+"net": "nick",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Danny Phantom",
+"net": "nick",
+"first_year": 2004,
+"last_year": 2004,
+"original_run": "2004-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Danger Mouse",
+"net": "nick",
+"first_year": 1984,
+"last_year": 1987,
+"original_run": "1984-1987",
+"q": "kids",
+"ct": "cable",
+"x": "2015"
+},
+{
+"title": "Count Duckula",
+"net": "nick",
+"first_year": 1988,
+"last_year": 1993,
+"original_run": "1988-1993",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "The World of David the Gnome",
+"net": "nick",
+"first_year": 1988,
+"last_year": 1995,
+"original_run": "1988-1995",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"World of David the Gnome",
+"David the Gnome"
+]
+},
+{
+"title": "The Mysterious Cities of Gold",
+"net": "nick",
+"first_year": 1986,
+"last_year": 1990,
+"original_run": "1986-1990",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Mysterious Cities of Gold"
+],
+"x": "2012|season [234]"
+},
+{
+"title": "Spartakus and the Sun Beneath the Sea",
+"net": "nick",
+"first_year": 1986,
+"last_year": 1991,
+"original_run": "1986-1991",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "The Little Koala",
+"net": "nick",
+"first_year": 1987,
+"last_year": 1993,
+"original_run": "1987-1993",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Adventures of the Little Koala"
+]
+},
+{
+"title": "Maya the Bee",
+"net": "nick",
+"first_year": 1990,
+"last_year": 1992,
+"original_run": "1990-1992",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Maya the Bee 1975",
+"Maya the Bee Nickelodeon"
+],
+"x": "2012|cgi|movie",
+"req": [
+"nickelodeon",
+"nick jr",
+"1975",
+"saban",
+"english dub",
+"episode"
+],
+"ambiguous": true
+},
+{
+"title": "Noozles",
+"net": "nick",
+"first_year": 1988,
+"last_year": 1993,
+"original_run": "1988-1993",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Grimm's Fairy Tale Classics",
+"net": "nick",
+"first_year": 1989,
+"last_year": 1995,
+"original_run": "1989-1995",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Grimm's Fairy Tale Classics",
+"Grimm Masterpiece Theater"
+]
+},
+{
+"title": "The Adventures of the Little Prince",
+"net": "nick",
+"first_year": 1985,
+"last_year": 1989,
+"original_run": "1985-1989",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Adventures of the Little Prince"
+]
+},
+{
+"title": "Maple Town",
+"net": "nick",
+"first_year": 1987,
+"last_year": 1989,
+"original_run": "1987-1989",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "The Adventures of Tintin",
+"net": "nick",
+"first_year": 1991,
+"last_year": 1992,
+"original_run": "1991-1992",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Adventures of Tintin 1991"
+],
+"x": "2011|spielberg|film",
+"req": [
+"nelvana",
+"1991",
+"ellipse",
+"episode",
+"season",
+"hbo",
+"animated series"
+],
+"ambiguous": true
+},
+{
+"title": "Little Bear",
+"net": "nick",
+"first_year": 1995,
+"last_year": 2003,
+"original_run": "1995-2003",
+"q": "kids",
+"ct": "cable",
+"req": [
+"nick jr",
+"nelvana",
+"sendak",
+"cartoon",
+"animated",
+"episode",
+"season"
+],
+"ambiguous": true
+},
+{
+"title": "The Busy World of Richard Scarry",
+"net": "nick",
+"first_year": 1994,
+"last_year": 1997,
+"original_run": "1994-1997",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Busy World of Richard Scarry"
+]
+},
+{
+"title": "Dora the Explorer",
+"net": "nick",
+"first_year": 2000,
+"last_year": 2004,
+"original_run": "2000-2004",
+"q": "kids",
+"ct": "cable",
+"req": [
+"season 1",
+"season 2",
+"season 3",
+"2000",
+"2001",
+"2002",
+"2003",
+"2004",
+"vhs",
+"nick jr"
+],
+"sat": [
+[
+2000,
+2004,
+"cbs"
+]
+]
+},
+{
+"title": "Little Bill",
+"net": "nick",
+"first_year": 1999,
+"last_year": 2004,
+"original_run": "1999-2004",
+"q": "kids",
+"ct": "cable",
+"sat": [
+[
+2000,
+2004,
+"cbs"
+]
+]
+},
+{
+"title": "Oswald",
+"net": "nick",
+"first_year": 2001,
+"last_year": 2003,
+"original_run": "2001-2003",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Oswald the Octopus"
+],
+"req": [
+"octopus",
+"nick jr",
+"cartoon",
+"animated",
+"episode"
+],
+"ambiguous": true
+},
+{
+"title": "Max & Ruby",
+"net": "nick",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Max and Ruby"
+]
+},
+{
+"title": "What a Cartoon!",
+"net": "cn",
+"first_year": 1995,
+"last_year": 1997,
+"original_run": "1995-1997",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"What a Cartoon",
+"World Premiere Toons"
+]
+},
+{
+"title": "Dexter's Laboratory",
+"net": "cn",
+"first_year": 1996,
+"last_year": 2003,
+"original_run": "1996-2003",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Dexters Laboratory",
+"Dexter's Lab"
+]
+},
+{
+"title": "Johnny Bravo",
+"net": "cn",
+"first_year": 1997,
+"last_year": 2004,
+"original_run": "1997-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Cow and Chicken",
+"net": "cn",
+"first_year": 1997,
+"last_year": 1999,
+"original_run": "1997-1999",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Cow & Chicken"
+]
+},
+{
+"title": "I Am Weasel",
+"net": "cn",
+"first_year": 1997,
+"last_year": 2000,
+"original_run": "1997-2000",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "The Powerpuff Girls",
+"net": "cn",
+"first_year": 1998,
+"last_year": 2004,
+"original_run": "1998-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Powerpuff Girls"
+],
+"x": "2016|reboot|z|live action"
+},
+{
+"title": "Ed, Edd n Eddy",
+"net": "cn",
+"first_year": 1999,
+"last_year": 2004,
+"original_run": "1999-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Ed Edd n Eddy",
+"Ed Edd and Eddy"
+]
+},
+{
+"title": "Courage the Cowardly Dog",
+"net": "cn",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Mike, Lu & Og",
+"net": "cn",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Mike Lu and Og"
+]
+},
+{
+"title": "Sheep in the Big City",
+"net": "cn",
+"first_year": 2000,
+"last_year": 2002,
+"original_run": "2000-2002",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Time Squad",
+"net": "cn",
+"first_year": 2001,
+"last_year": 2003,
+"original_run": "2001-2003",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Samurai Jack",
+"net": "cn",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "cable",
+"x": "season 5|2017"
+},
+{
+"title": "The Grim Adventures of Billy & Mandy",
+"net": "cn",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Grim Adventures of Billy and Mandy",
+"Grim & Evil",
+"Grim and Evil"
+]
+},
+{
+"title": "Whatever Happened to... Robot Jones?",
+"net": "cn",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Whatever Happened to Robot Jones",
+"Robot Jones"
+]
+},
+{
+"title": "Codename: Kids Next Door",
+"net": "cn",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Codename Kids Next Door",
+"Kids Next Door"
+]
+},
+{
+"title": "Justice League",
+"net": "cn",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Justice League animated",
+"Justice League 2001"
+],
+"x": "unlimited|snyder|film|movie|action|war|dark|doom|crisis",
+"req": [
+"animated",
+"cartoon network",
+"2001",
+"episode",
+"season",
+"timm"
+],
+"ambiguous": true
+},
+{
+"title": "Star Wars: Clone Wars (2003)",
+"net": "cn",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Star Wars Clone Wars 2003",
+"Clone Wars Tartakovsky",
+"Clone Wars micro-series"
+]
+},
+{
+"title": "Duck Dodgers",
+"net": "cn",
+"first_year": 2003,
+"last_year": 2004,
+"original_run": "2003-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Duck Dodgers 2003"
+]
+},
+{
+"title": "The Real Adventures of Jonny Quest",
+"net": "cn",
+"first_year": 1996,
+"last_year": 1997,
+"original_run": "1996-1997",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Real Adventures of Jonny Quest"
+]
+},
+{
+"title": "SWAT Kats: The Radical Squadron",
+"net": "tbs",
+"first_year": 1993,
+"last_year": 1995,
+"original_run": "1993-1995",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"SWAT Kats The Radical Squadron",
+"SWAT Kats",
+"Swat Kats"
+],
+"sat": [
+[
+1993,
+1995,
+"tbs"
+]
+]
+},
+{
+"title": "2 Stupid Dogs",
+"net": "tbs",
+"first_year": 1993,
+"last_year": 1995,
+"original_run": "1993-1995",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Two Stupid Dogs"
+],
+"sat": [
+[
+1993,
+1995,
+"tbs"
+]
+]
+},
+{
+"title": "Cartoon Planet",
+"net": "cn",
+"first_year": 1995,
+"last_year": 1998,
+"original_run": "1995-1998",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "He-Man and the Masters of the Universe (2002)",
+"net": "cn",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"He-Man 2002",
+"Masters of the Universe 2002",
+"He-Man 200X"
+]
+},
+{
+"title": "Transformers: Armada",
+"net": "cn",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Transformers Armada"
+]
+},
+{
+"title": "Transformers: Energon",
+"net": "cn",
+"first_year": 2004,
+"last_year": 2004,
+"original_run": "2004-2004",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Transformers Energon"
+]
+},
+{
+"title": "Mega Man (1994)",
+"net": "syn",
+"first_year": 1994,
+"last_year": 1995,
+"original_run": "1994-1995",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Mega Man 1994 cartoon",
+"Mega Man Ruby-Spears",
+"Mega Man animated series"
+],
+"strip": [
+[
+1994,
+1996,
+"syn"
+]
+]
+},
+{
+"title": "Street Fighter (animated)",
+"net": "usa",
+"first_year": 1995,
+"last_year": 1997,
+"original_run": "1995-1997",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Street Fighter The Animated Series",
+"Street Fighter USA cartoon"
+],
+"sat": [
+[
+1995,
+1997,
+"usa"
+]
+]
+},
+{
+"title": "Mortal Kombat: Defenders of the Realm",
+"net": "usa",
+"first_year": 1996,
+"last_year": 1996,
+"original_run": "1996-1996",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Mortal Kombat Defenders of the Realm"
+],
+"sat": [
+[
+1996,
+1996,
+"usa"
+]
+]
+},
+{
+"title": "Wing Commander Academy",
+"net": "usa",
+"first_year": 1996,
+"last_year": 1996,
+"original_run": "1996-1996",
+"q": "kids",
+"ct": "cable",
+"sat": [
+[
+1996,
+1996,
+"usa"
+]
+]
+},
+{
+"title": "The Savage Dragon",
+"net": "usa",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Savage Dragon animated"
+],
+"req": [
+"animated",
+"cartoon",
+"usa network",
+"episode"
+],
+"sat": [
+[
+1995,
+1996,
+"usa"
+]
+],
+"ambiguous": true
+},
+{
+"title": "Problem Child (animated)",
+"net": "usa",
+"first_year": 1993,
+"last_year": 1994,
+"original_run": "1993-1994",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Problem Child animated series",
+"Problem Child cartoon"
+]
+},
+{
+"title": "The Itsy Bitsy Spider",
+"net": "usa",
+"first_year": 1993,
+"last_year": 1996,
+"original_run": "1993-1996",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Itsy Bitsy Spider cartoon",
+"Itsy Bitsy Spider animated series"
+],
+"req": [
+"usa network",
+"cartoon express",
+"animated series",
+"hyperion"
+],
+"ambiguous": true
+},
+{
+"title": "The Jetsons (1985)",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1987,
+"original_run": "1985-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"The Jetsons 1985",
+"Jetsons season 2",
+"Jetsons season 3"
+],
+"strip": [
+[
+1985,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "Yogi's Treasure Hunt",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1988,
+"original_run": "1985-1988",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Yogis Treasure Hunt"
+]
+},
+{
+"title": "Paw Paws",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "Galtar and the Golden Lance",
+"net": "syn",
+"first_year": 1985,
+"last_year": 1986,
+"original_run": "1985-1986",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "The New Adventures of Jonny Quest",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Jonny Quest 1986",
+"New Adventures of Jonny Quest"
+]
+},
+{
+"title": "Fantastic Max",
+"net": "syn",
+"first_year": 1988,
+"last_year": 1990,
+"original_run": "1988-1990",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "The Further Adventures of SuperTed",
+"net": "syn",
+"first_year": 1989,
+"last_year": 1989,
+"original_run": "1989-1989",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Further Adventures of SuperTed"
+]
+},
+{
+"title": "Paddington Bear (1989)",
+"net": "syn",
+"first_year": 1989,
+"last_year": 1990,
+"original_run": "1989-1990",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Paddington Bear 1989",
+"Paddington Bear Hanna-Barbera"
+]
+},
+{
+"title": "Midnight Patrol: Adventures in the Dream Zone",
+"net": "syn",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Midnight Patrol"
+],
+"req": [
+"hanna",
+"cartoon",
+"animated",
+"dream zone"
+],
+"ambiguous": true
+},
+{
+"title": "Young Robin Hood",
+"net": "syn",
+"first_year": 1991,
+"last_year": 1992,
+"original_run": "1991-1992",
+"q": "kids",
+"ct": "weekday"
+},
+{
+"title": "The Adventures of Teddy Ruxpin",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Adventures of Teddy Ruxpin",
+"Teddy Ruxpin"
+],
+"strip": [
+[
+1987,
+1988,
+"syn"
+]
+]
+},
+{
+"title": "Popples",
+"net": "syn",
+"first_year": 1986,
+"last_year": 1987,
+"original_run": "1986-1987",
+"q": "kids",
+"ct": "weekday",
+"x": "2015|netflix",
+"req": [
+"cartoon",
+"animated",
+"dic",
+"episode",
+"season",
+"1986",
+"1987",
+"series",
+"vhs"
+],
+"sat": [
+[
+1986,
+1987,
+"syn"
+]
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "Poochie",
+"net": "syn",
+"first_year": 1984,
+"last_year": 1984,
+"original_run": "1984-1984",
+"q": "kids",
+"ct": "special",
+"req": [
+"cartoon",
+"animated",
+"dic",
+"1984",
+"special"
+],
+"ambiguous": true
+},
+{
+"title": "The Charmkins",
+"net": "syn",
+"first_year": 1983,
+"last_year": 1983,
+"original_run": "1983-1983",
+"q": "kids",
+"ct": "special",
+"alt": [
+"Charmkins"
+]
+},
+{
+"title": "Hello Kitty's Furry Tale Theater",
+"net": "cbs",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "satam",
+"alt": [
+"Hello Kittys Furry Tale Theater"
+],
+"sat": [
+[
+1987,
+1988,
+"cbs"
+]
+]
+},
+{
+"title": "Sylvanian Families",
+"net": "syn",
+"first_year": 1987,
+"last_year": 1987,
+"original_run": "1987-1987",
+"q": "kids",
+"ct": "weekday",
+"x": "toy|unboxing|flair|mini episodes|2007",
+"req": [
+"cartoon",
+"animated",
+"dic",
+"1987",
+"episode"
+],
+"ambiguous": true
+},
+{
+"title": "The Raccoons",
+"net": "disney",
+"first_year": 1985,
+"last_year": 1992,
+"original_run": "1985-1992",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Raccoons"
+],
+"x": "2024",
+"req": [
+"cartoon",
+"animated",
+"bert raccoon",
+"cyril sneer",
+"episode",
+"season",
+"evergreen"
+],
+"ambiguous": true
+},
+{
+"title": "Babar",
+"net": "fam",
+"first_year": 1989,
+"last_year": 1991,
+"original_run": "1989-1991",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Babar animated",
+"Babar TV series"
+],
+"x": "badou|2010|podcast|orchestra|poulenc|story of babar read|read aloud|audiobook|movie|king of the elephants film",
+"req": [
+"nelvana",
+"hbo",
+"elephant",
+"episode",
+"season",
+"cartoon",
+"animated",
+"series",
+"vhs",
+"king babar",
+"celeste"
+],
+"loose": true,
+"ambiguous": true
+},
+{
+"title": "The Legend of Prince Valiant",
+"net": "fam",
+"first_year": 1991,
+"last_year": 1994,
+"original_run": "1991-1994",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Legend of Prince Valiant"
+]
+},
+{
+"title": "All Dogs Go to Heaven: The Series",
+"net": "syn",
+"first_year": 1996,
+"last_year": 1998,
+"original_run": "1996-1998",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"All Dogs Go to Heaven The Series"
+]
+},
+{
+"title": "Bad Dog",
+"net": "fam",
+"first_year": 1998,
+"last_year": 2000,
+"original_run": "1998-2000",
+"q": "kids",
+"ct": "cable",
+"req": [
+"fox family",
+"cartoon",
+"animated",
+"cinar",
+"berkeley"
+],
+"ambiguous": true
+},
+{
+"title": "Angela Anaconda",
+"net": "fam",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Donkey Kong Country (TV series)",
+"net": "fam",
+"first_year": 1998,
+"last_year": 2000,
+"original_run": "1998-2000",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Donkey Kong Country cartoon",
+"Donkey Kong Country animated series",
+"Donkey Kong Country TV series"
+]
+},
+{
+"title": "The Kids from Room 402",
+"net": "fam",
+"first_year": 1999,
+"last_year": 2001,
+"original_run": "1999-2001",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Kids from Room 402"
+]
+},
+{
+"title": "Braceface",
+"net": "fam",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "PB&J Otter",
+"net": "disney",
+"first_year": 1998,
+"last_year": 2000,
+"original_run": "1998-2000",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"PB and J Otter"
+]
+},
+{
+"title": "Rolie Polie Olie",
+"net": "disney",
+"first_year": 1998,
+"last_year": 2004,
+"original_run": "1998-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Stanley",
+"net": "disney",
+"first_year": 2001,
+"last_year": 2004,
+"original_run": "2001-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Stanley Playhouse Disney"
+],
+"req": [
+"playhouse disney",
+"disney",
+"cartoon",
+"animated",
+"great big book"
+],
+"ambiguous": true
+},
+{
+"title": "Dave the Barbarian",
+"net": "disney",
+"first_year": 2004,
+"last_year": 2004,
+"original_run": "2004-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Brandy & Mr. Whiskers",
+"net": "disney",
+"first_year": 2004,
+"last_year": 2004,
+"original_run": "2004-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Brandy and Mr. Whiskers"
+]
+},
+{
+"title": "Arthur",
+"net": "pbs",
+"first_year": 1996,
+"last_year": 2004,
+"original_run": "1996-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Arthur PBS"
+],
+"x": "king arthur|christmas film|1981|2011|miller|ashe",
+"req": [
+"pbs",
+"aardvark",
+"cartoon",
+"animated",
+"marc brown",
+"episode",
+"season",
+"read"
+],
+"ambiguous": true
+},
+{
+"title": "The Magic School Bus",
+"net": "pbs",
+"first_year": 1994,
+"last_year": 1997,
+"original_run": "1994-1997",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Magic School Bus"
+],
+"x": "rides again"
+},
+{
+"title": "Dragon Tales",
+"net": "pbs",
+"first_year": 1999,
+"last_year": 2004,
+"original_run": "1999-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Clifford the Big Red Dog",
+"net": "pbs",
+"first_year": 2000,
+"last_year": 2003,
+"original_run": "2000-2003",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Clifford the Big Red Dog 2000"
+],
+"x": "2019|2021|film|movie"
+},
+{
+"title": "Caillou",
+"net": "pbs",
+"first_year": 2000,
+"last_year": 2004,
+"original_run": "2000-2004",
+"q": "kids",
+"ct": "cable",
+"x": "gets grounded|goanimate|vyond"
+},
+{
+"title": "Sagwa, the Chinese Siamese Cat",
+"net": "pbs",
+"first_year": 2001,
+"last_year": 2002,
+"original_run": "2001-2002",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Sagwa the Chinese Siamese Cat",
+"Sagwa"
+]
+},
+{
+"title": "Cyberchase",
+"net": "pbs",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Liberty's Kids",
+"net": "pbs",
+"first_year": 2002,
+"last_year": 2003,
+"original_run": "2002-2003",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Libertys Kids"
+]
+},
+{
+"title": "Adventures from the Book of Virtues",
+"net": "pbs",
+"first_year": 1996,
+"last_year": 2000,
+"original_run": "1996-2000",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Redwall",
+"net": "pbs",
+"first_year": 1999,
+"last_year": 2002,
+"original_run": "1999-2002",
+"q": "kids",
+"ct": "cable",
+"x": "audiobook|audio|novel|book",
+"req": [
+"nelvana",
+"animated",
+"cartoon",
+"episode",
+"season",
+"pbs",
+"series",
+"mattimeo",
+"martin the warrior"
+],
+"ambiguous": true
+},
+{
+"title": "Timothy Goes to School",
+"net": "pbs",
+"first_year": 2000,
+"last_year": 2001,
+"original_run": "2000-2001",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Seven Little Monsters",
+"net": "pbs",
+"first_year": 2000,
+"last_year": 2003,
+"original_run": "2000-2003",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "George Shrinks",
+"net": "pbs",
+"first_year": 2000,
+"last_year": 2003,
+"original_run": "2000-2003",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Marvin the Tap-Dancing Horse",
+"net": "pbs",
+"first_year": 2000,
+"last_year": 2002,
+"original_run": "2000-2002",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Jay Jay the Jet Plane",
+"net": "pbs",
+"first_year": 1998,
+"last_year": 2004,
+"original_run": "1998-2004",
+"q": "kids",
+"ct": "cable"
+},
+{
+"title": "Angelina Ballerina",
+"net": "pbs",
+"first_year": 2002,
+"last_year": 2004,
+"original_run": "2002-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Angelina Ballerina 2002"
+],
+"x": "next steps"
+},
+{
+"title": "Maya & Miguel",
+"net": "pbs",
+"first_year": 2004,
+"last_year": 2004,
+"original_run": "2004-2004",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Maya and Miguel"
+]
+},
+{
+"title": "The Little Lulu Show",
+"net": "hbo",
+"first_year": 1995,
+"last_year": 1999,
+"original_run": "1995-1999",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Little Lulu Show"
+]
+},
+{
+"title": "The Neverending Story (animated)",
+"net": "hbo",
+"first_year": 1995,
+"last_year": 1996,
+"original_run": "1995-1996",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"The Neverending Story animated series",
+"Neverending Story cartoon"
+]
+},
+{
+"title": "Happily Ever After: Fairy Tales for Every Child",
+"net": "hbo",
+"first_year": 1995,
+"last_year": 2000,
+"original_run": "1995-2000",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Happily Ever After Fairy Tales for Every Child"
+]
+},
+{
+"title": "The Country Mouse and the City Mouse Adventures",
+"net": "hbo",
+"first_year": 1998,
+"last_year": 1999,
+"original_run": "1998-1999",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Country Mouse and the City Mouse Adventures"
+]
+},
+{
+"title": "Superbook",
+"net": "fam",
+"first_year": 1982,
+"last_year": 1989,
+"original_run": "1982-1989",
+"q": "kids",
+"ct": "anime",
+"x": "2011|2013|reimagined|cgi|season [1-5] ep"
+},
+{
+"title": "The Flying House",
+"net": "fam",
+"first_year": 1982,
+"last_year": 1989,
+"original_run": "1982-1989",
+"q": "kids",
+"ct": "anime",
+"alt": [
+"Flying House"
+],
+"req": [
+"cbn",
+"tatsunoko",
+"anime",
+"cartoon",
+"christian",
+"episode"
+],
+"ambiguous": true
+},
+{
+"title": "Scooby-Doo, Where Are You!",
+"net": "syn",
+"first_year": 1969,
+"last_year": 1970,
+"original_run": "1969-1970",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Scooby Doo Where Are You"
+],
+"req": [
+"1969",
+"1970",
+"season",
+"episode",
+"classic",
+"hanna"
+]
+},
+{
+"title": "The Flintstones",
+"net": "syn",
+"first_year": 1960,
+"last_year": 1966,
+"original_run": "1960-1966",
+"q": "kids",
+"ct": "weekday",
+"x": "1994|film|kids|viva|stone age smackdown|bedrock",
+"req": [
+"1960",
+"season",
+"episode",
+"hanna",
+"classic",
+"original"
+],
+"ambiguous": true
+},
+{
+"title": "Looney Tunes",
+"net": "nick",
+"first_year": 1988,
+"last_year": 1999,
+"original_run": "1988-1999",
+"q": "kids",
+"ct": "cable",
+"alt": [
+"Merrie Melodies Show",
+"Bugs Bunny and Friends",
+"That's Warner Bros.",
+"Looney Tunes on Nickelodeon"
+],
+"x": "cartoons 2020|back in action|space jam|new looney",
+"req": [
+"nickelodeon",
+"show",
+"with commercials",
+"1988",
+"199",
+"tv broadcast",
+"syndicated"
+]
+},
+{
+"title": "Tom and Jerry",
+"net": "syn",
+"first_year": 1940,
+"last_year": 1967,
+"original_run": "1940-1967",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"Tom & Jerry"
+],
+"x": "movie|kids|tales|2014|2021|show 20",
+"req": [
+"tbs",
+"cartoon network",
+"with commercials",
+"broadcast",
+"syndicated",
+"199"
+]
+},
+{
+"title": "Popeye",
+"net": "syn",
+"first_year": 1960,
+"last_year": 1962,
+"original_run": "1960-1962",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"All New Popeye Hour",
+"Popeye the Sailor TV"
+],
+"req": [
+"with commercials",
+"broadcast",
+"syndicated",
+"king features 1960",
+"tv cartoons"
+]
+},
+{
+"title": "Woody Woodpecker",
+"net": "syn",
+"first_year": 1957,
+"last_year": 1958,
+"original_run": "1957-1958",
+"q": "kids",
+"ct": "weekday",
+"alt": [
+"The Woody Woodpecker Show"
+],
+"x": "2018|new woody|film",
+"req": [
+"show",
+"with commercials",
+"broadcast",
+"syndicated"
+]
+},
+{
+"title": "Mighty Morphin Alien Rangers",
+"net": "fox",
+"first_year": 1996,
+"last_year": 1996,
+"original_run": "1996-1996",
+"q": "kids",
+"ct": "special"
+},
+{
+"title": "Garfield specials",
+"net": "cbs",
+"first_year": 1982,
+"last_year": 1991,
+"original_run": "1982-1991",
+"q": "kids",
+"ct": "special",
+"alt": [
+"Garfield's Halloween Adventure",
+"A Garfield Christmas",
+"Garfield's Thanksgiving",
+"Garfield in Paradise",
+"Garfield Goes Hollywood",
+"Garfield on the Town",
+"Garfield in the Rough",
+"Garfield's Babes and Bullets",
+"Garfield His 9 Lives"
+]
+},
+{
+"title": "Looney Tunes specials",
+"net": "cbs",
+"first_year": 1976,
+"last_year": 1992,
+"original_run": "1976-1992",
+"q": "kids",
+"ct": "special",
+"alt": [
+"Bugs Bunny's Looney Christmas Tales",
+"Bugs Bunny's Howl-oween Special",
+"Bugs Bunny's Thanksgiving Diet",
+"Daffy Duck's Easter Egg-Citement"
+]
+},
+{
+"title": "Disney's Christmas specials",
+"net": "nbc",
+"first_year": 1983,
+"last_year": 1987,
+"original_run": "1983-1987",
+"q": "kids",
+"ct": "special",
+"alt": [
+"A Disney Christmas Gift",
+"Disney's DTV Monster Hit",
+"DTV Valentine",
+"Disney's Halloween Treat"
+]
+},
+{
+"title": "A Claymation Christmas Celebration",
+"net": "cbs",
+"first_year": 1987,
+"last_year": 1992,
+"original_run": "1987-1992",
+"q": "kids",
+"ct": "special",
+"alt": [
+"Claymation Christmas",
+"Claymation Easter",
+"Claymation Comedy of Horrors"
+]
+},
+{
+"title": "Cartoon All-Stars to the Rescue",
+"net": "syn",
+"first_year": 1990,
+"last_year": 1990,
+"original_run": "1990-1990",
+"q": "kids",
+"ct": "special"
+},
+{
+"title": "The Chipmunk Adventure specials",
+"net": "nbc",
+"first_year": 1981,
+"last_year": 2000,
+"original_run": "1981-2000",
+"q": "kids",
+"ct": "special",
+"alt": [
+"A Chipmunk Christmas",
+"A Chipmunk Reunion",
+"Alvin and the Chipmunks Meet Frankenstein",
+"Alvin and the Chipmunks Meet the Wolfman"
+]
+},
+{
+"title": "The Smurfs specials",
+"net": "nbc",
+"first_year": 1982,
+"last_year": 1987,
+"original_run": "1982-1987",
+"q": "kids",
+"ct": "special",
+"alt": [
+"The Smurfs Christmas Special",
+"Smurfily Ever After",
+"The Smurfic Games",
+"Tis the Season to Be Smurfy"
+]
+},
+{
+"title": "Rankin/Bass 1980s",
+"net": "abc",
+"first_year": 1982,
+"last_year": 1987,
+"original_run": "1982-1987",
+"q": "kids",
+"ct": "special",
+"alt": [
+"The Life and Adventures of Santa Claus 1985",
+"The Wind in the Willows 1987 Rankin",
+"The Flight of Dragons"
+]
+},
+{
+"title": "Ziggy's Gift",
+"net": "abc",
+"first_year": 1982,
+"last_year": 1982,
+"original_run": "1982-1982",
+"q": "kids",
+"ct": "special"
+},
+{
+"title": "A Pinky and the Brain Christmas",
+"net": "wb",
+"first_year": 1995,
+"last_year": 1995,
+"original_run": "1995-1995",
+"q": "kids",
+"ct": "special"
+},
+{
+"title": "Olive, the Other Reindeer",
+"net": "fox",
+"first_year": 1999,
+"last_year": 1999,
+"original_run": "1999-1999",
+"q": "kids",
+"ct": "special",
+"alt": [
+"Olive the Other Reindeer"
+]
+},
+{
+"title": "Grandma Got Run Over by a Reindeer",
+"net": "wb",
+"first_year": 2000,
+"last_year": 2000,
+"original_run": "2000-2000",
+"q": "kids",
+"ct": "special",
+"req": [
+"animated",
+"cartoon",
+"special",
+"2000",
+"phil roman"
+],
+"ambiguous": true
+}
+]
