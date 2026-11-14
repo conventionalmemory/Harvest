@@ -109,13 +109,7 @@ def keep(x):
         if not ok_title(x['t']) or (s.get('x') and re.search(s['x'], x['t'].lower())): return False
         if any((' ' + h + ' ') in b0 for h in [norm(a) for a in s['qn']]):
             x.pop('keep', None); x.pop('why', None); return True
-        ne = norm(x.get('ep', '')); nt = norm(x['t']); ds = [f[1] for f in x.get('f') or []]
-        if len(ne) < 16 or len(ne.split()) < 3 or ne not in nt or not ds: return False
-        if len((' ' + nt + ' ').replace(' ' + ne + ' ', ' ').split()) > 3: return False
-        if not all(1000 <= d <= 1700 or 2350 <= d <= 3150 for d in ds) or len(ds) > 2: return False
-        if set(x.get('c') or []) & XCOL: return False
-        x['keep'] = 'maybe'; x['why'] = 'episode title and runtime match only'
-        return True
+        return False
     if not ok_title(x['t'], s.get('brit')) or not match(s, x['t']): return False
     if s.get('ct') == 'anime' or s.get('net') in ('cn',):
         b1 = (x['t'] + ' ' + x.get('s', '') + ' ' + x.get('ds', '')).lower()
@@ -392,4 +386,3 @@ print('NETWORK TABLE', sorted(collections.Counter(x.get('net', '') for x in res)
 print('CT TABLE', sorted(collections.Counter(x.get('ct', '') for x in res).items()))
 print('BLOCKS dated', sum(1 for x in res if x['k'] == 'Cartoon block' and x.get('ad')), 'of', sum(1 for x in res if x['k'] == 'Cartoon block'))
 print('EP ROUTE', sum(1 for x in res if x.get('via') == 'ep'), 'maybe', sum(1 for x in res if x.get('keep') == 'maybe'))
-for x in [x for x in res if x.get('keep') == 'maybe'][:60]: print('MAYBE', x['k'], '|', x.get('ep'), '|', x['t'][:70], '|', x['i'][:40], '|', [round(f[1] / 60) for f in x['f']][:3])
