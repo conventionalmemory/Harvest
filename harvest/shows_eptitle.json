@@ -585,7 +585,8 @@
   "net": "fox",
   "q": "kids",
   "amb": 1,
-  "guide": "X-Men: The Animated Series"
+  "guide": "X-Men: The Animated Series",
+  "xt": "evolution|wolverine and the|anime|\\b97\\b"
  },
  {
   "title": "Spider-Man",
@@ -600,7 +601,8 @@
   "net": "fox",
   "q": "kids",
   "amb": 1,
-  "guide": "Spider-Man: The Animated Series"
+  "guide": "Spider-Man: The Animated Series",
+  "xt": "unlimited|spectacular|ultimate|amazing friends|1967|1981|new animated"
  },
  {
   "title": "Gargoyles",
@@ -659,7 +661,8 @@
   "py": 1987,
   "len": "h",
   "net": "syn",
-  "q": "kids"
+  "q": "kids",
+  "xt": "back to the sewer|fast forward|\\b2003\\b|\\b2012\\b|next mutation|rise of"
  },
  {
   "title": "He-Man and the Masters of the Universe",
@@ -682,7 +685,8 @@
   "py": 1984,
   "len": "h",
   "net": "syn",
-  "q": "kids"
+  "q": "kids",
+  "xt": "prime|animated|armada|energon|cybertron|beast|rescue bots|earthspark|headmasters|victory|masterforce"
  },
  {
   "title": "G.I. Joe: A Real American Hero",
@@ -704,7 +708,8 @@
   "py": 1985,
   "len": "h",
   "net": "syn",
-  "q": "kids"
+  "q": "kids",
+  "xt": "2011|roar"
  },
  {
   "title": "Pokémon",
@@ -716,7 +721,8 @@
   "net": "wb",
   "q": "kids",
   "maxs": 7,
-  "noad": 1
+  "noad": 1,
+  "xt": "horizons|journeys|sun and moon|\\bxy\\b|black and white|diamond and pearl"
  },
  {
   "title": "Mummies Alive!",

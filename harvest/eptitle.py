@@ -90,7 +90,7 @@ def hasname(s, blob):
     return any((' ' + n + ' ') in b for n in s['names'])
 X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblada|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|fran[cç]ais|french dub|vf|vostfr|italiano|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|t[uü]rk[cç]e|russian|hindi|tamil|arabic|subtitulado|sub ?esp|audio latino)\b"
 X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|rom ?hack|emulator|pinball|comic book|audiobook|audio book|ebook|podcast|review|reviews|reaction|reacts|commentary|recap|explained|ranking|ranked|top \d+|tier list|analysis|essay|theory|theories|trailer|teaser|promo|promos|bumper|bumpers|clip|clips|scene|scenes|fan ?made|fan ?film|fanfic|amv|parody|remix|ytp|soundtrack|ost|theme song|intro|opening|credits|script|transcript|behind the scenes|bloopers|interview|panel|convention|unboxing|toy|toys|figure|figures|lego|minecraft|roblox)\b"
-X_EDIT = r"\b(fan ?edit|re ?edited|recut|closing to|opening to|opening and closing|vhs opening|promo|trailer|bloopers|outtakes|behind the scenes|interview with|sub|subs|subbed|subtitulado|rus|4k upscale|remaster test|cam rip|master cut|pokeshipping|fan cut|abridged)\b"
+X_EDIT = r"\b(fan ?edit|re ?edited|recut|closing to|opening to|opening and closing|vhs opening|promo|trailer|bloopers|outtakes|behind the scenes|interview with|sub|subs|subbed|subtitulado|rus|4k upscale|remaster test|cam rip|master cut|pokeshipping|fan cut|abridged|reactions)\b"
 RES_OK = {'season', 'episode', 'ep', 'series', 'part', 'pt', 'tv', 'show', 'complete', 'full', 'hd', 'sd', 'dvd', 'dvdrip', 'vhs', 'vhsrip', 'rip', 'x264', 'x265', 'h264', 'hevc', 'aac', 'mp4', 'mkv', 'avi', '480p', '576p', '720p', '1080p', 'web', 'dl', 'bluray', 'blu', 'ray', 'webrip', 'the', 'a', 'of', 'and', 'with', 'commercials', 'original', 'broadcast', 'aired', 'nbc', 'abc', 'cbs', 'fox', 'wb', 'upn', 'english', 'eng', 'uncut', 'remastered', 'disc', 'disk', 'vol', 'volume', 's', 'e', 'x'}
 def residual(nt, names, en):
     t = ' ' + nt + ' '
@@ -312,24 +312,62 @@ def meta(it):
         elif s.get('intitle'):
             if not hasname(s, nt): continue
         elif not strong and not weak: continue
+        why = ''
         if not hit:
-            if len(res) > (3 if dist else 1): continue
-            if not dist and not strong and not (weak and not res and len(en.split()) >= 2): continue
-            if not dist and len(res) > 0 and not hasname(s, nt): continue
+            if strong:
+                if len(res) > (3 if dist else 1): why = 'extra words in title'
+                elif not dist and len(res) > 0 and not hasname(s, nt): why = 'short episode title, show named only in tags'
+                if why and (len(res) > 6 or not tstart(s, nt)): continue
+            else:
+                if len(res) > (3 if dist else 1): continue
+                if not dist and not (weak and not res and len(en.split()) >= 2): continue
         byname = [f for f in files if (' ' + en + ' ') in (' ' + norm(f[0]) + ' ') and fits(s, f[1])]
         fit = [f for f in files if fits(s, f[1])]
         pick = byname[:1] if byname else fit[:1] if len(fit) == 1 else None
         if not pick: continue
-        sc = (2 if strong else 0) + (1 if (se, ep) in tse else 0) + len(en) / 100.0
-        if best is None or sc > best[0]: best = (sc, s, se, ep, name, ad, pick)
+        sc = (2 if strong else 0) + (1 if (se, ep) in tse else 0) + len(en) / 100.0 - (1.5 if why else 0)
+        if best is None or sc > best[0]: best = (sc, s, se, ep, name, ad, pick, why)
     if not best: return None
-    sc, s, se, ep, name, ad, pick = best
-    return {'i': it['identifier'], 'q': s['q'], 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:300], 'f': pick, 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': int(ad[:4]) if ad[:4].isdigit() and 1984 <= int(ad[:4]) <= 2004 else '', 'net': s['net'], 'ct': 'eptitle', 'se': [se, ep], 'ep': name, 'ad': ad}
+    sc, s, se, ep, name, ad, pick, why = best
+    R0 = {'i': it['identifier'], 'q': s['q'], 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:300], 'f': pick, 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': int(ad[:4]) if ad[:4].isdigit() and 1984 <= int(ad[:4]) <= 2004 else '', 'net': s['net'], 'ct': 'eptitle', 'se': [se, ep], 'ep': name, 'ad': ad}
+    if why: R0['keep'] = 'maybe'; R0['why'] = why
+    return R0
+def tstart(s, nt):
+    nt0 = re.sub(r'^(the|a) ', '', nt)
+    return any(nt0 == n or nt0.startswith(n + ' ') for n in [re.sub(r'^(the|a) ', '', n) for n in s['names']])
+X_PFOR = r"\b(temporada|temporadas|gemischt|staffel|folge|saison|stagione|episodio|capitulo|dual audio|dublado|latino|castellano|doblaje|deutsch|german|vostfr|legendado|subtitulado|ita|esp|ger|fra)\b"
+def packrule(s, title, ident, fe):
+    nt = norm(title); ni = norm(ident); nt0 = re.sub(r'^(the|a) ', '', nt)
+    names0 = [re.sub(r'^(the|a) ', '', n) for n in s['names']]
+    prim = re.sub(r'^(the|a) ', '', norm(s['title']))
+    names1 = [n for n in names0 if n == prim or len(n.split()) >= 2]
+    starts = any(nt0 == n or nt0.startswith(n + ' ') for n in names1)
+    intitle = hasname(s, nt); inid = hasname(s, ni) or any(ni.replace(' ', '').startswith(n.replace(' ', '')) for n in names0 if len(n) >= 5)
+    low = (title + ' ' + ident.replace('-', ' ').replace('_', ' ') + ' ' + ' '.join(fe)).lower()
+    if re.search(X_PFOR, low) or re.search(X_FOR, low) or re.search(r'\b(reactions?|reacts?|first time watching|watch ?along|commentary|review|analysis|essay)\b', low): return None, '', {}
+    if s.get('xt') and re.search(s['xt'], low): return None, '', {}
+    out = {}
+    for fn, v in fe.items():
+        nf = norm(re.sub(r'\.(ia\.)?mp4$', '', fn.split('/')[-1]))
+        bys = (v[0], v[1]) in ses(nf)
+        en = norm(v[3])
+        sig = [w for w in en.split() if w not in STOP]
+        dist = len(sig) >= 3 or (len(sig) >= 2 and len(en) >= 12)
+        byt = len(en) >= 8 and (' ' + en + ' ') in (' ' + nf + ' ') and (dist or starts)
+        nf0 = re.sub(r'^(the|a) ', '', nf)
+        if byt or (bys and (starts or any(nf0.startswith(n + ' ') for n in names1))): out[fn] = v
+    if not out: return None, '', {}
+    nbt = sum(1 for fn, v in out.items() if len(norm(v[3])) >= 8 and (' ' + norm(v[3]) + ' ') in (' ' + norm(fn) + ' '))
+    idstart = any(ni.replace(' ', '').startswith(n.replace(' ', '')) for n in names0 if len(n) >= 4)
+    if starts or (idstart and intitle): return 'ok', '', out
+    if intitle or inid: return 'maybe', 'show named but the item title is not the series title', out
+    if nbt >= 5: return 'maybe', 'show not named; five or more file names match episode titles', out
+    return None, '', {}
 def packmeta(it, files, title, nt, nsub, ndesc, m, col, subj, desc):
     out = []
     for k in it.get('pk') or []:
         s = SHOWS[k]
-        if not (hasname(s, nt) or hasname(s, nsub)): continue
+        if not (hasname(s, nt) or hasname(s, nsub) or hasname(s, norm(it['identifier']))): continue
         if s.get('amb') and not any(re.sub(r'^(the|a) ', '', nt).startswith(re.sub(r'^(the|a) ', '', n) + ' ') or nt == n for n in s['names']): continue
         eps = EPX.get(k)
         if eps is None:
@@ -350,11 +388,12 @@ def packmeta(it, files, title, nt, nsub, ndesc, m, col, subj, desc):
                 e = best
             if not e or tuple(e['se']) in covd or tuple(e['se']) in used: continue
             used.add(tuple(e['se'])); fe[f[0]] = [e['se'][0], e['se'][1], e['ad'], e['ep']]
-        if not fe: continue
+        verdict, why, fe = packrule(s, title, it['identifier'], fe)
+        if not verdict: continue
         keep = [f for f in files if f[0] in fe][:60]
         fe = {f[0]: fe[f[0]] for f in keep}
         ys = sorted(int(v[2][:4]) for v in fe.values() if v[2][:4].isdigit())
-        out.append({'i': it['identifier'], 'q': s['q'], 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:300], 'f': keep, 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': ys[0] if ys and 1984 <= ys[0] <= 2004 else '', 'net': s.get('net', ''), 'ct': 'pack', 'fe': fe, 'pk': 1})
+        out.append({'i': it['identifier'], 'q': s['q'], 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:300], 'f': keep, 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': ys[0] if ys and 1984 <= ys[0] <= 2004 else '', 'net': s.get('net', ''), 'ct': 'pack', 'fe': fe, 'pk': 1, **({'keep': 'maybe', 'why': why} if verdict == 'maybe' else {})})
     return max(out, key=lambda x: len(x['fe'])) if out else None
 EPX = {}; COV = {}
 if MODE == 'meta':
@@ -372,7 +411,14 @@ if MODE == 'meta':
     print('shard done', len(res)); sys.exit(0)
 BYT = {s['title']: s for s in SHOWS}
 def still_ok(x):
-    if x.get('pk'): return True
+    if x.get('pk'):
+        verdict, why, fe = packrule(BYT[x['k']], x['t'], x['i'], x['fe'])
+        if not verdict: return False
+        x['fe'] = fe; x['f'] = [f for f in x['f'] if f[0] in fe]
+        x.pop('keep', None); x.pop('why', None)
+        if verdict == 'maybe': x['keep'] = 'maybe'; x['why'] = why
+        return True
+    x.pop('keep', None); x.pop('why', None)
     s = BYT[x['k']]; nt = norm(x['t']); en = norm(x['ep']); hit = tuple(x['se']) in ses(nt)
     strong = hasname(s, nt) or hasname(s, norm(str(x.get('s') or '') + ' ' + ' '.join(x.get('c') or []) + ' ' + x['i']))
     sig = [w for w in en.split() if w not in STOP]; dist = len(sig) >= 3 or (len(sig) >= 2 and len(en) >= 16)
@@ -381,8 +427,13 @@ def still_ok(x):
     if s.get('intitle') and not hasname(s, nt): return False
     if hit: return True
     res = residual(nt, s['names'], en)
+    if strong:
+        if len(res) > (3 if dist else 1): x['keep'] = 'maybe'; x['why'] = 'extra words in title'
+        elif not dist and res and not hasname(s, nt): x['keep'] = 'maybe'; x['why'] = 'short episode title, show named only in tags'
+        if x.get('keep') and (len(res) > 6 or not tstart(s, nt)): return False
+        return True
     if len(res) > (3 if dist else 1): return False
-    if not dist and not strong and not (weak and not res and len(en.split()) >= 2): return False
+    if not dist and not (weak and not res and len(en.split()) >= 2): return False
     if not dist and res and not hasname(s, nt): return False
     return True
 old = [x for x in (loadj(OUTF) or []) if x.get('k') in BYT and ok_title(x['t']) and still_ok(x)]
