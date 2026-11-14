@@ -45,16 +45,24 @@
 "Headbanger's Ball",
 "Headbangers Ball MTV"
 ],
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"Headbangers Ball\" OR \"Headbanger's Ball\" OR \"Headbangers Ball MTV\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Yo! MTV Raps",
 "ct": "mtv",
 "run": "1988-1995",
 "alt": [
-"Yo MTV Raps"
+"Yo MTV Raps",
+"Yo MTV Raps Today",
+"Yo! MTV Raps Today"
 ],
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"Yo MTV Raps\" OR \"Yo MTV Raps\" OR \"Yo MTV Raps Today\" OR \"Yo MTV Raps Today\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "120 Minutes",
@@ -64,19 +72,34 @@
 "MTV 120 Minutes"
 ],
 "net": "mtv",
-"need": "\\b(mtv|pinfield|kendall|m2)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+"need": "\\b(mtv|pinfield|kendall|m2)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)",
+"q": [
+"description:(\"120 Minutes\" OR \"MTV 120 Minutes\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Club MTV",
 "ct": "mtv",
 "run": "1987-1992",
-"net": "mtv"
+"net": "mtv",
+"alt": [
+"MTV Club MTV"
+],
+"q": [
+"description:(\"Club MTV\" OR \"MTV Club MTV\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Dial MTV",
 "ct": "mtv",
 "run": "1986-1991",
-"net": "mtv"
+"net": "mtv",
+"alt": [
+"MTV Dial MTV"
+],
+"q": [
+"description:(\"Dial MTV\" OR \"MTV Dial MTV\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Total Request Live",
@@ -86,7 +109,10 @@
 "MTV TRL",
 "TRL MTV"
 ],
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"Total Request Live\" OR \"MTV TRL\" OR \"TRL MTV\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Unplugged",
@@ -95,7 +121,10 @@
 "alt": [
 "Unplugged MTV"
 ],
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"MTV Unplugged\" OR \"Unplugged MTV\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Top 20 Video Countdown",
@@ -109,7 +138,10 @@
 "MTV Top 100 Videos",
 "MTV Year End Countdown"
 ],
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"MTV Top 20 Video Countdown\" OR \"MTV Top 20 Countdown\" OR \"MTV Top 20\" OR \"Top 20 Video Countdown\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "The Week in Rock",
@@ -120,7 +152,10 @@
 "MTV News"
 ],
 "net": "mtv",
-"need": "\\b(mtv|loder)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+"need": "\\b(mtv|loder)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)",
+"q": [
+"description:(\"The Week in Rock\" OR \"Week in Rock\" OR \"MTV News\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Video Music Awards",
@@ -130,45 +165,71 @@
 "Video Music Awards",
 "MTV VMA",
 "MTV VMAs",
-"VMAs"
+"VMAs",
+"MTV Video Music Awards 1984",
+"VMA 1984",
+"1984 VMAs",
+"MTV VMAs 1992",
+"MTV Video Music Award"
 ],
 "net": "mtv",
-"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\bmtv\\b"
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\bmtv\\b",
+"q": [
+"description:(\"MTV Video Music Awards\" OR \"Video Music Awards\" OR \"MTV VMA\" OR \"MTV VMAs\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Movie Awards",
 "ct": "awards",
 "run": "1992-2004",
 "net": "mtv",
-"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)",
+"q": [
+"description:(\"MTV Movie Awards\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Spring Break",
 "ct": "mtv",
 "run": "1986-2004",
 "alt": [
-"Spring Break MTV"
+"Spring Break MTV",
+"MTV Spring Break 1986",
+"Spring Break 1987 MTV",
+"MTV Spring Break Daytona"
 ],
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"MTV Spring Break\" OR \"Spring Break MTV\" OR \"MTV Spring Break 1986\" OR \"Spring Break 1987 MTV\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Beach House",
 "ct": "mtv",
 "run": "1993-2004",
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"MTV Beach House\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Alternative Nation",
 "ct": "mtv",
 "run": "1992-1997",
 "net": "mtv",
-"need": "\\b(mtv|kennedy)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+"need": "\\b(mtv|kennedy)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)",
+"q": [
+"description:(\"Alternative Nation\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Jams",
 "ct": "mtv",
 "run": "1992-2004",
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"MTV Jams\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "The Grind",
@@ -179,7 +240,10 @@
 "MTV Grind"
 ],
 "net": "mtv",
-"need": "\\bmtv\\b"
+"need": "\\bmtv\\b",
+"q": [
+"description:(\"The Grind\" OR \"MTV The Grind\" OR \"MTV Grind\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Rockumentary",
@@ -188,7 +252,10 @@
 "alt": [
 "Rockumentary"
 ],
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"MTV Rockumentary\" OR \"Rockumentary\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV New Year",
@@ -199,30 +266,41 @@
 "MTV's New Year's Eve",
 "MTV Rock N Roll New Year"
 ],
-"net": "mtv"
+"net": "mtv",
+"q": [
+"description:(\"MTV New Year\" OR \"MTV New Year's Eve\" OR \"MTV's New Year's Eve\" OR \"MTV Rock N Roll New Year\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Live",
 "ct": "mtv",
-"run": "1997-1998",
+"run": "1984-2004",
 "alt": [
 "MTV Live and Loud",
 "MTV Saturday Night Concert",
-"MTV Concert"
+"MTV Concert Special",
+"MTV Sunday Night Concert"
 ],
 "net": "mtv",
-"need": "\\bmtv\\b"
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)",
+"q": [
+"description:(\"MTV Live\" OR \"MTV Live and Loud\" OR \"MTV Saturday Night Concert\" OR \"MTV Concert Special\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
-"title": "MTV 2",
+"title": "MTV2",
 "ct": "mtv",
 "run": "1996-2004",
 "alt": [
-"MTV2",
-"M2 MTV"
+"M2 MTV",
+"M2 Music Television",
+"MTV2 Music Television"
 ],
 "net": "mtv",
-"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(aircheck|air check|full broadcast|broadcast|recorded|recording|vhs|betamax|tape|with commercials|w commercials|woc|commercials|block|hours?|vj|vjs|off air|aired|countdown|premiere|marathon|weekend|special)\\b"
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(aircheck|air check|full broadcast|broadcast|recorded|recording|vhs|betamax|tape|with commercials|w commercials|woc|commercials|block|hours?|vj|vjs|off air|aired|countdown|premiere|marathon|weekend|special)\\b",
+"q": [
+"description:(\"MTV2\" OR \"M2 MTV\" OR \"M2 Music Television\" OR \"MTV2 Music Television\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MTV Classic blocks",
@@ -230,7 +308,6 @@
 "run": "1984-2004",
 "alt": [
 "Closet Classics",
-"MTV Classic",
 "MTV Rock Block",
 "MTV Basement Tapes",
 "Basement Tapes MTV",
@@ -270,7 +347,10 @@
 "Pop Up Video",
 "VH1 Pop Up Video"
 ],
-"net": "vh1"
+"net": "vh1",
+"q": [
+"description:(\"Pop Up Video\" OR \"Pop Up Video\" OR \"VH1 Pop Up Video\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Behind the Music",
@@ -280,7 +360,10 @@
 "VH1 Behind the Music"
 ],
 "net": "vh1",
-"need": "\\b(vh1|vh-1|episode|season)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+"need": "\\b(vh1|vh-1|episode|season)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)",
+"q": [
+"description:(\"Behind the Music\" OR \"VH1 Behind the Music\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "VH1 Storytellers",
@@ -289,7 +372,10 @@
 "alt": [
 "Storytellers VH1"
 ],
-"net": "vh1"
+"net": "vh1",
+"q": [
+"description:(\"VH1 Storytellers\" OR \"Storytellers VH1\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "VH1 Top 10 Countdown",
@@ -304,7 +390,10 @@
 "100 Greatest Artists of Hard Rock",
 "100 Greatest Videos"
 ],
-"net": "vh1"
+"net": "vh1",
+"q": [
+"description:(\"VH1 Top 10 Countdown\" OR \"VH1 Top 20 Countdown\" OR \"VH1 Top 20 Video Countdown\" OR \"VH1 Countdown\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "VH1 Divas",
@@ -314,7 +403,10 @@
 "Divas Live",
 "VH1 Divas Live"
 ],
-"net": "vh1"
+"net": "vh1",
+"q": [
+"description:(\"VH1 Divas\" OR \"Divas Live\" OR \"VH1 Divas Live\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "VH1 Honors",
@@ -325,7 +417,10 @@
 "VH1 Vogue Fashion Awards",
 "My VH1 Music Awards"
 ],
-"net": "vh1"
+"net": "vh1",
+"q": [
+"description:(\"VH1 Honors\" OR \"VH1 Fashion Awards\" OR \"VH1 Vogue Fashion Awards\" OR \"My VH1 Music Awards\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "VH1 specials",
@@ -364,9 +459,15 @@
 "Night Tracks TBS",
 "Chartbusters Night Tracks",
 "Power Play Night Tracks",
-"Night Tracks Chartbusters"
+"Night Tracks Chartbusters",
+"TBS Night Tracks",
+"WTBS Night Tracks",
+"Nighttracks Chartbusters"
 ],
-"net": "tbs"
+"net": "tbs",
+"q": [
+"description:(\"Night Tracks\" OR \"Nighttracks\" OR \"Night Tracks TBS\" OR \"Chartbusters Night Tracks\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Night Flight",
@@ -377,7 +478,10 @@
 "Night Flight USA"
 ],
 "net": "usa",
-"need": "\\b(usa|network|take off|new wave theatre|video|episode|19(8\\d|9[0-6]))\\b"
+"need": "\\b(usa|network|take off|new wave theatre|video|episode|19(8\\d|9[0-6]))\\b",
+"q": [
+"description:(\"Night Flight\" OR \"USA Night Flight\" OR \"Night Flight USA\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Friday Night Videos",
@@ -387,7 +491,10 @@
 "NBC Friday Night Videos",
 "Friday Night NBC videos"
 ],
-"net": "nbc"
+"net": "nbc",
+"q": [
+"description:(\"Friday Night Videos\" OR \"NBC Friday Night Videos\" OR \"Friday Night NBC videos\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Solid Gold",
@@ -401,7 +508,10 @@
 "Solid Gold Countdown"
 ],
 "net": "syn",
-"need": "\\b(marilyn mccoo|dionne warwick|rick dees|andy gibb|rex smith|arsenio|dancers|countdown|episode|show|tv|19(8[0-8]))\\b"
+"need": "\\b(marilyn mccoo|dionne warwick|rick dees|andy gibb|rex smith|arsenio|dancers|countdown|episode|show|tv|19(8[0-8]))\\b",
+"q": [
+"description:(\"Solid Gold\" OR \"Solid Gold Hits\" OR \"Solid Gold 85\" OR \"Solid Gold 86\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "American Bandstand",
@@ -409,10 +519,20 @@
 "run": "1984-1989",
 "alt": [
 "Dick Clark's American Bandstand",
-"New American Bandstand"
+"New American Bandstand",
+"American Bandstand 1984",
+"American Bandstand 1985",
+"American Bandstand 1986",
+"American Bandstand 1987",
+"American Bandstand 1988",
+"American Bandstand 1989",
+"Bandstand 1988 USA Network"
 ],
 "net": "abc",
-"need": "(?<!\\d)(198[4-9])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-]8[4-9](?!\\d)"
+"need": "(?<!\\d)(198[4-9])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-]8[4-9](?!\\d)",
+"q": [
+"description:(\"American Bandstand\" OR \"Dick Clark's American Bandstand\" OR \"New American Bandstand\" OR \"American Bandstand 1984\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Dance Party USA",
@@ -422,7 +542,10 @@
 "Dancin' On Air",
 "Dancin On Air"
 ],
-"net": "usa"
+"net": "usa",
+"q": [
+"description:(\"Dance Party USA\" OR \"Dancin' On Air\" OR \"Dancin On Air\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Club Dance",
@@ -432,7 +555,10 @@
 "Club Dance at the White Horse Cafe"
 ],
 "net": "tnn",
-"need": "\\b(tnn|white horse|nashville|199\\d)\\b"
+"need": "\\b(tnn|white horse|nashville|199\\d)\\b",
+"q": [
+"description:(\"Club Dance\" OR \"Club Dance at the White Horse Cafe\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "The Box",
@@ -445,7 +571,10 @@
 "The Box Music Television You Control"
 ],
 "net": "box",
-"need": "\\b(video jukebox|music television|jukebox|music channel|music network|request|1-900|900 number)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+"need": "\\b(video jukebox|music television|jukebox|music channel|music network|request|1-900|900 number)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)",
+"q": [
+"description:(\"The Box\" OR \"Video Jukebox Network\" OR \"The Box Music Television\" OR \"Jukebox Network\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "America's Top 10",
@@ -457,13 +586,19 @@
 "America’s Top Ten",
 "America's Top Ten"
 ],
-"net": "syn"
+"net": "syn",
+"q": [
+"description:(\"America's Top 10\" OR \"Casey Kasem's America's Top 10\" OR \"Americas Top 10\" OR \"America’s Top Ten\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Hit Video USA",
 "ct": "block",
 "run": "1985-1990",
-"net": "syn"
+"net": "syn",
+"q": [
+"description:(\"Hit Video USA\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Radio 1990",
@@ -473,14 +608,20 @@
 "USA Radio 1990"
 ],
 "net": "usa",
-"need": "\\b(usa|kathryn kinley|video|episode|198[3-6])\\b"
+"need": "\\b(usa|kathryn kinley|video|episode|198[3-6])\\b",
+"q": [
+"description:(\"Radio 1990\" OR \"USA Radio 1990\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "MV3",
 "ct": "block",
 "run": "1982-1985",
 "net": "syn",
-"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(video|music|richard blade|dance)\\b"
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(video|music|richard blade|dance)\\b",
+"q": [
+"description:(\"MV3\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "FM-TV",
@@ -490,7 +631,10 @@
 "FMTV"
 ],
 "net": "syn",
-"need": "\\b(video|music)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+"need": "\\b(video|music)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)",
+"q": [
+"description:(\"FM TV\" OR \"FMTV\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Rock 'N' America",
@@ -499,7 +643,10 @@
 "alt": [
 "Rock N America"
 ],
-"net": "syn"
+"net": "syn",
+"q": [
+"description:(\"Rock 'N' America\" OR \"Rock N America\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "New York Hot Tracks",
@@ -509,7 +656,10 @@
 "Hot Tracks",
 "ABC Rocks"
 ],
-"net": "abc"
+"net": "abc",
+"q": [
+"description:(\"New York Hot Tracks\" OR \"Hot Tracks\" OR \"ABC Rocks\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Video Music Box",
@@ -518,7 +668,10 @@
 "alt": [
 "Ralph McDaniels Video Music Box"
 ],
-"net": "syn"
+"net": "syn",
+"q": [
+"description:(\"Video Music Box\" OR \"Ralph McDaniels Video Music Box\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "V66",
@@ -528,7 +681,10 @@
 "V-66"
 ],
 "net": "syn",
-"need": "\\b(video|music|boston)\\b"
+"need": "\\b(video|music|boston)\\b",
+"q": [
+"description:(\"V66\" OR \"V 66\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Top 40 Videos",
@@ -545,12 +701,6 @@
 ],
 "net": "syn",
 "need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(tv|countdown|video)\\b"
-},
-{
-"title": "The Midnight Special",
-"ct": "concert",
-"run": "1984-1984",
-"net": "nbc"
 },
 {
 "title": "Rock Concert",
@@ -600,7 +750,10 @@
 ],
 "net": "cbs",
 "need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(\\d\\d(st|nd|rd|th))\\b",
-"ord": 1958
+"ord": 1958,
+"q": [
+"description:(\"Grammy Awards\" OR \"Grammys\" OR \"The Grammys\" OR \"Annual Grammy Awards\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "American Music Awards",
@@ -608,11 +761,15 @@
 "run": "1984-2004",
 "alt": [
 "AMAs",
-"Annual American Music Awards"
+"Annual American Music Awards",
+"American Music Award"
 ],
 "net": "abc",
 "need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(\\d\\d(st|nd|rd|th))\\b",
-"ord": 1973
+"ord": 1973,
+"q": [
+"description:(\"American Music Awards\" OR \"AMAs\" OR \"Annual American Music Awards\" OR \"American Music Award\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Billboard Music Awards",
@@ -622,7 +779,10 @@
 "Billboard Awards"
 ],
 "net": "fox",
-"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)",
+"q": [
+"description:(\"Billboard Music Awards\" OR \"Billboard Awards\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Rock and Roll Hall of Fame",
@@ -648,7 +808,10 @@
 "Live Aid MTV broadcast"
 ],
 "net": "mtv",
-"need": "\\b(mtv|abc|broadcast|1985|live aid)\\b"
+"need": "\\b(mtv|abc|broadcast|1985|live aid)\\b",
+"q": [
+"description:(\"Live Aid\" OR \"Live Aid 1985\" OR \"MTV Live Aid\" OR \"Live Aid ABC\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 },
 {
 "title": "Concert specials",
@@ -664,10 +827,6 @@
 "Amnesty International Human Rights Now",
 "Conspiracy of Hope",
 "Moscow Music Peace Festival",
-"Monsters of Rock",
-"Freddie Mercury Tribute Concert",
-"Knebworth 1990",
-"Rock in Rio",
 "Nelson Mandela 70th Birthday Tribute",
 "Atlantic Records 40th Anniversary",
 "Motown 25",
@@ -777,9 +936,6 @@
 "Hit List TV",
 "Power Play Dancin",
 "The Tube Music Network",
-"Fuse TV",
-"MTV X",
-"MTV Hits",
 "California Music Channel",
 "Music Plus TV",
 "Videowave",
@@ -794,7 +950,6 @@
 "Video Beat",
 "Teletunes",
 "FM2TV",
-"Video 22",
 "K-TV videos",
 "KRLR Vusic 21",
 "Power Vision",
@@ -802,11 +957,9 @@
 "Jukebox Saturday Night TV",
 "Something Else video show",
 "Goodnight LA",
-"Videos 24",
 "Videopolis",
 "Showvideo",
 "Bandstand 1987",
-"Soul Beat TV",
 "Video Trax",
 "Rhythm and Raps video",
 "Urban X-pressions",
@@ -831,8 +984,7 @@
 "New Grooves",
 "Deja View Phil Collins",
 "Deja View video",
-"Now Music TV",
-"Classic MTV"
+"Now Music TV"
 ]
 }
 ]

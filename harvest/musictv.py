@@ -43,11 +43,12 @@ def scrape(q):
         if not cursor or len(out) > 40000: break
     return out
 X_FOR = r"\b(castellano|espa[nñ]ol|latino|doblaje|doblada|dublado|dublagem|legendado|portugu[eê]s|brasil|deutsch|german dub|fran[cç]ais|french dub|vf|vostfr|italiano|ita|nederlands|svenska|norsk|dansk|suomi|polski|lektor|magyar|rom[aâ]n[aă]|t[uü]rk[cç]e|русск|hindi|tamil|telugu|urdu|arabic|bahasa|tagalog|sub ?esp|subtitulado|temporada|cap[ií]tulo|episodio|folge|staffel|saison|aflevering|odcinek|uk version|australian version|canadian version|bbc|itv|channel 4|sky one|rte)\b"
-X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|playstation|xbox|rom ?hack|emulator|pinball|audiobook|ebook|pdf|podcast|reaction|reacts?|review|reviews|reviewed|recap|fan ?made|fan-?edit|fan film|amv|ytp|parody|spoof|karaoke|lyrics|lyric video|cover version|remix|mashup|mixtape|dj mix|dj set|full album|audio only|audio|radio show|radio broadcast|fm radio|vinyl|cassette|sheet music|tab|tutorial|lesson|how to|unboxing|slideshow|screensaver|wallpaper|test|sample|promos|bumpers|idents|ids|commercials only|commercial compilation|ad break|logo history|ident history|documentary about|retrospective|tribute band|fancam|bootleg audio|soundboard|xxx|porn|adult|hentai|nude|beavis|butt-?head|liquid television|jackass|real world|road rules|daria|celebrity deathmatch|aeon flux|cribs|punk'?d|osbournes|pimp my ride|jersey shore|teen mom|the hills|laguna beach|ridiculousness|catfish|top of the pops|totp|muchmusic|much music|much more music|mtv europe|mtv uk|mtv asia|mtv latino|mtv latin america|mtv brasil|mtv brazil|mtv japan|mtv india|mtv italia|mtv germany|mtv base|mtv russia|mtv nordic|mtv australia|mtv canada|mtv espa[nñ]a|mtv france|mtv polska|viva|the chart show|smash hits|rage abc|countdown abc|rockpalast|musikladen|formel eins|sanremo|eurovision)\b"
+X_JUNK = r"\b(video ?game|gameplay|longplay|walkthrough|playthrough|speedrun|playstation|xbox|rom ?hack|emulator|pinball|audiobook|ebook|pdf|podcast|reaction|reacts?|review|reviews|reviewed|recap|fan ?made|fan-?edit|fan film|amv|ytp|parody|spoof|karaoke|lyrics|lyric video|cover version|remix|mashup|mixtape|dj mix|dj set|full album|audio only|audio|radio show|radio broadcast|fm radio|vinyl|cassette|sheet music|tab|tutorial|lesson|how to|unboxing|slideshow|screensaver|wallpaper|test|sample|promos|bumpers|idents|ids|commercials only|commercial compilation|ad break|logo history|ident history|documentary about|retrospective|tribute band|fancam|bootleg audio|soundboard|xxx|porn|adult|hentai|nude|beavis|butt-?head|liquid television|jackass|real world|road rules|daria|celebrity deathmatch|aeon flux|cribs|punk'?d|osbournes|pimp my ride|jersey shore|teen mom|the hills|laguna beach|ridiculousness|catfish|top of the pops|totp|muchmusic|much music|much more music|mtv europe|mtv uk|mtv asia|mtv latino|mtv latin america|mtv brasil|mtv brazil|mtv japan|mtv india|mtv italia|mtv germany|mtv base|mtv russia|mtv nordic|mtv australia|mtv canada|mtv espa[nñ]a|mtv france|mtv polska|viva|the chart show|smash hits|rage abc|countdown abc|mtv classic|european|europe|australian feed|ac[uú]stico|completo|commercial breaks?|commercials -|commercials from|rock in rio|rockpalast|musikladen|formel eins|sanremo|eurovision)\b"
 X_MOD = r"(?<!\d)(20(0[5-9]|[1-3]\d))(?!\d)|\b(netflix|hulu|tiktok|twitch|livestream|zoom|vevo|spotify|pluto tv|mtv classic 20\d\d)\b"
 def ok_title(t):
     if not t: return False
     low = t.lower() + ' '
+    if re.search(r'(?<!\d)\d{1,2}[./-]\d{1,2}[./-](19)?(7\d|8[0-3])(?!\d)|(?<!\d)(19(7\d|8[0-3]))[./ -]\d{1,2}[./ -]\d{1,2}(?!\d)', low) or (re.search(r'(?<!\d)19(6\d|7\d|8[0-3])(?!\d)', low) and not re.search(r'(?<!\d)(19(8[4-9]|9\d)|200[0-4])(?!\d)', low)): return False
     if re.search(r'[^\x00-\xff\u2010-\u2027\u2122]', t) or re.search(r'[ãõçñ]', low): return False
     if re.search(X_FOR, low) or re.search(X_JUNK, low) or re.search(X_MOD, low): return False
     return True
@@ -131,9 +132,9 @@ if MODE == 'plan':
                 if not ok_title(t): continue
                 k2 = which(t)
                 if k2 is None:
-                    if not (loose and s['title'] in BLOB): continue
+                    if not loose: continue
                     k2 = k
-                seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': k2}; hits[k2] += 1
+                seen[i] = {'identifier': i, 'downloads': it.get('downloads') or 0, 'k': k2, 'l': loose}; hits[k2] += 1
             if n % 20 == 0: print('search', n, len(jobs), len(seen), round((time.time() - T0) / 60, 1), 'min', flush=True)
     cands = sorted(seen.values(), key=lambda x: x['identifier'])
     print('candidates', len(cands), flush=True)
@@ -151,16 +152,21 @@ def secs(v):
         return float(v)
     except Exception: return 0
 RANK = {'h.264 IA': 0, 'h.264': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
+REJ = collections.Counter()
 def meta(it):
-    if time.time() - T0 > BUDGET: return None
+    r = meta0(it)
+    if isinstance(r, str): REJ[(SHOWS[it['k']]['title'], r)] += 1; return None
+    return r
+def meta0(it):
+    if time.time() - T0 > BUDGET: return 'budget'
     j = get('https://archive.org/metadata/' + urllib.parse.quote(it['identifier']))
-    if not j or not j.get('files') or j.get('is_dark'): return None
+    if not j or not j.get('files') or j.get('is_dark'): return 'dark'
     m = j.get('metadata', {})
-    if str(m.get('access-restricted-item', '')).lower() == 'true': return None
+    if str(m.get('access-restricted-item', '')).lower() == 'true': return 'restricted'
     if str(m.get('mediatype', 'movies')) != 'movies': return None
     lang = m.get('language', '')
     if isinstance(lang, list): lang = ' '.join(lang)
-    if lang and not re.search(r'(?i)eng|english|^en\b', str(lang)): return None
+    if lang and not re.search(r'(?i)eng|english|^en\b', str(lang)): return 'lang'
     groups = {}
     for f in j['files']:
         if not f.get('name', '').lower().endswith('.mp4'): continue
@@ -176,10 +182,10 @@ def meta(it):
         sz = float(b.get('size') or 0)
         if sz and sz / 1e6 / (d / 60) > 30: continue
         files.append([b['name'], round(d), b.get('format', '')])
-    if not files or sum(f[1] for f in files) < 600: return None
+    if not files or sum(f[1] for f in files) < 600: return 'short'
     files.sort(key=lambda f: f[0])
     title = m.get('title', ''); title = ' '.join(title) if isinstance(title, list) else str(title)
-    if not ok_title(title): return None
+    if not ok_title(title): return 'title'
     desc = m.get('description', '')
     if isinstance(desc, list): desc = ' '.join(desc)
     desc = ' '.join(re.sub(r'<[^>]+>', ' ', str(desc)).split())
@@ -188,16 +194,16 @@ def meta(it):
     subj = m.get('subject', '')
     if isinstance(subj, list): subj = ';'.join(subj)
     blob = (title + ' ' + str(subj) + ' ' + desc[:400]).lower()
-    if re.search(X_FOR, blob): return None
+    if re.search(X_FOR, blob): return 'foreign'
     if re.search(r'\b(podcast|fan ?made|video ?game|gameplay|radio (show|program|broadcast)|audio only|mtv europe|mtv uk|muchmusic|top of the pops)\b', blob): return None
     if set(col) & {'podcasts', 'audio', 'opensource_audio', 'radioprograms', 'community_media', 'newsandpublicaffairs'}: return None
     k = which(title)
-    if k is None and SHOWS[it['k']]['title'] in BLOB: k = which(title + ' ' + str(subj) + ' ' + desc[:300], it['k'])
-    if k is None: return None
+    if k is None and it.get('l') and (SHOWS[it['k']]['title'] in BLOB or (sum(f[1] for f in files) >= 1200 and re.search(r'\b(vhs|betamax|recorded|recording|aircheck|with commercials|broadcast|taped|tape|aired)\b', blob))): k = which(title + ' ' + str(subj) + ' ' + desc[:300], it['k'])
+    if k is None: REJ[(SHOWS[it['k']]['title'], 'nomatch')] += 1; return None
     s = SHOWS[k]
     dy = re.match(r'(\d{4})', str(m.get('date') or ''))
     e = era(s, title, m.get('date'), m.get('year'), desc)
-    if it['identifier'].startswith('youtube-') and not re.search(r'(19[89]\d|200[0-4])', title) and not e: return None
+    if it['identifier'].startswith('youtube-') and not re.search(r'(19[89]\d|200[0-4])', title) and not e: return 'undated-yt'
     r = {'i': it['identifier'], 'q': 'music', 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': e, 'net': s.get('net', ''), 'ct': s['ct']}
     ad = airdate(title) or airdate(desc[:200])
     if ad: r['ad'] = ad
@@ -215,9 +221,14 @@ if MODE == 'meta':
             if n % 1000 == 0: print('meta', n, len(res), round((time.time() - T0) / 60, 1), 'min', flush=True)
     with gzip.open(os.path.join(PARTS, 'musictv-%d.json.gz' % SHARD), 'wt', encoding='utf-8') as f:
         json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
-    print('shard done', len(res)); sys.exit(0)
+    print('shard done', len(res))
+    print('REJECT', sorted(((k[0], k[1], n) for k, n in REJ.items()), key=lambda x: -x[2])[:80]); sys.exit(0)
 old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
-old = [x for x in old0 if keep(x)]
+old = [x for x in old0 if keep(x) and which(x['t'] + ' ' + x.get('s', '') + ' ' + x.get('ds', '')[:300]) is not None]
+for x in old:
+    k = which(x['t'])
+    if k is None: k = which(x['t'] + ' ' + x.get('s', '') + ' ' + x.get('ds', '')[:300])
+    sh = SHOWS[k]; x['k'] = sh['title']; x['ct'] = sh['ct']; x['net'] = sh.get('net', ''); x['e'] = era(sh, x['t'], x.get('d'), x.get('y'), x.get('ds', ''))
 print('refiltered existing', len(old0), '->', len(old))
 have = set(x['i'] for x in old) | known(); add = []
 for p in sorted(glob.glob(os.path.join(PARTS, 'musictv-*.json.gz'))):
