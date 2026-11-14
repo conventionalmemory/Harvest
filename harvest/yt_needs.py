@@ -29,12 +29,13 @@ SKIPK = set(['movie-package'])
 QMAP = {'sitcom': 'prime', 'drama': 'prime', 'kids': 'kids', 'doc': 'pub', 'cook': 'pub', 'game': 'game', 'talk': 'talk', 'soap': 'soap', 'late': 'late', 'news': 'news', 'mag': 'news', 'morning': 'news', 'gov': 'news', 'music': 'music', 'relig': 'talk', 'sports': 'sports', 'special': 'prime', 'other': 'prime'}
 NETW = {'nbc': ['nbc'], 'abc': ['abc'], 'cbs': ['cbs'], 'fox': ['fox'], 'pbs': ['pbs'], 'hbo': ['hbo'], 'mtv': ['mtv'], 'vh1': ['vh1', 'vh 1'], 'nick': ['nick', 'nickelodeon'], 'nickelodeon': ['nick', 'nickelodeon'], 'discovery': ['discovery'], 'a&e': ['a and e', 'ae'], 'tnn': ['tnn', 'nashville network'], 'bet': ['bet'], 'usa': ['usa network', 'usa'], 'espn': ['espn'], 'cnn': ['cnn'], 'tbs': ['tbs'], 'tnt': ['tnt'], 'disney': ['disney'], 'lifetime': ['lifetime'], 'showtime': ['showtime'], 'c-span': ['c span', 'cspan'], 'upn': ['upn'], 'wb': ['wb'], 'syn': ['syndicated', 'syndication'], 'comedy central': ['comedy central'], 'food network': ['food network'], 'tlc': ['tlc'], 'hgtv': ['hgtv'], 'e!': ['e entertainment'], 'sci-fi': ['sci fi', 'scifi'], 'cartoon network': ['cartoon network'], 'family': ['family channel', 'fox family', 'abc family'], 'history': ['history channel'], 'techtv': ['techtv', 'zdtv', 'tech tv']}
 BADT = re.compile(r"(?i)\b(reaction|reacts?|reacting|reviewed|best of|compilation|trailer|promo|promos|theme song|bloopers|behind the scenes|explained|top \d+|ranking|ranked|podcast|amv|mashup|teaser|every time|supercut|funniest|montage|unboxing|gameplay|longplay|walkthrough|speedrun|lyrics|karaoke|tiktok|meme|fan ?made|ambien(ce|t)|white noise|sleep|ups (and|&) downs|chat replay|lamentations|restored in 4k|60 ?fps|upscaled?|ai |sub español|subtitulado|latino|dublado|legendado|español|castellano|deutsch|fran[cç]ais|italiano|hindi|tagalog|vostfr|ger sub|napisy|türkçe|dubbed|doblaje|doblado|rus eng|eng rus|x264|x265|ac3|learn english|watch ?along|first time watching|breakdown|analysis|retrospective|rewatch|full movie|ost|audiobook|asmr|tv spots?|bumpers?|commercials? (break|block)s?|sign ?off|sneak peek|blu ?ray|dvd (menu|unboxing)|all episodes|episodes? \d+ ?(-|to|thru|through|&|and) ?\d+)\b")
-PARTX = re.compile(r"(?i)\b(part|pt\.?)\s*([1-9]|one|two|three)\s*(of|/)\s*\d|\[\s*\d\s*/\s*\d\s*\]|\(\s*\d\s*/\s*\d\s*\)|\b\d\s*/\s*\d\s*$")
-JUNKT = re.compile(r"(?i)\b(web ?series|icons unearthed|gmod|minecraft|roblox|fortnite|playstation|nintendo|game ?boy|n64|gamecube|dreamcast|pc game|video ?game|full game|cutscenes?|game movie|bridge commander|star trek online|prop|props|model kit|for the first time|we watch(ed)?|re-?watch(ed|ing)?|revisited|rundown|after ?show|afterbuzz|play ?through|let'?s play|script reading|table read|discuss(es|ed|ing|ion)?|analy[sz](ing|ed|is)|facts about|weird facts|un episodio|joined by|check out|watch ?along|my thoughts|deep dive|drinking game|ft\.|feat\.|ps[1-5]|xbox|let'?s watch|live ?stream|sermon|school project|stage production|decoded|reviews|then (and|&|vs\.?) now|where are they now|ranking every|every episode|iceberg|cast update|still alive|making of|featurette|reboot|fan ?film|fan ?fiction|audio only|audio drama|old time radio|otr|cosplay|comic ?con|q ?& ?a|unreleased|animatic|storyboard|lost media|creepypasta|ytp|poop|tier list|how to|tutorial|collection review|lego|rom ?hack|emulator|ep(isode)?s? ?\d+ ?- ?\d+|vol(ume)?\.? ?\d+|disc \d+|24/7|non ?stop)\b")
-JUNKC = re.compile(r"(?i)(react|podcast|gaming|gamer|commentary|rewatch|reviews?\b|plays\b|after ?show|longplay|\bfm\b|radio)")
+PARTX = re.compile(r"(?i)\b\d\s*of\s*\d\b|\b(part|pt\.?)\s*([1-9]|one|two|three)\s*(of|/)\s*\d|\[\s*\d\s*/\s*\d\s*\]|\(\s*\d\s*/\s*\d\s*\)|\b\d\s*/\s*\d\s*$")
+JUNKT = re.compile(r"(?i)\b(web ?series|icons unearthed|ruminations?|re-?binge|watch party|re:view|first watch|logcast|unwrapped|tv fails|summary|solving|i love bad|worst of|commentaries|spoilers?|thoughts|assigned viewing|a look at|a look back|looking back|history of|the story of|what happened to|the truth about|cancell?ed|rise and fall|tragic|net worth|scandal|video essay|critique|untold|you didn'?t know|never knew|gmod|minecraft|roblox|fortnite|playstation|nintendo|game ?boy|n64|gamecube|dreamcast|pc game|video ?game|full game|cutscenes?|game movie|bridge commander|star trek online|prop|props|model kit|for the first time|we watch(ed)?|re-?watch(ed|ing)?|revisited|rundown|after ?show|afterbuzz|play ?through|let'?s play|script reading|table read|discuss(es|ed|ing|ion)?|analy[sz](ing|ed|is)|facts about|weird facts|un episodio|joined by|check out|watch ?along|my thoughts|deep dive|drinking game|ft\.|feat\.|ps[1-5]|xbox|let'?s watch|live ?stream|sermon|school project|stage production|decoded|reviews|then (and|&|vs\.?) now|where are they now|ranking every|every episode|iceberg|cast update|still alive|making of|featurette|reboot|fan ?film|fan ?fiction|audio only|audio drama|old time radio|otr|cosplay|comic ?con|q ?& ?a|unreleased|animatic|storyboard|lost media|creepypasta|ytp|poop|tier list|how to|tutorial|collection review|lego|rom ?hack|emulator|ep(isode)?s? ?\d+ ?- ?\d+|vol(ume)?\.? ?\d+|disc \d+|24/7|non ?stop)\b")
+JUNKC = re.compile(r"(?i)(react|podcast|(pod|log|vid|trek|geek|nerd)cast\b|geek|nerd|rumination|rebinge|commentar|critic|pensky|lorerunner|vinesauce|trekculture|gaming|gamer|commentary|rewatch|reviews?\b|plays\b|after ?show|longplay|\bfm\b|radio)")
 OFFS = re.compile(r"(?i)^(star trek|star trek official|startrek\.com|paramount( ?\+| plus)?( [a-z]{2,10})?|cbs|cbs all access|pluto tv|paramount pictures|paramount network|showtime|twin peaks|cbs home entertainment)$")
 FANC = re.compile(r"(?i)(trek|geek|nerd|lore|culture|chat|archive|pod|cast\b|review|react|talk|\bfan|sci-?fi|peaks|perfect|unwrapped|pensky|vinesauce|debris|explained|theory|media|critic|watch|commentary|opinion|rant|show\b|live\b|stream|gaming|games?\b)")
-PODX = re.compile(r"(?i)\b(podcasts?|discuss(es|ed|ing|ion)?|reviews?|recaps?|re-?watch(ing)?|our thoughts|we talk|we watch|we cover|we look at|patreon|spotify|apple podcasts|anchor\.fm|commentary|reactions?|reacts?|watch ?along|watch party|join us|this week|in this episode,? (we|i)|hosts?|listen|breakdown|analysis|first time|bedtime|sleep|narrat(ed|ion|or)|audio drama|fan (film|made|production|series)|parody|my take|opinions?|rank(ed|ing)?|live ?stream|chat)\b")
+PODX = re.compile(r"(?i)\b(audio ?book|abridged|telling you|full face|tutorial|recorded|makeup|products|podcasts?|discuss(es|ed|ing|ion)?|reviews?|recaps?|re-?watch(ing)?|our thoughts|we talk|we watch|we cover|we look at|patreon|spotify|apple podcasts|anchor\.fm|commentary|reactions?|reacts?|watch ?along|watch party|join us|this week|in this episode,? (we|i)|hosts?|listen|breakdown|analysis|first time|bedtime|sleep|narrat(ed|ion|or)|audio drama|fan (film|made|production|series)|parody|my take|opinions?|rank(ed|ing)?|live ?stream|chat)\b")
+PODG = re.compile(r"(?i)\b(podcasts?|we discuss|discussion of|(our|my) (review|thoughts|reaction|take)|patreon\.com|spotify|apple podcasts|anchor\.fm|(my|our|first) reaction|reaction (video|to)|reacts? to|watch ?along|watch party|commentary track|fan (film|made|production|series|edit)|first time watching|audio ?book|abridged|gameplay|walkthrough|lets play|let's play|review of|(i|we) review|recap of|video essay|in this video,? (i|we)|today (i|we)|hey (guys|yall|y'all|everyone)|what'?s up (guys|everyone)|telling you|full face|tutorial|this week('s)? episode|episode of (our|my|the) (show|podcast)|temporary upload|compilation|clips from|highlights from|supercut)\b")
 SOFTJ = re.compile(r"(?i)\b(hours?|hrs?|vs\.?|versus|mix|mega ?mix|convention|panel|reunion|reunite[sd]?|toy|toys|figure|figures|pitch|mod|mods|genesis|sega|nes|snes|arcade|radio|trivia|quiz|theory|theories|the game|revival|cover|theme|edit|ending|opening|credits|preview|intro|outro|shorts?|scenes?|interview|tribute|deleted|review|clips?|moments|parody|german|french|polish|russian|arabic|partial|marathon|remix|highlights|commentary|recap|soundtrack)\b")
 LATEY = re.compile(r'\b(200[5-9]|20[12]\d)\b|\b\d{1,2}[./]\d{1,2}[./](0[5-9]|[12]\d)\b')
 OFFX = re.compile(r"(?i)(official|\bpbs\b|\bnbc\b|\bcbs\b|\babc\b|\bfox\b|warner|paramount|sony pictures|universal|disney|\bmgm\b|lionsgate|shout! ?(studios|factory)|shout ?factory|filmrise|hasbro|mattel|wildbrain|nelvana|9 story|cookie jar|nickelodeon|cartoon network|a&e|history channel|discovery|c-span|associated press|ap archive|\bbbc\b|\bitv\b|britbox|\bhbo\b|showtime|\bmtv\b|comedy central|\bbet\b|national geographic|smithsonian|american archive|library of congress|museum|university|public (television|media|broadcasting)|\bwgbh\b|\bwttw\b|\bwnet\b|\bkqed\b|\bopb\b|buzzr|fremantle|carsey|norman lear|stephen j\. cannell|cannell|peanuts|jim henson|henson|sesame|scholastic|dhx|cinedigm|multicom|mill creek|kino|questar|janson|echo bridge|vision films|grand ole opry|circle|opry|tv land|me-?tv|antenna tv|decades|the film detective|classic media|dreamworks|\bamc\b|ifc|sundance|food network|hgtv|\btlc\b|travel channel|court tv|\bcnn\b|\bespn\b|\bnfl\b|\bnba\b|\bmlb\b|\bnhl\b|\bwwe\b|nascar)")
@@ -85,6 +86,11 @@ def inner(ep, body):
     b = dict(body); b['context'] = CTX
     st, raw = http('https://www.youtube.com/youtubei/v1/' + ep + '?prettyPrint=false', json.dumps(b).encode(), {'Content-Type': 'application/json', 'Origin': 'https://www.youtube.com', 'X-YouTube-Client-Name': '1', 'X-YouTube-Client-Version': CTX['client']['clientVersion']})
     with LOCK: STAT['inner_' + ep.split('/')[0] + '_' + str(st)] += 1
+    for a in range(3):
+        if st != 403 or left() < 120: break
+        time.sleep(6 + a * 10 + random.random() * 6)
+        st, raw = http('https://www.youtube.com/youtubei/v1/' + ep + '?prettyPrint=false', json.dumps(b).encode(), {'Content-Type': 'application/json', 'Origin': 'https://www.youtube.com', 'X-YouTube-Client-Name': '1', 'X-YouTube-Client-Version': CTX['client']['clientVersion']})
+        with LOCK: STAT['retry_' + str(st)] += 1
     if st != 200: return None
     try: return json.loads(raw)
     except Exception: return None
@@ -582,8 +588,9 @@ def match(t, c, M):
     amb = t['amb']
     if t['kind'] == 'date':
         if not r['ad']:
-            if not (yin and full and pos and nxt): return None, 'undated'
-            r['m'] = 'year only'
+            if yin and full and pos and nxt: r['m'] = 'year only'
+            elif full and pos and nxt and not yout and not LATEY.search(Ts) and not (amb == 2 and (pre or post and post[0] not in NEXTW)): r['m'] = 'undated'; r['need'] = 1
+            else: return None, 'undated'
         elif amb == 2:
             if not (pos and nxt): return None, 'position'
             if pre or not (full or netw or off): r['m'] = 'common name'
@@ -627,6 +634,7 @@ def match(t, c, M):
             r['offs'] = 1
             if not inrt: r['m'] = 'official channel, runtime differs from broadcast length'
             elif rest and not full: r['m'] = 'official channel, title has extra words'
+    if not t['strict'] and t['kind'] == 'ep' and strong < 2 and re.match(r'\s*(#?\d+\s*[:.\-]|ep(isode)?\.?\s*#?\d+\s*[:\-])', T, re.I) and pre == [] and i > 0: r.setdefault('m', 'numbered title')
     if df == 2 and strong < 2: r.setdefault('m', 'double length')
     if df == 3:
         if strong < 2: return None, 'duration'
@@ -644,6 +652,65 @@ def stable(c):
     if c['age'] >= 4 and c.get('views', 0) >= 1000: return off, 'up %d years, %d views' % (int(c['age']), c['views'])
     if off and c['age'] >= 1: return 1, 'rights-holder style channel'
     return off, ''
+
+
+def fin(c):
+    off, why = stable(c)
+    c['off'] = off
+    mb = not why
+    if not why: why = 'up %s years, %d views' % (('%d' % int(c['age'])) if c['age'] >= 0 else '?', c.get('views', 0))
+    if c.get('inh'): why += ' (channel age)'
+    r = c['r']
+    if r.get('m'): why = r['m'] + '; ' + why; mb = True
+    if r.get('src'): why += '; ' + r['src']
+    c['why'] = ('maybe: ' if mb else '') + why
+    if mb: c['maybe'] = 1
+    else: c.pop('maybe', None)
+
+
+def enrich(c, t, G):
+    ds = c.get('ds') or ''
+    r = c['r']
+    if t['strict']: return
+    if PODG.search(ds) or PODG.search(c['t']): c['drop'] = 'description'; return
+    head = ds[:500]
+    y0 = t['hint'] or t['y0'] or 1950; y1 = t['y1'] or 2004
+    hi = min(y1 + 1, 2004) if t['kind'] == 'date' else y1 + 1
+    fixed = ''
+    if t['kind'] == 'ep' and G and not r['se']:
+        e = None
+        m = SEP.search(head)
+        if m:
+            g = [int(v) for v in m.groups() if v]
+            e = G['se'].get((g[0], g[1]))
+        if e is None:
+            hn = ' ' + nz(head) + ' '
+            best = None
+            for et, ee in G['ti']:
+                if len(et) >= 9 and len(et.split()) >= 2 and hn.find(' ' + et + ' ') >= 0 and (not best or len(et) > len(best[0])): best = (et, ee)
+            if best: e = best[1]
+        if e is not None and str(e[2]) <= t['until']:
+            r['se'] = [e[0], e[1]]; r['ep'] = e[3]
+            if re.match(r'\d{4}-\d\d-\d\d$', str(e[2] or '')): r['ad'] = str(e[2])
+            fixed = 'episode from description'
+    if not r['ad']:
+        d = ''
+        m = re.search(r'(?i)(air ?date|aired|airing|air(s|ed)? on|broadcast|telecast|taped|recorded|from|dated?)\W{0,14}.{0,44}', head)
+        if m: d = pdate(m.group(0))
+        if not d and t['kind'] == 'date': d = pdate(head[:200])
+        if d and y0 - 1 <= int(d[:4]) <= hi and '1950-01-01' <= d <= t['until']:
+            r['ad'] = d; fixed = fixed or 'air date from description'
+            if G and not r['se'] and d in G['ad']:
+                e = G['ad'][d]; r['se'] = [e[0], e[1]]; r['ep'] = e[3]
+    if fixed:
+        r['src'] = fixed
+        if r['ad']: r['e'] = int(r['ad'][:4])
+        if r.get('m') in ('episode not identified', 'year only', 'undated', 'common name, no episode guide'): r.pop('m')
+        r.pop('need', None)
+    elif r.get('need'):
+        if (t['y1'] or 2004) >= 2004: c['drop'] = 'undated'; return
+        r.pop('need')
+    fin(c)
 
 
 def run_search():
@@ -672,12 +739,11 @@ def run_search():
             return False
         if t['strict']: c = dict(c, offs=1) if r.get('offs') else dict(c, strictu=1)
         off, why = stable(c)
-        if not why:
-            if 0 <= c['age'] < 1 and c.get('views', 0) < 300 and not off: rejs['too new'] += 1; return False
-            why = 'maybe: up %s years, %d views' % (('%d' % int(c['age'])) if c['age'] >= 0 else '?', c.get('views', 0)); c = dict(c, maybe=1)
-        if r.get('m'): why = 'maybe: ' + r['m'] + '; ' + re.sub(r'^maybe: ', '', why); c = dict(c, maybe=1)
+        if not why and 0 <= c['age'] < 1 and c.get('views', 0) < 300 and not off: rejs['too new'] += 1; return False
         if c['vid'] in acc: return True
-        acc[c['vid']] = dict(c, k=k, r=r, off=off, why=why, src=src)
+        c = dict(c, k=k, r=r, off=off, src=src)
+        fin(c)
+        acc[c['vid']] = c
         return True
     def one(job):
         if left() < BUDGET * 0.42: return
@@ -760,8 +826,7 @@ def run_search():
     for c in items:
         if c['age'] < 0 and ages.get(c['chid']):
             a = sorted(ages[c['chid']]); c['age'] = a[len(a) // 2]; c['inh'] = 1
-            off, why = stable(c)
-            if why and c.get('maybe') and not c['r'].get('m'): c.pop('maybe'); c['why'] = why + ' (channel age)'; c['off'] = off
+            fin(c)
     best = {}
     for c in items:
         r = c['r']; ek = (c['k'], tuple(r['se']) if r['se'] else (r['ad'] or c['vid']))
@@ -775,8 +840,26 @@ def run_search():
     def det(c):
         if left() < 60: c['oe'] = -1; return
         c['oe'] = oembed(c['vid'])
+        if c['oe'] == 200 and left() > 200:
+            ds = describe(c['vid'])
+            with LOCK: STAT['desc_ok' if ds is not None else 'desc_fail'] += 1
+            if ds is not None:
+                c['ds'] = ds[:700]
+                enrich(c, byk[c['k']], M.get(c['k']))
+        if c['r'].get('need') and not c.get('drop'):
+            if (byk[c['k']]['y1'] or 2004) >= 2004: c['drop'] = 'undated'
+            else: c['r'].pop('need')
         time.sleep(0.15 + random.random() * 0.3)
+    items.sort(key=lambda c: (0 if c['r'].get('need') else 1, c['vid']))
     with ThreadPoolExecutor(THREADS) as ex: list(ex.map(det, items))
+    dropped = collections.Counter(c.get('drop') for c in items if c.get('drop'))
+    print('dropped after description', dict(dropped), 'fixed', dict(collections.Counter(c['r'].get('src') for c in items if c['r'].get('src'))), flush=True)
+    dsamp = [c for c in items if c.get('drop') == 'description']
+    for c in dsamp[:40]: print('   drop |', c['t'][:70], '|', (c.get('ds') or '')[:110])
+    fsamp = [c for c in items if c['r'].get('src')]
+    for c in fsamp[:40]: print('   fix  |', c['t'][:60], '|', c['r'].get('se'), c['r'].get('ad'), '|', (c.get('ds') or '')[:110])
+    items = [c for c in items if not c.get('drop')]
+    for c in items: c.pop('ds', None)
     print('stat', dict(STAT), 'oembed', dict(collections.Counter(c.get('oe') for c in items)), flush=True)
     print('PER SHOW (accepted by search)')
     for t in tasks:
@@ -833,17 +916,20 @@ def merge():
         t = byt.get(it['k'])
         if t:
             r, why0 = match(t, {'t': it['t'], 'dur': it['dur'], 'live': 0, 'ch': it.get('ch'), 'off': it.get('off'), 'pl': 1}, M)
-            if not r: purged += 1; continue
-            w = re.sub(r'^maybe: ', '', str(it.get('why', ''))).split('; ')[-1]
-            sm = re.match(r'up (\?|\d+) years, (\d+) views', w)
-            st_ok = not sm or (sm.group(1) != '?' and int(sm.group(1)) >= 4 and (int(sm.group(2)) >= 1000 or 'similar uploads' in w))
-            it['ad'] = r['ad'] if re.match(r'\d{4}-\d\d-\d\d$', r['ad'] or '') else ''
-            it['e'] = int(it['ad'][:4]) if it['ad'] else r['e']
-            it.pop('se', None); it.pop('ep', None)
-            if r['se']: it['se'] = r['se']; it['ep'] = r['ep']
-            if r.get('m'): it['keep'] = 'maybe'; it['why'] = 'maybe: ' + r['m'] + '; ' + w
-            elif st_ok: it.pop('keep', None); it['why'] = w
-            else: it['keep'] = 'maybe'; it['why'] = 'maybe: ' + w
+            fromd = 'from description' in str(it.get('why', ''))
+            if not r and not (fromd and why0 in ('undated', 'unidentified', 'position')): purged += 1; continue
+            if r and r.get('need') and not it.get('ad') and (t['y1'] or 2004) >= 2004: purged += 1; continue
+            if r and not fromd:
+                w = re.sub(r'^maybe: ', '', str(it.get('why', ''))).split('; ')[-1]
+                sm = re.match(r'up (\?|\d+) years, (\d+) views', w)
+                st_ok = not sm or (sm.group(1) != '?' and int(sm.group(1)) >= 4 and (int(sm.group(2)) >= 1000 or 'similar uploads' in w))
+                it['ad'] = r['ad'] if re.match(r'\d{4}-\d\d-\d\d$', r['ad'] or '') else ''
+                it['e'] = int(it['ad'][:4]) if it['ad'] else r['e']
+                it.pop('se', None); it.pop('ep', None)
+                if r['se']: it['se'] = r['se']; it['ep'] = r['ep']
+                if r.get('m'): it['keep'] = 'maybe'; it['why'] = 'maybe: ' + r['m'] + '; ' + w
+                elif st_ok: it.pop('keep', None); it['why'] = w
+                else: it['keep'] = 'maybe'; it['why'] = 'maybe: ' + w
         elif BADT.search(it['t']) or JUNKT.search(it['t']) or JUNKC.search(it.get('ch') or ''): purged += 1; continue
         put(it)
     print('purged from previous', purged)
@@ -862,7 +948,7 @@ def merge():
         if r['se']: it['se'] = r['se']; it['ep'] = r['ep']
         if c['age'] >= 0: it['agey'] = round(c['age'], 1)
         put(it)
-    stitles = set(t['title'] for t in tasks if t['strict'])
+    stitles = set(v['title'] for v in ALL.values() if v.get('strict'))
     chk = [(ek, it) for ek, it in out.items() if it['k'] in stitles][:500]
     print('DESCRIPTION CHECK', len(chk))
     for ek, it in chk:
