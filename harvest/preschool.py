@@ -313,9 +313,13 @@ elif MODE == 'meta':
     print('shard done', len(res))
 else:
     res = []; seen = set()
+    PF = os.path.join(OUT, 'preschool.json.gz')
+    old = json.load(gzip.open(PF, 'rt', encoding='utf-8')) if os.path.exists(PF) else []
     for p in sorted(glob.glob(os.path.join(PARTS, 'pshard-*.json.gz'))):
         for x in json.load(gzip.open(p, 'rt', encoding='utf-8')):
             if x['i'] not in seen: seen.add(x['i']); res.append(x)
+    for x in old:
+        if x['i'] not in seen: seen.add(x['i']); res.append(x)
     res.sort(key=lambda x: (x['k'], -x['dl']))
     with gzip.open(os.path.join(OUT, 'preschool.json.gz'), 'wt', encoding='utf-8') as f:
         json.dump(res, f, ensure_ascii=False, separators=(',', ':'))

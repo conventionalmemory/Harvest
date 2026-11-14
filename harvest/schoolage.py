@@ -258,19 +258,55 @@ def sq(x): return re.sub(r'[^a-z0-9]+', ' ', norm(x).replace('&', ' and ')).stri
 DISC = re.compile(r"\b(s\d{1,2} ?e\d{1,3}|s\d{1,2}|season \d|seasons? |series \d|episodes?\b|ep \d|eps\b|vol(ume)? ?\d|complete|the series|animated series|tv series|cartoon|tv ?rip|with commercials|w commercials|woc|nickelodeon|nicktoons?|nick jr|disney channel|toon disney|disney afternoon|fox kids|kids wb|cartoon network|toonami|pbs|abc|cbs|nbc|upn|syndicated|saturday morning|\d{1,2}x\d{2}|part \d|disc \d|full episodes?|pilot|marathon|block|aired|broadcast)\b")
 AMB2 = {'Hang Time', 'City Guys', 'Space Cases', 'Free Willy', 'Teen Wolf', 'Bug Juice', 'Time Squad', 'Road Rovers', 'Back to the Future', 'The Little Mermaid', 'Mighty Ducks', 'Care Bears', 'Pole Position', 'Galaxy High', 'Camp Candy', 'Science Court', 'Out of the Box', 'Super Mario World', 'The Legend of Zelda', 'Sonic the Hedgehog', 'Dennis the Menace', 'Dungeons & Dragons', 'The Tick', 'Cartoon Network', 'The Legend of Tarzan', 'Pound Puppies', 'Rainbow Brite', 'Power Rangers', 'Wee Sing', 'Fat Albert and the Cosby Kids'}
 STOPW = {'the', 'a', 'an', 'of', 'and', 'in', 'on', 'is', 'to', 'n', 's', 'show', 'series', 'adventures', 'new'}
+J2 = re.compile(r"\b(longplay|replay|game grumps|nostalgia critic|critic|review|reviews|livestream|deathstream|stream|happy meal|reaction|reacts?|podcast|minecraft|roblox|ptbr|pt br|episodio|annotated|storyboard|recreation|recreated|recreat|self insert|rewind|commentary|ranking|ranked|top \d+|explained|interview|trailer|teaser|promos?|bumpers?|tabletop|actual play|campaign|rpg|speedrun|walkthrough|gameplay|lets play|let s play|playthrough|video game|pc game|rom hack|fan film|fanfilm|fan made|fanmade|parody|tribute|theory|analysis|essay|retrospective|history of|making of|behind the scenes|unboxing|toys?|figures?|cosplay|convention|panel|lost media|creepypasta|meets|crossover|s adventures of|vs|versus|remake|reboot of|live action|musical|on ice|read aloud|audiobook|book|comic|manga|soundtrack|ost|album|song|songs|music video|amv|opening|intro|credits|theme|clip|clips|scene|scenes|moments|compilation of|best of youtube|shorts|tiktok|meme|memes|ytp|poop|uk dvd|uk vhs|pal)\b")
+PRE = r"(?:the |disney s |disneys |walt disney s |nickelodeon s |nickelodeon |nick |nicktoons |cartoon network s |cartoon network |cn |fox kids |kids wb |abc |cbs |nbc |pbs |pbs kids |marvel s |dic s |hanna barbera s |warner bros |wb |saban s |jim henson s |the new adventures of |the adventures of |adventures of |the all new |all new |the new |new |tv |vhs |dvd |\d{4} |\[[a-z0-9 ]+\] )*"
+NEED = {
+ 'Dungeons & Dragons': r"cartoon|animated|1983|1984|1985|cbs|s\d{1,2} ?e\d", 'The Legend of Zelda': r"cartoon|animated|1989|super show|dic|s\d{1,2} ?e\d", 'Sonic the Hedgehog': r"satam|animated|cartoon|s\d{1,2} ?e\d|abc|199[34]", 'Adventures of Sonic the Hedgehog': r"", 'Back to the Future': r"animated|cartoon|cbs|s\d{1,2} ?e\d", 'Teen Wolf': r"animated|cartoon|1986|1987|cbs", 'Super Mario World': r"cartoon|animated|s\d{1,2} ?e\d|1991|nbc|complete series", 'Aladdin': r"the series|animated series|tv series|s\d{1,2} ?e\d|disney afternoon", 'Hercules': r"the series|animated series|tv series|disney", 'The Little Mermaid': r"the series|animated series|tv series|s\d{1,2} ?e\d|cbs", 'Mighty Ducks': r"animated|the series|cartoon|199[67]|s\d{1,2} ?e\d|ep \d", 'Earthworm Jim': r"cartoon|animated|s\d{1,2} ?e\d|episode|kids wb|dvd|complete", 'Doug': r"nickelodeon|nick|disney|s\d{1,2} ?e\d|season|complete|brand spanking", 'Fifteen': r"nickelodeon|hillside", 'What Would You Do?': r"nickelodeon|marc summers", 'Ramona': r"1988|sarah polley|pbs", 'Madeline': r"s\d{1,2} ?e\d|season|episode|the new adventures|dic|complete", 'Storytime': r"pbs|kcet|kino", 'Zoom': r"pbs|wgbh", 'Cartoon Network': r"19[89]\d|200[0-4]|with commercials|w commercials|woc|block|broadcast|aired|recording|vhs", 'Toonami': r"19[89]\d|200[0-4]|with commercials|w commercials|woc|broadcast|aired|recording|vhs|midnight run|rising sun", "Kids' WB": r"19[89]\d|200[0-4]|with commercials|w commercials|woc|block|broadcast|aired|recording|vhs", 'Fox Kids': r"19[89]\d|200[0-4]|with commercials|w commercials|woc|block|broadcast|aired|recording|vhs", 'Saturday morning cartoons': r"19[89]\d|200[0-4]|with commercials|w commercials|woc|abc|cbs|nbc|fox|recording|vhs", 'One Saturday Morning': r"abc|disney", 'Power Rangers': r"mighty morphin|zeo|turbo|in space|lost galaxy|lightspeed|time force|wild force|ninja storm|dino thunder|199\d|200[0-4]", 'Goosebumps': r"s\d{1,2} ?e\d|season|episode|fox kids|tv series|complete|vhs", 'Inspector Gadget': r"s\d{1,2} ?e\d|season|episode|complete|198\d|cartoon", 'Samurai Jack': r"s\d{1,2} ?e\d|season [1-4]|episode|complete", 'Kim Possible': r"s\d{1,2} ?e\d|season|episode \d|complete", 'SpongeBob SquarePants': r"s0?[1-3] ?e\d|season [1-3]\b|1999|200[0-4]", 'Alvin and the Chipmunks': r"s\d{1,2} ?e\d|season|episode|198\d|nbc|cartoon|complete", 'Attack of the Killer Tomatoes': r"animated|cartoon|1990|1991|fox|s\d{1,2} ?e\d|the series", 'Beetlejuice': r"animated|cartoon|s\d{1,2} ?e\d|season|episode|the series", 'Free Willy': r"animated|cartoon|s\d{1,2} ?e\d|the series", 'Punky Brewster': r"animated|cartoon|it s punky", 'Dennis the Menace': r"1986|animated|cartoon|dic|s\d{1,2} ?e\d", 'Recess': r"disney|s\d{1,2} ?e\d|season|episode|complete", 'Babar': r"s\d{1,2} ?e\d|season|episode|nelvana|complete|hbo", 'Jem': r"holograms|s\d{1,2} ?e\d|season|episode|complete", 'Care Bears': r"s\d{1,2} ?e\d|season|episode|198\d|dic|nelvana|family", 'Out of the Box': r"playhouse disney|disney", 'The Tick': r"animated|cartoon|199[4-6]|fox|s\d{1,2} ?e\d", 'Digimon': r"adventure|tamers|frontier|digital monsters|s0?[1-4] ?e\d|season [1-4]\b|fox kids|199\d|200[0-3]", 'Yu-Gi-Oh!': r"duel monsters|season [1-4]\b|s0?[1-4] ?e\d|kids wb|200[1-4]", 'Beyblade': r"v force|g revolution|season [1-3]\b|s0?[1-3] ?e\d|200[2-4]", 'Zoids': r"chaotic century|new century|guardian force|fuzors|s\d{1,2} ?e\d",
+}
+BAD2 = {
+ 'Power Rangers': r"samurai|rpm|mystic force|spd|s p d|megaforce|jungle fury|overdrive|beast morphers|ninja steel|dino charge|dino fury|cosmic fury|operation overdrive", 'Digimon': r"fusion|ghost game|data squad|xros|savers|appli|universe|storytime|cyber sleuth|survive|tri\b", 'Yu-Gi-Oh!': r"5d|zexal|gx|arc v|vrains|go rush|sevens|abridged|cards", 'Beyblade': r"metal|burst|shogun", 'Alvin and the Chipmunks': r"road chip|meet|squeakquel|chipwrecked|movie|alvinnn", 'Hercules': r"young hercules|legendary journeys|minecraft", 'Aladdin': r"jamillah|tweenies|return of jafar|king of thieves", 'The Little Mermaid': r"little fox|2023", 'Teen Wolf': r"season [1-6]\b.*epis|mtv", 'SpongeBob SquarePants': r"movie|musical", 'Inspector Gadget': r"field trip|gadget 2|biggest caper|last case|2015", 'Doug': r"with doug|and doug|doug show|doug [a-z]+ (show|podcast)", 'Sonic the Hedgehog': r"sonic x|boom|prime|underground|ova|movie|zone|act \d", 'Super Mario World': r"hack|kaizo|smw", 'The Legend of Zelda': r"ocarina|wind waker|twilight|skyward|breath|tears|majora|link to the past|part \d", 'Mighty Ducks': r"game changers|d2|d3", 'Back to the Future': r"part ii|part iii|part 2|part 3|telltale|the game", 'Teacher\'s Pet': r"fifties|trouble with father", 'Recess': r"my recess|school s out", 'Mighty Morphin Power Rangers': r"once and always", 'Static Shock': r"disturbing", 'Hey Arnold!': r"gone to hell",
+}
+def r2ok(sh, t, ident):
+    title, a, b = sh
+    ph = sq(title); squeezed = ph.replace(' and ', ' ').replace(' ', '')
+    alts = {ph, ph.replace(' and ', ' ')}
+    if ph.startswith('the '): alts |= {ph[4:], ph[4:].replace(' and ', ' ')}
+    for x in list(alts):
+        if x.endswith(' show') and len(x) > 12: alts.add(x[:-5])
+        if x.startswith('adventures of ') and len(x) > 22: alts.add(x[14:])
+    low = norm(t); st = sq(t); idl = re.sub(r'[^a-z0-9]+', '', str(ident).lower())
+    if not low: return False
+    m = None
+    for x in sorted(alts, key=len, reverse=True):
+        m = re.match(PRE + re.escape(x) + r'(?= |$)', st)
+        if m: break
+    in_i = len(squeezed) >= 9 and idl.startswith(squeezed)
+    if not (m or in_i): return False
+    rest = st[m.end():] if m else st
+    if not (DISC.search(' ' + st + ' ') or (m and rest.strip() == '' and title not in AMB2 and len(ph.split()) >= 3)): return False
+    if J2.search(st) or JUNK.search(low) or FOREIGN.search(low) or CODES.search(str(t)): return False
+    if re.search(r'\b\d{1,2}[/.-]\d{1,2}[/.-](0[5-9]|1\d|2\d)\b', low): return False
+    if MODERN.search(low) and not ERA.search(low): return False
+    nd = NEED.get(title)
+    if nd and not re.search(nd, st): return False
+    bd = BAD2.get(title)
+    if bd and re.search(bd, st): return False
+    sm = re.search(r'\b(?:season|s)\s?0?(\d{1,2})\b', st)
+    if sm and int(sm.group(1)) > (min(b, 2004) - a + 2): return False
+    ys = [int(y) for y in ERA.findall(low)]
+    if ys and not any(a - 1 <= y <= 2004 for y in ys): return False
+    return True
 def r2search(sh):
     title, a, b = sh
-    ph = sq(title); words = [w for w in ph.split() if w not in STOPW]
-    amb = len(words) <= 1 or len(ph) < 9 or title in AMB2
+    ph = sq(title)
     squeezed = ph.replace(' and ', ' ').replace(' ', '')
-    alts = {ph}
-    if ph.startswith('the '): alts.add(ph[4:])
-    alts.add(ph.replace(' and ', ' '))
-    qs = ['mediatype:movies AND title:("' + title.replace('"', '').replace('!', '').replace('?', '') + '")', 'mediatype:movies AND subject:("' + title.replace('"', '').replace('!', '').replace('?', '') + '")']
-    if len(squeezed) >= 8:
-        v = {squeezed, ph.replace(' and ', ' ').replace(' ', '-'), ph.replace(' and ', ' ').replace(' ', '_'), ph.replace(' and ', ' ').replace(' ', '.')}
-        if squeezed.startswith('the') and len(squeezed) >= 11: v |= {squeezed[3:], ph[4:].replace(' and ', ' ').replace(' ', '-'), ph[4:].replace(' and ', ' ').replace(' ', '_')}
-        qs.append('mediatype:movies AND identifier:(' + ' OR '.join('*' + x + '*' for x in sorted(v)) + ')')
+    qt = title.replace('"', '').replace('!', '').replace('?', '')
+    qs = ['mediatype:movies AND title:("' + qt + '")', 'mediatype:movies AND subject:("' + qt + '")']
+    if len(squeezed) >= 9:
+        base = ph.replace(' and ', ' ')
+        v = {squeezed, base.replace(' ', '-'), base.replace(' ', '_'), base.replace(' ', '.')}
+        if squeezed.startswith('the') and len(squeezed) >= 12: v |= {squeezed[3:], base[4:].replace(' ', '-'), base[4:].replace(' ', '_'), base[4:].replace(' ', '.')}
+        qs.append('mediatype:movies AND identifier:(' + ' OR '.join(x + '*' for x in sorted(v)) + ')')
     items = []; ids = set()
     for q in qs:
         for it in scrape(q):
@@ -279,20 +315,11 @@ def r2search(sh):
     for it in items:
         t = it.get('title')
         if isinstance(t, list): t = ' '.join(t)
-        low = norm(t); st = ' ' + sq(t) + ' '; idl = re.sub(r'[^a-z0-9]+', '', it['identifier'].lower())
-        if not low or it['identifier'] in have: continue
-        in_t = any((' ' + x + ' ') in st for x in alts)
-        in_i = len(squeezed) >= 8 and squeezed in idl
-        if not (in_t or in_i): continue
-        if (amb or not in_t) and not DISC.search(st): continue
-        if JUNK.search(low) or FOREIGN.search(low) or CODES.search(str(t)) or low.endswith('?') and not title.endswith('?'): continue
-        if re.search(r'\b\d{1,2}[/.-]\d{1,2}[/.-](0[5-9]|1\d|2\d)\b', low): continue
+        if it['identifier'] in have: continue
         lang = it.get('language')
         if isinstance(lang, list): lang = ' '.join(lang)
         if lang and not re.search(r'eng|english|^en\b', str(lang).lower()): continue
-        if MODERN.search(low) and not ERA.search(low): continue
-        sm = re.search(r'\b(?:season|s)\s?0?(\d{1,2})\b', st)
-        if sm and int(sm.group(1)) > (2004 - a + 2): continue
+        if not r2ok(sh, t, it['identifier']): continue
         it['title'] = t; it['k'] = title; it['yr'] = a
         keep.append(it)
     return title, len(items), keep
@@ -371,8 +398,14 @@ for it in cands:
         p['k'] = it['k']; res.append(p)
     else: todo.append(it)
 _ci = set(it['identifier'] for it in cands)
+R2D = {x[0]: x for x in R2}
+res = [x for x in res if x['k'] not in R2D or r2ok(R2D[x['k']], x['t'], x['i'])]
+purged = 0
 for _i, _p in prev.items():
-    if _i not in _ci and _i not in have: res.append(_p)
+    if _i in _ci or _i in have: continue
+    if _p['k'] in R2D and not r2ok(R2D[_p['k']], _p['t'], _i): purged += 1; continue
+    res.append(_p)
+print('purged', purged, flush=True)
 print('reused', len(res), 'to look up', len(todo), flush=True)
 cands = todo
 with ThreadPoolExecutor(THREADS) as ex:
@@ -394,6 +427,23 @@ print('ROUTE2 TABLE show items files hours rawhits new_candidates flag')
 for sh in R2:
     r = tab[sh[0]]
     print('  %-44s %5d %6d %7.1f %7d %6d %s' % (sh[0], r[0], r[1], r[2] / 3600, r2raw.get(sh[0], 0), r2found[sh[0]], 'MISSING' if not r[0] else 'THIN' if r[1] < 15 else 'FOUND'))
+cov = collections.defaultdict(lambda: [0, 0, 0.0])
+def _cov(x):
+    for sh in R2:
+        if r2ok(sh, x.get('t', ''), x.get('i', '')):
+            c = cov[sh[0]]; c[0] += 1; c[1] += len(x.get('f') or []); c[2] += sum(f[1] for f in (x.get('f') or [])) / 3600
+            return
+for _p in glob.glob(os.path.join(OUT, '*.json.gz')):
+    if os.path.basename(_p) in ('schoolage.json.gz', 'dates.json.gz', 'epguide.json.gz', 'adsdates.json.gz', 'ads.json.gz', 'movies.json.gz', 'sports.json.gz', 'filler.json.gz'): continue
+    try:
+        for _x in json.load(gzip.open(_p, 'rt', encoding='utf-8')):
+            if isinstance(_x, dict) and 'i' in _x and 'f' in _x: _cov(_x)
+    except Exception as _e: print('skip', _p, _e)
+for _x in res: _cov(_x)
+print('COVERAGE ALL CATALOGS show items files hours flag')
+for sh in R2:
+    c = cov[sh[0]]
+    print('  %-44s %5d %6d %7.1f %s' % (sh[0], c[0], c[1], c[2], 'MISSING' if not c[0] else 'THIN' if c[1] < 15 else 'FOUND'))
 print('TOTAL items', len(res), 'files', sum(len(x['f']) for x in res), 'hours', round(sum(sum(f[1] for f in x['f']) for x in res) / 3600))
 print('ERA YEARS', sorted(collections.Counter(x['e'] for x in res).items()))
 random.seed(7)
