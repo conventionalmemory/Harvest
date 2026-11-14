@@ -49,6 +49,7 @@ def core(t):
         if s2 == s: break
         s = s2
     return s
+X_ESSAY = r"\b(secret galaxy|the history of|history of the|the failure of|untold history|a rant|rant on|annotated|nerdist|opening and closing|opening to|closing to|score suite|ai upscale[d]?|4k ai|colon movie|movie film for theaters|w/ commentary|with commentary|reacts?|my reaction|guide to|explained|ranked|ranking|top \d+|every episode|iceberg|lost media|analysis|video essay|parte|ilustre|vs the world|for pb|iso files?|dvd iso|bluray iso|\[iso\])\b"
 BRIT = r'\b(bbc|itv|channel 4|sky one|rte|uk version)\b'
 NAMES = sorted(set(n.lower() for s0 in SHOWS for n in [s0['title']] + s0.get('alt', [])), key=lambda n: -len(n))
 NAMERX = re.compile('|'.join(re.escape(n) for n in NAMES))
@@ -56,7 +57,8 @@ def ok_title(t, brit=False):
     if not t: return False
     low = t.lower() + ' '
     low = re.sub(r'(with|w/|w|incl\.?|including|original) ?(original |the )?(commercials?|ads)|commercials included|adult swim', ' ', low)
-    low = NAMERX.sub(' ', low)
+    low = NAMERX.sub(' ', low.replace('_', ' '))
+    if re.search(X_ESSAY, low): return False
     if brit: low = re.sub(BRIT, ' ', low)
     if re.search(r'[^\x00-\xff‐-‧™]', t) or re.search(r'[ãõçñ]', low): return False
     if re.search(X_FOR, low) or re.search(X_JUNK, low) or re.search(X_MOD, low): return False
@@ -90,7 +92,7 @@ def keep(x):
         if not any(r in blob for r in s['req']): return False
     my = re.match(r'(\d{4})', str(x.get('y') or x.get('d') or ''))
     oy = [int(v) for v in re.findall(r'\d{4}', s.get('original_run', ''))]
-    if my and oy and 1950 <= int(my.group(1)) <= 2004 and not (oy[0] - 1 <= int(my.group(1)) <= oy[-1] + 1) and not re.search(r'(?<!\d)(19[5-9]\d|200[0-4])(?!\d)', x['t']): return False
+    if my and oy and 1900 <= int(my.group(1)) <= 2004 and not (oy[0] - 1 <= int(my.group(1)) <= oy[-1] + 1) and not re.search(r'(?<!\d)(19[6-9]\d|200[0-4])(?!\d)', x['t']): return False
     if set(x.get('c') or []) & XCOL: return False
     if re.match(r'^[a-z]{4,10}-[A-Z]', x['i']) and not re.search(r'(19[4-9]\d|200[0-4])', x['t']): return False
     dy = re.match(r'(\d{4})', str(x.get('d') or ''))
@@ -124,9 +126,15 @@ if MODE == 'plan':
     print('known', len(have), 'shows', len(SHOWS), flush=True)
     def find(k):
         s = SHOWS[k]
-        q = 'mediatype:movies AND title:(' + ' OR '.join('"' + qtitle(a) + '"' for a in [s['title']] + s.get('alt', [])) + ')'
-        if s.get('ambiguous'): q += ' AND ' + CTXQ
-        return k, scrape(q)
+        names = [s['title']] + s.get('alt', [])
+        q = 'mediatype:movies AND title:(' + ' OR '.join('"' + qtitle(a) + '"' for a in names) + ')'
+        if s.get('ambiguous') and not s.get('chase'): q += ' AND ' + CTXQ
+        got = scrape(q)
+        if s.get('chase') or not s.get('ambiguous'):
+            ws = [w for w in qtitle(s['title']).split() if len(w) > 2 and w.lower() not in ('the', 'and', 'with', 'for')]
+            if len(ws) >= 2: got += scrape('mediatype:movies AND title:(' + ' AND '.join(ws) + ')')
+            got += scrape('mediatype:movies AND subject:(' + ' OR '.join('"' + qtitle(a) + '"' for a in names) + ')')
+        return k, got
     seen = {}; hits = collections.Counter(); raw = collections.Counter()
     with ThreadPoolExecutor(10) as ex:
         for k, items in ex.map(find, range(len(SHOWS))):
