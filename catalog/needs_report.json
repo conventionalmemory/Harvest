@@ -1,7 +1,7 @@
 {
-"updated": "2026-11-14 12:02 UTC",
-"items": 51,
-"hours": 935,
+"updated": "2026-11-14 12:12 UTC",
+"items": 37,
+"hours": 836,
 "priority": {
 "0": {
 "shows": 7,
@@ -9,8 +9,8 @@
 "thin": 2,
 "maybe": 0,
 "missing": 0,
-"items": 51,
-"hours": 935
+"items": 37,
+"hours": 837
 },
 "1": {
 "shows": 327,
@@ -57,21 +57,257 @@
 "Star Trek: Deep Space Nine": {
 "episodes": 176,
 "held_elsewhere": 10,
-"in_this_file": 71,
-"covered": 72,
+"in_this_file": 4,
+"covered": 11,
 "seasons": {
-"S01": "20/20",
-"S02": "26/26",
-"S03": "23/26",
+"S01": "3/20",
+"S02": "7/26",
+"S03": "0/26",
 "S04": "1/26",
 "S05": "0/26",
 "S06": "0/26",
-"S07": "2/26"
+"S07": "0/26"
 },
 "missing": [
 [
+"S01E01",
+"Emissary, Part I"
+],
+[
+"S01E02",
+"Emissary, Part II"
+],
+[
+"S01E03",
+"Past Prologue"
+],
+[
+"S01E04",
+"A Man Alone"
+],
+[
+"S01E05",
+"Babel"
+],
+[
+"S01E06",
+"Captive Pursuit"
+],
+[
+"S01E07",
+"Q-Less"
+],
+[
+"S01E08",
+"Dax"
+],
+[
+"S01E10",
+"Move Along Home"
+],
+[
+"S01E11",
+"The Nagus"
+],
+[
+"S01E12",
+"Vortex"
+],
+[
+"S01E13",
+"Battle Lines"
+],
+[
+"S01E14",
+"The Storyteller"
+],
+[
+"S01E16",
+"If Wishes Were Horses"
+],
+[
+"S01E17",
+"The Forsaken"
+],
+[
+"S01E19",
+"Duet"
+],
+[
+"S01E20",
+"In the Hands of the Prophets"
+],
+[
+"S02E01",
+"The Homecoming"
+],
+[
+"S02E02",
+"The Circle"
+],
+[
+"S02E03",
+"The Siege"
+],
+[
+"S02E04",
+"Invasive Procedures"
+],
+[
+"S02E05",
+"Cardassians"
+],
+[
+"S02E06",
+"Melora"
+],
+[
+"S02E12",
+"The Alternate"
+],
+[
+"S02E13",
+"Armageddon Game"
+],
+[
+"S02E14",
+"Whispers"
+],
+[
+"S02E16",
+"Shadowplay"
+],
+[
+"S02E17",
+"Playing God"
+],
+[
+"S02E18",
+"Profit and Loss"
+],
+[
+"S02E19",
+"Blood Oath"
+],
+[
+"S02E20",
+"The Maquis, Part I"
+],
+[
+"S02E21",
+"The Maquis, Part II"
+],
+[
+"S02E22",
+"The Wire"
+],
+[
+"S02E24",
+"The Collaborator"
+],
+[
+"S02E25",
+"Tribunal"
+],
+[
+"S02E26",
+"The Jem'Hadar"
+],
+[
+"S03E01",
+"The Search, Part I"
+],
+[
+"S03E02",
+"The Search, Part II"
+],
+[
 "S03E03",
 "The House of Quark"
+],
+[
+"S03E04",
+"Equilibrium"
+],
+[
+"S03E05",
+"Second Skin"
+],
+[
+"S03E06",
+"The Abandoned"
+],
+[
+"S03E07",
+"Civil Defense"
+],
+[
+"S03E08",
+"Meridian"
+],
+[
+"S03E09",
+"Defiant"
+],
+[
+"S03E10",
+"Fascination"
+],
+[
+"S03E11",
+"Past Tense, Part I"
+],
+[
+"S03E12",
+"Past Tense, Part II"
+],
+[
+"S03E13",
+"Life Support"
+],
+[
+"S03E14",
+"Heart of Stone"
+],
+[
+"S03E15",
+"Destiny"
+],
+[
+"S03E16",
+"Prophet Motive"
+],
+[
+"S03E17",
+"Visionary"
+],
+[
+"S03E18",
+"Distant Voices"
+],
+[
+"S03E19",
+"Through the Looking Glass"
+],
+[
+"S03E20",
+"Improbable Cause"
+],
+[
+"S03E21",
+"The Die is Cast"
+],
+[
+"S03E22",
+"Explorers"
+],
+[
+"S03E23",
+"Family Business"
+],
+[
+"S03E24",
+"Shakaar"
 ],
 [
 "S03E25",
@@ -484,6 +720,14 @@
 [
 "S07E24",
 "The Dogs of War"
+],
+[
+"S07E25",
+"What You Leave Behind, Part I"
+],
+[
+"S07E26",
+"What You Leave Behind, Part II"
 ]
 ],
 "missing_but_in_doubtful_items": []
@@ -558,7 +802,7 @@
 },
 "Star Trek: Voyager": {
 "episodes": 172,
-"held_elsewhere": 62,
+"held_elsewhere": 61,
 "in_this_file": 172,
 "covered": 172,
 "seasons": {
@@ -597,11 +841,11 @@
 1969
 ],
 "guide_episodes": 79,
-"items": 11,
-"maybe": 4,
-"files": 93,
-"hours": 86,
-"episodes": 80,
+"items": 10,
+"maybe": 5,
+"files": 89,
+"hours": 82,
+"episodes": 79,
 "other_files": 0,
 "status": "FOUND"
 },
@@ -615,11 +859,11 @@
 1999
 ],
 "guide_episodes": 176,
-"items": 4,
+"items": 0,
 "maybe": 0,
-"files": 88,
-"hours": 79,
-"episodes": 74,
+"files": 0,
+"hours": 0,
+"episodes": 0,
 "other_files": 0,
 "status": "THIN"
 },
@@ -633,10 +877,10 @@
 2005
 ],
 "guide_episodes": 98,
-"items": 3,
+"items": 1,
 "maybe": 0,
-"files": 99,
-"hours": 74,
+"files": 97,
+"hours": 71,
 "episodes": 98,
 "other_files": 0,
 "status": "FOUND"
@@ -669,10 +913,10 @@
 1994
 ],
 "guide_episodes": 178,
-"items": 24,
+"items": 20,
 "maybe": 4,
-"files": 338,
-"hours": 400,
+"files": 332,
+"hours": 391,
 "episodes": 179,
 "other_files": 0,
 "status": "FOUND"
@@ -687,10 +931,10 @@
 2001
 ],
 "guide_episodes": 172,
-"items": 3,
+"items": 2,
 "maybe": 0,
-"files": 337,
-"hours": 261,
+"files": 336,
+"hours": 260,
 "episodes": 172,
 "other_files": 0,
 "status": "FOUND"
@@ -705,10 +949,10 @@
 1991
 ],
 "guide_episodes": 30,
-"items": 4,
+"items": 2,
 "maybe": 0,
-"files": 33,
-"hours": 28,
+"files": 31,
+"hours": 26,
 "episodes": 30,
 "other_files": 0,
 "status": "FOUND"
