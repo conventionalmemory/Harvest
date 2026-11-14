@@ -1,0 +1,838 @@
+[
+{
+"title": "MTV",
+"ct": "mtv",
+"run": "1981-2004",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(aircheck|air check|full broadcast|broadcast|recorded|recording|vhs|betamax|tape|with commercials|w commercials|woc|commercials|block|hours?|vj|vjs|off air|aired|countdown|premiere|marathon|weekend|special)\\b",
+"q": [
+"title:(mtv) AND title:(1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993 OR 1994 OR 1995 OR 1996 OR 1997 OR 1998 OR 1999 OR 2000 OR 2001 OR 2002 OR 2003 OR 2004)",
+"title:(mtv) AND (title:(aircheck OR broadcast OR vhs OR commercials OR recording OR block OR vj OR tape) OR description:(\"with commercials\" OR aircheck OR \"recorded from\" OR \"taped off\"))",
+"subject:(mtv) AND (subject:(aircheck OR vhs OR \"with commercials\" OR 1980s OR 1990s) OR title:(vhs OR aircheck OR broadcast))"
+],
+"net": "mtv"
+},
+{
+"title": "MTV VJs",
+"ct": "mtv",
+"run": "1981-2004",
+"alt": [
+"Martha Quinn",
+"Mark Goodman",
+"Nina Blackwood",
+"Alan Hunter",
+"J.J. Jackson",
+"JJ Jackson",
+"Kurt Loder",
+"Adam Curry",
+"Downtown Julie Brown",
+"Carson Daly",
+"Kennedy MTV",
+"Matt Pinfield",
+"Riki Rachtman",
+"Fab 5 Freddy",
+"Dave Kendall",
+"Kevin Seal",
+"Martha Quinn MTV"
+],
+"need": "\\b(mtv|vj|vjs)\\b",
+"net": "mtv"
+},
+{
+"title": "Headbangers Ball",
+"ct": "mtv",
+"run": "1987-1995",
+"alt": [
+"Headbanger's Ball",
+"Headbangers Ball MTV"
+],
+"net": "mtv"
+},
+{
+"title": "Yo! MTV Raps",
+"ct": "mtv",
+"run": "1988-1995",
+"alt": [
+"Yo MTV Raps"
+],
+"net": "mtv"
+},
+{
+"title": "120 Minutes",
+"ct": "mtv",
+"run": "1986-2003",
+"alt": [
+"MTV 120 Minutes"
+],
+"net": "mtv",
+"need": "\\b(mtv|pinfield|kendall|m2)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "Club MTV",
+"ct": "mtv",
+"run": "1987-1992",
+"net": "mtv"
+},
+{
+"title": "Dial MTV",
+"ct": "mtv",
+"run": "1986-1991",
+"net": "mtv"
+},
+{
+"title": "Total Request Live",
+"ct": "mtv",
+"run": "1998-2004",
+"alt": [
+"MTV TRL",
+"TRL MTV"
+],
+"net": "mtv"
+},
+{
+"title": "MTV Unplugged",
+"ct": "mtv",
+"run": "1989-2004",
+"alt": [
+"Unplugged MTV"
+],
+"net": "mtv"
+},
+{
+"title": "MTV Top 20 Video Countdown",
+"ct": "countdown",
+"run": "1984-1998",
+"alt": [
+"MTV Top 20 Countdown",
+"MTV Top 20",
+"Top 20 Video Countdown",
+"MTV Top 100",
+"MTV Top 100 Videos",
+"MTV Year End Countdown"
+],
+"net": "mtv"
+},
+{
+"title": "The Week in Rock",
+"ct": "mtv",
+"run": "1987-1997",
+"alt": [
+"Week in Rock",
+"MTV News"
+],
+"net": "mtv",
+"need": "\\b(mtv|loder)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "MTV Video Music Awards",
+"ct": "awards",
+"run": "1984-2004",
+"alt": [
+"Video Music Awards",
+"MTV VMA",
+"MTV VMAs",
+"VMAs"
+],
+"net": "mtv",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\bmtv\\b"
+},
+{
+"title": "MTV Movie Awards",
+"ct": "awards",
+"run": "1992-2004",
+"net": "mtv",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "MTV Spring Break",
+"ct": "mtv",
+"run": "1986-2004",
+"alt": [
+"Spring Break MTV"
+],
+"net": "mtv"
+},
+{
+"title": "MTV Beach House",
+"ct": "mtv",
+"run": "1993-2004",
+"net": "mtv"
+},
+{
+"title": "Alternative Nation",
+"ct": "mtv",
+"run": "1992-1997",
+"net": "mtv",
+"need": "\\b(mtv|kennedy)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "MTV Jams",
+"ct": "mtv",
+"run": "1992-2004",
+"net": "mtv"
+},
+{
+"title": "The Grind",
+"ct": "mtv",
+"run": "1992-1997",
+"alt": [
+"MTV The Grind",
+"MTV Grind"
+],
+"net": "mtv",
+"need": "\\bmtv\\b"
+},
+{
+"title": "MTV Rockumentary",
+"ct": "mtv",
+"run": "1989-1996",
+"alt": [
+"Rockumentary"
+],
+"net": "mtv"
+},
+{
+"title": "MTV New Year",
+"ct": "mtv",
+"run": "1984-2004",
+"alt": [
+"MTV New Year's Eve",
+"MTV's New Year's Eve",
+"MTV Rock N Roll New Year"
+],
+"net": "mtv"
+},
+{
+"title": "MTV Live",
+"ct": "mtv",
+"run": "1997-1998",
+"alt": [
+"MTV Live and Loud",
+"MTV Saturday Night Concert",
+"MTV Concert"
+],
+"net": "mtv",
+"need": "\\bmtv\\b"
+},
+{
+"title": "MTV 2",
+"ct": "mtv",
+"run": "1996-2004",
+"alt": [
+"MTV2",
+"M2 MTV"
+],
+"net": "mtv",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(aircheck|air check|full broadcast|broadcast|recorded|recording|vhs|betamax|tape|with commercials|w commercials|woc|commercials|block|hours?|vj|vjs|off air|aired|countdown|premiere|marathon|weekend|special)\\b"
+},
+{
+"title": "MTV Classic blocks",
+"ct": "mtv",
+"run": "1984-2004",
+"alt": [
+"Closet Classics",
+"MTV Classic",
+"MTV Rock Block",
+"MTV Basement Tapes",
+"Basement Tapes MTV",
+"MTV Friday Night Video Fights",
+"MTV Most Wanted",
+"MTV Prime",
+"MTV Rocks Off",
+"Buzz Bin",
+"MTV Buzz Clips",
+"Superock",
+"MTV Hard 30",
+"MTV Hard 60",
+"Hard 60",
+"MTV Post Modern",
+"PostModern MTV",
+"MTV Raps",
+"Fade to Black MTV",
+"Sisters in the Name of Rap",
+"MTV Sports",
+"House of Style"
+],
+"net": "mtv",
+"need": "\\b(mtv|m2)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "VH1",
+"ct": "vh1",
+"run": "1985-2004",
+"net": "vh1",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(aircheck|air check|full broadcast|broadcast|recorded|recording|vhs|betamax|tape|with commercials|w commercials|woc|commercials|block|hours?|vj|vjs|off air|aired|countdown|premiere|marathon|weekend|special)\\b"
+},
+{
+"title": "Pop-Up Video",
+"ct": "vh1",
+"run": "1996-2002",
+"alt": [
+"Pop Up Video",
+"VH1 Pop Up Video"
+],
+"net": "vh1"
+},
+{
+"title": "Behind the Music",
+"ct": "vh1",
+"run": "1997-2004",
+"alt": [
+"VH1 Behind the Music"
+],
+"net": "vh1",
+"need": "\\b(vh1|vh-1|episode|season)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "VH1 Storytellers",
+"ct": "vh1",
+"run": "1996-2004",
+"alt": [
+"Storytellers VH1"
+],
+"net": "vh1"
+},
+{
+"title": "VH1 Top 10 Countdown",
+"ct": "countdown",
+"run": "1994-2004",
+"alt": [
+"VH1 Top 20 Countdown",
+"VH1 Top 20 Video Countdown",
+"VH1 Countdown",
+"VH1 Top 21 Countdown",
+"VH1 100 Greatest",
+"100 Greatest Artists of Hard Rock",
+"100 Greatest Videos"
+],
+"net": "vh1"
+},
+{
+"title": "VH1 Divas",
+"ct": "vh1",
+"run": "1998-2004",
+"alt": [
+"Divas Live",
+"VH1 Divas Live"
+],
+"net": "vh1"
+},
+{
+"title": "VH1 Honors",
+"ct": "awards",
+"run": "1994-1997",
+"alt": [
+"VH1 Fashion Awards",
+"VH1 Vogue Fashion Awards",
+"My VH1 Music Awards"
+],
+"net": "vh1"
+},
+{
+"title": "VH1 specials",
+"ct": "vh1",
+"run": "1985-2004",
+"alt": [
+"VH1 to One",
+"VH1 Legends",
+"Legends VH1",
+"Hard Rock Live",
+"VH1 Rock Show",
+"8 Track Flashback",
+"8-Track Flashback",
+"American Bandstand VH1",
+"VH1 Big 80s",
+"Big 80s VH1",
+"VH1 Classic",
+"Where Are They Now VH1",
+"Before They Were Rock Stars",
+"VH1 Crossroads",
+"Sex Appeal VH1",
+"VH1 Flix",
+"Rock of Ages VH1",
+"My Generation VH1",
+"New Visions VH1"
+],
+"net": "vh1",
+"need": "\\b(vh1|vh-1)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "Night Tracks",
+"ct": "block",
+"run": "1983-1992",
+"alt": [
+"Nighttracks",
+"Night Tracks TBS",
+"Chartbusters Night Tracks",
+"Power Play Night Tracks",
+"Night Tracks Chartbusters"
+],
+"net": "tbs"
+},
+{
+"title": "Night Flight",
+"ct": "block",
+"run": "1981-1996",
+"alt": [
+"USA Night Flight",
+"Night Flight USA"
+],
+"net": "usa",
+"need": "\\b(usa|network|take off|new wave theatre|video|episode|19(8\\d|9[0-6]))\\b"
+},
+{
+"title": "Friday Night Videos",
+"ct": "block",
+"run": "1983-2002",
+"alt": [
+"NBC Friday Night Videos",
+"Friday Night NBC videos"
+],
+"net": "nbc"
+},
+{
+"title": "Solid Gold",
+"ct": "countdown",
+"run": "1980-1988",
+"alt": [
+"Solid Gold Hits",
+"Solid Gold 85",
+"Solid Gold 86",
+"Solid Gold In Concert",
+"Solid Gold Countdown"
+],
+"net": "syn",
+"need": "\\b(marilyn mccoo|dionne warwick|rick dees|andy gibb|rex smith|arsenio|dancers|countdown|episode|show|tv|19(8[0-8]))\\b"
+},
+{
+"title": "American Bandstand",
+"ct": "block",
+"run": "1984-1989",
+"alt": [
+"Dick Clark's American Bandstand",
+"New American Bandstand"
+],
+"net": "abc",
+"need": "(?<!\\d)(198[4-9])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-]8[4-9](?!\\d)"
+},
+{
+"title": "Dance Party USA",
+"ct": "block",
+"run": "1986-1992",
+"alt": [
+"Dancin' On Air",
+"Dancin On Air"
+],
+"net": "usa"
+},
+{
+"title": "Club Dance",
+"ct": "country",
+"run": "1991-1999",
+"alt": [
+"Club Dance at the White Horse Cafe"
+],
+"net": "tnn",
+"need": "\\b(tnn|white horse|nashville|199\\d)\\b"
+},
+{
+"title": "The Box",
+"ct": "block",
+"run": "1985-2001",
+"alt": [
+"Video Jukebox Network",
+"The Box Music Television",
+"Jukebox Network",
+"The Box Music Television You Control"
+],
+"net": "box",
+"need": "\\b(video jukebox|music television|jukebox|music channel|music network|request|1-900|900 number)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "America's Top 10",
+"ct": "countdown",
+"run": "1980-1992",
+"alt": [
+"Casey Kasem's America's Top 10",
+"Americas Top 10",
+"America’s Top Ten",
+"America's Top Ten"
+],
+"net": "syn"
+},
+{
+"title": "Hit Video USA",
+"ct": "block",
+"run": "1985-1990",
+"net": "syn"
+},
+{
+"title": "Radio 1990",
+"ct": "block",
+"run": "1983-1986",
+"alt": [
+"USA Radio 1990"
+],
+"net": "usa",
+"need": "\\b(usa|kathryn kinley|video|episode|198[3-6])\\b"
+},
+{
+"title": "MV3",
+"ct": "block",
+"run": "1982-1985",
+"net": "syn",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(video|music|richard blade|dance)\\b"
+},
+{
+"title": "FM-TV",
+"ct": "block",
+"run": "1983-1986",
+"alt": [
+"FMTV"
+],
+"net": "syn",
+"need": "\\b(video|music)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "Rock 'N' America",
+"ct": "block",
+"run": "1984-1985",
+"alt": [
+"Rock N America"
+],
+"net": "syn"
+},
+{
+"title": "New York Hot Tracks",
+"ct": "block",
+"run": "1983-1989",
+"alt": [
+"Hot Tracks",
+"ABC Rocks"
+],
+"net": "abc"
+},
+{
+"title": "Video Music Box",
+"ct": "block",
+"run": "1983-2004",
+"alt": [
+"Ralph McDaniels Video Music Box"
+],
+"net": "syn"
+},
+{
+"title": "V66",
+"ct": "block",
+"run": "1985-1986",
+"alt": [
+"V-66"
+],
+"net": "syn",
+"need": "\\b(video|music|boston)\\b"
+},
+{
+"title": "Top 40 Videos",
+"ct": "countdown",
+"run": "1984-1990",
+"alt": [
+"Top 40 Video",
+"CHR video countdown",
+"Rick Dees Weekly Top 40 TV",
+"Into the Night Starring Rick Dees",
+"Countdown America",
+"Rock Video Countdown",
+"Video Countdown"
+],
+"net": "syn",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(tv|countdown|video)\\b"
+},
+{
+"title": "The Midnight Special",
+"ct": "concert",
+"run": "1984-1984",
+"net": "nbc"
+},
+{
+"title": "Rock Concert",
+"ct": "concert",
+"run": "1984-2004",
+"alt": [
+"Don Kirshner's Rock Concert",
+"King Biscuit Flower Hour",
+"In Concert ABC",
+"ABC In Concert",
+"In Concert 91",
+"In Concert 92",
+"Showtime Concert",
+"HBO Concert",
+"HBO World Stage",
+"Cinemax Sessions",
+"Westwood One concert"
+],
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(kirshner|king biscuit|abc|hbo|showtime|cinemax)\\b"
+},
+{
+"title": "Sessions at West 54th",
+"ct": "concert",
+"run": "1997-2000",
+"alt": [
+"Sessions at West 54th Street",
+"Hard Rock Live VH1",
+"Live from the House of Blues",
+"House of Blues Live",
+"Live by Request",
+"A&E Live by Request",
+"Sunday Night NBC",
+"Night Music",
+"Michelob Presents Night Music",
+"Sunday Night with David Sanborn"
+]
+},
+{
+"title": "Grammy Awards",
+"ct": "awards",
+"run": "1984-2004",
+"alt": [
+"Grammys",
+"The Grammys",
+"Annual Grammy Awards",
+"Grammy Awards Show"
+],
+"net": "cbs",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(\\d\\d(st|nd|rd|th))\\b",
+"ord": 1958
+},
+{
+"title": "American Music Awards",
+"ct": "awards",
+"run": "1984-2004",
+"alt": [
+"AMAs",
+"Annual American Music Awards"
+],
+"net": "abc",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)|\\b(\\d\\d(st|nd|rd|th))\\b",
+"ord": 1973
+},
+{
+"title": "Billboard Music Awards",
+"ct": "awards",
+"run": "1990-2004",
+"alt": [
+"Billboard Awards"
+],
+"net": "fox",
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "Rock and Roll Hall of Fame",
+"ct": "awards",
+"run": "1986-2004",
+"alt": [
+"Rock & Roll Hall of Fame Induction",
+"Rock Hall Induction",
+"World Music Awards",
+"Radio Music Awards",
+"Blockbuster Entertainment Awards"
+],
+"need": "(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "Live Aid",
+"ct": "concert",
+"run": "1985-1985",
+"alt": [
+"Live Aid 1985",
+"MTV Live Aid",
+"Live Aid ABC",
+"Live Aid MTV broadcast"
+],
+"net": "mtv",
+"need": "\\b(mtv|abc|broadcast|1985|live aid)\\b"
+},
+{
+"title": "Concert specials",
+"ct": "concert",
+"run": "1984-2004",
+"alt": [
+"Woodstock 94",
+"Woodstock '94",
+"Woodstock 99",
+"Woodstock '99",
+"Lollapalooza",
+"US Festival",
+"Amnesty International Human Rights Now",
+"Conspiracy of Hope",
+"Moscow Music Peace Festival",
+"Monsters of Rock",
+"Freddie Mercury Tribute Concert",
+"Knebworth 1990",
+"Rock in Rio",
+"Nelson Mandela 70th Birthday Tribute",
+"Atlantic Records 40th Anniversary",
+"Motown 25",
+"Motown 30",
+"Hands Across America",
+"We Are the World",
+"Tibetan Freedom Concert",
+"Concert for New York City",
+"America A Tribute to Heroes",
+"Concert for the Rock and Roll Hall of Fame",
+"Super Bowl Halftime",
+"Bob Dylan 30th Anniversary Concert",
+"Elvis Aloha from Hawaii",
+"Michael Jackson 30th Anniversary",
+"Michael Jackson Dangerous Tour Bucharest",
+"Madonna Blond Ambition",
+"Madonna Girlie Show",
+"Garth Brooks Live from Central Park",
+"Simon and Garfunkel Concert in Central Park",
+"Paul Simon Concert in the Park",
+"Barbra Streisand The Concert",
+"Eagles Hell Freezes Over",
+"Fleetwood Mac The Dance",
+"Page and Plant Unledded",
+"Nirvana Live and Loud",
+"Pearl Jam Unplugged",
+"Nirvana Unplugged",
+"Eric Clapton Unplugged",
+"Mariah Carey Unplugged",
+"Kiss Unplugged",
+"Alice in Chains Unplugged",
+"Tony Bennett Unplugged",
+"10,000 Maniacs Unplugged",
+"Rod Stewart Unplugged",
+"Neil Young Unplugged",
+"Bob Dylan Unplugged",
+"LL Cool J Unplugged",
+"Jay-Z Unplugged",
+"Lauryn Hill Unplugged",
+"Stone Temple Pilots Unplugged",
+"Oasis Unplugged",
+"R.E.M. Unplugged",
+"Bruce Springsteen Plugged",
+"Aerosmith Unplugged",
+"Paul McCartney Unplugged",
+"Elton John Unplugged",
+"Stevie Ray Vaughan Unplugged",
+"Hole Unplugged",
+"Alanis Morissette Unplugged",
+"Duran Duran Unplugged",
+"Live Unplugged",
+"Soul Asylum Unplugged",
+"Cranberries Unplugged",
+"Sting Unplugged",
+"Babyface Unplugged",
+"George Michael Unplugged",
+"Staind Unplugged",
+"Dashboard Confessional Unplugged"
+],
+"need": "\\b(broadcast|mtv|vh1|hbo|abc|nbc|cbs|fox|pbs|tv|ppv|pay per view|vhs|full|concert|unplugged|special|laserdisc|complete)\\b|(?<!\\d)(19(8[4-9]|9\\d)|200[0-4])(?!\\d)|(?<!\\d)\\d{1,2}[./-]\\d{1,2}[./-](8[4-9]|9\\d|0[0-4])(?!\\d)"
+},
+{
+"title": "Music video blocks",
+"ct": "block",
+"run": "1984-2004",
+"alt": [
+"music videos recorded",
+"music videos vhs",
+"music video block",
+"music videos 1984",
+"music videos 1985",
+"music videos 1986",
+"music videos 1987",
+"music videos 1988",
+"music videos 1989",
+"music videos 1990",
+"music videos 1991",
+"music videos 1992",
+"music videos 1993",
+"music videos 1994",
+"music videos 1995",
+"music videos 1996",
+"music videos 1997",
+"music videos 1998",
+"music videos 1999",
+"music videos 2000",
+"music videos 2001",
+"music videos 2002",
+"music videos 2003",
+"music videos 2004",
+"80s music videos vhs",
+"90s music videos vhs",
+"music videos off air",
+"music videos taped",
+"videos taped off MTV",
+"videos recorded from MTV",
+"recorded off MTV",
+"taped from MTV",
+"taped off MTV",
+"recorded from VH1",
+"taped from VH1",
+"video hits vhs",
+"Video Hits One",
+"WTBS Night Tracks",
+"Z Music Television",
+"MOR Music TV",
+"Hit List TV",
+"Power Play Dancin",
+"The Tube Music Network",
+"Fuse TV",
+"MTV X",
+"MTV Hits",
+"California Music Channel",
+"Music Plus TV",
+"Videowave",
+"Video Rock",
+"Video One Richard Blade",
+"MV Network",
+"Odyssey video show",
+"U68",
+"WWHT U68",
+"WLXI TV 61 video",
+"TV5 video hits",
+"Video Beat",
+"Teletunes",
+"FM2TV",
+"Video 22",
+"K-TV videos",
+"KRLR Vusic 21",
+"Power Vision",
+"JBTV",
+"Jukebox Saturday Night TV",
+"Something Else video show",
+"Goodnight LA",
+"Videos 24",
+"Videopolis",
+"Showvideo",
+"Bandstand 1987",
+"Soul Beat TV",
+"Video Trax",
+"Rhythm and Raps video",
+"Urban X-pressions",
+"Rock Videos 1984",
+"Rock Videos 1985",
+"Top Rock TV",
+"Rock of the 80s TV",
+"Rock n Roll Evening News",
+"Rock N Roll Evening News",
+"ROCK-TV",
+"Rock TV 1985",
+"Video Clipz",
+"Video Zone 1986",
+"Hot Hit Video",
+"Video Wave",
+"Video Disc Jockey",
+"Radio Vision video",
+"Rockworld",
+"Rock World college video",
+"Campus Network video",
+"NCTV New Grooves",
+"New Grooves",
+"Deja View Phil Collins",
+"Deja View video",
+"Now Music TV",
+"Classic MTV"
+]
+}
+]
