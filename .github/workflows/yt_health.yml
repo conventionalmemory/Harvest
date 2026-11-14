@@ -3,16 +3,16 @@ on:
   workflow_dispatch:
     inputs:
       scope:
-        description: all, or recheck for ids that were not ok in the last result plus new ids
+        description: all, recheck (ids that were not ok in the last result plus new ids) or list (only the ids given below, nothing written)
         default: all
       limit:
         description: check only this many ids, 0 for all
         default: "0"
       ids:
-        description: optional video ids separated by commas, checked and printed only
+        description: optional video ids separated by commas, checked on the side and printed only
         default: ""
       from_run:
-        description: optional id of an earlier lookup run, the ids it found not embeddable are checked and printed only
+        description: optional id of an earlier lookup run, the ids it found not embeddable are checked on the side and printed only
         default: ""
 permissions:
   contents: write
@@ -89,7 +89,7 @@ jobs:
       - name: Merge
         run: ls -la parts; MODE=merge THREADS=3 GAP=0.3 BUDGET_MIN=90 python3 harvest/yt_health.py
       - name: Commit
-        if: ${{ (inputs.limit == '0' || inputs.limit == '') && inputs.ids == '' && inputs.from_run == '' }}
+        if: ${{ (inputs.limit == '0' || inputs.limit == '') && inputs.scope != 'list' }}
         run: |
           git config user.name "Conventional Memory"
           git config user.email "conventionalmemory@users.noreply.github.com"

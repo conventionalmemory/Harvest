@@ -406,20 +406,23 @@ def plan():
     total = len(ids)
     scope = os.environ.get('SCOPE', 'all').strip() or 'all'
     L = listed()
-    if (os.environ.get('IDS', '').strip() or os.environ.get('FROM_RUN', '').strip()) and not L:
+    if (os.environ.get('IDS', '').strip() or os.environ.get('FROM_RUN', '').strip() or scope == 'list') and not L:
         print('nothing to check in the given list'); sys.exit(1)
-    if L:
-        scope = 'list'; ids = L
+    have = set(ids)
+    extra = [v for v in L if v not in have]
+    if scope == 'list':
+        ids = []
     elif scope == 'recheck':
         ids = [v for v in ids if (prev.get(v) or ['new'])[0] != 'ok']
     lim = int(os.environ.get('LIMIT', '0') or 0)
     if lim and len(ids) > lim:
         st = len(ids) / float(lim)
         ids = [ids[int(i * st)] for i in range(lim)]
-    print('ids in list', total, '| previous result', len(prev), '| scope', scope, '| to check', len(ids), flush=True)
+    print('ids in list', total, '| previous result', len(prev), '| scope', scope, '| to check', len(ids), '| listed ids checked on the side', len(extra), flush=True)
+    ids = sorted(set(ids) | set(extra))
     random.seed(7)
     probe(random.sample(ids, min(10, len(ids))))
-    json.dump({'ids': ids, 'scope': scope, 'total': total}, gzip.open(PLAN, 'wt', encoding='utf-8'))
+    json.dump({'ids': ids, 'scope': scope, 'total': total, 'extra': extra}, gzip.open(PLAN, 'wt', encoding='utf-8'))
 
 
 def check():
@@ -525,11 +528,11 @@ def merge():
         oks = sorted(v for v in used if (res.get(v) or {'s': (prev.get(v) or [''])[0]})['s'] == 'ok')
         bads = [v for v in ids if res[v]['s'] != 'ok' and res[v].get('oe') == 200]
         hosts(random.sample(oks, min(150, len(oks))) + bads[:250])
-    if P.get('scope') == 'list':
-        table(res, 'listed ids')
-        print('== listed ids, nothing written')
-        for v in sorted(res, key=lambda v: (res[v]['s'], res[v]['r'], v))[:900]: print('  %-10s %s  %s' % (res[v]['s'], v, res[v]['r'][:190]))
-        return
+    extra = [v for v in P.get('extra') or [] if v in res]
+    if extra:
+        table({v: res[v] for v in extra}, 'listed ids, checked on the side and not written')
+        for v in sorted(extra, key=lambda v: (res[v]['s'], res[v]['r'], v))[:900]: print('  %-10s %s  %s' % (res[v]['s'], v, res[v]['r'][:190]))
+    if P.get('scope') == 'list': return
     out = {}
     kept = 0
     for v in used:
