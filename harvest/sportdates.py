@@ -120,6 +120,8 @@ def prune(blocks):
 def pdate(text, yfn=None):
     m = RD3.search(text)
     if m: return iso(m.group(1), m.group(2), m.group(3))
+    m = re.search(r'(?<![\d/])(\d{1,2})/(\d{1,2})/((?:19|20)\d\d)(?!\d)', text)
+    if m: return iso(m.group(3), m.group(1), m.group(2))
     for rx, mi, di in ((RD1, 1, 2), (RD2, 2, 1)):
         m = rx.search(text)
         if m:
@@ -943,7 +945,7 @@ def resolve(SC, title, desc='', ctx=''):
         e, why = one(c, 'oly')
         if e: return {'ad': e['d'], 'ev': '%s %s OLYMPICS %s' % (e['d'][:4], e['s'].upper(), k.upper()), 'ct': 'olympics', 'row': e}, None
         return None, why
-    if lg == 'ncaab' and len(T) >= 2 and not re.search(r' (womens|women|nit|hockey|baseball|softball) ', nt):
+    if lg == 'ncaab' and len(T) == 2 and not re.search(r' (womens|women|nit|hockey|baseball|softball) ', nt):
         c = [e for e in pairs() if e.get('se') in ys or int(e['d'][:4]) in ys]
         rd = next((v for p, v in CBR if re.search(' (' + p + ')', nt)), None)
         if not rd and re.search(r' (midwest|mideast|southeast|east|west|south|regional|region) (semi ?finals?|semis?) ', nt): rd = 'sweet sixteen'
