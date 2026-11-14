@@ -1,0 +1,6828 @@
+[
+{
+"title": "The Cosby Show",
+"net": "nbc",
+"years": [
+1984,
+1992
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Cosby Show"
+],
+"slots": [
+[
+1984,
+1992,
+"nbc",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Family Ties",
+"net": "nbc",
+"years": [
+1982,
+1989
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1984,
+1987,
+"nbc",
+4,
+"20:30"
+],
+[
+1987,
+1989,
+"nbc",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Cheers",
+"net": "nbc",
+"years": [
+1982,
+1993
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1984,
+1993,
+"nbc",
+4,
+"21:00"
+]
+]
+},
+{
+"title": "Night Court",
+"net": "nbc",
+"years": [
+1984,
+1992
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1984,
+1987,
+"nbc",
+4,
+"21:30"
+],
+[
+1988,
+1991,
+"nbc",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "The Golden Girls",
+"net": "nbc",
+"years": [
+1985,
+1992
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Golden Girls"
+],
+"slots": [
+[
+1985,
+1991,
+"nbc",
+6,
+"21:00"
+]
+]
+},
+{
+"title": "Who's the Boss?",
+"net": "abc",
+"years": [
+1984,
+1992
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Whos the Boss"
+],
+"slots": [
+[
+1985,
+1991,
+"abc",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "Growing Pains",
+"net": "abc",
+"years": [
+1985,
+1992
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1985,
+1988,
+"abc",
+2,
+"20:30"
+],
+[
+1988,
+1990,
+"abc",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Moonlighting",
+"net": "abc",
+"years": [
+1985,
+1989
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1985,
+1989,
+"abc",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "Murder, She Wrote",
+"net": "cbs",
+"years": [
+1984,
+1996
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Murder She Wrote"
+],
+"slots": [
+[
+1984,
+1995,
+"cbs",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "60 Minutes",
+"net": "cbs",
+"years": [
+1968,
+2004
+],
+"q": "news",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1984,
+2004,
+"cbs",
+0,
+"19:00"
+]
+]
+},
+{
+"title": "Dallas",
+"net": "cbs",
+"years": [
+1978,
+1991
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1984,
+1991,
+"cbs",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Dynasty",
+"net": "abc",
+"years": [
+1981,
+1989
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1984,
+1988,
+"abc",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "Knots Landing",
+"net": "cbs",
+"years": [
+1979,
+1993
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1984,
+1993,
+"cbs",
+4,
+"22:00"
+]
+]
+},
+{
+"title": "Falcon Crest",
+"net": "cbs",
+"years": [
+1981,
+1990
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1984,
+1989,
+"cbs",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "The A-Team",
+"net": "nbc",
+"years": [
+1983,
+1987
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"A-Team",
+"A Team"
+],
+"slots": [
+[
+1984,
+1986,
+"nbc",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "Magnum, P.I.",
+"net": "cbs",
+"years": [
+1980,
+1988
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Magnum PI",
+"Magnum P.I."
+],
+"slots": [
+[
+1984,
+1986,
+"cbs",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Simon & Simon",
+"net": "cbs",
+"years": [
+1981,
+1989
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Simon and Simon"
+],
+"slots": [
+[
+1984,
+1986,
+"cbs",
+4,
+"21:00"
+]
+]
+},
+{
+"title": "Miami Vice",
+"net": "nbc",
+"years": [
+1984,
+1989
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1984,
+1986,
+"nbc",
+5,
+"22:00"
+],
+[
+1986,
+1988,
+"nbc",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Hill Street Blues",
+"net": "nbc",
+"years": [
+1981,
+1987
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1984,
+1986,
+"nbc",
+4,
+"22:00"
+]
+]
+},
+{
+"title": "L.A. Law",
+"net": "nbc",
+"years": [
+1986,
+1994
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"LA Law"
+],
+"slots": [
+[
+1986,
+1994,
+"nbc",
+4,
+"22:00"
+]
+]
+},
+{
+"title": "St. Elsewhere",
+"net": "nbc",
+"years": [
+1982,
+1988
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"St Elsewhere"
+],
+"slots": [
+[
+1984,
+1988,
+"nbc",
+3,
+"22:00"
+]
+]
+},
+{
+"title": "Highway to Heaven",
+"net": "nbc",
+"years": [
+1984,
+1989
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1984,
+1988,
+"nbc",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "The Facts of Life",
+"net": "nbc",
+"years": [
+1979,
+1988
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Facts of Life"
+],
+"slots": [
+[
+1985,
+1988,
+"nbc",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "227",
+"net": "nbc",
+"years": [
+1985,
+1990
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true,
+"slots": [
+[
+1985,
+1989,
+"nbc",
+6,
+"20:30"
+]
+]
+},
+{
+"title": "ALF",
+"net": "nbc",
+"years": [
+1986,
+1990
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1986,
+1990,
+"nbc",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Matlock",
+"net": "nbc",
+"years": [
+1986,
+1995
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1986,
+1991,
+"nbc",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "In the Heat of the Night",
+"net": "nbc",
+"years": [
+1988,
+1995
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1988,
+1992,
+"nbc",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "Unsolved Mysteries",
+"net": "nbc",
+"years": [
+1987,
+2002
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1988,
+1994,
+"nbc",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "A Different World",
+"net": "nbc",
+"years": [
+1987,
+1993
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1987,
+1992,
+"nbc",
+4,
+"20:30"
+]
+]
+},
+{
+"title": "Roseanne",
+"net": "abc",
+"years": [
+1988,
+1997
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1989,
+1994,
+"abc",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "The Wonder Years",
+"net": "abc",
+"years": [
+1988,
+1993
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Wonder Years"
+],
+"slots": [
+[
+1988,
+1990,
+"abc",
+2,
+"20:30"
+],
+[
+1990,
+1993,
+"abc",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Full House",
+"net": "abc",
+"years": [
+1987,
+1995
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1989,
+1991,
+"abc",
+5,
+"20:00"
+],
+[
+1991,
+1995,
+"abc",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "Family Matters",
+"net": "abc",
+"years": [
+1989,
+1998
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1989,
+1991,
+"abc",
+5,
+"20:30"
+],
+[
+1991,
+1997,
+"abc",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Perfect Strangers",
+"net": "abc",
+"years": [
+1986,
+1993
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1988,
+1991,
+"abc",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "Step by Step",
+"net": "abc",
+"years": [
+1991,
+1998
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1991,
+1993,
+"abc",
+5,
+"20:30"
+]
+]
+},
+{
+"title": "Boy Meets World",
+"net": "abc",
+"years": [
+1993,
+2000
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1993,
+1995,
+"abc",
+5,
+"20:30"
+]
+]
+},
+{
+"title": "Sabrina the Teenage Witch",
+"net": "abc",
+"years": [
+1996,
+2003
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1996,
+2000,
+"abc",
+5,
+"21:00"
+]
+]
+},
+{
+"title": "America's Funniest Home Videos",
+"net": "abc",
+"years": [
+1989,
+2004
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Americas Funniest Home Videos",
+"AFHV"
+],
+"slots": [
+[
+1990,
+1993,
+"abc",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Coach",
+"net": "abc",
+"years": [
+1989,
+1997
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true,
+"slots": [
+[
+1989,
+1993,
+"abc",
+2,
+"21:30"
+]
+]
+},
+{
+"title": "Home Improvement",
+"net": "abc",
+"years": [
+1991,
+1999
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1991,
+1992,
+"abc",
+2,
+"20:30"
+],
+[
+1992,
+1994,
+"abc",
+3,
+"21:00"
+],
+[
+1994,
+1998,
+"abc",
+2,
+"21:00"
+]
+]
+},
+{
+"title": "Doogie Howser, M.D.",
+"net": "abc",
+"years": [
+1989,
+1993
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Doogie Howser"
+],
+"slots": [
+[
+1989,
+1992,
+"abc",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "Empty Nest",
+"net": "nbc",
+"years": [
+1988,
+1995
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1988,
+1991,
+"nbc",
+6,
+"21:30"
+]
+]
+},
+{
+"title": "Murphy Brown",
+"net": "cbs",
+"years": [
+1988,
+1998
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1988,
+1996,
+"cbs",
+1,
+"21:00"
+]
+]
+},
+{
+"title": "Designing Women",
+"net": "cbs",
+"years": [
+1986,
+1993
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1989,
+1992,
+"cbs",
+1,
+"21:30"
+]
+]
+},
+{
+"title": "Major Dad",
+"net": "cbs",
+"years": [
+1989,
+1993
+],
+"q": "prime",
+"rank": 3,
+"slots": [
+[
+1990,
+1992,
+"cbs",
+1,
+"20:30"
+]
+]
+},
+{
+"title": "Evening Shade",
+"net": "cbs",
+"years": [
+1990,
+1994
+],
+"q": "prime",
+"rank": 3,
+"slots": [
+[
+1990,
+1994,
+"cbs",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Northern Exposure",
+"net": "cbs",
+"years": [
+1990,
+1995
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1991,
+1994,
+"cbs",
+1,
+"22:00"
+]
+]
+},
+{
+"title": "Seinfeld",
+"net": "nbc",
+"years": [
+1989,
+1998
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1993,
+1998,
+"nbc",
+4,
+"21:00"
+]
+]
+},
+{
+"title": "Frasier",
+"net": "nbc",
+"years": [
+1993,
+2004
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1994,
+1998,
+"nbc",
+2,
+"21:00"
+],
+[
+1998,
+2000,
+"nbc",
+4,
+"21:00"
+]
+]
+},
+{
+"title": "Friends",
+"net": "nbc",
+"years": [
+1994,
+2004
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1995,
+2004,
+"nbc",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Mad About You",
+"net": "nbc",
+"years": [
+1992,
+1999
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1993,
+1995,
+"nbc",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Wings",
+"net": "nbc",
+"years": [
+1990,
+1997
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "ER",
+"net": "nbc",
+"years": [
+1994,
+2004
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1994,
+2004,
+"nbc",
+4,
+"22:00"
+]
+]
+},
+{
+"title": "NYPD Blue",
+"net": "abc",
+"years": [
+1993,
+2004
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1993,
+2004,
+"abc",
+2,
+"22:00"
+]
+]
+},
+{
+"title": "Law & Order",
+"net": "nbc",
+"years": [
+1990,
+2004
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Law and Order"
+],
+"slots": [
+[
+1992,
+2004,
+"nbc",
+3,
+"22:00"
+]
+]
+},
+{
+"title": "The X-Files",
+"net": "fox",
+"years": [
+1993,
+2002
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"X-Files",
+"X Files"
+],
+"slots": [
+[
+1993,
+1996,
+"fox",
+5,
+"21:00"
+],
+[
+1996,
+2002,
+"fox",
+0,
+"21:00"
+]
+]
+},
+{
+"title": "The Simpsons",
+"net": "fox",
+"years": [
+1989,
+2004
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Simpsons"
+],
+"slots": [
+[
+1990,
+1994,
+"fox",
+4,
+"20:00"
+],
+[
+1994,
+2004,
+"fox",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Married... with Children",
+"net": "fox",
+"years": [
+1987,
+1997
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Married with Children"
+],
+"slots": [
+[
+1989,
+1996,
+"fox",
+0,
+"21:00"
+]
+]
+},
+{
+"title": "In Living Color",
+"net": "fox",
+"years": [
+1990,
+1994
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1990,
+1992,
+"fox",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Beverly Hills, 90210",
+"net": "fox",
+"years": [
+1990,
+2000
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Beverly Hills 90210"
+],
+"slots": [
+[
+1992,
+2000,
+"fox",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Melrose Place",
+"net": "fox",
+"years": [
+1992,
+1999
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1994,
+1999,
+"fox",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "COPS",
+"net": "fox",
+"years": [
+1989,
+2004
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1989,
+2004,
+"fox",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "America's Most Wanted",
+"net": "fox",
+"years": [
+1988,
+2004
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Americas Most Wanted"
+],
+"slots": [
+[
+1994,
+2004,
+"fox",
+6,
+"21:00"
+]
+]
+},
+{
+"title": "Martin",
+"net": "fox",
+"years": [
+1992,
+1997
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true,
+"slots": [
+[
+1993,
+1995,
+"fox",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Living Single",
+"net": "fox",
+"years": [
+1993,
+1998
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1993,
+1997,
+"fox",
+4,
+"20:30"
+]
+]
+},
+{
+"title": "The Fresh Prince of Bel-Air",
+"net": "nbc",
+"years": [
+1990,
+1996
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Fresh Prince of Bel Air",
+"Fresh Prince"
+],
+"slots": [
+[
+1990,
+1996,
+"nbc",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Blossom",
+"net": "nbc",
+"years": [
+1991,
+1995
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true,
+"slots": [
+[
+1991,
+1994,
+"nbc",
+1,
+"20:30"
+]
+]
+},
+{
+"title": "Saved by the Bell",
+"net": "nbc",
+"years": [
+1989,
+1993
+],
+"q": "kids",
+"rank": 1,
+"slots": [
+[
+1989,
+1993,
+"nbc",
+6,
+"11:00"
+]
+]
+},
+{
+"title": "Quantum Leap",
+"net": "nbc",
+"years": [
+1989,
+1993
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Twin Peaks",
+"net": "abc",
+"years": [
+1990,
+1991
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1990,
+1990,
+"abc",
+4,
+"21:00"
+]
+]
+},
+{
+"title": "MacGyver",
+"net": "abc",
+"years": [
+1985,
+1992
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1986,
+1991,
+"abc",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Knight Rider",
+"net": "nbc",
+"years": [
+1982,
+1986
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1984,
+1985,
+"nbc",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Airwolf",
+"net": "cbs",
+"years": [
+1984,
+1987
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1984,
+1986,
+"cbs",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "Remington Steele",
+"net": "nbc",
+"years": [
+1982,
+1987
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1984,
+1986,
+"nbc",
+2,
+"22:00"
+]
+]
+},
+{
+"title": "Cagney & Lacey",
+"net": "cbs",
+"years": [
+1982,
+1988
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Cagney and Lacey"
+],
+"slots": [
+[
+1984,
+1988,
+"cbs",
+1,
+"22:00"
+]
+]
+},
+{
+"title": "Scarecrow and Mrs. King",
+"net": "cbs",
+"years": [
+1983,
+1987
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Scarecrow and Mrs King"
+],
+"slots": [
+[
+1984,
+1986,
+"cbs",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Kate & Allie",
+"net": "cbs",
+"years": [
+1984,
+1989
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Kate and Allie"
+],
+"slots": [
+[
+1984,
+1987,
+"cbs",
+1,
+"21:00"
+]
+]
+},
+{
+"title": "Newhart",
+"net": "cbs",
+"years": [
+1982,
+1990
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1984,
+1988,
+"cbs",
+1,
+"21:30"
+]
+]
+},
+{
+"title": "Hunter",
+"net": "nbc",
+"years": [
+1984,
+1991
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true,
+"slots": [
+[
+1985,
+1990,
+"nbc",
+6,
+"22:00"
+]
+]
+},
+{
+"title": "Amen",
+"net": "nbc",
+"years": [
+1986,
+1991
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true,
+"slots": [
+[
+1986,
+1990,
+"nbc",
+6,
+"21:30"
+]
+]
+},
+{
+"title": "The Hogan Family",
+"net": "nbc",
+"years": [
+1986,
+1991
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Valerie",
+"Valerie's Family"
+]
+},
+{
+"title": "Head of the Class",
+"net": "abc",
+"years": [
+1986,
+1991
+],
+"q": "prime",
+"rank": 3,
+"slots": [
+[
+1986,
+1990,
+"abc",
+3,
+"20:30"
+]
+]
+},
+{
+"title": "Mr. Belvedere",
+"net": "abc",
+"years": [
+1985,
+1990
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Mr Belvedere"
+],
+"slots": [
+[
+1985,
+1989,
+"abc",
+5,
+"20:30"
+]
+]
+},
+{
+"title": "Webster",
+"net": "abc",
+"years": [
+1983,
+1989
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true,
+"slots": [
+[
+1984,
+1987,
+"abc",
+5,
+"20:00"
+]
+]
+},
+{
+"title": "Diff'rent Strokes",
+"net": "nbc",
+"years": [
+1978,
+1986
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Diffrent Strokes",
+"Different Strokes"
+]
+},
+{
+"title": "Silver Spoons",
+"net": "nbc",
+"years": [
+1982,
+1987
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Punky Brewster",
+"net": "nbc",
+"years": [
+1984,
+1988
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1984,
+1986,
+"nbc",
+0,
+"19:30"
+]
+]
+},
+{
+"title": "Gimme a Break!",
+"net": "nbc",
+"years": [
+1981,
+1987
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Gimme a Break"
+]
+},
+{
+"title": "Small Wonder",
+"net": "syn",
+"years": [
+1985,
+1989
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Charles in Charge",
+"net": "cbs",
+"years": [
+1984,
+1990
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Mama's Family",
+"net": "nbc",
+"years": [
+1983,
+1990
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Mamas Family"
+]
+},
+{
+"title": "Benson",
+"net": "abc",
+"years": [
+1979,
+1986
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Three's Company",
+"net": "abc",
+"years": [
+1977,
+1984
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Threes Company"
+]
+},
+{
+"title": "Happy Days",
+"net": "abc",
+"years": [
+1974,
+1984
+],
+"q": "rerun",
+"rank": 1
+},
+{
+"title": "Laverne & Shirley",
+"net": "abc",
+"years": [
+1976,
+1983
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Laverne and Shirley"
+]
+},
+{
+"title": "M*A*S*H",
+"net": "cbs",
+"years": [
+1972,
+1983
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"MASH",
+"M.A.S.H."
+]
+},
+{
+"title": "The Jeffersons",
+"net": "cbs",
+"years": [
+1975,
+1985
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Jeffersons"
+]
+},
+{
+"title": "Taxi",
+"net": "abc",
+"years": [
+1978,
+1983
+],
+"q": "rerun",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "Barney Miller",
+"net": "abc",
+"years": [
+1975,
+1982
+],
+"q": "rerun",
+"rank": 2
+},
+{
+"title": "WKRP in Cincinnati",
+"net": "cbs",
+"years": [
+1978,
+1982
+],
+"q": "rerun",
+"rank": 2,
+"alt": [
+"WKRP"
+]
+},
+{
+"title": "The Brady Bunch",
+"net": "abc",
+"years": [
+1969,
+1974
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Brady Bunch"
+]
+},
+{
+"title": "Gilligan's Island",
+"net": "cbs",
+"years": [
+1964,
+1967
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Gilligans Island"
+]
+},
+{
+"title": "The Andy Griffith Show",
+"net": "cbs",
+"years": [
+1960,
+1968
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Andy Griffith Show"
+]
+},
+{
+"title": "The Beverly Hillbillies",
+"net": "cbs",
+"years": [
+1962,
+1971
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Beverly Hillbillies"
+]
+},
+{
+"title": "I Dream of Jeannie",
+"net": "nbc",
+"years": [
+1965,
+1970
+],
+"q": "rerun",
+"rank": 1
+},
+{
+"title": "Bewitched",
+"net": "abc",
+"years": [
+1964,
+1972
+],
+"q": "rerun",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "The Munsters",
+"net": "cbs",
+"years": [
+1964,
+1966
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Munsters"
+]
+},
+{
+"title": "The Addams Family",
+"net": "abc",
+"years": [
+1964,
+1966
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Addams Family"
+]
+},
+{
+"title": "Leave It to Beaver",
+"net": "cbs",
+"years": [
+1957,
+1963
+],
+"q": "rerun",
+"rank": 1
+},
+{
+"title": "The Odd Couple",
+"net": "abc",
+"years": [
+1970,
+1975
+],
+"q": "rerun",
+"rank": 2,
+"alt": [
+"Odd Couple"
+]
+},
+{
+"title": "Sanford and Son",
+"net": "nbc",
+"years": [
+1972,
+1977
+],
+"q": "rerun",
+"rank": 1
+},
+{
+"title": "Good Times",
+"net": "cbs",
+"years": [
+1974,
+1979
+],
+"q": "rerun",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "All in the Family",
+"net": "cbs",
+"years": [
+1971,
+1979
+],
+"q": "rerun",
+"rank": 1
+},
+{
+"title": "Welcome Back, Kotter",
+"net": "abc",
+"years": [
+1975,
+1979
+],
+"q": "rerun",
+"rank": 2,
+"alt": [
+"Welcome Back Kotter"
+]
+},
+{
+"title": "Little House on the Prairie",
+"net": "nbc",
+"years": [
+1974,
+1983
+],
+"q": "rerun",
+"rank": 1
+},
+{
+"title": "The Waltons",
+"net": "cbs",
+"years": [
+1972,
+1981
+],
+"q": "rerun",
+"rank": 2,
+"alt": [
+"Waltons"
+]
+},
+{
+"title": "Bonanza",
+"net": "nbc",
+"years": [
+1959,
+1973
+],
+"q": "rerun",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "Gunsmoke",
+"net": "cbs",
+"years": [
+1955,
+1975
+],
+"q": "rerun",
+"rank": 1
+},
+{
+"title": "Star Trek",
+"net": "nbc",
+"years": [
+1966,
+1969
+],
+"q": "rerun",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"Star Trek The Original Series",
+"Star Trek TOS"
+]
+},
+{
+"title": "The Twilight Zone",
+"net": "cbs",
+"years": [
+1959,
+1964
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Twilight Zone"
+]
+},
+{
+"title": "Hogan's Heroes",
+"net": "cbs",
+"years": [
+1965,
+1971
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Hogans Heroes"
+]
+},
+{
+"title": "Get Smart",
+"net": "nbc",
+"years": [
+1965,
+1970
+],
+"q": "rerun",
+"rank": 2
+},
+{
+"title": "Batman",
+"net": "abc",
+"years": [
+1966,
+1968
+],
+"q": "rerun",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "The Rockford Files",
+"net": "nbc",
+"years": [
+1974,
+1980
+],
+"q": "rerun",
+"rank": 2,
+"alt": [
+"Rockford Files"
+]
+},
+{
+"title": "Columbo",
+"net": "nbc",
+"years": [
+1971,
+2003
+],
+"q": "rerun",
+"rank": 1
+},
+{
+"title": "Charlie's Angels",
+"net": "abc",
+"years": [
+1976,
+1981
+],
+"q": "rerun",
+"rank": 2,
+"alt": [
+"Charlies Angels"
+]
+},
+{
+"title": "CHiPs",
+"net": "nbc",
+"years": [
+1977,
+1983
+],
+"q": "rerun",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "The Love Boat",
+"net": "abc",
+"years": [
+1977,
+1986
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Love Boat"
+],
+"slots": [
+[
+1984,
+1985,
+"abc",
+6,
+"21:00"
+]
+]
+},
+{
+"title": "Fantasy Island",
+"net": "abc",
+"years": [
+1977,
+1984
+],
+"q": "rerun",
+"rank": 2
+},
+{
+"title": "The Incredible Hulk",
+"net": "cbs",
+"years": [
+1977,
+1982
+],
+"q": "rerun",
+"rank": 2,
+"alt": [
+"Incredible Hulk"
+]
+},
+{
+"title": "The Six Million Dollar Man",
+"net": "abc",
+"years": [
+1973,
+1978
+],
+"q": "rerun",
+"rank": 2,
+"alt": [
+"Six Million Dollar Man"
+]
+},
+{
+"title": "Wonder Woman",
+"net": "cbs",
+"years": [
+1975,
+1979
+],
+"q": "rerun",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Wheel of Fortune",
+"net": "syn",
+"years": [
+1983,
+2004
+],
+"q": "game",
+"rank": 1,
+"slots": [
+[
+1984,
+2004,
+"syn",
+1,
+"18:30"
+]
+]
+},
+{
+"title": "Jeopardy!",
+"net": "syn",
+"years": [
+1984,
+2004
+],
+"q": "game",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"Jeopardy"
+],
+"slots": [
+[
+1984,
+2004,
+"syn",
+1,
+"19:00"
+]
+]
+},
+{
+"title": "The Price Is Right",
+"net": "cbs",
+"years": [
+1972,
+2004
+],
+"q": "game",
+"rank": 1,
+"alt": [
+"Price Is Right"
+],
+"slots": [
+[
+1984,
+2004,
+"cbs",
+1,
+"11:00"
+]
+]
+},
+{
+"title": "Family Feud",
+"net": "syn",
+"years": [
+1976,
+2004
+],
+"q": "game",
+"rank": 1
+},
+{
+"title": "Hollywood Squares",
+"net": "syn",
+"years": [
+1986,
+2004
+],
+"q": "game",
+"rank": 2
+},
+{
+"title": "Star Trek: The Next Generation",
+"net": "syn",
+"years": [
+1987,
+1994
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Star Trek The Next Generation",
+"Star Trek TNG"
+]
+},
+{
+"title": "Star Trek: Deep Space Nine",
+"net": "syn",
+"years": [
+1993,
+1999
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Star Trek Deep Space Nine",
+"Star Trek DS9"
+]
+},
+{
+"title": "Star Trek: Voyager",
+"net": "upn",
+"years": [
+1995,
+2001
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Star Trek Voyager"
+],
+"slots": [
+[
+1995,
+2001,
+"upn",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "Baywatch",
+"net": "syn",
+"years": [
+1989,
+2001
+],
+"q": "prime",
+"rank": 1
+},
+{
+"title": "Hercules: The Legendary Journeys",
+"net": "syn",
+"years": [
+1995,
+1999
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Hercules The Legendary Journeys"
+]
+},
+{
+"title": "Xena: Warrior Princess",
+"net": "syn",
+"years": [
+1995,
+2001
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Xena Warrior Princess",
+"Xena"
+]
+},
+{
+"title": "Highlander: The Series",
+"net": "syn",
+"years": [
+1992,
+1998
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Highlander The Series"
+]
+},
+{
+"title": "Babylon 5",
+"net": "syn",
+"years": [
+1994,
+1998
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Walker, Texas Ranger",
+"net": "cbs",
+"years": [
+1993,
+2001
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Walker Texas Ranger"
+],
+"slots": [
+[
+1993,
+2001,
+"cbs",
+6,
+"22:00"
+]
+]
+},
+{
+"title": "Touched by an Angel",
+"net": "cbs",
+"years": [
+1994,
+2003
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1996,
+2001,
+"cbs",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "Dr. Quinn, Medicine Woman",
+"net": "cbs",
+"years": [
+1993,
+1998
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Dr Quinn Medicine Woman",
+"Dr. Quinn"
+],
+"slots": [
+[
+1993,
+1998,
+"cbs",
+6,
+"20:00"
+]
+]
+},
+{
+"title": "Diagnosis: Murder",
+"net": "cbs",
+"years": [
+1993,
+2001
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Diagnosis Murder"
+]
+},
+{
+"title": "Everybody Loves Raymond",
+"net": "cbs",
+"years": [
+1996,
+2004
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1998,
+2004,
+"cbs",
+1,
+"21:00"
+]
+]
+},
+{
+"title": "The King of Queens",
+"net": "cbs",
+"years": [
+1998,
+2004
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"King of Queens"
+]
+},
+{
+"title": "The Nanny",
+"net": "cbs",
+"years": [
+1993,
+1999
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true,
+"slots": [
+[
+1994,
+1998,
+"cbs",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Cybill",
+"net": "cbs",
+"years": [
+1995,
+1998
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Chicago Hope",
+"net": "cbs",
+"years": [
+1994,
+2000
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "JAG",
+"net": "cbs",
+"years": [
+1995,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Nash Bridges",
+"net": "cbs",
+"years": [
+1996,
+2001
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1996,
+2001,
+"cbs",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "CSI: Crime Scene Investigation",
+"net": "cbs",
+"years": [
+2000,
+2004
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"CSI Crime Scene Investigation"
+],
+"slots": [
+[
+2001,
+2004,
+"cbs",
+4,
+"21:00"
+]
+]
+},
+{
+"title": "Survivor",
+"net": "cbs",
+"years": [
+2000,
+2004
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+2001,
+2004,
+"cbs",
+4,
+"20:00"
+]
+]
+},
+{
+"title": "Big Brother",
+"net": "cbs",
+"years": [
+2000,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "The Amazing Race",
+"net": "cbs",
+"years": [
+2001,
+2004
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Amazing Race"
+]
+},
+{
+"title": "Who Wants to Be a Millionaire",
+"net": "abc",
+"years": [
+1999,
+2004
+],
+"q": "game",
+"rank": 1,
+"alt": [
+"Who Wants to Be a Millionaire?"
+]
+},
+{
+"title": "The Weakest Link",
+"net": "nbc",
+"years": [
+2001,
+2003
+],
+"q": "game",
+"rank": 2,
+"alt": [
+"Weakest Link"
+]
+},
+{
+"title": "Fear Factor",
+"net": "nbc",
+"years": [
+2001,
+2004
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "American Idol",
+"net": "fox",
+"years": [
+2002,
+2004
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "The Bachelor",
+"net": "abc",
+"years": [
+2002,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "The Mole",
+"net": "abc",
+"years": [
+2001,
+2004
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Joe Millionaire",
+"net": "fox",
+"years": [
+2003,
+2003
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Temptation Island",
+"net": "fox",
+"years": [
+2001,
+2003
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "The Drew Carey Show",
+"net": "abc",
+"years": [
+1995,
+2004
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Drew Carey Show"
+],
+"slots": [
+[
+1996,
+2001,
+"abc",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "Ellen",
+"net": "abc",
+"years": [
+1994,
+1998
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Spin City",
+"net": "abc",
+"years": [
+1996,
+2002
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Dharma & Greg",
+"net": "abc",
+"years": [
+1997,
+2002
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Dharma and Greg"
+]
+},
+{
+"title": "Grace Under Fire",
+"net": "abc",
+"years": [
+1993,
+1998
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "The Practice",
+"net": "abc",
+"years": [
+1997,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Ally McBeal",
+"net": "fox",
+"years": [
+1997,
+2002
+],
+"q": "prime",
+"rank": 2,
+"slots": [
+[
+1997,
+2002,
+"fox",
+1,
+"21:00"
+]
+]
+},
+{
+"title": "NewsRadio",
+"net": "nbc",
+"years": [
+1995,
+1999
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"News Radio"
+]
+},
+{
+"title": "3rd Rock from the Sun",
+"net": "nbc",
+"years": [
+1996,
+2001
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Third Rock from the Sun"
+]
+},
+{
+"title": "Just Shoot Me!",
+"net": "nbc",
+"years": [
+1997,
+2003
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Just Shoot Me"
+]
+},
+{
+"title": "Will & Grace",
+"net": "nbc",
+"years": [
+1998,
+2004
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Will and Grace"
+]
+},
+{
+"title": "Caroline in the City",
+"net": "nbc",
+"years": [
+1995,
+1999
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Suddenly Susan",
+"net": "nbc",
+"years": [
+1996,
+2000
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Veronica's Closet",
+"net": "nbc",
+"years": [
+1997,
+2000
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Veronicas Closet"
+]
+},
+{
+"title": "Homicide: Life on the Street",
+"net": "nbc",
+"years": [
+1993,
+1999
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Homicide Life on the Street"
+],
+"slots": [
+[
+1994,
+1999,
+"nbc",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "The West Wing",
+"net": "nbc",
+"years": [
+1999,
+2004
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"West Wing"
+],
+"slots": [
+[
+1999,
+2004,
+"nbc",
+3,
+"21:00"
+]
+]
+},
+{
+"title": "Scrubs",
+"net": "nbc",
+"years": [
+2001,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Law & Order: Special Victims Unit",
+"net": "nbc",
+"years": [
+1999,
+2004
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Law and Order Special Victims Unit",
+"Law & Order SVU"
+]
+},
+{
+"title": "Dateline NBC",
+"net": "nbc",
+"years": [
+1992,
+2004
+],
+"q": "news",
+"rank": 2,
+"alt": [
+"Dateline"
+]
+},
+{
+"title": "20/20",
+"net": "abc",
+"years": [
+1978,
+2004
+],
+"q": "news",
+"rank": 1,
+"ambiguous": true,
+"slots": [
+[
+1987,
+2001,
+"abc",
+5,
+"22:00"
+]
+]
+},
+{
+"title": "Primetime Live",
+"net": "abc",
+"years": [
+1989,
+2004
+],
+"q": "news",
+"rank": 3
+},
+{
+"title": "48 Hours",
+"net": "cbs",
+"years": [
+1988,
+2004
+],
+"q": "news",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Rescue 911",
+"net": "cbs",
+"years": [
+1989,
+1996
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1989,
+1995,
+"cbs",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "Lois & Clark: The New Adventures of Superman",
+"net": "abc",
+"years": [
+1993,
+1997
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Lois and Clark",
+"Lois & Clark"
+],
+"slots": [
+[
+1993,
+1997,
+"abc",
+0,
+"20:00"
+]
+]
+},
+{
+"title": "seaQuest DSV",
+"net": "nbc",
+"years": [
+1993,
+1996
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"seaQuest"
+]
+},
+{
+"title": "Sliders",
+"net": "fox",
+"years": [
+1995,
+2000
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Buffy the Vampire Slayer",
+"net": "wb",
+"years": [
+1997,
+2003
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1998,
+2001,
+"wb",
+2,
+"20:00"
+]
+]
+},
+{
+"title": "Angel",
+"net": "wb",
+"years": [
+1999,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Charmed",
+"net": "wb",
+"years": [
+1998,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Dawson's Creek",
+"net": "wb",
+"years": [
+1998,
+2003
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Dawsons Creek"
+],
+"slots": [
+[
+1998,
+2003,
+"wb",
+3,
+"20:00"
+]
+]
+},
+{
+"title": "7th Heaven",
+"net": "wb",
+"years": [
+1996,
+2004
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Seventh Heaven"
+],
+"slots": [
+[
+1996,
+2004,
+"wb",
+1,
+"20:00"
+]
+]
+},
+{
+"title": "Gilmore Girls",
+"net": "wb",
+"years": [
+2000,
+2004
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Smallville",
+"net": "wb",
+"years": [
+2001,
+2004
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Felicity",
+"net": "wb",
+"years": [
+1998,
+2002
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Roswell",
+"net": "wb",
+"years": [
+1999,
+2002
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Party of Five",
+"net": "fox",
+"years": [
+1994,
+2000
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "King of the Hill",
+"net": "fox",
+"years": [
+1997,
+2004
+],
+"q": "prime",
+"rank": 1
+},
+{
+"title": "Futurama",
+"net": "fox",
+"years": [
+1999,
+2003
+],
+"q": "prime",
+"rank": 1
+},
+{
+"title": "Family Guy",
+"net": "fox",
+"years": [
+1999,
+2003
+],
+"q": "prime",
+"rank": 1
+},
+{
+"title": "The Critic",
+"net": "abc",
+"years": [
+1994,
+1995
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Duckman",
+"net": "usa",
+"years": [
+1994,
+1997
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Malcolm in the Middle",
+"net": "fox",
+"years": [
+2000,
+2004
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+2000,
+2004,
+"fox",
+0,
+"20:30"
+]
+]
+},
+{
+"title": "That '70s Show",
+"net": "fox",
+"years": [
+1998,
+2004
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"That 70s Show"
+]
+},
+{
+"title": "24",
+"net": "fox",
+"years": [
+2001,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "MADtv",
+"net": "fox",
+"years": [
+1995,
+2004
+],
+"q": "late",
+"rank": 2,
+"alt": [
+"Mad TV"
+],
+"slots": [
+[
+1995,
+2004,
+"fox",
+6,
+"23:00"
+]
+]
+},
+{
+"title": "Millennium",
+"net": "fox",
+"years": [
+1996,
+1999
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "The Jamie Foxx Show",
+"net": "wb",
+"years": [
+1996,
+2001
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Jamie Foxx Show"
+]
+},
+{
+"title": "The Wayans Bros.",
+"net": "wb",
+"years": [
+1995,
+1999
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Wayans Bros",
+"Wayans Brothers"
+]
+},
+{
+"title": "The Steve Harvey Show",
+"net": "wb",
+"years": [
+1996,
+2002
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Steve Harvey Show"
+]
+},
+{
+"title": "Moesha",
+"net": "upn",
+"years": [
+1996,
+2001
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Sister, Sister",
+"net": "wb",
+"years": [
+1994,
+1999
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Sister Sister"
+]
+},
+{
+"title": "Hangin' with Mr. Cooper",
+"net": "abc",
+"years": [
+1992,
+1997
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Hangin with Mr Cooper"
+]
+},
+{
+"title": "My Wife and Kids",
+"net": "abc",
+"years": [
+2001,
+2004
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "The Bernie Mac Show",
+"net": "fox",
+"years": [
+2001,
+2004
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Bernie Mac Show"
+]
+},
+{
+"title": "Saturday Night Live",
+"net": "nbc",
+"years": [
+1975,
+2004
+],
+"q": "late",
+"rank": 1,
+"alt": [
+"SNL"
+],
+"slots": [
+[
+1984,
+2004,
+"nbc",
+6,
+"23:30"
+]
+]
+},
+{
+"title": "The Kids in the Hall",
+"net": "cbc",
+"years": [
+1989,
+1995
+],
+"q": "late",
+"rank": 2,
+"alt": [
+"Kids in the Hall"
+]
+},
+{
+"title": "The State",
+"net": "mtv",
+"years": [
+1993,
+1995
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "The Ben Stiller Show",
+"net": "fox",
+"years": [
+1992,
+1993
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Ben Stiller Show"
+]
+},
+{
+"title": "The Real World",
+"net": "mtv",
+"years": [
+1992,
+2004
+],
+"q": "prime",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"MTV The Real World",
+"Real World"
+]
+},
+{
+"title": "Road Rules",
+"net": "mtv",
+"years": [
+1995,
+2004
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Beavis and Butt-Head",
+"net": "mtv",
+"years": [
+1993,
+1997
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Beavis and Butthead",
+"Beavis & Butt-Head"
+]
+},
+{
+"title": "Daria",
+"net": "mtv",
+"years": [
+1997,
+2002
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Jackass",
+"net": "mtv",
+"years": [
+2000,
+2002
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Singled Out",
+"net": "mtv",
+"years": [
+1995,
+1998
+],
+"q": "game",
+"rank": 2
+},
+{
+"title": "Remote Control",
+"net": "mtv",
+"years": [
+1987,
+1990
+],
+"q": "game",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"MTV Remote Control"
+]
+},
+{
+"title": "Celebrity Deathmatch",
+"net": "mtv",
+"years": [
+1998,
+2002
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Aeon Flux",
+"net": "mtv",
+"years": [
+1991,
+1995
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Æon Flux"
+]
+},
+{
+"title": "Liquid Television",
+"net": "mtv",
+"years": [
+1991,
+1994
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "The Tom Green Show",
+"net": "mtv",
+"years": [
+1999,
+2000
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Tom Green Show"
+]
+},
+{
+"title": "The Osbournes",
+"net": "mtv",
+"years": [
+2002,
+2004
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Osbournes"
+]
+},
+{
+"title": "Total Request Live",
+"net": "mtv",
+"years": [
+1998,
+2004
+],
+"q": "music",
+"rank": 3,
+"alt": [
+"TRL"
+]
+},
+{
+"title": "Mystery Science Theater 3000",
+"net": "cc",
+"years": [
+1988,
+1999
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"MST3K"
+]
+},
+{
+"title": "South Park",
+"net": "cc",
+"years": [
+1997,
+2004
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1997,
+2004,
+"cc",
+3,
+"22:00"
+]
+]
+},
+{
+"title": "The Daily Show",
+"net": "cc",
+"years": [
+1996,
+2004
+],
+"q": "late",
+"rank": 1,
+"alt": [
+"Daily Show"
+],
+"slots": [
+[
+1996,
+2004,
+"cc",
+1,
+"23:00"
+]
+]
+},
+{
+"title": "Win Ben Stein's Money",
+"net": "cc",
+"years": [
+1997,
+2003
+],
+"q": "game",
+"rank": 2,
+"alt": [
+"Win Ben Steins Money"
+]
+},
+{
+"title": "Dr. Katz, Professional Therapist",
+"net": "cc",
+"years": [
+1995,
+1999
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Dr Katz Professional Therapist",
+"Dr. Katz"
+]
+},
+{
+"title": "Politically Incorrect",
+"net": "cc",
+"years": [
+1993,
+2002
+],
+"q": "late",
+"rank": 2
+},
+{
+"title": "Strangers with Candy",
+"net": "cc",
+"years": [
+1999,
+2000
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "The Man Show",
+"net": "cc",
+"years": [
+1999,
+2004
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Man Show"
+]
+},
+{
+"title": "BattleBots",
+"net": "cc",
+"years": [
+2000,
+2002
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Chappelle's Show",
+"net": "cc",
+"years": [
+2003,
+2004
+],
+"q": "prime",
+"rank": 1,
+"alt": [
+"Chappelles Show"
+]
+},
+{
+"title": "Crank Yankers",
+"net": "cc",
+"years": [
+2002,
+2004
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Comic Strip Live",
+"net": "fox",
+"years": [
+1989,
+1994
+],
+"q": "late",
+"rank": 3
+},
+{
+"title": "An Evening at the Improv",
+"net": "ae",
+"years": [
+1982,
+1996
+],
+"q": "late",
+"rank": 2,
+"alt": [
+"Evening at the Improv"
+]
+},
+{
+"title": "Stand-Up Spotlight",
+"net": "vh1",
+"years": [
+1988,
+1995
+],
+"q": "late",
+"rank": 3,
+"alt": [
+"Stand Up Spotlight"
+]
+},
+{
+"title": "Silk Stalkings",
+"net": "usa",
+"years": [
+1991,
+1999
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "La Femme Nikita",
+"net": "usa",
+"years": [
+1997,
+2001
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Monk",
+"net": "usa",
+"years": [
+2002,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Pacific Blue",
+"net": "usa",
+"years": [
+1996,
+2000
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Renegade",
+"net": "syn",
+"years": [
+1992,
+1997
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "The Dead Zone",
+"net": "usa",
+"years": [
+2002,
+2004
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Dead Zone"
+]
+},
+{
+"title": "USA Up All Night",
+"net": "usa",
+"years": [
+1989,
+1998
+],
+"q": "movie",
+"rank": 2,
+"alt": [
+"Up All Night"
+]
+},
+{
+"title": "Swamp Thing",
+"net": "usa",
+"years": [
+1990,
+1993
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true,
+"alt": [
+"Swamp Thing The Series"
+]
+},
+{
+"title": "Weird Science",
+"net": "usa",
+"years": [
+1994,
+1998
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Biography",
+"net": "ae",
+"years": [
+1987,
+2004
+],
+"q": "pub",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"A&E Biography"
+]
+},
+{
+"title": "Investigative Reports",
+"net": "ae",
+"years": [
+1991,
+2004
+],
+"q": "pub",
+"rank": 2
+},
+{
+"title": "American Justice",
+"net": "ae",
+"years": [
+1992,
+2004
+],
+"q": "pub",
+"rank": 2
+},
+{
+"title": "City Confidential",
+"net": "ae",
+"years": [
+1998,
+2004
+],
+"q": "pub",
+"rank": 3
+},
+{
+"title": "Cold Case Files",
+"net": "ae",
+"years": [
+1999,
+2004
+],
+"q": "pub",
+"rank": 3
+},
+{
+"title": "Ancient Mysteries",
+"net": "ae",
+"years": [
+1994,
+1998
+],
+"q": "pub",
+"rank": 3
+},
+{
+"title": "In Search of...",
+"net": "syn",
+"years": [
+1977,
+1982
+],
+"q": "rerun",
+"rank": 2,
+"alt": [
+"In Search Of"
+]
+},
+{
+"title": "Modern Marvels",
+"net": "hist",
+"years": [
+1995,
+2004
+],
+"q": "pub",
+"rank": 2
+},
+{
+"title": "History's Mysteries",
+"net": "hist",
+"years": [
+1998,
+2004
+],
+"q": "pub",
+"rank": 3,
+"alt": [
+"Historys Mysteries"
+]
+},
+{
+"title": "Tales of the Gun",
+"net": "hist",
+"years": [
+1998,
+2004
+],
+"q": "pub",
+"rank": 3
+},
+{
+"title": "Shark Week",
+"net": "disc",
+"years": [
+1988,
+2004
+],
+"q": "pub",
+"rank": 2
+},
+{
+"title": "Wild Discovery",
+"net": "disc",
+"years": [
+1995,
+2002
+],
+"q": "pub",
+"rank": 3
+},
+{
+"title": "The Crocodile Hunter",
+"net": "ap",
+"years": [
+1996,
+2004
+],
+"q": "pub",
+"rank": 1,
+"alt": [
+"Crocodile Hunter"
+]
+},
+{
+"title": "Emergency Vets",
+"net": "ap",
+"years": [
+1998,
+2002
+],
+"q": "pub",
+"rank": 3
+},
+{
+"title": "Trading Spaces",
+"net": "tlc",
+"years": [
+2000,
+2004
+],
+"q": "cook",
+"rank": 1
+},
+{
+"title": "Junkyard Wars",
+"net": "tlc",
+"years": [
+2000,
+2003
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "A Wedding Story",
+"net": "tlc",
+"years": [
+1996,
+2004
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Monster Garage",
+"net": "disc",
+"years": [
+2002,
+2004
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "MythBusters",
+"net": "disc",
+"years": [
+2003,
+2004
+],
+"q": "prime",
+"rank": 1
+},
+{
+"title": "American Chopper",
+"net": "disc",
+"years": [
+2003,
+2004
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Beyond 2000",
+"net": "disc",
+"years": [
+1985,
+1999
+],
+"q": "pub",
+"rank": 2
+},
+{
+"title": "Movie Magic",
+"net": "disc",
+"years": [
+1994,
+1997
+],
+"q": "pub",
+"rank": 3
+},
+{
+"title": "Nova",
+"net": "pbs",
+"years": [
+1974,
+2004
+],
+"q": "pub",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "Nature",
+"net": "pbs",
+"years": [
+1982,
+2004
+],
+"q": "pub",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"PBS Nature"
+]
+},
+{
+"title": "Frontline",
+"net": "pbs",
+"years": [
+1983,
+2004
+],
+"q": "pub",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"PBS Frontline"
+]
+},
+{
+"title": "Masterpiece Theatre",
+"net": "pbs",
+"years": [
+1971,
+2004
+],
+"q": "pub",
+"rank": 2
+},
+{
+"title": "Mystery!",
+"net": "pbs",
+"years": [
+1980,
+2004
+],
+"q": "pub",
+"rank": 3,
+"ambiguous": true,
+"alt": [
+"PBS Mystery"
+]
+},
+{
+"title": "The Civil War",
+"net": "pbs",
+"years": [
+1990,
+1990
+],
+"q": "pub",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"Ken Burns The Civil War"
+]
+},
+{
+"title": "Cosmos",
+"net": "pbs",
+"years": [
+1980,
+1980
+],
+"q": "pub",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"Cosmos A Personal Voyage"
+]
+},
+{
+"title": "The Joy of Painting",
+"net": "pbs",
+"years": [
+1983,
+1994
+],
+"q": "pub",
+"rank": 1,
+"alt": [
+"Joy of Painting",
+"Bob Ross"
+]
+},
+{
+"title": "This Old House",
+"net": "pbs",
+"years": [
+1979,
+2004
+],
+"q": "cook",
+"rank": 1
+},
+{
+"title": "Antiques Roadshow",
+"net": "pbs",
+"years": [
+1997,
+2004
+],
+"q": "pub",
+"rank": 2
+},
+{
+"title": "Farscape",
+"net": "scifi",
+"years": [
+1999,
+2003
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Stargate SG-1",
+"net": "sho",
+"years": [
+1997,
+2004
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Stargate SG1"
+]
+},
+{
+"title": "The Outer Limits",
+"net": "sho",
+"years": [
+1995,
+2002
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Outer Limits"
+]
+},
+{
+"title": "Sightings",
+"net": "scifi",
+"years": [
+1991,
+1997
+],
+"q": "pub",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Lexx",
+"net": "scifi",
+"years": [
+1997,
+2002
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Talk Soup",
+"net": "e",
+"years": [
+1991,
+2002
+],
+"q": "late",
+"rank": 2
+},
+{
+"title": "E! True Hollywood Story",
+"net": "e",
+"years": [
+1996,
+2004
+],
+"q": "pub",
+"rank": 2,
+"alt": [
+"True Hollywood Story"
+]
+},
+{
+"title": "Wild On!",
+"net": "e",
+"years": [
+1997,
+2003
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Wild On"
+]
+},
+{
+"title": "The Howard Stern Show",
+"net": "e",
+"years": [
+1994,
+2004
+],
+"q": "late",
+"rank": 2,
+"alt": [
+"Howard Stern"
+]
+},
+{
+"title": "Behind the Music",
+"net": "vh1",
+"years": [
+1997,
+2004
+],
+"q": "music",
+"rank": 2
+},
+{
+"title": "Pop-Up Video",
+"net": "vh1",
+"years": [
+1996,
+2002
+],
+"q": "music",
+"rank": 2,
+"alt": [
+"Pop Up Video"
+]
+},
+{
+"title": "I Love the '80s",
+"net": "vh1",
+"years": [
+2002,
+2003
+],
+"q": "music",
+"rank": 2,
+"alt": [
+"I Love the 80s"
+]
+},
+{
+"title": "Intimate Portrait",
+"net": "life",
+"years": [
+1994,
+2004
+],
+"q": "pub",
+"rank": 3
+},
+{
+"title": "Supermarket Sweep",
+"net": "life",
+"years": [
+1990,
+2003
+],
+"q": "game",
+"rank": 2
+},
+{
+"title": "Shop 'til You Drop",
+"net": "life",
+"years": [
+1991,
+2004
+],
+"q": "game",
+"rank": 3,
+"alt": [
+"Shop til You Drop"
+]
+},
+{
+"title": "Any Day Now",
+"net": "life",
+"years": [
+1998,
+2002
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Emeril Live",
+"net": "food",
+"years": [
+1997,
+2004
+],
+"q": "cook",
+"rank": 1
+},
+{
+"title": "Iron Chef",
+"net": "food",
+"years": [
+1999,
+2004
+],
+"q": "cook",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "Good Eats",
+"net": "food",
+"years": [
+1999,
+2004
+],
+"q": "cook",
+"rank": 1
+},
+{
+"title": "Two Fat Ladies",
+"net": "food",
+"years": [
+1997,
+1999
+],
+"q": "cook",
+"rank": 3
+},
+{
+"title": "Unwrapped",
+"net": "food",
+"years": [
+2001,
+2004
+],
+"q": "cook",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "SportsCenter",
+"net": "espn",
+"years": [
+1979,
+2004
+],
+"q": "news",
+"rank": 1,
+"alt": [
+"Sports Center"
+]
+},
+{
+"title": "NFL Primetime",
+"net": "espn",
+"years": [
+1987,
+2004
+],
+"q": "news",
+"rank": 2
+},
+{
+"title": "Baseball Tonight",
+"net": "espn",
+"years": [
+1990,
+2004
+],
+"q": "news",
+"rank": 3
+},
+{
+"title": "American Gladiators",
+"net": "syn",
+"years": [
+1989,
+1996
+],
+"q": "game",
+"rank": 1
+},
+{
+"title": "Double Dare",
+"net": "nick",
+"years": [
+1986,
+1993
+],
+"q": "kids",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"Family Double Dare",
+"Super Sloppy Double Dare"
+]
+},
+{
+"title": "Legends of the Hidden Temple",
+"net": "nick",
+"years": [
+1993,
+1995
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Nickelodeon GUTS",
+"net": "nick",
+"years": [
+1992,
+1995
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Nickelodeon Guts",
+"Global Guts"
+]
+},
+{
+"title": "Clarissa Explains It All",
+"net": "nick",
+"years": [
+1991,
+1994
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "The Adventures of Pete & Pete",
+"net": "nick",
+"years": [
+1993,
+1996
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Adventures of Pete and Pete",
+"Pete & Pete",
+"Pete and Pete"
+]
+},
+{
+"title": "Are You Afraid of the Dark?",
+"net": "nick",
+"years": [
+1992,
+2000
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Are You Afraid of the Dark"
+]
+},
+{
+"title": "Salute Your Shorts",
+"net": "nick",
+"years": [
+1991,
+1992
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Hey Dude",
+"net": "nick",
+"years": [
+1989,
+1991
+],
+"q": "kids",
+"rank": 2
+},
+{
+"title": "You Can't Do That on Television",
+"net": "nick",
+"years": [
+1979,
+1990
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"You Cant Do That on Television"
+]
+},
+{
+"title": "All That",
+"net": "nick",
+"years": [
+1994,
+2004
+],
+"q": "kids",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"Nickelodeon All That"
+]
+},
+{
+"title": "Kenan & Kel",
+"net": "nick",
+"years": [
+1996,
+2000
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Kenan and Kel"
+]
+},
+{
+"title": "The Secret World of Alex Mack",
+"net": "nick",
+"years": [
+1994,
+1998
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Secret World of Alex Mack"
+]
+},
+{
+"title": "Rugrats",
+"net": "nick",
+"years": [
+1991,
+2004
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Doug",
+"net": "nick",
+"years": [
+1991,
+1994
+],
+"q": "kids",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "The Ren & Stimpy Show",
+"net": "nick",
+"years": [
+1991,
+1996
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Ren and Stimpy",
+"Ren & Stimpy"
+]
+},
+{
+"title": "Rocko's Modern Life",
+"net": "nick",
+"years": [
+1993,
+1996
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Rockos Modern Life"
+]
+},
+{
+"title": "Hey Arnold!",
+"net": "nick",
+"years": [
+1996,
+2004
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Hey Arnold"
+]
+},
+{
+"title": "SpongeBob SquarePants",
+"net": "nick",
+"years": [
+1999,
+2004
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Spongebob Squarepants",
+"Spongebob"
+]
+},
+{
+"title": "Aaahh!!! Real Monsters",
+"net": "nick",
+"years": [
+1994,
+1997
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Aaahh Real Monsters",
+"Real Monsters"
+]
+},
+{
+"title": "The Angry Beavers",
+"net": "nick",
+"years": [
+1997,
+2001
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Angry Beavers"
+]
+},
+{
+"title": "CatDog",
+"net": "nick",
+"years": [
+1998,
+2004
+],
+"q": "kids",
+"rank": 2
+},
+{
+"title": "The Wild Thornberrys",
+"net": "nick",
+"years": [
+1998,
+2004
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Wild Thornberrys"
+]
+},
+{
+"title": "Mr. Wizard's World",
+"net": "nick",
+"years": [
+1983,
+1990
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Mr Wizards World"
+]
+},
+{
+"title": "Figure It Out",
+"net": "nick",
+"years": [
+1997,
+1999
+],
+"q": "kids",
+"rank": 2
+},
+{
+"title": "Dexter's Laboratory",
+"net": "cn",
+"years": [
+1996,
+2003
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Dexters Laboratory"
+]
+},
+{
+"title": "The Powerpuff Girls",
+"net": "cn",
+"years": [
+1998,
+2004
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Powerpuff Girls"
+]
+},
+{
+"title": "Johnny Bravo",
+"net": "cn",
+"years": [
+1997,
+2004
+],
+"q": "kids",
+"rank": 2
+},
+{
+"title": "Cow and Chicken",
+"net": "cn",
+"years": [
+1997,
+1999
+],
+"q": "kids",
+"rank": 2
+},
+{
+"title": "Ed, Edd n Eddy",
+"net": "cn",
+"years": [
+1999,
+2004
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Ed Edd n Eddy"
+]
+},
+{
+"title": "Courage the Cowardly Dog",
+"net": "cn",
+"years": [
+1999,
+2002
+],
+"q": "kids",
+"rank": 2
+},
+{
+"title": "Space Ghost Coast to Coast",
+"net": "cn",
+"years": [
+1994,
+2004
+],
+"q": "late",
+"rank": 2
+},
+{
+"title": "Batman: The Animated Series",
+"net": "fox",
+"years": [
+1992,
+1995
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Batman The Animated Series"
+]
+},
+{
+"title": "X-Men",
+"net": "fox",
+"years": [
+1992,
+1997
+],
+"q": "kids",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"X-Men The Animated Series"
+]
+},
+{
+"title": "Animaniacs",
+"net": "fox",
+"years": [
+1993,
+1998
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Tiny Toon Adventures",
+"net": "syn",
+"years": [
+1990,
+1992
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Tiny Toons"
+]
+},
+{
+"title": "Mighty Morphin Power Rangers",
+"net": "fox",
+"years": [
+1993,
+1996
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Power Rangers"
+]
+},
+{
+"title": "Teenage Mutant Ninja Turtles",
+"net": "syn",
+"years": [
+1987,
+1996
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "DuckTales",
+"net": "syn",
+"years": [
+1987,
+1990
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Duck Tales"
+]
+},
+{
+"title": "Chip 'n Dale Rescue Rangers",
+"net": "syn",
+"years": [
+1989,
+1990
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Chip n Dale Rescue Rangers",
+"Rescue Rangers"
+]
+},
+{
+"title": "TaleSpin",
+"net": "syn",
+"years": [
+1990,
+1991
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Tale Spin"
+]
+},
+{
+"title": "Darkwing Duck",
+"net": "syn",
+"years": [
+1991,
+1992
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Gargoyles",
+"net": "syn",
+"years": [
+1994,
+1997
+],
+"q": "kids",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Goosebumps",
+"net": "fox",
+"years": [
+1995,
+1998
+],
+"q": "kids",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "Pokémon",
+"net": "wb",
+"years": [
+1998,
+2004
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Pokemon"
+]
+},
+{
+"title": "Dragon Ball Z",
+"net": "cn",
+"years": [
+1996,
+2003
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Dragonball Z"
+]
+},
+{
+"title": "Sailor Moon",
+"net": "syn",
+"years": [
+1995,
+2000
+],
+"q": "kids",
+"rank": 2
+},
+{
+"title": "The Transformers",
+"net": "syn",
+"years": [
+1984,
+1987
+],
+"q": "kids",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"Transformers G1",
+"Transformers Generation 1"
+]
+},
+{
+"title": "G.I. Joe: A Real American Hero",
+"net": "syn",
+"years": [
+1985,
+1986
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"GI Joe A Real American Hero",
+"G.I. Joe"
+]
+},
+{
+"title": "He-Man and the Masters of the Universe",
+"net": "syn",
+"years": [
+1983,
+1985
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"He-Man"
+]
+},
+{
+"title": "ThunderCats",
+"net": "syn",
+"years": [
+1985,
+1989
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Thundercats"
+]
+},
+{
+"title": "The Real Ghostbusters",
+"net": "abc",
+"years": [
+1986,
+1991
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Real Ghostbusters"
+]
+},
+{
+"title": "Muppet Babies",
+"net": "cbs",
+"years": [
+1984,
+1991
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Garfield and Friends",
+"net": "cbs",
+"years": [
+1988,
+1994
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Pee-wee's Playhouse",
+"net": "cbs",
+"years": [
+1986,
+1990
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Pee-wees Playhouse",
+"Pee Wees Playhouse"
+]
+},
+{
+"title": "The Smurfs",
+"net": "nbc",
+"years": [
+1981,
+1989
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Smurfs"
+]
+},
+{
+"title": "Inspector Gadget",
+"net": "syn",
+"years": [
+1983,
+1986
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Reading Rainbow",
+"net": "pbs",
+"years": [
+1983,
+2004
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Sesame Street",
+"net": "pbs",
+"years": [
+1969,
+2004
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Mister Rogers' Neighborhood",
+"net": "pbs",
+"years": [
+1968,
+2001
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Mister Rogers Neighborhood",
+"Mr. Rogers Neighborhood"
+]
+},
+{
+"title": "Square One Television",
+"net": "pbs",
+"years": [
+1987,
+1992
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Square One TV"
+]
+},
+{
+"title": "3-2-1 Contact",
+"net": "pbs",
+"years": [
+1980,
+1988
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"3 2 1 Contact"
+]
+},
+{
+"title": "Where in the World Is Carmen Sandiego?",
+"net": "pbs",
+"years": [
+1991,
+1995
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Where in the World Is Carmen Sandiego"
+]
+},
+{
+"title": "Bill Nye the Science Guy",
+"net": "pbs",
+"years": [
+1993,
+1998
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "The Magic School Bus",
+"net": "pbs",
+"years": [
+1994,
+1997
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Magic School Bus"
+]
+},
+{
+"title": "Wishbone",
+"net": "pbs",
+"years": [
+1995,
+1998
+],
+"q": "kids",
+"rank": 2
+},
+{
+"title": "Ghostwriter",
+"net": "pbs",
+"years": [
+1992,
+1995
+],
+"q": "kids",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Arthur",
+"net": "pbs",
+"years": [
+1996,
+2004
+],
+"q": "kids",
+"rank": 1,
+"ambiguous": true
+},
+{
+"title": "Barney & Friends",
+"net": "pbs",
+"years": [
+1992,
+2004
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Barney and Friends"
+]
+},
+{
+"title": "Lamb Chop's Play-Along",
+"net": "pbs",
+"years": [
+1992,
+1997
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Lamb Chops Play Along"
+]
+},
+{
+"title": "Shining Time Station",
+"net": "pbs",
+"years": [
+1989,
+1995
+],
+"q": "kids",
+"rank": 2
+},
+{
+"title": "Blue's Clues",
+"net": "nick",
+"years": [
+1996,
+2004
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Blues Clues"
+]
+},
+{
+"title": "Fraggle Rock",
+"net": "hbo",
+"years": [
+1983,
+1987
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "The Muppet Show",
+"net": "syn",
+"years": [
+1976,
+1981
+],
+"q": "rerun",
+"rank": 1,
+"alt": [
+"Muppet Show"
+]
+},
+{
+"title": "Tales from the Crypt",
+"net": "hbo",
+"years": [
+1989,
+1996
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Tales from the Darkside",
+"net": "syn",
+"years": [
+1984,
+1988
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Monsters",
+"net": "syn",
+"years": [
+1988,
+1991
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Freddy's Nightmares",
+"net": "syn",
+"years": [
+1988,
+1990
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Freddys Nightmares"
+]
+},
+{
+"title": "Friday the 13th: The Series",
+"net": "syn",
+"years": [
+1987,
+1990
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Friday the 13th The Series"
+]
+},
+{
+"title": "Amazing Stories",
+"net": "nbc",
+"years": [
+1985,
+1987
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Max Headroom",
+"net": "abc",
+"years": [
+1987,
+1988
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "V",
+"net": "nbc",
+"years": [
+1983,
+1985
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"V The Series",
+"V The Final Battle"
+]
+},
+{
+"title": "Alien Nation",
+"net": "fox",
+"years": [
+1989,
+1990
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "21 Jump Street",
+"net": "fox",
+"years": [
+1987,
+1991
+],
+"q": "prime",
+"rank": 1,
+"slots": [
+[
+1987,
+1990,
+"fox",
+0,
+"19:00"
+]
+]
+},
+{
+"title": "The Tracey Ullman Show",
+"net": "fox",
+"years": [
+1987,
+1990
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Tracey Ullman Show"
+]
+},
+{
+"title": "It's Garry Shandling's Show",
+"net": "fox",
+"years": [
+1986,
+1990
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Its Garry Shandlings Show"
+]
+},
+{
+"title": "Parker Lewis Can't Lose",
+"net": "fox",
+"years": [
+1990,
+1993
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Parker Lewis Cant Lose"
+]
+},
+{
+"title": "Get a Life",
+"net": "fox",
+"years": [
+1990,
+1992
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Herman's Head",
+"net": "fox",
+"years": [
+1991,
+1994
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Hermans Head"
+]
+},
+{
+"title": "The Adventures of Brisco County, Jr.",
+"net": "fox",
+"years": [
+1993,
+1994
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Adventures of Brisco County Jr",
+"Brisco County"
+]
+},
+{
+"title": "My So-Called Life",
+"net": "abc",
+"years": [
+1994,
+1995
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"My So Called Life"
+]
+},
+{
+"title": "Freaks and Geeks",
+"net": "nbc",
+"years": [
+1999,
+2000
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "Thirtysomething",
+"net": "abc",
+"years": [
+1987,
+1991
+],
+"q": "prime",
+"rank": 2
+},
+{
+"title": "China Beach",
+"net": "abc",
+"years": [
+1988,
+1991
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Life Goes On",
+"net": "abc",
+"years": [
+1989,
+1993
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Wiseguy",
+"net": "cbs",
+"years": [
+1987,
+1990
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "The Equalizer",
+"net": "cbs",
+"years": [
+1985,
+1989
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Spenser: For Hire",
+"net": "abc",
+"years": [
+1985,
+1988
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Spenser For Hire"
+]
+},
+{
+"title": "T.J. Hooker",
+"net": "abc",
+"years": [
+1982,
+1986
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"TJ Hooker"
+]
+},
+{
+"title": "Hardcastle and McCormick",
+"net": "abc",
+"years": [
+1983,
+1986
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "The Fall Guy",
+"net": "abc",
+"years": [
+1981,
+1986
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Fall Guy"
+]
+},
+{
+"title": "Riptide",
+"net": "nbc",
+"years": [
+1984,
+1986
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Crazy Like a Fox",
+"net": "cbs",
+"years": [
+1984,
+1986
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Hotel",
+"net": "abc",
+"years": [
+1983,
+1988
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "Jake and the Fatman",
+"net": "cbs",
+"years": [
+1987,
+1992
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Father Dowling Mysteries",
+"net": "abc",
+"years": [
+1989,
+1991
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Mike Hammer",
+"net": "cbs",
+"years": [
+1984,
+1987
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true,
+"alt": [
+"Mickey Spillane's Mike Hammer"
+]
+},
+{
+"title": "Beauty and the Beast",
+"net": "cbs",
+"years": [
+1987,
+1990
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Tour of Duty",
+"net": "cbs",
+"years": [
+1987,
+1990
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "The Young Riders",
+"net": "abc",
+"years": [
+1989,
+1992
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Young Riders"
+]
+},
+{
+"title": "Early Edition",
+"net": "cbs",
+"years": [
+1996,
+2000
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "The Pretender",
+"net": "nbc",
+"years": [
+1996,
+2000
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Profiler",
+"net": "nbc",
+"years": [
+1996,
+2000
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Third Watch",
+"net": "nbc",
+"years": [
+1999,
+2004
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Providence",
+"net": "nbc",
+"years": [
+1999,
+2002
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Judging Amy",
+"net": "cbs",
+"years": [
+1999,
+2004
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Alias",
+"net": "abc",
+"years": [
+2001,
+2004
+],
+"q": "prime",
+"rank": 2,
+"ambiguous": true
+},
+{
+"title": "North and South",
+"net": "abc",
+"years": [
+1985,
+1986
+],
+"q": "movie",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"North and South miniseries"
+]
+},
+{
+"title": "Lonesome Dove",
+"net": "cbs",
+"years": [
+1989,
+1989
+],
+"q": "movie",
+"rank": 1
+},
+{
+"title": "Stephen King's It",
+"net": "abc",
+"years": [
+1990,
+1990
+],
+"q": "movie",
+"rank": 1,
+"alt": [
+"Stephen Kings It",
+"It 1990"
+]
+},
+{
+"title": "The Stand",
+"net": "abc",
+"years": [
+1994,
+1994
+],
+"q": "movie",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"Stephen King's The Stand"
+]
+},
+{
+"title": "Roots",
+"net": "abc",
+"years": [
+1977,
+1977
+],
+"q": "movie",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"Roots miniseries"
+]
+},
+{
+"title": "Shogun",
+"net": "nbc",
+"years": [
+1980,
+1980
+],
+"q": "movie",
+"rank": 3,
+"ambiguous": true,
+"alt": [
+"Shogun miniseries"
+]
+},
+{
+"title": "The Thorn Birds",
+"net": "abc",
+"years": [
+1983,
+1983
+],
+"q": "movie",
+"rank": 2,
+"alt": [
+"Thorn Birds"
+]
+},
+{
+"title": "The Day After",
+"net": "abc",
+"years": [
+1983,
+1983
+],
+"q": "movie",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"The Day After 1983"
+]
+},
+{
+"title": "War and Remembrance",
+"net": "abc",
+"years": [
+1988,
+1989
+],
+"q": "movie",
+"rank": 3
+},
+{
+"title": "The Winds of War",
+"net": "abc",
+"years": [
+1983,
+1983
+],
+"q": "movie",
+"rank": 3,
+"alt": [
+"Winds of War"
+]
+},
+{
+"title": "Amerika",
+"net": "abc",
+"years": [
+1987,
+1987
+],
+"q": "movie",
+"rank": 3,
+"ambiguous": true,
+"alt": [
+"Amerika miniseries"
+]
+},
+{
+"title": "The Langoliers",
+"net": "abc",
+"years": [
+1995,
+1995
+],
+"q": "movie",
+"rank": 3,
+"alt": [
+"Langoliers"
+]
+},
+{
+"title": "The Tommyknockers",
+"net": "abc",
+"years": [
+1993,
+1993
+],
+"q": "movie",
+"rank": 3,
+"alt": [
+"Tommyknockers"
+]
+},
+{
+"title": "Real TV",
+"net": "syn",
+"years": [
+1996,
+2001
+],
+"q": "prime",
+"rank": 3,
+"ambiguous": true
+},
+{
+"title": "Real Stories of the Highway Patrol",
+"net": "syn",
+"years": [
+1993,
+1999
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Hard Copy",
+"net": "syn",
+"years": [
+1989,
+1999
+],
+"q": "mag",
+"rank": 2
+},
+{
+"title": "A Current Affair",
+"net": "syn",
+"years": [
+1986,
+1996
+],
+"q": "mag",
+"rank": 2
+},
+{
+"title": "Inside Edition",
+"net": "syn",
+"years": [
+1989,
+2004
+],
+"q": "mag",
+"rank": 2
+},
+{
+"title": "Entertainment Tonight",
+"net": "syn",
+"years": [
+1981,
+2004
+],
+"q": "mag",
+"rank": 1
+},
+{
+"title": "Lifestyles of the Rich and Famous",
+"net": "syn",
+"years": [
+1984,
+1995
+],
+"q": "mag",
+"rank": 2
+},
+{
+"title": "Star Search",
+"net": "syn",
+"years": [
+1983,
+1995
+],
+"q": "prime",
+"rank": 1
+},
+{
+"title": "Siskel & Ebert",
+"net": "syn",
+"years": [
+1986,
+1999
+],
+"q": "mag",
+"rank": 2,
+"alt": [
+"Siskel and Ebert",
+"At the Movies"
+]
+},
+{
+"title": "Ripley's Believe It or Not!",
+"net": "abc",
+"years": [
+1982,
+1986
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"Ripleys Believe It or Not"
+]
+},
+{
+"title": "That's Incredible!",
+"net": "abc",
+"years": [
+1980,
+1984
+],
+"q": "prime",
+"rank": 3,
+"alt": [
+"Thats Incredible"
+]
+},
+{
+"title": "TV's Bloopers & Practical Jokes",
+"net": "nbc",
+"years": [
+1984,
+1986
+],
+"q": "prime",
+"rank": 2,
+"alt": [
+"TVs Bloopers and Practical Jokes",
+"Bloopers and Practical Jokes"
+]
+},
+{
+"title": "Candid Camera",
+"net": "cbs",
+"years": [
+1960,
+2004
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Totally Hidden Video",
+"net": "fox",
+"years": [
+1989,
+1992
+],
+"q": "prime",
+"rank": 3
+},
+{
+"title": "Judge Judy",
+"net": "syn",
+"years": [
+1996,
+2004
+],
+"q": "talk",
+"rank": 1
+},
+{
+"title": "The People's Court",
+"net": "syn",
+"years": [
+1981,
+2004
+],
+"q": "talk",
+"rank": 1,
+"alt": [
+"Peoples Court"
+]
+},
+{
+"title": "The Oprah Winfrey Show",
+"net": "syn",
+"years": [
+1986,
+2004
+],
+"q": "talk",
+"rank": 1,
+"alt": [
+"Oprah Winfrey Show",
+"Oprah"
+]
+},
+{
+"title": "Donahue",
+"net": "syn",
+"years": [
+1970,
+1996
+],
+"q": "talk",
+"rank": 1,
+"ambiguous": true,
+"alt": [
+"Phil Donahue"
+]
+},
+{
+"title": "Geraldo",
+"net": "syn",
+"years": [
+1987,
+1998
+],
+"q": "talk",
+"rank": 2,
+"ambiguous": true,
+"alt": [
+"Geraldo Rivera"
+]
+},
+{
+"title": "The Jerry Springer Show",
+"net": "syn",
+"years": [
+1991,
+2004
+],
+"q": "talk",
+"rank": 1,
+"alt": [
+"Jerry Springer"
+]
+},
+{
+"title": "Ricki Lake",
+"net": "syn",
+"years": [
+1993,
+2004
+],
+"q": "talk",
+"rank": 2
+},
+{
+"title": "The Arsenio Hall Show",
+"net": "syn",
+"years": [
+1989,
+1994
+],
+"q": "late",
+"rank": 1,
+"alt": [
+"Arsenio Hall Show",
+"Arsenio Hall"
+]
+},
+{
+"title": "The Tonight Show Starring Johnny Carson",
+"net": "nbc",
+"years": [
+1962,
+1992
+],
+"q": "late",
+"rank": 1,
+"alt": [
+"Tonight Show Starring Johnny Carson",
+"Johnny Carson"
+],
+"slots": [
+[
+1984,
+1992,
+"nbc",
+1,
+"23:30"
+]
+]
+},
+{
+"title": "Late Night with David Letterman",
+"net": "nbc",
+"years": [
+1982,
+1993
+],
+"q": "late",
+"rank": 1,
+"slots": [
+[
+1984,
+1993,
+"nbc",
+1,
+"00:30"
+]
+]
+},
+{
+"title": "Late Show with David Letterman",
+"net": "cbs",
+"years": [
+1993,
+2004
+],
+"q": "late",
+"rank": 1,
+"slots": [
+[
+1993,
+2004,
+"cbs",
+1,
+"23:35"
+]
+]
+},
+{
+"title": "Late Night with Conan O'Brien",
+"net": "nbc",
+"years": [
+1993,
+2004
+],
+"q": "late",
+"rank": 1,
+"alt": [
+"Late Night with Conan OBrien",
+"Conan O'Brien"
+]
+},
+{
+"title": "The Tonight Show with Jay Leno",
+"net": "nbc",
+"years": [
+1992,
+2004
+],
+"q": "late",
+"rank": 1,
+"alt": [
+"Tonight Show with Jay Leno"
+]
+},
+{
+"title": "A Charlie Brown Christmas",
+"net": "cbs",
+"years": [
+1965,
+2004
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "It's the Great Pumpkin, Charlie Brown",
+"net": "cbs",
+"years": [
+1966,
+2004
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Its the Great Pumpkin Charlie Brown",
+"Great Pumpkin Charlie Brown"
+]
+},
+{
+"title": "A Charlie Brown Thanksgiving",
+"net": "cbs",
+"years": [
+1973,
+2004
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "Rudolph the Red-Nosed Reindeer",
+"net": "cbs",
+"years": [
+1964,
+2004
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Rudolph the Red Nosed Reindeer"
+]
+},
+{
+"title": "Frosty the Snowman",
+"net": "cbs",
+"years": [
+1969,
+2004
+],
+"q": "kids",
+"rank": 1
+},
+{
+"title": "How the Grinch Stole Christmas",
+"net": "cbs",
+"years": [
+1966,
+2004
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"How the Grinch Stole Christmas!",
+"Dr. Seuss' How the Grinch Stole Christmas"
+]
+},
+{
+"title": "Santa Claus Is Comin' to Town",
+"net": "abc",
+"years": [
+1970,
+2004
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Santa Claus Is Comin to Town",
+"Santa Claus Is Coming to Town"
+]
+},
+{
+"title": "The Year Without a Santa Claus",
+"net": "abc",
+"years": [
+1974,
+2004
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Year Without a Santa Claus"
+]
+},
+{
+"title": "A Garfield Christmas",
+"net": "cbs",
+"years": [
+1987,
+2000
+],
+"q": "kids",
+"rank": 1,
+"alt": [
+"Garfield Christmas Special",
+"A Garfield Christmas Special"
+]
+},
+{
+"title": "Garfield's Halloween Adventure",
+"net": "cbs",
+"years": [
+1985,
+2000
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Garfields Halloween Adventure"
+]
+},
+{
+"title": "Garfield's Thanksgiving",
+"net": "cbs",
+"years": [
+1989,
+2000
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Garfields Thanksgiving"
+]
+},
+{
+"title": "A Claymation Christmas Celebration",
+"net": "cbs",
+"years": [
+1987,
+1992
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Claymation Christmas Celebration",
+"Claymation Christmas"
+]
+},
+{
+"title": "Mickey's Christmas Carol",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Mickeys Christmas Carol"
+]
+},
+{
+"title": "A Muppet Family Christmas",
+"net": "abc",
+"years": [
+1987,
+1989
+],
+"q": "kids",
+"rank": 2,
+"alt": [
+"Muppet Family Christmas"
+]
+},
+{
+"title": "Emmet Otter's Jug-Band Christmas",
+"net": "hbo",
+"years": [
+1977,
+2004
+],
+"q": "kids",
+"rank": 3,
+"alt": [
+"Emmet Otters Jug Band Christmas"
+]
+}
+]
