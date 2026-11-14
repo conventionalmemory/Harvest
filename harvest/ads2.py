@@ -85,6 +85,9 @@ def when(title, desc, date, year):
     m = YR.search(t)
     if m: y = int(m.group(1)); src = 't'
     if not y:
+        m = re.search(r'(?<!\d)(\d{1,2})[/.-](\d{1,2})[/.-](8[4-9]|9\d|0[0-4])(?!\d)', t)
+        if m and 1 <= int(m.group(1)) <= 12 and 1 <= int(m.group(2)) <= 31: y = int(('19' if m.group(3) >= '84' else '20') + m.group(3)); src = 't'
+    if not y:
         m = YR.search(desc[:240])
         if m and not re.search(r'(upload|posted|digitiz|transfer|captur|rip)\w* (on|in)? ?' + m.group(1), desc[:240], re.I): y = int(m.group(1)); src = 'd'
     if not y:
