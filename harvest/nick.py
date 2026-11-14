@@ -77,11 +77,13 @@ def match(show, title):
     return False
 XCOL = {'community_media', 'podcasts', 'newsandpublicaffairs', 'audio', 'opensource_audio', 'radioprograms', 'oldtimeradio'}
 
+X_MORE = r"\b(annotated|japanese dub|dub|dvd extras?|bonus features?|secret galaxy|surprise|song videos?|banned|edited|i ain.?t afraid|rinse repeat|opening (and|&|to)|closing to|nicktoons broadcast|full broadcast archive|lost city of gold|the movie|marathon|iceberg|explained|ranked|ranking|every episode|top \d+|worst|best of youtube|theory|theories|analysis|essay|lost media|creepypasta|react\w*|unboxing|stream)\b"
 ADS = r"\b(commercials?|bumpers?|promos?|ads?)\b"
 ADOK = r"(with|w/|w|and|\+|&|incl\w*|plus)\s*(original\s+|some\s+|the\s+)?(commercials|bumpers|promos|ads)|commercials included|\bwoc\b|\bblock\b|full (broadcast|tape|recording|episode)"
 def ok_title2(t):
     if not ok_title(t): return False
     low = t.lower()
+    if re.search(X_MORE, low): return False
     if re.search(ADS, low) and not re.search(ADOK, low): return False
     return True
 def ekey(name):
@@ -132,6 +134,7 @@ def match2(show, title):
     elif not match(show, title): return False
     low = title.lower()
     if show.get('need') and not re.search(show['need'], low): return False
+    if show.get('loose') and not re.search(r'(?<!\d)(19[89]\d|200[0-4])(?!\d)|(?<!\d)\d{1,2}[./-]\d{1,2}[./-]([89]\d|0[0-4])(?!\d)', low): return False
     if show.get('ms'):
         for m in re.finditer(r'(?:season|series|s)\s?0?(\d{1,2})(?!\d)', low):
             if int(m.group(1)) > show['ms'] and int(m.group(1)) < 30: return False
@@ -171,7 +174,7 @@ def tvmaze(s):
         sh = r.get('show') or {}
         if norm(sh.get('name')) != s['n'] and norm(sh.get('name')) not in [norm(a) for a in s.get('alt', [])]: continue
         py = int(str(sh.get('premiered') or '0000')[:4] or 0)
-        if not oy or not (oy[0] - 3 <= py <= oy[0] + 1): continue
+        if not oy or not (oy[0] - 3 <= py <= oy[-1]): continue
         eps = get('https://api.tvmaze.com/shows/%d/episodes?specials=1' % sh['id'], tries=3) or []
         out = [{'s': e.get('season') or 0, 'e': e.get('number') or 0, 'name': e.get('name') or '', 'airdate': e.get('airdate') or ''} for e in eps if e.get('number')]
         if out: return out
@@ -198,6 +201,8 @@ if MODE == 'plan':
         jobs.append((k, q, 0))
         if s.get('guide') or s.get('priority'):
             jobs.append((k, 'mediatype:movies AND (' + ' OR '.join('"' + qtitle(a) + '"' for a in names) + ')', 1))
+        if s.get('wide'):
+            jobs.append((k, 'mediatype:movies AND (' + ' OR '.join('"' + qtitle(a) + '"' for a in names) + ')', 3))
         if s.get('priority'):
             g, by = gidx(s['title'])
             keys = sorted(set('tale of the ' + k2 for k2 in by) | set('tale of ' + k2 for k2 in by))
@@ -219,6 +224,8 @@ if MODE == 'plan':
                 kk = k
                 if mode == 0:
                     if not match2(s, t): continue
+                elif mode == 3:
+                    if not match(s, t): continue
                 elif mode == 2:
                     if not epfind(s['title'], t): continue
                 else:
@@ -257,7 +264,7 @@ RANK = {'h.264 IA': 0, 'h.264': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
 def keep(x):
     s = BYT.get(x['k'])
     if not s or not ok_title2(x['t']): return False
-    if not match2(s, x['t']) and not (x.get('se') and s.get('guide')) and not x.get('blk'): return False
+    if not match2(s, x['t']) and not (x.get('se') and s.get('guide')) and not x.get('blk') and not (x.get('w') and match(s, x['t'])): return False
     if set(x.get('c') or []) & XCOL: return False
     dy = re.match(r'(\d{4})', str(x.get('d') or ''))
     if x['i'].startswith('youtube-') and dy and int(dy.group(1)) >= 2005 and not re.search(r'(19[4-9]\d|200[0-4]|s\d+\s?e\d+)', x['t'].lower()): return False
@@ -302,6 +309,10 @@ def meta(it):
     blob = (title + ' ' + str(subj) + ' ' + desc[:500]).lower()
     if re.search(X_FOR, blob): return None
     if re.search(r'\b(podcast|fan ?film|fan ?made|video ?game|gameplay|radio (show|program|broadcast)|old time radio|audio only)\b', blob): return None
+    wide = 0
+    if it.get('m') == 3 and not match2(s, title):
+        if not s.get('need') or not re.search(s['need'], blob) or not match(s, title): return None
+        wide = 1
     se = {}
     if s.get('guide'):
         single = epfind(s['title'], title) if len(files) <= 2 else None
@@ -314,6 +325,7 @@ def meta(it):
         if ys and 1984 <= int(ys[0]) <= 2004: e = int(ys[0])
     r = {'i': it['identifier'], 'q': s.get('q', 'kids'), 't': title[:200], 'd': str(m.get('date', '') or ''), 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files, 'dl': it.get('downloads') or 0, 'k': s['title'], 'e': e, 'net': s.get('net', ''), 'ct': s['ct']}
     if se: r['se'] = se
+    if wide: r['w'] = 1
     if s['title'] == 'SNICK' and it.get('m') == 1: r['blk'] = 1
     return r
 def meta2(it):

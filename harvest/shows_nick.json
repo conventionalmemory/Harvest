@@ -5,7 +5,8 @@
 "net": "nick",
 "run": "1991-1992",
 "q": "kids",
-"guide": true
+"guide": true,
+"wide": true
 },
 {
 "title": "Hey Dude",
@@ -14,7 +15,8 @@
 "run": "1989-1991",
 "q": "kids",
 "ambiguous": true,
-"guide": true
+"guide": true,
+"wide": true
 },
 {
 "title": "The Adventures of Pete & Pete",
@@ -35,14 +37,16 @@
 "net": "nick",
 "run": "1991-1994",
 "q": "kids",
-"guide": true
+"guide": true,
+"wide": true
 },
 {
 "title": "Welcome Freshmen",
 "ct": "nick",
 "net": "nick",
 "run": "1991-1993",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "Fifteen",
@@ -54,7 +58,8 @@
 "Hillside"
 ],
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|hillside|ytv|s\\d+\\s?e\\d+|season|episode"
+"need": "nickelodeon|nick\\b|hillside|ytv|s\\d+\\s?e\\d+|season|episode",
+"wide": true
 },
 {
 "title": "Are You Afraid of the Dark?",
@@ -728,7 +733,8 @@
 "alt": [
 "Mystery Files of Shelby Woo",
 "Shelby Woo"
-]
+],
+"wide": true
 },
 {
 "title": "Space Cases",
@@ -743,7 +749,8 @@
 "ct": "nick",
 "net": "nick",
 "run": "1994-1995",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "Kenan & Kel",
@@ -834,7 +841,8 @@
 "run": "2001-2002",
 "q": "kids",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|s\\d+\\s?e\\d+|season|episode"
+"need": "nickelodeon|nick\\b|s\\d+\\s?e\\d+|season|episode",
+"wide": true
 },
 {
 "title": "The Brothers Garcia",
@@ -855,7 +863,8 @@
 "alt": [
 "Drake and Josh"
 ],
-"ms": 2
+"ms": 2,
+"need": "s\\d+\\s?e\\d+|season [12]\\b|s0?[12]\\b|episode \\d|2004"
 },
 {
 "title": "Roundhouse",
@@ -864,7 +873,8 @@
 "run": "1992-1996",
 "q": "kids",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|snick|s\\d+\\s?e\\d+|season|episode|199[2-6]"
+"need": "nickelodeon|nick\\b|snick|s\\d+\\s?e\\d+|season|episode|199[2-6]",
+"wide": true
 },
 {
 "title": "You Can't Do That on Television",
@@ -882,7 +892,8 @@
 "ct": "nick",
 "net": "nick",
 "run": "1985-1986",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "Out of Control",
@@ -891,7 +902,8 @@
 "run": "1984-1985",
 "q": "kids",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|dave coulier|198[45]"
+"need": "nickelodeon|nick\\b|dave coulier|198[45]",
+"wide": true
 },
 {
 "title": "Mr. Wizard's World",
@@ -910,7 +922,8 @@
 "ct": "nick",
 "net": "nick",
 "run": "1984-1989",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "Don't Just Sit There",
@@ -932,7 +945,8 @@
 "Kids Court"
 ],
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|198[89]|episode"
+"need": "nickelodeon|nick\\b|198[89]|episode",
+"wide": true
 },
 {
 "title": "Total Panic",
@@ -941,7 +955,8 @@
 "run": "1989-1990",
 "q": "kids",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|1989|1990|episode"
+"need": "nickelodeon|nick\\b|1989|1990|episode",
+"wide": true
 },
 {
 "title": "Weinerville",
@@ -958,7 +973,8 @@
 "q": "kids",
 "alt": [
 "Wild and Crazy Kids"
-]
+],
+"wide": true
 },
 {
 "title": "What Would You Do?",
@@ -970,7 +986,8 @@
 "What Would You Do"
 ],
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|marc summers|199[1-3]"
+"need": "nickelodeon|nick\\b|marc summers|199[1-3]",
+"wide": true
 },
 {
 "title": "Double Dare",
@@ -1004,7 +1021,8 @@
 "run": "1987-1989",
 "q": "game",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|game show|198[789]|episode"
+"need": "nickelodeon|nick\\b|game show|198[789]|episode",
+"wide": true
 },
 {
 "title": "Think Fast",
@@ -1013,7 +1031,8 @@
 "run": "1989-1991",
 "q": "game",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|game show|1989|199[01]"
+"need": "nickelodeon|nick\\b|game show|1989|199[01]",
+"wide": true
 },
 {
 "title": "Make the Grade",
@@ -1022,7 +1041,8 @@
 "run": "1989-1991",
 "q": "game",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|game show|1989|199[01]"
+"need": "nickelodeon|nick\\b|game show|1989|199[01]",
+"wide": true
 },
 {
 "title": "Get the Picture",
@@ -1031,7 +1051,8 @@
 "run": "1991-1993",
 "q": "game",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|game show|199[1-3]"
+"need": "nickelodeon|nick\\b|game show|199[1-3]",
+"wide": true
 },
 {
 "title": "Nick Arcade",
@@ -1069,7 +1090,8 @@
 "run": "1992-1995",
 "q": "game",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|aggro crag|199[2-5]|episode|season"
+"need": "nickelodeon|nick\\b|aggro crag|199[2-5]|episode|season",
+"wide": true
 },
 {
 "title": "Figure It Out",
@@ -1090,7 +1112,8 @@
 "Youre On"
 ],
 "ambiguous": true,
-"need": "nickelodeon|nick\\b"
+"need": "nickelodeon|nick\\b",
+"wide": true
 },
 {
 "title": "Nickelodeon Launch Box",
@@ -1100,7 +1123,8 @@
 "q": "kids",
 "alt": [
 "Launch Box"
-]
+],
+"wide": true
 },
 {
 "title": "Nick News",
@@ -1112,7 +1136,8 @@
 "Nick News W/5",
 "Nick News with Linda Ellerbee"
 ],
-"ambiguous": true
+"ambiguous": true,
+"wide": true
 },
 {
 "title": "SNICK",
@@ -1214,7 +1239,8 @@
 "net": "nbc",
 "run": "1992-1997",
 "q": "kids",
-"ambiguous": true
+"ambiguous": true,
+"wide": true
 },
 {
 "title": "Hang Time",
@@ -1230,7 +1256,8 @@
 "ct": "tween",
 "net": "nbc",
 "run": "1997-2001",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "One World",
@@ -1239,7 +1266,8 @@
 "run": "1998-2001",
 "q": "kids",
 "ambiguous": true,
-"need": "nbc|tnbc|s\\d+\\s?e\\d+|season \\d|199[89]|200[01]"
+"need": "nbc|tnbc|s\\d+\\s?e\\d+|season \\d|199[89]|200[01]",
+"wide": true
 },
 {
 "title": "Sweet Valley High",
@@ -1279,14 +1307,16 @@
 "ct": "tween",
 "net": "abc",
 "run": "1992-1993",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "Breaker High",
 "ct": "tween",
 "net": "upn",
 "run": "1997-1998",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "Student Bodies",
@@ -1367,7 +1397,8 @@
 "run": "1996-1997",
 "q": "kids",
 "ambiguous": true,
-"need": "disney|199[67]|s\\d+\\s?e\\d+|episode"
+"need": "disney|199[67]|s\\d+\\s?e\\d+|episode",
+"wide": true
 },
 {
 "title": "The Famous Jett Jackson",
@@ -1400,7 +1431,8 @@
 "net": "disney",
 "run": "1999-2001",
 "q": "kids",
-"ambiguous": true
+"ambiguous": true,
+"wide": true
 },
 {
 "title": "The Jersey",
@@ -1491,7 +1523,8 @@
 "Power Rangers Wild Force",
 "Power Rangers Ninja Storm",
 "Power Rangers Dino Thunder"
-]
+],
+"need": "s\\d+\\s?e\\d+|season|episode|complete|vhs|199\\d|200[0-4]|vol"
 },
 {
 "title": "VR Troopers",
@@ -1526,7 +1559,8 @@
 "ct": "tween",
 "net": "abc",
 "run": "1996-1996",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "Eerie, Indiana",
@@ -1561,7 +1595,8 @@
 "run": "1994-1996",
 "q": "kids",
 "ambiguous": true,
-"need": "s\\d+\\s?e\\d+|episode|season"
+"need": "s\\d+\\s?e\\d+|episode|season",
+"wide": true
 },
 {
 "title": "The Tribe",
@@ -1570,7 +1605,8 @@
 "run": "1999-2003",
 "q": "kids",
 "ambiguous": true,
-"need": "s\\d+\\s?e\\d+|series \\d|season \\d"
+"need": "s\\d+\\s?e\\d+|series \\d|season \\d",
+"wide": true
 },
 {
 "title": "Round the Twist",
@@ -1631,7 +1667,8 @@
 "run": "2000-2002",
 "q": "kids",
 "ambiguous": true,
-"need": "nbc|tnbc|s\\d+\\s?e\\d+|episode"
+"need": "nbc|tnbc|s\\d+\\s?e\\d+|episode",
+"wide": true
 },
 {
 "title": "Skate",
@@ -1643,7 +1680,8 @@
 "All About Us"
 ],
 "ambiguous": true,
-"need": "tnbc"
+"need": "tnbc",
+"wide": true
 },
 {
 "title": "USA High",
@@ -1660,21 +1698,24 @@
 "q": "kids",
 "alt": [
 "Malibu CA"
-]
+],
+"wide": true
 },
 {
 "title": "Running the Halls",
 "ct": "tween",
 "net": "nbc",
 "run": "1993-1993",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "Name Your Adventure",
 "ct": "tween",
 "net": "nbc",
 "run": "1992-1995",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "NBA Inside Stuff",
@@ -1690,7 +1731,8 @@
 "run": "1991-1992",
 "q": "kids",
 "ambiguous": true,
-"need": "teen|magazine show|1991"
+"need": "teen|magazine show|1991",
+"wide": true
 },
 {
 "title": "Mystic Knights of Tir Na Nog",
@@ -1804,7 +1846,8 @@
 "run": "1984-1990",
 "q": "kids",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b|198\\d"
+"need": "nickelodeon|nick\\b|198\\d",
+"wide": true
 },
 {
 "title": "Today's Special",
@@ -1835,7 +1878,8 @@
 "run": "1984-1993",
 "q": "kids",
 "ambiguous": true,
-"need": "nickelodeon"
+"need": "nickelodeon",
+"wide": true
 },
 {
 "title": "Standby... Lights! Camera! Action!",
@@ -1845,7 +1889,8 @@
 "q": "kids",
 "alt": [
 "Standby Lights Camera Action"
-]
+],
+"wide": true
 },
 {
 "title": "Livewire",
@@ -1854,7 +1899,8 @@
 "run": "1984-1985",
 "q": "kids",
 "ambiguous": true,
-"need": "nickelodeon|nick\\b"
+"need": "nickelodeon|nick\\b",
+"wide": true
 },
 {
 "title": "The Third Eye",
@@ -1863,7 +1909,8 @@
 "run": "1984-1985",
 "q": "kids",
 "ambiguous": true,
-"need": "nickelodeon"
+"need": "nickelodeon",
+"wide": true
 },
 {
 "title": "Rated K: For Kids by Kids",
@@ -1883,7 +1930,8 @@
 "q": "kids",
 "alt": [
 "Hi Honey Im Home"
-]
+],
+"wide": true
 },
 {
 "title": "Nickelodeon Wild Side Show",
@@ -1893,7 +1941,8 @@
 "q": "kids",
 "alt": [
 "Wild Side Show"
-]
+],
+"wide": true
 },
 {
 "title": "Kablam!",
@@ -1955,27 +2004,31 @@
 "ct": "nick",
 "net": "nick",
 "run": "2000-2003",
-"q": "kids"
+"q": "kids",
+"wide": true
 },
 {
 "title": "Global GUTS",
 "ct": "nick",
 "net": "nick",
 "run": "1995-1995",
-"q": "game"
+"q": "game",
+"wide": true
 },
 {
 "title": "Nickelodeon All-Star Challenge",
 "ct": "nick",
 "net": "nick",
 "run": "1994-1994",
-"q": "game"
+"q": "game",
+"wide": true
 },
 {
 "title": "Double Dare 2000",
 "ct": "nick",
 "net": "nick",
 "run": "2000-2000",
-"q": "game"
+"q": "game",
+"wide": true
 }
 ]
