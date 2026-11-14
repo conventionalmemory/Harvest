@@ -334,13 +334,16 @@ def hosts(ids):
     sys.stdout.flush()
 
 
-def load_used():
+def load_used(prev):
     ids = []
     for line in gzip.open(USED, 'rt', encoding='utf-8'):
         v = line.strip()
         if re.fullmatch(r'[A-Za-z0-9_-]{11}', v): ids.append(v)
         elif v: print('skipped malformed id', repr(v[:20]))
-    return sorted(set(ids))
+    have = set(ids)
+    kept = [v for v, r in prev.items() if r and r[0] != 'ok' and v not in have]
+    if kept: print('ids no longer in the list but not ok in the last result, still tracked', len(kept))
+    return sorted(have | set(kept))
 
 
 def load_prev():
@@ -398,10 +401,10 @@ def listed():
 
 def plan():
     os.makedirs(PARTS, exist_ok=True)
-    ids = load_used()
+    prev = load_prev()
+    ids = load_used(prev)
     total = len(ids)
     scope = os.environ.get('SCOPE', 'all').strip() or 'all'
-    prev = load_prev()
     L = listed()
     if (os.environ.get('IDS', '').strip() or os.environ.get('FROM_RUN', '').strip()) and not L:
         print('nothing to check in the given list'); sys.exit(1)
@@ -515,8 +518,8 @@ def merge():
     else:
         print('no second opinion:', 'nothing to recheck' if usable else 'this runner cannot reach the service', len(again))
     print('== second opinion', sorted(cross.items(), key=lambda x: -x[1]))
-    used = load_used()
     prev = load_prev()
+    used = load_used(prev)
     if usable and USE_EMBED[0]:
         random.seed(13)
         oks = sorted(v for v in used if (res.get(v) or {'s': (prev.get(v) or [''])[0]})['s'] == 'ok')
