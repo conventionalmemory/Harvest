@@ -808,6 +808,7 @@ def resolve(SC, title, desc='', ctx=''):
         if m: ys = [int(('19' if m.group(1) > '50' else '20') + m.group(1))]
     if not ys: return None, 'noyear'
     if re.search(REBX, nt): return None, 'rebroadcast'
+    if re.search(r'\b(?:games?|gms?|g)\)?\s*\d\s*(?:[-–&]|to|thru|through|and)\s*\d\b', title.lower()): return None, 'several_games'
     for n, w in enumerate(('one', 'two', 'three', 'four', 'five', 'six', 'seven')): nt = nt.replace(' game ' + w + ' ', ' game %d ' % (n + 1))
     rg = re.search(r' r(\d) ?g(\d) ', nt)
     g = re.search(r' (?:game|gm|g) ?(\d)(?: |$)', nt); g = int(rg.group(2)) if rg else int(g.group(1)) if g else None
@@ -1003,6 +1004,13 @@ def classify(SC, title, ident, dfield, desc):
     if re.search(GAMEX, nt) or re.search(FORX, nt): return None, 'junk'
     if re.search(BADW, nt): return None, 'badword'
     if find_date(title, ident, dfield, desc)[0]: return None, 'dated'
+    t2 = re.sub(r'\s*/\s*', '/', title)
+    d2 = D['dates_in'](t2) if t2 != title else []
+    if d2 and '1984' <= d2[0][1][:4] <= '2004':
+        r0 = sport(title, desc, d2[0][1])
+        if r0:
+            row, ev = rowat(SC, r0[0], d2[0][1], nt)
+            return {'ct': r0[0], 'k': LGK.get(r0[0], 'SPORTS'), 'ad': d2[0][1], 'ev': ev or ' '.join(norm(t2).split()).upper()[:90], 'e': int(d2[0][1][:4]), 'min': 2400, 'net': netof(title, '') or (row or {}).get('net') or netof(title, desc) or known_net(r0[0], nt, d2[0][1], 0), 'st': (row or {}).get('st', ''), 'row': row or {}, 'as': 'fname'}, None
     r, why = resolve(SC, title, desc)
     if not r:
         if why in ('nosport', 'noyear'): return None, why
@@ -1292,7 +1300,9 @@ def meta1(it):
     if tot > 14 * 3600: return 'long'
     if len(files) > 12 and c['ct'] != 'sportsdoc': return 'manyfiles'
     r = {'i': it['identifier'], 'q': 'sports', 't': title[:200], 'd': S(m.get('date')), 'y': S(m.get('year')), 'c': cl[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': c['k'], 'e': c['e'], 'net': c['net'], 'ct': c['ct']}
-    if c['ad']: r['ad'] = c['ad']; r['as'] = 'sched'; r['ev'] = c['ev']; r['sr'] = json.dumps({k: v for k, v in c['row'].items() if k not in ('hk', 'who')}, ensure_ascii=False)[:200]
+    if c['ad']:
+        r['ad'] = c['ad']; r['as'] = c.get('as', 'sched'); r['ev'] = c['ev']
+        if c['row']: r['sr'] = json.dumps({k: v for k, v in c['row'].items() if k not in ('hk', 'who')}, ensure_ascii=False)[:200]
     if c.get('st'): r['st'] = c['st']
     if c.get('keep'): r['keep'] = c['keep']; r['why'] = c['why']
     if hb: r['hb'] = 1
@@ -1320,7 +1330,9 @@ if MODE == 'merge':
             old.append(x); continue
         for k in ('ad', 'as', 'ev', 'sr', 'st', 'keep', 'why'): x.pop(k, None)
         x.update(ct=c['ct'], k=c['k'], e=c['e'], net=c['net'])
-        if c['ad']: x.update(ad=c['ad'], ev=c['ev'], sr=json.dumps({k: v for k, v in c['row'].items() if k not in ('hk', 'who')}, ensure_ascii=False)[:200], **{'as': 'sched'})
+        if c['ad']:
+            x.update(ad=c['ad'], ev=c['ev'], **{'as': c.get('as', 'sched')})
+            if c['row']: x['sr'] = json.dumps({k: v for k, v in c['row'].items() if k not in ('hk', 'who')}, ensure_ascii=False)[:200]
         if c.get('st'): x['st'] = c['st']
         if c.get('keep'): x.update(keep=c['keep'], why=c['why'])
         old.append(x)
