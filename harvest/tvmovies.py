@@ -81,8 +81,18 @@ def ftitle(t):
     s = re.sub(r'\s[-–|:]+\s*$', ' ', re.sub(r'^\s*[-–|:]+\s', ' ', s))
     s = ' '.join(s.split()).strip(' -–|:,.')
     return s
+PINY = re.compile(r'^(zh|ch|sh|[bpmfdtnlgkhjqxrzcsyw])?(a|o|e|i|u|ai|ei|ao|ou|an|en|ang|eng|ong|ia|ie|iao|iu|ian|in|iang|ing|iong|ua|uo|uai|ui|uan|un|uang|ue)$')
+ROMA = re.compile(r'^((sh|ch|ts|ky|ry|gy|ny|hy|by|py|my|[kgsztdnhbpmyrwfj])?[aeiou]+n?)+$')
+ENGW = {'a', 'the', 'of', 'to', 'in', 'no', 'me', 'he', 'we', 'so', 'go', 'do', 'on', 'man', 'men', 'one', 'two', 'i', 'you', 'she', 'her', 'his', 'my', 'is', 'it', 'an', 'at', 'be', 'by', 'or', 'up', 'us', 'day', 'sun', 'son', 'war', 'gun', 'woman', 'women', 'love', 'time', 'and', 'for', 'with', 'from'}
+FUNW = {'das', 'der', 'die', 'und', 'des', 'dem', 'den', 'ein', 'eine', 'zur', 'zum', 'il', 'gli', 'della', 'dello', 'degli', 'delle', 'nel', 'nella', 'el', 'los', 'las', 'del', 'una', 'uno', 'les', 'du', 'aux', 'une', 'et', 'le', 'la', 'de', 'di', 'da', 'do', 'dos', 'em', 'um', 'uma', 'het', 'een', 'och', 'og'}
+def foreign_words(t):
+    w = [x for x in re.sub(r'[^a-z ]+', ' ', re.sub(r'\(.*?\)|\[.*?\]', ' ', t.lower())).split() if x]
+    if len(set(w) & FUNW) >= 2 and not (set(w) & {'the', 'of', 'and', 'in', 'to', 'for', 'with'}): return True
+    if len(w) >= 3 and not (set(w) & ENGW) and (all(PINY.match(x) for x in w) or (all(ROMA.match(x) for x in w) and any(re.search(r'tsu|shi|chi|jin|dai|kyo|ryu|gei|aku|oku', x) for x in w))): return True
+    return False
 def ok_title(t):
     if not t: return False
+    if foreign_words(t) or re.search(r'(?i)\b(subtitled|subbed|eng ?subs?|australian vhs|aussie vhs|pal vhs|\(pal\)|erotic|sexy|sexploitation|softcore|nudist|nudie|xxx|adults? only|x-rated)\b', t): return False
     if re.search(r"(?i)\b(e ?subs?|esubs|hindi|bollywood|dv ?d ?rip xvi ?d|x ?rg|ddr|tmb|desi|yeh |hai\b| ka | ki | ke |dil |pyaar|pyar|ishq|kabhi|zindagi|dulhan|mohabbat|jackanory|bbc ?(one|two|1|2)|itv|channel 4|uk vhs|uk tv|pal vhs|cbbc|cbeebies)\b", t): return False
     if re.search(r'^\s*(19|20)\d\d\s*-\s*[^-]+\s-\s[^-]+\s-\s', t) or re.search(r'(?i)\b(vose|vos|v\.?o\.?s\.?e|subtitulad[ao]|sub esp|subt\.?)\b|\s-\s(ve|vo)\s*$', t): return False
     low = t.lower() + ' '
