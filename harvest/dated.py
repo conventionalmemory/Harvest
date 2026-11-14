@@ -368,7 +368,7 @@ def secs(v):
         return float(v)
     except Exception: return 0
 RANK = {'h.264 IA': 0, 'h.264': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
-REJ = collections.Counter()
+REJ = collections.Counter(); NOMP = []
 def meta(it):
     r = meta1(it)
     if isinstance(r, str): REJ[r] += 1; return None
@@ -397,7 +397,9 @@ def meta1(it):
         sz = float(b.get('size') or 0)
         if sz and sz / 1e6 / (d / 60) > 30: continue
         files.append([b['name'], round(d), b.get('format', '')])
-    if not files: return 'nomp4'
+    if not files:
+        if len(NOMP) < 8: NOMP.append([it['identifier'], sorted(set((f.get('format', ''), f.get('name', '').rsplit('.', 1)[-1].lower()) for f in j['files']))[:14], [(f.get('name', '')[-30:], f.get('size'), f.get('length')) for f in j['files'] if f.get('name', '').lower().endswith('.mp4')][:3]])
+        return 'nomp4'
     files.sort(key=lambda f: f[0])
     title = S(m.get('title'))
     desc = ' '.join(re.sub(r'<[^>]+>', ' ', S(m.get('description'))).split())
@@ -435,6 +437,7 @@ if MODE == 'meta':
             if n % 1000 == 0: print('meta', n, len(res), round((time.time() - T0) / 60, 1), 'min', flush=True)
     with gzip.open(os.path.join(PARTS, 'dated-%d.json.gz' % SHARD), 'wt', encoding='utf-8') as f:
         json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
+    for x in NOMP: print('NOMP4', x)
     print('shard done', len(res), 'rejected', REJ.most_common()); sys.exit(0)
 if MODE == 'merge':
     old0 = json.load(gzip.open(OUTF, 'rt', encoding='utf-8')) if os.path.exists(OUTF) else []
