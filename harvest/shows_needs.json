@@ -280,6 +280,17 @@
 "pri": 1
 },
 {
+"title": "Access Hollywood",
+"aka": [],
+"type": "mag",
+"net": "syn",
+"years": [
+1996,
+2004
+],
+"pri": 1
+},
+{
 "title": "Alias",
 "aka": [],
 "type": "drama",
@@ -413,6 +424,17 @@
 "pri": 1
 },
 {
+"title": "American Music Shop",
+"aka": [],
+"type": "music",
+"net": "tnn",
+"years": [
+1990,
+1994
+],
+"pri": 1
+},
+{
 "title": "An Evening at the Improv",
 "aka": [
 "Evening at the Improv"
@@ -457,6 +479,19 @@
 "years": [
 1972,
 1985
+],
+"pri": 1
+},
+{
+"title": "Arena",
+"aka": [
+"G4 Arena"
+],
+"type": "tech",
+"net": "g4",
+"years": [
+2002,
+2004
 ],
 "pri": 1
 },
@@ -527,6 +562,19 @@
 "net": "vh1",
 "years": [
 2004,
+2004
+],
+"pri": 1
+},
+{
+"title": "BET News",
+"aka": [
+"Lead Story"
+],
+"type": "news",
+"net": "bet",
+"years": [
+1986,
 2004
 ],
 "pri": 1
@@ -772,6 +820,19 @@
 "pri": 1
 },
 {
+"title": "Cinematech",
+"aka": [
+"G4 Cinematech"
+],
+"type": "tech",
+"net": "g4",
+"years": [
+2002,
+2004
+],
+"pri": 1
+},
+{
 "title": "Clinton impeachment coverage",
 "aka": [
 "Impeachment"
@@ -798,6 +859,34 @@
 "pri": 1
 },
 {
+"title": "CMT country music videos",
+"aka": [
+"Country Music Television",
+"CMT Music Videos"
+],
+"type": "music",
+"net": "cmt",
+"years": [
+1986,
+2000
+],
+"pri": 1
+},
+{
+"title": "CMT Top 12 Countdown",
+"aka": [
+"CMT Countdown",
+"CMT"
+],
+"type": "music",
+"net": "cmt",
+"years": [
+1993,
+2000
+],
+"pri": 1
+},
+{
 "title": "CNET Central",
 "aka": [
 "C-Net Central",
@@ -820,6 +909,26 @@
 "net": "cnn",
 "years": [
 1982,
+2004
+],
+"pri": 1
+},
+{
+"title": "CNN news airchecks",
+"aka": [
+"CNN",
+"Cable News Network",
+"CNN News",
+"CNN Newsroom",
+"CNN Daybreak",
+"CNN World News",
+"CNN Newsday",
+"CNN Breaking News"
+],
+"type": "news",
+"net": "cnn",
+"years": [
+1984,
 2004
 ],
 "pri": 1
@@ -1186,6 +1295,20 @@
 "pri": 1
 },
 {
+"title": "Electric Playground",
+"aka": [
+"The Electric Playground",
+"EP Daily"
+],
+"type": "tech",
+"net": "syn",
+"years": [
+1997,
+2004
+],
+"pri": 1
+},
+{
 "title": "Ellen",
 "aka": [
 "These Friends of Mine"
@@ -1287,6 +1410,17 @@
 "pri": 1
 },
 {
+"title": "Extra",
+"aka": [],
+"type": "mag",
+"net": "syn",
+"years": [
+1994,
+2004
+],
+"pri": 1
+},
+{
 "title": "Family Double Dare",
 "aka": [
 "Super Sloppy Double Dare"
@@ -1321,6 +1455,19 @@
 "years": [
 1998,
 2002
+],
+"pri": 1
+},
+{
+"title": "Filter",
+"aka": [
+"G4 Filter"
+],
+"type": "tech",
+"net": "g4",
+"years": [
+2002,
+2004
 ],
 "pri": 1
 },
@@ -1378,6 +1525,19 @@
 "years": [
 1999,
 2003
+],
+"pri": 1
+},
+{
+"title": "GamePro TV",
+"aka": [
+"GamePro"
+],
+"type": "tech",
+"net": "syn",
+"years": [
+1991,
+1992
 ],
 "pri": 1
 },
@@ -1593,6 +1753,17 @@
 "pri": 1
 },
 {
+"title": "Hee Haw",
+"aka": [],
+"type": "music",
+"net": "tnn",
+"years": [
+1969,
+1997
+],
+"pri": 1
+},
+{
 "title": "Hogan's Heroes",
 "aka": [
 "Hogans Heroes"
@@ -1699,6 +1870,19 @@
 "pri": 1
 },
 {
+"title": "Icons",
+"aka": [
+"G4 Icons"
+],
+"type": "tech",
+"net": "g4",
+"years": [
+2002,
+2004
+],
+"pri": 1
+},
+{
 "title": "Infomercials (Amazing Discoveries, Psychic Friends Network, Ronco)",
 "aka": [
 "Amazing Discoveries",
@@ -1721,6 +1905,17 @@
 "net": "syn",
 "years": [
 1989,
+2004
+],
+"pri": 1
+},
+{
+"title": "Inside Politics",
+"aka": [],
+"type": "news",
+"net": "cnn",
+"years": [
+1984,
 2004
 ],
 "pri": 1
@@ -2153,6 +2348,17 @@
 "pri": 1
 },
 {
+"title": "Midnight Love",
+"aka": [],
+"type": "music",
+"net": "bet",
+"years": [
+1985,
+2004
+],
+"pri": 1
+},
+{
 "title": "Millennium",
 "aka": [],
 "type": "drama",
@@ -2187,6 +2393,21 @@
 "net": "abc",
 "years": [
 1970,
+2004
+],
+"pri": 1
+},
+{
+"title": "Moneyline",
+"aka": [
+"Moneyline with Lou Dobbs",
+"Lou Dobbs Moneyline",
+"Lou Dobbs Tonight"
+],
+"type": "news",
+"net": "cnn",
+"years": [
+1980,
 2004
 ],
 "pri": 1
@@ -2423,17 +2644,6 @@
 "net": "cbs",
 "years": [
 1956,
-1993
-],
-"pri": 1
-},
-{
-"title": "NFL on CBS",
-"aka": [],
-"type": "sports",
-"net": "cbs",
-"years": [
-1998,
 2004
 ],
 "pri": 1
@@ -2490,6 +2700,19 @@
 "net": "espn",
 "years": [
 1987,
+1997
+],
+"pri": 1
+},
+{
+"title": "Nick Arcade",
+"aka": [
+"Nickelodeon Arcade"
+],
+"type": "game",
+"net": "nick",
+"years": [
+1992,
 1997
 ],
 "pri": 1
@@ -2903,6 +3126,30 @@
 "pri": 1
 },
 {
+"title": "Showbiz Today",
+"aka": [],
+"type": "mag",
+"net": "cnn",
+"years": [
+1984,
+2001
+],
+"pri": 1
+},
+{
+"title": "Showtime at the Apollo",
+"aka": [
+"It's Showtime at the Apollo"
+],
+"type": "late",
+"net": "syn",
+"years": [
+1987,
+2004
+],
+"pri": 1
+},
+{
 "title": "Simon & Simon",
 "aka": [
 "Simon and Simon"
@@ -3044,6 +3291,17 @@
 "pri": 1
 },
 {
+"title": "Starcade",
+"aka": [],
+"type": "game",
+"net": "tbs",
+"years": [
+1982,
+1984
+],
+"pri": 1
+},
+{
 "title": "Stargate SG-1",
 "aka": [
 "Stargate SG1"
@@ -3125,6 +3383,17 @@
 "pri": 1
 },
 {
+"title": "Talkback Live",
+"aka": [],
+"type": "talk",
+"net": "cnn",
+"years": [
+1994,
+2003
+],
+"pri": 1
+},
+{
 "title": "TBS Braves Baseball",
 "aka": [
 "Atlanta Braves Baseball",
@@ -3152,6 +3421,17 @@
 "pri": 1
 },
 {
+"title": "Teen Summit",
+"aka": [],
+"type": "talk",
+"net": "bet",
+"years": [
+1989,
+2002
+],
+"pri": 1
+},
+{
 "title": "The $25,000 Pyramid",
 "aka": [
 "$25,000 Pyramid",
@@ -3162,7 +3442,7 @@
 "net": "gsn",
 "years": [
 1982,
-1988
+2004
 ],
 "pri": 1
 },
@@ -3293,6 +3573,19 @@
 "years": [
 1985,
 2000
+],
+"pri": 1
+},
+{
+"title": "The Capital Gang",
+"aka": [
+"Capital Gang"
+],
+"type": "talk",
+"net": "cnn",
+"years": [
+1988,
+2004
 ],
 "pri": 1
 },
@@ -3742,6 +4035,21 @@
 "pri": 1
 },
 {
+"title": "TNN country video blocks",
+"aka": [
+"TNN",
+"The Nashville Network",
+"Nashville Network"
+],
+"type": "music",
+"net": "tnn",
+"years": [
+1986,
+2000
+],
+"pri": 1
+},
+{
 "title": "TNT launch movies and MGM library",
 "aka": [
 "TNT",
@@ -3973,6 +4281,19 @@
 "pri": 1
 },
 {
+"title": "Video Power",
+"aka": [
+"The Power Team"
+],
+"type": "game",
+"net": "syn",
+"years": [
+1990,
+1992
+],
+"pri": 1
+},
+{
 "title": "Video Soul",
 "aka": [],
 "type": "music",
@@ -3980,6 +4301,31 @@
 "years": [
 1981,
 1996
+],
+"pri": 1
+},
+{
+"title": "Video Vibrations",
+"aka": [],
+"type": "music",
+"net": "bet",
+"years": [
+1984,
+1997
+],
+"pri": 1
+},
+{
+"title": "VideoMorning",
+"aka": [
+"VideoPM",
+"Video Morning"
+],
+"type": "music",
+"net": "tnn",
+"years": [
+1989,
+1997
 ],
 "pri": 1
 },
@@ -4208,6 +4554,21 @@
 "pri": 1
 },
 {
+"title": "X-Play",
+"aka": [
+"XPlay",
+"Extended Play",
+"GameSpot TV"
+],
+"type": "tech",
+"net": "g4",
+"years": [
+1998,
+2004
+],
+"pri": 1
+},
+{
 "title": "Yo! MTV Raps",
 "aka": [
 "Yo MTV Raps"
@@ -4431,17 +4792,6 @@
 "net": "abc",
 "years": [
 1992,
-2004
-],
-"pri": 2
-},
-{
-"title": "Access Hollywood",
-"aka": [],
-"type": "mag",
-"net": "syn",
-"years": [
-1996,
 2004
 ],
 "pri": 2
@@ -5138,17 +5488,6 @@
 "pri": 2
 },
 {
-"title": "CBS Sunday Movie",
-"aka": [],
-"type": "movie-package",
-"net": "cbs",
-"years": [
-1999,
-2004
-],
-"pri": 2
-},
-{
 "title": "CBS This Morning",
 "aka": [],
 "type": "news",
@@ -5297,20 +5636,6 @@
 "years": [
 2000,
 2004
-],
-"pri": 2
-},
-{
-"title": "CMT Top 12 Countdown",
-"aka": [
-"CMT Countdown",
-"CMT"
-],
-"type": "music",
-"net": "cmt",
-"years": [
-1993,
-2000
 ],
 "pri": 2
 },
@@ -5632,17 +5957,6 @@
 "net": "syn",
 "years": [
 1984,
-1993
-],
-"pri": 2
-},
-{
-"title": "Divorce Court",
-"aka": [],
-"type": "talk",
-"net": "syn",
-"years": [
-1999,
 2004
 ],
 "pri": 2
@@ -5853,17 +6167,6 @@
 "net": "pbs",
 "years": [
 1970,
-2004
-],
-"pri": 2
-},
-{
-"title": "Extra",
-"aka": [],
-"type": "mag",
-"net": "syn",
-"years": [
-1994,
 2004
 ],
 "pri": 2
@@ -6424,17 +6727,6 @@
 "pri": 2
 },
 {
-"title": "Inside Politics",
-"aka": [],
-"type": "news",
-"net": "cnn",
-"years": [
-1984,
-2004
-],
-"pri": 2
-},
-{
 "title": "Inside the NFL",
 "aka": [],
 "type": "sports",
@@ -6983,17 +7275,6 @@
 "pri": 2
 },
 {
-"title": "Midnight Love",
-"aka": [],
-"type": "music",
-"net": "bet",
-"years": [
-1985,
-2004
-],
-"pri": 2
-},
-{
 "title": "Miss America Pageant",
 "aka": [
 "Miss America"
@@ -7042,21 +7323,6 @@
 "net": "food",
 "years": [
 1996,
-2004
-],
-"pri": 2
-},
-{
-"title": "Moneyline",
-"aka": [
-"Moneyline with Lou Dobbs",
-"Lou Dobbs Moneyline",
-"Lou Dobbs Tonight"
-],
-"type": "news",
-"net": "cnn",
-"years": [
-1980,
 2004
 ],
 "pri": 2
@@ -8380,30 +8646,6 @@
 "pri": 2
 },
 {
-"title": "Showbiz Today",
-"aka": [],
-"type": "mag",
-"net": "cnn",
-"years": [
-1984,
-2001
-],
-"pri": 2
-},
-{
-"title": "Showtime at the Apollo",
-"aka": [
-"It's Showtime at the Apollo"
-],
-"type": "late",
-"net": "syn",
-"years": [
-1987,
-2004
-],
-"pri": 2
-},
-{
 "title": "Silver Spoons",
 "aka": [],
 "type": "sitcom",
@@ -8734,17 +8976,6 @@
 "pri": 2
 },
 {
-"title": "Talkback Live",
-"aka": [],
-"type": "talk",
-"net": "cnn",
-"years": [
-1994,
-2003
-],
-"pri": 2
-},
-{
 "title": "Taste",
 "aka": [
 "Taste with David Rosengarten"
@@ -8796,17 +9027,6 @@
 "pri": 2
 },
 {
-"title": "Teen Summit",
-"aka": [],
-"type": "talk",
-"net": "bet",
-"years": [
-1989,
-2002
-],
-"pri": 2
-},
-{
 "title": "Teenage Mutant Ninja Turtles (2003)",
 "aka": [],
 "type": "kids",
@@ -8825,21 +9045,6 @@
 "years": [
 2001,
 2003
-],
-"pri": 2
-},
-{
-"title": "The $25,000 Pyramid",
-"aka": [
-"$25,000 Pyramid",
-"The $100,000 Pyramid",
-"Pyramid"
-],
-"type": "game",
-"net": "gsn",
-"years": [
-1997,
-2004
 ],
 "pri": 2
 },
@@ -9921,7 +10126,7 @@
 "net": "gsn",
 "years": [
 1978,
-1986
+2004
 ],
 "pri": 2
 },
@@ -10244,19 +10449,6 @@
 "pri": 2
 },
 {
-"title": "US Open Tennis",
-"aka": [
-"U.S. Open Tennis"
-],
-"type": "sports",
-"net": "usa",
-"years": [
-1984,
-2004
-],
-"pri": 2
-},
-{
 "title": "USA movie package",
 "aka": [
 "USA Saturday movie"
@@ -10359,17 +10551,6 @@
 "pri": 2
 },
 {
-"title": "Video Vibrations",
-"aka": [],
-"type": "music",
-"net": "bet",
-"years": [
-1984,
-1997
-],
-"pri": 2
-},
-{
 "title": "VideoCountry",
 "aka": [
 "Video Country",
@@ -10380,20 +10561,6 @@
 "years": [
 1984,
 1993
-],
-"pri": 2
-},
-{
-"title": "VideoMorning",
-"aka": [
-"VideoPM",
-"Video Morning"
-],
-"type": "music",
-"net": "tnn",
-"years": [
-1989,
-1997
 ],
 "pri": 2
 },
@@ -11160,17 +11327,6 @@
 "pri": 3
 },
 {
-"title": "American Music Shop",
-"aka": [],
-"type": "music",
-"net": "tnn",
-"years": [
-1990,
-1994
-],
-"pri": 3
-},
-{
 "title": "American Sports Cavalcade",
 "aka": [],
 "type": "sports",
@@ -11432,19 +11588,6 @@
 "years": [
 1985,
 1985
-],
-"pri": 3
-},
-{
-"title": "BET News",
-"aka": [
-"Lead Story"
-],
-"type": "news",
-"net": "bet",
-"years": [
-1986,
-2004
 ],
 "pri": 3
 },
@@ -18490,19 +18633,8 @@
 "type": "game",
 "net": "gsn",
 "years": [
-1994,
-2004
-],
-"pri": 3
-},
-{
-"title": "Tattletales",
-"aka": [],
-"type": "game",
-"net": "gsn",
-"years": [
 1974,
-1984
+2004
 ],
 "pri": 3
 },
@@ -18975,19 +19107,6 @@
 "years": [
 1996,
 1997
-],
-"pri": 3
-},
-{
-"title": "The Capital Gang",
-"aka": [
-"Capital Gang"
-],
-"type": "talk",
-"net": "cnn",
-"years": [
-1988,
-2004
 ],
 "pri": 3
 },
@@ -20638,19 +20757,6 @@
 "years": [
 1997,
 2000
-],
-"pri": 3
-},
-{
-"title": "Tic-Tac-Dough",
-"aka": [
-"Tic Tac Dough"
-],
-"type": "game",
-"net": "gsn",
-"years": [
-1994,
-2004
 ],
 "pri": 3
 },
