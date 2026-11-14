@@ -387,7 +387,7 @@ def meta1(it):
         if not f.get('name', '').lower().endswith('.mp4'): continue
         key = f.get('original') if f.get('source') == 'derivative' else f['name']
         groups.setdefault(key, []).append(f)
-    files = []
+    files = []; hb = []
     for key, g in groups.items():
         g.sort(key=lambda f: RANK.get(f.get('format', ''), 9))
         b = g[0]
@@ -395,7 +395,9 @@ def meta1(it):
         d = secs(b.get('length') or next((x.get('length') for x in g if x.get('length')), 0))
         if d < 60: continue
         sz = float(b.get('size') or 0)
-        if sz and sz / 1e6 / (d / 60) > 30: continue
+        br = sz / 1e6 / (d / 60) if sz else 0
+        if br > 30 and not (b.get('format') == 'h.264 IA' or br <= 60): continue
+        if br > 30: hb.append(1)
         files.append([b['name'], round(d), b.get('format', '')])
     if not files:
         if len(NOMP) < 8: NOMP.append([it['identifier'], sorted(set((f.get('format', ''), f.get('name', '').rsplit('.', 1)[-1].lower()) for f in j['files']))[:14], [(f.get('name', '')[-30:], f.get('size'), f.get('length')) for f in j['files'] if f.get('name', '').lower().endswith('.mp4')][:3]])
@@ -420,6 +422,7 @@ def meta1(it):
     r = {'i': it['identifier'], 'q': c['q'], 't': title[:200], 'd': S(m.get('date')), 'y': S(m.get('year')), 'c': col[:4], 's': str(subj)[:200], 'ds': desc[:400], 'f': files[:60], 'dl': it.get('downloads') or 0, 'k': c['k'], 'e': int(c['ad'][:4]), 'net': c['net'], 'ct': c['ct'], 'ad': c['ad'], 'as': c['as']}
     if c.get('st'): r['st'] = c['st']
     if c.get('via'): r['via'] = c['via']
+    if hb: r['hb'] = 1
     return r
 def keep(x):
     c = classify(x['t'], x['i'], x.get('d'), x.get('ds'))
