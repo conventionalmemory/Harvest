@@ -50,7 +50,7 @@ C "systemctl enable retrotv.service retrotv-wifi.service retrotv-status.service 
 CFG="$R/boot/firmware/config.txt"
 sudo sed -i 's/^dtoverlay=vc4-kms-v3d.*/dtoverlay=vc4-kms-v3d,composite/' "$CFG"
 grep -q '^dtoverlay=vc4-kms-v3d,composite' "$CFG" || echo 'dtoverlay=vc4-kms-v3d,composite' | sudo tee -a "$CFG" >/dev/null
-printf '\n[pi4]\nenable_tvout=1\n\n[all]\ndtparam=audio=on\ndtoverlay=gpio-fan,gpiopin=14,temp=60000\n' | sudo tee -a "$CFG" >/dev/null
+printf '\n[pi4]\nenable_tvout=1\n\n[all]\ndtparam=audio=on\n' | sudo tee -a "$CFG" >/dev/null
 CMD="$R/boot/firmware/cmdline.txt"
 sudo sed -i '1 s/$/ video=Composite-1:720x480@60ie consoleblank=0 vt.global_cursor_default=0 logo.nologo/' "$CMD"
 cat "$CFG" "$CMD"
