@@ -105,6 +105,19 @@
 "pri": 0
 },
 {
+"title": "Quantum Leap",
+"aka": [
+"Quantum Leap (1989)"
+],
+"type": "drama",
+"net": "nbc",
+"years": [
+1989,
+1993
+],
+"pri": 0
+},
+{
 "title": "106 & Park",
 "aka": [],
 "type": "music",
@@ -3315,7 +3328,7 @@
 1997,
 2007
 ],
-"pri": 1
+"pri": 0
 },
 {
 "title": "Strangers with Candy",
