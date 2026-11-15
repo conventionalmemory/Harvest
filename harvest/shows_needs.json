@@ -680,8 +680,11 @@
 {
 "title": "Bozo's Circus",
 "aka": [
+"Bozo",
+"Bozo Show",
+"Bozo the Clown",
 "The Bozo Show",
-"Bozo"
+"WGN Bozo"
 ],
 "type": "kids",
 "net": "wgn",
@@ -689,7 +692,7 @@
 1960,
 2001
 ],
-"pri": 1
+"pri": 5
 },
 {
 "title": "C-SPAN call-in program",
@@ -5427,14 +5430,17 @@
 },
 {
 "title": "Captain Kangaroo",
-"aka": [],
+"aka": [
+"Captain Kangaroo and Friends",
+"Mister Green Jeans"
+],
 "type": "kids",
 "net": "cbs",
 "years": [
 1955,
 1984
 ],
-"pri": 2
+"pri": 5
 },
 {
 "title": "Carnivale",
@@ -29224,14 +29230,19 @@
 },
 {
 "title": "The Bozo Super Sunday Show",
-"aka": [],
+"aka": [
+"Bozo",
+"Bozo Show",
+"Bozo the Clown",
+"WGN Bozo"
+],
 "type": "kids",
 "net": "",
 "years": [
 1994,
 2001
 ],
-"pri": 4
+"pri": 5
 },
 {
 "title": "The Carol Duvall Show",
@@ -42465,5 +42476,31 @@
 2004
 ],
 "pri": 4
+},
+{
+"title": "Legends of the Hidden Temple",
+"aka": [
+"Hidden Temple"
+],
+"type": "game",
+"net": "nick",
+"years": [
+1993,
+1995
+],
+"pri": 5
+},
+{
+"title": "The All New Captain Kangaroo",
+"aka": [
+"All New Captain Kangaroo"
+],
+"type": "kids",
+"net": "syn",
+"years": [
+1997,
+1999
+],
+"pri": 5
 }
 ]
