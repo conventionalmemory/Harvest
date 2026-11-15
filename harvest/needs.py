@@ -778,7 +778,6 @@ def recheck(x):
     it = {'identifier': x['i'], 'title': t, 'description': x.get('ds'), 'subject': x.get('s'), 'collection': x.get('c'), 'date': x.get('d')}
     v = consider(sh, it, x.get('r', 't'))
     if not v: return 'no longer passes the title rules'
-    if v[0] == 'm' and v[1].startswith('short title') and not x.get('keep') and not x.get('se'): maybe(x, v[1])
     return ''
 def plan():
     global GUIDE
