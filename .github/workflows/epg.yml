@@ -1,0 +1,23 @@
+name: Episode guides
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 harvest/epg.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp catalog/epguide.json.gz /tmp/w.gz
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/w.gz catalog/epguide.json.gz && git add catalog/epguide.json.gz
+            git commit -q -m "Update episode guides" || break
+            git push && break
+            sleep 15
+          done
