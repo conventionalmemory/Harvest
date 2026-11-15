@@ -580,7 +580,7 @@ def consider0(sh, it, route='t'):
         if sh['type'] == 'sports' and (inrun or inera) and re.search(r'\b(vs|versus|at|game|nlcs|alcs|playoffs?|bowl)\b|@', low): return ('y', 't')
         if hd == 2 and (inrun or inera): return ('m', 'short name with a year only')
         return None
-    if not dated: return ('m', 'no broadcast year') if hd == 2 and (ctx or dev) else None
+    if not dated: return ('m', 'no broadcast year') if (hd == 2 and (ctx or dev)) or (lvl == 0 and (hd >= 0.5 or ctx)) else None
     if hd >= 0.5 or ctx: return ('y', 't')
     return ('m', 'name inside a longer title')
 def trim_seasons(sh, x):
