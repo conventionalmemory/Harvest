@@ -39,4 +39,8 @@ mkdir -p "$HOME/.cache/retrotv" && echo "${DEV:-default}" > "$HOME/.cache/retrot
 AUD=""
 [ -n "$DEV" ] && [ "$DEV" != "default" ] && AUD="--alsa-output-device=$DEV"
 export XKB_DEFAULT_LAYOUT=us
-exec /usr/bin/cage -s -- "$BIN" --kiosk --noerrdialogs --disable-infobars --no-first-run --disable-session-crashed-bubble --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 --disable-features=Translate,MediaRouter,HardwareMediaKeyHandling,AudioServiceSandbox,LocalNetworkAccessChecks,PrivateNetworkAccessSendPreflights,PrivateNetworkAccessRespectPreflightResults --overscroll-history-navigation=0 --disable-pinch --ozone-platform=wayland --enable-features=OverlayScrollbar --user-data-dir=/home/tv/.config/retrotv-chromium --password-store=basic $AUD "file:///usr/local/share/retrotv/wait.html#$(printf %s "$URL" | sed 's/&/%26/g;s/?/%3F/g;s/=/%3D/g')"
+PROF=/home/tv/.config/retrotv-chromium
+mkdir -p "$PROF"
+rm -f "$PROF/SingletonLock" "$PROF/SingletonSocket" "$PROF/SingletonCookie"
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[A-Za-z]*"/"exit_type":"Normal"/' "$PROF/Default/Preferences" 2>/dev/null || true
+exec /usr/bin/cage -s -- "$BIN" --kiosk --noerrdialogs --disable-infobars --no-first-run --disable-session-crashed-bubble --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 --disable-features=Translate,MediaRouter,HardwareMediaKeyHandling,AudioServiceSandbox,LocalNetworkAccessChecks,PrivateNetworkAccessSendPreflights,PrivateNetworkAccessRespectPreflightResults --overscroll-history-navigation=0 --disable-pinch --ozone-platform=wayland --enable-features=OverlayScrollbar --user-data-dir="$PROF" --password-store=basic $AUD "file:///usr/local/share/retrotv/wait.html#$(printf %s "$URL" | sed 's/&/%26/g;s/?/%3F/g;s/=/%3D/g')"
