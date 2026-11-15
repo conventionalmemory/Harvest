@@ -52,8 +52,9 @@ for k in 3 2 1; do [ -f "$LOGD/kiosk-$((k-1)).log" ] && mv -f "$LOGD/kiosk-$((k-
 LOG="$LOGD/kiosk-0.log"
 EXTRA=""
 export WLR_NO_HARDWARE_CURSORS=1
-if [ "$N" -ge 1 ]; then export WLR_RENDERER=pixman; EXTRA="--disable-gpu --disable-gpu-compositing"; fi
-if [ "$N" -ge 3 ]; then EXTRA="$EXTRA --disable-features=Vulkan,DefaultANGLEVulkan,VulkanFromANGLE --use-gl=disabled"; fi
+export WLR_LIBINPUT_NO_DEVICES=1
+if [ "$N" -ge 2 ]; then export WLR_RENDERER=pixman; EXTRA="--disable-gpu --disable-gpu-compositing"; fi
+if [ "$N" -ge 4 ]; then EXTRA="$EXTRA --disable-features=Vulkan,DefaultANGLEVulkan,VulkanFromANGLE --use-gl=disabled"; fi
 echo "retrotv start attempt $((N + 1)) renderer=${WLR_RENDERER:-default} extra=$EXTRA" > "$LOG"
 ( sleep 120; kill -0 $$ 2>/dev/null && echo 0 > "$F" ) &
 exec >>"$LOG" 2>&1
