@@ -10,6 +10,10 @@ on:
         description: MediaWiki API url
         required: false
         default: ''
+      search:
+        description: search queries separated by |
+        required: false
+        default: ''
       out:
         description: output file name
         required: false
@@ -26,6 +30,7 @@ jobs:
         env:
           PAGES: ${{ inputs.pages }}
           API: ${{ inputs.api }}
+          SEARCH: ${{ inputs.search }}
           OUTF: ${{ inputs.out }}
           NOSCHED: ${{ inputs.api }}
           UA: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36

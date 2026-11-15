@@ -21,6 +21,11 @@ def search(q):
     return [x['title'] for x in (d.get('query') or {}).get('search', [])]
 
 T = [x.strip() for x in os.environ.get('PAGES', '').split('|') if x.strip()]
+for q in [x.strip() for x in os.environ.get('SEARCH', '').split('|') if x.strip()]:
+    d = api(action='query', list='search', srsearch=q, srlimit='25')
+    for x in (d.get('query') or {}).get('search', []):
+        if x['title'] not in T: T.append(x['title'])
+    print('search', q, len(T), flush=True)
 for y in (range(1984, 2004) if not os.environ.get('NOSCHED') else []):
     s = '%d–%02d' % (y, (y + 1) % 100)
     for kind in ('Saturday morning', 'weekday', 'Sunday morning'):
