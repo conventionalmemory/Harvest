@@ -601,7 +601,7 @@ def trim_seasons(sh, x):
     if n: x['f'] = keepf
     return n
 def trim_full(sh, x):
-    x['f'] = [f for f in x['f'] if f[1] >= FULLMIN[sh['type']]]
+    x['f'] = [f for f in x['f'] if f[1] >= FULLMIN.get(sh['type'], 600)]
     if not x['f']: return set()
     ver = {r[0] for r in tag_full(sh, x)}
     pack = len(ver) * 10 >= len(x['f']) * 6
@@ -991,7 +991,7 @@ def merge():
         for sh in fulls:
             nm, hd = find(sh, t)
             if not nm or nm['lvl'] >= 2 or (sh['junk'] and (sh['junk'].search(low) or sh['junk'].search(re.sub(r'[\W_]+', ' ', fold(low))))) or JUNK.search(strip_names(sh, low)): continue
-            y = {'i': x['i'], 't': t, 'k': sh['title'], 'f': [f for f in x['f'] if isinstance(f, list) and len(f) > 1 and isinstance(f[0], str) and isinstance(f[1], (int, float)) and f[1] >= FULLMIN[sh['type']]]}
+            y = {'i': x['i'], 't': t, 'k': sh['title'], 'f': [f for f in x['f'] if isinstance(f, list) and len(f) > 1 and isinstance(f[0], str) and isinstance(f[1], (int, float)) and f[1] >= FULLMIN.get(sh['type'], 600)]}
             if y['f'] and tag_full(sh, y):
                 credit(y, 'held'); print('HELD', sh['title'], '|', x['i'], '|', t[:70], '|', len(x['f']), 'files', len(y['se']), 'episodes')
             break
