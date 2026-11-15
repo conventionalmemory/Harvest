@@ -1,0 +1,23 @@
+name: Series list
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 harvest/wikilist.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp catalog/wiki_shows.json.gz /tmp/w.gz
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/w.gz catalog/wiki_shows.json.gz && git add catalog/wiki_shows.json.gz
+            git commit -q -m "Update series list" || break
+            git push && break
+            sleep 15
+          done
