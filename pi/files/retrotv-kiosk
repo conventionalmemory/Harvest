@@ -35,7 +35,8 @@ if [ -z "$DEV" ]; then
   done
 fi
 echo "retrotv audio device: ${DEV:-default}"
+mkdir -p "$HOME/.cache/retrotv" && echo "${DEV:-default}" > "$HOME/.cache/retrotv/audio" || true
 AUD=""
 [ -n "$DEV" ] && [ "$DEV" != "default" ] && AUD="--alsa-output-device=$DEV"
 export XKB_DEFAULT_LAYOUT=us
-exec /usr/bin/cage -s -- "$BIN" --kiosk --noerrdialogs --disable-infobars --no-first-run --disable-session-crashed-bubble --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 --disable-features=Translate,MediaRouter,HardwareMediaKeyHandling,AudioServiceSandbox --overscroll-history-navigation=0 --disable-pinch --ozone-platform=wayland --enable-features=OverlayScrollbar --user-data-dir=/home/tv/.config/retrotv-chromium --password-store=basic $AUD "$URL"
+exec /usr/bin/cage -s -- "$BIN" --kiosk --noerrdialogs --disable-infobars --no-first-run --disable-session-crashed-bubble --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 --disable-features=Translate,MediaRouter,HardwareMediaKeyHandling,AudioServiceSandbox,LocalNetworkAccessChecks,PrivateNetworkAccessSendPreflights,PrivateNetworkAccessRespectPreflightResults --overscroll-history-navigation=0 --disable-pinch --ozone-platform=wayland --enable-features=OverlayScrollbar --user-data-dir=/home/tv/.config/retrotv-chromium --password-store=basic $AUD "$URL"

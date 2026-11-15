@@ -1,5 +1,7 @@
 name: Video link health
 on:
+  schedule:
+    - cron: '41 10 * * 0'
   workflow_dispatch:
     inputs:
       scope:
@@ -37,8 +39,8 @@ jobs:
           github-token: ${{ github.token }}
       - name: Plan
         env:
-          SCOPE: ${{ inputs.scope }}
-          LIMIT: ${{ inputs.limit }}
+          SCOPE: ${{ inputs.scope || 'all' }}
+          LIMIT: ${{ inputs.limit || '0' }}
           IDS: ${{ inputs.ids }}
           FROM_RUN: ${{ inputs.from_run }}
         run: MODE=plan BUDGET_MIN=15 python3 harvest/yt_health.py

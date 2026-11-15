@@ -37,7 +37,7 @@
 1982,
 1993
 ],
-"pri": 0,
+"pri": 1,
 "strict": 1,
 "runtime": [
 [
@@ -50,9 +50,11 @@
 ]
 ],
 "not": [
+"cheerleader",
+"cheers to",
 "frasier",
-"tortellis",
-"reunion"
+"reunion",
+"tortellis"
 ]
 },
 {
@@ -87,24 +89,22 @@
 1993,
 2004
 ],
-"pri": 0,
+"pri": 1,
 "strict": 1,
 "runtime": [
 [
-1230,
-1560
-],
-[
-2460,
-3120
+1260,
+1500
 ]
 ],
 "not": [
 "2023",
 "2024",
-"revival",
+"cheers",
+"paramount+",
+"reaction",
 "reboot",
-"cheers"
+"revival"
 ]
 },
 {
@@ -116,21 +116,20 @@
 1987,
 1995
 ],
-"pri": 0,
+"pri": 1,
 "strict": 1,
 "runtime": [
 [
-1230,
-1560
-],
-[
-2460,
-3120
+1260,
+1500
 ]
 ],
 "not": [
 "fuller",
-"reunion"
+"fuller house",
+"reaction",
+"reunion",
+"then and now"
 ]
 },
 {
@@ -196,26 +195,30 @@
 1989,
 1998
 ],
-"pri": 0,
+"pri": 1,
 "strict": 1,
 "runtime": [
 [
-1230,
-1560
+1260,
+1500
 ],
 [
 2460,
-3120
+3000
 ]
 ],
 "not": [
-"curb",
+"bee movie",
+"bloopers",
 "comedians in cars",
-"unfrosted",
+"curb",
+"interview",
+"jerry seinfeld stand",
+"reaction",
+"reunion",
 "stand up",
 "standup",
-"reunion",
-"bee movie"
+"unfrosted"
 ]
 },
 {
@@ -3173,7 +3176,19 @@
 1984,
 1992
 ],
-"pri": 1
+"pri": 1,
+"runtime": [
+[
+1260,
+1500
+]
+],
+"strict": 1,
+"not": [
+"2023",
+"reaction",
+"revival"
+]
 },
 {
 "title": "Night Flight",
@@ -4777,7 +4792,19 @@
 1984,
 1992
 ],
-"pri": 1
+"pri": 1,
+"runtime": [
+[
+1260,
+1500
+]
+],
+"strict": 1,
+"not": [
+"reaction",
+"reunion",
+"then and now"
+]
 },
 {
 "title": "Wild Discovery",
@@ -44515,5 +44542,257 @@
 ],
 "pri": 6,
 "hol": "E"
+},
+{
+"title": "The X-Files",
+"aka": [
+"X-Files",
+"X Files"
+],
+"type": "drama",
+"net": "fox",
+"years": [
+1993,
+2002
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+2400,
+2940
+]
+],
+"not": [
+"2016",
+"2018",
+"reaction",
+"review",
+"explained",
+"theory"
+]
+},
+{
+"title": "Pokémon",
+"aka": [
+"Pokemon",
+"Pokemon Indigo League",
+"Pokemon Orange Islands",
+"Pokemon Johto"
+],
+"type": "kids",
+"net": "wb",
+"years": [
+1998,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1260,
+1440
+]
+],
+"not": [
+"journeys",
+"horizons",
+"sun and moon",
+"xy",
+"sword",
+"reaction",
+"review",
+"pokemon go",
+"card",
+"unboxing",
+"nuzlocke",
+"let's play"
+]
+},
+{
+"title": "Ghostwriter",
+"aka": [],
+"type": "kids",
+"net": "pbs",
+"years": [
+1992,
+1995
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1500,
+1740
+]
+],
+"not": [
+"2019",
+"apple tv",
+"reaction"
+]
+},
+{
+"title": "MacGyver",
+"aka": [],
+"type": "drama",
+"net": "abc",
+"years": [
+1985,
+1992
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+2640,
+2940
+]
+],
+"not": [
+"2016",
+"2017",
+"2018",
+"2019",
+"2020",
+"reboot",
+"reaction"
+]
+},
+{
+"title": "Miami Vice",
+"aka": [],
+"type": "drama",
+"net": "nbc",
+"years": [
+1984,
+1990
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+2640,
+2940
+]
+],
+"not": [
+"2006",
+"movie",
+"reaction",
+"gta"
+]
+},
+{
+"title": "Pee-wee's Playhouse",
+"aka": [
+"Peewee's Playhouse",
+"Pee Wee's Playhouse",
+"Peewees Playhouse"
+],
+"type": "kids",
+"net": "cbs",
+"years": [
+1986,
+1991
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1320,
+1500
+]
+],
+"not": [
+"big adventure",
+"big top",
+"holiday",
+"netflix",
+"reaction",
+"review",
+"hbo"
+]
+},
+{
+"title": "Hey Arnold!",
+"aka": [
+"Hey Arnold"
+],
+"type": "kids",
+"net": "nick",
+"years": [
+1996,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1260,
+1440
+]
+],
+"not": [
+"jungle movie",
+"2017",
+"reaction",
+"review",
+"theory"
+]
+},
+{
+"title": "Doug",
+"aka": [
+"Nickelodeon Doug",
+"Disney's Doug",
+"Brand Spanking New Doug"
+],
+"type": "kids",
+"net": "nick",
+"years": [
+1991,
+1999
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1260,
+1440
+]
+],
+"not": [
+"doug walker",
+"doug demuro",
+"doug stanhope",
+"reaction",
+"review",
+"dougie",
+"nostalgia critic"
+]
+},
+{
+"title": "Family Matters",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1989,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1260,
+1500
+]
+],
+"not": [
+"reaction",
+"then and now",
+"reunion"
+]
 }
 ]

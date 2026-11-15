@@ -33,7 +33,10 @@ C "id tv >/dev/null 2>&1 || useradd -m -s /bin/bash -G video,render,input,audio,
 C "systemctl mask userconfig.service >/dev/null 2>&1 || true; rm -f /etc/systemd/system/multi-user.target.wants/userconfig.service"
 sudo install -m 0755 "$HERE/files/retrotv-kiosk" "$R/usr/local/bin/retrotv-kiosk"
 sudo install -m 0755 "$HERE/files/retrotv-wifi" "$R/usr/local/bin/retrotv-wifi"
-for u in retrotv.service retrotv-wifi.service retrotv-restart.service retrotv-restart.timer; do sudo install -m 0644 "$HERE/files/$u" "$R/etc/systemd/system/$u"; done
+sudo install -m 0755 "$HERE/files/retrotv-status" "$R/usr/local/bin/retrotv-status"
+for d in chromium chromium-browser; do sudo mkdir -p "$R/etc/$d/policies/managed"; sudo install -m 0644 "$HERE/files/chromium-policy.json" "$R/etc/$d/policies/managed/retrotv.json"; done
+sudo mkdir -p "$R/etc/retrotv"; date -u +%Y-%m-%d | sudo tee "$R/etc/retrotv/version" >/dev/null
+for u in retrotv.service retrotv-wifi.service retrotv-status.service retrotv-restart.service retrotv-restart.timer; do sudo install -m 0644 "$HERE/files/$u" "$R/etc/systemd/system/$u"; done
 sudo install -m 0644 "$HERE/files/pam-cage" "$R/etc/pam.d/cage"
 sudo install -m 0644 "$HERE/files/asound.conf" "$R/etc/asound.conf"
 test -f "$R/usr/lib/ladspa/sc4_1882.so" && test -f "$R/usr/lib/ladspa/fast_lookahead_limiter_1913.so" && test -f "$R/usr/lib/ladspa/notch_iir_1894.so" && test -f "$R/usr/lib/ladspa/highpass_iir_1890.so"
@@ -42,11 +45,11 @@ echo "$CODE" | sudo tee "$R/etc/retrotv/tv-code" >/dev/null
 for f in retrotv-wifi.txt retrotv-settings.txt retrotv-README.txt; do sudo install -m 0644 "$HERE/files/$f" "$R/boot/firmware/$f"; done
 echo retrotv | sudo tee "$R/etc/hostname" >/dev/null
 sudo sed -i 's/raspberrypi/retrotv/g' "$R/etc/hosts"
-C "systemctl enable retrotv.service retrotv-wifi.service retrotv-restart.timer; systemctl set-default graphical.target; systemctl disable getty@tty1.service || true"
+C "systemctl enable retrotv.service retrotv-wifi.service retrotv-status.service retrotv-restart.timer; systemctl set-default graphical.target; systemctl disable getty@tty1.service || true"
 CFG="$R/boot/firmware/config.txt"
 sudo sed -i 's/^dtoverlay=vc4-kms-v3d.*/dtoverlay=vc4-kms-v3d,composite/' "$CFG"
 grep -q '^dtoverlay=vc4-kms-v3d,composite' "$CFG" || echo 'dtoverlay=vc4-kms-v3d,composite' | sudo tee -a "$CFG" >/dev/null
-printf '\n[pi4]\nenable_tvout=1\n\n[all]\ndtparam=audio=on\n' | sudo tee -a "$CFG" >/dev/null
+printf '\n[pi4]\nenable_tvout=1\n\n[all]\ndtparam=audio=on\ndtoverlay=gpio-fan,gpiopin=14,temp=60000\n' | sudo tee -a "$CFG" >/dev/null
 CMD="$R/boot/firmware/cmdline.txt"
 sudo sed -i '1 s/$/ video=Composite-1:720x480@60ie consoleblank=0 vt.global_cursor_default=0 logo.nologo/' "$CMD"
 cat "$CFG" "$CMD"

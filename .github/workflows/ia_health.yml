@@ -1,0 +1,59 @@
+name: Archive link health
+on:
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+    inputs:
+      slice:
+        description: day (a seventh of the items, by weekday) or all
+        default: day
+permissions:
+  contents: write
+concurrency:
+  group: ia-health
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check
+        env:
+          SLICE: ${{ inputs.slice || 'day' }}
+        run: MODE=check SHARD=${{ matrix.shard }} SHARDS=4 THREADS=10 BUDGET_MIN=65 python3 harvest/ia_health.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iah-${{ matrix.shard }}
+          path: parts/iah-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: check
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: iah-[0-9]*
+          path: parts
+          merge-multiple: true
+      - run: MODE=merge python3 harvest/ia_health.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp catalog/ia_health.json.gz /tmp/w.gz
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/w.gz catalog/ia_health.json.gz && git add catalog/ia_health.json.gz
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update archive link health" && git push && exit 0
+            sleep $((10 + RANDOM % 20))
+          done
