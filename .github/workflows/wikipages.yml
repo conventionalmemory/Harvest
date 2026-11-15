@@ -1,0 +1,30 @@
+name: Wiki pages
+on:
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: Page titles separated by |
+        required: false
+        default: ''
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 harvest/wikipages.py
+        env:
+          PAGES: ${{ inputs.pages }}
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp catalog/wikipages.json.gz /tmp/w.gz
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/w.gz catalog/wikipages.json.gz && git add catalog/wikipages.json.gz
+            git commit -q -m "Update wiki pages" || break
+            git push && break
+            sleep 15
+          done
