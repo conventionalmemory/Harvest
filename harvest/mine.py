@@ -11,6 +11,12 @@ BUDGET = float(os.environ.get('BUDGET_MIN', '320')) * 60
 SEEDS = int(os.environ.get('SEEDS', '14000'))
 TOPUP = int(os.environ.get('TOPUP', '300'))
 MAXC = int(os.environ.get('MAXC', '260000'))
+FAV = os.environ.get('FAV', '0') == '1'
+SEEDMINE = os.environ.get('SEEDMINE', '0') == '1'
+MINU = int(os.environ.get('MINU', '6'))
+MINC = int(os.environ.get('MINC', '10'))
+NC = int(os.environ.get('NC', '400'))
+SEENF = os.path.join(OUT, 'mine_seen.txt.gz')
 T0 = time.time()
 OUTF = os.path.join(OUT, 'mine.json.gz')
 DROPF = os.path.join(here, 'mine_drop.txt')
@@ -155,7 +161,8 @@ def seed_items():
     S = {}
     for p in glob.glob(os.path.join(OUT, '*.json.gz')):
         b = os.path.basename(p)
-        if b in ('dates.json.gz', 'epguide.json.gz', 'adsdates.json.gz', 'ads.json.gz', 'openarch.json.gz', 'movies.json.gz', 'mine.json.gz', 'nick_guide.json.gz'): continue
+        if b in ('dates.json.gz', 'epguide.json.gz', 'adsdates.json.gz', 'ads.json.gz', 'openarch.json.gz', 'movies.json.gz', 'nick_guide.json.gz'): continue
+        if b == 'mine.json.gz' and not SEEDMINE: continue
         try: L = json.load(gzip.open(p, 'rt', encoding='utf-8'))
         except Exception: continue
         if not isinstance(L, list): continue
@@ -174,6 +181,8 @@ def seed_items():
     return S
 if MODE == 'plan':
     have = load_have()
+    if os.path.exists(OUTF): have |= set(x['i'] for x in json.load(gzip.open(OUTF, 'rt', encoding='utf-8')))
+    if os.path.exists(SEENF): have |= set(l.strip() for l in gzip.open(SEENF, 'rt', encoding='utf-8') if l.strip())
     S = seed_items()
     print('known', len(have), 'good seeds', len(S), 'shows', len(SHOWS), flush=True)
     random.seed(11)
@@ -192,7 +201,7 @@ if MODE == 'plan':
             i, u, col = r
             if u: ups[u] += S[i]; upx[u].append(i)
             for c in col:
-                if c not in GENERIC and c not in XCOL and not c.startswith('fav-'): cols[c] += S[i]
+                if c not in GENERIC and c not in XCOL and (FAV or not c.startswith('fav-')): cols[c] += S[i]
             if n % 2000 == 0: print('seed meta', n, len(ups), len(cols), round((time.time() - T0) / 60, 1), 'min', flush=True)
     if os.path.exists(OUTF):
         prev = json.load(gzip.open(OUTF, 'rt', encoding='utf-8'))
@@ -206,7 +215,7 @@ if MODE == 'plan':
         print('uploaders carried from previous output', len(one), flush=True)
     for u in list(ups):
         if hid(u) in DROP: del ups[u]
-    top = [u for u, n in ups.most_common(TOPUP) if n >= 6]
+    top = [u for u, n in ups.most_common(TOPUP) if n >= MINU]
     print('UPLOADER LEADERBOARD (score, seed items)')
     for u, n in ups.most_common(120): print('  %5d %4d  %s' % (n, len(upx[u]), hid(u)))
     print('COLLECTION LEADERBOARD')
@@ -216,7 +225,8 @@ if MODE == 'plan':
         for it in scrape('mediatype:collection AND ' + q, cap=5000):
             found.add(it['identifier'])
     found = set(c for c in found if c not in GENERIC and c not in XCOL and not c.startswith('fav-') and c not in DROP)
-    selc = sorted(set([c for c, n in cols.most_common(400) if n >= 10 and c not in DROP]) | found)
+    selc = sorted(set([c for c, n in cols.most_common(NC) if n >= MINC and c not in DROP]) | found)
+    print('favorites lists selected', sum(1 for c in selc if c.startswith('fav-')), flush=True)
     print('uploaders selected', len(top), 'collections selected', len(selc), 'of which by search', len(found), flush=True)
     def listing(job):
         kind, v = job
@@ -346,14 +356,15 @@ def meta(it):
 if MODE == 'meta':
     cands = json.load(gzip.open(os.path.join(PARTS, 'mine_cands.json.gz'), 'rt', encoding='utf-8'))[SHARD::SHARDS]
     print('shard', SHARD, 'of', SHARDS, 'items', len(cands), flush=True)
-    res = []; cnt = collections.Counter()
+    res = []; cnt = collections.Counter(); rej = []
     with ThreadPoolExecutor(THREADS) as ex:
         for n, (it, r) in enumerate(zip(cands, ex.map(meta, cands))):
             cnt[it.get('src', '')] += 1
             if r: res.append(r)
+            elif time.time() - T0 <= BUDGET: rej.append(it['identifier'])
             if n % 2000 == 0: print('meta', n, len(res), round((time.time() - T0) / 60, 1), 'min', flush=True)
     with gzip.open(os.path.join(PARTS, 'mine-%d.json.gz' % SHARD), 'wt', encoding='utf-8') as f:
-        json.dump({'res': res, 'cnt': dict(cnt)}, f, ensure_ascii=False, separators=(',', ':'))
+        json.dump({'res': res, 'cnt': dict(cnt), 'rej': rej}, f, ensure_ascii=False, separators=(',', ':'))
     print('rejections', sorted(REJ.items(), key=lambda kv: -kv[1]))
     print('shard done', len(res)); sys.exit(0)
 have0 = load_have()
@@ -374,12 +385,17 @@ def rekeep(x):
 old = [x for x in old0 if rekeep(x)]
 print('refiltered existing', len(old0), '->', len(old))
 have = set(x['i'] for x in old); add = []; cnt = collections.Counter()
+seen0 = set(l.strip() for l in gzip.open(SEENF, 'rt', encoding='utf-8') if l.strip()) if os.path.exists(SEENF) else set()
 for p in sorted(glob.glob(os.path.join(PARTS, 'mine-*.json.gz'))):
     j = json.load(gzip.open(p, 'rt', encoding='utf-8'))
+    seen0 |= set(j.get('rej') or [])
     for k, n in j.get('cnt', {}).items(): cnt[k] += n
     for x in j.get('res', []):
         if x['i'] not in have and rekeep(x): have.add(x['i']); add.append(x)
 res = old + add
+with gzip.open(SEENF, 'wt', encoding='utf-8') as f:
+    f.write('\n'.join(sorted(seen0)) + '\n')
+print('looked up and rejected so far', len(seen0))
 with gzip.open(OUTF, 'wt', encoding='utf-8') as f:
     json.dump(res, f, ensure_ascii=False, separators=(',', ':'))
 hrs = lambda L: round(sum(sum(f[1] for f in x['f']) for x in L) / 3600)
