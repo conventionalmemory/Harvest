@@ -378,7 +378,7 @@ def tag_full(sh, x):
     title = x['t'][len(sh['title']) + 3:] if x['t'].startswith(sh['title'] + ' - ') else x['t']
     hows = []
     for n, f in enumerate(files):
-        if f[1] < FULLMIN[sh['type']]: continue
+        if f[1] < FULLMIN.get(sh['type'], 600): continue
         for s2 in series_of(sh, f[0]):
             ws, how = parse_full(s2, f[0], f[1], ctx if s2 is sh else {})
             if not ws and len(files) <= 2: ws, how = parse_full(s2, title, f[1], ctx if s2 is sh else {})
