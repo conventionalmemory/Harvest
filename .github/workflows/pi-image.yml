@@ -1,0 +1,21 @@
+name: Build Pi image
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tools
+        run: sudo apt-get update && sudo apt-get install -y qemu-user-static binfmt-support xz-utils parted e2fsprogs dosfstools zerofree
+      - name: Build
+        run: WORK=$PWD/work bash pi/build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: retrotv-pi-image
+          path: work/retrotv-pi.img.xz
+          compression-level: 0
+          retention-days: 14

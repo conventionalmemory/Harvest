@@ -1,0 +1,12 @@
+# Retro TV settings
+# TV_CODE is the code printed on your phone remote card.
+# Leave it blank to use the code this card was built with. If the card was
+# built without one, the TV makes up its own code and shows it on screen.
+TV_CODE=
+# AUDIO_LEVELER evens out loud and quiet shows and sends full-level audio to the TV.
+# Set it to off if you would rather hear the original levels.
+AUDIO_LEVELER=on
+# OVERSCAN shrinks the picture so its edges fit inside your TV. 0 is full size
+# and each step up makes it a little smaller. You can also change it any time
+# from the TV menu (PICTURE SIZE) or the phone remote (SIZE).
+OVERSCAN=2

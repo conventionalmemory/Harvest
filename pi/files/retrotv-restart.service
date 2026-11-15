@@ -1,0 +1,6 @@
+[Unit]
+Description=Reload the Retro TV page
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl restart retrotv.service

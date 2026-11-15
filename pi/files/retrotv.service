@@ -1,0 +1,28 @@
+[Unit]
+Description=Retro TV on the composite output
+After=systemd-user-sessions.service plymouth-quit-wait.service dbus.socket systemd-logind.service retrotv-wifi.service
+Wants=dbus.socket systemd-logind.service
+Before=graphical.target
+ConditionPathExists=/dev/tty0
+Conflicts=getty@tty1.service
+After=getty@tty1.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/retrotv-kiosk
+Restart=always
+RestartSec=4
+User=tv
+UtmpIdentifier=tty1
+UtmpMode=user
+TTYPath=/dev/tty1
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+StandardInput=tty-fail
+StandardOutput=journal
+StandardError=journal
+PAMName=cage
+
+[Install]
+WantedBy=graphical.target

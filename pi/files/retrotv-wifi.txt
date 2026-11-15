@@ -1,0 +1,7 @@
+# Retro TV Wi-Fi
+# Type your Wi-Fi name and password after the = signs, save this file,
+# then put the card back in the Raspberry Pi and power it on.
+# COUNTRY is the two-letter code for your country (US, CA, GB...).
+SSID=
+PASSWORD=
+COUNTRY=US

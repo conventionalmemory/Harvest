@@ -1,0 +1,20 @@
+#!/bin/bash
+F=/boot/firmware/retrotv-wifi.txt
+[ -f "$F" ] || exit 0
+get() { sed -n "s/^$1=//p" "$F" | head -1 | tr -d '\r'; }
+SSID=$(get SSID); PASS=$(get PASSWORD); CC=$(get COUNTRY)
+CC=${CC:-US}
+raspi-config nonint do_wifi_country "$CC" >/dev/null 2>&1 || iw reg set "$CC" || true
+[ -z "$SSID" ] && exit 0
+H=$(printf '%s|%s|%s' "$SSID" "$PASS" "$CC" | sha256sum | cut -c1-16)
+[ "$(cat /var/lib/retrotv-wifi 2>/dev/null)" = "$H" ] && exit 0
+rfkill unblock wifi || true
+nmcli radio wifi on || true
+nmcli connection delete retrotv-wifi >/dev/null 2>&1 || true
+if [ -n "$PASS" ]; then
+  nmcli connection add type wifi ifname wlan0 con-name retrotv-wifi ssid "$SSID" wifi-sec.key-mgmt wpa-psk wifi-sec.psk "$PASS" connection.autoconnect yes
+else
+  nmcli connection add type wifi ifname wlan0 con-name retrotv-wifi ssid "$SSID" connection.autoconnect yes
+fi
+nmcli connection up retrotv-wifi || true
+echo "$H" > /var/lib/retrotv-wifi

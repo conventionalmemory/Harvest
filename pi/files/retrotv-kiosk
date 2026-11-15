@@ -1,0 +1,28 @@
+#!/bin/bash
+CODE=$(cat /etc/retrotv/tv-code 2>/dev/null)
+B=/boot/firmware/retrotv-settings.txt
+if [ -f "$B" ]; then
+  C=$(sed -n 's/^TV_CODE=//p' "$B" | tr -d '\r ' | tr 'a-z' 'A-Z')
+  [ -n "$C" ] && CODE="$C"
+fi
+OS=2
+if [ -f "$B" ]; then
+  O=$(sed -n 's/^OVERSCAN=//p' "$B" | tr -cd '0-9')
+  [ -n "$O" ] && OS="$O"
+fi
+URL="https://retrotvpi.conventionalmemory.io/?tv=$CODE&os=$OS"
+for i in $(seq 1 150); do
+  curl -fsS -o /dev/null --max-time 6 "https://retrotvpi.conventionalmemory.io/" && break
+  sleep 2
+done
+BIN=$(command -v chromium || command -v chromium-browser)
+LEV=on
+if [ -f "$B" ]; then
+  L=$(sed -n 's/^AUDIO_LEVELER=//p' "$B" | tr -d '\r ' | tr 'A-Z' 'a-z')
+  [ -n "$L" ] && LEV="$L"
+fi
+AUD=""
+[ "$LEV" = "off" ] && AUD="--alsa-output-device=retrotv_raw"
+amixer -q -c Headphones sset PCM 0dB unmute 2>/dev/null || amixer -q sset PCM 0dB unmute 2>/dev/null || true
+export XKB_DEFAULT_LAYOUT=us
+exec /usr/bin/cage -s -- "$BIN" --kiosk --noerrdialogs --disable-infobars --no-first-run --disable-session-crashed-bubble --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 --disable-features=Translate,MediaRouter,HardwareMediaKeyHandling --overscroll-history-navigation=0 --disable-pinch --ozone-platform=wayland --enable-features=OverlayScrollbar --user-data-dir=/home/tv/.config/retrotv-chromium --password-store=basic $AUD "$URL"

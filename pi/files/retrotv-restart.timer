@@ -1,0 +1,9 @@
+[Unit]
+Description=Reload the Retro TV page every morning
+
+[Timer]
+OnCalendar=*-*-* 05:45:00
+Persistent=false
+
+[Install]
+WantedBy=timers.target
