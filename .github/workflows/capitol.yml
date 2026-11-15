@@ -1,0 +1,69 @@
+name: Government and public affairs video
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 230
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q yt-dlp
+      - name: Search
+        run: MODE=plan BUDGET_MIN=200 python3 harvest/capitol.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cap-cands
+          path: parts/cap_cands.json.gz
+          retention-days: 3
+  lookup:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: cap-cands
+          path: parts
+      - name: Look up videos
+        run: MODE=meta SHARD=${{ matrix.shard }} SHARDS=6 THREADS=5 BUDGET_MIN=180 python3 harvest/capitol.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cap-${{ matrix.shard }}
+          path: parts/cap-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: lookup
+    if: ${{ !cancelled() && needs.lookup.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: cap-cands
+          path: parts
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: cap-[0-9]*
+          path: parts
+          merge-multiple: true
+      - name: Merge
+        run: ls -la parts; MODE=merge python3 harvest/capitol.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp catalog/capitol.json.gz /tmp/out.json.gz
+          for i in 1 2 3 4 5 6 7 8; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/out.json.gz catalog/capitol.json.gz && git add catalog/capitol.json.gz
+            git commit -q -m "Update government and public affairs video" || break
+            git push && break
+            sleep $((10 + RANDOM % 30))
+          done
