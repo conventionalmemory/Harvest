@@ -1,6 +1,11 @@
 name: Commercials and promos harvest
 on:
   workflow_dispatch:
+    inputs:
+      focus:
+        description: Leave empty for everything, or holiday
+        required: false
+        default: ''
 permissions:
   contents: write
 jobs:
@@ -10,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Search the archive
-        run: MODE=plan THREADS=24 python3 harvest/ads2.py
+        run: MODE=plan FOCUS='${{ github.event.inputs.focus }}' THREADS=24 python3 harvest/ads2.py
       - uses: actions/upload-artifact@v4
         with:
           name: ads2-cands

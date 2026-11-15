@@ -159,6 +159,17 @@ for k in range(0, len(CALLS), 60):
 QE = [('e84', 'title:(' + YE + ') AND (description:(commercial OR commercials OR "tv spot" OR advertisement OR "tv ad") OR subject:(commercial OR commercials OR advertising OR advertisement OR ads OR "tv ads"))')]
 for k in range(0, len(BR), 20):
     QE.append(('eb%d' % (k // 20), 'title:(' + YE + ') AND title:(' + ' OR '.join('"%s"' % b for b in BR[k:k + 20]) + ')'))
+FOCUS = os.environ.get('FOCUS', '')
+if FOCUS == 'holiday':
+    HOL = [('x', 'christmas OR xmas OR "x-mas" OR santa OR "holiday season" OR "happy holidays" OR "season\'s greetings" OR hanukkah OR "stocking stuffer" OR "holiday sale"'), ('t', 'thanksgiving OR "turkey day"'), ('w', 'halloween OR "trick or treat"'), ('e', 'easter OR "easter bunny"'), ('v', 'valentine OR valentines OR "valentine\'s"'), ('n', '"new year" OR "new years" OR "new year\'s" OR "new year\'s eve"'), ('j', '"4th of july" OR "fourth of july" OR "independence day" OR "july 4th"'), ('b', '"back to school" OR "back-to-school"')]
+    ADH = 'title:(commercial OR commercials OR ad OR ads OR spot OR spots OR advert OR adverts OR advertisement OR "tv spot")'
+    QA = []
+    for k, h in HOL:
+        QA.append(('h' + k, ADH + ' AND title:(' + h + ')'))
+        QA.append(('h' + k + 's', 'subject:(commercial OR commercials OR advertising OR "tv commercials" OR "vintage commercials" OR "80s commercials" OR "90s commercials") AND title:(' + h + ')'))
+        QA.append(('h' + k + 'd', 'description:(commercial OR commercials OR "tv spot" OR advertisement) AND title:(' + h + ') AND (year:[1984 TO 2004] OR title:(' + Y8 + ' OR ' + Y9 + ' OR "80s" OR "90s" OR vintage OR retro OR vhs))'))
+    QF = [q for q in QF if q[0] in ('holiday', 'adbreak')]
+    QX = []; QE = []
 THIN = ('promo', 'bumper', 'kidint', 'psa', 'stationid', 'newsbrk', 'signoff', 'moviech')
 KIDN = r"nickelodeon|nick jr|nick at nite|nicktoons|snick|cartoon network|toonami|cartoon cartoon|fox kids|kids'? ?wb|disney afternoon|one saturday morning|saturday morning|pbs kids|tnbc|cartoon express|toon disney|zoog|playhouse disney|boomerang|noggin"
 MOVN = r"hbo|showtime|cinemax|the movie channel|starz|encore|feature presentation"
@@ -312,7 +323,7 @@ def plan():
     global mine
     mine = set(r[0] for r in oldads if fixrow(list(r))) | set(x['i'] for x in oldfl if fixfl(dict(x)))
     print('own after cleaning', len(mine), flush=True)
-    if oldads:
+    if oldads and not FOCUS:
         cols, ups = colscan()
         for k, c in enumerate(cols):
             items = scrape('collection:"%s" AND mediatype:movies' % c, 30000)

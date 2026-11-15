@@ -1,0 +1,28 @@
+name: Station logos
+on:
+  workflow_dispatch:
+    inputs:
+      per:
+        description: Candidates kept per station
+        required: false
+        default: '8'
+permissions:
+  contents: write
+concurrency:
+  group: logos
+  cancel-in-progress: false
+jobs:
+  logos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch logos
+        run: PER='${{ github.event.inputs.per }}' python3 harvest/logos.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/logos catalog/logos.json
+          git commit -m "Update station logos" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
