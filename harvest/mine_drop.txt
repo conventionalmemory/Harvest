@@ -43,3 +43,10 @@ vhsinstructionals
 vhsopenings
 vhstrailers
 whisper_test
+anime_miscellaneous
+video_blender
+vhsvault
+sportstelevision
+musictelevision
+vhsmisc
+hhvp-videos
