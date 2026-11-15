@@ -430,6 +430,20 @@ def strip_names(sh, low):
     for nm in sh['names']: low = nm['rx'].sub(' ', low)
     return low
 def consider(sh, it, route='t'):
+    v = consider0(sh, it, route)
+    if not v or v[0] != 'y' or sh['full'] or sh['type'] in ('sports', 'special', 'movie-package', 'movie'): return v
+    g = EP.get(sh['title'])
+    if g and g.get('n'): return v
+    t = flat(it.get('title')); low = clean(t)
+    nm, hd = find(sh, t)
+    if not nm or len(nm['n'].split()) > 3: return v
+    desc = flat(it.get('description')).lower(); subj = flat(it.get('subject')).lower()
+    cols = it.get('collection') or []
+    cols = set(cols) if isinstance(cols, list) else {cols}
+    rest = strip_names(sh, low)
+    ev = TAPE.search(rest) or cols & TVSET or (sh['netrx'] and sh['netrx'].search(rest + ' ' + subj + ' ' + desc[:300])) or DESCEV.search(desc[:400] + ' ' + subj) or airdate(t) or SE1.search(low) or seasons(low)
+    return v if ev else ('m', 'short title, no episode guide and no TV evidence')
+def consider0(sh, it, route='t'):
     t = flat(it.get('title')); low = clean(t)
     if not t or NONLAT.search(t) or FOREIGN.search(low): return None
     lang = flat(it.get('language')).lower()
@@ -760,6 +774,7 @@ def recheck(x):
     it = {'identifier': x['i'], 'title': t, 'description': x.get('ds'), 'subject': x.get('s'), 'collection': x.get('c'), 'date': x.get('d')}
     v = consider(sh, it, x.get('r', 't'))
     if not v: return 'no longer passes the title rules'
+    if v[0] == 'm' and v[1].startswith('short title') and not x.get('keep') and not x.get('se'): maybe(x, v[1])
     return ''
 def plan():
     global GUIDE
