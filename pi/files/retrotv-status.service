@@ -1,10 +1,11 @@
 [Unit]
 Description=Retro TV status for the phone remote
-After=network.target
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=simple
-User=tv
+User=root
 ExecStart=/usr/local/bin/retrotv-status
 Restart=always
 RestartSec=5

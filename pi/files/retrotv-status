@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import json, os, re, socket, subprocess, time
+import json, os, re, socket, subprocess, threading, time, urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 ORIGINS = ('https://retrotvpi.conventionalmemory.io', 'https://retrotv.conventionalmemory.io', 'null')
 def rd(p, d=None):
@@ -35,7 +35,7 @@ def status():
     m2 = re.search(r'MemAvailable:\s+(\d+)', mi)
     if m2: mem = int(m2.group(1)) // 1024
     up = rd('/proc/uptime', '0 0').split()[0]
-    return {'temp': round(int(t) / 1000, 1) if t and t.isdigit() else None, 'thr': (thr & 0x50005) if thr is not None else None, 'fan': fan(), 'wifi': wifi(), 'aud': rd(os.path.expanduser('~/.cache/retrotv/audio'), '') or 'default', 'mem': mem, 'up': int(float(up)), 'img': rd('/etc/retrotv/version', '')}
+    return {'temp': round(int(t) / 1000, 1) if t and t.isdigit() else None, 'thr': (thr & 0x50005) if thr is not None else None, 'fan': fan(), 'wifi': wifi(), 'aud': rd('/home/tv/.cache/retrotv/audio', '') or 'default', 'mem': mem, 'up': int(float(up)), 'img': rd('/etc/retrotv/version', '')}
 def netinfo():
     o = {'ssid': '', 'signal': None, 'ip': '', 'eth': False, 'inet': False}
     lk = run('iw', 'dev', 'wlan0', 'link')
@@ -69,4 +69,40 @@ class H(BaseHTTPRequestHandler):
         b = json.dumps(status() if pth == '/status' else netinfo()).encode()
         self.send_response(200); self.hdr(); self.send_header('Content-Type', 'application/json'); self.send_header('Content-Length', str(len(b))); self.end_headers(); self.wfile.write(b)
     def log_message(self, *a): pass
+RB = 'https://samkpoezeriuurhyrrif.supabase.co/realtime/v1/api/broadcast'
+RK = 'sb_publishable_Bqq2ARWOinPrUQ6XegVb_A_BgdPx-XL'
+def code():
+    c = ''
+    try:
+        for ln in open('/boot/firmware/retrotv-settings.txt'):
+            if ln.startswith('TV_CODE='): c = ln.split('=', 1)[1].strip().upper()
+    except Exception: pass
+    return c or (rd('/etc/retrotv/tv-code', '') or '')
+def report():
+    o = {'host_changed': socket.gethostname() != 'retrotv', 'code': code(), 'img': rd('/etc/retrotv/version', '')}
+    o.update(status())
+    n = netinfo()
+    o['net'] = {'wifi': bool(n['ssid']), 'signal': n['signal'], 'eth': n['eth'], 'has_ip': bool(n['ip']), 'inet': n['inet']}
+    o['procs'] = [re.sub(r'--user-data-dir=\S+', '', x)[:180] for x in run('pgrep', '-a', '-f', 'cage|chromium').splitlines()[:6]]
+    o['journal'] = [x[:220] for x in run('journalctl', '-u', 'retrotv.service', '-b', '-n', '40', '--no-pager', '-o', 'short-monotonic').splitlines()[-40:]]
+    try: o['lock'] = os.readlink('/home/tv/.config/retrotv-chromium/SingletonLock').split('-')[-1]
+    except Exception: o['lock'] = None
+    drm = {}
+    try:
+        for d in os.listdir('/sys/class/drm'):
+            st = rd('/sys/class/drm/%s/status' % d)
+            if st: drm[d] = st + '/' + (rd('/sys/class/drm/%s/enabled' % d, '') or '')
+    except Exception: pass
+    o['drm'] = drm
+    o['chromium'] = run('chromium', '--version') or run('chromium-browser', '--version')
+    return o
+def beacon():
+    while True:
+        try:
+            b = json.dumps({'messages': [{'topic': 'afterglow-diag', 'event': 'diag', 'payload': {'c': 'PI', 'k': 'pi', 'v': report()}, 'private': False}]}).encode()
+            urllib.request.urlopen(urllib.request.Request(RB, data=b, headers={'apikey': RK, 'Content-Type': 'application/json'}), timeout=15).read()
+        except Exception: pass
+        up = float((rd('/proc/uptime', '0 0') or '0 0').split()[0])
+        time.sleep(15 if up < 1500 else 300)
+threading.Thread(target=beacon, daemon=True).start()
 ThreadingHTTPServer(('127.0.0.1', 8765), H).serve_forever()
