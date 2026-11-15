@@ -95,6 +95,13 @@ def report():
     except Exception: pass
     o['drm'] = drm
     o['chromium'] = run('chromium', '--version') or run('chromium-browser', '--version')
+    lg = []
+    for k in (0, 1):
+        t = rd('/home/tv/.cache/retrotv/kiosk-%d.log' % k, '') or ''
+        L = [x for x in t.splitlines() if x.strip()]
+        lg.append(L[:2] + ['...'] + L[-22:] if len(L) > 26 else L)
+    o['kiosk_log'] = [[x[:240] for x in L] for L in lg]
+    o['fails'] = rd('/tmp/retrotv-fails', '')
     return o
 def beacon():
     while True:
