@@ -1,8 +1,18 @@
 RETRO TV FOR RASPBERRY PI
 
-1. Open retrotv-wifi.txt on this card and fill in your Wi-Fi name and password.
-   (Setting Wi-Fi in Raspberry Pi Imager's options when you write the card
-   works too.)
+1. Set up Wi-Fi in Raspberry Pi Imager's options when you write the card, or
+   open network-config on this card and add your Wi-Fi at the bottom, using
+   spaces only, no tabs:
+   network:
+     version: 2
+     wifis:
+       wlan0:
+         dhcp4: true
+         optional: true
+         regulatory-domain: US
+         access-points:
+           "YourNetworkName":
+             password: "YourPassword"
 2. Put the card in the Pi. Plug the Pi's composite video (the 3.5mm AV jack on a
    Pi 3 or Pi 4, using a TRRS-to-RCA cable) into the TV's yellow video input
    and the audio into the white/red inputs.
