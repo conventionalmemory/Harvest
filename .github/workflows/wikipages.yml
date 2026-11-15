@@ -6,6 +6,14 @@ on:
         description: Page titles separated by |
         required: false
         default: ''
+      api:
+        description: MediaWiki API url
+        required: false
+        default: ''
+      out:
+        description: output file name
+        required: false
+        default: 'wikipages.json.gz'
 permissions:
   contents: write
 jobs:
@@ -17,13 +25,17 @@ jobs:
       - run: python3 harvest/wikipages.py
         env:
           PAGES: ${{ inputs.pages }}
+          API: ${{ inputs.api }}
+          OUTF: ${{ inputs.out }}
+          NOSCHED: ${{ inputs.api }}
+          UA: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36
       - name: Commit
         run: |
           git config user.name "Conventional Memory"
           git config user.email "conventionalmemory@users.noreply.github.com"
-          cp catalog/wikipages.json.gz /tmp/w.gz
+          cp catalog/${{ inputs.out }} /tmp/w.gz
           for i in 1 2 3 4 5; do
-            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/w.gz catalog/wikipages.json.gz && git add catalog/wikipages.json.gz
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/w.gz catalog/${{ inputs.out }} && git add catalog/${{ inputs.out }}
             git commit -q -m "Update wiki pages" || break
             git push && break
             sleep 15

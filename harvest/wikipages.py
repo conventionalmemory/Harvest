@@ -1,9 +1,9 @@
 import gzip, json, os, time, urllib.request, urllib.parse
 
-API = 'https://en.wikipedia.org/w/api.php'
-UA = 'ConventionalMemoryTV/1.0 (https://conventionalmemory.io)'
+API = os.environ.get('API') or 'https://en.wikipedia.org/w/api.php'
+UA = os.environ.get('UA') or 'ConventionalMemoryTV/1.0 (https://conventionalmemory.io)'
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, 'catalog', 'wikipages.json.gz')
+OUT = os.path.join(ROOT, 'catalog', os.environ.get('OUTF') or 'wikipages.json.gz')
 
 def api(**p):
     p.update(format='json', formatversion='2')
@@ -21,7 +21,7 @@ def search(q):
     return [x['title'] for x in (d.get('query') or {}).get('search', [])]
 
 T = [x.strip() for x in os.environ.get('PAGES', '').split('|') if x.strip()]
-for y in range(1984, 2004):
+for y in (range(1984, 2004) if not os.environ.get('NOSCHED') else []):
     s = '%d–%02d' % (y, (y + 1) % 100)
     for kind in ('Saturday morning', 'weekday', 'Sunday morning'):
         T.append('%s United States network television schedule (%s)' % (s, kind))
