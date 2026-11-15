@@ -43799,5 +43799,721 @@
 1999
 ],
 "pri": 5
+},
+{
+"title": "Macy's Thanksgiving Day Parade",
+"aka": [
+"Macys Thanksgiving Day Parade",
+"Thanksgiving Day Parade",
+"Macys Parade"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "t"
+},
+{
+"title": "Garfield's Thanksgiving",
+"aka": [
+"Garfield Thanksgiving"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1989,
+1995
+],
+"pri": 6,
+"hol": "t"
+},
+{
+"title": "The Mouse on the Mayflower",
+"aka": [
+"Mouse on the Mayflower"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1968,
+2000
+],
+"pri": 6,
+"hol": "t"
+},
+{
+"title": "The Thanksgiving That Almost Wasn't",
+"aka": [
+"Thanksgiving That Almost Wasnt"
+],
+"type": "special",
+"net": "syn",
+"years": [
+1972,
+2000
+],
+"pri": 6,
+"hol": "t"
+},
+{
+"title": "Thanksgiving Day Football",
+"aka": [
+"NFL Thanksgiving",
+"Lions Thanksgiving",
+"Cowboys Thanksgiving"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "t"
+},
+{
+"title": "Thanksgiving Commercials",
+"aka": [
+"Thanksgiving commercials",
+"Thanksgiving 1988 commercials",
+"Thanksgiving TV commercials"
+],
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "t"
+},
+{
+"title": "Rudolph the Red-Nosed Reindeer",
+"aka": [
+"Rudolph the Red Nosed Reindeer",
+"Rudolph Rankin Bass"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1964,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Frosty the Snowman",
+"aka": [
+"Frosty the Snowman Rankin Bass"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1969,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Santa Claus Is Comin' to Town",
+"aka": [
+"Santa Claus Is Coming to Town"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1970,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "A Charlie Brown Christmas",
+"aka": [
+"Charlie Brown Christmas"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1965,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "How the Grinch Stole Christmas!",
+"aka": [
+"How the Grinch Stole Christmas",
+"Grinch 1966"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1966,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "The Little Drummer Boy",
+"aka": [
+"Little Drummer Boy Rankin Bass"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1968,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "The Year Without a Santa Claus",
+"aka": [
+"Year Without a Santa Claus"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1974,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "'Twas the Night Before Christmas",
+"aka": [
+"Twas the Night Before Christmas Rankin Bass"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1974,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "A Garfield Christmas",
+"aka": [
+"Garfield Christmas Special"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1987,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Mickey's Christmas Carol",
+"aka": [
+"Mickeys Christmas Carol"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1983,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Ziggy's Gift",
+"aka": [
+"Ziggys Gift"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1982,
+2000
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "A Muppet Family Christmas",
+"aka": [
+"Muppet Family Christmas"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1987,
+2000
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Emmet Otter's Jug-Band Christmas",
+"aka": [
+"Emmet Otters Jug Band Christmas"
+],
+"type": "special",
+"net": "hbo",
+"years": [
+1977,
+2000
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Pee-wee's Playhouse Christmas Special",
+"aka": [
+"Peewee Playhouse Christmas"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1988,
+1991
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Christmas Eve on Sesame Street",
+"aka": [
+"Sesame Street Christmas"
+],
+"type": "special",
+"net": "pbs",
+"years": [
+1978,
+2000
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "A Flintstone Christmas",
+"aka": [
+"Flintstones Christmas"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1977,
+2000
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Christmas in Rockefeller Center",
+"aka": [
+"Rockefeller Center Christmas Tree Lighting",
+"Christmas in Rockefeller Center"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Christmas in Washington",
+"aka": [
+"Christmas in Washington"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Walt Disney World Christmas Day Parade",
+"aka": [
+"Disney Christmas Day Parade",
+"Walt Disney World Very Merry Christmas Parade"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Mr. Magoo's Christmas Carol",
+"aka": [
+"Mr Magoos Christmas Carol",
+"Magoo Christmas Carol"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1962,
+2000
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Nestor, the Long-Eared Christmas Donkey",
+"aka": [
+"Nestor the Long Eared Christmas Donkey"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1977,
+2000
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Jack Frost",
+"aka": [
+"Jack Frost Rankin Bass 1979"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1979,
+2000
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "A Claymation Christmas Celebration",
+"aka": [
+"Claymation Christmas"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1987,
+2000
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Olive, the Other Reindeer",
+"aka": [
+"Olive the Other Reindeer"
+],
+"type": "special",
+"net": "fox",
+"years": [
+1999,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "A Christmas Story",
+"aka": [
+"A Christmas Story 1983"
+],
+"type": "special",
+"net": "tbs",
+"years": [
+1983,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "It's a Wonderful Life",
+"aka": [
+"Its a Wonderful Life"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "The Yule Log",
+"aka": [
+"Yule Log",
+"WPIX Yule Log",
+"Fireplace Yule Log"
+],
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Christmas Commercials",
+"aka": [
+"Christmas commercials",
+"Christmas TV commercials",
+"Holiday commercials 1980s",
+"Holiday commercials 1990s"
+],
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "x"
+},
+{
+"title": "Dick Clark's New Year's Rockin' Eve",
+"aka": [
+"New Year's Rockin' Eve",
+"Dick Clark New Years Rockin Eve",
+"New Years Rockin Eve"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "n"
+},
+{
+"title": "Times Square New Year's Eve",
+"aka": [
+"Times Square ball drop",
+"New Years Eve ball drop",
+"New Years Eve countdown"
+],
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "n"
+},
+{
+"title": "Tournament of Roses Parade",
+"aka": [
+"Rose Parade",
+"Rose Bowl Parade",
+"Tournament of Roses"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "n"
+},
+{
+"title": "ABC 2000 Today",
+"aka": [
+"ABC 2000",
+"Millennium coverage",
+"CNN Millennium",
+"Y2K New Years Eve"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1999,
+2000
+],
+"pri": 6,
+"hol": "n"
+},
+{
+"title": "MTV New Year's Eve",
+"aka": [
+"MTV New Years Eve",
+"MTV Times Square New Years"
+],
+"type": "special",
+"net": "mtv",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "n"
+},
+{
+"title": "New Year's Eve Commercials",
+"aka": [
+"New Years Eve commercials",
+"New Years 1990 commercials"
+],
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "n"
+},
+{
+"title": "It's the Easter Beagle, Charlie Brown",
+"aka": [
+"Easter Beagle Charlie Brown",
+"Its the Easter Beagle"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1974,
+2004
+],
+"pri": 6,
+"hol": "E"
+},
+{
+"title": "Here Comes Peter Cottontail",
+"aka": [
+"Peter Cottontail Rankin Bass"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1971,
+2004
+],
+"pri": 6,
+"hol": "E"
+},
+{
+"title": "The Easter Bunny Is Comin' to Town",
+"aka": [
+"Easter Bunny Is Coming to Town"
+],
+"type": "special",
+"net": "abc",
+"years": [
+1977,
+2004
+],
+"pri": 6,
+"hol": "E"
+},
+{
+"title": "The First Easter Rabbit",
+"aka": [
+"First Easter Rabbit"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1976,
+2000
+],
+"pri": 6,
+"hol": "E"
+},
+{
+"title": "Yogi the Easter Bear",
+"aka": [
+"Yogi the Easter Bear"
+],
+"type": "special",
+"net": "syn",
+"years": [
+1994,
+2004
+],
+"pri": 6,
+"hol": "E"
+},
+{
+"title": "Bugs Bunny's Easter Special",
+"aka": [
+"Bugs Bunny Easter Funnies",
+"Bugs Bunnys Easter Special"
+],
+"type": "special",
+"net": "cbs",
+"years": [
+1977,
+2000
+],
+"pri": 6,
+"hol": "E"
+},
+{
+"title": "Jesus of Nazareth",
+"aka": [
+"Jesus of Nazareth miniseries"
+],
+"type": "special",
+"net": "nbc",
+"years": [
+1977,
+2000
+],
+"pri": 6,
+"hol": "E"
+},
+{
+"title": "Easter Parade",
+"aka": [
+"Easter Parade 1948"
+],
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "E"
+},
+{
+"title": "Easter Commercials",
+"aka": [
+"Easter commercials",
+"Easter TV commercials"
+],
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"pri": 6,
+"hol": "E"
 }
 ]
