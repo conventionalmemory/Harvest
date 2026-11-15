@@ -1,7 +1,7 @@
 {
-"updated": "2026-11-15 11:39 UTC",
-"items": 5623,
-"hours": 30814,
+"updated": "2026-11-15 14:54 UTC",
+"items": 5758,
+"hours": 30824,
 "priority": {
 "0": {
 "shows": 7,
@@ -14,21 +14,21 @@
 "hours": 1826
 },
 "1": {
-"shows": 355,
+"shows": 354,
 "found": 62,
 "thin": 66,
-"maybe": 63,
+"maybe": 62,
 "held": 106,
 "missing": 58,
-"items": 784,
-"hours": 7057
+"items": 783,
+"hours": 7056
 },
 "2": {
-"shows": 523,
+"shows": 522,
 "found": 85,
 "thin": 80,
 "maybe": 58,
-"held": 184,
+"held": 183,
 "missing": 116,
 "items": 1189,
 "hours": 8459
@@ -45,6 +45,33 @@
 }
 },
 "coverage": {
+"Bozo's Circus": {
+"episodes": 0,
+"held_elsewhere": 0,
+"in_this_file": 0,
+"covered": 0,
+"seasons": {},
+"missing": [],
+"missing_but_in_doubtful_items": []
+},
+"Captain Kangaroo": {
+"episodes": 0,
+"held_elsewhere": 0,
+"in_this_file": 0,
+"covered": 0,
+"seasons": {},
+"missing": [],
+"missing_but_in_doubtful_items": []
+},
+"Legends of the Hidden Temple": {
+"episodes": 0,
+"held_elsewhere": 0,
+"in_this_file": 0,
+"covered": 0,
+"seasons": {},
+"missing": [],
+"missing_but_in_doubtful_items": []
+},
 "Star Trek": {
 "episodes": 79,
 "held_elsewhere": 60,
@@ -166,6 +193,15 @@
 "S06": "26/26",
 "S07": "26/26"
 },
+"missing": [],
+"missing_but_in_doubtful_items": []
+},
+"The Bozo Super Sunday Show": {
+"episodes": 0,
+"held_elsewhere": 0,
+"in_this_file": 0,
+"covered": 0,
+"seasons": {},
 "missing": [],
 "missing_but_in_doubtful_items": []
 },
@@ -1262,26 +1298,6 @@
 "held_elsewhere_items": 12,
 "held_elsewhere_files": 16,
 "status": "THIN"
-},
-{
-"title": "Bozo's Circus",
-"pri": 1,
-"type": "kids",
-"net": "wgn",
-"years": [
-1960,
-2001
-],
-"guide_episodes": 0,
-"items": 1,
-"maybe": 1,
-"files": 1,
-"hours": 1,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MAYBE"
 },
 {
 "title": "C-SPAN call-in program",
@@ -5899,8 +5915,8 @@
 "hours": 23,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 141,
-"held_elsewhere_files": 525,
+"held_elsewhere_items": 140,
+"held_elsewhere_files": 524,
 "status": "THIN"
 },
 {
@@ -8921,26 +8937,6 @@
 "other_files": 0,
 "held_elsewhere_items": 2,
 "held_elsewhere_files": 52,
-"status": "HELD"
-},
-{
-"title": "Captain Kangaroo",
-"pri": 2,
-"type": "kids",
-"net": "cbs",
-"years": [
-1955,
-1984
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 15,
-"held_elsewhere_files": 47,
 "status": "HELD"
 },
 {
@@ -63613,11 +63609,11 @@
 1997
 ],
 "guide_episodes": 6,
-"items": 2,
+"items": 1,
 "maybe": 0,
-"files": 273,
-"hours": 140,
-"episodes": 6,
+"files": 6,
+"hours": 2,
+"episodes": 5,
 "other_files": 0,
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
@@ -64564,26 +64560,6 @@
 "status": "HELD"
 },
 {
-"title": "The Bozo Super Sunday Show",
-"pri": 4,
-"type": "kids",
-"net": "",
-"years": [
-1994,
-2001
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
-},
-{
 "title": "The Brothers Flub",
 "pri": 4,
 "type": "kids",
@@ -64993,10 +64969,10 @@
 1990
 ],
 "guide_episodes": 9,
-"items": 21,
-"maybe": 18,
-"files": 30,
-"hours": 50,
+"items": 20,
+"maybe": 17,
+"files": 29,
+"hours": 49,
 "episodes": 8,
 "other_files": 2,
 "held_elsewhere_items": 54,
@@ -69813,10 +69789,10 @@
 2007
 ],
 "guide_episodes": 1,
-"items": 10,
-"maybe": 7,
-"files": 101,
-"hours": 73,
+"items": 9,
+"maybe": 6,
+"files": 89,
+"hours": 65,
 "episodes": 1,
 "other_files": 0,
 "held_elsewhere_items": 1,
@@ -74042,6 +74018,1086 @@
 "held_elsewhere_items": 1,
 "held_elsewhere_files": 1,
 "status": "HELD"
+},
+{
+"title": "Bozo's Circus",
+"pri": 5,
+"type": "kids",
+"net": "wgn",
+"years": [
+1960,
+2001
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 4,
+"status": "MAYBE"
+},
+{
+"title": "Captain Kangaroo",
+"pri": 5,
+"type": "kids",
+"net": "cbs",
+"years": [
+1955,
+1984
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 15,
+"held_elsewhere_files": 47,
+"status": "HELD"
+},
+{
+"title": "Legends of the Hidden Temple",
+"pri": 5,
+"type": "game",
+"net": "nick",
+"years": [
+1993,
+1995
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 134,
+"status": "HELD"
+},
+{
+"title": "The All New Captain Kangaroo",
+"pri": 5,
+"type": "kids",
+"net": "syn",
+"years": [
+1997,
+1999
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
+"title": "The Bozo Super Sunday Show",
+"pri": 5,
+"type": "kids",
+"net": "",
+"years": [
+1994,
+2001
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
+"title": "'Twas the Night Before Christmas",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1974,
+2004
+],
+"guide_episodes": 0,
+"items": 3,
+"maybe": 3,
+"files": 3,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 25,
+"status": "MAYBE"
+},
+{
+"title": "A Charlie Brown Christmas",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1965,
+2004
+],
+"guide_episodes": 0,
+"items": 4,
+"maybe": 4,
+"files": 4,
+"hours": 4,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 43,
+"held_elsewhere_files": 55,
+"status": "MAYBE"
+},
+{
+"title": "A Christmas Story",
+"pri": 6,
+"type": "special",
+"net": "tbs",
+"years": [
+1983,
+2004
+],
+"guide_episodes": 0,
+"items": 8,
+"maybe": 7,
+"files": 11,
+"hours": 10,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "THIN"
+},
+{
+"title": "A Claymation Christmas Celebration",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1987,
+2000
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 0,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 12,
+"status": "THIN"
+},
+{
+"title": "A Flintstone Christmas",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1977,
+2000
+],
+"guide_episodes": 0,
+"items": 2,
+"maybe": 1,
+"files": 2,
+"hours": 2,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
+"status": "THIN"
+},
+{
+"title": "A Garfield Christmas",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1987,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 17,
+"status": "HELD"
+},
+{
+"title": "A Muppet Family Christmas",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1987,
+2000
+],
+"guide_episodes": 0,
+"items": 4,
+"maybe": 0,
+"files": 5,
+"hours": 4,
+"episodes": 0,
+"other_files": 5,
+"held_elsewhere_items": 18,
+"held_elsewhere_files": 42,
+"status": "FOUND"
+},
+{
+"title": "ABC 2000 Today",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1999,
+2000
+],
+"guide_episodes": 0,
+"items": 6,
+"maybe": 1,
+"files": 6,
+"hours": 13,
+"episodes": 0,
+"other_files": 5,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 16,
+"status": "FOUND"
+},
+{
+"title": "Bugs Bunny's Easter Special",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1977,
+2000
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
+},
+{
+"title": "Christmas Commercials",
+"pri": 6,
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
+"status": "HELD"
+},
+{
+"title": "Christmas Eve on Sesame Street",
+"pri": 6,
+"type": "special",
+"net": "pbs",
+"years": [
+1978,
+2000
+],
+"guide_episodes": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 18,
+"held_elsewhere_files": 28,
+"status": "MAYBE"
+},
+{
+"title": "Christmas in Rockefeller Center",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "THIN"
+},
+{
+"title": "Christmas in Washington",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 2,
+"maybe": 0,
+"files": 4,
+"hours": 3,
+"episodes": 0,
+"other_files": 4,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 7,
+"status": "THIN"
+},
+{
+"title": "Dick Clark's New Year's Rockin' Eve",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 7,
+"status": "HELD"
+},
+{
+"title": "Easter Commercials",
+"pri": 6,
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
+"title": "Easter Parade",
+"pri": 6,
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 2,
+"maybe": 0,
+"files": 2,
+"hours": 2,
+"episodes": 0,
+"other_files": 2,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 17,
+"status": "THIN"
+},
+{
+"title": "Emmet Otter's Jug-Band Christmas",
+"pri": 6,
+"type": "special",
+"net": "hbo",
+"years": [
+1977,
+2000
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 11,
+"status": "HELD"
+},
+{
+"title": "Frosty the Snowman",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1969,
+2004
+],
+"guide_episodes": 0,
+"items": 6,
+"maybe": 6,
+"files": 7,
+"hours": 3,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 39,
+"held_elsewhere_files": 56,
+"status": "MAYBE"
+},
+{
+"title": "Garfield's Thanksgiving",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1989,
+1995
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 8,
+"status": "HELD"
+},
+{
+"title": "Here Comes Peter Cottontail",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1971,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 20,
+"held_elsewhere_files": 29,
+"status": "HELD"
+},
+{
+"title": "How the Grinch Stole Christmas!",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1966,
+2004
+],
+"guide_episodes": 0,
+"items": 12,
+"maybe": 11,
+"files": 14,
+"hours": 8,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 52,
+"held_elsewhere_files": 69,
+"status": "THIN"
+},
+{
+"title": "It's a Wonderful Life",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 3,
+"maybe": 3,
+"files": 5,
+"hours": 5,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "MAYBE"
+},
+{
+"title": "It's the Easter Beagle, Charlie Brown",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1974,
+2004
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
+"status": "MAYBE"
+},
+{
+"title": "Jack Frost",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1979,
+2000
+],
+"guide_episodes": 0,
+"items": 3,
+"maybe": 1,
+"files": 3,
+"hours": 4,
+"episodes": 0,
+"other_files": 2,
+"held_elsewhere_items": 32,
+"held_elsewhere_files": 37,
+"status": "THIN"
+},
+{
+"title": "Jesus of Nazareth",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1977,
+2000
+],
+"guide_episodes": 0,
+"items": 6,
+"maybe": 6,
+"files": 12,
+"hours": 32,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "MAYBE"
+},
+{
+"title": "MTV New Year's Eve",
+"pri": 6,
+"type": "special",
+"net": "mtv",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 7,
+"status": "HELD"
+},
+{
+"title": "Macy's Thanksgiving Day Parade",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 3,
+"maybe": 2,
+"files": 3,
+"hours": 5,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 172,
+"held_elsewhere_files": 222,
+"status": "THIN"
+},
+{
+"title": "Mickey's Christmas Carol",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1983,
+2004
+],
+"guide_episodes": 0,
+"items": 10,
+"maybe": 9,
+"files": 10,
+"hours": 5,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 14,
+"held_elsewhere_files": 18,
+"status": "THIN"
+},
+{
+"title": "Mr. Magoo's Christmas Carol",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1962,
+2000
+],
+"guide_episodes": 0,
+"items": 2,
+"maybe": 2,
+"files": 3,
+"hours": 2,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "MAYBE"
+},
+{
+"title": "Nestor, the Long-Eared Christmas Donkey",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1977,
+2000
+],
+"guide_episodes": 0,
+"items": 4,
+"maybe": 4,
+"files": 4,
+"hours": 2,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 5,
+"status": "MAYBE"
+},
+{
+"title": "New Year's Eve Commercials",
+"pri": 6,
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
+"title": "Olive, the Other Reindeer",
+"pri": 6,
+"type": "special",
+"net": "fox",
+"years": [
+1999,
+2004
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 18,
+"status": "THIN"
+},
+{
+"title": "Pee-wee's Playhouse Christmas Special",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1988,
+1991
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 11,
+"status": "MAYBE"
+},
+{
+"title": "Rudolph the Red-Nosed Reindeer",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1964,
+2004
+],
+"guide_episodes": 0,
+"items": 16,
+"maybe": 13,
+"files": 23,
+"hours": 21,
+"episodes": 0,
+"other_files": 3,
+"held_elsewhere_items": 74,
+"held_elsewhere_files": 89,
+"status": "THIN"
+},
+{
+"title": "Santa Claus Is Comin' to Town",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1970,
+2004
+],
+"guide_episodes": 0,
+"items": 10,
+"maybe": 9,
+"files": 11,
+"hours": 9,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 14,
+"held_elsewhere_files": 14,
+"status": "THIN"
+},
+{
+"title": "Thanksgiving Commercials",
+"pri": 6,
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
+},
+{
+"title": "Thanksgiving Day Football",
+"pri": 6,
+"type": "special",
+"net": "cbs",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 2,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
+"status": "MAYBE"
+},
+{
+"title": "The Easter Bunny Is Comin' to Town",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1977,
+2004
+],
+"guide_episodes": 0,
+"items": 5,
+"maybe": 4,
+"files": 5,
+"hours": 4,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 6,
+"status": "THIN"
+},
+{
+"title": "The First Easter Rabbit",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1976,
+2000
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
+"status": "MAYBE"
+},
+{
+"title": "The Little Drummer Boy",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1968,
+2004
+],
+"guide_episodes": 0,
+"items": 5,
+"maybe": 4,
+"files": 5,
+"hours": 3,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 14,
+"held_elsewhere_files": 19,
+"status": "THIN"
+},
+{
+"title": "The Mouse on the Mayflower",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1968,
+2000
+],
+"guide_episodes": 0,
+"items": 6,
+"maybe": 6,
+"files": 6,
+"hours": 5,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MAYBE"
+},
+{
+"title": "The Thanksgiving That Almost Wasn't",
+"pri": 6,
+"type": "special",
+"net": "syn",
+"years": [
+1972,
+2000
+],
+"guide_episodes": 0,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MAYBE"
+},
+{
+"title": "The Year Without a Santa Claus",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1974,
+2004
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 13,
+"held_elsewhere_files": 23,
+"status": "MAYBE"
+},
+{
+"title": "The Yule Log",
+"pri": 6,
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 3,
+"status": "HELD"
+},
+{
+"title": "Times Square New Year's Eve",
+"pri": 6,
+"type": "special",
+"net": "",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 1,
+"files": 2,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MAYBE"
+},
+{
+"title": "Tournament of Roses Parade",
+"pri": 6,
+"type": "special",
+"net": "nbc",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 23,
+"held_elsewhere_files": 24,
+"status": "THIN"
+},
+{
+"title": "Walt Disney World Christmas Day Parade",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1984,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 13,
+"status": "HELD"
+},
+{
+"title": "Yogi the Easter Bear",
+"pri": 6,
+"type": "special",
+"net": "syn",
+"years": [
+1994,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 5,
+"status": "HELD"
+},
+{
+"title": "Ziggy's Gift",
+"pri": 6,
+"type": "special",
+"net": "abc",
+"years": [
+1982,
+2000
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 5,
+"status": "MAYBE"
 }
 ]
 }
