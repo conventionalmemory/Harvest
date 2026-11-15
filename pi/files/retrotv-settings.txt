@@ -10,3 +10,8 @@ AUDIO_LEVELER=on
 # and each step up makes it a little smaller. You can also change it any time
 # from the TV menu (PICTURE SIZE) or the phone remote (SIZE).
 OVERSCAN=2
+# TIMEZONE is where the TV's clock and schedule run (America/Chicago is Central).
+TIMEZONE=America/Chicago
+# AUDIO_DEVICE is only for troubleshooting. Leave it blank, or try retrotv_raw,
+# retrotv_hw or default if there is no sound.
+AUDIO_DEVICE=

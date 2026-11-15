@@ -17,12 +17,25 @@ for i in $(seq 1 150); do
 done
 BIN=$(command -v chromium || command -v chromium-browser)
 LEV=on
+DEV=""
+TZV=America/Chicago
 if [ -f "$B" ]; then
   L=$(sed -n 's/^AUDIO_LEVELER=//p' "$B" | tr -d '\r ' | tr 'A-Z' 'a-z')
   [ -n "$L" ] && LEV="$L"
+  DEV=$(sed -n 's/^AUDIO_DEVICE=//p' "$B" | tr -d '\r ')
+  Z=$(sed -n 's/^TIMEZONE=//p' "$B" | tr -d '\r ')
+  [ -n "$Z" ] && TZV="$Z"
 fi
-AUD=""
-[ "$LEV" = "off" ] && AUD="--alsa-output-device=retrotv_raw"
+[ -f "/usr/share/zoneinfo/$TZV" ] && export TZ="$TZV"
 amixer -q -c Headphones sset PCM 0dB unmute 2>/dev/null || amixer -q sset PCM 0dB unmute 2>/dev/null || true
+if [ -z "$DEV" ]; then
+  if [ "$LEV" = "off" ]; then C="retrotv_raw retrotv_hw default"; else C="retrotv_dsp retrotv_raw retrotv_hw default"; fi
+  for d in $C; do
+    if timeout 6 aplay -q -D "$d" -f S16_LE -r 48000 -c 2 -d 1 /dev/zero >/dev/null 2>&1; then DEV="$d"; break; fi
+  done
+fi
+echo "retrotv audio device: ${DEV:-default}"
+AUD=""
+[ -n "$DEV" ] && [ "$DEV" != "default" ] && AUD="--alsa-output-device=$DEV"
 export XKB_DEFAULT_LAYOUT=us
-exec /usr/bin/cage -s -- "$BIN" --kiosk --noerrdialogs --disable-infobars --no-first-run --disable-session-crashed-bubble --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 --disable-features=Translate,MediaRouter,HardwareMediaKeyHandling --overscroll-history-navigation=0 --disable-pinch --ozone-platform=wayland --enable-features=OverlayScrollbar --user-data-dir=/home/tv/.config/retrotv-chromium --password-store=basic $AUD "$URL"
+exec /usr/bin/cage -s -- "$BIN" --kiosk --noerrdialogs --disable-infobars --no-first-run --disable-session-crashed-bubble --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 --disable-features=Translate,MediaRouter,HardwareMediaKeyHandling,AudioServiceSandbox --overscroll-history-navigation=0 --disable-pinch --ozone-platform=wayland --enable-features=OverlayScrollbar --user-data-dir=/home/tv/.config/retrotv-chromium --password-store=basic $AUD "$URL"

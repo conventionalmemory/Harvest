@@ -28,6 +28,7 @@ C() { sudo chroot "$R" /usr/bin/env DEBIAN_FRONTEND=noninteractive LANG=C.UTF-8 
 C "apt-get update"
 C "apt-get install -y --no-install-recommends cage chromium fonts-dejavu-core curl ca-certificates alsa-utils swh-plugins iw rfkill || apt-get install -y --no-install-recommends cage chromium-browser fonts-dejavu-core curl ca-certificates alsa-utils swh-plugins iw rfkill"
 C "sed -i 's/^XKBLAYOUT=.*/XKBLAYOUT=\"us\"/' /etc/default/keyboard 2>/dev/null || true"
+C "ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime && echo America/Chicago > /etc/timezone"
 C "id tv >/dev/null 2>&1 || useradd -m -s /bin/bash -G video,render,input,audio,netdev tv; passwd -l tv"
 C "systemctl mask userconfig.service >/dev/null 2>&1 || true; rm -f /etc/systemd/system/multi-user.target.wants/userconfig.service"
 sudo install -m 0755 "$HERE/files/retrotv-kiosk" "$R/usr/local/bin/retrotv-kiosk"
