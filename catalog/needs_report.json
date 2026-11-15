@@ -1,27 +1,27 @@
 {
-"updated": "2026-11-15 16:05 UTC",
-"items": 6269,
-"hours": 34627,
+"updated": "2026-11-15 22:10 UTC",
+"items": 6302,
+"hours": 35028,
 "priority": {
 "0": {
-"shows": 7,
-"found": 5,
+"shows": 9,
+"found": 6,
 "thin": 2,
 "maybe": 0,
-"held": 0,
+"held": 1,
 "missing": 0,
-"items": 42,
-"hours": 1826
+"items": 45,
+"hours": 2073
 },
 "1": {
-"shows": 362,
-"found": 64,
-"thin": 66,
-"maybe": 62,
+"shows": 371,
+"found": 65,
+"thin": 67,
+"maybe": 65,
 "held": 110,
-"missing": 60,
-"items": 790,
-"hours": 7200
+"missing": 64,
+"items": 821,
+"hours": 7356
 },
 "2": {
 "shows": 545,
@@ -34,14 +34,14 @@
 "hours": 9260
 },
 "3": {
-"shows": 1088,
+"shows": 1085,
 "found": 194,
 "thin": 130,
-"maybe": 126,
+"maybe": 125,
 "held": 316,
-"missing": 322,
-"items": 1710,
-"hours": 7880
+"missing": 320,
+"items": 1709,
+"hours": 7879
 }
 },
 "coverage": {
@@ -220,6 +220,26 @@
 },
 "shows": [
 {
+"title": "Quantum Leap",
+"pri": 0,
+"type": "drama",
+"net": "nbc",
+"years": [
+1989,
+1993
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 41,
+"held_elsewhere_files": 238,
+"status": "HELD"
+},
+{
 "title": "Star Trek",
 "pri": 0,
 "type": "drama",
@@ -337,6 +357,26 @@
 "other_files": 0,
 "held_elsewhere_items": 33,
 "held_elsewhere_files": 174,
+"status": "FOUND"
+},
+{
+"title": "Stargate SG-1",
+"pri": 0,
+"type": "drama",
+"net": "showtime",
+"years": [
+1997,
+2007
+],
+"guide_episodes": 163,
+"items": 3,
+"maybe": 1,
+"files": 327,
+"hours": 247,
+"episodes": 1,
+"other_files": 217,
+"held_elsewhere_items": 32,
+"held_elsewhere_files": 336,
 "status": "FOUND"
 },
 {
@@ -1540,6 +1580,26 @@
 "status": "MISSING"
 },
 {
+"title": "Cheers",
+"pri": 1,
+"type": "sitcom",
+"net": "nbc",
+"years": [
+1982,
+1993
+],
+"guide_episodes": 273,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Chicago Cubs Baseball",
 "pri": 1,
 "type": "sports",
@@ -2140,6 +2200,26 @@
 "status": "FOUND"
 },
 {
+"title": "Doug",
+"pri": 1,
+"type": "kids",
+"net": "nick",
+"years": [
+1991,
+1999
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 1,
+"files": 7,
+"hours": 3,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 13,
+"status": "MAYBE"
+},
+{
 "title": "Dr. Katz, Professional Therapist",
 "pri": 1,
 "type": "kids",
@@ -2523,10 +2603,10 @@
 "title": "Family Matters",
 "pri": 1,
 "type": "sitcom",
-"net": "",
+"net": "abc",
 "years": [
-1984,
-1992
+1989,
+1998
 ],
 "guide_episodes": 0,
 "items": 5,
@@ -2623,10 +2703,10 @@
 "title": "Frasier",
 "pri": 1,
 "type": "sitcom",
-"net": "",
+"net": "nbc",
 "years": [
-1984,
-2000
+1993,
+2004
 ],
 "guide_episodes": 0,
 "items": 0,
@@ -2738,6 +2818,26 @@
 "held_elsewhere_items": 4,
 "held_elsewhere_files": 73,
 "status": "MAYBE"
+},
+{
+"title": "Ghostwriter",
+"pri": 1,
+"type": "kids",
+"net": "pbs",
+"years": [
+1992,
+1995
+],
+"guide_episodes": 74,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Gilmore Girls",
@@ -3078,6 +3178,26 @@
 "held_elsewhere_items": 220,
 "held_elsewhere_files": 292,
 "status": "THIN"
+},
+{
+"title": "Hey Arnold!",
+"pri": 1,
+"type": "kids",
+"net": "nick",
+"years": [
+1996,
+2004
+],
+"guide_episodes": 100,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 29,
+"held_elsewhere_files": 103,
+"status": "MAYBE"
 },
 {
 "title": "Hogan's Heroes",
@@ -3900,6 +4020,26 @@
 "status": "MISSING"
 },
 {
+"title": "MacGyver",
+"pri": 1,
+"type": "drama",
+"net": "abc",
+"years": [
+1985,
+1992
+],
+"guide_episodes": 139,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Magnum, P.I.",
 "pri": 1,
 "type": "drama",
@@ -4078,6 +4218,26 @@
 "held_elsewhere_items": 13,
 "held_elsewhere_files": 13,
 "status": "HELD"
+},
+{
+"title": "Miami Vice",
+"pri": 1,
+"type": "drama",
+"net": "nbc",
+"years": [
+1984,
+1990
+],
+"guide_episodes": 110,
+"items": 4,
+"maybe": 2,
+"files": 137,
+"hours": 113,
+"episodes": 108,
+"other_files": 0,
+"held_elsewhere_items": 40,
+"held_elsewhere_files": 99,
+"status": "FOUND"
 },
 {
 "title": "Midnight Love",
@@ -4820,6 +4980,26 @@
 "status": "FOUND"
 },
 {
+"title": "Pee-wee's Playhouse",
+"pri": 1,
+"type": "kids",
+"net": "cbs",
+"years": [
+1986,
+1991
+],
+"guide_episodes": 45,
+"items": 12,
+"maybe": 2,
+"files": 16,
+"hours": 9,
+"episodes": 8,
+"other_files": 3,
+"held_elsewhere_items": 92,
+"held_elsewhere_files": 151,
+"status": "FOUND"
+},
+{
 "title": "Perry Mason",
 "pri": 1,
 "type": "drama",
@@ -4858,6 +5038,26 @@
 "held_elsewhere_items": 19,
 "held_elsewhere_files": 55,
 "status": "HELD"
+},
+{
+"title": "Pokémon",
+"pri": 1,
+"type": "kids",
+"net": "wb",
+"years": [
+1998,
+2004
+],
+"guide_episodes": 338,
+"items": 14,
+"maybe": 7,
+"files": 698,
+"hours": 269,
+"episodes": 4,
+"other_files": 3,
+"held_elsewhere_items": 306,
+"held_elsewhere_files": 2226,
+"status": "THIN"
 },
 {
 "title": "Politically Incorrect",
@@ -5220,6 +5420,26 @@
 "status": "MAYBE"
 },
 {
+"title": "Seinfeld",
+"pri": 1,
+"type": "sitcom",
+"net": "nbc",
+"years": [
+1989,
+1998
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Senate floor coverage",
 "pri": 1,
 "type": "other",
@@ -5578,26 +5798,6 @@
 "held_elsewhere_items": 2,
 "held_elsewhere_files": 2,
 "status": "THIN"
-},
-{
-"title": "Stargate SG-1",
-"pri": 1,
-"type": "drama",
-"net": "showtime",
-"years": [
-1997,
-2007
-],
-"guide_episodes": 163,
-"items": 3,
-"maybe": 1,
-"files": 327,
-"hours": 247,
-"episodes": 1,
-"other_files": 217,
-"held_elsewhere_items": 32,
-"held_elsewhere_files": 336,
-"status": "FOUND"
 },
 {
 "title": "Strangers with Candy",
@@ -6717,6 +6917,26 @@
 "other_files": 0,
 "held_elsewhere_items": 74,
 "held_elsewhere_files": 100,
+"status": "MAYBE"
+},
+{
+"title": "The X-Files",
+"pri": 1,
+"type": "drama",
+"net": "fox",
+"years": [
+1993,
+2002
+],
+"guide_episodes": 202,
+"items": 1,
+"maybe": 1,
+"files": 10,
+"hours": 8,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 82,
+"held_elsewhere_files": 285,
 "status": "MAYBE"
 },
 {
@@ -22460,26 +22680,6 @@
 "status": "FOUND"
 },
 {
-"title": "Doug",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1994,
-1998
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
-},
-{
 "title": "Down Wit' Droopy D",
 "pri": 3,
 "type": "kids",
@@ -25037,26 +25237,6 @@
 "other_files": 0,
 "held_elsewhere_items": 4,
 "held_elsewhere_files": 4,
-"status": "MAYBE"
-},
-{
-"title": "Hey Arnold!",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1996,
-1996
-],
-"guide_episodes": 100,
-"items": 1,
-"maybe": 1,
-"files": 1,
-"hours": 1,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 29,
-"held_elsewhere_files": 103,
 "status": "MAYBE"
 },
 {
@@ -32358,26 +32538,6 @@
 "held_elsewhere_items": 7,
 "held_elsewhere_files": 12,
 "status": "THIN"
-},
-{
-"title": "Seinfeld",
-"pri": 3,
-"type": "sitcom",
-"net": "",
-"years": [
-1993,
-1993
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
 },
 {
 "title": "Sessions at West 54th",
