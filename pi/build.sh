@@ -34,6 +34,7 @@ C "systemctl mask userconfig.service >/dev/null 2>&1 || true; rm -f /etc/systemd
 sudo install -m 0755 "$HERE/files/retrotv-kiosk" "$R/usr/local/bin/retrotv-kiosk"
 sudo install -m 0755 "$HERE/files/retrotv-wifi" "$R/usr/local/bin/retrotv-wifi"
 sudo install -m 0755 "$HERE/files/retrotv-status" "$R/usr/local/bin/retrotv-status"
+sudo mkdir -p "$R/usr/local/share/retrotv" && sudo install -m 0644 "$HERE/files/retrotv-wait.html" "$R/usr/local/share/retrotv/wait.html"
 for d in chromium chromium-browser; do sudo mkdir -p "$R/etc/$d/policies/managed"; sudo install -m 0644 "$HERE/files/chromium-policy.json" "$R/etc/$d/policies/managed/retrotv.json"; done
 sudo mkdir -p "$R/etc/retrotv"; date -u +%Y-%m-%d | sudo tee "$R/etc/retrotv/version" >/dev/null
 for u in retrotv.service retrotv-wifi.service retrotv-status.service retrotv-restart.service retrotv-restart.timer; do sudo install -m 0644 "$HERE/files/$u" "$R/etc/systemd/system/$u"; done

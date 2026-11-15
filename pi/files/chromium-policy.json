@@ -1,4 +1,4 @@
 {
-  "LocalNetworkAccessAllowedForUrls": ["https://retrotvpi.conventionalmemory.io"],
-  "InsecurePrivateNetworkRequestsAllowedForUrls": ["https://retrotvpi.conventionalmemory.io"]
+  "LocalNetworkAccessAllowedForUrls": ["https://retrotvpi.conventionalmemory.io", "file:///*"],
+  "InsecurePrivateNetworkRequestsAllowedForUrls": ["https://retrotvpi.conventionalmemory.io", "file:///*"]
 }

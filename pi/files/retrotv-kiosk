@@ -11,9 +11,9 @@ if [ -f "$B" ]; then
   [ -n "$O" ] && OS="$O"
 fi
 URL="https://retrotvpi.conventionalmemory.io/?tv=$CODE&os=$OS"
-for i in $(seq 1 150); do
-  curl -fsS -o /dev/null --max-time 6 "https://retrotvpi.conventionalmemory.io/" && break
-  sleep 2
+for i in $(seq 1 8); do
+  curl -fsS -o /dev/null --max-time 4 "https://retrotvpi.conventionalmemory.io/" && break
+  sleep 1
 done
 BIN=$(command -v chromium || command -v chromium-browser)
 LEV=on
@@ -39,4 +39,4 @@ mkdir -p "$HOME/.cache/retrotv" && echo "${DEV:-default}" > "$HOME/.cache/retrot
 AUD=""
 [ -n "$DEV" ] && [ "$DEV" != "default" ] && AUD="--alsa-output-device=$DEV"
 export XKB_DEFAULT_LAYOUT=us
-exec /usr/bin/cage -s -- "$BIN" --kiosk --noerrdialogs --disable-infobars --no-first-run --disable-session-crashed-bubble --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 --disable-features=Translate,MediaRouter,HardwareMediaKeyHandling,AudioServiceSandbox,LocalNetworkAccessChecks,PrivateNetworkAccessSendPreflights,PrivateNetworkAccessRespectPreflightResults --overscroll-history-navigation=0 --disable-pinch --ozone-platform=wayland --enable-features=OverlayScrollbar --user-data-dir=/home/tv/.config/retrotv-chromium --password-store=basic $AUD "$URL"
+exec /usr/bin/cage -s -- "$BIN" --kiosk --noerrdialogs --disable-infobars --no-first-run --disable-session-crashed-bubble --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 --disable-features=Translate,MediaRouter,HardwareMediaKeyHandling,AudioServiceSandbox,LocalNetworkAccessChecks,PrivateNetworkAccessSendPreflights,PrivateNetworkAccessRespectPreflightResults --overscroll-history-navigation=0 --disable-pinch --ozone-platform=wayland --enable-features=OverlayScrollbar --user-data-dir=/home/tv/.config/retrotv-chromium --password-store=basic $AUD "file:///usr/local/share/retrotv/wait.html#$(printf %s "$URL" | sed 's/&/%26/g;s/?/%3F/g;s/=/%3D/g')"

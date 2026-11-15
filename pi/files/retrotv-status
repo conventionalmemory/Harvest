@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import json, os, re, subprocess, time
+import json, os, re, socket, subprocess, time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-ORIGINS = ('https://retrotvpi.conventionalmemory.io', 'https://retrotv.conventionalmemory.io')
+ORIGINS = ('https://retrotvpi.conventionalmemory.io', 'https://retrotv.conventionalmemory.io', 'null')
 def rd(p, d=None):
     try:
         with open(p) as f: return f.read().strip()
@@ -36,6 +36,22 @@ def status():
     if m2: mem = int(m2.group(1)) // 1024
     up = rd('/proc/uptime', '0 0').split()[0]
     return {'temp': round(int(t) / 1000, 1) if t and t.isdigit() else None, 'thr': (thr & 0x50005) if thr is not None else None, 'fan': fan(), 'wifi': wifi(), 'aud': rd(os.path.expanduser('~/.cache/retrotv/audio'), '') or 'default', 'mem': mem, 'up': int(float(up)), 'img': rd('/etc/retrotv/version', '')}
+def netinfo():
+    o = {'ssid': '', 'signal': None, 'ip': '', 'eth': False, 'inet': False}
+    lk = run('iw', 'dev', 'wlan0', 'link')
+    m = re.search(r'SSID: (.+)', lk)
+    if m: o['ssid'] = m.group(1).strip()
+    m = re.search(r'signal: (-?\d+)', lk)
+    if m: o['signal'] = int(m.group(1))
+    o['eth'] = (rd('/sys/class/net/eth0/carrier', '0') == '1')
+    o['ip'] = (run('hostname', '-I').split() or [''])[0]
+    try:
+        s = socket.create_connection(('1.1.1.1', 443), timeout=2); s.close(); o['inet'] = True
+    except Exception:
+        try:
+            s = socket.create_connection(('8.8.8.8', 53), timeout=2); s.close(); o['inet'] = True
+        except Exception: pass
+    return o
 class H(BaseHTTPRequestHandler):
     def hdr(self):
         o = self.headers.get('Origin', '')
@@ -47,9 +63,10 @@ class H(BaseHTTPRequestHandler):
     def do_OPTIONS(self):
         self.send_response(204); self.hdr(); self.end_headers()
     def do_GET(self):
-        if self.path.split('?')[0] != '/status':
+        pth = self.path.split('?')[0]
+        if pth not in ('/status', '/net'):
             self.send_response(404); self.end_headers(); return
-        b = json.dumps(status()).encode()
+        b = json.dumps(status() if pth == '/status' else netinfo()).encode()
         self.send_response(200); self.hdr(); self.send_header('Content-Type', 'application/json'); self.send_header('Content-Length', str(len(b))); self.end_headers(); self.wfile.write(b)
     def log_message(self, *a): pass
 ThreadingHTTPServer(('127.0.0.1', 8765), H).serve_forever()

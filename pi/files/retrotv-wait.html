@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Retro TV</title>
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;cursor:none}
+canvas{position:fixed;inset:0;width:100%;height:100%;image-rendering:pixelated}
+#b{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:76%;background:rgba(6,14,60,.92);border-top:6px solid #f5c11b;color:#fff;font:bold 22px/1.45 "DejaVu Sans Mono",monospace;padding:22px 26px;text-align:center}
+#b h1{margin:0 0 14px;font-size:28px;color:#ffe24a;letter-spacing:.06em}
+#b p{margin:4px 0}.g{color:#7fe07f}.r{color:#ff8a7a}.d{color:#9fb3ff;font-size:18px;margin-top:14px!important}
+</style></head><body><canvas id="c" width="160" height="120"></canvas>
+<div id="b"><h1>LOOKING FOR THE CABLE SIGNAL</h1><p id="w">WI-FI: CHECKING</p><p id="n">INTERNET: CHECKING</p><p id="s">TV SERVICE: CHECKING</p><p class="d" id="m">THE TV COMES ON BY ITSELF AS SOON AS IT CONNECTS</p></div>
+<script>
+const T=decodeURIComponent(location.hash.slice(1)||'')||'https://retrotvpi.conventionalmemory.io/';
+const c=document.getElementById('c'),x=c.getContext('2d'),im=x.createImageData(160,120);
+setInterval(()=>{const d=im.data;for(let i=0;i<d.length;i+=4){const v=Math.random()*200;d[i]=d[i+1]=d[i+2]=v;d[i+3]=255}x.putImageData(im,0,0)},60);
+const $=i=>document.getElementById(i),set=(i,t,ok)=>{const e=$(i);e.textContent=t;e.className=ok===undefined?'':ok?'g':'r'};
+let tries=0;
+async function net(){try{const a=new AbortController();setTimeout(()=>a.abort(),3000);const j=await fetch('http://127.0.0.1:8765/net',{cache:'no-store',signal:a.signal}).then(r=>r.json());
+set('w',j.ssid?'WI-FI: CONNECTED TO '+j.ssid.toUpperCase()+(j.signal?' ('+j.signal+' DBM)':''):j.eth?'WIRED NETWORK: CONNECTED':'WI-FI: NOT CONNECTED',!!(j.ssid||j.eth));
+set('n',j.inet?'INTERNET: OK'+(j.ip?' ('+j.ip+')':''):j.ip?'INTERNET: NO ROUTE (ADDRESS '+j.ip+')':'INTERNET: NO NETWORK ADDRESS',!!j.inet);
+if(!j.ssid&&!j.eth)set('m','CHECK THE WI-FI NAME AND PASSWORD IN RETROTV-WIFI.TXT OR NETWORK-CONFIG ON THE CARD',false)}catch(e){}}
+async function site(){tries++;try{const a=new AbortController();setTimeout(()=>a.abort(),8000);await fetch(T.split('?')[0]+'?ping='+Date.now(),{mode:'no-cors',cache:'no-store',signal:a.signal});set('s','TV SERVICE: FOUND, TUNING IN',true);setTimeout(()=>location.replace(T),600);return}catch(e){set('s','TV SERVICE: NOT REACHABLE YET (TRY '+tries+')',false)}setTimeout(site,4000)}
+net();setInterval(net,5000);site();
+</script></body></html>
