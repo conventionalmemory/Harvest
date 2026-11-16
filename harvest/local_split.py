@@ -7,8 +7,9 @@ SRC = os.path.join(ROOT, 'catalog', 'local.json.gz')
 MODE = os.environ.get('MODE_SPLIT', 'check')
 CALL = re.compile(r'(?i)\bW(REX|TVO|IFR|QRF)\b|rockford|loves park|machesney|belvidere|freeport')
 SKIP = re.compile(r'(?i)fosgate|dyno|dance team|clock ?tower|knez|abortion|slam dunk|mall\b(?!.*commercial)|as it aired|with commercials|\bnews\b|basketball|rockford files|tv land|edge of night|jennifer slept')
+YFIX = json.load(open(os.path.join(HERE, 'local_years.json')))
 def want(x):
-    y = x.get('y') or 0
+    y = x.get('y') or YFIX.get(x['i'], 0)
     if not (1980 <= y <= 2004) or x.get('kind') != 'ad' or not CALL.search(x['t']) or SKIP.search(x['t']): return False
     if x['src'] == 'yt': return (x.get('d') or 0) > 75 and not x.get('seg')
     return any(f[1] > 75 and not (len(f) > 2 and isinstance(f[2], list) and f[2]) for f in x['f'])
@@ -76,6 +77,7 @@ else:
         if p.startswith('lsplit-'): got.update(json.load(gzip.open(os.path.join(ROOT, 'parts', p), 'rt', encoding='utf-8')))
     n = 0
     for x in rows_doc['rows']:
+        if not x.get('y') and x['i'] in YFIX: x['y'] = YFIX[x['i']]
         if x['src'] == 'yt':
             k = 'yt:' + x['i']
             if k in got:

@@ -40,6 +40,8 @@ def secs(v):
         return float(v)
     except Exception: return 0
 RANK = {'h.264 IA': 0, 'h.264': 1, 'MPEG4': 2, '512Kb MPEG4': 3}
+try: YFIX = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'local_years.json')))
+except Exception: YFIX = {}
 def year_of(*s):
     for x in s:
         m = YR.search(str(x or ''))
@@ -66,7 +68,7 @@ def ia_meta(it):
     fl = sorted([v[:2] for v in files.values() if v[1] >= 5], key=lambda v: v[0])
     if not fl: return None
     y = year_of(title, m.get('date'), m.get('year'), desc)
-    return {'src': 'ia', 'i': it['identifier'], 't': title[:200], 'ds': desc[:300], 'y': y, 'date': str(m.get('date') or '')[:10], 'f': fl}
+    return {'src': 'ia', 'i': it['identifier'], 't': title[:200], 'ds': desc[:300], 'y': YFIX.get(it['identifier'], y), 'date': str(m.get('date') or '')[:10], 'f': fl}
 def search_ia():
     qs = ['(title:(' + ' OR '.join('"%s"' % a for a in ['rockford', 'loves park', 'machesney park', 'belvidere', 'freeport illinois', 'winnebago county', 'rockton', 'roscoe illinois', 'cherryvale']) + ')) AND mediatype:movies',
           'title:(wrex OR wtvo OR wifr OR wqrf OR "fox 39 rockford" OR "13 wrex" OR "17 wtvo" OR "23 wifr") AND mediatype:movies',
