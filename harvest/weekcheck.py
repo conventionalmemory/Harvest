@@ -33,9 +33,7 @@ def meta(i):
         try:
             with urllib.request.urlopen(urllib.request.Request('https://archive.org/metadata/' + urllib.parse.quote(i), headers=UA), timeout=40) as r:
                 return json.loads(r.read().decode('utf-8', 'replace'))
-        except urllib.error.HTTPError as e:
-            if e.code in (403, 404):
-                return {}
+        except urllib.error.HTTPError:
             time.sleep(3 + k * 5)
         except Exception:
             time.sleep(2 + k * 4)
@@ -97,9 +95,10 @@ def one_ia(item):
     present = [x[0] for x in files if x[0] not in miss]
     bad = []
     for fn in present[:2]:
-        ok = fetch_ok(i, fn)
-        if ok is False:
-            bad.append(fn)
+        if fetch_ok(i, fn) is False:
+            time.sleep(5)
+            if fetch_ok(i, fn) is False:
+                bad.append(fn)
     st = 'miss' if (miss or bad) else 'dur' if dur else 'ok'
     with LOCK: ST['ia_' + st] += 1
     return [i, st, miss + bad, dur]
@@ -122,9 +121,12 @@ def check():
         Y.BUDGET = left()
         Y.T0 = time.time()
         try:
-            Y.setup()
+            usable = Y.setup()
         except Exception as e:
+            usable = False
             print('youtube setup', type(e).__name__, e, flush=True)
+        if not usable:
+            yt = []
         def one_yt(v):
             if left() < 60:
                 return None
