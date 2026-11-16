@@ -1,0 +1,36 @@
+name: Site source snapshot
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: Space-separated page URLs
+        required: true
+permissions:
+  contents: write
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: URLS='${{ inputs.urls }}' python3 harvest/sitesrc.py
+      - name: Seal and commit
+        run: |
+          mkdir -p /tmp/seal && cd /tmp/seal
+          openssl rand -hex 32 > k
+          openssl enc -aes-256-cbc -pbkdf2 -salt -pass file:k -in $GITHUB_WORKSPACE/parts/sitesrc.json.gz -out part-0.enc
+          openssl pkeyutl -encrypt -pubin -inkey $GITHUB_WORKSPACE/harvest/keys/pub.pem -pkeyopt rsa_padding_mode:oaep -in k -out part-0.key
+          rm -f k
+          cd $GITHUB_WORKSPACE
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            mkdir -p catalog/sealed/sitesrc
+            cp /tmp/seal/part-0.enc /tmp/seal/part-0.key catalog/sealed/sitesrc/
+            git add catalog/sealed/sitesrc
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update site source snapshot" && git push -q && exit 0
+            sleep $((5 + RANDOM % 15))
+          done
+          exit 1
