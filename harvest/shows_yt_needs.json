@@ -27656,7 +27656,7 @@
 "title": "Wish You Were Here",
 "aka": [],
 "type": "sitcom",
-"net": "",
+"net": "tnn",
 "years": [
 1990,
 1990
@@ -44794,5 +44794,261 @@
 "then and now",
 "reunion"
 ]
+},
+{
+"title": "Bobby Bare and Friends",
+"aka": [
+"Bobby Bare & Friends"
+],
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1988
+],
+"pri": 2
+},
+{
+"title": "Yesteryear in Nashville",
+"aka": [],
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1986
+],
+"pri": 2
+},
+{
+"title": "Fire on the Mountain",
+"aka": [],
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1985
+],
+"pri": 3,
+"strict": 1
+},
+{
+"title": "Phantom of the Opry",
+"aka": [],
+"type": "late",
+"net": "tnn",
+"years": [
+1983,
+1985
+],
+"pri": 3
+},
+{
+"title": "Opry Backstage",
+"aka": [
+"Backstage at the Grand Ole Opry"
+],
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1999
+],
+"pri": 2
+},
+{
+"title": "The Bassmasters",
+"aka": [
+"Bassmasters"
+],
+"type": "sports",
+"net": "tnn",
+"years": [
+1985,
+2000
+],
+"pri": 3
+},
+{
+"title": "Nashville Beat",
+"aka": [],
+"type": "talk",
+"net": "tnn",
+"years": [
+1989,
+1990
+],
+"pri": 3
+},
+{
+"title": "Country Standard Time",
+"aka": [],
+"type": "music",
+"net": "tnn",
+"years": [
+1985,
+1990
+],
+"pri": 3
+},
+{
+"title": "Nashville Swing",
+"aka": [],
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1985
+],
+"pri": 3
+},
+{
+"title": "Cinematech",
+"aka": [
+"G4 Cinematech"
+],
+"type": "other",
+"net": "g4",
+"years": [
+2002,
+2007
+],
+"pri": 2,
+"strict": 1
+},
+{
+"title": "Judgment Day",
+"aka": [
+"Judgement Day",
+"G4 Judgment Day",
+"G4 Judgement Day"
+],
+"type": "other",
+"net": "g4",
+"years": [
+2002,
+2004
+],
+"pri": 2,
+"strict": 1,
+"not": [
+"dark fate",
+"terminator",
+"t2",
+"wrestling",
+"wwe"
+]
+},
+{
+"title": "G4 Icons",
+"aka": [
+"Icons G4"
+],
+"type": "doc",
+"net": "g4",
+"years": [
+2002,
+2006
+],
+"pri": 2,
+"strict": 1
+},
+{
+"title": "G4 Arena",
+"aka": [
+"Arena G4"
+],
+"type": "other",
+"net": "g4",
+"years": [
+2002,
+2005
+],
+"pri": 3,
+"strict": 1
+},
+{
+"title": "G4 Filter",
+"aka": [
+"Filter G4"
+],
+"type": "other",
+"net": "g4",
+"years": [
+2002,
+2006
+],
+"pri": 3,
+"strict": 1
+},
+{
+"title": "G4 Pulse",
+"aka": [
+"Pulse G4"
+],
+"type": "news",
+"net": "g4",
+"years": [
+2002,
+2004
+],
+"pri": 3,
+"strict": 1
+},
+{
+"title": "G4 Sweat",
+"aka": [
+"Sweat G4"
+],
+"type": "sports",
+"net": "g4",
+"years": [
+2002,
+2004
+],
+"pri": 3,
+"strict": 1
+},
+{
+"title": "G4 Portal",
+"aka": [
+"Portal G4"
+],
+"type": "other",
+"net": "g4",
+"years": [
+2002,
+2004
+],
+"pri": 3,
+"strict": 1
+},
+{
+"title": "G4 Game On",
+"aka": [
+"Game On G4"
+],
+"type": "other",
+"net": "g4",
+"years": [
+2002,
+2003
+],
+"pri": 3,
+"strict": 1
+},
+{
+"title": "Player$",
+"aka": [
+"G4 Players",
+"G4 Player$"
+],
+"type": "other",
+"net": "g4",
+"years": [
+2002,
+2004
+],
+"pri": 3,
+"strict": 1
 }
 ]

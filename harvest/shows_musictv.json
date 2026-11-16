@@ -984,5 +984,227 @@
 "Deja View video",
 "Now Music TV"
 ]
+},
+{
+"title": "Nashville Now",
+"ct": "country",
+"run": "1983-1993",
+"alt": [
+"Ralph Emery Nashville Now"
+],
+"net": "tnn",
+"q": [
+"description:(\"Nashville Now\" OR \"Ralph Emery Nashville Now\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "Crook & Chase",
+"ct": "country",
+"run": "1986-1993",
+"alt": [
+"Crook and Chase"
+],
+"net": "tnn",
+"q": [
+"description:(\"Crook & Chase\" OR \"Crook and Chase\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "Fandango",
+"ct": "country",
+"run": "1983-1989",
+"alt": [
+"Fandango TNN"
+],
+"net": "tnn",
+"q": [
+"description:(\"Fandango\" OR \"Fandango TNN\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+],
+"need": "\\b(tnn|nashville|bill anderson|game show|country)\\b"
+},
+{
+"title": "You Can Be a Star",
+"ct": "country",
+"run": "1983-1989",
+"alt": [],
+"net": "tnn",
+"q": [
+"description:(\"You Can Be a Star\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+],
+"need": "\\b(tnn|nashville|jim ed brown|talent)\\b"
+},
+{
+"title": "Grand Ole Opry Live",
+"ct": "country",
+"run": "1985-1993",
+"alt": [
+"Opry Live",
+"Grand Ole Opry"
+],
+"net": "tnn",
+"q": [
+"description:(\"Grand Ole Opry Live\" OR \"Opry Live\" OR \"Grand Ole Opry\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+],
+"need": "\\b(tnn|opry live|nashville network)\\b|(?<!\\d)19(8[5-9]|9[0-3])(?!\\d)"
+},
+{
+"title": "Country Kitchen",
+"ct": "country",
+"run": "1985-1993",
+"alt": [
+"Florence Henderson's Country Kitchen"
+],
+"net": "tnn",
+"q": [
+"description:(\"Country Kitchen\" OR \"Florence Henderson's Country Kitchen\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+],
+"need": "\\b(tnn|florence henderson|nashville)\\b"
+},
+{
+"title": "Bobby Bare and Friends",
+"ct": "country",
+"run": "1983-1988",
+"alt": [
+"Bobby Bare & Friends"
+],
+"net": "tnn",
+"q": [
+"description:(\"Bobby Bare and Friends\" OR \"Bobby Bare & Friends\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "Church Street Station",
+"ct": "country",
+"run": "1984-1993",
+"alt": [],
+"net": "tnn",
+"q": [
+"description:(\"Church Street Station\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "American Music Shop",
+"ct": "country",
+"run": "1990-1993",
+"alt": [],
+"net": "tnn",
+"q": [
+"description:(\"American Music Shop\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "Top Card",
+"ct": "country",
+"run": "1989-1993",
+"alt": [],
+"net": "tnn",
+"q": [
+"description:(\"Top Card\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+],
+"need": "\\b(tnn|nashville|game show|jim caldwell|dan miller)\\b"
+},
+{
+"title": "VideoCountry",
+"ct": "country",
+"run": "1984-1993",
+"alt": [
+"Video Country",
+"Country Clips",
+"VideoPM",
+"Video PM",
+"VideoMorning",
+"Video Morning"
+],
+"net": "tnn",
+"q": [
+"description:(\"VideoCountry\" OR \"Video Country\" OR \"Country Clips\" OR \"VideoPM\" OR \"Video PM\" OR \"VideoMorning\" OR \"Video Morning\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "Video Soul",
+"ct": "block",
+"run": "1984-1993",
+"alt": [
+"BET Video Soul"
+],
+"net": "bet",
+"q": [
+"description:(\"Video Soul\" OR \"BET Video Soul\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "Video Vibrations",
+"ct": "block",
+"run": "1984-1993",
+"alt": [
+"BET Video Vibrations"
+],
+"net": "bet",
+"q": [
+"description:(\"Video Vibrations\" OR \"BET Video Vibrations\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "Midnight Love",
+"ct": "block",
+"run": "1985-1993",
+"alt": [
+"BET Midnight Love"
+],
+"net": "bet",
+"q": [
+"description:(\"Midnight Love\" OR \"BET Midnight Love\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+],
+"need": "\\b(bet|video|videos|1980s|198\\d|199\\d)\\b"
+},
+{
+"title": "Video LP",
+"ct": "block",
+"run": "1986-1993",
+"alt": [
+"BET Video LP"
+],
+"net": "bet",
+"q": [
+"description:(\"Video LP\" OR \"BET Video LP\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+],
+"need": "\\b(bet|video lp)\\b"
+},
+{
+"title": "Teen Summit",
+"ct": "block",
+"run": "1989-1993",
+"alt": [
+"BET Teen Summit"
+],
+"net": "bet",
+"q": [
+"description:(\"Teen Summit\" OR \"BET Teen Summit\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "Bobby Jones Gospel",
+"ct": "block",
+"run": "1984-1993",
+"alt": [
+"BET Bobby Jones Gospel",
+"Bobby Jones Presents"
+],
+"net": "bet",
+"q": [
+"description:(\"Bobby Jones Gospel\" OR \"BET Bobby Jones Gospel\" OR \"Bobby Jones Presents\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
+},
+{
+"title": "Rap City",
+"ct": "block",
+"run": "1989-1993",
+"alt": [
+"BET Rap City"
+],
+"net": "bet",
+"q": [
+"description:(\"Rap City\" OR \"BET Rap City\") AND (title:(vhs OR tape OR recorded OR recording OR aircheck OR broadcast OR commercials OR 1984 OR 1985 OR 1986 OR 1987 OR 1988 OR 1989 OR 1990 OR 1991 OR 1992 OR 1993) OR collection:(vhsvault OR television_inbox OR vhstvshows))"
+]
 }
 ]
