@@ -1,0 +1,53 @@
+name: Episode splits
+on:
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: Minutes per shard
+        required: false
+        default: '150'
+permissions:
+  contents: write
+concurrency:
+  group: episodes
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tools
+        run: which ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+      - name: Probe
+        run: MODE=run SHARD=${{ matrix.shard }} SHARDS=6 PAR=2 BUDGET_MIN='${{ github.event.inputs.minutes }}' python3 harvest/episodes.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: episodes-${{ matrix.shard }}
+          path: parts/episodes-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: probe
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: episodes-*
+          path: parts
+      - name: Merge
+        run: MODE=merge python3 harvest/episodes.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/episodes.json.gz
+          git commit -m "Update episode splits" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
