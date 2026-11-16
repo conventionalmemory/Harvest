@@ -1,0 +1,20 @@
+name: Tech shows harvest
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    steps:
+      - uses: actions/checkout@v4
+      - run: BUDGET_MIN=130 python3 harvest/techshows.py
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/techshows.json.gz
+          git commit -m "Tech shows" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 5; done
