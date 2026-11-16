@@ -58,13 +58,13 @@ def meta(row):
     if not files: return None
     files.sort(key=lambda f: f[0])
     md = str(m.get('date') or '')
-    d = md[:10] if re.match(r'(19\d\d|200[0-4])-\d\d-\d\d', md) and md[5:10] != '01-01' and q in ('horror', 'hhost', 'anime', 'toku', 'jgame', 'home') else md[:10] if re.match(r'(19[89]\d|200[0-4])-\d\d-\d\d', md) and md[5:10] != '01-01' else ''
+    d = md[:10] if re.match(r'(19\d\d|200[0-4])-\d\d-\d\d', md) and md[5:10] != '01-01' and q in ('horror', 'hhost', 'anime', 'toku', 'jgame', 'home', 'rubber', 'western', 'noir', 'serial', 'edu', 'cd', 'train', 'classic', 'nature', 'vad', 'vtr', 'jad', 'aad') else md[:10] if re.match(r'(19[89]\d|200[0-4])-\d\d-\d\d', md) and md[5:10] != '01-01' else ''
     d = d or text_date(t) or text_date(i.replace('_', ' ')) or text_date(ds[:600]) or (md[:4] if re.match(r'(19[89]\d|200[0-4])', md) else '') or (str(m.get('year')) if str(m.get('year', '')).isdigit() else '')
     col = m.get('collection', [])
     col = [col] if isinstance(col, str) else col
     subj = m.get('subject', '')
     subj = ';'.join(subj) if isinstance(subj, list) else str(subj)
-    if i in YH and q in ('horror', 'hhost', 'anime', 'toku', 'jgame', 'home') and (not d or abs(int(d[:4]) - YH[i]) > 1): d = str(YH[i]) if YH[i] < 2025 else d
+    if i in YH and q in ('horror', 'hhost', 'anime', 'toku', 'jgame', 'home', 'rubber', 'western', 'noir', 'serial', 'edu', 'cd', 'train', 'classic', 'nature', 'vad', 'vtr', 'jad', 'aad') and (not d or abs(int(d[:4]) - YH[i]) > 1): d = str(YH[i]) if YH[i] < 2025 else d
     return {'i': i, 'q': q, 'yh': YH.get(i, 0), 't': t[:200], 'd': d, 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': subj[:200], 'ds': ' '.join(ds.split())[:400], 'f': files[:80], 'dl': 0}
 rows = [l.split() for l in open(os.path.join(here, 'extra_ids.txt')) if l.strip()]
 YH = {r[1]: int(r[2]) for r in rows if len(r) > 2 and r[2].isdigit() and r[2] != '0'}
