@@ -1,0 +1,49 @@
+name: Rockford break tapes
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+      - run: pip install -q yt-dlp
+      - run: MODE_SPLIT=check SHARD=${{ matrix.shard }} SHARDS=4 BUDGET_MIN=105 python3 harvest/local_split.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lsplit-${{ matrix.shard }}
+          path: parts/lsplit-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: check
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: lsplit-*
+          path: parts
+          merge-multiple: true
+      - name: Merge and commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            MODE_SPLIT=merge python3 harvest/local_split.py
+            git add catalog/local.json.gz
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Split Rockford break tapes" && git push && exit 0
+            sleep $((10 + RANDOM % 20))
+          done
