@@ -1,0 +1,55 @@
+name: Weekly schedule video check
+on:
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: time budget per shard in minutes
+        default: "90"
+permissions:
+  contents: write
+concurrency:
+  group: weekcheck
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 130
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check
+        run: MODE=check SHARD=${{ matrix.shard }} SHARDS=8 THREADS=8 BUDGET_MIN=${{ inputs.minutes || '90' }} python3 harvest/weekcheck.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wk-${{ matrix.shard }}
+          path: parts/week_${{ matrix.shard }}.json
+          retention-days: 3
+  merge:
+    needs: check
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: wk-[0-9]*
+          path: parts
+          merge-multiple: true
+      - run: MODE=merge python3 harvest/weekcheck.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp catalog/week_health.json.gz /tmp/w.gz
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/w.gz catalog/week_health.json.gz && git add catalog/week_health.json.gz
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update weekly schedule video check" && git push && exit 0
+            sleep $((10 + RANDOM % 20))
+          done
