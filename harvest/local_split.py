@@ -19,6 +19,19 @@ def iam(vid):
     if not fs: return None
     fs.sort(key=lambda f: (0 if 'h.264' in str(f.get('format', '')).lower() else 1, int(f.get('size') or 0)))
     return ['youtube-' + vid, fs[0]['name']]
+def tsegs(vid, dur):
+    try: ds = L.Y.describe(vid) or ''
+    except Exception: return None
+    P = []
+    for m in re.finditer(r'(?<![\d:])(?:(\d{1,2}):)?(\d{1,2}):(\d{2})(?![\d:])', ds):
+        t = int(m.group(1) or 0) * 3600 + int(m.group(2)) * 60 + int(m.group(3))
+        if not P or t > P[-1]: P.append(t)
+    if len(P) < 4: return None
+    P.append(dur)
+    out = []
+    for a, b in zip(P, P[1:]):
+        if 9.5 <= b - a <= 65: out.append([float(a), float(b - a)])
+    return out or None
 def yt_url2(vid):
     for cl in ('tv_embedded', 'mweb', 'web_embedded', 'ios', 'android'):
         try:
@@ -40,7 +53,10 @@ if MODE == 'check':
             u = None
             if mir: u = 'https://archive.org/download/' + urllib.parse.quote(mir[0]) + '/' + '/'.join(urllib.parse.quote(p) for p in mir[1].split('/'))
             if not u: u = yt_url2(x['i'])
-            if not u: out['yt:' + x['i']] = None; print('nourl', x['i'], flush=True); continue
+            if not u:
+                ts = tsegs(x['i'], x.get('d') or 0)
+                out['yt:' + x['i']] = {'seg': ts, 'iam': None, 'ts': 1} if ts else None
+                print('nourl', x['i'], 'timestamps', len(ts or []), flush=True); continue
             pts = L.cuts(u, x['d'])
             out['yt:' + x['i']] = None if pts is None else {'seg': L.segs(pts, x['d']), 'iam': mir}
         else:
