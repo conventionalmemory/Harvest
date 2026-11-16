@@ -1,0 +1,29 @@
+name: Send phone notification
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: notification title
+        default: "Retro TV"
+      message:
+        description: notification text
+        required: true
+      priority:
+        description: 1 to 5
+        default: "3"
+permissions:
+  contents: read
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Send
+        env:
+          TOPIC: ${{ secrets.NTFY_TOPIC }}
+          TITLE: ${{ inputs.title }}
+          MSG: ${{ inputs.message }}
+          PRI: ${{ inputs.priority }}
+        run: |
+          if [ -z "$TOPIC" ]; then echo "NTFY_TOPIC secret is not set"; exit 1; fi
+          printf '%s' "$MSG" | curl -sS -m 30 -H "Title: $TITLE" -H "Priority: $PRI" --data-binary @- "https://ntfy.sh/$TOPIC" -o /dev/null -w "%{http_code}\n"
