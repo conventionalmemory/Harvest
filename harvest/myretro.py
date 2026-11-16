@@ -14,6 +14,7 @@ CTX = {'client': {'clientName': 'WEB', 'clientVersion': '2.20240620.05.00', 'hl'
 LOCK = threading.Lock()
 ST = collections.Counter()
 BASE = {'80s': 1980, '90s': 1990, '00s': 2000}
+YMIN, YMAX = int(os.environ.get('YMIN', '1984')), int(os.environ.get('YMAX', '2004'))
 
 
 def h(s):
@@ -56,7 +57,7 @@ def lineup(site):
     for u, s in enumerate(j.get('x') or []):
         for i in range(0, len(s), 12):
             r = s[i:i + 12]
-            if len(r) == 12:
+            if len(r) == 12 and YMIN <= BASE[site] + u <= YMAX:
                 c = r[-1]
                 out.append((r[:11], c.lower(), BASE[site] + u, 1 if c == c.lower() else 0, site))
     return out
