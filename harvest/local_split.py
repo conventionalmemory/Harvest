@@ -12,6 +12,21 @@ def want(x):
     if not (1980 <= y <= 2004) or x.get('kind') != 'ad' or not CALL.search(x['t']) or SKIP.search(x['t']): return False
     if x['src'] == 'yt': return (x.get('d') or 0) > 75 and not x.get('seg')
     return any(f[1] > 75 and not (len(f) > 2 and isinstance(f[2], list) and f[2]) for f in x['f'])
+def iam(vid):
+    j = L.get('https://archive.org/metadata/youtube-' + vid, tries=2)
+    if not j or not j.get('files'): return None
+    fs = [f for f in j['files'] if str(f.get('name', '')).lower().endswith('.mp4')]
+    if not fs: return None
+    fs.sort(key=lambda f: (0 if 'h.264' in str(f.get('format', '')).lower() else 1, int(f.get('size') or 0)))
+    return ['youtube-' + vid, fs[0]['name']]
+def yt_url2(vid):
+    for cl in ('tv_embedded', 'mweb', 'web_embedded', 'ios', 'android'):
+        try:
+            p = subprocess.run(['yt-dlp', '-q', '--no-warnings', '--extractor-args', 'youtube:player_client=' + cl, '-f', 'worst[ext=mp4][height>=144]/worst', '-g', 'https://www.youtube.com/watch?v=' + vid], capture_output=True, text=True, timeout=90)
+            u = p.stdout.strip().splitlines()
+            if u: return u[0]
+        except Exception: pass
+    return None
 if MODE == 'check':
     sh, n = int(os.environ['SHARD']), int(os.environ['SHARDS'])
     rows = json.load(gzip.open(SRC, 'rt', encoding='utf-8'))['rows']
@@ -21,10 +36,13 @@ if MODE == 'check':
     for x in todo:
         if L.left() < 300: break
         if x['src'] == 'yt':
-            u = L.yt_url(x['i'])
+            mir = iam(x['i'])
+            u = None
+            if mir: u = 'https://archive.org/download/' + urllib.parse.quote(mir[0]) + '/' + '/'.join(urllib.parse.quote(p) for p in mir[1].split('/'))
+            if not u: u = yt_url2(x['i'])
             if not u: out['yt:' + x['i']] = None; print('nourl', x['i'], flush=True); continue
             pts = L.cuts(u, x['d'])
-            out['yt:' + x['i']] = None if pts is None else L.segs(pts, x['d'])
+            out['yt:' + x['i']] = None if pts is None else {'seg': L.segs(pts, x['d']), 'iam': mir}
         else:
             for f in x['f']:
                 if f[1] > 75:
@@ -46,6 +64,9 @@ else:
             k = 'yt:' + x['i']
             if k in got:
                 if got[k] is None: x['nourl'] = 1
+                elif isinstance(got[k], dict):
+                    x['seg'] = got[k]['seg']; n += 1
+                    if got[k].get('iam'): x['iam'] = got[k]['iam']
                 else: x['seg'] = got[k]; n += 1
         else:
             for f in x['f']:
