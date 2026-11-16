@@ -3,7 +3,7 @@ from concurrent.futures import ThreadPoolExecutor
 here = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(here, '..', 'catalog'); PARTS = os.path.join(here, '..', 'parts'); os.makedirs(PARTS, exist_ok=True)
 MODE = os.environ.get('MODE', 'run'); SHARD = int(os.environ.get('SHARD', '0')); SHARDS = int(os.environ.get('SHARDS', '1'))
-BUDGET = float(os.environ.get('BUDGET_MIN', '300')) * 60; PAR = int(os.environ.get('PAR', '3')); T0 = time.time()
+BUDGET = float(os.environ.get('BUDGET_MIN', '300')) * 60; HARD = BUDGET + float(os.environ.get('GRACE_MIN', '30')) * 60; PAR = int(os.environ.get('PAR', '3')); T0 = time.time()
 EF = os.path.join(OUT, 'episodes.json.gz')
 done = json.load(gzip.open(EF, 'rt')) if os.path.exists(EF) else {}
 def url(i, f): return 'https://archive.org/download/' + urllib.parse.quote(i, safe='') + '/' + '/'.join(urllib.parse.quote(x, safe='') for x in f.split('/'))
@@ -15,12 +15,14 @@ def ff(args, tmo):
 def probe(row):
     i, f, dur = row[:3]
     if time.time() - T0 > BUDGET: return None
+    cap = lambda: HARD - (time.time() - T0)
     tmp = '/tmp/ep_%d_%d.mp4' % (SHARD, abs(hash(i + f)) % 10**8)
     try:
-        d = subprocess.run(['curl', '-sSL', '--retry', '4', '--max-time', '1500', '-o', tmp, url(i, f)], capture_output=True, text=True)
+        d = subprocess.run(['curl', '-sSL', '--retry', '4', '--max-time', str(int(max(60, min(1500, cap())))), '--retry-max-time', str(int(max(60, cap()))), '-o', tmp, url(i, f)], capture_output=True, text=True)
         if d.returncode != 0 or not os.path.exists(tmp) or os.path.getsize(tmp) < 1e6: return [i, f, None, 'download']
-        a = ff(['-i', tmp, '-vn', '-af', 'silencedetect=n=-38dB:d=0.35', '-f', 'null', '-'], 900)
-        v = ff(['-skip_frame', 'nokey', '-i', tmp, '-an', '-vf', 'scale=96:-2,blackdetect=d=0:pic_th=0.92:pix_th=0.12', '-f', 'null', '-'], 900)
+        if cap() < 60: return [i, f, None, 'time']
+        a = ff(['-i', tmp, '-vn', '-af', 'silencedetect=n=-38dB:d=0.35', '-f', 'null', '-'], max(30, min(900, cap())))
+        v = ff(['-skip_frame', 'nokey', '-i', tmp, '-an', '-vf', 'scale=96:-2,blackdetect=d=0:pic_th=0.92:pix_th=0.12', '-f', 'null', '-'], max(30, min(900, cap())))
     finally:
         try: os.remove(tmp)
         except Exception: pass
@@ -54,6 +56,7 @@ if MODE == 'run':
             if r is None: continue
             n += 1
             if r[2] is not None: res[r[0] + '|' + r[1]] = r[2]
+            if n % 10 == 0: json.dump(res, gzip.open(os.path.join(PARTS, 'episodes-%d.json.gz' % SHARD), 'wt'))
             print(n, r[0][:60], 'ok' if r[2] else r[3], len(r[2]['c']) if r[2] else '', round((time.time() - T0) / 60, 1), 'min', flush=True)
     json.dump(res, gzip.open(os.path.join(PARTS, 'episodes-%d.json.gz' % SHARD), 'wt'))
 if MODE == 'merge':
