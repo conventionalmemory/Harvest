@@ -1,0 +1,58 @@
+name: Commercial tape cuts
+on:
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: Minutes per shard
+        required: false
+        default: '100'
+permissions:
+  contents: write
+concurrency:
+  group: adtapes
+  cancel-in-progress: false
+jobs:
+  cut:
+    runs-on: ubuntu-latest
+    timeout-minutes: 140
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    steps:
+      - uses: actions/checkout@v4
+      - run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null)
+      - run: MODE=check SHARD=${{ matrix.shard }} SHARDS=12 BUDGET_MIN='${{ github.event.inputs.minutes || '100' }}' python3 harvest/adtape_split.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: adtapes-${{ matrix.shard }}
+          path: parts/adtapes-${{ matrix.shard }}.json.gz
+          retention-days: 3
+  merge:
+    needs: cut
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: adtapes-*
+          path: parts
+          merge-multiple: true
+      - name: Merge and commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp -r parts /tmp/parts
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            rm -rf parts && cp -r /tmp/parts parts
+            MODE=merge python3 harvest/adtape_split.py
+            git add catalog/adtapes.json.gz
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Cut commercial tapes into spots" && git push && exit 0
+            sleep $((10 + RANDOM % 20))
+          done
