@@ -1,0 +1,11 @@
+[Unit]
+Description=Check for Retro TV software updates
+
+[Timer]
+OnBootSec=10min
+OnCalendar=*-*-* 04:10:00
+RandomizedDelaySec=20min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

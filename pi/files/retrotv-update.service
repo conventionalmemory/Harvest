@@ -1,0 +1,9 @@
+[Unit]
+Description=Retro TV signed software update
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/retrotv-update
+Nice=10

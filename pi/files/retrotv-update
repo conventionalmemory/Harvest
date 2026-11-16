@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+import hashlib, json, os, subprocess, sys, tempfile, time, urllib.request
+BASE = 'https://raw.githubusercontent.com/conventionalmemory/Harvest/main/pi/files/'
+PUB = '/usr/local/share/retrotv/update.pub'
+STATE = '/var/lib/retrotv/update-version'
+LOG = '/var/lib/retrotv/update.log'
+FILES = {
+    'retrotv-kiosk': ([('/usr/local/bin/retrotv-kiosk', 0o755)], None),
+    'retrotv-wifi': ([('/usr/local/bin/retrotv-wifi', 0o755)], None),
+    'retrotv-status': ([('/usr/local/bin/retrotv-status', 0o755)], 'retrotv-status.service'),
+    'retrotv-update': ([('/usr/local/bin/retrotv-update', 0o755)], None),
+    'retrotv-wait.html': ([('/usr/local/share/retrotv/wait.html', 0o644)], None),
+    'chromium-policy.json': ([('/etc/chromium/policies/managed/retrotv.json', 0o644), ('/etc/chromium-browser/policies/managed/retrotv.json', 0o644)], None),
+    'asound.conf': ([('/etc/asound.conf', 0o644)], None),
+    'pam-cage': ([('/etc/pam.d/cage', 0o644)], None),
+    'retrotv.service': ([('/etc/systemd/system/retrotv.service', 0o644)], '-'),
+    'retrotv-wifi.service': ([('/etc/systemd/system/retrotv-wifi.service', 0o644)], '-'),
+    'retrotv-status.service': ([('/etc/systemd/system/retrotv-status.service', 0o644)], '-'),
+    'retrotv-restart.service': ([('/etc/systemd/system/retrotv-restart.service', 0o644)], '-'),
+    'retrotv-restart.timer': ([('/etc/systemd/system/retrotv-restart.timer', 0o644)], '-'),
+    'retrotv-update.service': ([('/etc/systemd/system/retrotv-update.service', 0o644)], '-'),
+    'retrotv-update.timer': ([('/etc/systemd/system/retrotv-update.timer', 0o644)], '-'),
+    'retrotv-README.txt': ([('/boot/firmware/retrotv-README.txt', 0o644)], None),
+}
+MAX = 4 * 1024 * 1024
+def log(m):
+    try:
+        os.makedirs(os.path.dirname(LOG), exist_ok=True)
+        with open(LOG, 'a') as f: f.write(time.strftime('%Y-%m-%d %H:%M:%S ') + m + '\n')
+    except Exception: pass
+def fetch(name):
+    with urllib.request.urlopen(urllib.request.Request(BASE + name, headers={'Cache-Control': 'no-cache'}), timeout=30) as r:
+        b = r.read(MAX + 1)
+    if len(b) > MAX: raise ValueError('too large')
+    return b
+def sha(b): return hashlib.sha256(b).hexdigest()
+def verify(data, sig):
+    with tempfile.TemporaryDirectory() as d:
+        m, s = os.path.join(d, 'm'), os.path.join(d, 's')
+        open(m, 'wb').write(data); open(s, 'wb').write(sig)
+        p = subprocess.run(['openssl', 'pkeyutl', '-verify', '-pubin', '-inkey', PUB, '-rawin', '-in', m, '-sigfile', s], capture_output=True)
+        return p.returncode == 0
+def put(path, data, mode):
+    d = os.path.dirname(path)
+    if not os.path.isdir(d): return False
+    fd, tmp = tempfile.mkstemp(dir=d, prefix='.retrotv-')
+    with os.fdopen(fd, 'wb') as f: f.write(data)
+    os.chmod(tmp, mode); os.chown(tmp, 0, 0); os.replace(tmp, path)
+    return True
+def main():
+    if os.geteuid() != 0 or not os.path.exists(PUB): return
+    try:
+        man, sig = fetch('manifest.json'), fetch('manifest.sig')
+    except Exception as e:
+        log('fetch failed ' + str(e)[:120]); return
+    if not verify(man, sig):
+        log('bad signature, ignored'); return
+    try: M = json.loads(man.decode('utf-8'))
+    except Exception: log('bad manifest'); return
+    v = int(M.get('v') or 0)
+    try: cur = int(open(STATE).read().strip() or 0)
+    except Exception: cur = 0
+    if v <= cur: return
+    want = M.get('files') or {}
+    changed, units, reload = [], set(), False
+    for name, h in want.items():
+        if name not in FILES or not isinstance(h, str) or len(h) != 64: continue
+        dests, unit = FILES[name]
+        if all(os.path.exists(p) and sha(open(p, 'rb').read()) == h for p, _ in dests if os.path.isdir(os.path.dirname(p))): continue
+        try: b = fetch(name)
+        except Exception as e: log('fetch %s failed %s' % (name, str(e)[:80])); return
+        if sha(b) != h: log('hash mismatch ' + name); return
+        for p, mode in dests: put(p, b, mode)
+        changed.append(name)
+        if unit == '-': reload = True
+        elif unit: units.add(unit)
+    if reload: subprocess.run(['systemctl', 'daemon-reload'])
+    for u in sorted(units): subprocess.run(['systemctl', 'restart', u])
+    os.makedirs(os.path.dirname(STATE), exist_ok=True)
+    open(STATE, 'w').write(str(v))
+    log('updated to %d: %s' % (v, ', '.join(changed) or 'nothing changed'))
+if __name__ == '__main__':
+    main()
