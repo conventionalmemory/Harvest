@@ -1,0 +1,61 @@
+name: Other retro site lists
+on:
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: time budget per shard in minutes
+        default: "100"
+permissions:
+  contents: write
+concurrency:
+  group: sitelists
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: MODE=plan python3 harvest/sitelists.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sitelists-plan
+          path: parts/sitelists_plan.json
+          retention-days: 1
+  look:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: sitelists-plan
+          path: parts
+      - name: Look up clips
+        run: MODE=look SHARD=${{ matrix.shard }} SHARDS=8 THREADS=8 BUDGET_MIN=${{ inputs.minutes }} python3 harvest/sitelists.py
+      - name: Seal and commit
+        run: |
+          N=${{ matrix.shard }}
+          mkdir -p /tmp/seal && cd /tmp/seal
+          openssl rand -hex 32 > k
+          openssl enc -aes-256-cbc -pbkdf2 -salt -pass file:k -in $GITHUB_WORKSPACE/parts/sitelists-$N.json.gz -out part-$N.enc
+          openssl pkeyutl -encrypt -pubin -inkey $GITHUB_WORKSPACE/harvest/keys/pub.pem -pkeyopt rsa_padding_mode:oaep -in k -out part-$N.key
+          rm -f k
+          cd $GITHUB_WORKSPACE
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          for i in 1 2 3 4 5 6 7 8; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            mkdir -p catalog/sealed/sitelists
+            cp /tmp/seal/part-$N.enc /tmp/seal/part-$N.key catalog/sealed/sitelists/
+            git add catalog/sealed/sitelists/part-$N.enc catalog/sealed/sitelists/part-$N.key
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update site list details $N" && git push -q && exit 0
+            sleep $((10 + RANDOM % 30))
+          done
+          exit 1
