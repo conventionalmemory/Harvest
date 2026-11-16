@@ -31,12 +31,12 @@ into the same outlet strip, or add an inexpensive RCA ground loop isolator
 on the audio cable. A TRRS cable with the wrong pin order can also hum; the
 Pi needs the kind where the sleeve is video.
 
-FAN: the card turns on a fan wired to GPIO 14 (physical pin 8) when the Pi
-reaches 60 C, the same pin Raspberry Pi's own fan setting uses. The fan needs
-its control wire on pin 8 and its power on a 5V pin (2 or 4). Physical pin 14
-is a ground pin, so a fan wire there never gets power. A plain two-wire fan on
-pins 4 and 6 simply runs all the time. To change the temperature, edit the
-dtoverlay=gpio-fan line in config.txt (temp=60000 means 60 C).
+FAN: the card does not control a fan. A plain two-wire fan on pins 4 and 6
+simply runs all the time.
+
+KEYBOARD: cards made from November 15, 2026 on start with nothing plugged in.
+Older cards need a USB keyboard, mouse or FLIRC receiver plugged in, or they
+stay on a black screen.
 
 TV STATUS: on the phone remote, open SET-UP and tap "tv status" for the Pi's
 temperature, fan, Wi-Fi signal, power warnings, audio output and dropped

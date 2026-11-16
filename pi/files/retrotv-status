@@ -104,12 +104,16 @@ def report():
     o['fails'] = rd('/tmp/retrotv-fails', '')
     return o
 def beacon():
+    lastf, lasth = None, 0
     while True:
-        try:
-            b = json.dumps({'messages': [{'topic': 'afterglow-diag', 'event': 'diag', 'payload': {'c': 'PI', 'k': 'pi', 'v': report()}, 'private': False}]}).encode()
-            urllib.request.urlopen(urllib.request.Request(RB, data=b, headers={'apikey': RK, 'Content-Type': 'application/json'}), timeout=15).read()
-        except Exception: pass
         up = float((rd('/proc/uptime', '0 0') or '0 0').split()[0])
-        time.sleep(15 if up < 1500 else 300)
+        f = rd('/tmp/retrotv-fails', '')
+        if up < 600 or f != lastf or time.time() - lasth >= 3600:
+            try:
+                b = json.dumps({'messages': [{'topic': 'afterglow-diag', 'event': 'diag', 'payload': {'c': 'PI', 'k': 'pi', 'v': report()}, 'private': False}]}).encode()
+                urllib.request.urlopen(urllib.request.Request(RB, data=b, headers={'apikey': RK, 'Content-Type': 'application/json'}), timeout=15).read()
+            except Exception: pass
+            lastf, lasth = f, time.time()
+        time.sleep(30 if up < 600 else 60)
 threading.Thread(target=beacon, daemon=True).start()
 ThreadingHTTPServer(('127.0.0.1', 8765), H).serve_forever()
