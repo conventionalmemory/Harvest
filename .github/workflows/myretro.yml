@@ -1,0 +1,48 @@
+name: Retro clip lineup details
+on:
+  workflow_dispatch:
+    inputs:
+      sites:
+        description: comma list of decade sites
+        default: "90s"
+      minutes:
+        description: time budget per shard in minutes
+        default: "100"
+permissions:
+  contents: write
+concurrency:
+  group: myretro
+  cancel-in-progress: false
+jobs:
+  look:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Look up clips
+        run: SITES=${{ inputs.sites }} SHARD=${{ matrix.shard }} SHARDS=8 THREADS=6 BUDGET_MIN=${{ inputs.minutes }} python3 harvest/myretro.py
+      - name: Seal and commit
+        run: |
+          N=${{ matrix.shard }}
+          mkdir -p /tmp/seal && cd /tmp/seal
+          openssl rand -hex 32 > k
+          openssl enc -aes-256-cbc -pbkdf2 -salt -pass file:k -in $GITHUB_WORKSPACE/parts/myretro-$N.json.gz -out part-$N.enc
+          openssl pkeyutl -encrypt -pubin -inkey $GITHUB_WORKSPACE/harvest/keys/pub.pem -pkeyopt rsa_padding_mode:oaep -in k -out part-$N.key
+          rm -f k
+          cd $GITHUB_WORKSPACE
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          for i in 1 2 3 4 5 6 7 8; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            mkdir -p catalog/sealed/myretro
+            cp /tmp/seal/part-$N.enc /tmp/seal/part-$N.key catalog/sealed/myretro/
+            git add catalog/sealed/myretro/part-$N.enc catalog/sealed/myretro/part-$N.key
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update clip details $N" && git push -q && exit 0
+            sleep $((10 + RANDOM % 30))
+          done
+          exit 1
