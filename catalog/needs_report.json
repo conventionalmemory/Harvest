@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-17 12:59 UTC",
+"updated": "2026-11-17 15:53 UTC",
 "items": 6580,
 "hours": 36863,
 "priority": {
@@ -14,34 +14,34 @@
 "hours": 1985
 },
 "1": {
-"shows": 458,
+"shows": 489,
 "found": 105,
-"thin": 74,
+"thin": 75,
 "maybe": 76,
-"held": 132,
-"missing": 71,
-"items": 1160,
-"hours": 9785
+"held": 143,
+"missing": 90,
+"items": 1161,
+"hours": 9787
 },
 "2": {
-"shows": 531,
+"shows": 527,
 "found": 88,
 "thin": 79,
 "maybe": 61,
-"held": 186,
-"missing": 117,
+"held": 184,
+"missing": 115,
 "items": 1290,
 "hours": 9098
 },
 "3": {
-"shows": 1070,
+"shows": 1061,
 "found": 187,
-"thin": 129,
+"thin": 128,
 "maybe": 122,
-"held": 314,
-"missing": 318,
-"items": 1682,
-"hours": 7617
+"held": 310,
+"missing": 314,
+"items": 1681,
+"hours": 7615
 }
 },
 "coverage": {
@@ -1300,6 +1300,26 @@
 "status": "HELD"
 },
 {
+"title": "BET Tonight",
+"pri": 1,
+"type": "talk",
+"net": "bet",
+"years": [
+1996,
+2001
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Band of Brothers",
 "pri": 1,
 "type": "drama",
@@ -1460,6 +1480,26 @@
 "status": "HELD"
 },
 {
+"title": "Bill Dance Outdoors",
+"pri": 1,
+"type": "sports",
+"net": "tnn",
+"years": [
+1986,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Biography",
 "pri": 1,
 "type": "doc",
@@ -1498,6 +1538,26 @@
 "held_elsewhere_items": 8,
 "held_elsewhere_files": 14,
 "status": "FOUND"
+},
+{
+"title": "Bobby Bare and Friends",
+"pri": 1,
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1988
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Bobby Jones Gospel",
@@ -1880,6 +1940,26 @@
 "status": "HELD"
 },
 {
+"title": "Caribbean Rhythms",
+"pri": 1,
+"type": "music",
+"net": "bet",
+"years": [
+1985,
+1996
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Celebrity Deathmatch",
 "pri": 1,
 "type": "sitcom",
@@ -2060,6 +2140,26 @@
 "status": "THIN"
 },
 {
+"title": "Church Street Station",
+"pri": 1,
+"type": "music",
+"net": "tnn",
+"years": [
+1984,
+1994
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
+},
+{
 "title": "Cinematech",
 "pri": 1,
 "type": "tech",
@@ -2078,6 +2178,26 @@
 "held_elsewhere_items": 12,
 "held_elsewhere_files": 147,
 "status": "FOUND"
+},
+{
+"title": "Cita's World",
+"pri": 1,
+"type": "music",
+"net": "bet",
+"years": [
+1999,
+2003
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 2,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "THIN"
 },
 {
 "title": "Clarissa Explains It All",
@@ -2180,6 +2300,26 @@
 "status": "HELD"
 },
 {
+"title": "Comic View",
+"pri": 1,
+"type": "other",
+"net": "bet",
+"years": [
+1992,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "ComicView",
 "pri": 1,
 "type": "other",
@@ -2217,6 +2357,26 @@
 "other_files": 0,
 "held_elsewhere_items": 52,
 "held_elsewhere_files": 55,
+"status": "HELD"
+},
+{
+"title": "Country Kitchen",
+"pri": 1,
+"type": "cook",
+"net": "tnn",
+"years": [
+1985,
+1993
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
 "status": "HELD"
 },
 {
@@ -2318,6 +2478,26 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "FOUND"
+},
+{
+"title": "Dancin' USA",
+"pri": 1,
+"type": "music",
+"net": "tnn",
+"years": [
+1984,
+1990
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Danger Mouse",
@@ -3140,6 +3320,26 @@
 "status": "FOUND"
 },
 {
+"title": "Fandango",
+"pri": 1,
+"type": "game",
+"net": "tnn",
+"years": [
+1983,
+1989
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Felicity",
 "pri": 1,
 "type": "drama",
@@ -3860,6 +4060,26 @@
 "status": "MAYBE"
 },
 {
+"title": "Hits from the Street",
+"pri": 1,
+"type": "music",
+"net": "bet",
+"years": [
+1995,
+1999
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Hogan's Heroes",
 "pri": 1,
 "type": "sitcom",
@@ -4018,6 +4238,26 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "FOUND"
+},
+{
+"title": "I-40 Paradise",
+"pri": 1,
+"type": "sitcom",
+"net": "tnn",
+"years": [
+1983,
+1986
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Icons",
@@ -4218,6 +4458,26 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
+},
+{
+"title": "Jazz Central",
+"pri": 1,
+"type": "music",
+"net": "bet",
+"years": [
+1990,
+1996
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
 },
 {
 "title": "Jeopardy!",
@@ -4558,6 +4818,26 @@
 "held_elsewhere_items": 3,
 "held_elsewhere_files": 63,
 "status": "FOUND"
+},
+{
+"title": "Lead Story",
+"pri": 1,
+"type": "talk",
+"net": "bet",
+"years": [
+1990,
+1998
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Leave It to Beaver",
@@ -5280,6 +5560,26 @@
 "status": "HELD"
 },
 {
+"title": "Music City Tonight",
+"pri": 1,
+"type": "talk",
+"net": "tnn",
+"years": [
+1993,
+1995
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "My So-Called Life",
 "pri": 1,
 "type": "drama",
@@ -5620,6 +5920,26 @@
 "status": "MAYBE"
 },
 {
+"title": "Nashville After Hours",
+"pri": 1,
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1987
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Nashville Now",
 "pri": 1,
 "type": "talk",
@@ -5860,6 +6180,26 @@
 "status": "HELD"
 },
 {
+"title": "Our Voices",
+"pri": 1,
+"type": "talk",
+"net": "bet",
+"years": [
+1990,
+1998
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
+},
+{
 "title": "Oz",
 "pri": 1,
 "type": "drama",
@@ -6000,6 +6340,26 @@
 "status": "FOUND"
 },
 {
+"title": "Phantom of the Opry",
+"pri": 1,
+"type": "other",
+"net": "tnn",
+"years": [
+1990,
+1992
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Pinwheel",
 "pri": 1,
 "type": "kids",
@@ -6018,6 +6378,26 @@
 "held_elsewhere_items": 19,
 "held_elsewhere_files": 55,
 "status": "HELD"
+},
+{
+"title": "Planet Groove",
+"pri": 1,
+"type": "music",
+"net": "bet",
+"years": [
+1996,
+1999
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Pokémon",
@@ -6300,6 +6680,26 @@
 "status": "THIN"
 },
 {
+"title": "Ralph Emery Show",
+"pri": 1,
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1993
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
+"status": "HELD"
+},
+{
 "title": "Rap City",
 "pri": 1,
 "type": "music",
@@ -6529,6 +6929,26 @@
 1993
 ],
 "guide_episodes": 3,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
+"title": "Screen Scene",
+"pri": 1,
+"type": "mag",
+"net": "bet",
+"years": [
+1990,
+1997
+],
+"guide_episodes": 0,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -8300,6 +8720,26 @@
 "status": "MISSING"
 },
 {
+"title": "The Shotgun Red Variety Show",
+"pri": 1,
+"type": "other",
+"net": "tnn",
+"years": [
+1990,
+1994
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
+},
+{
 "title": "The Site",
 "pri": 1,
 "type": "other",
@@ -8398,6 +8838,26 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
+},
+{
+"title": "The Tommy Hunter Show",
+"pri": 1,
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1992
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
 },
 {
 "title": "The View",
@@ -8558,6 +9018,26 @@
 "held_elsewhere_items": 2,
 "held_elsewhere_files": 8,
 "status": "FOUND"
+},
+{
+"title": "This Week in Nashville",
+"pri": 1,
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1989
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Three's Company",
@@ -8737,6 +9217,26 @@
 "other_files": 0,
 "held_elsewhere_items": 1,
 "held_elsewhere_files": 20,
+"status": "HELD"
+},
+{
+"title": "Tumbleweed Theater",
+"pri": 1,
+"type": "sitcom",
+"net": "tnn",
+"years": [
+1983,
+1988
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -8978,6 +9478,66 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
+},
+{
+"title": "Video Country",
+"pri": 1,
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1993
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
+"title": "Video Gospel",
+"pri": 1,
+"type": "music",
+"net": "bet",
+"years": [
+1989,
+2011
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
+"title": "Video LP",
+"pri": 1,
+"type": "music",
+"net": "bet",
+"years": [
+1986,
+1994
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
+"status": "HELD"
 },
 {
 "title": "Video Power",
@@ -9280,6 +9840,26 @@
 "status": "FOUND"
 },
 {
+"title": "Wildhorse Saloon",
+"pri": 1,
+"type": "music",
+"net": "tnn",
+"years": [
+1994,
+2000
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
+},
+{
 "title": "Win Ben Stein's Money",
 "pri": 1,
 "type": "game",
@@ -9480,6 +10060,26 @@
 "status": "FOUND"
 },
 {
+"title": "Yesteryear in Nashville",
+"pri": 1,
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1988
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Yo! MTV Raps",
 "pri": 1,
 "type": "music",
@@ -9498,6 +10098,26 @@
 "held_elsewhere_items": 26,
 "held_elsewhere_files": 99,
 "status": "FOUND"
+},
+{
+"title": "You Can Be a Star",
+"pri": 1,
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1989
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 7,
+"status": "HELD"
 },
 {
 "title": "You Wish",
@@ -12340,26 +12960,6 @@
 "status": "HELD"
 },
 {
-"title": "Fandango",
-"pri": 2,
-"type": "game",
-"net": "tnn",
-"years": [
-1983,
-1989
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
-},
-{
 "title": "Farscape: The Peacekeeper Wars",
 "pri": 2,
 "type": "drama",
@@ -14418,26 +15018,6 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "THIN"
-},
-{
-"title": "Music City Tonight",
-"pri": 2,
-"type": "talk",
-"net": "tnn",
-"years": [
-1993,
-1995
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
 },
 {
 "title": "Mutant X",
@@ -19920,26 +20500,6 @@
 "status": "MISSING"
 },
 {
-"title": "Wildhorse Saloon",
-"pri": 2,
-"type": "music",
-"net": "tnn",
-"years": [
-1994,
-2000
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
-"status": "HELD"
-},
-{
 "title": "Witchblade",
 "pri": 2,
 "type": "drama",
@@ -20117,26 +20677,6 @@
 "other_files": 0,
 "held_elsewhere_items": 2,
 "held_elsewhere_files": 97,
-"status": "HELD"
-},
-{
-"title": "You Can Be a Star",
-"pri": 2,
-"type": "music",
-"net": "tnn",
-"years": [
-1983,
-1989
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 7,
 "status": "HELD"
 },
 {
@@ -21600,26 +22140,6 @@
 "status": "MISSING"
 },
 {
-"title": "Bill Dance Outdoors",
-"pri": 3,
-"type": "sports",
-"net": "tnn",
-"years": [
-1986,
-2004
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
-},
-{
 "title": "Black Scorpion",
 "pri": 3,
 "type": "drama",
@@ -22820,26 +23340,6 @@
 "status": "MISSING"
 },
 {
-"title": "Church Street Station",
-"pri": 3,
-"type": "music",
-"net": "tnn",
-"years": [
-1984,
-1994
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
-"status": "HELD"
-},
-{
 "title": "Ciao Italia",
 "pri": 3,
 "type": "cook",
@@ -22878,26 +23378,6 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
-},
-{
-"title": "Cita's World",
-"pri": 3,
-"type": "music",
-"net": "bet",
-"years": [
-1999,
-2003
-],
-"guide_episodes": 0,
-"items": 1,
-"maybe": 0,
-"files": 1,
-"hours": 2,
-"episodes": 0,
-"other_files": 1,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "THIN"
 },
 {
 "title": "Citizen Baines",
@@ -23257,26 +23737,6 @@
 "other_files": 0,
 "held_elsewhere_items": 5,
 "held_elsewhere_files": 9,
-"status": "HELD"
-},
-{
-"title": "Country Kitchen",
-"pri": 3,
-"type": "cook",
-"net": "tnn",
-"years": [
-1985,
-1993
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
 "status": "HELD"
 },
 {
@@ -27189,26 +27649,6 @@
 2003
 ],
 "guide_episodes": 63,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
-},
-{
-"title": "I-40 Paradise",
-"pri": 3,
-"type": "sitcom",
-"net": "tnn",
-"years": [
-1983,
-1986
-],
-"guide_episodes": 0,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -31580,26 +32020,6 @@
 "status": "MAYBE"
 },
 {
-"title": "Our Voices",
-"pri": 3,
-"type": "talk",
-"net": "bet",
-"years": [
-1990,
-1998
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
-"status": "HELD"
-},
-{
 "title": "Out of Control",
 "pri": 3,
 "type": "kids",
@@ -32098,26 +32518,6 @@
 "held_elsewhere_items": 2,
 "held_elsewhere_files": 26,
 "status": "HELD"
-},
-{
-"title": "Planet Groove",
-"pri": 3,
-"type": "music",
-"net": "bet",
-"years": [
-1996,
-1999
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
 },
 {
 "title": "Platypus Man",
@@ -33718,26 +34118,6 @@
 "held_elsewhere_items": 1,
 "held_elsewhere_files": 1,
 "status": "HELD"
-},
-{
-"title": "Screen Scene",
-"pri": 3,
-"type": "mag",
-"net": "bet",
-"years": [
-1990,
-1997
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
 },
 {
 "title": "Scripps National Spelling Bee",
@@ -40438,26 +40818,6 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "THIN"
-},
-{
-"title": "Video LP",
-"pri": 3,
-"type": "music",
-"net": "bet",
-"years": [
-1986,
-1994
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 3,
-"status": "HELD"
 },
 {
 "title": "Videopolis",
@@ -75520,26 +75880,6 @@
 "status": "FOUND"
 },
 {
-"title": "Tumbleweed Theater",
-"pri": 4,
-"type": "sitcom",
-"net": "tnn",
-"years": [
-1983,
-1988
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 2,
-"status": "HELD"
-},
-{
 "title": "Turks",
 "pri": 4,
 "type": "drama",
@@ -76307,26 +76647,6 @@
 "years": [
 1994,
 2003
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
-},
-{
-"title": "Video Gospel",
-"pri": 4,
-"type": "music",
-"net": "bet",
-"years": [
-1989,
-2011
 ],
 "guide_episodes": 0,
 "items": 0,
