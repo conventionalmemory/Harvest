@@ -5,6 +5,9 @@ on:
       budget:
         description: minutes
         default: "80"
+      q:
+        description: JSON list of searches
+        default: ""
 permissions:
   contents: write
 jobs:
@@ -13,7 +16,7 @@ jobs:
     timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
-      - run: BUDGET_MIN='${{ inputs.budget }}' python3 harvest/tvguide.py
+      - run: BUDGET_MIN='${{ inputs.budget }}' TVQ='${{ inputs.q }}' python3 harvest/tvguide.py
       - name: Seal and commit
         run: |
           mkdir -p /tmp/seal && cd /tmp/seal

@@ -15,6 +15,7 @@ QS = ['(title:("tv guide") OR subject:("tv guide")) AND (chicago OR illinois OR 
       '(title:("tv week") OR title:("tv listings") OR title:("tv magazine") OR title:("tv times")) AND (chicago OR rockford OR illinois)',
       '(rockford register star OR "register star") AND (tv OR television)',
       '(wrex OR wtvo OR wifr OR wqrf) AND (listings OR schedule OR guide)']
+if os.environ.get('TVQ'): QS = json.loads(os.environ['TVQ'])
 items = {}
 for q in QS:
     for page in range(1, 6):
