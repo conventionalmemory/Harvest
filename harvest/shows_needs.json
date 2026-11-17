@@ -6232,7 +6232,7 @@
 1983,
 1989
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Farscape: The Peacekeeper Wars",
@@ -7490,7 +7490,7 @@
 1993,
 1995
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Mutant X",
@@ -10788,7 +10788,7 @@
 1994,
 2000
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Witchblade",
@@ -10945,7 +10945,7 @@
 1983,
 1989
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Zorro (1990)",
@@ -11685,7 +11685,7 @@
 1986,
 2004
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Black Scorpion",
@@ -12352,7 +12352,7 @@
 1984,
 1994
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Ciao Italia",
@@ -12385,7 +12385,7 @@
 1999,
 2003
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Citizen Baines",
@@ -12613,7 +12613,7 @@
 1985,
 1993
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Coupling",
@@ -14574,7 +14574,7 @@
 1983,
 1986
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Idiot Savants",
@@ -16820,7 +16820,7 @@
 1990,
 1998
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Overhaulin'",
@@ -17072,7 +17072,7 @@
 1996,
 1999
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Platypus Man",
@@ -17870,7 +17870,7 @@
 1990,
 1997
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Scripps National Spelling Bee",
@@ -21384,7 +21384,7 @@
 1986,
 1994
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Videopolis",
@@ -25290,7 +25290,7 @@
 1983,
 1988
 ],
-"pri": 4
+"pri": 1
 },
 {
 "title": "Yogi's Treasure Hunt",
@@ -25961,7 +25961,7 @@
 1989,
 2011
 ],
-"pri": 4
+"pri": 1
 },
 {
 "title": "War and Peace in the Nuclear Age",
@@ -45780,6 +45780,195 @@
 "years": [
 1999,
 2004
+],
+"pri": 1
+},
+{
+"title": "Lead Story",
+"aka": [],
+"type": "talk",
+"net": "bet",
+"years": [
+1990,
+1998
+],
+"pri": 1
+},
+{
+"title": "Comic View",
+"aka": [
+"BET ComicView",
+"Comicview"
+],
+"type": "other",
+"net": "bet",
+"years": [
+1992,
+2004
+],
+"pri": 1
+},
+{
+"title": "BET Tonight",
+"aka": [
+"BET Tonight with Tavis Smiley"
+],
+"type": "talk",
+"net": "bet",
+"years": [
+1996,
+2001
+],
+"pri": 1
+},
+{
+"title": "Hits from the Street",
+"aka": [],
+"type": "music",
+"net": "bet",
+"years": [
+1995,
+1999
+],
+"pri": 1
+},
+{
+"title": "Caribbean Rhythms",
+"aka": [],
+"type": "music",
+"net": "bet",
+"years": [
+1985,
+1996
+],
+"pri": 1
+},
+{
+"title": "Jazz Central",
+"aka": [],
+"type": "music",
+"net": "bet",
+"years": [
+1990,
+1996
+],
+"pri": 1
+},
+{
+"title": "Video Country",
+"aka": [],
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1993
+],
+"pri": 1
+},
+{
+"title": "Bobby Bare and Friends",
+"aka": [],
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1988
+],
+"pri": 1
+},
+{
+"title": "Yesteryear in Nashville",
+"aka": [],
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1988
+],
+"pri": 1
+},
+{
+"title": "Dancin' USA",
+"aka": [
+"Dancin USA"
+],
+"type": "music",
+"net": "tnn",
+"years": [
+1984,
+1990
+],
+"pri": 1
+},
+{
+"title": "Nashville After Hours",
+"aka": [],
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1987
+],
+"pri": 1
+},
+{
+"title": "This Week in Nashville",
+"aka": [],
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1989
+],
+"pri": 1
+},
+{
+"title": "The Tommy Hunter Show",
+"aka": [
+"Tommy Hunter Show"
+],
+"type": "music",
+"net": "tnn",
+"years": [
+1983,
+1992
+],
+"pri": 1
+},
+{
+"title": "Phantom of the Opry",
+"aka": [],
+"type": "other",
+"net": "tnn",
+"years": [
+1990,
+1992
+],
+"pri": 1
+},
+{
+"title": "The Shotgun Red Variety Show",
+"aka": [
+"Shotgun Red"
+],
+"type": "other",
+"net": "tnn",
+"years": [
+1990,
+1994
+],
+"pri": 1
+},
+{
+"title": "Ralph Emery Show",
+"aka": [
+"The Ralph Emery Show"
+],
+"type": "talk",
+"net": "tnn",
+"years": [
+1983,
+1993
 ],
 "pri": 1
 }
