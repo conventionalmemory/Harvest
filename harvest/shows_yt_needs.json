@@ -6014,7 +6014,7 @@
 1991,
 1994
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Clash of the Champions",
@@ -8469,7 +8469,7 @@
 1998,
 1998
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Power Rangers Turbo",
@@ -8480,7 +8480,7 @@
 1997,
 1997
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Prevue Guide",
@@ -12756,7 +12756,7 @@
 1992,
 1993
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Can't Hurry Love",
@@ -13178,7 +13178,7 @@
 1996,
 1999
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "CNN Sports Tonight",
@@ -14518,7 +14518,7 @@
 1993,
 1994
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "Ghost Stories",
@@ -17458,7 +17458,7 @@
 1994,
 1995
 ],
-"pri": 3
+"pri": 1
 },
 {
 "title": "One Big Family",
@@ -28388,7 +28388,7 @@
 1991,
 1991
 ],
-"pri": 4
+"pri": 1
 },
 {
 "title": "Bucky O'Hare and the Toad Wars!",
@@ -34965,7 +34965,7 @@
 1998,
 1998
 ],
-"pri": 4
+"pri": 1
 },
 {
 "title": "All Dogs Go to Heaven: The Series",
@@ -36069,7 +36069,7 @@
 1999,
 1999
 ],
-"pri": 4
+"pri": 1
 },
 {
 "title": "Sonic Underground",
@@ -45050,5 +45050,2584 @@
 ],
 "pri": 3,
 "strict": 1
+},
+{
+"title": "Perfect Strangers",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1986,
+1993
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Step by Step",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1991,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Boy Meets World",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1993,
+2000
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Dinosaurs",
+"aka": [
+"Dinosaurs TV series"
+],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1991,
+1994
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Sabrina the Teenage Witch",
+"aka": [
+"Sabrina, the Teenage Witch"
+],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1996,
+2003
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Just the Ten of Us",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1988,
+1990
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Teen Angel",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1997,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Two of a Kind",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1998,
+1999
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Going Places",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1990,
+1991
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Where I Live",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1993,
+1993
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Aliens in the Family",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1996,
+1996
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "You Wish",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1997,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Muppets Tonight",
+"aka": [],
+"type": "sitcom",
+"net": "abc",
+"years": [
+1996,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Bobby's World",
+"aka": [
+"Bobbys World"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1990,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Peter Pan & the Pirates",
+"aka": [
+"Peter Pan and the Pirates"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1990,
+1991
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Attack of the Killer Tomatoes",
+"aka": [
+"Attack of the Killer Tomatoes animated"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1990,
+1991
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Taz-Mania",
+"aka": [
+"Taz Mania"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1991,
+1995
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Batman: The Animated Series",
+"aka": [
+"Batman The Animated Series",
+"Batman TAS"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1992,
+1995
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "X-Men",
+"aka": [
+"X-Men The Animated Series",
+"X-Men 92"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1992,
+1997
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Mighty Morphin Power Rangers",
+"aka": [],
+"type": "kids",
+"net": "fox",
+"years": [
+1993,
+1996
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Spider-Man",
+"aka": [
+"Spider-Man The Animated Series",
+"Spider-Man 1994"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1994,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Eek! The Cat",
+"aka": [
+"Eek the Cat",
+"Eek! Stravaganza"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1992,
+1997
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Goosebumps",
+"aka": [
+"Goosebumps TV series"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1995,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Big Bad Beetleborgs",
+"aka": [],
+"type": "kids",
+"net": "fox",
+"years": [
+1996,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Masked Rider",
+"aka": [],
+"type": "kids",
+"net": "fox",
+"years": [
+1995,
+1996
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Life with Louie",
+"aka": [],
+"type": "kids",
+"net": "fox",
+"years": [
+1994,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Tick",
+"aka": [
+"The Tick animated"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1994,
+1996
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Animaniacs",
+"aka": [],
+"type": "kids",
+"net": "fox",
+"years": [
+1993,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Silver Surfer",
+"aka": [
+"Silver Surfer animated series"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1998,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Spider-Man Unlimited",
+"aka": [],
+"type": "kids",
+"net": "fox",
+"years": [
+1999,
+2001
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Digimon",
+"aka": [
+"Digimon Digital Monsters"
+],
+"type": "kids",
+"net": "fox",
+"years": [
+1999,
+2002
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "VR Troopers",
+"aka": [],
+"type": "kids",
+"net": "",
+"years": [
+1994,
+1996
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Where's Waldo?",
+"aka": [
+"Wheres Waldo"
+],
+"type": "kids",
+"net": "cbs",
+"years": [
+1991,
+1992
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Toonsylvania",
+"aka": [],
+"type": "kids",
+"net": "fox",
+"years": [
+1998,
+1999
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Medabots",
+"aka": [],
+"type": "kids",
+"net": "fox",
+"years": [
+2001,
+2002
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "DuckTales",
+"aka": [
+"Duck Tales"
+],
+"type": "kids",
+"net": "",
+"years": [
+1987,
+1990
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Chip 'n Dale Rescue Rangers",
+"aka": [
+"Chip n Dale Rescue Rangers",
+"Rescue Rangers"
+],
+"type": "kids",
+"net": "",
+"years": [
+1989,
+1990
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "TaleSpin",
+"aka": [
+"Tale Spin"
+],
+"type": "kids",
+"net": "",
+"years": [
+1990,
+1991
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Darkwing Duck",
+"aka": [],
+"type": "kids",
+"net": "",
+"years": [
+1991,
+1992
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Goof Troop",
+"aka": [],
+"type": "kids",
+"net": "",
+"years": [
+1992,
+1993
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Bonkers",
+"aka": [],
+"type": "kids",
+"net": "",
+"years": [
+1993,
+1994
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Gargoyles",
+"aka": [],
+"type": "kids",
+"net": "",
+"years": [
+1994,
+1997
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Aladdin",
+"aka": [
+"Aladdin animated series",
+"Disney's Aladdin"
+],
+"type": "kids",
+"net": "",
+"years": [
+1994,
+1995
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Timon & Pumbaa",
+"aka": [
+"Timon and Pumbaa"
+],
+"type": "kids",
+"net": "",
+"years": [
+1995,
+1999
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Quack Pack",
+"aka": [],
+"type": "kids",
+"net": "",
+"years": [
+1996,
+1996
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Mighty Ducks",
+"aka": [
+"Mighty Ducks animated series"
+],
+"type": "kids",
+"net": "abc",
+"years": [
+1996,
+1997
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Shnookums and Meat Funny Cartoon Show",
+"aka": [
+"Shnookums & Meat"
+],
+"type": "kids",
+"net": "",
+"years": [
+1995,
+1995
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Recess",
+"aka": [],
+"type": "kids",
+"net": "abc",
+"years": [
+1997,
+2001
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Pepper Ann",
+"aka": [],
+"type": "kids",
+"net": "abc",
+"years": [
+1997,
+2000
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Brand Spanking New! Doug",
+"aka": [
+"Disney's Doug",
+"Doug 1996"
+],
+"type": "kids",
+"net": "abc",
+"years": [
+1996,
+1999
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Jungle Cubs",
+"aka": [],
+"type": "kids",
+"net": "abc",
+"years": [
+1996,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Hercules",
+"aka": [
+"Disney's Hercules animated series",
+"Hercules The Animated Series"
+],
+"type": "kids",
+"net": "abc",
+"years": [
+1998,
+1999
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Mickey Mouse Works",
+"aka": [],
+"type": "kids",
+"net": "abc",
+"years": [
+1999,
+2000
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Teamo Supremo",
+"aka": [],
+"type": "kids",
+"net": "abc",
+"years": [
+2002,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Weekenders",
+"aka": [],
+"type": "kids",
+"net": "abc",
+"years": [
+2000,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Lloyd in Space",
+"aka": [],
+"type": "kids",
+"net": "abc",
+"years": [
+2001,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Fillmore!",
+"aka": [
+"Fillmore"
+],
+"type": "kids",
+"net": "abc",
+"years": [
+2002,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Buzz Lightyear of Star Command",
+"aka": [],
+"type": "kids",
+"net": "abc",
+"years": [
+2000,
+2001
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Legend of Tarzan",
+"aka": [
+"Legend of Tarzan animated"
+],
+"type": "kids",
+"net": "abc",
+"years": [
+2001,
+2003
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Ren & Stimpy Show",
+"aka": [
+"Ren and Stimpy",
+"Ren & Stimpy"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1991,
+1995
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Roundhouse",
+"aka": [],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1992,
+1996
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Are You Afraid of the Dark?",
+"aka": [
+"Are You Afraid of the Dark"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1990,
+2000
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Adventures of Pete & Pete",
+"aka": [
+"Pete and Pete",
+"Pete & Pete"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1993,
+1996
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "All That",
+"aka": [],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1994,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Kenan & Kel",
+"aka": [
+"Kenan and Kel"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1996,
+2000
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Secret World of Alex Mack",
+"aka": [
+"Alex Mack"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1994,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "KaBlam!",
+"aka": [
+"KaBlam"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1996,
+2000
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Journey of Allen Strange",
+"aka": [],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1997,
+2000
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Amanda Show",
+"aka": [],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1999,
+2002
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Wild Thornberrys",
+"aka": [
+"Wild Thornberrys"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1998,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Cousin Skeeter",
+"aka": [],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1998,
+2001
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Animorphs",
+"aka": [
+"Animorphs TV series"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1998,
+1999
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Space Cases",
+"aka": [],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1996,
+1997
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Rugrats",
+"aka": [],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1991,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "SpongeBob SquarePants",
+"aka": [
+"Spongebob"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1999,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "The Fairly OddParents",
+"aka": [
+"Fairly OddParents",
+"Fairly Odd Parents"
+],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+2001,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Invader Zim",
+"aka": [],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+2001,
+2002
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
+},
+{
+"title": "Rocket Power",
+"aka": [],
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1999,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"review",
+"recap",
+"reunion",
+"then and now",
+"intro",
+"opening",
+"theme song"
+]
 }
 ]
