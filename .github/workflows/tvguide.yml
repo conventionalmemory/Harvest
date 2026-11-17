@@ -1,0 +1,36 @@
+name: TV listings search
+on:
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: minutes
+        default: "80"
+permissions:
+  contents: write
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+      - run: BUDGET_MIN='${{ inputs.budget }}' python3 harvest/tvguide.py
+      - name: Seal and commit
+        run: |
+          mkdir -p /tmp/seal && cd /tmp/seal
+          openssl rand -hex 32 > k
+          openssl enc -aes-256-cbc -pbkdf2 -salt -pass file:k -in $GITHUB_WORKSPACE/parts/tvguide.json.gz -out part-0.enc
+          openssl pkeyutl -encrypt -pubin -inkey $GITHUB_WORKSPACE/harvest/keys/pub.pem -pkeyopt rsa_padding_mode:oaep -in k -out part-0.key
+          rm -f k
+          cd $GITHUB_WORKSPACE
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            mkdir -p catalog/sealed/tvguide
+            cp /tmp/seal/part-0.enc /tmp/seal/part-0.key catalog/sealed/tvguide/
+            git add catalog/sealed/tvguide
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update TV listings search" && git push -q && exit 0
+            sleep $((5 + RANDOM % 15))
+          done
+          exit 1
