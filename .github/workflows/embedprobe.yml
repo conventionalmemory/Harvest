@@ -18,8 +18,7 @@ jobs:
           IDS='${{ inputs.ids }}' python3 - <<'PY'
           import os, re, yt_health as Y
           for v in os.environ['IDS'].split():
-              st, raw = Y.http('https://www.youtube.com/embed/' + v)
-              h = raw.decode('utf-8', 'replace') if raw else ''
+              st, h, fin = Y.fetch('https://www.youtube.com/embed/' + v, ref=True)
               keys = {k: re.findall(r'\\?"' + k + r'\\?"\s*:\s*\\?"?(\d+)', h)[:2] for k in ('lengthSeconds', 'videoDurationSeconds', 'approxDurationMs')}
               print(v, st, len(h), keys, Y.parse(h) if h else None)
           PY
