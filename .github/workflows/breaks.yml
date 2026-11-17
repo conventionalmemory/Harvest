@@ -1,5 +1,7 @@
 name: Episode break points
 on:
+  schedule:
+    - cron: '23 5 * * *'
   workflow_dispatch:
     inputs:
       minutes:
@@ -17,6 +19,7 @@ jobs:
     timeout-minutes: 350
     strategy:
       fail-fast: false
+      max-parallel: 10
       matrix:
         shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     steps:
@@ -24,7 +27,7 @@ jobs:
       - name: Tools
         run: which ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
       - name: Probe
-        run: MODE=run SHARD=${{ matrix.shard }} SHARDS=12 PAR=3 BUDGET_MIN='${{ github.event.inputs.minutes }}' python3 harvest/breaks.py
+        run: MODE=run SHARD=${{ matrix.shard }} SHARDS=12 PAR=3 BUDGET_MIN='${{ github.event.inputs.minutes || '300' }}' python3 harvest/breaks.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
