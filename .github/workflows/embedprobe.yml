@@ -1,0 +1,25 @@
+name: Embed page probe
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: Space-separated video ids
+        required: true
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          cd harvest
+          IDS='${{ inputs.ids }}' python3 - <<'PY'
+          import os, re, yt_health as Y
+          for v in os.environ['IDS'].split():
+              st, raw = Y.http('https://www.youtube.com/embed/' + v)
+              h = raw.decode('utf-8', 'replace') if raw else ''
+              keys = {k: re.findall(r'\\?"' + k + r'\\?"\s*:\s*\\?"?(\d+)', h)[:2] for k in ('lengthSeconds', 'videoDurationSeconds', 'approxDurationMs')}
+              print(v, st, len(h), keys, Y.parse(h) if h else None)
+          PY
