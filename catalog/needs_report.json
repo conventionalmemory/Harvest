@@ -1,7 +1,7 @@
 {
-"updated": "2026-11-15 22:10 UTC",
-"items": 6302,
-"hours": 35028,
+"updated": "2026-11-17 12:59 UTC",
+"items": 6580,
+"hours": 36863,
 "priority": {
 "0": {
 "shows": 9,
@@ -10,38 +10,38 @@
 "maybe": 0,
 "held": 1,
 "missing": 0,
-"items": 45,
-"hours": 2073
+"items": 42,
+"hours": 1985
 },
 "1": {
-"shows": 371,
-"found": 65,
-"thin": 67,
-"maybe": 65,
-"held": 110,
-"missing": 64,
-"items": 821,
-"hours": 7356
+"shows": 458,
+"found": 105,
+"thin": 74,
+"maybe": 76,
+"held": 132,
+"missing": 71,
+"items": 1160,
+"hours": 9785
 },
 "2": {
-"shows": 545,
-"found": 90,
-"thin": 82,
-"maybe": 64,
-"held": 191,
-"missing": 118,
-"items": 1314,
-"hours": 9260
+"shows": 531,
+"found": 88,
+"thin": 79,
+"maybe": 61,
+"held": 186,
+"missing": 117,
+"items": 1290,
+"hours": 9098
 },
 "3": {
-"shows": 1085,
-"found": 194,
-"thin": 130,
-"maybe": 125,
-"held": 316,
-"missing": 320,
-"items": 1709,
-"hours": 7879
+"shows": 1070,
+"found": 187,
+"thin": 129,
+"maybe": 122,
+"held": 314,
+"missing": 318,
+"items": 1682,
+"hours": 7617
 }
 },
 "coverage": {
@@ -74,7 +74,7 @@
 },
 "Star Trek": {
 "episodes": 79,
-"held_elsewhere": 60,
+"held_elsewhere": 79,
 "in_this_file": 79,
 "covered": 79,
 "seasons": {
@@ -249,14 +249,14 @@
 1969
 ],
 "guide_episodes": 79,
-"items": 11,
-"maybe": 5,
-"files": 168,
-"hours": 148,
+"items": 9,
+"maybe": 4,
+"files": 88,
+"hours": 78,
 "episodes": 79,
 "other_files": 0,
-"held_elsewhere_items": 117,
-"held_elsewhere_files": 311,
+"held_elsewhere_items": 128,
+"held_elsewhere_files": 402,
 "status": "FOUND"
 },
 {
@@ -275,8 +275,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 15,
-"held_elsewhere_files": 37,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 54,
 "status": "THIN"
 },
 {
@@ -329,14 +329,14 @@
 1994
 ],
 "guide_episodes": 178,
-"items": 24,
+"items": 23,
 "maybe": 6,
-"files": 1535,
-"hours": 1314,
+"files": 1511,
+"hours": 1296,
 "episodes": 182,
 "other_files": 0,
-"held_elsewhere_items": 52,
-"held_elsewhere_files": 285,
+"held_elsewhere_items": 57,
+"held_elsewhere_files": 314,
 "status": "FOUND"
 },
 {
@@ -355,8 +355,8 @@
 "hours": 260,
 "episodes": 172,
 "other_files": 0,
-"held_elsewhere_items": 33,
-"held_elsewhere_files": 174,
+"held_elsewhere_items": 34,
+"held_elsewhere_files": 175,
 "status": "FOUND"
 },
 {
@@ -397,6 +397,26 @@
 "other_files": 0,
 "held_elsewhere_items": 44,
 "held_elsewhere_files": 75,
+"status": "FOUND"
+},
+{
+"title": "101 Dalmatians: The Series",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+1998,
+1998
+],
+"guide_episodes": 65,
+"items": 2,
+"maybe": 0,
+"files": 67,
+"hours": 25,
+"episodes": 2,
+"other_files": 65,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 86,
 "status": "FOUND"
 },
 {
@@ -555,8 +575,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 9,
-"held_elsewhere_files": 48,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 49,
 "status": "MAYBE"
 },
 {
@@ -760,6 +780,46 @@
 "status": "HELD"
 },
 {
+"title": "Adventures of the Gummi Bears",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+1991,
+1991
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 298,
+"status": "HELD"
+},
+{
+"title": "Aladdin",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1994,
+1995
+],
+"guide_episodes": 86,
+"items": 5,
+"maybe": 4,
+"files": 91,
+"hours": 38,
+"episodes": 29,
+"other_files": 0,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 62,
+"status": "FOUND"
+},
+{
 "title": "Alias",
 "pri": 1,
 "type": "drama",
@@ -778,6 +838,26 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
+},
+{
+"title": "Aliens in the Family",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1996,
+1996
+],
+"guide_episodes": 8,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 27,
+"status": "HELD"
 },
 {
 "title": "All My Children",
@@ -800,6 +880,26 @@
 "status": "FOUND"
 },
 {
+"title": "All That",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1994,
+1994
+],
+"guide_episodes": 151,
+"items": 11,
+"maybe": 3,
+"files": 144,
+"hours": 58,
+"episodes": 110,
+"other_files": 0,
+"held_elsewhere_items": 115,
+"held_elsewhere_files": 617,
+"status": "FOUND"
+},
+{
 "title": "All in the Family",
 "pri": 1,
 "type": "sitcom",
@@ -815,8 +915,8 @@
 "hours": 162,
 "episodes": 200,
 "other_files": 23,
-"held_elsewhere_items": 59,
-"held_elsewhere_files": 113,
+"held_elsewhere_items": 60,
+"held_elsewhere_files": 114,
 "status": "FOUND"
 },
 {
@@ -980,6 +1080,46 @@
 "status": "MAYBE"
 },
 {
+"title": "Animaniacs",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1993,
+1998
+],
+"guide_episodes": 274,
+"items": 1,
+"maybe": 0,
+"files": 100,
+"hours": 35,
+"episodes": 99,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
+},
+{
+"title": "Animorphs",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1998,
+1999
+],
+"guide_episodes": 26,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Antiques Roadshow",
 "pri": 1,
 "type": "other",
@@ -997,6 +1137,26 @@
 "other_files": 37,
 "held_elsewhere_items": 27,
 "held_elsewhere_files": 35,
+"status": "FOUND"
+},
+{
+"title": "Are You Afraid of the Dark?",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1990,
+2000
+],
+"guide_episodes": 0,
+"items": 7,
+"maybe": 2,
+"files": 364,
+"hours": 155,
+"episodes": 91,
+"other_files": 2,
+"held_elsewhere_items": 27,
+"held_elsewhere_files": 342,
 "status": "FOUND"
 },
 {
@@ -1080,6 +1240,26 @@
 "status": "MAYBE"
 },
 {
+"title": "Attack of the Killer Tomatoes",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1990,
+1991
+],
+"guide_episodes": 21,
+"items": 8,
+"maybe": 1,
+"files": 45,
+"hours": 24,
+"episodes": 21,
+"other_files": 7,
+"held_elsewhere_items": 18,
+"held_elsewhere_files": 137,
+"status": "FOUND"
+},
+{
 "title": "Attitudes",
 "pri": 1,
 "type": "talk",
@@ -1158,6 +1338,26 @@
 "held_elsewhere_items": 1,
 "held_elsewhere_files": 1,
 "status": "HELD"
+},
+{
+"title": "Batman: The Animated Series",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1992,
+1995
+],
+"guide_episodes": 85,
+"items": 5,
+"maybe": 1,
+"files": 448,
+"hours": 174,
+"episodes": 85,
+"other_files": 0,
+"held_elsewhere_items": 58,
+"held_elsewhere_files": 731,
+"status": "FOUND"
 },
 {
 "title": "Best Week Ever",
@@ -1240,6 +1440,26 @@
 "status": "THIN"
 },
 {
+"title": "Big Bad Beetleborgs",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1996,
+1998
+],
+"guide_episodes": 88,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 103,
+"status": "HELD"
+},
+{
 "title": "Biography",
 "pri": 1,
 "type": "doc",
@@ -1300,6 +1520,46 @@
 "status": "HELD"
 },
 {
+"title": "Bobby's World",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1990,
+1998
+],
+"guide_episodes": 80,
+"items": 1,
+"maybe": 0,
+"files": 81,
+"hours": 29,
+"episodes": 80,
+"other_files": 0,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 63,
+"status": "FOUND"
+},
+{
+"title": "Bonkers",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1993,
+1994
+],
+"guide_episodes": 63,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "Booknotes",
 "pri": 1,
 "type": "talk",
@@ -1338,6 +1598,66 @@
 "held_elsewhere_items": 12,
 "held_elsewhere_files": 16,
 "status": "THIN"
+},
+{
+"title": "Boy Meets World",
+"pri": 1,
+"type": "sitcom",
+"net": "",
+"years": [
+1993,
+1993
+],
+"guide_episodes": 158,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 62,
+"status": "HELD"
+},
+{
+"title": "Brand Spanking New! Doug",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+1996,
+1999
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
+"title": "Buzz Lightyear of Star Command",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+2000,
+2001
+],
+"guide_episodes": 62,
+"items": 14,
+"maybe": 1,
+"files": 463,
+"hours": 179,
+"episodes": 62,
+"other_files": 3,
+"held_elsewhere_items": 32,
+"held_elsewhere_files": 613,
+"status": "FOUND"
 },
 {
 "title": "C-SPAN call-in program",
@@ -1455,8 +1775,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -1538,6 +1858,26 @@
 "held_elsewhere_items": 2,
 "held_elsewhere_files": 3,
 "status": "MAYBE"
+},
+{
+"title": "Camp Wilder",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1992,
+1993
+],
+"guide_episodes": 19,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 19,
+"status": "HELD"
 },
 {
 "title": "Celebrity Deathmatch",
@@ -1700,6 +2040,26 @@
 "status": "HELD"
 },
 {
+"title": "Chip 'n Dale Rescue Rangers",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1989,
+1990
+],
+"guide_episodes": 65,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 1,
+"episodes": 1,
+"other_files": 0,
+"held_elsewhere_items": 42,
+"held_elsewhere_files": 90,
+"status": "THIN"
+},
+{
 "title": "Cinematech",
 "pri": 1,
 "type": "tech",
@@ -1715,8 +2075,28 @@
 "hours": 42,
 "episodes": 58,
 "other_files": 5,
+"held_elsewhere_items": 12,
+"held_elsewhere_files": 147,
+"status": "FOUND"
+},
+{
+"title": "Clarissa Explains It All",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1991,
+1994
+],
+"guide_episodes": 65,
+"items": 2,
+"maybe": 1,
+"files": 66,
+"hours": 29,
+"episodes": 44,
+"other_files": 0,
 "held_elsewhere_items": 9,
-"held_elsewhere_files": 123,
+"held_elsewhere_files": 138,
 "status": "FOUND"
 },
 {
@@ -1758,6 +2138,26 @@
 "held_elsewhere_items": 5,
 "held_elsewhere_files": 5,
 "status": "MAYBE"
+},
+{
+"title": "Clueless",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1996,
+1999
+],
+"guide_episodes": 62,
+"items": 1,
+"maybe": 0,
+"files": 76,
+"hours": 27,
+"episodes": 61,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
 },
 {
 "title": "College Basketball on ESPN (Big Monday)",
@@ -1815,8 +2215,28 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 46,
-"held_elsewhere_files": 49,
+"held_elsewhere_items": 52,
+"held_elsewhere_files": 55,
+"status": "HELD"
+},
+{
+"title": "Cousin Skeeter",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1998,
+2001
+],
+"guide_episodes": 52,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 27,
+"held_elsewhere_files": 35,
 "status": "HELD"
 },
 {
@@ -1957,6 +2377,26 @@
 "other_files": 831,
 "held_elsewhere_items": 27,
 "held_elsewhere_files": 148,
+"status": "FOUND"
+},
+{
+"title": "Darkwing Duck",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1991,
+1992
+],
+"guide_episodes": 91,
+"items": 5,
+"maybe": 0,
+"files": 365,
+"hours": 139,
+"episodes": 91,
+"other_files": 0,
+"held_elsewhere_items": 44,
+"held_elsewhere_files": 371,
 "status": "FOUND"
 },
 {
@@ -2160,6 +2600,26 @@
 "status": "HELD"
 },
 {
+"title": "Digimon",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1999,
+2002
+],
+"guide_episodes": 104,
+"items": 7,
+"maybe": 2,
+"files": 226,
+"hours": 78,
+"episodes": 104,
+"other_files": 3,
+"held_elsewhere_items": 26,
+"held_elsewhere_files": 150,
+"status": "FOUND"
+},
+{
 "title": "Dinner and a Movie",
 "pri": 1,
 "type": "movie-package",
@@ -2178,6 +2638,26 @@
 "held_elsewhere_items": 2,
 "held_elsewhere_files": 2,
 "status": "HELD"
+},
+{
+"title": "Dinosaurs",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1991,
+1994
+],
+"guide_episodes": 65,
+"items": 1,
+"maybe": 0,
+"files": 69,
+"hours": 26,
+"episodes": 65,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
 },
 {
 "title": "Disney Channel Original Movies",
@@ -2278,6 +2758,26 @@
 "held_elsewhere_items": 17,
 "held_elsewhere_files": 25,
 "status": "THIN"
+},
+{
+"title": "DuckTales",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1987,
+1990
+],
+"guide_episodes": 100,
+"items": 6,
+"maybe": 1,
+"files": 446,
+"hours": 170,
+"episodes": 100,
+"other_files": 0,
+"held_elsewhere_items": 25,
+"held_elsewhere_files": 159,
+"status": "FOUND"
 },
 {
 "title": "E! News Daily",
@@ -2420,6 +2920,26 @@
 "status": "HELD"
 },
 {
+"title": "Eek! The Cat",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1992,
+1997
+],
+"guide_episodes": 75,
+"items": 1,
+"maybe": 0,
+"files": 64,
+"hours": 22,
+"episodes": 61,
+"other_files": 0,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 159,
+"status": "FOUND"
+},
+{
 "title": "Electric Playground",
 "pri": 1,
 "type": "tech",
@@ -2435,8 +2955,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -2575,8 +3095,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 19,
-"held_elsewhere_files": 43,
+"held_elsewhere_items": 20,
+"held_elsewhere_files": 44,
 "status": "HELD"
 },
 {
@@ -2638,6 +3158,26 @@
 "held_elsewhere_items": 41,
 "held_elsewhere_files": 41,
 "status": "HELD"
+},
+{
+"title": "Fillmore!",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+2002,
+2004
+],
+"guide_episodes": 25,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Filter",
@@ -2795,9 +3335,29 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 30,
-"held_elsewhere_files": 30,
+"held_elsewhere_items": 60,
+"held_elsewhere_files": 60,
 "status": "MAYBE"
+},
+{
+"title": "Gargoyles",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1994,
+1994
+],
+"guide_episodes": 78,
+"items": 2,
+"maybe": 1,
+"files": 142,
+"hours": 53,
+"episodes": 78,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
 },
 {
 "title": "Get a Life",
@@ -2818,6 +3378,26 @@
 "held_elsewhere_items": 4,
 "held_elsewhere_files": 73,
 "status": "MAYBE"
+},
+{
+"title": "Getting By",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1993,
+1994
+],
+"guide_episodes": 31,
+"items": 1,
+"maybe": 0,
+"files": 25,
+"hours": 10,
+"episodes": 24,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
 },
 {
 "title": "Ghostwriter",
@@ -2880,6 +3460,26 @@
 "status": "FOUND"
 },
 {
+"title": "Going Places",
+"pri": 1,
+"type": "sitcom",
+"net": "",
+"years": [
+1990,
+1990
+],
+"guide_episodes": 19,
+"items": 4,
+"maybe": 4,
+"files": 5,
+"hours": 3,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 12,
+"held_elsewhere_files": 55,
+"status": "MAYBE"
+},
+{
 "title": "Good Eats",
 "pri": 1,
 "type": "cook",
@@ -2895,8 +3495,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 17,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 31,
 "status": "HELD"
 },
 {
@@ -2938,6 +3538,46 @@
 "held_elsewhere_items": 4,
 "held_elsewhere_files": 6,
 "status": "MAYBE"
+},
+{
+"title": "Goof Troop",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1992,
+1992
+],
+"guide_episodes": 65,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 26,
+"held_elsewhere_files": 57,
+"status": "THIN"
+},
+{
+"title": "Goosebumps",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1995,
+1998
+],
+"guide_episodes": 74,
+"items": 2,
+"maybe": 0,
+"files": 136,
+"hours": 54,
+"episodes": 68,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 60,
+"status": "FOUND"
 },
 {
 "title": "Grace Under Fire",
@@ -3180,6 +3820,26 @@
 "status": "THIN"
 },
 {
+"title": "Hercules",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+1998,
+1999
+],
+"guide_episodes": 0,
+"items": 3,
+"maybe": 3,
+"files": 5,
+"hours": 8,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MAYBE"
+},
+{
 "title": "Hey Arnold!",
 "pri": 1,
 "type": "kids",
@@ -3375,8 +4035,8 @@
 "hours": 50,
 "episodes": 0,
 "other_files": 63,
-"held_elsewhere_items": 73,
-"held_elsewhere_files": 144,
+"held_elsewhere_items": 75,
+"held_elsewhere_files": 184,
 "status": "FOUND"
 },
 {
@@ -3478,6 +4138,26 @@
 "held_elsewhere_items": 5,
 "held_elsewhere_files": 5,
 "status": "HELD"
+},
+{
+"title": "Invader Zim",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+2001,
+2002
+],
+"guide_episodes": 37,
+"items": 2,
+"maybe": 2,
+"files": 43,
+"hours": 15,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 69,
+"held_elsewhere_files": 501,
+"status": "MAYBE"
 },
 {
 "title": "Investigative Reports",
@@ -3640,6 +4320,26 @@
 "status": "MISSING"
 },
 {
+"title": "Jungle Cubs",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+1996,
+1998
+],
+"guide_episodes": 21,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 59,
+"status": "THIN"
+},
+{
 "title": "Just Shoot Me!",
 "pri": 1,
 "type": "sitcom",
@@ -3658,6 +4358,46 @@
 "held_elsewhere_items": 19,
 "held_elsewhere_files": 34,
 "status": "MAYBE"
+},
+{
+"title": "Just the Ten of Us",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1988,
+1990
+],
+"guide_episodes": 47,
+"items": 1,
+"maybe": 0,
+"files": 47,
+"hours": 19,
+"episodes": 47,
+"other_files": 0,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 115,
+"status": "FOUND"
+},
+{
+"title": "KaBlam!",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1996,
+2000
+],
+"guide_episodes": 9,
+"items": 2,
+"maybe": 1,
+"files": 55,
+"hours": 22,
+"episodes": 9,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
 },
 {
 "title": "Keeping Up Appearances",
@@ -3755,8 +4495,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 121,
-"held_elsewhere_files": 204,
+"held_elsewhere_items": 122,
+"held_elsewhere_files": 205,
 "status": "THIN"
 },
 {
@@ -3840,6 +4580,26 @@
 "status": "MAYBE"
 },
 {
+"title": "Life with Louie",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1994,
+1998
+],
+"guide_episodes": 39,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 130,
+"status": "HELD"
+},
+{
 "title": "Lifetime Original Movies",
 "pri": 1,
 "type": "movie-package",
@@ -3918,6 +4678,26 @@
 "held_elsewhere_items": 17,
 "held_elsewhere_files": 17,
 "status": "FOUND"
+},
+{
+"title": "Lloyd in Space",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+2001,
+2004
+],
+"guide_episodes": 39,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 128,
+"status": "HELD"
 },
 {
 "title": "Lois & Clark: The New Adventures of Superman",
@@ -4115,8 +4895,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 23,
-"held_elsewhere_files": 23,
+"held_elsewhere_items": 24,
+"held_elsewhere_files": 24,
 "status": "HELD"
 },
 {
@@ -4138,6 +4918,26 @@
 "held_elsewhere_items": 4,
 "held_elsewhere_files": 40,
 "status": "HELD"
+},
+{
+"title": "Masked Rider",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1995,
+1996
+],
+"guide_episodes": 40,
+"items": 1,
+"maybe": 0,
+"files": 82,
+"hours": 29,
+"episodes": 27,
+"other_files": 0,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 285,
+"status": "FOUND"
 },
 {
 "title": "Masterpiece Theatre",
@@ -4200,6 +5000,26 @@
 "status": "MAYBE"
 },
 {
+"title": "Medabots",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+2001,
+2002
+],
+"guide_episodes": 91,
+"items": 2,
+"maybe": 0,
+"files": 182,
+"hours": 68,
+"episodes": 91,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
+},
+{
 "title": "Melrose Place",
 "pri": 1,
 "type": "drama",
@@ -4240,6 +5060,26 @@
 "status": "FOUND"
 },
 {
+"title": "Mickey Mouse Works",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+1999,
+2000
+],
+"guide_episodes": 98,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 106,
+"status": "HELD"
+},
+{
 "title": "Midnight Love",
 "pri": 1,
 "type": "music",
@@ -4258,6 +5098,46 @@
 "held_elsewhere_items": 2,
 "held_elsewhere_files": 2,
 "status": "HELD"
+},
+{
+"title": "Mighty Ducks",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+1996,
+1997
+],
+"guide_episodes": 26,
+"items": 9,
+"maybe": 9,
+"files": 9,
+"hours": 8,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 41,
+"status": "MAYBE"
+},
+{
+"title": "Mighty Morphin Power Rangers",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1993,
+1996
+],
+"guide_episodes": 0,
+"items": 14,
+"maybe": 7,
+"files": 165,
+"hours": 72,
+"episodes": 60,
+"other_files": 36,
+"held_elsewhere_items": 83,
+"held_elsewhere_files": 511,
+"status": "FOUND"
 },
 {
 "title": "Millennium",
@@ -4378,6 +5258,26 @@
 "held_elsewhere_items": 10,
 "held_elsewhere_files": 158,
 "status": "FOUND"
+},
+{
+"title": "Muppets Tonight",
+"pri": 1,
+"type": "sitcom",
+"net": "",
+"years": [
+1996,
+1996
+],
+"guide_episodes": 22,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 104,
+"status": "HELD"
 },
 {
 "title": "My So-Called Life",
@@ -4795,8 +5695,8 @@
 "hours": 90,
 "episodes": 38,
 "other_files": 0,
-"held_elsewhere_items": 23,
-"held_elsewhere_files": 201,
+"held_elsewhere_items": 37,
+"held_elsewhere_files": 217,
 "status": "FOUND"
 },
 {
@@ -4940,6 +5840,26 @@
 "status": "THIN"
 },
 {
+"title": "On Our Own",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1994,
+1995
+],
+"guide_episodes": 20,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 30,
+"status": "HELD"
+},
+{
 "title": "Oz",
 "pri": 1,
 "type": "drama",
@@ -4995,9 +5915,49 @@
 "hours": 9,
 "episodes": 8,
 "other_files": 3,
-"held_elsewhere_items": 92,
-"held_elsewhere_files": 151,
+"held_elsewhere_items": 93,
+"held_elsewhere_files": 152,
 "status": "FOUND"
+},
+{
+"title": "Pepper Ann",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+1997,
+2000
+],
+"guide_episodes": 65,
+"items": 3,
+"maybe": 0,
+"files": 301,
+"hours": 71,
+"episodes": 65,
+"other_files": 0,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 274,
+"status": "FOUND"
+},
+{
+"title": "Perfect Strangers",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1986,
+1993
+],
+"guide_episodes": 150,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 25,
+"held_elsewhere_files": 419,
+"status": "MAYBE"
 },
 {
 "title": "Perry Mason",
@@ -5018,6 +5978,26 @@
 "held_elsewhere_items": 53,
 "held_elsewhere_files": 168,
 "status": "HELD"
+},
+{
+"title": "Peter Pan & the Pirates",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1990,
+1991
+],
+"guide_episodes": 65,
+"items": 3,
+"maybe": 2,
+"files": 67,
+"hours": 24,
+"episodes": 50,
+"other_files": 0,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 220,
+"status": "FOUND"
 },
 {
 "title": "Pinwheel",
@@ -5095,9 +6075,29 @@
 "hours": 35,
 "episodes": 3,
 "other_files": 5,
-"held_elsewhere_items": 450,
-"held_elsewhere_files": 1836,
+"held_elsewhere_items": 372,
+"held_elsewhere_files": 1330,
 "status": "FOUND"
+},
+{
+"title": "Power Rangers Turbo",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1997,
+1997
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 52,
+"held_elsewhere_files": 99,
+"status": "HELD"
 },
 {
 "title": "Power Rangers Zeo",
@@ -5118,6 +6118,26 @@
 "held_elsewhere_items": 58,
 "held_elsewhere_files": 108,
 "status": "HELD"
+},
+{
+"title": "Power Rangers in Space",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1998,
+1998
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 1,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 35,
+"held_elsewhere_files": 121,
+"status": "THIN"
 },
 {
 "title": "Premium movie package 1999-2004",
@@ -5229,15 +6249,35 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 3,
+"items": 2,
 "maybe": 2,
-"files": 3,
-"hours": 4,
+"files": 2,
+"hours": 3,
 "episodes": 0,
-"other_files": 1,
+"other_files": 0,
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
-"status": "THIN"
+"status": "MAYBE"
+},
+{
+"title": "Quack Pack",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1996,
+1996
+],
+"guide_episodes": 39,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 103,
+"status": "MAYBE"
 },
 {
 "title": "Queer Eye for the Straight Guy",
@@ -5278,6 +6318,26 @@
 "held_elsewhere_items": 23,
 "held_elsewhere_files": 186,
 "status": "HELD"
+},
+{
+"title": "Recess",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1997,
+1997
+],
+"guide_episodes": 127,
+"items": 2,
+"maybe": 0,
+"files": 201,
+"hours": 57,
+"episodes": 124,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
 },
 {
 "title": "Reno 911!",
@@ -5338,6 +6398,106 @@
 "held_elsewhere_items": 6,
 "held_elsewhere_files": 14,
 "status": "HELD"
+},
+{
+"title": "Rocket Power",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1999,
+2004
+],
+"guide_episodes": 118,
+"items": 2,
+"maybe": 2,
+"files": 57,
+"hours": 24,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 136,
+"status": "MAYBE"
+},
+{
+"title": "Roundhouse",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1985,
+1993
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 0,
+"episodes": 0,
+"other_files": 1,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "THIN"
+},
+{
+"title": "Rugrats",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1994,
+2004
+],
+"guide_episodes": 0,
+"items": 8,
+"maybe": 8,
+"files": 12,
+"hours": 5,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MAYBE"
+},
+{
+"title": "Sabrina the Teenage Witch",
+"pri": 1,
+"type": "sitcom",
+"net": "",
+"years": [
+1996,
+1996
+],
+"guide_episodes": 163,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 71,
+"status": "HELD"
+},
+{
+"title": "Sabrina: The Animated Series",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+1999,
+1999
+],
+"guide_episodes": 65,
+"items": 4,
+"maybe": 0,
+"files": 139,
+"hours": 54,
+"episodes": 65,
+"other_files": 1,
+"held_elsewhere_items": 23,
+"held_elsewhere_files": 266,
+"status": "FOUND"
 },
 {
 "title": "Samurai Jack",
@@ -5480,6 +6640,26 @@
 "status": "MISSING"
 },
 {
+"title": "Shnookums and Meat Funny Cartoon Show",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1995,
+1995
+],
+"guide_episodes": 0,
+"items": 1,
+"maybe": 0,
+"files": 5,
+"hours": 1,
+"episodes": 0,
+"other_files": 5,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
+},
+{
 "title": "Short Attention Span Theater",
 "pri": 1,
 "type": "other",
@@ -5537,6 +6717,26 @@
 "other_files": 0,
 "held_elsewhere_items": 14,
 "held_elsewhere_files": 63,
+"status": "HELD"
+},
+{
+"title": "Silver Surfer",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1998,
+1998
+],
+"guide_episodes": 13,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 58,
 "status": "HELD"
 },
 {
@@ -5660,6 +6860,26 @@
 "status": "THIN"
 },
 {
+"title": "Space Cases",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1996,
+1996
+],
+"guide_episodes": 26,
+"items": 1,
+"maybe": 0,
+"files": 1,
+"hours": 0,
+"episodes": 1,
+"other_files": 0,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 117,
+"status": "THIN"
+},
+{
 "title": "Space Ghost Coast to Coast",
 "pri": 1,
 "type": "late",
@@ -5680,6 +6900,46 @@
 "status": "MAYBE"
 },
 {
+"title": "Spider-Man",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1994,
+1998
+],
+"guide_episodes": 65,
+"items": 107,
+"maybe": 73,
+"files": 346,
+"hours": 239,
+"episodes": 44,
+"other_files": 31,
+"held_elsewhere_items": 202,
+"held_elsewhere_files": 800,
+"status": "FOUND"
+},
+{
+"title": "Spider-man Unlimited",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+2001,
+2001
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 67,
+"status": "HELD"
+},
+{
 "title": "Spin City",
 "pri": 1,
 "type": "sitcom",
@@ -5698,6 +6958,26 @@
 "held_elsewhere_items": 6,
 "held_elsewhere_files": 6,
 "status": "HELD"
+},
+{
+"title": "SpongeBob SquarePants",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1999,
+2004
+],
+"guide_episodes": 114,
+"items": 40,
+"maybe": 26,
+"files": 223,
+"hours": 87,
+"episodes": 108,
+"other_files": 8,
+"held_elsewhere_items": 201,
+"held_elsewhere_files": 777,
+"status": "FOUND"
 },
 {
 "title": "SportsCenter",
@@ -5789,15 +7069,35 @@
 1984
 ],
 "guide_episodes": 133,
-"items": 1,
+"items": 0,
 "maybe": 0,
-"files": 1,
+"files": 0,
 "hours": 0,
 "episodes": 0,
-"other_files": 1,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 2,
-"status": "THIN"
+"other_files": 0,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
+"status": "HELD"
+},
+{
+"title": "Step by Step",
+"pri": 1,
+"type": "sitcom",
+"net": "",
+"years": [
+1991,
+1991
+],
+"guide_episodes": 160,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 42,
+"held_elsewhere_files": 135,
+"status": "MAYBE"
 },
 {
 "title": "Strangers with Candy",
@@ -6000,6 +7300,26 @@
 "status": "FOUND"
 },
 {
+"title": "TaleSpin",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1990,
+1991
+],
+"guide_episodes": 65,
+"items": 3,
+"maybe": 0,
+"files": 129,
+"hours": 50,
+"episodes": 60,
+"other_files": 1,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 158,
+"status": "FOUND"
+},
+{
 "title": "Talk Soup",
 "pri": 1,
 "type": "other",
@@ -6038,6 +7358,66 @@
 "held_elsewhere_items": 7,
 "held_elsewhere_files": 8,
 "status": "THIN"
+},
+{
+"title": "Taz-mania",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1991,
+1991
+],
+"guide_episodes": 121,
+"items": 3,
+"maybe": 2,
+"files": 70,
+"hours": 24,
+"episodes": 0,
+"other_files": 65,
+"held_elsewhere_items": 29,
+"held_elsewhere_files": 216,
+"status": "FOUND"
+},
+{
+"title": "Teamo Supremo",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+2002,
+2004
+],
+"guide_episodes": 39,
+"items": 1,
+"maybe": 0,
+"files": 13,
+"hours": 5,
+"episodes": 13,
+"other_files": 0,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 64,
+"status": "FOUND"
+},
+{
+"title": "Teen Angel",
+"pri": 1,
+"type": "sitcom",
+"net": "",
+"years": [
+1997,
+1997
+],
+"guide_episodes": 17,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 61,
+"status": "HELD"
 },
 {
 "title": "Teen Summit",
@@ -6118,6 +7498,46 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MAYBE"
+},
+{
+"title": "The Adventures of Pete & Pete",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1993,
+1993
+],
+"guide_episodes": 34,
+"items": 1,
+"maybe": 1,
+"files": 2,
+"hours": 1,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 40,
+"held_elsewhere_files": 380,
+"status": "MAYBE"
+},
+{
+"title": "The Amanda Show",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1999,
+1999
+],
+"guide_episodes": 40,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "The Amazing Race",
@@ -6255,8 +7675,8 @@
 "hours": 23,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 140,
-"held_elsewhere_files": 524,
+"held_elsewhere_items": 142,
+"held_elsewhere_files": 526,
 "status": "THIN"
 },
 {
@@ -6440,6 +7860,26 @@
 "status": "HELD"
 },
 {
+"title": "The Fairly OddParents",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+2001,
+2004
+],
+"guide_episodes": 89,
+"items": 7,
+"maybe": 6,
+"files": 139,
+"hours": 60,
+"episodes": 55,
+"other_files": 0,
+"held_elsewhere_items": 84,
+"held_elsewhere_files": 384,
+"status": "FOUND"
+},
+{
 "title": "The Hitchhiker",
 "pri": 1,
 "type": "drama",
@@ -6540,6 +7980,26 @@
 "status": "FOUND"
 },
 {
+"title": "The Journey of Allen Strange",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1997,
+2000
+],
+"guide_episodes": 57,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 44,
+"status": "HELD"
+},
+{
 "title": "The King of Queens",
 "pri": 1,
 "type": "sitcom",
@@ -6578,6 +8038,26 @@
 "held_elsewhere_items": 13,
 "held_elsewhere_files": 13,
 "status": "THIN"
+},
+{
+"title": "The Legend of Tarzan",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+2001,
+2003
+],
+"guide_episodes": 39,
+"items": 2,
+"maybe": 0,
+"files": 40,
+"hours": 15,
+"episodes": 35,
+"other_files": 1,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 140,
+"status": "FOUND"
 },
 {
 "title": "The Muppet Show",
@@ -6740,6 +8220,26 @@
 "status": "FOUND"
 },
 {
+"title": "The Ren & Stimpy Show",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1991,
+1995
+],
+"guide_episodes": 0,
+"items": 13,
+"maybe": 1,
+"files": 113,
+"hours": 31,
+"episodes": 100,
+"other_files": 11,
+"held_elsewhere_items": 108,
+"held_elsewhere_files": 497,
+"status": "FOUND"
+},
+{
 "title": "The Rosie O'Donnell Show",
 "pri": 1,
 "type": "talk",
@@ -6757,6 +8257,26 @@
 "other_files": 32,
 "held_elsewhere_items": 24,
 "held_elsewhere_files": 24,
+"status": "FOUND"
+},
+{
+"title": "The Secret World of Alex Mack",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1994,
+1994
+],
+"guide_episodes": 78,
+"items": 3,
+"maybe": 0,
+"files": 234,
+"hours": 95,
+"episodes": 78,
+"other_files": 0,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 183,
 "status": "FOUND"
 },
 {
@@ -6860,6 +8380,26 @@
 "status": "HELD"
 },
 {
+"title": "The Tick",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1988,
+2004
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
+},
+{
 "title": "The View",
 "pri": 1,
 "type": "talk",
@@ -6878,6 +8418,46 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
+},
+{
+"title": "The Weekenders",
+"pri": 1,
+"type": "kids",
+"net": "abc",
+"years": [
+2000,
+2004
+],
+"guide_episodes": 78,
+"items": 1,
+"maybe": 0,
+"files": 73,
+"hours": 14,
+"episodes": 51,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "FOUND"
+},
+{
+"title": "The Wild Thornberrys",
+"pri": 1,
+"type": "kids",
+"net": "nickelodeon",
+"years": [
+1998,
+2004
+],
+"guide_episodes": 91,
+"items": 4,
+"maybe": 2,
+"files": 95,
+"hours": 41,
+"episodes": 0,
+"other_files": 2,
+"held_elsewhere_items": 24,
+"held_elsewhere_files": 53,
+"status": "THIN"
 },
 {
 "title": "The Wire",
@@ -6935,8 +8515,8 @@
 "hours": 8,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 82,
-"held_elsewhere_files": 285,
+"held_elsewhere_items": 88,
+"held_elsewhere_files": 311,
 "status": "MAYBE"
 },
 {
@@ -7000,6 +8580,26 @@
 "status": "THIN"
 },
 {
+"title": "Timon & Pumbaa",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1995,
+1999
+],
+"guide_episodes": 169,
+"items": 2,
+"maybe": 0,
+"files": 217,
+"hours": 61,
+"episodes": 139,
+"other_files": 0,
+"held_elsewhere_items": 73,
+"held_elsewhere_files": 851,
+"status": "FOUND"
+},
+{
 "title": "Today",
 "pri": 1,
 "type": "morning",
@@ -7038,6 +8638,26 @@
 "held_elsewhere_items": 31,
 "held_elsewhere_files": 93,
 "status": "FOUND"
+},
+{
+"title": "Toonsylvania",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1998,
+1999
+],
+"guide_episodes": 19,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Top 20 Video Countdown",
@@ -7180,6 +8800,26 @@
 "status": "HELD"
 },
 {
+"title": "Two of a Kind",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1998,
+1999
+],
+"guide_episodes": 22,
+"items": 2,
+"maybe": 0,
+"files": 3,
+"hours": 1,
+"episodes": 1,
+"other_files": 2,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 75,
+"status": "THIN"
+},
+{
 "title": "USA Cartoon Express",
 "pri": 1,
 "type": "kids",
@@ -7235,8 +8875,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 77,
-"held_elsewhere_files": 133,
+"held_elsewhere_items": 78,
+"held_elsewhere_files": 181,
 "status": "HELD"
 },
 {
@@ -7300,6 +8940,26 @@
 "status": "HELD"
 },
 {
+"title": "VR Troopers",
+"pri": 1,
+"type": "kids",
+"net": "",
+"years": [
+1994,
+1996
+],
+"guide_episodes": 0,
+"items": 3,
+"maybe": 2,
+"files": 92,
+"hours": 33,
+"episodes": 1,
+"other_files": 0,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 166,
+"status": "THIN"
+},
+{
 "title": "Veronica Mars",
 "pri": 1,
 "type": "drama",
@@ -7329,15 +8989,15 @@
 1992
 ],
 "guide_episodes": 33,
-"items": 2,
-"maybe": 2,
-"files": 8,
-"hours": 4,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 40,
-"held_elsewhere_files": 99,
-"status": "MAYBE"
+"held_elsewhere_items": 76,
+"held_elsewhere_files": 141,
+"status": "HELD"
 },
 {
 "title": "Video Soul",
@@ -7435,8 +9095,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 221,
-"held_elsewhere_files": 365,
+"held_elsewhere_items": 222,
+"held_elsewhere_files": 366,
 "status": "MAYBE"
 },
 {
@@ -7455,8 +9115,8 @@
 "hours": 10,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 34,
-"held_elsewhere_files": 296,
+"held_elsewhere_items": 36,
+"held_elsewhere_files": 400,
 "status": "THIN"
 },
 {
@@ -7540,6 +9200,46 @@
 "status": "MAYBE"
 },
 {
+"title": "Where I Live",
+"pri": 1,
+"type": "sitcom",
+"net": "abc",
+"years": [
+1993,
+1993
+],
+"guide_episodes": 14,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 19,
+"status": "HELD"
+},
+{
+"title": "Where's Waldo?",
+"pri": 1,
+"type": "other",
+"net": "",
+"years": [
+1991,
+1991
+],
+"guide_episodes": 13,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 16,
+"status": "HELD"
+},
+{
 "title": "Who's the Boss?",
 "pri": 1,
 "type": "sitcom",
@@ -7575,8 +9275,8 @@
 "hours": 185,
 "episodes": 0,
 "other_files": 209,
-"held_elsewhere_items": 9,
-"held_elsewhere_files": 9,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 10,
 "status": "FOUND"
 },
 {
@@ -7740,6 +9440,26 @@
 "status": "THIN"
 },
 {
+"title": "X-Men",
+"pri": 1,
+"type": "kids",
+"net": "fox",
+"years": [
+1992,
+1997
+],
+"guide_episodes": 76,
+"items": 1,
+"maybe": 1,
+"files": 2,
+"hours": 3,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MAYBE"
+},
+{
 "title": "X-Play",
 "pri": 1,
 "type": "tech",
@@ -7749,14 +9469,14 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 7,
-"maybe": 4,
-"files": 436,
-"hours": 190,
+"items": 4,
+"maybe": 3,
+"files": 130,
+"hours": 53,
 "episodes": 0,
-"other_files": 190,
-"held_elsewhere_items": 25,
-"held_elsewhere_files": 187,
+"other_files": 126,
+"held_elsewhere_items": 40,
+"held_elsewhere_files": 360,
 "status": "FOUND"
 },
 {
@@ -7778,6 +9498,26 @@
 "held_elsewhere_items": 26,
 "held_elsewhere_files": 99,
 "status": "FOUND"
+},
+{
+"title": "You Wish",
+"pri": 1,
+"type": "sitcom",
+"net": "",
+"years": [
+1984,
+1997
+],
+"guide_episodes": 0,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
+"episodes": 0,
+"other_files": 0,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 39,
+"status": "HELD"
 },
 {
 "title": "Zoids",
@@ -7935,8 +9675,8 @@
 "hours": 8,
 "episodes": 3,
 "other_files": 4,
-"held_elsewhere_items": 37,
-"held_elsewhere_files": 39,
+"held_elsewhere_items": 38,
+"held_elsewhere_files": 40,
 "status": "FOUND"
 },
 {
@@ -8575,8 +10315,8 @@
 "hours": 10,
 "episodes": 1,
 "other_files": 2,
-"held_elsewhere_items": 45,
-"held_elsewhere_files": 55,
+"held_elsewhere_items": 46,
+"held_elsewhere_files": 56,
 "status": "THIN"
 },
 {
@@ -9100,26 +10840,6 @@
 "status": "MISSING"
 },
 {
-"title": "Boy Meets World",
-"pri": 2,
-"type": "sitcom",
-"net": "",
-"years": [
-1993,
-1993
-],
-"guide_episodes": 158,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 62,
-"status": "HELD"
-},
-{
 "title": "Brothers",
 "pri": 2,
 "type": "sitcom",
@@ -9329,14 +11049,14 @@
 2004
 ],
 "guide_episodes": 0,
-"items": 3,
-"maybe": 2,
-"files": 289,
-"hours": 398,
+"items": 1,
+"maybe": 0,
+"files": 287,
+"hours": 396,
 "episodes": 0,
 "other_files": 275,
-"held_elsewhere_items": 30,
-"held_elsewhere_files": 92,
+"held_elsewhere_items": 61,
+"held_elsewhere_files": 127,
 "status": "FOUND"
 },
 {
@@ -9535,8 +11255,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 18,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 20,
 "status": "HELD"
 },
 {
@@ -9558,26 +11278,6 @@
 "held_elsewhere_items": 12,
 "held_elsewhere_files": 12,
 "status": "MAYBE"
-},
-{
-"title": "Clarissa Explains It All",
-"pri": 2,
-"type": "kids",
-"net": "nickelodeon",
-"years": [
-1991,
-1994
-],
-"guide_episodes": 65,
-"items": 2,
-"maybe": 1,
-"files": 66,
-"hours": 29,
-"episodes": 44,
-"other_files": 0,
-"held_elsewhere_items": 9,
-"held_elsewhere_files": 138,
-"status": "FOUND"
 },
 {
 "title": "Clash of the Champions",
@@ -10035,8 +11735,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 44,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 64,
 "status": "HELD"
 },
 {
@@ -10855,8 +12555,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 23,
-"held_elsewhere_files": 45,
+"held_elsewhere_items": 26,
+"held_elsewhere_files": 48,
 "status": "HELD"
 },
 {
@@ -10980,26 +12680,6 @@
 "status": "MISSING"
 },
 {
-"title": "Going Places",
-"pri": 2,
-"type": "sitcom",
-"net": "",
-"years": [
-1990,
-1990
-],
-"guide_episodes": 19,
-"items": 4,
-"maybe": 4,
-"files": 5,
-"hours": 3,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 55,
-"status": "MAYBE"
-},
-{
 "title": "Goodwill Games (1986)",
 "pri": 2,
 "type": "sports",
@@ -11018,26 +12698,6 @@
 "held_elsewhere_items": 2,
 "held_elsewhere_files": 2,
 "status": "HELD"
-},
-{
-"title": "Goof Troop",
-"pri": 2,
-"type": "kids",
-"net": "",
-"years": [
-1992,
-1992
-],
-"guide_episodes": 65,
-"items": 1,
-"maybe": 0,
-"files": 1,
-"hours": 1,
-"episodes": 0,
-"other_files": 1,
-"held_elsewhere_items": 26,
-"held_elsewhere_files": 57,
-"status": "THIN"
 },
 {
 "title": "Grammy Awards",
@@ -11349,14 +13009,14 @@
 2004
 ],
 "guide_episodes": 52,
-"items": 85,
-"maybe": 78,
-"files": 169,
+"items": 84,
+"maybe": 77,
+"files": 168,
 "hours": 73,
 "episodes": 0,
 "other_files": 14,
-"held_elsewhere_items": 18,
-"held_elsewhere_files": 181,
+"held_elsewhere_items": 24,
+"held_elsewhere_files": 187,
 "status": "FOUND"
 },
 {
@@ -11475,8 +13135,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 3,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
 "status": "HELD"
 },
 {
@@ -11555,8 +13215,8 @@
 "hours": 216,
 "episodes": 1,
 "other_files": 70,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 19,
 "status": "FOUND"
 },
 {
@@ -11735,8 +13395,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 37,
-"held_elsewhere_files": 129,
+"held_elsewhere_items": 40,
+"held_elsewhere_files": 132,
 "status": "THIN"
 },
 {
@@ -12635,8 +14295,8 @@
 "hours": 219,
 "episodes": 51,
 "other_files": 84,
-"held_elsewhere_items": 159,
-"held_elsewhere_files": 437,
+"held_elsewhere_items": 160,
+"held_elsewhere_files": 438,
 "status": "FOUND"
 },
 {
@@ -12737,26 +14397,6 @@
 "other_files": 0,
 "held_elsewhere_items": 3,
 "held_elsewhere_files": 84,
-"status": "HELD"
-},
-{
-"title": "Muppets Tonight",
-"pri": 2,
-"type": "sitcom",
-"net": "",
-"years": [
-1996,
-1996
-],
-"guide_episodes": 22,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 104,
 "status": "HELD"
 },
 {
@@ -13175,8 +14815,8 @@
 "hours": 56,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 33,
-"held_elsewhere_files": 34,
+"held_elsewhere_items": 68,
+"held_elsewhere_files": 69,
 "status": "MAYBE"
 },
 {
@@ -13355,8 +14995,8 @@
 "hours": 38,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "MAYBE"
 },
 {
@@ -13698,46 +15338,6 @@
 "held_elsewhere_items": 5,
 "held_elsewhere_files": 64,
 "status": "FOUND"
-},
-{
-"title": "Power Rangers Turbo",
-"pri": 2,
-"type": "kids",
-"net": "fox",
-"years": [
-1997,
-1997
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 52,
-"held_elsewhere_files": 99,
-"status": "HELD"
-},
-{
-"title": "Power Rangers in Space",
-"pri": 2,
-"type": "kids",
-"net": "fox",
-"years": [
-1998,
-1998
-],
-"guide_episodes": 0,
-"items": 1,
-"maybe": 0,
-"files": 1,
-"hours": 1,
-"episodes": 0,
-"other_files": 1,
-"held_elsewhere_items": 35,
-"held_elsewhere_files": 121,
-"status": "THIN"
 },
 {
 "title": "Prevue Guide",
@@ -14420,26 +16020,6 @@
 "status": "MISSING"
 },
 {
-"title": "Roundhouse",
-"pri": 2,
-"type": "kids",
-"net": "",
-"years": [
-1985,
-1993
-],
-"guide_episodes": 0,
-"items": 1,
-"maybe": 0,
-"files": 1,
-"hours": 0,
-"episodes": 0,
-"other_files": 1,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "THIN"
-},
-{
 "title": "Royal Rumble",
 "pri": 2,
 "type": "special",
@@ -14458,26 +16038,6 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
-},
-{
-"title": "Rugrats",
-"pri": 2,
-"type": "kids",
-"net": "",
-"years": [
-1994,
-2004
-],
-"guide_episodes": 0,
-"items": 8,
-"maybe": 8,
-"files": 12,
-"hours": 5,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MAYBE"
 },
 {
 "title": "Russian Roulette",
@@ -14535,29 +16095,9 @@
 "hours": 6,
 "episodes": 0,
 "other_files": 32,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 31,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 62,
 "status": "FOUND"
-},
-{
-"title": "Sabrina the Teenage Witch",
-"pri": 2,
-"type": "sitcom",
-"net": "",
-"years": [
-1996,
-1996
-],
-"guide_episodes": 163,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 71,
-"status": "HELD"
 },
 {
 "title": "Sagwa, the Chinese Siamese Cat",
@@ -14575,8 +16115,8 @@
 "hours": 0,
 "episodes": 1,
 "other_files": 0,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 166,
+"held_elsewhere_items": 12,
+"held_elsewhere_files": 206,
 "status": "THIN"
 },
 {
@@ -14635,8 +16175,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 13,
-"held_elsewhere_files": 17,
+"held_elsewhere_items": 20,
+"held_elsewhere_files": 24,
 "status": "HELD"
 },
 {
@@ -15597,26 +17137,6 @@
 "other_files": 0,
 "held_elsewhere_items": 1,
 "held_elsewhere_files": 1,
-"status": "HELD"
-},
-{
-"title": "Teen Angel",
-"pri": 2,
-"type": "sitcom",
-"net": "",
-"years": [
-1997,
-1997
-],
-"guide_episodes": 17,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 61,
 "status": "HELD"
 },
 {
@@ -16735,8 +18255,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 33,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 63,
 "status": "HELD"
 },
 {
@@ -16835,8 +18355,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 14,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 15,
 "status": "HELD"
 },
 {
@@ -17069,15 +18589,15 @@
 1992
 ],
 "guide_episodes": 65,
-"items": 1,
-"maybe": 1,
-"files": 65,
-"hours": 26,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 60,
-"status": "MAYBE"
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 125,
+"status": "HELD"
 },
 {
 "title": "The Rifleman",
@@ -17118,26 +18638,6 @@
 "held_elsewhere_items": 57,
 "held_elsewhere_files": 58,
 "status": "HELD"
-},
-{
-"title": "The Secret World of Alex Mack",
-"pri": 2,
-"type": "kids",
-"net": "",
-"years": [
-1994,
-1994
-],
-"guide_episodes": 78,
-"items": 3,
-"maybe": 0,
-"files": 234,
-"hours": 95,
-"episodes": 78,
-"other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 183,
-"status": "FOUND"
 },
 {
 "title": "The Sentinel",
@@ -17260,26 +18760,6 @@
 "status": "THIN"
 },
 {
-"title": "The Tick",
-"pri": 2,
-"type": "kids",
-"net": "",
-"years": [
-1988,
-2004
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
-},
-{
 "title": "The Undersea World of Jacques Cousteau",
 "pri": 2,
 "type": "doc",
@@ -17295,8 +18775,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 10,
-"held_elsewhere_files": 21,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 58,
 "status": "HELD"
 },
 {
@@ -17375,8 +18855,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 145,
-"held_elsewhere_files": 158,
+"held_elsewhere_items": 146,
+"held_elsewhere_files": 159,
 "status": "HELD"
 },
 {
@@ -18680,26 +20160,6 @@
 "status": "FOUND"
 },
 {
-"title": "You Wish",
-"pri": 2,
-"type": "sitcom",
-"net": "",
-"years": [
-1984,
-1997
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 39,
-"status": "HELD"
-},
-{
 "title": "Zorro (1990)",
 "pri": 2,
 "type": "drama",
@@ -18775,8 +20235,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 386,
-"held_elsewhere_files": 461,
+"held_elsewhere_items": 396,
+"held_elsewhere_files": 471,
 "status": "MAYBE"
 },
 {
@@ -19320,26 +20780,6 @@
 "status": "MISSING"
 },
 {
-"title": "All That",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1994,
-1994
-],
-"guide_episodes": 151,
-"items": 11,
-"maybe": 3,
-"files": 144,
-"hours": 58,
-"episodes": 110,
-"other_files": 0,
-"held_elsewhere_items": 114,
-"held_elsewhere_files": 615,
-"status": "FOUND"
-},
-{
 "title": "All-new Dennis the Menace",
 "pri": 3,
 "type": "other",
@@ -19395,8 +20835,8 @@
 "hours": 83,
 "episodes": 1,
 "other_files": 0,
-"held_elsewhere_items": 76,
-"held_elsewhere_files": 395,
+"held_elsewhere_items": 77,
+"held_elsewhere_files": 396,
 "status": "THIN"
 },
 {
@@ -20035,8 +21475,8 @@
 "hours": 95,
 "episodes": 0,
 "other_files": 90,
-"held_elsewhere_items": 34,
-"held_elsewhere_files": 94,
+"held_elsewhere_items": 36,
+"held_elsewhere_files": 96,
 "status": "FOUND"
 },
 {
@@ -20297,26 +21737,6 @@
 "other_files": 2,
 "held_elsewhere_items": 1,
 "held_elsewhere_files": 1,
-"status": "FOUND"
-},
-{
-"title": "Bobby's World",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1990,
-1998
-],
-"guide_episodes": 80,
-"items": 1,
-"maybe": 0,
-"files": 81,
-"hours": 29,
-"episodes": 80,
-"other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 63,
 "status": "FOUND"
 },
 {
@@ -21000,26 +22420,6 @@
 "status": "MISSING"
 },
 {
-"title": "Camp Wilder",
-"pri": 3,
-"type": "sitcom",
-"net": "abc",
-"years": [
-1992,
-1993
-],
-"guide_episodes": 19,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 19,
-"status": "HELD"
-},
-{
 "title": "Can't Hurry Love",
 "pri": 3,
 "type": "sitcom",
@@ -21680,26 +23080,6 @@
 "status": "FOUND"
 },
 {
-"title": "Clueless",
-"pri": 3,
-"type": "sitcom",
-"net": "abc",
-"years": [
-1996,
-1999
-],
-"guide_episodes": 62,
-"items": 1,
-"maybe": 0,
-"files": 76,
-"hours": 27,
-"episodes": 61,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "FOUND"
-},
-{
 "title": "Cobra",
 "pri": 3,
 "type": "drama",
@@ -22295,8 +23675,8 @@
 "hours": 109,
 "episodes": 36,
 "other_files": 2,
-"held_elsewhere_items": 17,
-"held_elsewhere_files": 265,
+"held_elsewhere_items": 18,
+"held_elsewhere_files": 266,
 "status": "FOUND"
 },
 {
@@ -22635,8 +24015,8 @@
 "hours": 82,
 "episodes": 0,
 "other_files": 43,
-"held_elsewhere_items": 17,
-"held_elsewhere_files": 25,
+"held_elsewhere_items": 18,
+"held_elsewhere_files": 26,
 "status": "FOUND"
 },
 {
@@ -24035,8 +25415,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 9,
-"held_elsewhere_files": 9,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 10,
 "status": "HELD"
 },
 {
@@ -24055,8 +25435,8 @@
 "hours": 24,
 "episodes": 0,
 "other_files": 5,
-"held_elsewhere_items": 135,
-"held_elsewhere_files": 158,
+"held_elsewhere_items": 136,
+"held_elsewhere_files": 159,
 "status": "FOUND"
 },
 {
@@ -24175,8 +25555,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 51,
-"held_elsewhere_files": 445,
+"held_elsewhere_items": 52,
+"held_elsewhere_files": 446,
 "status": "HELD"
 },
 {
@@ -24229,35 +25609,15 @@
 1989
 ],
 "guide_episodes": 363,
-"items": 5,
-"maybe": 1,
-"files": 5,
-"hours": 3,
+"items": 4,
+"maybe": 0,
+"files": 4,
+"hours": 2,
 "episodes": 0,
 "other_files": 4,
-"held_elsewhere_items": 61,
-"held_elsewhere_files": 703,
+"held_elsewhere_items": 62,
+"held_elsewhere_files": 704,
 "status": "THIN"
-},
-{
-"title": "Gargoyles",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1994,
-1994
-],
-"guide_episodes": 78,
-"items": 2,
-"maybe": 1,
-"files": 142,
-"hours": 53,
-"episodes": 78,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "FOUND"
 },
 {
 "title": "Gary & Mike",
@@ -24358,26 +25718,6 @@
 "held_elsewhere_items": 3,
 "held_elsewhere_files": 25,
 "status": "MAYBE"
-},
-{
-"title": "Getting By",
-"pri": 3,
-"type": "sitcom",
-"net": "abc",
-"years": [
-1993,
-1994
-],
-"guide_episodes": 31,
-"items": 1,
-"maybe": 0,
-"files": 25,
-"hours": 10,
-"episodes": 24,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "FOUND"
 },
 {
 "title": "Ghost Stories",
@@ -27355,8 +28695,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 26,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 27,
 "status": "HELD"
 },
 {
@@ -29335,8 +30675,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "HELD"
 },
 {
@@ -29795,8 +31135,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 3,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 23,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 24,
 "status": "THIN"
 },
 {
@@ -29915,8 +31255,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 22,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 23,
 "status": "HELD"
 },
 {
@@ -30078,26 +31418,6 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
-},
-{
-"title": "On Our Own",
-"pri": 3,
-"type": "sitcom",
-"net": "abc",
-"years": [
-1994,
-1995
-],
-"guide_episodes": 20,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 30,
-"status": "HELD"
 },
 {
 "title": "One Big Family",
@@ -30415,8 +31735,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 8,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 9,
 "status": "HELD"
 },
 {
@@ -30515,8 +31835,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -30875,8 +32195,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 84,
+"held_elsewhere_items": 12,
+"held_elsewhere_files": 85,
 "status": "HELD"
 },
 {
@@ -31035,8 +32355,8 @@
 "hours": 9,
 "episodes": 13,
 "other_files": 13,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 2,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
 "status": "FOUND"
 },
 {
@@ -31095,8 +32415,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 3,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
 "status": "MAYBE"
 },
 {
@@ -31449,15 +32769,15 @@
 1992
 ],
 "guide_episodes": 12,
-"items": 1,
-"maybe": 1,
-"files": 3,
-"hours": 1,
+"items": 0,
+"maybe": 0,
+"files": 0,
+"hours": 0,
 "episodes": 0,
 "other_files": 0,
 "held_elsewhere_items": 12,
 "held_elsewhere_files": 35,
-"status": "MAYBE"
+"status": "HELD"
 },
 {
 "title": "Ready Set Learn!",
@@ -31518,26 +32838,6 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
-},
-{
-"title": "Recess",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1997,
-1997
-],
-"guide_episodes": 127,
-"items": 2,
-"maybe": 0,
-"files": 201,
-"hours": 57,
-"episodes": 124,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "FOUND"
 },
 {
 "title": "Reggie Jackson's World of Sports",
@@ -32775,8 +34075,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 12,
+"held_elsewhere_items": 13,
+"held_elsewhere_files": 13,
 "status": "HELD"
 },
 {
@@ -32815,8 +34115,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 12,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 19,
 "status": "HELD"
 },
 {
@@ -33100,26 +34400,6 @@
 "status": "HELD"
 },
 {
-"title": "Space Cases",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1996,
-1996
-],
-"guide_episodes": 26,
-"items": 1,
-"maybe": 0,
-"files": 1,
-"hours": 0,
-"episodes": 1,
-"other_files": 0,
-"held_elsewhere_items": 10,
-"held_elsewhere_files": 117,
-"status": "THIN"
-},
-{
 "title": "Space Cats",
 "pri": 3,
 "type": "kids",
@@ -33238,26 +34518,6 @@
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
 "status": "MISSING"
-},
-{
-"title": "Spider-man Unlimited",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-2001,
-2001
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 67,
-"status": "HELD"
 },
 {
 "title": "Spider-man and His Amazing Friends",
@@ -33380,26 +34640,6 @@
 "status": "FOUND"
 },
 {
-"title": "Step by Step",
-"pri": 3,
-"type": "sitcom",
-"net": "",
-"years": [
-1991,
-1991
-],
-"guide_episodes": 160,
-"items": 2,
-"maybe": 2,
-"files": 2,
-"hours": 1,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 42,
-"held_elsewhere_files": 135,
-"status": "MAYBE"
-},
-{
 "title": "Steve Harvey's Big Time",
 "pri": 3,
 "type": "other",
@@ -33455,9 +34695,9 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 2,
+"status": "HELD"
 },
 {
 "title": "Strange Days at Blake Holsey High",
@@ -34000,26 +35240,6 @@
 "status": "HELD"
 },
 {
-"title": "Taz-mania",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1991,
-1991
-],
-"guide_episodes": 121,
-"items": 3,
-"maybe": 2,
-"files": 70,
-"hours": 24,
-"episodes": 0,
-"other_files": 65,
-"held_elsewhere_items": 29,
-"held_elsewhere_files": 216,
-"status": "FOUND"
-},
-{
 "title": "Teen Win, Lose or Draw",
 "pri": 3,
 "type": "game",
@@ -34055,8 +35275,8 @@
 "hours": 28,
 "episodes": 25,
 "other_files": 1,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 6,
 "status": "FOUND"
 },
 {
@@ -34375,29 +35595,9 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 67,
-"held_elsewhere_files": 752,
+"held_elsewhere_items": 68,
+"held_elsewhere_files": 754,
 "status": "THIN"
-},
-{
-"title": "The Adventures of Pete & Pete",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1993,
-1993
-],
-"guide_episodes": 34,
-"items": 1,
-"maybe": 1,
-"files": 2,
-"hours": 1,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 40,
-"held_elsewhere_files": 380,
-"status": "MAYBE"
 },
 {
 "title": "The Adventures of Sam & Max: Freelance Police",
@@ -34489,26 +35689,6 @@
 1987
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
-},
-{
-"title": "The Amanda Show",
-"pri": 3,
-"type": "kids",
-"net": "",
-"years": [
-1999,
-1999
-],
-"guide_episodes": 40,
 "items": 0,
 "maybe": 0,
 "files": 0,
@@ -34655,8 +35835,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 7,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 8,
 "status": "HELD"
 },
 {
@@ -34795,8 +35975,8 @@
 "hours": 29,
 "episodes": 0,
 "other_files": 20,
-"held_elsewhere_items": 10,
-"held_elsewhere_files": 10,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 11,
 "status": "FOUND"
 },
 {
@@ -36135,8 +37315,8 @@
 "hours": 55,
 "episodes": 66,
 "other_files": 0,
-"held_elsewhere_items": 27,
-"held_elsewhere_files": 88,
+"held_elsewhere_items": 28,
+"held_elsewhere_files": 89,
 "status": "FOUND"
 },
 {
@@ -36195,8 +37375,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 191,
-"held_elsewhere_files": 959,
+"held_elsewhere_items": 192,
+"held_elsewhere_files": 1011,
 "status": "MAYBE"
 },
 {
@@ -37615,8 +38795,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 76,
-"held_elsewhere_files": 753,
+"held_elsewhere_items": 110,
+"held_elsewhere_files": 1111,
 "status": "HELD"
 },
 {
@@ -38735,8 +39915,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "HELD"
 },
 {
@@ -39275,8 +40455,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
 "status": "HELD"
 },
 {
@@ -39797,26 +40977,6 @@
 "other_files": 0,
 "held_elsewhere_items": 4,
 "held_elsewhere_files": 4,
-"status": "HELD"
-},
-{
-"title": "Where's Waldo?",
-"pri": 3,
-"type": "other",
-"net": "",
-"years": [
-1991,
-1991
-],
-"guide_episodes": 13,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 16,
 "status": "HELD"
 },
 {
@@ -40578,26 +41738,6 @@
 "held_elsewhere_items": 1,
 "held_elsewhere_files": 1,
 "status": "HELD"
-},
-{
-"title": "101 Dalmatians: The Series",
-"pri": 4,
-"type": "kids",
-"net": "abc",
-"years": [
-1998,
-1998
-],
-"guide_episodes": 65,
-"items": 2,
-"maybe": 0,
-"files": 67,
-"hours": 25,
-"episodes": 2,
-"other_files": 65,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 86,
-"status": "FOUND"
 },
 {
 "title": "12 Angry Viewers",
@@ -41580,26 +42720,6 @@
 "status": "MAYBE"
 },
 {
-"title": "Adventures of the Gummi Bears",
-"pri": 4,
-"type": "kids",
-"net": "abc",
-"years": [
-1991,
-1991
-],
-"guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 17,
-"held_elsewhere_files": 298,
-"status": "HELD"
-},
-{
 "title": "African Skies",
 "pri": 4,
 "type": "drama",
@@ -42035,8 +43155,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 16,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 17,
 "status": "HELD"
 },
 {
@@ -43769,15 +44889,15 @@
 1996
 ],
 "guide_episodes": 0,
-"items": 1,
+"items": 0,
 "maybe": 0,
-"files": 1,
+"files": 0,
 "hours": 0,
 "episodes": 0,
-"other_files": 1,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "THIN"
+"other_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
 },
 {
 "title": "Beyond the Glory",
@@ -45175,8 +46295,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 18,
-"held_elsewhere_files": 50,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 55,
 "status": "HELD"
 },
 {
@@ -47875,8 +48995,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "HELD"
 },
 {
@@ -52375,8 +53495,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -55075,8 +56195,8 @@
 "hours": 8,
 "episodes": 0,
 "other_files": 4,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
 "status": "FOUND"
 },
 {
@@ -62775,9 +63895,9 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 0,
-"held_elsewhere_files": 0,
-"status": "MISSING"
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
+"status": "HELD"
 },
 {
 "title": "Random Play",
@@ -62975,8 +64095,8 @@
 "hours": 4,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 9,
-"held_elsewhere_files": 11,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 13,
 "status": "MAYBE"
 },
 {
@@ -63820,26 +64940,6 @@
 "status": "FOUND"
 },
 {
-"title": "Sabrina: The Animated Series",
-"pri": 4,
-"type": "kids",
-"net": "abc",
-"years": [
-1999,
-1999
-],
-"guide_episodes": 65,
-"items": 4,
-"maybe": 0,
-"files": 139,
-"hours": 54,
-"episodes": 65,
-"other_files": 1,
-"held_elsewhere_items": 23,
-"held_elsewhere_files": 266,
-"status": "FOUND"
-},
-{
 "title": "Sail Away",
 "pri": 4,
 "type": "other",
@@ -63935,8 +65035,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 3,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
 "status": "THIN"
 },
 {
@@ -66335,8 +67435,8 @@
 "hours": 7,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 7,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 9,
 "status": "MAYBE"
 },
 {
@@ -72755,8 +73855,8 @@
 "hours": 6,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 58,
-"held_elsewhere_files": 68,
+"held_elsewhere_items": 62,
+"held_elsewhere_files": 212,
 "status": "MAYBE"
 },
 {
@@ -76435,8 +77535,8 @@
 "hours": 6,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 29,
-"held_elsewhere_files": 163,
+"held_elsewhere_items": 30,
+"held_elsewhere_files": 164,
 "status": "THIN"
 },
 {
@@ -78255,8 +79355,8 @@
 "hours": 8,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 52,
-"held_elsewhere_files": 69,
+"held_elsewhere_items": 54,
+"held_elsewhere_files": 71,
 "status": "THIN"
 },
 {
@@ -78275,8 +79375,8 @@
 "hours": 5,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "MAYBE"
 },
 {
@@ -78315,8 +79415,8 @@
 "hours": 4,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 32,
-"held_elsewhere_files": 37,
+"held_elsewhere_items": 33,
+"held_elsewhere_files": 38,
 "status": "THIN"
 },
 {
@@ -78355,8 +79455,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 7,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 8,
 "status": "HELD"
 },
 {
