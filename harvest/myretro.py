@@ -56,9 +56,13 @@ def perms(site):
         st2, b = http('https://%s.myretrotvs.com/%s' % (site, js), tries=4, timeout=60)
         if st2 != 200:
             continue
-        m = re.search(r'map\(\w=>\w\[\w\]\)\.join\(""\)\}\}\}\((\[\[[\d,\[\]]+\]\])\)', b.decode('utf-8', 'replace'))
+        t = b.decode('utf-8', 'replace')
+        cands = re.findall(r'map\(\w=>\w\[\w\]\)\.join\(""\)\}\}\}\((\[\[[\d,\[\]]+\]\])\)', t)
+        m = re.search(r'map\(\w=>\w\[\w\]\)\.join\(""\)\}\}\}\(([A-Za-z_$][\w$]*)\)', t)
         if m:
-            P = json.loads(m.group(1))
+            cands += re.findall(r'(?<![\w$.])' + re.escape(m.group(1)) + r'=(\[\[[\d,\[\]]+\]\])', t)
+        for c in cands:
+            P = json.loads(c)
             if P and all(sorted(x) == list(range(11)) for x in P):
                 return P
     return None
