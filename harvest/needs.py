@@ -913,6 +913,22 @@ def plan():
                     add(sh, i, it, v, nm, up=1 if v[0] == 'y' else 0); acc += 1; nup += 1; break
         print('UPLOADER', n, 'packs', cnt, 'items', len(hits), 'candidates', acc, flush=True)
     print('uploader candidates', nup, 'from', len(ups), 'uploaders', flush=True)
+    OFP = os.path.join(here, '..', 'catalog', 'offair.json.gz')
+    if os.path.exists(OFP):
+        nof = 0
+        for x in json.load(gzip.open(OFP, 'rt', encoding='utf-8')):
+            i = x['i']
+            if i in seen or i in mine: continue
+            it = {'identifier': i, 'title': x.get('t') or '', 'subject': x.get('s') or '', 'description': ' '.join(str(x.get('ds') or '').split())[:800], 'collection': x.get('c') or [], 'downloads': x.get('dl') or 0, 'date': x.get('d') or ''}
+            for k in x.get('k') or []:
+                sh = BYT.get(k)
+                if not sh or sh['title'] not in want or sh['type'] not in ('sitcom', 'drama', 'game', 'talk', 'kids', 'soap'): continue
+                if i in have and not (sh['full'] or have[i] in (30, 60)): continue
+                try: v = consider(sh, it, 'd')
+                except Exception: v = None
+                if v:
+                    add(sh, i, it, v, find(sh, flat(it.get('title')))[0] or sh['names'][0]); nof += 1; break
+        print('off-air candidates', nof, flush=True)
     for c in seen.values(): per[c['k']] += 1; c.pop('rk')
     cands = sorted(seen.values(), key=lambda x: (x['pri'], x['r'] != 't', -x['downloads']))
     print('candidates', len(cands), 'by route', sorted(collections.Counter(c['r'] for c in cands).items()), 'by pri', sorted(collections.Counter(c['pri'] for c in cands).items()), flush=True)
