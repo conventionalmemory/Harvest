@@ -1,0 +1,20 @@
+name: Thin channel search
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 harvest/thin_search.py
+      - run: python3 harvest/extra.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          git add catalog/extra.json.gz harvest/thin_ids.txt
+          git commit -m "Thin channel items" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 5; done

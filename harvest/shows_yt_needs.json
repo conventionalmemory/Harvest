@@ -8275,7 +8275,7 @@
 1989,
 1992
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Night Gallery",
@@ -8531,7 +8531,7 @@
 2001,
 2003
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Primetime Live",
@@ -10800,7 +10800,7 @@
 2002,
 2004
 ],
-"pri": 2
+"pri": 1
 },
 {
 "title": "Tracey Takes On...",
@@ -38505,7 +38505,7 @@
 2001,
 2001
 ],
-"pri": 4,
+"pri": 1,
 "strict": 1
 },
 {
@@ -48109,6 +48109,213 @@
 "tribute",
 "documentary",
 "interview clip"
+]
+},
+{
+"title": "Exit 57",
+"aka": [],
+"type": "sitcom",
+"net": "comedy central",
+"years": [
+1995,
+1996
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"highway",
+"exit 57 sign"
+]
+},
+{
+"title": "Upright Citizens Brigade",
+"aka": [
+"UCB Comedy Central"
+],
+"type": "sitcom",
+"net": "comedy central",
+"years": [
+1998,
+2000
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"ucb theatre",
+"asssscat",
+"improv 101"
+]
+},
+{
+"title": "The Kids in the Hall",
+"aka": [
+"Kids in the Hall"
+],
+"type": "sitcom",
+"net": "comedy central",
+"years": [
+1989,
+1995
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"death comes to town",
+"2022",
+"amazon",
+"reunion",
+"comedy punks"
+]
+},
+{
+"title": "Dr. Katz, Professional Therapist",
+"aka": [
+"Dr Katz Professional Therapist",
+"Dr. Katz"
+],
+"type": "sitcom",
+"net": "comedy central",
+"years": [
+1995,
+2002
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": []
+},
+{
+"title": "Insomniac with Dave Attell",
+"aka": [
+"Insomniac Dave Attell"
+],
+"type": "late",
+"net": "comedy central",
+"years": [
+2001,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": []
+},
+{
+"title": "MXC",
+"aka": [
+"Most Extreme Elimination Challenge"
+],
+"type": "game",
+"net": "spike",
+"years": [
+2003,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"2005",
+"2006",
+"2007"
+]
+},
+{
+"title": "Iron Chef",
+"aka": [
+"Ryori no Tetsujin",
+"Iron Chef Food Network"
+],
+"type": "cook",
+"net": "food",
+"years": [
+1993,
+2002
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+2460,
+3300
+],
+[
+4800,
+7400
+]
+],
+"not": [
+"america",
+"iron chef usa",
+"gauntlet",
+"quest for an iron chef",
+"2005",
+"2006",
+"2007",
+"2008",
+"2009",
+"2010",
+"canada",
+"thailand",
+"vietnam",
+"uk"
 ]
 }
 ]

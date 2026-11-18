@@ -66,7 +66,7 @@ def meta(row):
     subj = ';'.join(subj) if isinstance(subj, list) else str(subj)
     if i in YH and q in ('horror', 'hhost', 'anime', 'toku', 'jgame', 'home', 'rubber', 'western', 'noir', 'serial', 'edu', 'cd', 'train', 'classic', 'nature', 'vad', 'vtr', 'jad', 'aad') and (not d or abs(int(d[:4]) - YH[i]) > 1): d = str(YH[i]) if YH[i] < 2025 else d
     return {'i': i, 'q': q, 'yh': YH.get(i, 0), 't': t[:200], 'd': d, 'y': str(m.get('year', '') or ''), 'c': col[:4], 's': subj[:200], 'ds': ' '.join(ds.split())[:400], 'f': files[:80], 'dl': 0}
-rows = [l.split() for l in open(os.path.join(here, 'extra_ids.txt')) if l.strip()]
+rows = [l.split() for f in ('extra_ids.txt', 'thin_ids.txt') if os.path.exists(os.path.join(here, f)) for l in open(os.path.join(here, f)) if l.strip()]
 YH = {r[1]: int(r[2]) for r in rows if len(r) > 2 and r[2].isdigit() and r[2] != '0'}
 rows = [(r[0], r[1]) for r in rows]
 with ThreadPoolExecutor(12) as ex: res = [r for r in ex.map(meta, rows) if r]
