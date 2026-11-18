@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
-      - run: BUDGET_MIN='${{ inputs.budget }}' GROUPS='${{ inputs.groups }}' MODE=lib python3 harvest/yt_realism.py
+      - run: BUDGET_MIN='${{ inputs.budget }}' YTGROUPS='${{ inputs.groups }}' MODE=lib python3 harvest/yt_realism.py
       - name: Commit
         run: |
           git config user.name "Conventional Memory"

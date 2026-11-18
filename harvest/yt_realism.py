@@ -4,7 +4,7 @@ import yt_events as E
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'catalog', 'yt_realism.json.gz')
 BUDGET = float(os.environ.get('BUDGET_MIN', '50')) * 60; T0 = time.time()
-GROUPS = [g for g in os.environ.get('GROUPS', 'promo,special,localnews,infomercial').split(',') if g]
+GROUPS = [g for g in os.environ.get('YTGROUPS', 'promo,special,localnews,infomercial').split(',') if g]
 BAD = re.compile(r"(?i)reaction|review|unboxing|tutorial|how to|then and now|minecraft|roblox|gmod|\bmod\b|blender|simulat|recreat|remake|parody|\bfake\b|\b20(0[5-9]|1\d|2\d)\b(?!\s*(remaster|upload|transfer))")
 Y = re.compile(r'(?<!\d)(19[89]\d|200[0-4])(?!\d)')
 MON = {m: i + 1 for i, m in enumerate(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'])}
