@@ -45,6 +45,7 @@ for n, (i, d) in enumerate(sorted(items.items())):
         for k, l in enumerate(lines):
             if KEEPRE.search(l): rec['hits'].append(' | '.join(x.strip() for x in lines[max(0, k - 1):k + 2])[:300])
         rec['hits'] = rec['hits'][:4000]
+        if os.environ.get('FULL') == '1': rec['txt'] = (rec.get('txt', '') + s)[:6000000]
     res[i] = rec
     if n % 20 == 0: print(n, i, rec.get('rf', 0), len(rec['hits']), flush=True)
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
