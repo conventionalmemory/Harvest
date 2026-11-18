@@ -48317,5 +48317,144 @@
 "vietnam",
 "uk"
 ]
+},
+{
+"title": "Highlander: The Series",
+"aka": [
+"Highlander The Series"
+],
+"type": "drama",
+"net": "syn",
+"years": [
+1992,
+1998
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+2460,
+3120
+],
+[
+4920,
+6000
+]
+],
+"not": [
+"the raven",
+"endgame",
+"the source",
+"immortals",
+"2007"
+]
+},
+{
+"title": "In Search of...",
+"aka": [
+"In Search Of Leonard Nimoy"
+],
+"type": "doc",
+"net": "syn",
+"years": [
+1977,
+1982
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1600
+]
+],
+"not": [
+"zachary quinto",
+"2018",
+"history channel 2002"
+]
+},
+{
+"title": "Square One Television",
+"aka": [
+"Square One TV"
+],
+"type": "kids",
+"net": "pbs",
+"years": [
+1987,
+1992
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1600,
+1900
+]
+],
+"not": []
+},
+{
+"title": "Dynasty",
+"aka": [
+"Dynasty 1981"
+],
+"type": "drama",
+"net": "abc",
+"years": [
+1981,
+1989
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+2460,
+3120
+],
+[
+4920,
+6000
+]
+],
+"not": [
+"2017",
+"netflix",
+"cw",
+"duck dynasty",
+"reunion",
+"the colbys"
+]
+},
+{
+"title": "Family Guy",
+"aka": [],
+"type": "sitcom",
+"net": "fox",
+"years": [
+1999,
+2004
+],
+"pri": 1,
+"strict": 1,
+"runtime": [
+[
+1230,
+1560
+],
+[
+2460,
+3120
+]
+],
+"not": [
+"reaction",
+"funniest",
+"best of",
+"compilation",
+"moments",
+"clip"
+]
 }
 ]
