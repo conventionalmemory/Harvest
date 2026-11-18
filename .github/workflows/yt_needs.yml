@@ -17,6 +17,9 @@ on:
       deep:
         description: per-episode query cap, 0 for default
         default: "0"
+      style:
+        description: query style, blank or offair
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -42,6 +45,7 @@ jobs:
           PRI: ${{ inputs.pri }}
           ONLY: ${{ inputs.only }}
           DEEP: ${{ inputs.deep }}
+          STYLE: ${{ inputs.style }}
         run: MODE=plan python3 harvest/yt_needs.py
       - uses: actions/upload-artifact@v4
         with:
@@ -67,6 +71,7 @@ jobs:
       - name: Search
         env:
           BUDGET_MIN: ${{ inputs.budget }}
+          STYLE: ${{ inputs.style }}
         run: MODE=search SHARD=${{ matrix.shard }} SHARDS=6 THREADS=4 python3 harvest/yt_needs.py
       - uses: actions/upload-artifact@v4
         if: always()
@@ -92,6 +97,8 @@ jobs:
           path: parts
           merge-multiple: true
       - name: Merge
+        env:
+          STYLE: ${{ inputs.style }}
         run: ls -la parts; MODE=merge python3 harvest/yt_needs.py
       - name: Commit
         run: |

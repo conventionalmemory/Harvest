@@ -1,0 +1,401 @@
+[
+{
+"title": "Full House",
+"aka": [],
+"years": [
+1987,
+1995
+],
+"net": "abc",
+"amb": 0
+},
+{
+"title": "Frasier",
+"aka": [],
+"years": [
+1993,
+2004
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Seinfeld",
+"aka": [],
+"years": [
+1989,
+1998
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "The Fresh Prince of Bel-Air",
+"aka": [
+"Fresh Prince of Bel Air",
+"Fresh Prince"
+],
+"years": [
+1990,
+1996
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Melrose Place",
+"aka": [],
+"years": [
+1992,
+1999
+],
+"net": "fox",
+"amb": 0
+},
+{
+"title": "Dr. Quinn, Medicine Woman",
+"aka": [
+"Dr. Quinn",
+"Dr Quinn"
+],
+"years": [
+1993,
+1998
+],
+"net": "cbs",
+"amb": 0
+},
+{
+"title": "7th Heaven",
+"aka": [],
+"years": [
+1996,
+2004
+],
+"net": "wb",
+"amb": 0
+},
+{
+"title": "227",
+"aka": [],
+"years": [
+1985,
+1990
+],
+"net": "nbc",
+"amb": 1
+},
+{
+"title": "A Different World",
+"aka": [],
+"years": [
+1987,
+1993
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Spin City",
+"aka": [],
+"years": [
+1996,
+2002
+],
+"net": "abc",
+"amb": 0
+},
+{
+"title": "Scarecrow and Mrs. King",
+"aka": [
+"Scarecrow & Mrs. King"
+],
+"years": [
+1983,
+1987
+],
+"net": "cbs",
+"amb": 0
+},
+{
+"title": "Matlock",
+"aka": [],
+"years": [
+1986,
+1995
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Cheers",
+"aka": [],
+"years": [
+1984,
+1993
+],
+"net": "nbc",
+"amb": 1
+},
+{
+"title": "Ally McBeal",
+"aka": [],
+"years": [
+1997,
+2002
+],
+"net": "fox",
+"amb": 0
+},
+{
+"title": "Dawson's Creek",
+"aka": [],
+"years": [
+1998,
+2003
+],
+"net": "wb",
+"amb": 0
+},
+{
+"title": "Head of the Class",
+"aka": [],
+"years": [
+1986,
+1991
+],
+"net": "abc",
+"amb": 0
+},
+{
+"title": "Hangin' with Mr. Cooper",
+"aka": [
+"Hangin with Mr Cooper"
+],
+"years": [
+1992,
+1997
+],
+"net": "abc",
+"amb": 0
+},
+{
+"title": "Martin",
+"aka": [],
+"years": [
+1992,
+1997
+],
+"net": "fox",
+"amb": 1
+},
+{
+"title": "Just Shoot Me!",
+"aka": [
+"Just Shoot Me"
+],
+"years": [
+1997,
+2003
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Malcolm in the Middle",
+"aka": [],
+"years": [
+2000,
+2004
+],
+"net": "fox",
+"amb": 0
+},
+{
+"title": "Ellen",
+"aka": [],
+"years": [
+1994,
+1998
+],
+"net": "abc",
+"amb": 1
+},
+{
+"title": "JAG",
+"aka": [],
+"years": [
+1995,
+2004
+],
+"net": "cbs",
+"amb": 1
+},
+{
+"title": "The Equalizer",
+"aka": [],
+"years": [
+1985,
+1989
+],
+"net": "cbs",
+"amb": 0
+},
+{
+"title": "Magnum, P.I.",
+"aka": [
+"Magnum PI",
+"Magnum P.I."
+],
+"years": [
+1984,
+1988
+],
+"net": "cbs",
+"amb": 0
+},
+{
+"title": "ER",
+"aka": [],
+"years": [
+1994,
+2004
+],
+"net": "nbc",
+"amb": 1
+},
+{
+"title": "The West Wing",
+"aka": [],
+"years": [
+1999,
+2004
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Star Search",
+"aka": [],
+"years": [
+1984,
+1995
+],
+"net": "syndicated",
+"amb": 0
+},
+{
+"title": "Family Ties",
+"aka": [],
+"years": [
+1984,
+1989
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Sister, Sister",
+"aka": [
+"Sister Sister"
+],
+"years": [
+1994,
+1999
+],
+"net": "abc",
+"amb": 0
+},
+{
+"title": "Mad About You",
+"aka": [],
+"years": [
+1992,
+1999
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Friends",
+"aka": [],
+"years": [
+1994,
+2004
+],
+"net": "nbc",
+"amb": 1
+},
+{
+"title": "Murphy Brown",
+"aka": [],
+"years": [
+1988,
+1998
+],
+"net": "cbs",
+"amb": 0
+},
+{
+"title": "Wings",
+"aka": [],
+"years": [
+1990,
+1997
+],
+"net": "nbc",
+"amb": 1
+},
+{
+"title": "NewsRadio",
+"aka": [],
+"years": [
+1995,
+1999
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Coach",
+"aka": [],
+"years": [
+1989,
+1997
+],
+"net": "abc",
+"amb": 1
+},
+{
+"title": "Blossom",
+"aka": [],
+"years": [
+1990,
+1995
+],
+"net": "nbc",
+"amb": 0
+},
+{
+"title": "Doogie Howser, M.D.",
+"aka": [
+"Doogie Howser"
+],
+"years": [
+1989,
+1993
+],
+"net": "abc",
+"amb": 0
+},
+{
+"title": "Night Court",
+"aka": [],
+"years": [
+1984,
+1992
+],
+"net": "nbc",
+"amb": 0
+}
+]

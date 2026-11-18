@@ -15,6 +15,8 @@ BUDGET = float(os.environ.get('BUDGET_MIN', '60') or 60) * 60
 PRI = os.environ.get('PRI', '1') or '1'
 ONLY = [x.strip() for x in (os.environ.get('ONLY', '') or '').split('|') if x.strip()]
 DEEP = int(os.environ.get('DEEP', '0') or 0)
+STYLE = (os.environ.get('STYLE', '') or '').strip().lower()
+OFFW = set('woc vhs recorded recording airing aired tgif broadcast broadcasts tape taped live feed local station affiliate syndicated syndication network ch channel version'.split())
 RUN = os.environ.get('GITHUB_RUN_ID', '')
 T0 = time.time()
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
@@ -432,6 +434,23 @@ def plan():
                 step = 1 if s['pri'] <= 1 else 3
                 epq = [bt + ' ' + mo + ' %d' % y for y in ys if y for mo in MONTHS[::step]]
             plq = [bt + ' full episodes'] if s['pri'] <= 2 else []
+        if STYLE == 'offair' and s['kind'] == 'ep':
+            yy = [y for y in ys if y]
+            qs = []
+            for nm in names:
+                qs += [nm + ' with commercials', nm + ' original broadcast', nm + ' original airing', nm + ' vhs recording', nm + ' woc', nm + ' recorded off tv', nm + ' ' + (nw or 'tv') + ' broadcast']
+                qs += [nm + ' %d with commercials' % y for y in yy] + [nm + ' %d vhs' % y for y in yy[::2]]
+                if nw: qs += [nm + ' ' + nw + ' %d' % y for y in yy]
+            pool = [e for e in eps if str(e[2]) <= s['until']]
+            cap = DEEP if DEEP > 0 else 60
+            if len(pool) > cap:
+                random.seed(s['k'] + 'offair'); pool = sorted(random.sample(pool, cap))
+            epq = []
+            for e in pool:
+                et = nz(str(e[3]))
+                if len(et) >= 5 and not re.match(r'^(episode|part|pilot|show|chapter)\b', et): epq.append(bt + ' ' + str(e[3]) + ' commercials')
+                if str(e[2])[:4].isdigit(): epq.append(bt + ' ' + str(e[2])[:10])
+            plq = [bt + ' with commercials', bt + ' vhs recordings', bt + ' original broadcasts']; chq = []
         t['qs'] = [re.sub(r'\s+', ' ', q).strip() for q in qs]; t['epq'] = epq; t['plq'] = plq; t['chq'] = chq
         t['prev'] = prev.get(s['title'], 0)
         tasks.append(t)
@@ -641,7 +660,8 @@ def match(t, c, M):
             return r, ''
         if not r['se'] or strong < 1 or r.get('m'): return None, 'strict: episode not confirmed'
         rest = [w for w in re.sub(SERX, ' ', pn.replace(' ' + hit + ' ', ' ', 1)).split() if w not in STOPW and w not in ew and not w.isdigit() and w not in MONW and len(w) >= 3 and w not in ('remastered', 'restored', 'uncut', 'paramount', 'plus', 'star', 'trek', 'tos', 'tng', 'ds9', 'voy', 'ent', 'tas')]
-        inrt = any(a <= c['dur'] <= b for a, b in t['runtime'])
+        if STYLE == 'offair': rest = [w for w in rest if w not in OFFW and not re.match(r'^[kw][a-z]{2,3}(tv)?$', w)]
+        inrt = any(a <= c['dur'] <= b for a, b in t['runtime']) or (STYLE == 'offair' and any(a <= c['dur'] <= (1860 if b < 1700 else 3660 if b < 3400 else b + 300) for a, b in t['runtime']))
         if not offs:
             if rest or re.match(r'\s*(#?\d+\s*[:.\-]|ep(isode)?\.?\s*#?\d+\s*[:\-])', T, re.I) or re.search(r'(?i)\d\s*(&|and|\+)\s*\d|\bwatch\b', Ts): return None, 'strict: extra words'
             if not inrt: return None, 'strict: runtime'

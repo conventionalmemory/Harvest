@@ -1,0 +1,39 @@
+name: Off-air recordings
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: optional show titles separated by |
+        default: ""
+      budget:
+        description: minutes
+        default: "150"
+permissions:
+  contents: write
+concurrency:
+  group: offair
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search
+        env:
+          ONLY: ${{ inputs.only }}
+          BUDGET_MIN: ${{ inputs.budget }}
+        run: python3 harvest/offair.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp catalog/offair.json.gz /tmp/offair.json.gz
+          for k in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            cp /tmp/offair.json.gz catalog/offair.json.gz
+            git add catalog/offair.json.gz
+            git diff --cached --quiet && break
+            git commit -qm "Update off-air recordings catalog" && git push -q origin HEAD:main && break
+            sleep $((k*7))
+          done
