@@ -191,7 +191,7 @@ def scrape(q, cap=20000):
 def load_ids(rows=None):
     have = {}
     for p in sorted(glob.glob(os.path.join(OUT, '*.json.gz'))):
-        if p.endswith('needs.json.gz') or p.endswith('movies.json.gz'): continue
+        if p.endswith(('needs.json.gz', 'movies.json.gz', 'offair.json.gz')): continue
         try:
             d = json.load(gzip.open(p, 'rt', encoding='utf-8'))
             if isinstance(d, list):
