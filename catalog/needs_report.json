@@ -1,7 +1,7 @@
 {
-"updated": "2026-11-18 18:16 UTC",
-"items": 6502,
-"hours": 36634,
+"updated": "2026-11-18 18:27 UTC",
+"items": 6606,
+"hours": 37043,
 "priority": {
 "0": {
 "shows": 9,
@@ -15,21 +15,21 @@
 },
 "1": {
 "shows": 501,
-"found": 103,
-"thin": 75,
-"maybe": 75,
-"held": 154,
-"missing": 94,
-"items": 1144,
-"hours": 9668
+"found": 106,
+"thin": 77,
+"maybe": 79,
+"held": 148,
+"missing": 91,
+"items": 1158,
+"hours": 9987
 },
 "2": {
 "shows": 527,
 "found": 88,
 "thin": 78,
 "maybe": 61,
-"held": 185,
-"missing": 115,
+"held": 184,
+"missing": 116,
 "items": 1285,
 "hours": 9083
 },
@@ -38,10 +38,10 @@
 "found": 186,
 "thin": 127,
 "maybe": 123,
-"held": 313,
-"missing": 312,
-"items": 1653,
-"hours": 7583
+"held": 310,
+"missing": 315,
+"items": 1743,
+"hours": 7673
 }
 },
 "coverage": {
@@ -235,8 +235,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 43,
-"held_elsewhere_files": 241,
+"held_elsewhere_items": 41,
+"held_elsewhere_files": 238,
 "status": "HELD"
 },
 {
@@ -255,8 +255,8 @@
 "hours": 78,
 "episodes": 79,
 "other_files": 0,
-"held_elsewhere_items": 133,
-"held_elsewhere_files": 414,
+"held_elsewhere_items": 130,
+"held_elsewhere_files": 404,
 "status": "FOUND"
 },
 {
@@ -335,8 +335,8 @@
 "hours": 1296,
 "episodes": 182,
 "other_files": 0,
-"held_elsewhere_items": 60,
-"held_elsewhere_files": 317,
+"held_elsewhere_items": 57,
+"held_elsewhere_files": 314,
 "status": "FOUND"
 },
 {
@@ -355,8 +355,8 @@
 "hours": 260,
 "episodes": 172,
 "other_files": 0,
-"held_elsewhere_items": 35,
-"held_elsewhere_files": 177,
+"held_elsewhere_items": 34,
+"held_elsewhere_files": 175,
 "status": "FOUND"
 },
 {
@@ -395,8 +395,8 @@
 "hours": 26,
 "episodes": 30,
 "other_files": 0,
-"held_elsewhere_items": 45,
-"held_elsewhere_files": 76,
+"held_elsewhere_items": 44,
+"held_elsewhere_files": 75,
 "status": "FOUND"
 },
 {
@@ -515,8 +515,8 @@
 "hours": 9,
 "episodes": 0,
 "other_files": 5,
-"held_elsewhere_items": 218,
-"held_elsewhere_files": 278,
+"held_elsewhere_items": 213,
+"held_elsewhere_files": 258,
 "status": "FOUND"
 },
 {
@@ -529,15 +529,15 @@
 2007
 ],
 "guide_episodes": 188,
-"items": 1,
+"items": 2,
 "maybe": 1,
-"files": 1,
-"hours": 2,
+"files": 3,
+"hours": 6,
 "episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 18,
-"held_elsewhere_files": 20,
-"status": "MAYBE"
+"other_files": 2,
+"held_elsewhere_items": 14,
+"held_elsewhere_files": 14,
+"status": "THIN"
 },
 {
 "title": "A Charlie Brown Thanksgiving",
@@ -575,8 +575,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 50,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 49,
 "status": "MAYBE"
 },
 {
@@ -595,8 +595,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 52,
-"held_elsewhere_files": 53,
+"held_elsewhere_items": 50,
+"held_elsewhere_files": 51,
 "status": "THIN"
 },
 {
@@ -615,8 +615,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 15,
-"held_elsewhere_files": 18,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 12,
 "status": "MAYBE"
 },
 {
@@ -675,8 +675,8 @@
 "hours": 10,
 "episodes": 0,
 "other_files": 5,
-"held_elsewhere_items": 23,
-"held_elsewhere_files": 25,
+"held_elsewhere_items": 21,
+"held_elsewhere_files": 21,
 "status": "FOUND"
 },
 {
@@ -775,8 +775,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 52,
-"held_elsewhere_files": 79,
+"held_elsewhere_items": 47,
+"held_elsewhere_files": 70,
 "status": "HELD"
 },
 {
@@ -855,8 +855,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 59,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 27,
 "status": "HELD"
 },
 {
@@ -875,8 +875,8 @@
 "hours": 738,
 "episodes": 0,
 "other_files": 976,
-"held_elsewhere_items": 159,
-"held_elsewhere_files": 1281,
+"held_elsewhere_items": 155,
+"held_elsewhere_files": 1259,
 "status": "FOUND"
 },
 {
@@ -915,8 +915,8 @@
 "hours": 162,
 "episodes": 200,
 "other_files": 23,
-"held_elsewhere_items": 61,
-"held_elsewhere_files": 115,
+"held_elsewhere_items": 60,
+"held_elsewhere_files": 114,
 "status": "FOUND"
 },
 {
@@ -935,8 +935,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 45,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 18,
 "status": "HELD"
 },
 {
@@ -1055,8 +1055,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
 "status": "HELD"
 },
 {
@@ -1175,8 +1175,8 @@
 "hours": 323,
 "episodes": 64,
 "other_files": 2,
-"held_elsewhere_items": 32,
-"held_elsewhere_files": 248,
+"held_elsewhere_items": 31,
+"held_elsewhere_files": 242,
 "status": "FOUND"
 },
 {
@@ -1455,8 +1455,8 @@
 "hours": 4,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 41,
-"held_elsewhere_files": 46,
+"held_elsewhere_items": 39,
+"held_elsewhere_files": 42,
 "status": "THIN"
 },
 {
@@ -1695,8 +1695,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 64,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 62,
 "status": "HELD"
 },
 {
@@ -1755,8 +1755,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 3,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
 "status": "MAYBE"
 },
 {
@@ -1775,8 +1775,8 @@
 "hours": 41,
 "episodes": 1,
 "other_files": 1,
-"held_elsewhere_items": 420,
-"held_elsewhere_files": 486,
+"held_elsewhere_items": 418,
+"held_elsewhere_files": 484,
 "status": "THIN"
 },
 {
@@ -1795,8 +1795,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 20,
-"held_elsewhere_files": 21,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 19,
 "status": "HELD"
 },
 {
@@ -1875,8 +1875,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 52,
-"held_elsewhere_files": 54,
+"held_elsewhere_items": 51,
+"held_elsewhere_files": 52,
 "status": "MAYBE"
 },
 {
@@ -1895,8 +1895,8 @@
 "hours": 6,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 30,
-"held_elsewhere_files": 36,
+"held_elsewhere_items": 29,
+"held_elsewhere_files": 34,
 "status": "THIN"
 },
 {
@@ -2635,8 +2635,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 3,
-"held_elsewhere_items": 61,
-"held_elsewhere_files": 65,
+"held_elsewhere_items": 50,
+"held_elsewhere_files": 50,
 "status": "THIN"
 },
 {
@@ -2655,8 +2655,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 19,
-"held_elsewhere_files": 51,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 42,
 "status": "HELD"
 },
 {
@@ -2675,8 +2675,8 @@
 "hours": 6,
 "episodes": 0,
 "other_files": 7,
-"held_elsewhere_items": 70,
-"held_elsewhere_files": 181,
+"held_elsewhere_items": 68,
+"held_elsewhere_files": 164,
 "status": "FOUND"
 },
 {
@@ -2795,8 +2795,8 @@
 "hours": 26,
 "episodes": 73,
 "other_files": 0,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 135,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 133,
 "status": "FOUND"
 },
 {
@@ -2815,8 +2815,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 21,
-"held_elsewhere_files": 26,
+"held_elsewhere_items": 20,
+"held_elsewhere_files": 24,
 "status": "HELD"
 },
 {
@@ -2915,8 +2915,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 18,
-"held_elsewhere_files": 495,
+"held_elsewhere_items": 12,
+"held_elsewhere_files": 213,
 "status": "HELD"
 },
 {
@@ -2995,8 +2995,8 @@
 "hours": 1,
 "episodes": 1,
 "other_files": 0,
-"held_elsewhere_items": 25,
-"held_elsewhere_files": 43,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 25,
 "status": "THIN"
 },
 {
@@ -3089,15 +3089,15 @@
 2009
 ],
 "guide_episodes": 232,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "ESPN College Basketball",
@@ -3155,8 +3155,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 110,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 94,
 "status": "HELD"
 },
 {
@@ -3255,8 +3255,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 3,
-"held_elsewhere_items": 383,
-"held_elsewhere_files": 599,
+"held_elsewhere_items": 359,
+"held_elsewhere_files": 564,
 "status": "THIN"
 },
 {
@@ -3355,8 +3355,8 @@
 "hours": 115,
 "episodes": 0,
 "other_files": 304,
-"held_elsewhere_items": 291,
-"held_elsewhere_files": 527,
+"held_elsewhere_items": 287,
+"held_elsewhere_files": 520,
 "status": "FOUND"
 },
 {
@@ -3375,8 +3375,8 @@
 "hours": 84,
 "episodes": 211,
 "other_files": 1,
-"held_elsewhere_items": 56,
-"held_elsewhere_files": 123,
+"held_elsewhere_items": 50,
+"held_elsewhere_files": 112,
 "status": "FOUND"
 },
 {
@@ -3395,8 +3395,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 21,
-"held_elsewhere_files": 87,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 79,
 "status": "MAYBE"
 },
 {
@@ -3569,14 +3569,14 @@
 1995
 ],
 "guide_episodes": 192,
-"items": 1,
-"maybe": 1,
-"files": 1,
-"hours": 4,
+"items": 2,
+"maybe": 2,
+"files": 2,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 66,
-"held_elsewhere_files": 226,
+"held_elsewhere_items": 48,
+"held_elsewhere_files": 150,
 "status": "MAYBE"
 },
 {
@@ -3755,8 +3755,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 17,
-"held_elsewhere_files": 62,
+"held_elsewhere_items": 15,
+"held_elsewhere_files": 58,
 "status": "MAYBE"
 },
 {
@@ -3795,8 +3795,8 @@
 "hours": 7,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 69,
-"held_elsewhere_files": 111,
+"held_elsewhere_items": 68,
+"held_elsewhere_files": 109,
 "status": "MAYBE"
 },
 {
@@ -3835,8 +3835,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 27,
-"held_elsewhere_files": 71,
+"held_elsewhere_items": 26,
+"held_elsewhere_files": 57,
 "status": "THIN"
 },
 {
@@ -3875,8 +3875,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
 "status": "HELD"
 },
 {
@@ -4035,8 +4035,8 @@
 "hours": 15,
 "episodes": 25,
 "other_files": 3,
-"held_elsewhere_items": 23,
-"held_elsewhere_files": 96,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 79,
 "status": "FOUND"
 },
 {
@@ -4055,8 +4055,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -4075,8 +4075,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 7,
-"held_elsewhere_items": 44,
-"held_elsewhere_files": 63,
+"held_elsewhere_items": 41,
+"held_elsewhere_files": 58,
 "status": "FOUND"
 },
 {
@@ -4395,8 +4395,8 @@
 "hours": 9,
 "episodes": 0,
 "other_files": 8,
-"held_elsewhere_items": 68,
-"held_elsewhere_files": 77,
+"held_elsewhere_items": 64,
+"held_elsewhere_files": 71,
 "status": "FOUND"
 },
 {
@@ -4475,8 +4475,8 @@
 "hours": 15,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 70,
-"held_elsewhere_files": 503,
+"held_elsewhere_items": 69,
+"held_elsewhere_files": 501,
 "status": "MAYBE"
 },
 {
@@ -4575,8 +4575,8 @@
 "hours": 4,
 "episodes": 0,
 "other_files": 4,
-"held_elsewhere_items": 482,
-"held_elsewhere_files": 636,
+"held_elsewhere_items": 479,
+"held_elsewhere_files": 633,
 "status": "THIN"
 },
 {
@@ -4635,8 +4635,8 @@
 "hours": 44,
 "episodes": 0,
 "other_files": 129,
-"held_elsewhere_items": 48,
-"held_elsewhere_files": 421,
+"held_elsewhere_items": 47,
+"held_elsewhere_files": 419,
 "status": "FOUND"
 },
 {
@@ -4695,8 +4695,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 23,
-"held_elsewhere_files": 41,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 34,
 "status": "HELD"
 },
 {
@@ -4715,8 +4715,8 @@
 "hours": 19,
 "episodes": 47,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 251,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 115,
 "status": "FOUND"
 },
 {
@@ -4755,8 +4755,8 @@
 "hours": 64,
 "episodes": 40,
 "other_files": 6,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 171,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 91,
 "status": "FOUND"
 },
 {
@@ -4815,8 +4815,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 10,
-"held_elsewhere_files": 70,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 69,
 "status": "HELD"
 },
 {
@@ -4835,8 +4835,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 123,
-"held_elsewhere_files": 206,
+"held_elsewhere_items": 122,
+"held_elsewhere_files": 205,
 "status": "THIN"
 },
 {
@@ -4855,8 +4855,8 @@
 "hours": 16,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 84,
-"held_elsewhere_files": 101,
+"held_elsewhere_items": 81,
+"held_elsewhere_files": 93,
 "status": "THIN"
 },
 {
@@ -4875,8 +4875,8 @@
 "hours": 8,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 37,
-"held_elsewhere_files": 93,
+"held_elsewhere_items": 31,
+"held_elsewhere_files": 82,
 "status": "THIN"
 },
 {
@@ -4935,8 +4935,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 47,
-"held_elsewhere_files": 264,
+"held_elsewhere_items": 44,
+"held_elsewhere_files": 166,
 "status": "MAYBE"
 },
 {
@@ -4995,8 +4995,8 @@
 "hours": 107,
 "episodes": 1,
 "other_files": 1,
-"held_elsewhere_items": 14,
-"held_elsewhere_files": 52,
+"held_elsewhere_items": 12,
+"held_elsewhere_files": 40,
 "status": "THIN"
 },
 {
@@ -5189,15 +5189,15 @@
 1999
 ],
 "guide_episodes": 164,
-"items": 0,
+"items": 1,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 166,
+"hours": 62,
+"episodes": 164,
 "other_files": 0,
-"held_elsewhere_items": 30,
-"held_elsewhere_files": 398,
-"status": "HELD"
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 303,
+"status": "FOUND"
 },
 {
 "title": "Magnum, P.I.",
@@ -5215,8 +5215,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 29,
-"held_elsewhere_files": 35,
+"held_elsewhere_items": 18,
+"held_elsewhere_files": 20,
 "status": "HELD"
 },
 {
@@ -5275,8 +5275,8 @@
 "hours": 27,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 28,
-"held_elsewhere_files": 271,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 163,
 "status": "MAYBE"
 },
 {
@@ -5309,15 +5309,15 @@
 1997
 ],
 "guide_episodes": 132,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 1,
 "episodes": 0,
 "other_files": 0,
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Mary-Kate and Ashley in Action!",
@@ -5389,15 +5389,15 @@
 1995
 ],
 "guide_episodes": 177,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 6,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 24,
-"held_elsewhere_files": 52,
-"status": "HELD"
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 10,
+"status": "MAYBE"
 },
 {
 "title": "Maury",
@@ -5455,8 +5455,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 18,
-"held_elsewhere_files": 21,
+"held_elsewhere_items": 13,
+"held_elsewhere_files": 13,
 "status": "HELD"
 },
 {
@@ -5675,8 +5675,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 24,
-"held_elsewhere_files": 484,
+"held_elsewhere_items": 23,
+"held_elsewhere_files": 474,
 "status": "HELD"
 },
 {
@@ -5709,15 +5709,15 @@
 1998
 ],
 "guide_episodes": 247,
-"items": 0,
+"items": 2,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 394,
+"hours": 154,
+"episodes": 247,
 "other_files": 0,
-"held_elsewhere_items": 302,
-"held_elsewhere_files": 745,
-"status": "HELD"
+"held_elsewhere_items": 272,
+"held_elsewhere_files": 469,
+"status": "FOUND"
 },
 {
 "title": "Music City Tonight",
@@ -5895,8 +5895,8 @@
 "hours": 5,
 "episodes": 0,
 "other_files": 9,
-"held_elsewhere_items": 111,
-"held_elsewhere_files": 121,
+"held_elsewhere_items": 110,
+"held_elsewhere_files": 120,
 "status": "FOUND"
 },
 {
@@ -6035,8 +6035,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 12,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -6075,8 +6075,8 @@
 "hours": 5,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "MAYBE"
 },
 {
@@ -6169,15 +6169,15 @@
 1999
 ],
 "guide_episodes": 97,
-"items": 0,
+"items": 2,
 "maybe": 0,
-"files": 0,
-"hours": 0,
-"episodes": 0,
+"files": 190,
+"hours": 74,
+"episodes": 97,
 "other_files": 0,
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
-"status": "MISSING"
+"status": "FOUND"
 },
 {
 "title": "Nick Arcade",
@@ -6215,8 +6215,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 24,
-"held_elsewhere_files": 350,
+"held_elsewhere_items": 15,
+"held_elsewhere_files": 257,
 "status": "HELD"
 },
 {
@@ -6235,8 +6235,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 75,
-"held_elsewhere_files": 160,
+"held_elsewhere_items": 73,
+"held_elsewhere_files": 157,
 "status": "MAYBE"
 },
 {
@@ -6255,8 +6255,8 @@
 "hours": 12,
 "episodes": 0,
 "other_files": 8,
-"held_elsewhere_items": 529,
-"held_elsewhere_files": 987,
+"held_elsewhere_items": 522,
+"held_elsewhere_files": 974,
 "status": "FOUND"
 },
 {
@@ -6475,8 +6475,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 26,
-"held_elsewhere_files": 421,
+"held_elsewhere_items": 25,
+"held_elsewhere_files": 419,
 "status": "MAYBE"
 },
 {
@@ -6495,8 +6495,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 54,
-"held_elsewhere_files": 169,
+"held_elsewhere_items": 53,
+"held_elsewhere_files": 168,
 "status": "HELD"
 },
 {
@@ -6615,8 +6615,8 @@
 "hours": 85,
 "episodes": 49,
 "other_files": 176,
-"held_elsewhere_items": 32,
-"held_elsewhere_files": 125,
+"held_elsewhere_items": 31,
+"held_elsewhere_files": 124,
 "status": "FOUND"
 },
 {
@@ -6635,8 +6635,8 @@
 "hours": 35,
 "episodes": 3,
 "other_files": 5,
-"held_elsewhere_items": 385,
-"held_elsewhere_files": 1345,
+"held_elsewhere_items": 383,
+"held_elsewhere_files": 1341,
 "status": "FOUND"
 },
 {
@@ -7055,8 +7055,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 20,
-"held_elsewhere_files": 77,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 71,
 "status": "HELD"
 },
 {
@@ -7075,8 +7075,8 @@
 "hours": 54,
 "episodes": 65,
 "other_files": 1,
-"held_elsewhere_items": 24,
-"held_elsewhere_files": 267,
+"held_elsewhere_items": 23,
+"held_elsewhere_files": 266,
 "status": "FOUND"
 },
 {
@@ -7189,15 +7189,15 @@
 1998
 ],
 "guide_episodes": 0,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
+"hours": 8,
 "episodes": 0,
 "other_files": 0,
 "held_elsewhere_items": 0,
 "held_elsewhere_files": 0,
-"status": "MISSING"
+"status": "MAYBE"
 },
 {
 "title": "Senate floor coverage",
@@ -7315,8 +7315,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 15,
-"held_elsewhere_files": 64,
+"held_elsewhere_items": 14,
+"held_elsewhere_files": 63,
 "status": "HELD"
 },
 {
@@ -7375,8 +7375,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 13,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 12,
 "status": "HELD"
 },
 {
@@ -7409,15 +7409,15 @@
 1999
 ],
 "guide_episodes": 119,
-"items": 0,
-"maybe": 0,
-"files": 0,
+"items": 1,
+"maybe": 1,
+"files": 1,
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 17,
-"held_elsewhere_files": 564,
-"status": "HELD"
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 185,
+"status": "MAYBE"
 },
 {
 "title": "Smallville",
@@ -7535,8 +7535,8 @@
 "hours": 239,
 "episodes": 44,
 "other_files": 31,
-"held_elsewhere_items": 204,
-"held_elsewhere_files": 806,
+"held_elsewhere_items": 202,
+"held_elsewhere_files": 800,
 "status": "FOUND"
 },
 {
@@ -7575,8 +7575,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 21,
-"held_elsewhere_files": 34,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 6,
 "status": "HELD"
 },
 {
@@ -7675,8 +7675,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 34,
-"held_elsewhere_files": 42,
+"held_elsewhere_items": 18,
+"held_elsewhere_files": 20,
 "status": "THIN"
 },
 {
@@ -7715,8 +7715,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 44,
-"held_elsewhere_files": 139,
+"held_elsewhere_items": 42,
+"held_elsewhere_files": 135,
 "status": "MAYBE"
 },
 {
@@ -8035,8 +8035,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 95,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 61,
 "status": "HELD"
 },
 {
@@ -8215,8 +8215,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 4,
-"held_elsewhere_items": 22,
-"held_elsewhere_files": 22,
+"held_elsewhere_items": 21,
+"held_elsewhere_files": 21,
 "status": "THIN"
 },
 {
@@ -8275,8 +8275,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 88,
-"held_elsewhere_files": 93,
+"held_elsewhere_items": 87,
+"held_elsewhere_files": 91,
 "status": "THIN"
 },
 {
@@ -8295,8 +8295,8 @@
 "hours": 23,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 158,
-"held_elsewhere_files": 549,
+"held_elsewhere_items": 142,
+"held_elsewhere_files": 526,
 "status": "THIN"
 },
 {
@@ -8395,8 +8395,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 17,
-"held_elsewhere_files": 18,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 16,
 "status": "HELD"
 },
 {
@@ -8455,9 +8455,9 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 24,
-"status": "HELD"
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "The Facts of Life",
@@ -8515,8 +8515,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 5,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
 "status": "HELD"
 },
 {
@@ -8555,8 +8555,8 @@
 "hours": 312,
 "episodes": 0,
 "other_files": 11,
-"held_elsewhere_items": 302,
-"held_elsewhere_files": 404,
+"held_elsewhere_items": 299,
+"held_elsewhere_files": 398,
 "status": "FOUND"
 },
 {
@@ -8595,8 +8595,8 @@
 "hours": 8,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 23,
-"held_elsewhere_files": 33,
+"held_elsewhere_items": 21,
+"held_elsewhere_files": 30,
 "status": "MAYBE"
 },
 {
@@ -8615,8 +8615,8 @@
 "hours": 153,
 "episodes": 0,
 "other_files": 85,
-"held_elsewhere_items": 58,
-"held_elsewhere_files": 64,
+"held_elsewhere_items": 56,
+"held_elsewhere_files": 62,
 "status": "FOUND"
 },
 {
@@ -8795,8 +8795,8 @@
 "hours": 6,
 "episodes": 0,
 "other_files": 3,
-"held_elsewhere_items": 128,
-"held_elsewhere_files": 135,
+"held_elsewhere_items": 127,
+"held_elsewhere_files": 134,
 "status": "THIN"
 },
 {
@@ -8875,8 +8875,8 @@
 "hours": 31,
 "episodes": 100,
 "other_files": 11,
-"held_elsewhere_items": 109,
-"held_elsewhere_files": 499,
+"held_elsewhere_items": 108,
+"held_elsewhere_files": 497,
 "status": "FOUND"
 },
 {
@@ -8895,8 +8895,8 @@
 "hours": 20,
 "episodes": 0,
 "other_files": 32,
-"held_elsewhere_items": 26,
-"held_elsewhere_files": 28,
+"held_elsewhere_items": 24,
+"held_elsewhere_files": 24,
 "status": "FOUND"
 },
 {
@@ -9129,15 +9129,15 @@
 2006
 ],
 "guide_episodes": 119,
-"items": 0,
-"maybe": 0,
-"files": 0,
-"hours": 0,
+"items": 2,
+"maybe": 1,
+"files": 3,
+"hours": 2,
 "episodes": 0,
-"other_files": 0,
-"held_elsewhere_items": 38,
-"held_elsewhere_files": 128,
-"status": "HELD"
+"other_files": 1,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 63,
+"status": "THIN"
 },
 {
 "title": "The Wild Thornberrys",
@@ -9195,8 +9195,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 75,
-"held_elsewhere_files": 101,
+"held_elsewhere_items": 74,
+"held_elsewhere_files": 100,
 "status": "MAYBE"
 },
 {
@@ -9215,8 +9215,8 @@
 "hours": 8,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 92,
-"held_elsewhere_files": 327,
+"held_elsewhere_items": 88,
+"held_elsewhere_files": 311,
 "status": "MAYBE"
 },
 {
@@ -9435,8 +9435,8 @@
 "hours": 1,
 "episodes": 1,
 "other_files": 0,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 21,
+"held_elsewhere_items": 14,
+"held_elsewhere_files": 18,
 "status": "THIN"
 },
 {
@@ -9575,8 +9575,8 @@
 "hours": 5,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 36,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 26,
 "status": "THIN"
 },
 {
@@ -9895,8 +9895,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 223,
-"held_elsewhere_files": 368,
+"held_elsewhere_items": 222,
+"held_elsewhere_files": 366,
 "status": "MAYBE"
 },
 {
@@ -9995,8 +9995,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 537,
-"held_elsewhere_files": 998,
+"held_elsewhere_items": 531,
+"held_elsewhere_files": 990,
 "status": "MAYBE"
 },
 {
@@ -10015,8 +10015,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 37,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 19,
 "status": "HELD"
 },
 {
@@ -10055,8 +10055,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 15,
-"held_elsewhere_files": 16,
+"held_elsewhere_items": 13,
+"held_elsewhere_files": 13,
 "status": "HELD"
 },
 {
@@ -10335,8 +10335,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 28,
-"held_elsewhere_files": 193,
+"held_elsewhere_items": 26,
+"held_elsewhere_files": 99,
 "status": "HELD"
 },
 {
@@ -10555,8 +10555,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 13,
-"held_elsewhere_files": 51,
+"held_elsewhere_items": 12,
+"held_elsewhere_files": 49,
 "status": "HELD"
 },
 {
@@ -10675,8 +10675,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 12,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 7,
 "status": "HELD"
 },
 {
@@ -10695,8 +10695,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 26,
-"held_elsewhere_files": 44,
+"held_elsewhere_items": 25,
+"held_elsewhere_files": 42,
 "status": "HELD"
 },
 {
@@ -10715,8 +10715,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 44,
-"held_elsewhere_files": 58,
+"held_elsewhere_items": 42,
+"held_elsewhere_files": 55,
 "status": "HELD"
 },
 {
@@ -10755,8 +10755,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 26,
-"held_elsewhere_files": 26,
+"held_elsewhere_items": 25,
+"held_elsewhere_files": 25,
 "status": "HELD"
 },
 {
@@ -10875,8 +10875,8 @@
 "hours": 21,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 18,
+"held_elsewhere_items": 15,
+"held_elsewhere_files": 15,
 "status": "MAYBE"
 },
 {
@@ -10955,8 +10955,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 9,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 7,
 "status": "HELD"
 },
 {
@@ -11175,8 +11175,8 @@
 "hours": 10,
 "episodes": 1,
 "other_files": 2,
-"held_elsewhere_items": 47,
-"held_elsewhere_files": 57,
+"held_elsewhere_items": 46,
+"held_elsewhere_files": 56,
 "status": "THIN"
 },
 {
@@ -11255,8 +11255,8 @@
 "hours": 9,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 45,
-"held_elsewhere_files": 82,
+"held_elsewhere_items": 44,
+"held_elsewhere_files": 80,
 "status": "THIN"
 },
 {
@@ -11535,8 +11535,8 @@
 "hours": 81,
 "episodes": 0,
 "other_files": 23,
-"held_elsewhere_items": 23,
-"held_elsewhere_files": 31,
+"held_elsewhere_items": 20,
+"held_elsewhere_files": 23,
 "status": "FOUND"
 },
 {
@@ -11655,8 +11655,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 27,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 25,
 "status": "HELD"
 },
 {
@@ -11815,8 +11815,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 22,
-"held_elsewhere_files": 23,
+"held_elsewhere_items": 21,
+"held_elsewhere_files": 21,
 "status": "THIN"
 },
 {
@@ -11835,8 +11835,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 32,
-"held_elsewhere_files": 35,
+"held_elsewhere_items": 29,
+"held_elsewhere_files": 29,
 "status": "HELD"
 },
 {
@@ -11975,8 +11975,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 3,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 100,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 99,
 "status": "THIN"
 },
 {
@@ -12015,9 +12015,9 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 2,
-"status": "HELD"
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Chain Reaction (1986)",
@@ -12075,8 +12075,8 @@
 "hours": 5,
 "episodes": 1,
 "other_files": 5,
-"held_elsewhere_items": 3165,
-"held_elsewhere_files": 3179,
+"held_elsewhere_items": 3152,
+"held_elsewhere_files": 3156,
 "status": "FOUND"
 },
 {
@@ -12675,8 +12675,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 9,
-"held_elsewhere_files": 10,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 9,
 "status": "HELD"
 },
 {
@@ -12775,8 +12775,8 @@
 "hours": 64,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 106,
-"held_elsewhere_files": 116,
+"held_elsewhere_items": 96,
+"held_elsewhere_files": 98,
 "status": "THIN"
 },
 {
@@ -12955,8 +12955,8 @@
 "hours": 6,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 18,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 16,
 "status": "MAYBE"
 },
 {
@@ -13475,8 +13475,8 @@
 "hours": 34,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 95,
-"held_elsewhere_files": 100,
+"held_elsewhere_items": 94,
+"held_elsewhere_files": 99,
 "status": "THIN"
 },
 {
@@ -13655,8 +13655,8 @@
 "hours": 7,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 11,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 7,
 "status": "THIN"
 },
 {
@@ -13735,8 +13735,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 69,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 67,
 "status": "HELD"
 },
 {
@@ -13755,8 +13755,8 @@
 "hours": 10,
 "episodes": 1,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 23,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 11,
 "status": "THIN"
 },
 {
@@ -13795,8 +13795,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 9,
-"held_elsewhere_files": 90,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 19,
 "status": "HELD"
 },
 {
@@ -13855,8 +13855,8 @@
 "hours": 73,
 "episodes": 0,
 "other_files": 14,
-"held_elsewhere_items": 27,
-"held_elsewhere_files": 192,
+"held_elsewhere_items": 24,
+"held_elsewhere_files": 187,
 "status": "FOUND"
 },
 {
@@ -14215,8 +14215,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
 "status": "HELD"
 },
 {
@@ -14255,8 +14255,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 9,
-"held_elsewhere_files": 68,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 66,
 "status": "HELD"
 },
 {
@@ -14535,8 +14535,8 @@
 "hours": 10,
 "episodes": 5,
 "other_files": 0,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 11,
+"held_elsewhere_items": 8,
+"held_elsewhere_files": 8,
 "status": "FOUND"
 },
 {
@@ -14595,8 +14595,8 @@
 "hours": 8,
 "episodes": 18,
 "other_files": 1,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 107,
+"held_elsewhere_items": 15,
+"held_elsewhere_files": 106,
 "status": "THIN"
 },
 {
@@ -15035,8 +15035,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 66,
-"held_elsewhere_files": 78,
+"held_elsewhere_items": 56,
+"held_elsewhere_files": 58,
 "status": "THIN"
 },
 {
@@ -15495,8 +15495,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 15,
-"held_elsewhere_files": 16,
+"held_elsewhere_items": 13,
+"held_elsewhere_files": 14,
 "status": "MAYBE"
 },
 {
@@ -15755,8 +15755,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 14,
-"held_elsewhere_files": 20,
+"held_elsewhere_items": 13,
+"held_elsewhere_files": 19,
 "status": "HELD"
 },
 {
@@ -15915,8 +15915,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 85,
-"held_elsewhere_files": 330,
+"held_elsewhere_items": 84,
+"held_elsewhere_files": 329,
 "status": "HELD"
 },
 {
@@ -15955,8 +15955,8 @@
 "hours": 31,
 "episodes": 70,
 "other_files": 0,
-"held_elsewhere_items": 18,
-"held_elsewhere_files": 186,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 184,
 "status": "FOUND"
 },
 {
@@ -16235,8 +16235,8 @@
 "hours": 23,
 "episodes": 0,
 "other_files": 16,
-"held_elsewhere_items": 43,
-"held_elsewhere_files": 45,
+"held_elsewhere_items": 40,
+"held_elsewhere_files": 42,
 "status": "FOUND"
 },
 {
@@ -16635,8 +16635,8 @@
 "hours": 76,
 "episodes": 90,
 "other_files": 0,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 12,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 11,
 "status": "FOUND"
 },
 {
@@ -16715,8 +16715,8 @@
 "hours": 63,
 "episodes": 88,
 "other_files": 0,
-"held_elsewhere_items": 17,
-"held_elsewhere_files": 119,
+"held_elsewhere_items": 16,
+"held_elsewhere_files": 117,
 "status": "FOUND"
 },
 {
@@ -16735,8 +16735,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 55,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 53,
 "status": "THIN"
 },
 {
@@ -16775,8 +16775,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 2,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
 "status": "THIN"
 },
 {
@@ -16935,8 +16935,8 @@
 "hours": 0,
 "episodes": 1,
 "other_files": 0,
-"held_elsewhere_items": 13,
-"held_elsewhere_files": 208,
+"held_elsewhere_items": 12,
+"held_elsewhere_files": 206,
 "status": "THIN"
 },
 {
@@ -17015,8 +17015,8 @@
 "hours": 1819,
 "episodes": 378,
 "other_files": 202,
-"held_elsewhere_items": 305,
-"held_elsewhere_files": 1974,
+"held_elsewhere_items": 300,
+"held_elsewhere_files": 1948,
 "status": "FOUND"
 },
 {
@@ -17355,8 +17355,8 @@
 "hours": 241,
 "episodes": 40,
 "other_files": 16,
-"held_elsewhere_items": 75,
-"held_elsewhere_files": 384,
+"held_elsewhere_items": 74,
+"held_elsewhere_files": 382,
 "status": "FOUND"
 },
 {
@@ -17435,8 +17435,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 73,
-"held_elsewhere_files": 93,
+"held_elsewhere_items": 57,
+"held_elsewhere_files": 61,
 "status": "HELD"
 },
 {
@@ -17675,8 +17675,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "HELD"
 },
 {
@@ -17895,8 +17895,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 7,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "HELD"
 },
 {
@@ -18295,8 +18295,8 @@
 "hours": 4,
 "episodes": 0,
 "other_files": 3,
-"held_elsewhere_items": 43,
-"held_elsewhere_files": 52,
+"held_elsewhere_items": 41,
+"held_elsewhere_files": 48,
 "status": "THIN"
 },
 {
@@ -18475,8 +18475,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 19,
+"held_elsewhere_items": 13,
+"held_elsewhere_files": 13,
 "status": "HELD"
 },
 {
@@ -18615,8 +18615,8 @@
 "hours": 18,
 "episodes": 3,
 "other_files": 2,
-"held_elsewhere_items": 36,
-"held_elsewhere_files": 347,
+"held_elsewhere_items": 34,
+"held_elsewhere_files": 340,
 "status": "THIN"
 },
 {
@@ -18675,8 +18675,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 21,
-"held_elsewhere_files": 22,
+"held_elsewhere_items": 20,
+"held_elsewhere_files": 20,
 "status": "HELD"
 },
 {
@@ -18855,8 +18855,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 5,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
 "status": "HELD"
 },
 {
@@ -19175,8 +19175,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 16,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 15,
 "status": "HELD"
 },
 {
@@ -19455,8 +19455,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 63,
-"held_elsewhere_files": 75,
+"held_elsewhere_items": 57,
+"held_elsewhere_files": 58,
 "status": "HELD"
 },
 {
@@ -19675,8 +19675,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 155,
-"held_elsewhere_files": 175,
+"held_elsewhere_items": 146,
+"held_elsewhere_files": 159,
 "status": "HELD"
 },
 {
@@ -20075,8 +20075,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 10,
-"held_elsewhere_files": 11,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 9,
 "status": "MAYBE"
 },
 {
@@ -20255,8 +20255,8 @@
 "hours": 4,
 "episodes": 0,
 "other_files": 3,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 32,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 30,
 "status": "THIN"
 },
 {
@@ -20375,8 +20375,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 20,
-"held_elsewhere_files": 23,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 17,
 "status": "HELD"
 },
 {
@@ -20395,8 +20395,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 34,
-"held_elsewhere_files": 37,
+"held_elsewhere_items": 33,
+"held_elsewhere_files": 35,
 "status": "HELD"
 },
 {
@@ -20415,8 +20415,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 40,
-"held_elsewhere_files": 41,
+"held_elsewhere_items": 39,
+"held_elsewhere_files": 39,
 "status": "HELD"
 },
 {
@@ -20495,8 +20495,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
 "status": "THIN"
 },
 {
@@ -20575,8 +20575,8 @@
 "hours": 216,
 "episodes": 499,
 "other_files": 0,
-"held_elsewhere_items": 60,
-"held_elsewhere_files": 137,
+"held_elsewhere_items": 59,
+"held_elsewhere_files": 134,
 "status": "FOUND"
 },
 {
@@ -21015,8 +21015,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 400,
-"held_elsewhere_files": 484,
+"held_elsewhere_items": 396,
+"held_elsewhere_files": 471,
 "status": "MAYBE"
 },
 {
@@ -21115,8 +21115,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 34,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 30,
 "status": "HELD"
 },
 {
@@ -21395,8 +21395,8 @@
 "hours": 10,
 "episodes": 0,
 "other_files": 48,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 7,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "FOUND"
 },
 {
@@ -21615,8 +21615,8 @@
 "hours": 83,
 "episodes": 1,
 "other_files": 0,
-"held_elsewhere_items": 78,
-"held_elsewhere_files": 397,
+"held_elsewhere_items": 77,
+"held_elsewhere_files": 396,
 "status": "THIN"
 },
 {
@@ -22255,8 +22255,8 @@
 "hours": 94,
 "episodes": 0,
 "other_files": 90,
-"held_elsewhere_items": 38,
-"held_elsewhere_files": 99,
+"held_elsewhere_items": 36,
+"held_elsewhere_files": 96,
 "status": "FOUND"
 },
 {
@@ -22595,8 +22595,8 @@
 "hours": 85,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 10,
-"held_elsewhere_files": 17,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 15,
 "status": "MAYBE"
 },
 {
@@ -23295,9 +23295,9 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 10,
-"status": "HELD"
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Cedric the Entertainer Presents",
@@ -24135,8 +24135,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 14,
-"held_elsewhere_files": 81,
+"held_elsewhere_items": 13,
+"held_elsewhere_files": 69,
 "status": "HELD"
 },
 {
@@ -24575,8 +24575,8 @@
 "hours": 5,
 "episodes": 11,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 44,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 43,
 "status": "FOUND"
 },
 {
@@ -24595,8 +24595,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 3,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -25075,8 +25075,8 @@
 "hours": 14,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 25,
-"held_elsewhere_files": 255,
+"held_elsewhere_items": 24,
+"held_elsewhere_files": 253,
 "status": "MAYBE"
 },
 {
@@ -25915,8 +25915,8 @@
 "hours": 7,
 "episodes": 1,
 "other_files": 6,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 10,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 5,
 "status": "FOUND"
 },
 {
@@ -26035,8 +26035,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
 "status": "THIN"
 },
 {
@@ -26135,8 +26135,8 @@
 "hours": 22,
 "episodes": 0,
 "other_files": 5,
-"held_elsewhere_items": 140,
-"held_elsewhere_files": 166,
+"held_elsewhere_items": 136,
+"held_elsewhere_files": 159,
 "status": "FOUND"
 },
 {
@@ -26149,10 +26149,10 @@
 1994
 ],
 "guide_episodes": 236,
-"items": 3,
-"maybe": 3,
-"files": 3,
-"hours": 2,
+"items": 93,
+"maybe": 93,
+"files": 96,
+"hours": 92,
 "episodes": 0,
 "other_files": 0,
 "held_elsewhere_items": 0,
@@ -26315,8 +26315,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 4,
-"held_elsewhere_items": 80,
-"held_elsewhere_files": 794,
+"held_elsewhere_items": 62,
+"held_elsewhere_files": 704,
 "status": "THIN"
 },
 {
@@ -26575,8 +26575,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 127,
+"held_elsewhere_items": 15,
+"held_elsewhere_files": 126,
 "status": "HELD"
 },
 {
@@ -27315,8 +27315,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 17,
-"held_elsewhere_files": 22,
+"held_elsewhere_items": 14,
+"held_elsewhere_files": 16,
 "status": "MAYBE"
 },
 {
@@ -27675,8 +27675,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 9,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 8,
 "status": "HELD"
 },
 {
@@ -27775,8 +27775,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 8,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 7,
 "status": "HELD"
 },
 {
@@ -28115,8 +28115,8 @@
 "hours": 8,
 "episodes": 6,
 "other_files": 1,
-"held_elsewhere_items": 10,
-"held_elsewhere_files": 11,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 9,
 "status": "FOUND"
 },
 {
@@ -28135,8 +28135,8 @@
 "hours": 22,
 "episodes": 4,
 "other_files": 3,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "FOUND"
 },
 {
@@ -29095,8 +29095,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 14,
-"held_elsewhere_files": 15,
+"held_elsewhere_items": 10,
+"held_elsewhere_files": 10,
 "status": "MAYBE"
 },
 {
@@ -29375,8 +29375,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 28,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 27,
 "status": "HELD"
 },
 {
@@ -29895,8 +29895,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 26,
-"held_elsewhere_files": 49,
+"held_elsewhere_items": 20,
+"held_elsewhere_files": 35,
 "status": "HELD"
 },
 {
@@ -30115,9 +30115,9 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 2,
-"status": "HELD"
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Marker",
@@ -30175,9 +30175,9 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 66,
-"status": "HELD"
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Masquerade",
@@ -30655,8 +30655,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 97,
+"held_elsewhere_items": 15,
+"held_elsewhere_files": 95,
 "status": "HELD"
 },
 {
@@ -30715,8 +30715,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 63,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 33,
 "status": "HELD"
 },
 {
@@ -30795,8 +30795,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 37,
-"held_elsewhere_files": 52,
+"held_elsewhere_items": 36,
+"held_elsewhere_files": 51,
 "status": "HELD"
 },
 {
@@ -31295,8 +31295,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "HELD"
 },
 {
@@ -31315,8 +31315,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 11,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 9,
 "status": "HELD"
 },
 {
@@ -31495,8 +31495,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 10,
-"held_elsewhere_files": 24,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 20,
 "status": "MAYBE"
 },
 {
@@ -32215,8 +32215,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 41,
-"held_elsewhere_files": 180,
+"held_elsewhere_items": 39,
+"held_elsewhere_files": 99,
 "status": "MAYBE"
 },
 {
@@ -32255,8 +32255,8 @@
 "hours": 4,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 13,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 11,
 "status": "MAYBE"
 },
 {
@@ -32275,8 +32275,8 @@
 "hours": 10,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 61,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 27,
 "status": "MAYBE"
 },
 {
@@ -32715,8 +32715,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 55,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 29,
 "status": "HELD"
 },
 {
@@ -33055,8 +33055,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 10,
-"held_elsewhere_files": 21,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
 "status": "MAYBE"
 },
 {
@@ -33715,8 +33715,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 4,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 46,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 4,
 "status": "FOUND"
 },
 {
@@ -33735,8 +33735,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 45,
-"held_elsewhere_files": 125,
+"held_elsewhere_items": 43,
+"held_elsewhere_files": 122,
 "status": "MAYBE"
 },
 {
@@ -34195,8 +34195,8 @@
 "hours": 5,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 14,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 7,
 "status": "THIN"
 },
 {
@@ -35055,8 +35055,8 @@
 "hours": 5,
 "episodes": 1,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 8,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 7,
 "status": "THIN"
 },
 {
@@ -36035,8 +36035,8 @@
 "hours": 10,
 "episodes": 13,
 "other_files": 1,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 8,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 7,
 "status": "FOUND"
 },
 {
@@ -36135,8 +36135,8 @@
 "hours": 45,
 "episodes": 50,
 "other_files": 0,
-"held_elsewhere_items": 18,
-"held_elsewhere_files": 19,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 17,
 "status": "FOUND"
 },
 {
@@ -36595,8 +36595,8 @@
 "hours": 29,
 "episodes": 0,
 "other_files": 20,
-"held_elsewhere_items": 12,
-"held_elsewhere_files": 12,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 11,
 "status": "FOUND"
 },
 {
@@ -37195,8 +37195,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 2,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
 "status": "HELD"
 },
 {
@@ -37835,8 +37835,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 5,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
 "status": "HELD"
 },
 {
@@ -38395,8 +38395,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 16,
-"held_elsewhere_files": 17,
+"held_elsewhere_items": 15,
+"held_elsewhere_files": 15,
 "status": "HELD"
 },
 {
@@ -39015,8 +39015,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 158,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 77,
 "status": "HELD"
 },
 {
@@ -39095,8 +39095,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
 "status": "THIN"
 },
 {
@@ -39475,8 +39475,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 45,
-"held_elsewhere_files": 547,
+"held_elsewhere_items": 43,
+"held_elsewhere_files": 543,
 "status": "THIN"
 },
 {
@@ -39915,8 +39915,8 @@
 "hours": 7,
 "episodes": 21,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 65,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 44,
 "status": "FOUND"
 },
 {
@@ -41635,8 +41635,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 15,
-"held_elsewhere_files": 61,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 45,
 "status": "MAYBE"
 },
 {
@@ -41815,8 +41815,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
 "status": "MAYBE"
 },
 {
@@ -44415,8 +44415,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 11,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
 "status": "HELD"
 },
 {
@@ -45135,9 +45135,9 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 1,
-"status": "HELD"
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Be the Creature",
@@ -45255,8 +45255,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 6,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 3,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "FOUND"
 },
 {
@@ -45575,8 +45575,8 @@
 "hours": 105,
 "episodes": 156,
 "other_files": 1,
-"held_elsewhere_items": 15,
-"held_elsewhere_files": 107,
+"held_elsewhere_items": 13,
+"held_elsewhere_files": 104,
 "status": "FOUND"
 },
 {
@@ -46895,8 +46895,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 20,
-"held_elsewhere_files": 57,
+"held_elsewhere_items": 19,
+"held_elsewhere_files": 55,
 "status": "HELD"
 },
 {
@@ -47075,8 +47075,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 5,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
 "status": "HELD"
 },
 {
@@ -47975,8 +47975,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 7,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "HELD"
 },
 {
@@ -47995,8 +47995,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 13,
-"held_elsewhere_files": 16,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 7,
 "status": "HELD"
 },
 {
@@ -48315,8 +48315,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 111,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 41,
 "status": "THIN"
 },
 {
@@ -51075,8 +51075,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 9,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 14,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 12,
 "status": "FOUND"
 },
 {
@@ -51755,8 +51755,8 @@
 "hours": 40,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 15,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 11,
 "status": "THIN"
 },
 {
@@ -52075,8 +52075,8 @@
 "hours": 9,
 "episodes": 0,
 "other_files": 12,
-"held_elsewhere_items": 5,
-"held_elsewhere_files": 5,
+"held_elsewhere_items": 4,
+"held_elsewhere_files": 4,
 "status": "FOUND"
 },
 {
@@ -52415,8 +52415,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 42,
-"held_elsewhere_files": 77,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 3,
 "status": "HELD"
 },
 {
@@ -52475,8 +52475,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 9,
-"held_elsewhere_files": 11,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 9,
 "status": "MAYBE"
 },
 {
@@ -52495,8 +52495,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 2,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
 "status": "HELD"
 },
 {
@@ -53595,8 +53595,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 67,
-"held_elsewhere_files": 68,
+"held_elsewhere_items": 66,
+"held_elsewhere_files": 66,
 "status": "MAYBE"
 },
 {
@@ -54075,8 +54075,8 @@
 "hours": 126,
 "episodes": 15,
 "other_files": 60,
-"held_elsewhere_items": 40,
-"held_elsewhere_files": 330,
+"held_elsewhere_items": 14,
+"held_elsewhere_files": 181,
 "status": "FOUND"
 },
 {
@@ -55035,8 +55035,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 5,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 2,
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
 "status": "FOUND"
 },
 {
@@ -55395,8 +55395,8 @@
 "hours": 30,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 192,
-"held_elsewhere_files": 337,
+"held_elsewhere_items": 188,
+"held_elsewhere_files": 332,
 "status": "MAYBE"
 },
 {
@@ -55535,8 +55535,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 3,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -55635,8 +55635,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 4,
 "status": "THIN"
 },
 {
@@ -57695,8 +57695,8 @@
 "hours": 7,
 "episodes": 0,
 "other_files": 6,
-"held_elsewhere_items": 13,
-"held_elsewhere_files": 14,
+"held_elsewhere_items": 12,
+"held_elsewhere_files": 13,
 "status": "FOUND"
 },
 {
@@ -57715,8 +57715,8 @@
 "hours": 14,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 8,
+"held_elsewhere_items": 7,
+"held_elsewhere_files": 7,
 "status": "THIN"
 },
 {
@@ -58415,8 +58415,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 18,
-"held_elsewhere_files": 52,
+"held_elsewhere_items": 17,
+"held_elsewhere_files": 50,
 "status": "HELD"
 },
 {
@@ -58495,8 +58495,8 @@
 "hours": 1,
 "episodes": 1,
 "other_files": 1,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 21,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 12,
 "status": "THIN"
 },
 {
@@ -58655,8 +58655,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 7,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 5,
 "status": "HELD"
 },
 {
@@ -58915,8 +58915,8 @@
 "hours": 1,
 "episodes": 1,
 "other_files": 0,
-"held_elsewhere_items": 24,
-"held_elsewhere_files": 35,
+"held_elsewhere_items": 23,
+"held_elsewhere_files": 34,
 "status": "THIN"
 },
 {
@@ -60655,8 +60655,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 30,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 10,
 "status": "HELD"
 },
 {
@@ -64015,8 +64015,8 @@
 "hours": 5,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 6,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 5,
 "status": "MAYBE"
 },
 {
@@ -64595,8 +64595,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 7,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "MAYBE"
 },
 {
@@ -64795,9 +64795,9 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 1,
-"held_elsewhere_files": 22,
-"status": "HELD"
+"held_elsewhere_items": 0,
+"held_elsewhere_files": 0,
+"status": "MISSING"
 },
 {
 "title": "Renovate My Family",
@@ -65455,8 +65455,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 2,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
 "status": "HELD"
 },
 {
@@ -65895,8 +65895,8 @@
 "hours": 16,
 "episodes": 0,
 "other_files": 11,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 8,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 6,
 "status": "FOUND"
 },
 {
@@ -66775,8 +66775,8 @@
 "hours": 14,
 "episodes": 0,
 "other_files": 20,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 7,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 5,
 "status": "FOUND"
 },
 {
@@ -67295,8 +67295,8 @@
 "hours": 9,
 "episodes": 2,
 "other_files": 2,
-"held_elsewhere_items": 73,
-"held_elsewhere_files": 134,
+"held_elsewhere_items": 71,
+"held_elsewhere_files": 130,
 "status": "THIN"
 },
 {
@@ -68235,8 +68235,8 @@
 "hours": 7,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 119,
-"held_elsewhere_files": 323,
+"held_elsewhere_items": 113,
+"held_elsewhere_files": 272,
 "status": "THIN"
 },
 {
@@ -68415,8 +68415,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 117,
-"held_elsewhere_files": 139,
+"held_elsewhere_items": 116,
+"held_elsewhere_files": 137,
 "status": "HELD"
 },
 {
@@ -69675,8 +69675,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 3,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "HELD"
 },
 {
@@ -70135,8 +70135,8 @@
 "hours": 20,
 "episodes": 0,
 "other_files": 86,
-"held_elsewhere_items": 6,
-"held_elsewhere_files": 65,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 64,
 "status": "FOUND"
 },
 {
@@ -70395,8 +70395,8 @@
 "hours": 48,
 "episodes": 8,
 "other_files": 2,
-"held_elsewhere_items": 58,
-"held_elsewhere_files": 84,
+"held_elsewhere_items": 57,
+"held_elsewhere_files": 82,
 "status": "FOUND"
 },
 {
@@ -72015,8 +72015,8 @@
 "hours": 403,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 87,
-"held_elsewhere_files": 255,
+"held_elsewhere_items": 81,
+"held_elsewhere_files": 246,
 "status": "THIN"
 },
 {
@@ -72315,8 +72315,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 4,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 1,
 "status": "HELD"
 },
 {
@@ -72755,8 +72755,8 @@
 "hours": 3,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 7,
-"held_elsewhere_files": 13,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 10,
 "status": "MAYBE"
 },
 {
@@ -73055,8 +73055,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 16,
+"held_elsewhere_items": 6,
+"held_elsewhere_files": 12,
 "status": "MAYBE"
 },
 {
@@ -73835,8 +73835,8 @@
 "hours": 10,
 "episodes": 8,
 "other_files": 0,
-"held_elsewhere_items": 11,
-"held_elsewhere_files": 14,
+"held_elsewhere_items": 9,
+"held_elsewhere_files": 11,
 "status": "FOUND"
 },
 {
@@ -74615,8 +74615,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 12,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 6,
 "status": "THIN"
 },
 {
@@ -76315,8 +76315,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 2,
-"held_elsewhere_files": 140,
+"held_elsewhere_items": 1,
+"held_elsewhere_files": 60,
 "status": "HELD"
 },
 {
@@ -76515,8 +76515,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 4,
-"held_elsewhere_files": 12,
+"held_elsewhere_items": 3,
+"held_elsewhere_files": 7,
 "status": "MAYBE"
 },
 {
@@ -77755,8 +77755,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 30,
-"held_elsewhere_files": 54,
+"held_elsewhere_items": 29,
+"held_elsewhere_files": 49,
 "status": "HELD"
 },
 {
@@ -78275,8 +78275,8 @@
 "hours": 150,
 "episodes": 2,
 "other_files": 99,
-"held_elsewhere_items": 475,
-"held_elsewhere_files": 788,
+"held_elsewhere_items": 474,
+"held_elsewhere_files": 786,
 "status": "FOUND"
 },
 {
@@ -79695,8 +79695,8 @@
 "hours": 0,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 8,
-"held_elsewhere_files": 9,
+"held_elsewhere_items": 5,
+"held_elsewhere_files": 5,
 "status": "HELD"
 },
 {
@@ -79815,8 +79815,8 @@
 "hours": 2,
 "episodes": 0,
 "other_files": 2,
-"held_elsewhere_items": 13,
-"held_elsewhere_files": 26,
+"held_elsewhere_items": 11,
+"held_elsewhere_files": 17,
 "status": "THIN"
 },
 {
@@ -79935,8 +79935,8 @@
 "hours": 5,
 "episodes": 0,
 "other_files": 0,
-"held_elsewhere_items": 3,
-"held_elsewhere_files": 3,
+"held_elsewhere_items": 2,
+"held_elsewhere_files": 2,
 "status": "MAYBE"
 },
 {
@@ -80055,8 +80055,8 @@
 "hours": 5,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 15,
-"held_elsewhere_files": 19,
+"held_elsewhere_items": 14,
+"held_elsewhere_files": 18,
 "status": "THIN"
 },
 {
@@ -80415,8 +80415,8 @@
 "hours": 1,
 "episodes": 0,
 "other_files": 1,
-"held_elsewhere_items": 25,
-"held_elsewhere_files": 26,
+"held_elsewhere_items": 23,
+"held_elsewhere_files": 24,
 "status": "THIN"
 },
 {
