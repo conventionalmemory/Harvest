@@ -24,6 +24,8 @@ Q = [
  ('kidint', 'title:("nick at nite promo" OR "nick at nite promos" OR "nickelodeon bumper" OR "nickelodeon bumpers" OR "nickelodeon ident" OR "nickelodeon idents" OR "nickelodeon promo" OR "nickelodeon promos" OR "nick bumpers" OR "nick promos" OR "cartoon network bumper" OR "cartoon network bumpers" OR "cartoon network promo" OR "cartoon network promos" OR groovies OR "disney channel promo" OR "disney channel promos" OR "disney channel bumper" OR "disney channel bumpers" OR dtv OR "mtv ident" OR "mtv idents" OR "mtv id" OR "mtv ids" OR "mtv promo" OR "mtv promos" OR "vh1 promo" OR "vh1 promos" OR "vh1 ident" OR "toonami promo" OR "toonami promos" OR "toonami bumpers" OR "fox kids promo" OR "fox kids promos" OR "fox kids bumpers" OR "kids wb promo" OR "kids wb promos" OR "short films by short people")'),
  ('shortform', 'title:("short attention span theater" OR "lottery drawing" OR "lotto drawing" OR "lottery drawings" OR "farm report" OR "did you know" OR "great moments" OR "sports bloopers" OR horoscope OR "bicentennial minute" OR "minute" OR "newsminute" OR "health minute" OR "consumer tip" OR "trivia break")'),
  ('infomercial', 'title:(infomercial OR infomercials OR "paid programming" OR "paid program" OR ronco OR "k-tel" OR "as seen on tv" OR "amazing discoveries" OR "home shopping" OR qvc OR hsn OR "direct response")'),
+ ('infomercial', 'title:("psychic friends" OR thighmaster OR "thigh master" OR "ab roller" OR "tae bo" OR flowbee OR soloflex OR "showtime rotisserie" OR "deal-a-meal" OR "susan powter" OR "carlton sheets" OR "don lapre" OR "hooked on phonics" OR juiceman OR "body by jake" OR "ab isolator" OR "tony robbins" OR "mega memory" OR nordictrack OR "total gym" OR "buns of steel" OR "sweatin to the oldies" OR ginsu OR popeil OR "veg-o-matic" OR "pocket fisherman" OR "miracle blade" OR "ultimate chopper" OR "chef tony" OR "hair club for men" OR proactiv OR "orange glo" OR oxiclean OR "billy mays" OR "time life music" OR "freedom rock" OR "dave del dotto" OR "tom vu" OR "smart mop" OR "topsy tail" OR abflex OR "ab flex" OR "ab doer" OR "tony little" OR bowflex OR healthrider OR "george foreman grill" OR "power juicer" OR "victoria principal" OR "mike levey" OR "amazing discoveries" OR "miss cleo" OR "space bag" OR "smokeless ashtray" OR "spray on hair" OR "glh formula")', 1),
+ ('infomercial', 'subject:(infomercial OR infomercials OR "paid programming" OR "direct response")', 1),
  ('telethon', 'title:(telethon)'),
  ('holiday', 'title:("yule log" OR "new year\'s countdown" OR "holiday greetings" OR "season\'s greetings" OR "seasons greetings" OR "christmas greetings" OR "happy holidays from" OR "holiday bumper" OR "holiday bumpers" OR "christmas bumper" OR "christmas bumpers" OR "holiday promo" OR "holiday promos" OR "christmas promo" OR "christmas promos" OR "holiday ident" OR "christmas ident" OR "halloween promo" OR "halloween promos" OR "halloween bumpers")'),
 ]
@@ -56,9 +58,12 @@ def scrape(q):
         out += j.get('items', []); cursor = j.get('cursor')
         if not cursor or len(out) > 40000: break
     return out
+QONLY = set(x for x in (os.environ.get('QONLY', '') or '').split(',') if x)
+Q = [q for q in Q if not QONLY or q[0] in QONLY]
 seen = {}
-for tag, expr in Q:
-    items = scrape('(' + expr + ') AND ' + BASE)
+for qq in Q:
+    tag, expr = qq[0], qq[1]
+    items = scrape('(' + expr + ') AND ' + ('mediatype:movies' if len(qq) > 2 else BASE))
     ok = []
     for it in items:
         t = str(it.get('title') or '')
@@ -129,6 +134,9 @@ with ThreadPoolExecutor(THREADS) as ex:
     for n, r in enumerate(ex.map(meta, cands)):
         if r: res.append(r)
         if n % 2000 == 0: print('meta', n, len(res), round((time.time() - T0) / 60, 1), 'min', flush=True)
+if QONLY and os.path.exists(os.path.join(OUT, 'filler.json.gz')):
+    _ids = set(x['i'] for x in res)
+    res = res + [x for x in json.load(gzip.open(os.path.join(OUT, 'filler.json.gz'), 'rt', encoding='utf-8')) if x['i'] not in _ids]
 with gzip.open(os.path.join(OUT, 'filler.json.gz'), 'wt', encoding='utf-8') as f:
     json.dump([{k: v for k, v in x.items() if k != 'u'} for x in res], f, ensure_ascii=False, separators=(',', ':'))
 def yr(x):
