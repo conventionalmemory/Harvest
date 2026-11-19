@@ -21,7 +21,7 @@ BAD = re.compile(r'(?i)reaction|reacts|review|highlights?\b|podcast|excerpt|reca
 have = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'eventfill_have.json'))) if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'eventfill_have.json')) else {}
 out = json.load(gzip.open(OUT, 'rt')) if os.path.exists(OUT) else []
 seen = set(x['vid'] for x in out)
-for E in EV:
+for E in (EV if not os.environ.get('ONLYTG') else []):
     for y, md in sorted(E['d'].items()):
         if y in set(have.get(E['k'], [])): continue
         if Y.left() < 300: break
@@ -47,5 +47,31 @@ for E in EV:
             seen.add(c['vid'])
             out.append({'i': 'yt:' + c['vid'], 'vid': c['vid'], 't': c['t'], 'ch': c.get('ch', ''), 'off': 0, 'dur': c['dur'], 'views': c.get('views', 0), 'q': E['q'], 'k': c['t'].upper()[:60], 'ad': f'{y}-{md}', 'as': 'fill', 'e': y, 'net': E['net'](y), 'ct': E['k'], 'why': 'eventfill'})
             print(E['k'], y, round(c['dur'] / 60), c['t'][:80], flush=True)
+TG = """1984|Green Bay Packers|Detroit Lions|cbs;1984|New England Patriots|Dallas Cowboys|nbc;1985|New York Jets|Detroit Lions|nbc;1985|St. Louis Cardinals|Dallas Cowboys|cbs;1986|Green Bay Packers|Detroit Lions|cbs;1986|Seattle Seahawks|Dallas Cowboys|nbc;1987|Kansas City Chiefs|Detroit Lions|nbc;1987|Minnesota Vikings|Dallas Cowboys|cbs;1988|Minnesota Vikings|Detroit Lions|cbs;1988|Houston Oilers|Dallas Cowboys|nbc;1989|Cleveland Browns|Detroit Lions|nbc;1989|Philadelphia Eagles|Dallas Cowboys|cbs;1990|Denver Broncos|Detroit Lions|nbc;1990|Washington Redskins|Dallas Cowboys|cbs;1991|Chicago Bears|Detroit Lions|cbs;1991|Pittsburgh Steelers|Dallas Cowboys|nbc;1992|Houston Oilers|Detroit Lions|nbc;1992|New York Giants|Dallas Cowboys|cbs;1993|Chicago Bears|Detroit Lions|cbs;1993|Miami Dolphins|Dallas Cowboys|nbc;1994|Buffalo Bills|Detroit Lions|nbc;1994|Green Bay Packers|Dallas Cowboys|fox;1995|Minnesota Vikings|Detroit Lions|fox;1995|Kansas City Chiefs|Dallas Cowboys|nbc;1996|Kansas City Chiefs|Detroit Lions|nbc;1996|Washington Redskins|Dallas Cowboys|fox;1997|Chicago Bears|Detroit Lions|fox;1997|Tennessee Oilers|Dallas Cowboys|nbc;1998|Pittsburgh Steelers|Detroit Lions|cbs;1998|Minnesota Vikings|Dallas Cowboys|fox;1999|Chicago Bears|Detroit Lions|fox;1999|Miami Dolphins|Dallas Cowboys|cbs;2000|New England Patriots|Detroit Lions|cbs;2000|Minnesota Vikings|Dallas Cowboys|fox;2001|Green Bay Packers|Detroit Lions|fox;2001|Denver Broncos|Dallas Cowboys|cbs;2002|New England Patriots|Detroit Lions|cbs;2002|Washington Redskins|Dallas Cowboys|fox;2003|Green Bay Packers|Detroit Lions|fox;2003|Miami Dolphins|Dallas Cowboys|cbs;2004|Indianapolis Colts|Detroit Lions|cbs;2004|Chicago Bears|Dallas Cowboys|fox"""
+import datetime
+for row in TG.split(';'):
+    if Y.left() < 300: break
+    y, vis, home, net = row.split('|'); y = int(y)
+    if 'tg:' + row in set(have.get('tgfb', [])): continue
+    f = datetime.date(y, 11, 1).weekday(); th = 1 + ((3 - f) % 7) + 21
+    vn, hn = vis.split()[-1], home.split()[-1]
+    qs = [f"{y} Thanksgiving {vn} vs {hn}", f"{vn} at {hn} {y} Thanksgiving", f"{vis} vs {home} {y} full game"]
+    best = []
+    for q in qs:
+        try: res = Y.search(q, pages=1)
+        except Exception: res = []
+        for c in res:
+            t = c.get('t') or ''; low = t.lower(); dur = c.get('dur') or 0
+            if c['vid'] in seen or c.get('live') or dur < 3600 or BAD.search(t): continue
+            if vn.lower() not in low or hn.lower() not in low: continue
+            if str(y) not in t and not ('thanksgiving' in low and str(y)[2:] in t): continue
+            if re.search(r'(?<!\d)(19[89]\d|200[0-4])(?!\d)', t) and str(y) not in t: continue
+            best.append(c)
+        time.sleep(0.5 + random.random())
+    best.sort(key=lambda c: -(c.get('dur') or 0))
+    for c in best[:1]:
+        seen.add(c['vid'])
+        out.append({'i': 'yt:' + c['vid'], 'vid': c['vid'], 't': c['t'], 'ch': c.get('ch', ''), 'off': 0, 'dur': c['dur'], 'views': c.get('views', 0), 'q': 'sports', 'k': ('NFL THANKSGIVING: ' + vn + ' AT ' + hn).upper(), 'ad': '%d-11-%02d' % (y, th), 'net': net, 'why': 'tgfb', 'ct': ('NFL Thanksgiving: ' + vn + ' at ' + hn)})
+        print('tgfb', y, vn, hn, round(c['dur'] / 60), c['t'][:80], flush=True)
 json.dump(out, gzip.open(OUT, 'wt'), ensure_ascii=False)
 print('total', len(out))

@@ -1,6 +1,10 @@
 name: Event broadcast fill
 on:
   workflow_dispatch:
+    inputs:
+      onlytg:
+        description: set to 1 to only search Thanksgiving games
+        default: ""
 permissions:
   contents: write
 jobs:
@@ -9,7 +13,7 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
-      - run: BUDGET_MIN=100 python3 harvest/yt_eventfill.py
+      - run: BUDGET_MIN=100 ONLYTG='${{ inputs.onlytg }}' python3 harvest/yt_eventfill.py
       - name: Commit
         run: |
           git config user.name "Conventional Memory"
