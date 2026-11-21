@@ -53,22 +53,38 @@ for row in TG.split(';'):
     if Y.left() < 300: break
     y, vis, home, net = row.split('|'); y = int(y)
     if 'tg:' + row in set(have.get('tgfb', [])): continue
+    _vn, _hn = vis.split()[-1], home.split()[-1]
+    if any(x.get('why') == 'tgfb' and x.get('k') == ('NFL THANKSGIVING: ' + _vn + ' AT ' + _hn).upper() and str(x.get('ad', '')).startswith(str(y)) and (x.get('parts') or not re.search(r'(?i)part [2-9]', x.get('t', ''))) for x in out): continue
     f = datetime.date(y, 11, 1).weekday(); th = 1 + ((3 - f) % 7) + 21
     vn, hn = vis.split()[-1], home.split()[-1]
-    qs = [f"{y} Thanksgiving {vn} vs {hn}", f"{vn} at {hn} {y} Thanksgiving", f"{vis} vs {home} {y} full game"]
-    best = []
+    qs = [f"{y} Thanksgiving {vn} vs {hn}", f"{vn} at {hn} {y} Thanksgiving", f"{vis} vs {home} {y} full game", f"{y} {vn} {hn} thanksgiving part 1", f"{hn} vs {vn} {y} NFL", f"{y} {vn} at {hn} week 13"]
+    best = []; parts = []
     for q in qs:
         try: res = Y.search(q, pages=1)
         except Exception: res = []
         for c in res:
             t = c.get('t') or ''; low = t.lower(); dur = c.get('dur') or 0
-            if c['vid'] in seen or c.get('live') or dur < 3600 or BAD.search(t): continue
+            if c['vid'] in seen or c.get('live') or BAD.search(t): continue
             if vn.lower() not in low or hn.lower() not in low: continue
+            pm = re.search(r'(?i)\b(?:part|pt\.?)\s*(\d)', t)
+            if pm and dur >= 600 and (str(y) in t or str(y)[2:] in t):
+                parts.append((c.get('ch', ''), int(pm.group(1)), c)); continue
+            if dur < 3600: continue
             if str(y) not in t and not ('thanksgiving' in low and str(y)[2:] in t): continue
             if re.search(r'(?<!\d)(19[89]\d|200[0-4])(?!\d)', t) and str(y) not in t: continue
             best.append(c)
         time.sleep(0.5 + random.random())
     best.sort(key=lambda c: -(c.get('dur') or 0))
+    if not best or (best[0].get('dur') or 0) < 7200:
+        byc = {}
+        for ch, n, cc in parts: byc.setdefault(ch, {}).setdefault(n, cc)
+        grp = max(byc.values(), key=lambda g: sum((v.get('dur') or 0) for v in g.values()), default={})
+        if grp and 1 in grp and sum((v.get('dur') or 0) for v in grp.values()) >= 7200:
+            pl = [grp[k] for k in sorted(grp)]
+            for v in pl: seen.add(v['vid'])
+            out.append({'i': 'yt:' + pl[0]['vid'], 'vid': pl[0]['vid'], 't': pl[0]['t'], 'ch': pl[0].get('ch', ''), 'off': 0, 'dur': sum(v['dur'] for v in pl), 'parts': [[v['vid'], v['dur']] for v in pl], 'views': pl[0].get('views', 0), 'q': 'sports', 'k': ('NFL THANKSGIVING: ' + vn + ' AT ' + hn).upper(), 'ad': '%d-11-%02d' % (y, th), 'net': net, 'why': 'tgfb', 'ct': ('NFL Thanksgiving: ' + vn + ' at ' + hn)})
+            print('tgfb parts', y, vn, hn, len(pl), flush=True)
+            continue
     for c in best[:1]:
         seen.add(c['vid'])
         out.append({'i': 'yt:' + c['vid'], 'vid': c['vid'], 't': c['t'], 'ch': c.get('ch', ''), 'off': 0, 'dur': c['dur'], 'views': c.get('views', 0), 'q': 'sports', 'k': ('NFL THANKSGIVING: ' + vn + ' AT ' + hn).upper(), 'ad': '%d-11-%02d' % (y, th), 'net': net, 'why': 'tgfb', 'ct': ('NFL Thanksgiving: ' + vn + ' at ' + hn)})
