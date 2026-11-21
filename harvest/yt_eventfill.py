@@ -64,9 +64,9 @@ for row in TG.split(';'):
         except Exception: res = []
         for c in res:
             t = c.get('t') or ''; low = t.lower(); dur = c.get('dur') or 0
-            if c['vid'] in seen or c.get('live') or BAD.search(t): continue
-            if vn.lower() not in low or hn.lower() not in low: continue
             pm = re.search(r'(?i)\b(?:part|pt\.?)\s*(\d)', t)
+            if c['vid'] in seen or c.get('live') or BAD.search(re.sub(r'(?i)\b(?:part|pt\.?)\s*\d+( of \d+)?', ' ', t) if pm else t): continue
+            if vn.lower() not in low or hn.lower() not in low: continue
             if pm and dur >= 600 and (str(y) in t or str(y)[2:] in t):
                 parts.append((c.get('ch', ''), int(pm.group(1)), c)); continue
             if dur < 3600: continue
