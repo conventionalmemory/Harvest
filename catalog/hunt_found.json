@@ -2,34 +2,53 @@
  "iawl": {
   "ia": [
    {
-    "id": "lpama-It_s_a_Wonderful_Life_-_A_Live_Radio_Play_-_LHS_12.06.13",
-    "t": "It's a Wonderful Life - A Live Radio Play - LHS 12.06.13",
-    "y": "2013",
-    "dl": 251,
-    "lang": "English",
-    "files": [
-     [
-      "It_s_a_Wonderful_Life_-_A_Live_Radio_Play_-_LHS_12.06.13.mp4",
-      5135
-     ]
-    ],
-    "tot": 5135,
-    "desc": ""
-   },
-   {
-    "id": "DoubleACS_FeehanItsAWonderfulLife",
-    "t": "Bishop Feehan's Presentation of It's A Wonderful Life",
-    "y": "2008",
-    "dl": 246,
+    "id": "DoubleACS_WonderfulLife",
+    "t": "St. Joseph's presentation of It's a Wonderful Life",
+    "y": "2007",
+    "dl": 294,
     "lang": "",
     "files": [
      [
-      "DoubleACS_FeehanItsAWonderfulLife.mp4",
-      4670
+      "DoubleACS_WonderfulLife.mp4",
+      4413
      ]
     ],
-    "tot": 4670,
-    "desc": "Bishop Feehan's Presentation of It's A Wonderful Life"
+    "tot": 4413,
+    "desc": "St. Joseph's presentation of It's a Wonderful Life"
+   },
+   {
+    "id": "its-a-wonderful-life-opening-title-sequence",
+    "t": "It's A Wonderful Life OPENING TITLE SEQUENCE",
+    "y": "",
+    "dl": 276,
+    "lang": "",
+    "files": [
+     [
+      "Bells of San Angelo (1947) Roy Rogers   Dale Evans   Classic Western Color Movie.mp4",
+      4517
+     ],
+     [
+      "Miracle On 34th Street.mp4",
+      5786
+     ]
+    ],
+    "tot": 13463,
+    "desc": "1947"
+   },
+   {
+    "id": "its-a-wonderful-life-1994-chn",
+    "t": "It's a Wonderful Life (1994)",
+    "y": "1994",
+    "dl": 242,
+    "lang": "chi",
+    "files": [
+     [
+      "It's a Wonderful Life (1994) CHN Disk Kino Bluray.mp4",
+      5620
+     ]
+    ],
+    "tot": 5620,
+    "desc": " This 1994 Chinese New Year offering takes place over a period of time between one Christmas and Chinese New Year's eve. We are introduced to thirteen \"Big Rich\" people, learn of their particular disp"
    }
   ],
   "yt": [
@@ -38,7 +57,20 @@
     "t": "The \"It's A Wonderful Life\" Parade, Downtown Indiana (11-20-26)",
     "ch": "Renda Digital TV",
     "dur": 7697,
-    "q": "It's a Wonderful Life TV broadcast"
+    "q": "It's a Wonderful Life TV broadcast",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
+   },
+   {
+    "vid": "aUtdaHpEry8",
+    "t": "It's A Wonderful Life the radio play",
+    "ch": "Ross MacKae",
+    "dur": 8059,
+    "q": "It's a Wonderful Life TV broadcast",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
    }
   ],
   "at": "2026-11-24"
@@ -157,25 +189,34 @@
   "ia": [],
   "yt": [
    {
-    "vid": "6Rjk7p7yA8Q",
-    "t": "National Lampoon's Christmas Vacation | Classic Christmas Comedy Movie | Chevy Chase | Full Movie",
-    "ch": "International News Insights Global",
-    "dur": 5423,
-    "q": "Christmas Vacation 1989 full movie Chevy Chase"
+    "vid": "TaUN8OCcPMQ",
+    "t": "National Lampoon's Christmas Vacation (1989) Comedy/Fantasy Movie in English HD details & updates",
+    "ch": "RKD Pictures",
+    "dur": 6773,
+    "q": "National Lampoon's Christmas Vacation full movie 1989",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
    },
    {
     "vid": "D4nBIsMOrz0",
     "t": "National Lampoon's Christmas Vacation (1989)",
     "ch": "Movie Trap",
     "dur": 4962,
-    "q": "Christmas Vacation 1989 full movie"
+    "q": "Christmas Vacation 1989 full film HD",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
    },
    {
-    "vid": "TaUN8OCcPMQ",
-    "t": "National Lampoon's Christmas Vacation (1989) Comedy/Fantasy Movie in English HD details & updates",
-    "ch": "RKD Pictures",
-    "dur": 6773,
-    "q": "Christmas Vacation 1989 full movie"
+    "vid": "6Rjk7p7yA8Q",
+    "t": "National Lampoon's Christmas Vacation | Classic Christmas Comedy Movie | Chevy Chase | Full Movie",
+    "ch": "International News Insights Global",
+    "dur": 5423,
+    "q": "Christmas Vacation 1989 full film HD",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
    }
   ],
   "at": "2026-11-24"
@@ -184,24 +225,36 @@
   "ia": [],
   "yt": [
    {
-    "vid": "OoIMYmWcAWg",
-    "t": "THE PREACHER'S WIFE - NOLLYWOOD BLOCKBUSTER MOVIE",
-    "ch": "BTAtv",
-    "dur": 7253,
-    "q": "The Preacher's Wife full movie"
-   },
-   {
     "vid": "ZrCDYoVIoI0",
     "t": "The Preacher's Wife - w/ Evelyn Jones (mom)",
     "ch": "The Sir Walter Jones Show",
     "dur": 7175,
-    "q": "The Preacher's Wife TV broadcast"
+    "q": "The Preacher's Wife TV broadcast",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
    }
   ],
   "at": "2026-11-24"
  },
  "ha3": {
-  "ia": [],
+  "ia": [
+   {
+    "id": "home-alone-3_202611",
+    "t": "Home Alone 3",
+    "y": "",
+    "dl": 0,
+    "lang": "",
+    "files": [
+     [
+      "Home Alone 3.mp4",
+      6145
+     ]
+    ],
+    "tot": 6145,
+    "desc": "home alone 3"
+   }
+  ],
   "yt": [],
   "at": "2026-11-24"
  },
@@ -381,18 +434,44 @@
   "ia": [],
   "yt": [
    {
-    "vid": "qrzsDMgthMY",
-    "t": "Doug: Doug's Christmas Story (Nickelodeon) & Doug's Secret Christmas (Disney)",
-    "ch": "Behind the Bells",
-    "dur": 2209,
-    "q": "Doug Christmas Story Nickelodeon full"
-   },
-   {
     "vid": "_zV3AG85rSs",
     "t": "3rd day of Christmas:Doug's Christmas Story.",
     "ch": "Larry Bou Cloun",
     "dur": 1170,
-    "q": "Doug's Christmas Story 1993"
+    "q": "Doug Doug's Christmas Story 1993",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
+   },
+   {
+    "vid": "F-TibdpGPyg",
+    "t": "Doug S4E10 \"Doug's Christmas Story\"",
+    "ch": "Matt Kelly Podcasts",
+    "dur": 1452,
+    "q": "Doug's Christmas Story full special",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
+   },
+   {
+    "vid": "qrzsDMgthMY",
+    "t": "Doug: Doug's Christmas Story (Nickelodeon) & Doug's Secret Christmas (Disney)",
+    "ch": "Behind the Bells",
+    "dur": 2209,
+    "q": "Doug's Christmas Story full special",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
+   },
+   {
+    "vid": "PD3KrWt9Xfc",
+    "t": "25 Days of Toon Beyond Christmas - Day 6 - Doug - Doug's Christmas Story",
+    "ch": "The GCRN",
+    "dur": 1338,
+    "q": "Doug's Christmas Story full special",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
    }
   ],
   "at": "2026-11-24"
@@ -405,7 +484,10 @@
     "t": "ARNOLD'S CHRISTMAS",
     "ch": "MEMORIAS DE LOS 90",
     "dur": 1592,
-    "q": "Arnold's Christmas Hey Arnold full episode"
+    "q": "Arnold's Christmas Hey Arnold full episode",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
    }
   ],
   "at": "2026-11-24"
@@ -765,7 +847,18 @@
  },
  "animaniacsxmas": {
   "ia": [],
-  "yt": [],
+  "yt": [
+   {
+    "vid": "NnIXp8hDOOM",
+    "t": "DCSHG: It's the most Superful time of the year! An Animaniacs Universalfan20 Style Christmas Special",
+    "ch": "Universalfan20 Animation Studios",
+    "dur": 1327,
+    "q": "Animaniacs Christmas full special",
+    "status": "LOGIN_REQUIRED",
+    "emb": null,
+    "reason": "Sign in to confirm you’re not a bot"
+   }
+  ],
   "at": "2026-11-24"
  },
  "renstimpyxmas": {
@@ -1319,5 +1412,56 @@
   "ia": [],
   "yt": [],
   "at": "2026-11-24"
+ },
+ "_check": {
+  "6Rjk7p7yA8Q": {
+   "status": "LOGIN_REQUIRED",
+   "emb": null,
+   "reason": "Sign in to confirm you’re not a bot",
+   "t": "National Lampoon's Christmas Vacation | Classic Christmas Comedy Movie | Chevy Chase | Full Movie",
+   "ch": "International News Insights Global"
+  },
+  "KkbHFyixrus": {
+   "status": "LOGIN_REQUIRED",
+   "emb": null,
+   "reason": "Sign in to confirm you’re not a bot",
+   "t": "Home Alone 3 1997 Full Movie | Alex D. Linz, Olek Krupa | Alex's Crazy Traps",
+   "ch": "Black Frames"
+  },
+  "D4nBIsMOrz0": {
+   "status": "LOGIN_REQUIRED",
+   "emb": null,
+   "reason": "Sign in to confirm you’re not a bot",
+   "t": "National Lampoon's Christmas Vacation (1989)",
+   "ch": "Movie Trap"
+  },
+  "TaUN8OCcPMQ": {
+   "status": "LOGIN_REQUIRED",
+   "emb": null,
+   "reason": "Sign in to confirm you’re not a bot",
+   "t": "National Lampoon's Christmas Vacation (1989) Comedy/Fantasy Movie in English HD details & updates",
+   "ch": "RKD Pictures"
+  },
+  "d2ToZnqC0u0": {
+   "status": "LOGIN_REQUIRED",
+   "emb": null,
+   "reason": "Sign in to confirm you’re not a bot",
+   "t": "LA NAVIDAD DE ARNOLD  | HEY ARNOLD CAPITULO 19 COMPLETO",
+   "ch": "MEMORIAS DE LOS 90"
+  },
+  "_zV3AG85rSs": {
+   "status": "LOGIN_REQUIRED",
+   "emb": null,
+   "reason": "Sign in to confirm you’re not a bot",
+   "t": "3rd day of Christmas:Doug's Christmas Story.",
+   "ch": "Larry Bou Cloun"
+  },
+  "1m1h1AOlLhs": {
+   "status": "LOGIN_REQUIRED",
+   "emb": null,
+   "reason": "Sign in to confirm you’re not a bot",
+   "t": "Scrooged (1988)",
+   "ch": "The Shermer High Alumni Association"
+  }
  }
 }
