@@ -1,0 +1,348 @@
+[
+ {
+  "k": "iawl",
+  "must": "wonderful life",
+  "lo": 6630,
+  "hi": 11310,
+  "ia": [
+   "title:(\"Its a Wonderful Life\")",
+   "\"It's a Wonderful Life\" AND mediatype:movies",
+   "title:(Its a Wonderful Life) AND year:1946"
+  ],
+  "yt": [
+   "It's a Wonderful Life 1946 full movie",
+   "It's a Wonderful Life full movie",
+   "It's a Wonderful Life 1946 VHS",
+   "It's a Wonderful Life TV broadcast",
+   "It's a Wonderful Life colorized full movie",
+   "It's a Wonderful Life NBC broadcast 1990s"
+  ]
+ },
+ {
+  "k": "scrooged",
+  "must": "scrooged",
+  "lo": 5151,
+  "hi": 8787,
+  "ia": [
+   "title:(\"Scrooged\")",
+   "\"Scrooged\" AND mediatype:movies",
+   "title:(Scrooged) AND year:1988"
+  ],
+  "yt": [
+   "Scrooged 1988 full movie",
+   "Scrooged full movie",
+   "Scrooged 1988 VHS",
+   "Scrooged TV broadcast"
+  ]
+ },
+ {
+  "k": "santamovie",
+  "must": "santa claus:? the movie|santa claus the movie",
+  "lo": 5457,
+  "hi": 9309,
+  "ia": [
+   "title:(\"Santa Claus: The Movie\")",
+   "\"Santa Claus: The Movie\" AND mediatype:movies",
+   "title:(Santa Claus The Movie) AND year:1985"
+  ],
+  "yt": [
+   "Santa Claus: The Movie 1985 full movie",
+   "Santa Claus: The Movie full movie",
+   "Santa Claus: The Movie 1985 VHS",
+   "Santa Claus: The Movie TV broadcast"
+  ]
+ },
+ {
+  "k": "xvac",
+  "must": "christmas vacation(?! ?2)",
+  "lo": 4947,
+  "hi": 8439,
+  "ia": [
+   "title:(\"National Lampoons Christmas Vacation\")",
+   "\"National Lampoon's Christmas Vacation\" AND mediatype:movies",
+   "title:(National Lampoons Christmas Vacation) AND year:1989"
+  ],
+  "yt": [
+   "National Lampoon's Christmas Vacation 1989 full movie",
+   "National Lampoon's Christmas Vacation full movie",
+   "National Lampoon's Christmas Vacation 1989 VHS",
+   "National Lampoon's Christmas Vacation TV broadcast",
+   "Christmas Vacation 1989 full movie"
+  ]
+ },
+ {
+  "k": "preacher",
+  "must": "preacher'?s wife",
+  "lo": 6324,
+  "hi": 10788,
+  "ia": [
+   "title:(\"The Preachers Wife\")",
+   "\"The Preacher's Wife\" AND mediatype:movies",
+   "title:(The Preachers Wife) AND year:1996"
+  ],
+  "yt": [
+   "The Preacher's Wife 1996 full movie",
+   "The Preacher's Wife full movie",
+   "The Preacher's Wife 1996 VHS",
+   "The Preacher's Wife TV broadcast"
+  ]
+ },
+ {
+  "k": "ha3",
+  "must": "home alone 3",
+  "lo": 5202,
+  "hi": 8874,
+  "ia": [
+   "title:(\"Home Alone 3\")",
+   "\"Home Alone 3\" AND mediatype:movies",
+   "title:(Home Alone 3) AND year:1997"
+  ],
+  "yt": [
+   "Home Alone 3 1997 full movie",
+   "Home Alone 3 full movie",
+   "Home Alone 3 1997 VHS",
+   "Home Alone 3 TV broadcast"
+  ]
+ },
+ {
+  "k": "looneyxmas",
+  "must": "looney christmas|bugs bunny'?s? (looney )?christmas",
+  "lo": 1050,
+  "hi": 3300,
+  "ia": [
+   "title:(\"Bugs Bunnys Looney Christmas Tales\")",
+   "\"Bugs Bunny's Looney Christmas Tales\"",
+   "title:(looney christmas)"
+  ],
+  "yt": [
+   "Bugs Bunny's Looney Christmas Tales 1979",
+   "Bugs Bunny's Looney Christmas Tales full special",
+   "Bugs Bunny's Looney Christmas Tales full episode",
+   "Bugs Bunny's Looney Christmas Tales VHS",
+   "Looney Christmas Tales CBS 1979"
+  ]
+ },
+ {
+  "k": "simpsonsxmas",
+  "must": "roasting on an open fire|simpsons christmas special",
+  "lo": 965,
+  "hi": 3036,
+  "ia": [
+   "title:(\"Simpsons Roasting on an Open Fire\")",
+   "\"Simpsons Roasting on an Open Fire\"",
+   "title:(simpsons) AND title:(christmas)"
+  ],
+  "yt": [
+   "Simpsons Roasting on an Open Fire 1989",
+   "Simpsons Roasting on an Open Fire full special",
+   "Simpsons Roasting on an Open Fire full episode",
+   "Simpsons Roasting on an Open Fire VHS",
+   "The Simpsons Christmas special 1989 Fox"
+  ]
+ },
+ {
+  "k": "yogixmas",
+  "must": "yogi'?s first christmas",
+  "lo": 4073,
+  "hi": 12804,
+  "ia": [
+   "title:(\"Yogis First Christmas\")",
+   "\"Yogi's First Christmas\""
+  ],
+  "yt": [
+   "Yogi's First Christmas 1980",
+   "Yogi's First Christmas full special",
+   "Yogi's First Christmas full episode",
+   "Yogi's First Christmas VHS",
+   "Yogi's First Christmas 1980 full movie"
+  ]
+ },
+ {
+  "k": "casperxmas",
+  "must": "casper'?s first christmas",
+  "lo": 1050,
+  "hi": 3300,
+  "ia": [
+   "title:(\"Caspers First Christmas\")",
+   "\"Casper's First Christmas\""
+  ],
+  "yt": [
+   "Casper's First Christmas 1979",
+   "Casper's First Christmas full special",
+   "Casper's First Christmas full episode",
+   "Casper's First Christmas VHS"
+  ]
+ },
+ {
+  "k": "dougxmas",
+  "must": "doug'?s christmas",
+  "lo": 965,
+  "hi": 3036,
+  "ia": [
+   "title:(\"Dougs Christmas Story\")",
+   "\"Doug's Christmas Story\""
+  ],
+  "yt": [
+   "Doug's Christmas Story 1993",
+   "Doug's Christmas Story full special",
+   "Doug's Christmas Story full episode",
+   "Doug's Christmas Story VHS",
+   "Doug Christmas episode Nickelodeon"
+  ]
+ },
+ {
+  "k": "arnoldxmas",
+  "must": "arnold'?s christmas",
+  "lo": 965,
+  "hi": 3036,
+  "ia": [
+   "title:(\"Hey Arnold Arnolds Christmas\")",
+   "\"Hey Arnold Arnold's Christmas\""
+  ],
+  "yt": [
+   "Hey Arnold Arnold's Christmas 1996",
+   "Hey Arnold Arnold's Christmas full special",
+   "Hey Arnold Arnold's Christmas full episode",
+   "Hey Arnold Arnold's Christmas VHS",
+   "Arnold's Christmas Hey Arnold full episode"
+  ]
+ },
+ {
+  "k": "pinkyxmas",
+  "must": "pinky (and|&) the brain christmas|pinky.*christmas",
+  "lo": 965,
+  "hi": 3036,
+  "ia": [
+   "title:(\"A Pinky and the Brain Christmas\")",
+   "\"A Pinky and the Brain Christmas\""
+  ],
+  "yt": [
+   "A Pinky and the Brain Christmas 1995",
+   "A Pinky and the Brain Christmas full special",
+   "A Pinky and the Brain Christmas full episode",
+   "A Pinky and the Brain Christmas VHS"
+  ]
+ },
+ {
+  "k": "animaniacsxmas",
+  "must": "animaniacs.*(christmas|xmas|jingle|holiday)|twas the day before christmas|the christmas tree.*animaniacs",
+  "lo": 965,
+  "hi": 3036,
+  "ia": [
+   "title:(\"Animaniacs Christmas\")",
+   "\"Animaniacs Christmas\""
+  ],
+  "yt": [
+   "Animaniacs Christmas 1993",
+   "Animaniacs Christmas full special",
+   "Animaniacs Christmas full episode",
+   "Animaniacs Christmas VHS",
+   "Animaniacs Twas the Day Before Christmas",
+   "Animaniacs The Christmas Tree"
+  ]
+ },
+ {
+  "k": "renstimpyxmas",
+  "must": "son of stimpy|stimpy.*(christmas|xmas)|christmas.*stimpy|ren (and|&) stimpy.*holiday",
+  "lo": 965,
+  "hi": 3036,
+  "ia": [
+   "title:(\"Ren and Stimpy Christmas\")",
+   "\"Ren and Stimpy Christmas\""
+  ],
+  "yt": [
+   "Ren and Stimpy Christmas 1993",
+   "Ren and Stimpy Christmas full special",
+   "Ren and Stimpy Christmas full episode",
+   "Ren and Stimpy Christmas VHS",
+   "Ren and Stimpy Son of Stimpy",
+   "Ren and Stimpy Christmas Special 1992"
+  ]
+ },
+ {
+  "k": "rugratsxmas",
+  "must": "santa experience|rugrats.*(chanukah|hanukkah|christmas)|a rugrats chanukah|babies in toyland",
+  "lo": 965,
+  "hi": 3036,
+  "ia": [
+   "title:(\"Rugrats Christmas\")",
+   "\"Rugrats Christmas\""
+  ],
+  "yt": [
+   "Rugrats Christmas 1992",
+   "Rugrats Christmas full special",
+   "Rugrats Christmas full episode",
+   "Rugrats Christmas VHS",
+   "Rugrats The Santa Experience",
+   "A Rugrats Chanukah 1996",
+   "Rugrats Babies in Toyland"
+  ]
+ },
+ {
+  "k": "yesvirginia",
+  "must": "yes,? virginia",
+  "lo": 1050,
+  "hi": 3300,
+  "ia": [
+   "title:(\"Yes, Virginia, There Is a Santa Claus\")",
+   "\"Yes, Virginia, There Is a Santa Claus\""
+  ],
+  "yt": [
+   "Yes, Virginia, There Is a Santa Claus 1974",
+   "Yes, Virginia, There Is a Santa Claus full special",
+   "Yes, Virginia, There Is a Santa Claus full episode",
+   "Yes, Virginia, There Is a Santa Claus VHS",
+   "Yes Virginia There Is a Santa Claus 1974 animated special"
+  ]
+ },
+ {
+  "k": "drummerboy",
+  "must": "little drummer boy",
+  "lo": 1050,
+  "hi": 3300,
+  "ia": [
+   "title:(\"The Little Drummer Boy\")",
+   "\"The Little Drummer Boy\""
+  ],
+  "yt": [
+   "The Little Drummer Boy 1968",
+   "The Little Drummer Boy full special",
+   "The Little Drummer Boy full episode",
+   "The Little Drummer Boy VHS",
+   "The Little Drummer Boy 1968 Rankin Bass full"
+  ]
+ },
+ {
+  "k": "christmastimeagain",
+  "must": "christmastime again",
+  "lo": 965,
+  "hi": 3036,
+  "ia": [
+   "title:(\"Its Christmastime Again, Charlie Brown\")",
+   "\"It's Christmastime Again, Charlie Brown\""
+  ],
+  "yt": [
+   "It's Christmastime Again, Charlie Brown 1992",
+   "It's Christmastime Again, Charlie Brown full special",
+   "It's Christmastime Again, Charlie Brown full episode",
+   "It's Christmastime Again, Charlie Brown VHS"
+  ]
+ },
+ {
+  "k": "muppetbabiesxmas",
+  "must": "muppet babies.*(christmas|holiday)|christmas.*muppet babies",
+  "lo": 965,
+  "hi": 3036,
+  "ia": [
+   "title:(\"Muppet Babies Christmas\")",
+   "\"Muppet Babies Christmas\""
+  ],
+  "yt": [
+   "Muppet Babies Christmas 1985",
+   "Muppet Babies Christmas full special",
+   "Muppet Babies Christmas full episode",
+   "Muppet Babies Christmas VHS",
+   "Muppet Babies Merry Muppet Christmas"
+  ]
+ }
+]
