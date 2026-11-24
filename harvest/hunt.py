@@ -4,7 +4,7 @@ import yt_events as E
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IN = os.path.join(ROOT, 'catalog', 'hunt_items.json'); OUT = os.path.join(ROOT, 'catalog', 'hunt_found.json')
 UA = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'}
-JUNK = re.compile(r"(?i)reaction|review|trailer|teaser|clip\b|scene\b|behind the scenes|making of|interview|podcast|commentary|explained|facts|secrets|everything wrong|nostalgia critic|ranking|ranked|top \d+|parody|\bytp\b|karaoke|lyrics|soundtrack|\bost\b|audio ?book|read ?aloud|play at|theatre|theater company|high school|musical\b|recap|analysis|lookback|look back|retrospective|tribute|compilation|shorts\b|#shorts|tiktok|\b(2005|20[1-2]\d)\b(?!\s*(upload|transfer|remaster))")
+JUNK = re.compile(r"(?i)lektor|dublado|dublada|doblaje|latino|espa[nñ]ol|castellano|deutsch|german|fran[cç]ais|\bvf\b|italiano|russian|polski|hindi|montaj|watch party|first time watching|reacts|my thoughts|dark side of|music only|episode \d+ - |reaction|review|trailer|teaser|clip\b|scene\b|behind the scenes|making of|interview|podcast|commentary|explained|facts|secrets|everything wrong|nostalgia critic|ranking|ranked|top \d+|parody|\bytp\b|karaoke|lyrics|soundtrack|\bost\b|audio ?book|read ?aloud|play at|theatre|theater company|high school|musical\b|recap|analysis|lookback|look back|retrospective|tribute|compilation|shorts\b|#shorts|tiktok|\b(2005|20[1-2]\d)\b(?!\s*(upload|transfer|remaster))")
 def get(url, tries=4):
     for i in range(tries):
         try:

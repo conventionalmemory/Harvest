@@ -5,11 +5,16 @@
   "lo": 6630,
   "hi": 11310,
   "ia": [
-   "title:(\"Its a Wonderful Life\")",
-   "\"It's a Wonderful Life\" AND mediatype:movies",
-   "title:(Its a Wonderful Life) AND year:1946"
+   "title:(wonderful life) AND year:1946",
+   "title:(wonderful life) AND mediatype:movies",
+   "wonderful life 1946 capra",
+   "wonderful life colorized",
+   "wonderful life stewart"
   ],
   "yt": [
+   "It's a Wonderful Life 1946 full movie James Stewart",
+   "It's a Wonderful Life (1946) full film",
+   "It's a Wonderful Life 1946 HD",
    "It's a Wonderful Life 1946 full movie",
    "It's a Wonderful Life full movie",
    "It's a Wonderful Life 1946 VHS",
@@ -24,9 +29,8 @@
   "lo": 5151,
   "hi": 8787,
   "ia": [
-   "title:(\"Scrooged\")",
-   "\"Scrooged\" AND mediatype:movies",
-   "title:(Scrooged) AND year:1988"
+   "title:(scrooged) AND mediatype:movies",
+   "scrooged 1988 bill murray"
   ],
   "yt": [
    "Scrooged 1988 full movie",
@@ -58,11 +62,12 @@
   "lo": 4947,
   "hi": 8439,
   "ia": [
-   "title:(\"National Lampoons Christmas Vacation\")",
-   "\"National Lampoon's Christmas Vacation\" AND mediatype:movies",
-   "title:(National Lampoons Christmas Vacation) AND year:1989"
+   "title:(christmas vacation) AND mediatype:movies",
+   "christmas vacation 1989",
+   "lampoon christmas vacation"
   ],
   "yt": [
+   "Christmas Vacation 1989 full movie Chevy Chase",
    "National Lampoon's Christmas Vacation 1989 full movie",
    "National Lampoon's Christmas Vacation full movie",
    "National Lampoon's Christmas Vacation 1989 VHS",
@@ -76,11 +81,12 @@
   "lo": 6324,
   "hi": 10788,
   "ia": [
-   "title:(\"The Preachers Wife\")",
-   "\"The Preacher's Wife\" AND mediatype:movies",
-   "title:(The Preachers Wife) AND year:1996"
+   "title:(preacher wife) AND mediatype:movies",
+   "preachers wife 1996",
+   "preacher wife whitney houston"
   ],
   "yt": [
+   "The Preacher's Wife 1996 full movie Whitney Houston Denzel Washington",
    "The Preacher's Wife 1996 full movie",
    "The Preacher's Wife full movie",
    "The Preacher's Wife 1996 VHS",
@@ -93,9 +99,8 @@
   "lo": 5202,
   "hi": 8874,
   "ia": [
-   "title:(\"Home Alone 3\")",
-   "\"Home Alone 3\" AND mediatype:movies",
-   "title:(Home Alone 3) AND year:1997"
+   "title:(home alone 3) AND mediatype:movies",
+   "home alone 3 1997"
   ],
   "yt": [
    "Home Alone 3 1997 full movie",
@@ -179,10 +184,13 @@
   "lo": 965,
   "hi": 3036,
   "ia": [
-   "title:(\"Dougs Christmas Story\")",
-   "\"Doug's Christmas Story\""
+   "title:(doug christmas)",
+   "doug christmas story nickelodeon",
+   "doug nickelodeon 1993 christmas"
   ],
   "yt": [
+   "Doug's Christmas Story full episode 1993",
+   "Doug Christmas Story Nickelodeon full",
    "Doug's Christmas Story 1993",
    "Doug's Christmas Story full special",
    "Doug's Christmas Story full episode",
@@ -196,10 +204,12 @@
   "lo": 965,
   "hi": 3036,
   "ia": [
-   "title:(\"Hey Arnold Arnolds Christmas\")",
-   "\"Hey Arnold Arnold's Christmas\""
+   "title:(arnold christmas)",
+   "hey arnold christmas"
   ],
   "yt": [
+   "Hey Arnold Arnold's Christmas 1996 full episode",
+   "Arnold's Christmas full episode Nickelodeon",
    "Hey Arnold Arnold's Christmas 1996",
    "Hey Arnold Arnold's Christmas full special",
    "Hey Arnold Arnold's Christmas full episode",
@@ -213,10 +223,12 @@
   "lo": 965,
   "hi": 3036,
   "ia": [
-   "title:(\"A Pinky and the Brain Christmas\")",
-   "\"A Pinky and the Brain Christmas\""
+   "title:(pinky brain christmas)",
+   "pinky and the brain christmas 1995"
   ],
   "yt": [
+   "Pinky and the Brain Christmas full episode",
+   "A Pinky and the Brain Christmas 1995 full",
    "A Pinky and the Brain Christmas 1995",
    "A Pinky and the Brain Christmas full special",
    "A Pinky and the Brain Christmas full episode",
@@ -229,10 +241,13 @@
   "lo": 965,
   "hi": 3036,
   "ia": [
-   "title:(\"Animaniacs Christmas\")",
-   "\"Animaniacs Christmas\""
+   "title:(animaniacs christmas)",
+   "title:(animaniacs) AND title:(holiday)",
+   "animaniacs christmas 1993"
   ],
   "yt": [
+   "Animaniacs Twas the Day Before Christmas full episode",
+   "Animaniacs Christmas episode full",
    "Animaniacs Christmas 1993",
    "Animaniacs Christmas full special",
    "Animaniacs Christmas full episode",
@@ -247,10 +262,13 @@
   "lo": 965,
   "hi": 3036,
   "ia": [
-   "title:(\"Ren and Stimpy Christmas\")",
-   "\"Ren and Stimpy Christmas\""
+   "title:(son of stimpy)",
+   "title:(ren stimpy christmas)",
+   "ren stimpy christmas 1993"
   ],
   "yt": [
+   "Ren and Stimpy Son of Stimpy full episode",
+   "Ren & Stimpy Son of Stimpy 1993",
    "Ren and Stimpy Christmas 1993",
    "Ren and Stimpy Christmas full special",
    "Ren and Stimpy Christmas full episode",
@@ -265,10 +283,15 @@
   "lo": 965,
   "hi": 3036,
   "ia": [
-   "title:(\"Rugrats Christmas\")",
-   "\"Rugrats Christmas\""
+   "title:(rugrats santa experience)",
+   "title:(rugrats chanukah)",
+   "title:(rugrats christmas)",
+   "title:(babies in toyland)"
   ],
   "yt": [
+   "Rugrats The Santa Experience full episode",
+   "A Rugrats Chanukah full episode",
+   "Rugrats Christmas special full episode",
    "Rugrats Christmas 1992",
    "Rugrats Christmas full special",
    "Rugrats Christmas full episode",
@@ -334,10 +357,11 @@
   "lo": 965,
   "hi": 3036,
   "ia": [
-   "title:(\"Muppet Babies Christmas\")",
-   "\"Muppet Babies Christmas\""
+   "title:(muppet babies christmas)",
+   "muppet babies holiday"
   ],
   "yt": [
+   "Muppet Babies Christmas full episode 1980s",
    "Muppet Babies Christmas 1985",
    "Muppet Babies Christmas full special",
    "Muppet Babies Christmas full episode",
