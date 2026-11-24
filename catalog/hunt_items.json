@@ -389,7 +389,7 @@
  },
  {
   "k": "lions1984",
-  "must": "(?i)(lions|detroit).*(packers|green bay)|(packers|green bay).*(lions|detroit)",
+  "must": "(lions|detroit).*(packers|green bay)|(packers|green bay).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
@@ -407,7 +407,7 @@
  },
  {
   "k": "lions1986",
-  "must": "(?i)(lions|detroit).*(packers|green bay)|(packers|green bay).*(lions|detroit)",
+  "must": "(lions|detroit).*(packers|green bay)|(packers|green bay).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
@@ -425,7 +425,7 @@
  },
  {
   "k": "lions1987",
-  "must": "(?i)(lions|detroit).*(chiefs|kansas city)|(chiefs|kansas city).*(lions|detroit)",
+  "must": "(lions|detroit).*(chiefs|kansas city)|(chiefs|kansas city).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
@@ -443,7 +443,7 @@
  },
  {
   "k": "lions1988",
-  "must": "(?i)(lions|detroit).*(vikings|minnesota)|(vikings|minnesota).*(lions|detroit)",
+  "must": "(lions|detroit).*(vikings|minnesota)|(vikings|minnesota).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
@@ -461,7 +461,7 @@
  },
  {
   "k": "lions1990",
-  "must": "(?i)(lions|detroit).*(broncos|denver)|(broncos|denver).*(lions|detroit)",
+  "must": "(lions|detroit).*(broncos|denver)|(broncos|denver).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
@@ -479,7 +479,7 @@
  },
  {
   "k": "lions1993",
-  "must": "(?i)(lions|detroit).*(bears|chicago)|(bears|chicago).*(lions|detroit)",
+  "must": "(lions|detroit).*(bears|chicago)|(bears|chicago).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
@@ -497,7 +497,7 @@
  },
  {
   "k": "lions1998",
-  "must": "(?i)(lions|detroit).*(steelers|pittsburgh)|(steelers|pittsburgh).*(lions|detroit)",
+  "must": "(lions|detroit).*(steelers|pittsburgh)|(steelers|pittsburgh).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
@@ -515,7 +515,7 @@
  },
  {
   "k": "lions1999",
-  "must": "(?i)(lions|detroit).*(bears|chicago)|(bears|chicago).*(lions|detroit)",
+  "must": "(lions|detroit).*(bears|chicago)|(bears|chicago).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
@@ -533,7 +533,7 @@
  },
  {
   "k": "lions2000",
-  "must": "(?i)(lions|detroit).*(patriots|new england)|(patriots|new england).*(lions|detroit)",
+  "must": "(lions|detroit).*(patriots|new england)|(patriots|new england).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
@@ -551,7 +551,7 @@
  },
  {
   "k": "lions2003",
-  "must": "(?i)(lions|detroit).*(packers|green bay)|(packers|green bay).*(lions|detroit)",
+  "must": "(lions|detroit).*(packers|green bay)|(packers|green bay).*(lions|detroit)",
   "lo": 2400,
   "hi": 15000,
   "ia": [
