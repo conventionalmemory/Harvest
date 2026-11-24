@@ -435,6 +435,7 @@ if MODE == 'wanted':
             print('WANTED not on wikidata', w['t'], y, flush=True)
             f = {'q': 'w-' + norm(w['t']).replace(' ', '-') + ('-%d' % y if y else ''), 't': w['t'], 'd': ('%d-01-01' % y) if y else '', 'rt': 0, 'sl': 0, 'bo': 0, 'g': [], 'r': ''}
         if w.get('rt'): f['rt'] = float(w['rt'])
+        if w.get('x'): f['x'] = 1
         for k in ('ia', 'ias', 'keep', 'why', 'tried', 'pia'): f.pop(k, None)
         work.append(f); n0 = norm(f['t']); ALLT.add(n0)
         if len(n0.split()) >= 2 or len(n0) >= 7: ALLP.add(n0)
