@@ -402,6 +402,57 @@ def match(f):
     if sure: f['ia'] = [sure[0][0], sure[0][1]]
     else: f['keep'] = 'maybe'; f['why'] = out[0][4] if len(out[0]) > 4 else 'doubtful match'
     return f
+def wd_lookup(t, y):
+    yf = ('FILTER(YEAR(?d) >= %d && YEAR(?d) <= %d)' % (y - 1, y + 1)) if y else ''
+    q = 'SELECT ?film ?d ?du ?sl WHERE { VALUES ?ty { wd:Q11424 wd:Q506240 wd:Q1259759 } ?film wdt:P31 ?ty; rdfs:label "%s"@en; wdt:P577 ?d; wikibase:sitelinks ?sl. OPTIONAL{?film wdt:P2047 ?du} %s } ORDER BY DESC(?sl) LIMIT 1' % (t.replace('"', ''), yf)
+    j = get('https://query.wikidata.org/sparql?format=json&query=' + urllib.parse.quote(q), accept='application/sparql-results+json')
+    rows = (j or {}).get('results', {}).get('bindings', [])
+    if not rows: return None
+    r = rows[0]; v = lambda k: r.get(k, {}).get('value', '')
+    try: du = float(v('du') or 0)
+    except Exception: du = 0
+    try: sl = int(float(v('sl') or 0))
+    except Exception: sl = 0
+    return {'q': v('film').rsplit('/', 1)[-1], 't': t, 'd': v('d')[:10], 'rt': du, 'sl': sl, 'bo': 0, 'g': [], 'r': ''}
+if MODE == 'wanted':
+    WF = os.path.join(OUT, 'movies_wanted.json'); FF = os.path.join(OUT, 'movies_wanted_found.json.gz')
+    want = json.load(open(WF, encoding='utf-8')) if os.path.exists(WF) else []
+    for s0 in [x.strip() for x in os.environ.get('TITLES', '').split('|') if x.strip()]:
+        m = re.match(r'^(.*?)\s*\((\d{4})\)\s*$', s0)
+        t, y = (m.group(1).strip(), int(m.group(2))) if m else (s0, 0)
+        if not any(norm(w['t']) == norm(t) and int(w.get('y') or 0) == y for w in want): want.append({'t': t, 'y': y})
+    json.dump(want, open(WF, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    only = set(norm(x.split('(')[0]) for x in os.environ.get('ONLY', '').split('|') if x.strip())
+    byt = {}
+    for x in films: byt.setdefault(norm(x['t']), []).append(x)
+    work = []
+    for w in want:
+        if only and norm(w['t']) not in only: continue
+        y = int(w.get('y') or 0)
+        c = [x for x in byt.get(norm(w['t']), []) if not y or (x['d'][:4].isdigit() and abs(int(x['d'][:4]) - y) <= 1)]
+        f = dict(c[0]) if c else wd_lookup(w['t'], y)
+        if not f:
+            print('WANTED not on wikidata', w['t'], y, flush=True)
+            f = {'q': 'w-' + norm(w['t']).replace(' ', '-') + ('-%d' % y if y else ''), 't': w['t'], 'd': ('%d-01-01' % y) if y else '', 'rt': 0, 'sl': 0, 'bo': 0, 'g': [], 'r': ''}
+        if w.get('rt'): f['rt'] = float(w['rt'])
+        for k in ('ia', 'ias', 'keep', 'why', 'tried', 'pia'): f.pop(k, None)
+        work.append(f); n0 = norm(f['t']); ALLT.add(n0)
+        if len(n0.split()) >= 2 or len(n0) >= 7: ALLP.add(n0)
+    print('wanted films', len(work), flush=True)
+    os.environ['WIDE'] = '1'
+    people([x['q'] for x in work if x['q'].startswith('Q')])
+    with ThreadPoolExecutor(int(os.environ.get('THREADS', '6'))) as ex: got = list(ex.map(match, work))
+    prev = {x['q']: x for x in json.load(gzip.open(FF, 'rt', encoding='utf-8'))} if os.path.exists(FF) else {}
+    for f in got:
+        old = prev.get(f['q'])
+        if old and old.get('ias') and not f.get('ias'): continue
+        prev[f['q']] = f
+        if f.get('ias'):
+            for c in f['ias'][:6]: print('FOUND', f['t'], f['d'][:4], int(f.get('rt') or 0), '->', c[0], round(sum(p[1] for p in c[1]) / 60), c[2], ','.join(c[3]), c[4] if len(c) > 4 else '', flush=True)
+        else: print('NONE', f['t'], f['d'][:4], int(f.get('rt') or 0), flush=True)
+    with gzip.open(FF, 'wt', encoding='utf-8') as fo: json.dump(sorted(prev.values(), key=lambda x: x['q']), fo, ensure_ascii=False, separators=(',', ':'))
+    print('wanted done', len(got), 'sure', sum(1 for x in got if x.get('ia')), 'maybe only', sum(1 for x in got if x.get('ias') and not x.get('ia')), 'foreign rejected', CNT['foreign'], flush=True)
+    raise SystemExit(0)
 if MODE == 'merge':
     by = {}
     for fn in sorted(os.listdir(PARTS)):

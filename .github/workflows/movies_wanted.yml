@@ -1,0 +1,43 @@
+name: Wanted movies
+on:
+  workflow_dispatch:
+    inputs:
+      titles:
+        description: 'Titles to add to the wanted list, as Title (Year) separated by |'
+        required: false
+        default: ''
+      only:
+        description: 'Search only these wanted titles, separated by |'
+        required: false
+        default: ''
+permissions:
+  contents: write
+concurrency:
+  group: movies-wanted
+  cancel-in-progress: false
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Search for English copies
+        env:
+          TITLES: ${{ inputs.titles }}
+          ONLY: ${{ inputs.only }}
+        run: MODE=wanted THREADS=6 BUDGET=100 python3 harvest/movies.py
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          cp catalog/movies_wanted.json /tmp/mw.json
+          cp catalog/movies_wanted_found.json.gz /tmp/mwf.json.gz
+          for i in 1 2 3 4 5 6 7 8; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/mw.json catalog/movies_wanted.json && cp /tmp/mwf.json.gz catalog/movies_wanted_found.json.gz && git add catalog/movies_wanted.json catalog/movies_wanted_found.json.gz || { sleep $((10 + RANDOM % 20)); continue; }
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update wanted movies" && git push origin HEAD:main && exit 0
+            sleep $((10 + RANDOM % 20))
+          done
+          exit 1
