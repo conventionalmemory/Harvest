@@ -32,6 +32,8 @@ jobs:
         shard: [0, 1, 2, 3, 4, 5]
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/download-artifact@v4
         with:
           name: mine-cands
@@ -50,6 +52,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/download-artifact@v4
         with:
           pattern: mine-[0-9]*

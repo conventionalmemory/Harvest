@@ -63,6 +63,8 @@ jobs:
         shard: [0, 1, 2, 3, 4, 5]
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/download-artifact@v4
         with:
           name: ytn-plan
@@ -86,6 +88,8 @@ jobs:
     timeout-minutes: 70
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/download-artifact@v4
         with:
           name: ytn-plan
