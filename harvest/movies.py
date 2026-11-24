@@ -444,8 +444,6 @@ if MODE == 'wanted':
     with ThreadPoolExecutor(int(os.environ.get('THREADS', '6'))) as ex: got = list(ex.map(match, work))
     prev = {x['q']: x for x in json.load(gzip.open(FF, 'rt', encoding='utf-8'))} if os.path.exists(FF) else {}
     for f in got:
-        old = prev.get(f['q'])
-        if old and old.get('ias') and not f.get('ias'): continue
         prev[f['q']] = f
         if f.get('ias'):
             for c in f['ias'][:6]: print('FOUND', f['t'], f['d'][:4], int(f.get('rt') or 0), '->', c[0], round(sum(p[1] for p in c[1]) / 60), c[2], ','.join(c[3]), c[4] if len(c) > 4 else '', flush=True)
