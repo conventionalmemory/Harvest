@@ -1,26 +1,32 @@
 [
  {
   "t": "Short Circuit",
-  "y": 1986
+  "y": 1986,
+  "rt": 98
  },
  {
   "t": "Back to the Future Part II",
-  "y": 1989
+  "y": 1989,
+  "rt": 108
  },
  {
   "t": "Apollo 13",
-  "y": 1995
+  "y": 1995,
+  "rt": 140
  },
  {
   "t": "Lethal Weapon",
-  "y": 1987
+  "y": 1987,
+  "rt": 110
  },
  {
   "t": "Three Amigos",
-  "y": 1986
+  "y": 1986,
+  "rt": 104
  },
  {
   "t": "Adventures in Babysitting",
-  "y": 1987
+  "y": 1987,
+  "rt": 102
  }
 ]
