@@ -386,5 +386,185 @@
    "Muppet Babies Christmas VHS",
    "Muppet Babies Merry Muppet Christmas"
   ]
+ },
+ {
+  "k": "lions1984",
+  "must": "(?i)(lions|detroit).*(packers|green bay)|(packers|green bay).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(packers) AND title:(1984)",
+   "lions packers 1984 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:1984"
+  ],
+  "yt": [
+   "Packers vs Lions 1984 Thanksgiving",
+   "1984 Thanksgiving Packers Lions full game",
+   "Packers at Detroit Lions 1984",
+   "Packers Lions 1984-11-22",
+   "NFL 1984 Week 13 Packers Lions"
+  ]
+ },
+ {
+  "k": "lions1986",
+  "must": "(?i)(lions|detroit).*(packers|green bay)|(packers|green bay).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(packers) AND title:(1986)",
+   "lions packers 1986 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:1986"
+  ],
+  "yt": [
+   "Packers vs Lions 1986 Thanksgiving",
+   "1986 Thanksgiving Packers Lions full game",
+   "Packers at Detroit Lions 1986",
+   "Packers Lions 1986-11-27",
+   "NFL 1986 Week 13 Packers Lions"
+  ]
+ },
+ {
+  "k": "lions1987",
+  "must": "(?i)(lions|detroit).*(chiefs|kansas city)|(chiefs|kansas city).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(chiefs) AND title:(1987)",
+   "lions chiefs 1987 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:1987"
+  ],
+  "yt": [
+   "Chiefs vs Lions 1987 Thanksgiving",
+   "1987 Thanksgiving Chiefs Lions full game",
+   "Chiefs at Detroit Lions 1987",
+   "Chiefs Lions 1987-11-26",
+   "NFL 1987 Week 13 Chiefs Lions"
+  ]
+ },
+ {
+  "k": "lions1988",
+  "must": "(?i)(lions|detroit).*(vikings|minnesota)|(vikings|minnesota).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(vikings) AND title:(1988)",
+   "lions vikings 1988 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:1988"
+  ],
+  "yt": [
+   "Vikings vs Lions 1988 Thanksgiving",
+   "1988 Thanksgiving Vikings Lions full game",
+   "Vikings at Detroit Lions 1988",
+   "Vikings Lions 1988-11-24",
+   "NFL 1988 Week 13 Vikings Lions"
+  ]
+ },
+ {
+  "k": "lions1990",
+  "must": "(?i)(lions|detroit).*(broncos|denver)|(broncos|denver).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(broncos) AND title:(1990)",
+   "lions broncos 1990 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:1990"
+  ],
+  "yt": [
+   "Broncos vs Lions 1990 Thanksgiving",
+   "1990 Thanksgiving Broncos Lions full game",
+   "Broncos at Detroit Lions 1990",
+   "Broncos Lions 1990-11-22",
+   "NFL 1990 Week 13 Broncos Lions"
+  ]
+ },
+ {
+  "k": "lions1993",
+  "must": "(?i)(lions|detroit).*(bears|chicago)|(bears|chicago).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(bears) AND title:(1993)",
+   "lions bears 1993 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:1993"
+  ],
+  "yt": [
+   "Bears vs Lions 1993 Thanksgiving",
+   "1993 Thanksgiving Bears Lions full game",
+   "Bears at Detroit Lions 1993",
+   "Bears Lions 1993-11-25",
+   "NFL 1993 Week 13 Bears Lions"
+  ]
+ },
+ {
+  "k": "lions1998",
+  "must": "(?i)(lions|detroit).*(steelers|pittsburgh)|(steelers|pittsburgh).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(steelers) AND title:(1998)",
+   "lions steelers 1998 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:1998"
+  ],
+  "yt": [
+   "Steelers vs Lions 1998 Thanksgiving",
+   "1998 Thanksgiving Steelers Lions full game",
+   "Steelers at Detroit Lions 1998",
+   "Steelers Lions 1998-11-26",
+   "NFL 1998 Week 13 Steelers Lions"
+  ]
+ },
+ {
+  "k": "lions1999",
+  "must": "(?i)(lions|detroit).*(bears|chicago)|(bears|chicago).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(bears) AND title:(1999)",
+   "lions bears 1999 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:1999"
+  ],
+  "yt": [
+   "Bears vs Lions 1999 Thanksgiving",
+   "1999 Thanksgiving Bears Lions full game",
+   "Bears at Detroit Lions 1999",
+   "Bears Lions 1999-11-25",
+   "NFL 1999 Week 13 Bears Lions"
+  ]
+ },
+ {
+  "k": "lions2000",
+  "must": "(?i)(lions|detroit).*(patriots|new england)|(patriots|new england).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(patriots) AND title:(2000)",
+   "lions patriots 2000 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:2000"
+  ],
+  "yt": [
+   "Patriots vs Lions 2000 Thanksgiving",
+   "2000 Thanksgiving Patriots Lions full game",
+   "Patriots at Detroit Lions 2000",
+   "Patriots Lions 2000-11-23",
+   "NFL 2000 Week 13 Patriots Lions"
+  ]
+ },
+ {
+  "k": "lions2003",
+  "must": "(?i)(lions|detroit).*(packers|green bay)|(packers|green bay).*(lions|detroit)",
+  "lo": 2400,
+  "hi": 15000,
+  "ia": [
+   "title:(lions) AND title:(packers) AND title:(2003)",
+   "lions packers 2003 thanksgiving",
+   "title:(thanksgiving) AND title:(lions) AND year:2003"
+  ],
+  "yt": [
+   "Packers vs Lions 2003 Thanksgiving",
+   "2003 Thanksgiving Packers Lions full game",
+   "Packers at Detroit Lions 2003",
+   "Packers Lions 2003-11-27",
+   "NFL 2003 Week 13 Packers Lions"
+  ]
  }
 ]
