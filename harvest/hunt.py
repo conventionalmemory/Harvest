@@ -1,6 +1,8 @@
 import gzip, json, os, re, sys, time, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import yt_events as E
+os.environ['MODE'] = 'lib'
+import yt_shows as YS
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IN = os.path.join(ROOT, 'catalog', 'hunt_items.json'); OUT = os.path.join(ROOT, 'catalog', 'hunt_found.json')
 UA = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'}
@@ -65,6 +67,19 @@ for it in items:
             t = r.get('t') or ''; d = int(r.get('dur') or 0)
             if r['vid'] in yt or not must.search(t) or JUNK.search(t) or not (lo <= d <= hi): continue
             yt[r['vid']] = {'vid': r['vid'], 't': t[:160], 'ch': (r.get('ch') or '')[:60], 'dur': d, 'q': q}
-    res[k] = {'ia': sorted(ia.values(), key=lambda x: -x['dl'])[:15], 'yt': list(yt.values())[:20], 'at': time.strftime('%Y-%m-%d')}
+    ytl = list(yt.values())[:20]
+    for r in ytl[:10]:
+        try: r.update(YS.player(r['vid']) or {})
+        except Exception as e: r['perr'] = str(e)[:80]
+    res[k] = {'ia': sorted(ia.values(), key=lambda x: -x['dl'])[:15], 'yt': ytl, 'at': time.strftime('%Y-%m-%d')}
     print(k, 'ia', len(res[k]['ia']), 'yt', len(res[k]['yt']), flush=True)
+ck = res.setdefault('_check', {})
+for v in [x for x in os.environ.get('CHECK', '').split('|') if x]:
+    try: r = YS.player(v) or {}
+    except Exception as e: r = {'perr': str(e)[:80]}
+    try:
+        j = get('https://www.youtube.com/oembed?format=json&url=' + urllib.parse.quote('https://www.youtube.com/watch?v=' + v, safe=''), tries=2)
+        if j: r['t'] = j.get('title', ''); r['ch'] = j.get('author_name', '')
+    except Exception: pass
+    ck[v] = r; print('check', v, r.get('status'), r.get('dur'), r.get('t', '')[:60], flush=True)
 json.dump(res, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

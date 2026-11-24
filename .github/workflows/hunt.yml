@@ -6,6 +6,10 @@ on:
         description: 'Item keys to search, separated by |'
         required: false
         default: ''
+      check:
+        description: 'YouTube video ids to look up, separated by |'
+        required: false
+        default: ''
 permissions:
   contents: write
 concurrency:
@@ -22,6 +26,7 @@ jobs:
       - name: Search
         env:
           ONLY: ${{ inputs.only }}
+          CHECK: ${{ inputs.check }}
         run: python3 harvest/hunt.py
       - name: Commit
         run: |
