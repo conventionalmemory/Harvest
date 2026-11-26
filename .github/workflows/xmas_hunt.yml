@@ -1,0 +1,72 @@
+name: Christmas hunt
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Item keys to search, separated by |'
+        required: false
+        default: ''
+permissions:
+  contents: write
+concurrency:
+  group: xmas-hunt
+  cancel-in-progress: false
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Search
+        env:
+          ONLY: ${{ inputs.only }}
+          ITEMS: xmas_hunt.json
+          OUTF: xmas_part.json
+          SHARD: ${{ matrix.shard }}
+          NSHARD: '16'
+        run: rm -f catalog/xmas_part.json && python3 harvest/hunt.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xmas-${{ matrix.shard }}
+          path: catalog/xmas_part.json
+          retention-days: 3
+  merge:
+    needs: search
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+      - name: Merge
+        run: |
+          python3 - <<'PY'
+          import glob, json, os
+          p = 'catalog/xmas_found.json'
+          R = json.load(open(p)) if os.path.exists(p) else {}
+          for f in glob.glob('parts/*/xmas_part.json'):
+              for k, v in json.load(open(f)).items():
+                  if k != '_check': R[k] = v
+          json.dump(R, open('/tmp/xf.json', 'w'), ensure_ascii=False, indent=0)
+          print(len(R))
+          PY
+      - name: Commit
+        run: |
+          git config user.name "Conventional Memory"
+          git config user.email "conventionalmemory@users.noreply.github.com"
+          for i in 1 2 3 4 5 6 7 8; do
+            git fetch -q origin main && git reset -q --hard origin/main && cp /tmp/xf.json catalog/xmas_found.json && git add catalog/xmas_found.json || { sleep $((10 + RANDOM % 20)); continue; }
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Update Christmas hunt" && git push origin HEAD:main && exit 0
+            sleep $((10 + RANDOM % 20))
+          done
+          exit 1

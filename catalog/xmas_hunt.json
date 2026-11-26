@@ -1,0 +1,6616 @@
+[
+{
+"k": "xsthelittledrummerboybookii1976",
+"kind": "sp",
+"t": "The Little Drummer Boy Book II",
+"y": 1976,
+"mins": 25,
+"must": "little.{0,5}drummer.{0,5}boy.{0,5}book.{0,5}ii",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(little drummer boy book ii)",
+"\"The Little Drummer Boy Book II\""
+],
+"yt": [
+"The Little Drummer Boy Book II 1976",
+"The Little Drummer Boy Book II full special",
+"The Little Drummer Boy Book II 1976 broadcast",
+"The Little Drummer Boy Book II VHS"
+]
+},
+{
+"k": "xsthefirstchristmasthestoryofthefirstchris",
+"kind": "sp",
+"t": "The First Christmas: The Story of the First Christmas Snow",
+"y": 1975,
+"mins": 25,
+"must": "first christmas.{0,30}snow|story of the first christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(first christmas story of first christmas snow)",
+"\"The First Christmas: The Story of the First Christmas Snow\""
+],
+"yt": [
+"The First Christmas: The Story of the First Christmas Snow 1975",
+"The First Christmas: The Story of the First Christmas Snow full special",
+"The First Christmas: The Story of the First Christmas Snow 1975 broadcast",
+"The First Christmas: The Story of the First Christmas Snow VHS"
+]
+},
+{
+"k": "xstheleprechaunschristmasgold1981",
+"kind": "sp",
+"t": "The Leprechauns' Christmas Gold",
+"y": 1981,
+"mins": 25,
+"must": "leprechaun.{0,5}christmas gold",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(leprechauns christmas gold)",
+"\"The Leprechauns' Christmas Gold\""
+],
+"yt": [
+"The Leprechauns' Christmas Gold 1981",
+"The Leprechauns' Christmas Gold full special",
+"The Leprechauns' Christmas Gold 1981 broadcast",
+"The Leprechauns' Christmas Gold VHS"
+]
+},
+{
+"k": "xsthestingiestmanintown1978",
+"kind": "sp",
+"t": "The Stingiest Man in Town",
+"y": 1978,
+"mins": 50,
+"must": "stingiest.{0,5}man.{0,5}in.{0,5}town",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(stingiest man in town)",
+"\"The Stingiest Man in Town\""
+],
+"yt": [
+"The Stingiest Man in Town 1978",
+"The Stingiest Man in Town full special",
+"The Stingiest Man in Town 1978 broadcast",
+"The Stingiest Man in Town VHS"
+]
+},
+{
+"k": "xsrudolphandfrostyschristmasinjuly1979",
+"kind": "sp",
+"t": "Rudolph and Frosty's Christmas in July",
+"y": 1979,
+"mins": 97,
+"must": "christmas in july",
+"lo": 4073,
+"hi": 13985,
+"ia": [
+"title:(rudolph and frosty christmas in july)",
+"\"Rudolph and Frosty's Christmas in July\""
+],
+"yt": [
+"Rudolph and Frosty's Christmas in July 1979",
+"Rudolph and Frosty's Christmas in July full special",
+"Rudolph and Frosty's Christmas in July 1979 broadcast",
+"Rudolph and Frosty's Christmas in July VHS"
+]
+},
+{
+"k": "xssantababy2001",
+"kind": "sp",
+"t": "Santa, Baby!",
+"y": 2001,
+"mins": 45,
+"must": "santa,? baby",
+"lo": 1889,
+"hi": 6809,
+"ia": [
+"title:(santa baby)",
+"\"Santa, Baby!\""
+],
+"yt": [
+"Santa, Baby! 2001",
+"Santa, Baby! full special",
+"Santa, Baby! 2001 broadcast",
+"Santa, Baby! VHS"
+]
+},
+{
+"k": "xsrudolphtherednosedreindeerandtheislandof",
+"kind": "sp",
+"t": "Rudolph the Red-Nosed Reindeer and the Island of Misfit Toys",
+"y": 2001,
+"mins": 75,
+"must": "island of misfit toys",
+"lo": 3150,
+"hi": 10950,
+"ia": [
+"title:(rudolph red nosed reindeer and island of misfit toys)",
+"\"Rudolph the Red-Nosed Reindeer and the Island of Misfit Toys\""
+],
+"yt": [
+"Rudolph the Red-Nosed Reindeer and the Island of Misfit Toys 2001",
+"Rudolph the Red-Nosed Reindeer and the Island of Misfit Toys full special",
+"Rudolph the Red-Nosed Reindeer and the Island of Misfit Toys 2001 broadcast",
+"Rudolph the Red-Nosed Reindeer and the Island of Misfit Toys VHS"
+]
+},
+{
+"k": "xscharliebrownschristmastales2002",
+"kind": "sp",
+"t": "Charlie Brown's Christmas Tales",
+"y": 2002,
+"mins": 25,
+"must": "charlie brown'?s christmas tales",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(charlie brown christmas tales)",
+"\"Charlie Brown's Christmas Tales\""
+],
+"yt": [
+"Charlie Brown's Christmas Tales 2002",
+"Charlie Brown's Christmas Tales full special",
+"Charlie Brown's Christmas Tales 2002 broadcast",
+"Charlie Brown's Christmas Tales VHS"
+]
+},
+{
+"k": "xsacharliebrownchristmas1965",
+"kind": "sp",
+"t": "A Charlie Brown Christmas",
+"y": 1965,
+"mins": 25,
+"must": "charlie brown christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(charlie brown christmas)",
+"\"A Charlie Brown Christmas\""
+],
+"yt": [
+"A Charlie Brown Christmas 1965",
+"A Charlie Brown Christmas full special",
+"A Charlie Brown Christmas 1965 broadcast",
+"A Charlie Brown Christmas VHS"
+]
+},
+{
+"k": "xsmickeystwiceuponachristmas2004",
+"kind": "sp",
+"t": "Mickey's Twice Upon a Christmas",
+"y": 2004,
+"mins": 68,
+"must": "twice upon a christmas",
+"lo": 2856,
+"hi": 9984,
+"ia": [
+"title:(mickey twice upon christmas)",
+"\"Mickey's Twice Upon a Christmas\""
+],
+"yt": [
+"Mickey's Twice Upon a Christmas 2004",
+"Mickey's Twice Upon a Christmas full special",
+"Mickey's Twice Upon a Christmas 2004 broadcast",
+"Mickey's Twice Upon a Christmas VHS"
+]
+},
+{
+"k": "xsmickeysonceuponachristmas1999",
+"kind": "sp",
+"t": "Mickey's Once Upon a Christmas",
+"y": 1999,
+"mins": 66,
+"must": "once upon a christmas",
+"lo": 2772,
+"hi": 9708,
+"ia": [
+"title:(mickey once upon christmas)",
+"\"Mickey's Once Upon a Christmas\""
+],
+"yt": [
+"Mickey's Once Upon a Christmas 1999",
+"Mickey's Once Upon a Christmas full special",
+"Mickey's Once Upon a Christmas 1999 broadcast",
+"Mickey's Once Upon a Christmas VHS"
+]
+},
+{
+"k": "xswinniethepoohandchristmastoo1991",
+"kind": "sp",
+"t": "Winnie the Pooh and Christmas Too",
+"y": 1991,
+"mins": 25,
+"must": "pooh.{0,10}christmas too",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(winnie pooh and christmas too)",
+"\"Winnie the Pooh and Christmas Too\""
+],
+"yt": [
+"Winnie the Pooh and Christmas Too 1991",
+"Winnie the Pooh and Christmas Too full special",
+"Winnie the Pooh and Christmas Too 1991 broadcast",
+"Winnie the Pooh and Christmas Too VHS"
+]
+},
+{
+"k": "xswinniethepoohaverymerrypoohyear2002",
+"kind": "sp",
+"t": "Winnie the Pooh: A Very Merry Pooh Year",
+"y": 2002,
+"mins": 65,
+"must": "merry pooh year",
+"lo": 2730,
+"hi": 9570,
+"ia": [
+"title:(winnie pooh very merry pooh year)",
+"\"Winnie the Pooh: A Very Merry Pooh Year\""
+],
+"yt": [
+"Winnie the Pooh: A Very Merry Pooh Year 2002",
+"Winnie the Pooh: A Very Merry Pooh Year full special",
+"Winnie the Pooh: A Very Merry Pooh Year 2002 broadcast",
+"Winnie the Pooh: A Very Merry Pooh Year VHS"
+]
+},
+{
+"k": "xsplutoschristmastree1952",
+"kind": "sp",
+"t": "Pluto's Christmas Tree",
+"y": 1952,
+"mins": 7,
+"must": "pluto'?s christmas tree",
+"lo": 294,
+"hi": 1565,
+"ia": [
+"title:(pluto christmas tree)",
+"\"Pluto's Christmas Tree\""
+],
+"yt": [
+"Pluto's Christmas Tree 1952",
+"Pluto's Christmas Tree full special",
+"Pluto's Christmas Tree 1952 broadcast",
+"Pluto's Christmas Tree VHS"
+]
+},
+{
+"k": "xsaflintstonefamilychristmas1993",
+"kind": "sp",
+"t": "A Flintstone Family Christmas",
+"y": 1993,
+"mins": 25,
+"must": "flintstone family christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(flintstone family christmas)",
+"\"A Flintstone Family Christmas\""
+],
+"yt": [
+"A Flintstone Family Christmas 1993",
+"A Flintstone Family Christmas full special",
+"A Flintstone Family Christmas 1993 broadcast",
+"A Flintstone Family Christmas VHS"
+]
+},
+{
+"k": "xsaflintstonechristmas1977",
+"kind": "sp",
+"t": "A Flintstone Christmas",
+"y": 1977,
+"mins": 50,
+"must": "a flintstone christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(flintstone christmas)",
+"\"A Flintstone Christmas\""
+],
+"yt": [
+"A Flintstone Christmas 1977",
+"A Flintstone Christmas full special",
+"A Flintstone Christmas 1977 broadcast",
+"A Flintstone Christmas VHS"
+]
+},
+{
+"k": "xsthetownsantaforgot1993",
+"kind": "sp",
+"t": "The Town Santa Forgot",
+"y": 1993,
+"mins": 25,
+"must": "town santa forgot",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(town santa forgot)",
+"\"The Town Santa Forgot\""
+],
+"yt": [
+"The Town Santa Forgot 1993",
+"The Town Santa Forgot full special",
+"The Town Santa Forgot 1993 broadcast",
+"The Town Santa Forgot VHS"
+]
+},
+{
+"k": "xsthesmurfschristmasspecial1982",
+"kind": "sp",
+"t": "The Smurfs Christmas Special",
+"y": 1982,
+"mins": 25,
+"must": "smurfs?'? christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(smurfs christmas special)",
+"\"The Smurfs Christmas Special\""
+],
+"yt": [
+"The Smurfs Christmas Special 1982",
+"The Smurfs Christmas Special full special",
+"The Smurfs Christmas Special 1982 broadcast",
+"The Smurfs Christmas Special VHS"
+]
+},
+{
+"k": "xsajetsonchristmascarol1985",
+"kind": "sp",
+"t": "A Jetson Christmas Carol",
+"y": 1985,
+"mins": 25,
+"must": "jetsons?'? christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(jetson christmas carol)",
+"\"A Jetson Christmas Carol\""
+],
+"yt": [
+"A Jetson Christmas Carol 1985",
+"A Jetson Christmas Carol full special",
+"A Jetson Christmas Carol 1985 broadcast",
+"A Jetson Christmas Carol VHS"
+]
+},
+{
+"k": "xsapinkchristmas1978",
+"kind": "sp",
+"t": "A Pink Christmas",
+"y": 1978,
+"mins": 25,
+"must": "pink christmas|pink panther.{0,20}christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(pink christmas)",
+"\"A Pink Christmas\""
+],
+"yt": [
+"A Pink Christmas 1978",
+"A Pink Christmas full special",
+"A Pink Christmas 1978 broadcast",
+"A Pink Christmas VHS"
+]
+},
+{
+"k": "xsthefatalbertchristmasspecial1977",
+"kind": "sp",
+"t": "The Fat Albert Christmas Special",
+"y": 1977,
+"mins": 25,
+"must": "fat albert.{0,20}christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(fat albert christmas special)",
+"\"The Fat Albert Christmas Special\""
+],
+"yt": [
+"The Fat Albert Christmas Special 1977",
+"The Fat Albert Christmas Special full special",
+"The Fat Albert Christmas Special 1977 broadcast",
+"The Fat Albert Christmas Special VHS"
+]
+},
+{
+"k": "xsacosmicchristmas1977",
+"kind": "sp",
+"t": "A Cosmic Christmas",
+"y": 1977,
+"mins": 25,
+"must": "cosmic christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(cosmic christmas)",
+"\"A Cosmic Christmas\""
+],
+"yt": [
+"A Cosmic Christmas 1977",
+"A Cosmic Christmas full special",
+"A Cosmic Christmas 1977 broadcast",
+"A Cosmic Christmas VHS"
+]
+},
+{
+"k": "xsthecarebearsnutcrackersuite1988",
+"kind": "sp",
+"t": "The Care Bears Nutcracker Suite",
+"y": 1988,
+"mins": 50,
+"must": "care bears.{0,20}nutcracker",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(care bears nutcracker suite)",
+"\"The Care Bears Nutcracker Suite\""
+],
+"yt": [
+"The Care Bears Nutcracker Suite 1988",
+"The Care Bears Nutcracker Suite full special",
+"The Care Bears Nutcracker Suite 1988 broadcast",
+"The Care Bears Nutcracker Suite VHS"
+]
+},
+{
+"k": "xsthesnowman1982",
+"kind": "sp",
+"t": "The Snowman",
+"y": 1982,
+"mins": 26,
+"must": "the snowman.{0,20}(1982|raymond briggs|david bowie|walking in the air)|raymond briggs.{0,20}snowman",
+"lo": 1092,
+"hi": 4187,
+"ia": [
+"title:(snowman)",
+"\"The Snowman\""
+],
+"yt": [
+"The Snowman 1982",
+"The Snowman full special",
+"The Snowman 1982 broadcast",
+"The Snowman VHS"
+]
+},
+{
+"k": "xsfatherchristmas1991",
+"kind": "sp",
+"t": "Father Christmas",
+"y": 1991,
+"mins": 25,
+"must": "father christmas.{0,20}(1991|raymond briggs|briggs)",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(father christmas)",
+"\"Father Christmas\""
+],
+"yt": [
+"Father Christmas 1991",
+"Father Christmas full special",
+"Father Christmas 1991 broadcast",
+"Father Christmas VHS"
+]
+},
+{
+"k": "xsthestoryofsantaclaus1996",
+"kind": "sp",
+"t": "The Story of Santa Claus",
+"y": 1996,
+"mins": 50,
+"must": "story of santa claus",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(story of santa claus)",
+"\"The Story of Santa Claus\""
+],
+"yt": [
+"The Story of Santa Claus 1996",
+"The Story of Santa Claus full special",
+"The Story of Santa Claus 1996 broadcast",
+"The Story of Santa Claus VHS"
+]
+},
+{
+"k": "xssantavsthesnowman1997",
+"kind": "sp",
+"t": "Santa vs. the Snowman",
+"y": 1997,
+"mins": 25,
+"must": "santa vs\\.? the snowman",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(santa vs snowman)",
+"\"Santa vs. the Snowman\""
+],
+"yt": [
+"Santa vs. the Snowman 1997",
+"Santa vs. the Snowman full special",
+"Santa vs. the Snowman 1997 broadcast",
+"Santa vs. the Snowman VHS"
+]
+},
+{
+"k": "xsachristmascarol1971",
+"kind": "sp",
+"t": "A Christmas Carol",
+"y": 1971,
+"mins": 25,
+"must": "christmas carol.{0,20}(1971|richard williams|alastair sim.{0,10}animated)",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(christmas carol)",
+"\"A Christmas Carol\""
+],
+"yt": [
+"A Christmas Carol 1971",
+"A Christmas Carol full special",
+"A Christmas Carol 1971 broadcast",
+"A Christmas Carol VHS"
+]
+},
+{
+"k": "xstheberenstainbearschristmastree1979",
+"kind": "sp",
+"t": "The Berenstain Bears' Christmas Tree",
+"y": 1979,
+"mins": 25,
+"must": "berenstain bears'? christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(berenstain bears christmas tree)",
+"\"The Berenstain Bears' Christmas Tree\""
+],
+"yt": [
+"The Berenstain Bears' Christmas Tree 1979",
+"The Berenstain Bears' Christmas Tree full special",
+"The Berenstain Bears' Christmas Tree 1979 broadcast",
+"The Berenstain Bears' Christmas Tree VHS"
+]
+},
+{
+"k": "xsinspectorgadgetsaveschristmas1992",
+"kind": "sp",
+"t": "Inspector Gadget Saves Christmas",
+"y": 1992,
+"mins": 25,
+"must": "gadget saves christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(inspector gadget saves christmas)",
+"\"Inspector Gadget Saves Christmas\""
+],
+"yt": [
+"Inspector Gadget Saves Christmas 1992",
+"Inspector Gadget Saves Christmas full special",
+"Inspector Gadget Saves Christmas 1992 broadcast",
+"Inspector Gadget Saves Christmas VHS"
+]
+},
+{
+"k": "xschristmaseveonsesamestreet1978",
+"kind": "sp",
+"t": "Christmas Eve on Sesame Street",
+"y": 1978,
+"mins": 60,
+"must": "christmas eve on sesame street",
+"lo": 2520,
+"hi": 8880,
+"ia": [
+"title:(christmas eve on sesame street)",
+"\"Christmas Eve on Sesame Street\""
+],
+"yt": [
+"Christmas Eve on Sesame Street 1978",
+"Christmas Eve on Sesame Street full special",
+"Christmas Eve on Sesame Street 1978 broadcast",
+"Christmas Eve on Sesame Street VHS"
+]
+},
+{
+"k": "xselmosaveschristmas1996",
+"kind": "sp",
+"t": "Elmo Saves Christmas",
+"y": 1996,
+"mins": 60,
+"must": "elmo saves christmas",
+"lo": 2520,
+"hi": 8880,
+"ia": [
+"title:(elmo saves christmas)",
+"\"Elmo Saves Christmas\""
+],
+"yt": [
+"Elmo Saves Christmas 1996",
+"Elmo Saves Christmas full special",
+"Elmo Saves Christmas 1996 broadcast",
+"Elmo Saves Christmas VHS"
+]
+},
+{
+"k": "xsemmetottersjugbandchristmas1977",
+"kind": "sp",
+"t": "Emmet Otter's Jug-Band Christmas",
+"y": 1977,
+"mins": 50,
+"must": "emmet otter",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(emmet otter jug band christmas)",
+"\"Emmet Otter's Jug-Band Christmas\""
+],
+"yt": [
+"Emmet Otter's Jug-Band Christmas 1977",
+"Emmet Otter's Jug-Band Christmas full special",
+"Emmet Otter's Jug-Band Christmas 1977 broadcast",
+"Emmet Otter's Jug-Band Christmas VHS"
+]
+},
+{
+"k": "xsthechristmastoy1986",
+"kind": "sp",
+"t": "The Christmas Toy",
+"y": 1986,
+"mins": 50,
+"must": "the christmas toy",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(christmas toy)",
+"\"The Christmas Toy\""
+],
+"yt": [
+"The Christmas Toy 1986",
+"The Christmas Toy full special",
+"The Christmas Toy 1986 broadcast",
+"The Christmas Toy VHS"
+]
+},
+{
+"k": "xsjohndenverandthemuppetsachristmastogethe",
+"kind": "sp",
+"t": "John Denver and the Muppets: A Christmas Together",
+"y": 1979,
+"mins": 50,
+"must": "john denver.{0,20}muppets",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(john denver and muppets christmas together)",
+"\"John Denver and the Muppets: A Christmas Together\""
+],
+"yt": [
+"John Denver and the Muppets: A Christmas Together 1979",
+"John Denver and the Muppets: A Christmas Together full special",
+"John Denver and the Muppets: A Christmas Together 1979 broadcast",
+"John Denver and the Muppets: A Christmas Together VHS"
+]
+},
+{
+"k": "xsamuppetfamilychristmas1987",
+"kind": "sp",
+"t": "A Muppet Family Christmas",
+"y": 1987,
+"mins": 50,
+"must": "muppet family christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(muppet family christmas)",
+"\"A Muppet Family Christmas\""
+],
+"yt": [
+"A Muppet Family Christmas 1987",
+"A Muppet Family Christmas full special",
+"A Muppet Family Christmas 1987 broadcast",
+"A Muppet Family Christmas VHS"
+]
+},
+{
+"k": "xsitsaverymerrymuppetchristmasmovie2002",
+"kind": "sp",
+"t": "It's a Very Merry Muppet Christmas Movie",
+"y": 2002,
+"mins": 100,
+"must": "very merry muppet christmas",
+"lo": 4200,
+"hi": 14399,
+"ia": [
+"title:(it very merry muppet christmas movie)",
+"\"It's a Very Merry Muppet Christmas Movie\""
+],
+"yt": [
+"It's a Very Merry Muppet Christmas Movie 2002",
+"It's a Very Merry Muppet Christmas Movie full special",
+"It's a Very Merry Muppet Christmas Movie 2002 broadcast",
+"It's a Very Merry Muppet Christmas Movie VHS"
+]
+},
+{
+"k": "xsmrmagooschristmascarol1962",
+"kind": "sp",
+"t": "Mr. Magoo's Christmas Carol",
+"y": 1962,
+"mins": 52,
+"must": "magoo'?s christmas carol",
+"lo": 2184,
+"hi": 7775,
+"ia": [
+"title:(mr magoo christmas carol)",
+"\"Mr. Magoo's Christmas Carol\""
+],
+"yt": [
+"Mr. Magoo's Christmas Carol 1962",
+"Mr. Magoo's Christmas Carol full special",
+"Mr. Magoo's Christmas Carol 1962 broadcast",
+"Mr. Magoo's Christmas Carol VHS"
+]
+},
+{
+"k": "xswillvintonsclaymationchristmascelebratio",
+"kind": "sp",
+"t": "Will Vinton's Claymation Christmas Celebration",
+"y": 1987,
+"mins": 25,
+"must": "claymation christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(will vinton claymation christmas celebration)",
+"\"Will Vinton's Claymation Christmas Celebration\""
+],
+"yt": [
+"Will Vinton's Claymation Christmas Celebration 1987",
+"Will Vinton's Claymation Christmas Celebration full special",
+"Will Vinton's Claymation Christmas Celebration 1987 broadcast",
+"Will Vinton's Claymation Christmas Celebration VHS"
+]
+},
+{
+"k": "xsagarfieldchristmas1987",
+"kind": "sp",
+"t": "A Garfield Christmas",
+"y": 1987,
+"mins": 25,
+"must": "garfield christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(garfield christmas)",
+"\"A Garfield Christmas\""
+],
+"yt": [
+"A Garfield Christmas 1987",
+"A Garfield Christmas full special",
+"A Garfield Christmas 1987 broadcast",
+"A Garfield Christmas VHS"
+]
+},
+{
+"k": "xsziggysgift1982",
+"kind": "sp",
+"t": "Ziggy's Gift",
+"y": 1982,
+"mins": 25,
+"must": "ziggy'?s gift",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(ziggy gift)",
+"\"Ziggy's Gift\""
+],
+"yt": [
+"Ziggy's Gift 1982",
+"Ziggy's Gift full special",
+"Ziggy's Gift 1982 broadcast",
+"Ziggy's Gift VHS"
+]
+},
+{
+"k": "xsthebearwhosleptthroughchristmas1973",
+"kind": "sp",
+"t": "The Bear Who Slept Through Christmas",
+"y": 1973,
+"mins": 25,
+"must": "bear who slept through christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(bear who slept through christmas)",
+"\"The Bear Who Slept Through Christmas\""
+],
+"yt": [
+"The Bear Who Slept Through Christmas 1973",
+"The Bear Who Slept Through Christmas full special",
+"The Bear Who Slept Through Christmas 1973 broadcast",
+"The Bear Who Slept Through Christmas VHS"
+]
+},
+{
+"k": "xsraggedyannandandyinthegreatsantaclauscap",
+"kind": "sp",
+"t": "Raggedy Ann and Andy in The Great Santa Claus Caper",
+"y": 1978,
+"mins": 25,
+"must": "great santa claus caper",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(raggedy ann and andy in great santa claus caper)",
+"\"Raggedy Ann and Andy in The Great Santa Claus Caper\""
+],
+"yt": [
+"Raggedy Ann and Andy in The Great Santa Claus Caper 1978",
+"Raggedy Ann and Andy in The Great Santa Claus Caper full special",
+"Raggedy Ann and Andy in The Great Santa Claus Caper 1978 broadcast",
+"Raggedy Ann and Andy in The Great Santa Claus Caper VHS"
+]
+},
+{
+"k": "xsmadelineschristmas1990",
+"kind": "sp",
+"t": "Madeline's Christmas",
+"y": 1990,
+"mins": 25,
+"must": "madeline'?s christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(madeline christmas)",
+"\"Madeline's Christmas\""
+],
+"yt": [
+"Madeline's Christmas 1990",
+"Madeline's Christmas full special",
+"Madeline's Christmas 1990 broadcast",
+"Madeline's Christmas VHS"
+]
+},
+{
+"k": "xsbabarandfatherchristmas1986",
+"kind": "sp",
+"t": "Babar and Father Christmas",
+"y": 1986,
+"mins": 25,
+"must": "babar and father christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(babar and father christmas)",
+"\"Babar and Father Christmas\""
+],
+"yt": [
+"Babar and Father Christmas 1986",
+"Babar and Father Christmas full special",
+"Babar and Father Christmas 1986 broadcast",
+"Babar and Father Christmas VHS"
+]
+},
+{
+"k": "xsthenightbeforechristmas1968",
+"kind": "sp",
+"t": "The Night Before Christmas",
+"y": 1968,
+"mins": 25,
+"must": "the night before christmas.{0,20}(1968|animated|cartoon)",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(night before christmas)",
+"\"The Night Before Christmas\""
+],
+"yt": [
+"The Night Before Christmas 1968",
+"The Night Before Christmas full special",
+"The Night Before Christmas 1968 broadcast",
+"The Night Before Christmas VHS"
+]
+},
+{
+"k": "xschristmaseveryday1996",
+"kind": "sp",
+"t": "Christmas Every Day",
+"y": 1996,
+"mins": 90,
+"must": "christmas every day",
+"lo": 3779,
+"hi": 13019,
+"ia": [
+"title:(christmas every day)",
+"\"Christmas Every Day\""
+],
+"yt": [
+"Christmas Every Day 1996",
+"Christmas Every Day full special",
+"Christmas Every Day 1996 broadcast",
+"Christmas Every Day VHS"
+]
+},
+{
+"k": "xsmrwillowbyschristmastree1995",
+"kind": "sp",
+"t": "Mr. Willowby's Christmas Tree",
+"y": 1995,
+"mins": 25,
+"must": "willowby",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(mr willowby christmas tree)",
+"\"Mr. Willowby's Christmas Tree\""
+],
+"yt": [
+"Mr. Willowby's Christmas Tree 1995",
+"Mr. Willowby's Christmas Tree full special",
+"Mr. Willowby's Christmas Tree 1995 broadcast",
+"Mr. Willowby's Christmas Tree VHS"
+]
+},
+{
+"k": "xsthetangerinebear2000",
+"kind": "sp",
+"t": "The Tangerine Bear",
+"y": 2000,
+"mins": 48,
+"must": "tangerine bear",
+"lo": 2015,
+"hi": 7223,
+"ia": [
+"title:(tangerine bear)",
+"\"The Tangerine Bear\""
+],
+"yt": [
+"The Tangerine Bear 2000",
+"The Tangerine Bear full special",
+"The Tangerine Bear 2000 broadcast",
+"The Tangerine Bear VHS"
+]
+},
+{
+"k": "xsgrandmagotrunoverbyareindeer2000",
+"kind": "sp",
+"t": "Grandma Got Run Over by a Reindeer",
+"y": 2000,
+"mins": 51,
+"must": "grandma got run over",
+"lo": 2142,
+"hi": 7637,
+"ia": [
+"title:(grandma got run over by reindeer)",
+"\"Grandma Got Run Over by a Reindeer\""
+],
+"yt": [
+"Grandma Got Run Over by a Reindeer 2000",
+"Grandma Got Run Over by a Reindeer full special",
+"Grandma Got Run Over by a Reindeer 2000 broadcast",
+"Grandma Got Run Over by a Reindeer VHS"
+]
+},
+{
+"k": "xsfrostyreturns1992",
+"kind": "sp",
+"t": "Frosty Returns",
+"y": 1992,
+"mins": 25,
+"must": "frosty returns",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(frosty returns)",
+"\"Frosty Returns\""
+],
+"yt": [
+"Frosty Returns 1992",
+"Frosty Returns full special",
+"Frosty Returns 1992 broadcast",
+"Frosty Returns VHS"
+]
+},
+{
+"k": "xsfrostyswinterwonderland1976",
+"kind": "sp",
+"t": "Frosty's Winter Wonderland",
+"y": 1976,
+"mins": 25,
+"must": "frosty'?s winter wonderland",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(frosty winter wonderland)",
+"\"Frosty's Winter Wonderland\""
+],
+"yt": [
+"Frosty's Winter Wonderland 1976",
+"Frosty's Winter Wonderland full special",
+"Frosty's Winter Wonderland 1976 broadcast",
+"Frosty's Winter Wonderland VHS"
+]
+},
+{
+"k": "xsrudolphsshinynewyear1976",
+"kind": "sp",
+"t": "Rudolph's Shiny New Year",
+"y": 1976,
+"mins": 50,
+"must": "shiny new year",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(rudolph shiny new year)",
+"\"Rudolph's Shiny New Year\""
+],
+"yt": [
+"Rudolph's Shiny New Year 1976",
+"Rudolph's Shiny New Year full special",
+"Rudolph's Shiny New Year 1976 broadcast",
+"Rudolph's Shiny New Year VHS"
+]
+},
+{
+"k": "xsjackfrost1979",
+"kind": "sp",
+"t": "Jack Frost",
+"y": 1979,
+"mins": 50,
+"must": "jack frost.{0,20}(1979|rankin|bass)",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(jack frost)",
+"\"Jack Frost\""
+],
+"yt": [
+"Jack Frost 1979",
+"Jack Frost full special",
+"Jack Frost 1979 broadcast",
+"Jack Frost VHS"
+]
+},
+{
+"k": "xsnestorthelongearedchristmasdonkey1977",
+"kind": "sp",
+"t": "Nestor, the Long-Eared Christmas Donkey",
+"y": 1977,
+"mins": 25,
+"must": "nestor",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(nestor long eared christmas donkey)",
+"\"Nestor, the Long-Eared Christmas Donkey\""
+],
+"yt": [
+"Nestor, the Long-Eared Christmas Donkey 1977",
+"Nestor, the Long-Eared Christmas Donkey full special",
+"Nestor, the Long-Eared Christmas Donkey 1977 broadcast",
+"Nestor, the Long-Eared Christmas Donkey VHS"
+]
+},
+{
+"k": "xstwasthenightbeforechristmas1974",
+"kind": "sp",
+"t": "'Twas the Night Before Christmas",
+"y": 1974,
+"mins": 25,
+"must": "'?twas the night before christmas.{0,20}(1974|rankin|bass|joel grey)",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(twas night before christmas)",
+"\"'Twas the Night Before Christmas\""
+],
+"yt": [
+"'Twas the Night Before Christmas 1974",
+"'Twas the Night Before Christmas full special",
+"'Twas the Night Before Christmas 1974 broadcast",
+"'Twas the Night Before Christmas VHS"
+]
+},
+{
+"k": "xstheyearwithoutasantaclaus1974",
+"kind": "sp",
+"t": "The Year Without a Santa Claus",
+"y": 1974,
+"mins": 51,
+"must": "year without a santa claus",
+"lo": 2142,
+"hi": 7637,
+"ia": [
+"title:(year without santa claus)",
+"\"The Year Without a Santa Claus\""
+],
+"yt": [
+"The Year Without a Santa Claus 1974",
+"The Year Without a Santa Claus full special",
+"The Year Without a Santa Claus 1974 broadcast",
+"The Year Without a Santa Claus VHS"
+]
+},
+{
+"k": "xssantaclausiscomintotown1970",
+"kind": "sp",
+"t": "Santa Claus Is Comin' to Town",
+"y": 1970,
+"mins": 51,
+"must": "santa claus is comin'?g? to town",
+"lo": 2142,
+"hi": 7637,
+"ia": [
+"title:(santa claus is comin to town)",
+"\"Santa Claus Is Comin' to Town\""
+],
+"yt": [
+"Santa Claus Is Comin' to Town 1970",
+"Santa Claus Is Comin' to Town full special",
+"Santa Claus Is Comin' to Town 1970 broadcast",
+"Santa Claus Is Comin' to Town VHS"
+]
+},
+{
+"k": "xsthelifeandadventuresofsantaclaus1985",
+"kind": "sp",
+"t": "The Life and Adventures of Santa Claus",
+"y": 1985,
+"mins": 50,
+"must": "life and adventures of santa claus",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(life and adventures of santa claus)",
+"\"The Life and Adventures of Santa Claus\""
+],
+"yt": [
+"The Life and Adventures of Santa Claus 1985",
+"The Life and Adventures of Santa Claus full special",
+"The Life and Adventures of Santa Claus 1985 broadcast",
+"The Life and Adventures of Santa Claus VHS"
+]
+},
+{
+"k": "xspinocchioschristmas1980",
+"kind": "sp",
+"t": "Pinocchio's Christmas",
+"y": 1980,
+"mins": 50,
+"must": "pinocchio'?s christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(pinocchio christmas)",
+"\"Pinocchio's Christmas\""
+],
+"yt": [
+"Pinocchio's Christmas 1980",
+"Pinocchio's Christmas full special",
+"Pinocchio's Christmas 1980 broadcast",
+"Pinocchio's Christmas VHS"
+]
+},
+{
+"k": "xscricketonthehearth1967",
+"kind": "sp",
+"t": "Cricket on the Hearth",
+"y": 1967,
+"mins": 50,
+"must": "cricket on the hearth",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(cricket on hearth)",
+"\"Cricket on the Hearth\""
+],
+"yt": [
+"Cricket on the Hearth 1967",
+"Cricket on the Hearth full special",
+"Cricket on the Hearth 1967 broadcast",
+"Cricket on the Hearth VHS"
+]
+},
+{
+"k": "xshowthegrinchstolechristmas1966",
+"kind": "sp",
+"t": "How the Grinch Stole Christmas",
+"y": 1966,
+"mins": 26,
+"must": "grinch stole christmas",
+"lo": 1092,
+"hi": 4187,
+"ia": [
+"title:(how grinch stole christmas)",
+"\"How the Grinch Stole Christmas\""
+],
+"yt": [
+"How the Grinch Stole Christmas 1966",
+"How the Grinch Stole Christmas full special",
+"How the Grinch Stole Christmas 1966 broadcast",
+"How the Grinch Stole Christmas VHS"
+]
+},
+{
+"k": "xsrudolphtherednosedreindeer1964",
+"kind": "sp",
+"t": "Rudolph the Red-Nosed Reindeer",
+"y": 1964,
+"mins": 52,
+"must": "rudolph the red.?nosed reindeer",
+"lo": 2184,
+"hi": 7775,
+"ia": [
+"title:(rudolph red nosed reindeer)",
+"\"Rudolph the Red-Nosed Reindeer\""
+],
+"yt": [
+"Rudolph the Red-Nosed Reindeer 1964",
+"Rudolph the Red-Nosed Reindeer full special",
+"Rudolph the Red-Nosed Reindeer 1964 broadcast",
+"Rudolph the Red-Nosed Reindeer VHS"
+]
+},
+{
+"k": "xsfrostythesnowman1969",
+"kind": "sp",
+"t": "Frosty the Snowman",
+"y": 1969,
+"mins": 26,
+"must": "frosty the snowman",
+"lo": 1092,
+"hi": 4187,
+"ia": [
+"title:(frosty snowman)",
+"\"Frosty the Snowman\""
+],
+"yt": [
+"Frosty the Snowman 1969",
+"Frosty the Snowman full special",
+"Frosty the Snowman 1969 broadcast",
+"Frosty the Snowman VHS"
+]
+},
+{
+"k": "xsachipmunkchristmas1981",
+"kind": "sp",
+"t": "A Chipmunk Christmas",
+"y": 1981,
+"mins": 25,
+"must": "chipmunk christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(chipmunk christmas)",
+"\"A Chipmunk Christmas\""
+],
+"yt": [
+"A Chipmunk Christmas 1981",
+"A Chipmunk Christmas full special",
+"A Chipmunk Christmas 1981 broadcast",
+"A Chipmunk Christmas VHS"
+]
+},
+{
+"k": "xsadisneychristmasgift1982",
+"kind": "sp",
+"t": "A Disney Christmas Gift",
+"y": 1982,
+"mins": 48,
+"must": "disney christmas gift",
+"lo": 2015,
+"hi": 7223,
+"ia": [
+"title:(disney christmas gift)",
+"\"A Disney Christmas Gift\""
+],
+"yt": [
+"A Disney Christmas Gift 1982",
+"A Disney Christmas Gift full special",
+"A Disney Christmas Gift 1982 broadcast",
+"A Disney Christmas Gift VHS"
+]
+},
+{
+"k": "xsmickeyschristmascarol1983",
+"kind": "sp",
+"t": "Mickey's Christmas Carol",
+"y": 1983,
+"mins": 26,
+"must": "mickey'?s christmas carol",
+"lo": 1092,
+"hi": 4187,
+"ia": [
+"title:(mickey christmas carol)",
+"\"Mickey's Christmas Carol\""
+],
+"yt": [
+"Mickey's Christmas Carol 1983",
+"Mickey's Christmas Carol full special",
+"Mickey's Christmas Carol 1983 broadcast",
+"Mickey's Christmas Carol VHS"
+]
+},
+{
+"k": "xschristmasintattertown1988",
+"kind": "sp",
+"t": "Christmas in Tattertown",
+"y": 1988,
+"mins": 25,
+"must": "tattertown",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(christmas in tattertown)",
+"\"Christmas in Tattertown\""
+],
+"yt": [
+"Christmas in Tattertown 1988",
+"Christmas in Tattertown full special",
+"Christmas in Tattertown 1988 broadcast",
+"Christmas in Tattertown VHS"
+]
+},
+{
+"k": "xstherealghostbustersxmasmarksthespot1986",
+"kind": "sp",
+"t": "The Real Ghostbusters X-Mas Marks the Spot",
+"y": 1986,
+"mins": 25,
+"must": "x-?mas marks the spot",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(real ghostbusters x mas marks spot)",
+"\"The Real Ghostbusters X-Mas Marks the Spot\""
+],
+"yt": [
+"The Real Ghostbusters X-Mas Marks the Spot 1986",
+"The Real Ghostbusters X-Mas Marks the Spot full special",
+"The Real Ghostbusters X-Mas Marks the Spot 1986 broadcast",
+"The Real Ghostbusters X-Mas Marks the Spot VHS"
+]
+},
+{
+"k": "xsthecaliforniaraisinsmeetthehiphopsanta19",
+"kind": "sp",
+"t": "The California Raisins Meet the Hip Hop Santa",
+"y": 1990,
+"mins": 25,
+"must": "raisins.{0,30}(christmas|santa)",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(california raisins meet hip hop santa)",
+"\"The California Raisins Meet the Hip Hop Santa\""
+],
+"yt": [
+"The California Raisins Meet the Hip Hop Santa 1990",
+"The California Raisins Meet the Hip Hop Santa full special",
+"The California Raisins Meet the Hip Hop Santa 1990 broadcast",
+"The California Raisins Meet the Hip Hop Santa VHS"
+]
+},
+{
+"k": "xsshirttaleschristmas1983",
+"kind": "sp",
+"t": "Shirt Tales Christmas",
+"y": 1983,
+"mins": 25,
+"must": "shirt tales.{0,20}christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(shirt tales christmas)",
+"\"Shirt Tales Christmas\""
+],
+"yt": [
+"Shirt Tales Christmas 1983",
+"Shirt Tales Christmas full special",
+"Shirt Tales Christmas 1983 broadcast",
+"Shirt Tales Christmas VHS"
+]
+},
+{
+"k": "xsstrawberryshortcakechristmas1985",
+"kind": "sp",
+"t": "Strawberry Shortcake Christmas",
+"y": 1985,
+"mins": 25,
+"must": "strawberry shortcake.{0,20}christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(strawberry shortcake christmas)",
+"\"Strawberry Shortcake Christmas\""
+],
+"yt": [
+"Strawberry Shortcake Christmas 1985",
+"Strawberry Shortcake Christmas full special",
+"Strawberry Shortcake Christmas 1985 broadcast",
+"Strawberry Shortcake Christmas VHS"
+]
+},
+{
+"k": "xsalvinandthechipmunksmerrychristmasmrcarr",
+"kind": "sp",
+"t": "Alvin and the Chipmunks Merry Christmas Mr. Carroll",
+"y": 1983,
+"mins": 25,
+"must": "merry christmas,? mr\\.? carroll",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(alvin and chipmunks merry christmas mr carroll)",
+"\"Alvin and the Chipmunks Merry Christmas Mr. Carroll\""
+],
+"yt": [
+"Alvin and the Chipmunks Merry Christmas Mr. Carroll 1983",
+"Alvin and the Chipmunks Merry Christmas Mr. Carroll full special",
+"Alvin and the Chipmunks Merry Christmas Mr. Carroll 1983 broadcast",
+"Alvin and the Chipmunks Merry Christmas Mr. Carroll VHS"
+]
+},
+{
+"k": "xsarthursperfectchristmas2000",
+"kind": "sp",
+"t": "Arthur's Perfect Christmas",
+"y": 2000,
+"mins": 55,
+"must": "arthur'?s perfect christmas",
+"lo": 2310,
+"hi": 8189,
+"ia": [
+"title:(arthur perfect christmas)",
+"\"Arthur's Perfect Christmas\""
+],
+"yt": [
+"Arthur's Perfect Christmas 2000",
+"Arthur's Perfect Christmas full special",
+"Arthur's Perfect Christmas 2000 broadcast",
+"Arthur's Perfect Christmas VHS"
+]
+},
+{
+"k": "xscliffordschristmas2001",
+"kind": "sp",
+"t": "Clifford's Christmas",
+"y": 2001,
+"mins": 25,
+"must": "clifford.{0,20}christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(clifford christmas)",
+"\"Clifford's Christmas\""
+],
+"yt": [
+"Clifford's Christmas 2001",
+"Clifford's Christmas full special",
+"Clifford's Christmas 2001 broadcast",
+"Clifford's Christmas VHS"
+]
+},
+{
+"k": "xsfranklinsmagicchristmas2001",
+"kind": "sp",
+"t": "Franklin's Magic Christmas",
+"y": 2001,
+"mins": 70,
+"must": "franklin'?s magic christmas",
+"lo": 2940,
+"hi": 10260,
+"ia": [
+"title:(franklin magic christmas)",
+"\"Franklin's Magic Christmas\""
+],
+"yt": [
+"Franklin's Magic Christmas 2001",
+"Franklin's Magic Christmas full special",
+"Franklin's Magic Christmas 2001 broadcast",
+"Franklin's Magic Christmas VHS"
+]
+},
+{
+"k": "xskipperchristmas1998",
+"kind": "sp",
+"t": "Kipper Christmas",
+"y": 1998,
+"mins": 25,
+"must": "kipper.{0,20}christmas",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(kipper christmas)",
+"\"Kipper Christmas\""
+],
+"yt": [
+"Kipper Christmas 1998",
+"Kipper Christmas full special",
+"Kipper Christmas 1998 broadcast",
+"Kipper Christmas VHS"
+]
+},
+{
+"k": "xsrugratschanukah1996",
+"kind": "sp",
+"t": "Rugrats Chanukah",
+"y": 1996,
+"mins": 25,
+"must": "rugrats chanukah",
+"lo": 1050,
+"hi": 4049,
+"ia": [
+"title:(rugrats chanukah)",
+"\"Rugrats Chanukah\""
+],
+"yt": [
+"Rugrats Chanukah 1996",
+"Rugrats Chanukah full special",
+"Rugrats Chanukah 1996 broadcast",
+"Rugrats Chanukah VHS"
+]
+},
+{
+"k": "xsbarneysnightbeforechristmas1999",
+"kind": "sp",
+"t": "Barney's Night Before Christmas",
+"y": 1999,
+"mins": 50,
+"must": "barney'?s night before christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(barney night before christmas)",
+"\"Barney's Night Before Christmas\""
+],
+"yt": [
+"Barney's Night Before Christmas 1999",
+"Barney's Night Before Christmas full special",
+"Barney's Night Before Christmas 1999 broadcast",
+"Barney's Night Before Christmas VHS"
+]
+},
+{
+"k": "xsbobhopechristmasspecial1985",
+"kind": "sp",
+"t": "Bob Hope Christmas Special",
+"y": 1985,
+"mins": 90,
+"must": "bob hope.{0,30}christmas",
+"lo": 3779,
+"hi": 13019,
+"ia": [
+"title:(bob hope christmas special)",
+"\"Bob Hope Christmas Special\""
+],
+"yt": [
+"Bob Hope Christmas Special 1985",
+"Bob Hope Christmas Special full special",
+"Bob Hope Christmas Special 1985 broadcast",
+"Bob Hope Christmas Special VHS"
+]
+},
+{
+"k": "xsperrycomoschristmas1986",
+"kind": "sp",
+"t": "Perry Como's Christmas",
+"y": 1986,
+"mins": 50,
+"must": "perry como.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(perry como christmas)",
+"\"Perry Como's Christmas\""
+],
+"yt": [
+"Perry Como's Christmas 1986",
+"Perry Como's Christmas full special",
+"Perry Como's Christmas 1986 broadcast",
+"Perry Como's Christmas VHS"
+]
+},
+{
+"k": "xsandywilliamschristmasspecial1985",
+"kind": "sp",
+"t": "Andy Williams Christmas Special",
+"y": 1985,
+"mins": 50,
+"must": "andy williams.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(andy williams christmas special)",
+"\"Andy Williams Christmas Special\""
+],
+"yt": [
+"Andy Williams Christmas Special 1985",
+"Andy Williams Christmas Special full special",
+"Andy Williams Christmas Special 1985 broadcast",
+"Andy Williams Christmas Special VHS"
+]
+},
+{
+"k": "xsjohndenversrockymountainchristmas1975",
+"kind": "sp",
+"t": "John Denver's Rocky Mountain Christmas",
+"y": 1975,
+"mins": 50,
+"must": "rocky mountain christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(john denver rocky mountain christmas)",
+"\"John Denver's Rocky Mountain Christmas\""
+],
+"yt": [
+"John Denver's Rocky Mountain Christmas 1975",
+"John Denver's Rocky Mountain Christmas full special",
+"John Denver's Rocky Mountain Christmas 1975 broadcast",
+"John Denver's Rocky Mountain Christmas VHS"
+]
+},
+{
+"k": "xsjohndenverschristmasinaspen1988",
+"kind": "sp",
+"t": "John Denver's Christmas in Aspen",
+"y": 1988,
+"mins": 50,
+"must": "christmas in aspen",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(john denver christmas in aspen)",
+"\"John Denver's Christmas in Aspen\""
+],
+"yt": [
+"John Denver's Christmas in Aspen 1988",
+"John Denver's Christmas in Aspen full special",
+"John Denver's Christmas in Aspen 1988 broadcast",
+"John Denver's Christmas in Aspen VHS"
+]
+},
+{
+"k": "xskennyrogerschristmas1985",
+"kind": "sp",
+"t": "Kenny Rogers Christmas",
+"y": 1985,
+"mins": 50,
+"must": "kenny rogers.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(kenny rogers christmas)",
+"\"Kenny Rogers Christmas\""
+],
+"yt": [
+"Kenny Rogers Christmas 1985",
+"Kenny Rogers Christmas full special",
+"Kenny Rogers Christmas 1985 broadcast",
+"Kenny Rogers Christmas VHS"
+]
+},
+{
+"k": "xskennyanddollyachristmastoremember1984",
+"kind": "sp",
+"t": "Kenny and Dolly: A Christmas to Remember",
+"y": 1984,
+"mins": 50,
+"must": "kenny (and|&) dolly|christmas to remember.{0,20}(kenny|dolly)",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(kenny and dolly christmas to remember)",
+"\"Kenny and Dolly: A Christmas to Remember\""
+],
+"yt": [
+"Kenny and Dolly: A Christmas to Remember 1984",
+"Kenny and Dolly: A Christmas to Remember full special",
+"Kenny and Dolly: A Christmas to Remember 1984 broadcast",
+"Kenny and Dolly: A Christmas to Remember VHS"
+]
+},
+{
+"k": "xsdollypartonchristmasspecial1990",
+"kind": "sp",
+"t": "Dolly Parton Christmas Special",
+"y": 1990,
+"mins": 50,
+"must": "dolly.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(dolly parton christmas special)",
+"\"Dolly Parton Christmas Special\""
+],
+"yt": [
+"Dolly Parton Christmas Special 1990",
+"Dolly Parton Christmas Special full special",
+"Dolly Parton Christmas Special 1990 broadcast",
+"Dolly Parton Christmas Special VHS"
+]
+},
+{
+"k": "xsjohnnycashchristmasspecial1985",
+"kind": "sp",
+"t": "Johnny Cash Christmas Special",
+"y": 1985,
+"mins": 50,
+"must": "johnny cash.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(johnny cash christmas special)",
+"\"Johnny Cash Christmas Special\""
+],
+"yt": [
+"Johnny Cash Christmas Special 1985",
+"Johnny Cash Christmas Special full special",
+"Johnny Cash Christmas Special 1985 broadcast",
+"Johnny Cash Christmas Special VHS"
+]
+},
+{
+"k": "xsglencampbellchristmas1985",
+"kind": "sp",
+"t": "Glen Campbell Christmas",
+"y": 1985,
+"mins": 50,
+"must": "glen campbell.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(glen campbell christmas)",
+"\"Glen Campbell Christmas\""
+],
+"yt": [
+"Glen Campbell Christmas 1985",
+"Glen Campbell Christmas full special",
+"Glen Campbell Christmas 1985 broadcast",
+"Glen Campbell Christmas VHS"
+]
+},
+{
+"k": "xsbingcrosbysmerrieoldechristmas1977",
+"kind": "sp",
+"t": "Bing Crosby's Merrie Olde Christmas",
+"y": 1977,
+"mins": 50,
+"must": "merrie olde christmas|bing crosby.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(bing crosby merrie olde christmas)",
+"\"Bing Crosby's Merrie Olde Christmas\""
+],
+"yt": [
+"Bing Crosby's Merrie Olde Christmas 1977",
+"Bing Crosby's Merrie Olde Christmas full special",
+"Bing Crosby's Merrie Olde Christmas 1977 broadcast",
+"Bing Crosby's Merrie Olde Christmas VHS"
+]
+},
+{
+"k": "xsamygrantchristmasspecial1986",
+"kind": "sp",
+"t": "Amy Grant Christmas Special",
+"y": 1986,
+"mins": 50,
+"must": "amy grant.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(amy grant christmas special)",
+"\"Amy Grant Christmas Special\""
+],
+"yt": [
+"Amy Grant Christmas Special 1986",
+"Amy Grant Christmas Special full special",
+"Amy Grant Christmas Special 1986 broadcast",
+"Amy Grant Christmas Special VHS"
+]
+},
+{
+"k": "xsgarthbrookschristmasspecial1992",
+"kind": "sp",
+"t": "Garth Brooks Christmas Special",
+"y": 1992,
+"mins": 50,
+"must": "garth.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(garth brooks christmas special)",
+"\"Garth Brooks Christmas Special\""
+],
+"yt": [
+"Garth Brooks Christmas Special 1992",
+"Garth Brooks Christmas Special full special",
+"Garth Brooks Christmas Special 1992 broadcast",
+"Garth Brooks Christmas Special VHS"
+]
+},
+{
+"k": "xscelinedionthesearespecialtimes1998",
+"kind": "sp",
+"t": "Celine Dion These Are Special Times",
+"y": 1998,
+"mins": 50,
+"must": "these are special times",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(celine dion these are special times)",
+"\"Celine Dion These Are Special Times\""
+],
+"yt": [
+"Celine Dion These Are Special Times 1998",
+"Celine Dion These Are Special Times full special",
+"Celine Dion These Are Special Times 1998 broadcast",
+"Celine Dion These Are Special Times VHS"
+]
+},
+{
+"k": "xsmariahcareymerrychristmas1994",
+"kind": "sp",
+"t": "Mariah Carey Merry Christmas",
+"y": 1994,
+"mins": 50,
+"must": "mariah carey.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(mariah carey merry christmas)",
+"\"Mariah Carey Merry Christmas\""
+],
+"yt": [
+"Mariah Carey Merry Christmas 1994",
+"Mariah Carey Merry Christmas full special",
+"Mariah Carey Merry Christmas 1994 broadcast",
+"Mariah Carey Merry Christmas VHS"
+]
+},
+{
+"k": "xschristmasinwashington1990",
+"kind": "sp",
+"t": "Christmas in Washington",
+"y": 1990,
+"mins": 60,
+"must": "christmas in washington",
+"lo": 2520,
+"hi": 8880,
+"ia": [
+"title:(christmas in washington)",
+"\"Christmas in Washington\""
+],
+"yt": [
+"Christmas in Washington 1990",
+"Christmas in Washington full special",
+"Christmas in Washington 1990 broadcast",
+"Christmas in Washington VHS"
+]
+},
+{
+"k": "xschristmasinrockefellercenter1997",
+"kind": "sp",
+"t": "Christmas in Rockefeller Center",
+"y": 1997,
+"mins": 60,
+"must": "christmas (in|at) rockefeller",
+"lo": 2520,
+"hi": 8880,
+"ia": [
+"title:(christmas in rockefeller center)",
+"\"Christmas in Rockefeller Center\""
+],
+"yt": [
+"Christmas in Rockefeller Center 1997",
+"Christmas in Rockefeller Center full special",
+"Christmas in Rockefeller Center 1997 broadcast",
+"Christmas in Rockefeller Center VHS"
+]
+},
+{
+"k": "xswaltdisneyworldchristmasdayparade1990",
+"kind": "sp",
+"t": "Walt Disney World Christmas Day Parade",
+"y": 1990,
+"mins": 120,
+"must": "(disney|disneyland).{0,30}christmas.{0,10}parade|very merry christmas parade",
+"lo": 5040,
+"hi": 17160,
+"ia": [
+"title:(walt disney world christmas day parade)",
+"\"Walt Disney World Christmas Day Parade\""
+],
+"yt": [
+"Walt Disney World Christmas Day Parade 1990",
+"Walt Disney World Christmas Day Parade full special",
+"Walt Disney World Christmas Day Parade 1990 broadcast",
+"Walt Disney World Christmas Day Parade VHS"
+]
+},
+{
+"k": "xshollywoodchristmasparade1990",
+"kind": "sp",
+"t": "Hollywood Christmas Parade",
+"y": 1990,
+"mins": 120,
+"must": "hollywood christmas parade",
+"lo": 5040,
+"hi": 17160,
+"ia": [
+"title:(hollywood christmas parade)",
+"\"Hollywood Christmas Parade\""
+],
+"yt": [
+"Hollywood Christmas Parade 1990",
+"Hollywood Christmas Parade full special",
+"Hollywood Christmas Parade 1990 broadcast",
+"Hollywood Christmas Parade VHS"
+]
+},
+{
+"k": "xschristmasevemidnightmass1990",
+"kind": "sp",
+"t": "Christmas Eve Midnight Mass",
+"y": 1990,
+"mins": 90,
+"must": "midnight mass.{0,30}(vatican|st\\.? peter|pope|john paul)|pope.{0,30}midnight mass|papal christmas",
+"lo": 3779,
+"hi": 13019,
+"ia": [
+"title:(christmas eve midnight mass)",
+"\"Christmas Eve Midnight Mass\""
+],
+"yt": [
+"Christmas Eve Midnight Mass 1990",
+"Christmas Eve Midnight Mass full special",
+"Christmas Eve Midnight Mass 1990 broadcast",
+"Christmas Eve Midnight Mass VHS"
+]
+},
+{
+"k": "xsmormontabernaclechoirchristmas1990",
+"kind": "sp",
+"t": "Mormon Tabernacle Choir Christmas",
+"y": 1990,
+"mins": 60,
+"must": "tabernacle choir.{0,30}christmas",
+"lo": 2520,
+"hi": 8880,
+"ia": [
+"title:(mormon tabernacle choir christmas)",
+"\"Mormon Tabernacle Choir Christmas\""
+],
+"yt": [
+"Mormon Tabernacle Choir Christmas 1990",
+"Mormon Tabernacle Choir Christmas full special",
+"Mormon Tabernacle Choir Christmas 1990 broadcast",
+"Mormon Tabernacle Choir Christmas VHS"
+]
+},
+{
+"k": "xsradiocitychristmasspectacular1990",
+"kind": "sp",
+"t": "Radio City Christmas Spectacular",
+"y": 1990,
+"mins": 60,
+"must": "radio city christmas spectacular",
+"lo": 2520,
+"hi": 8880,
+"ia": [
+"title:(radio city christmas spectacular)",
+"\"Radio City Christmas Spectacular\""
+],
+"yt": [
+"Radio City Christmas Spectacular 1990",
+"Radio City Christmas Spectacular full special",
+"Radio City Christmas Spectacular 1990 broadcast",
+"Radio City Christmas Spectacular VHS"
+]
+},
+{
+"k": "xsacountrychristmas1982",
+"kind": "sp",
+"t": "A Country Christmas",
+"y": 1982,
+"mins": 60,
+"must": "a country christmas",
+"lo": 2520,
+"hi": 8880,
+"ia": [
+"title:(country christmas)",
+"\"A Country Christmas\""
+],
+"yt": [
+"A Country Christmas 1982",
+"A Country Christmas full special",
+"A Country Christmas 1982 broadcast",
+"A Country Christmas VHS"
+]
+},
+{
+"k": "xsthestatlerbrotherschristmas1993",
+"kind": "sp",
+"t": "The Statler Brothers Christmas",
+"y": 1993,
+"mins": 50,
+"must": "statler brothers.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(statler brothers christmas)",
+"\"The Statler Brothers Christmas\""
+],
+"yt": [
+"The Statler Brothers Christmas 1993",
+"The Statler Brothers Christmas full special",
+"The Statler Brothers Christmas 1993 broadcast",
+"The Statler Brothers Christmas VHS"
+]
+},
+{
+"k": "xspeeweesplayhousechristmasspecial1988",
+"kind": "sp",
+"t": "Pee-wee's Playhouse Christmas Special",
+"y": 1988,
+"mins": 50,
+"must": "pee-?wee'?s playhouse christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(pee wee playhouse christmas special)",
+"\"Pee-wee's Playhouse Christmas Special\""
+],
+"yt": [
+"Pee-wee's Playhouse Christmas Special 1988",
+"Pee-wee's Playhouse Christmas Special full special",
+"Pee-wee's Playhouse Christmas Special 1988 broadcast",
+"Pee-wee's Playhouse Christmas Special VHS"
+]
+},
+{
+"k": "xsthejudygarlandchristmasshow1963",
+"kind": "sp",
+"t": "The Judy Garland Christmas Show",
+"y": 1963,
+"mins": 50,
+"must": "judy garland.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(judy garland christmas show)",
+"\"The Judy Garland Christmas Show\""
+],
+"yt": [
+"The Judy Garland Christmas Show 1963",
+"The Judy Garland Christmas Show full special",
+"The Judy Garland Christmas Show 1963 broadcast",
+"The Judy Garland Christmas Show VHS"
+]
+},
+{
+"k": "xschristmaswiththecarpenters1977",
+"kind": "sp",
+"t": "Christmas with the Carpenters",
+"y": 1977,
+"mins": 50,
+"must": "carpenters.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(christmas with carpenters)",
+"\"Christmas with the Carpenters\""
+],
+"yt": [
+"Christmas with the Carpenters 1977",
+"Christmas with the Carpenters full special",
+"Christmas with the Carpenters 1977 broadcast",
+"Christmas with the Carpenters VHS"
+]
+},
+{
+"k": "xsmarthastewartsholidayclassics1994",
+"kind": "sp",
+"t": "Martha Stewart's Holiday Classics",
+"y": 1994,
+"mins": 50,
+"must": "martha stewart.{0,30}(christmas|holiday)",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(martha stewart holiday classics)",
+"\"Martha Stewart's Holiday Classics\""
+],
+"yt": [
+"Martha Stewart's Holiday Classics 1994",
+"Martha Stewart's Holiday Classics full special",
+"Martha Stewart's Holiday Classics 1994 broadcast",
+"Martha Stewart's Holiday Classics VHS"
+]
+},
+{
+"k": "xswpixyulelog1985",
+"kind": "sp",
+"t": "WPIX Yule Log",
+"y": 1985,
+"mins": 180,
+"must": "yule log",
+"lo": 7559,
+"hi": 25439,
+"ia": [
+"title:(wpix yule log)",
+"\"WPIX Yule Log\""
+],
+"yt": [
+"WPIX Yule Log 1985",
+"WPIX Yule Log full special",
+"WPIX Yule Log 1985 broadcast",
+"WPIX Yule Log VHS"
+]
+},
+{
+"k": "xsnsyncholidayspecial1998",
+"kind": "sp",
+"t": "NSYNC Holiday Special",
+"y": 1998,
+"mins": 50,
+"must": "(n ?sync|backstreet).{0,30}(christmas|holiday)",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(nsync holiday special)",
+"\"NSYNC Holiday Special\""
+],
+"yt": [
+"NSYNC Holiday Special 1998",
+"NSYNC Holiday Special full special",
+"NSYNC Holiday Special 1998 broadcast",
+"NSYNC Holiday Special VHS"
+]
+},
+{
+"k": "xsmannheimsteamrollerchristmas1988",
+"kind": "sp",
+"t": "Mannheim Steamroller Christmas",
+"y": 1988,
+"mins": 50,
+"must": "mannheim.{0,30}christmas",
+"lo": 2100,
+"hi": 7499,
+"ia": [
+"title:(mannheim steamroller christmas)",
+"\"Mannheim Steamroller Christmas\""
+],
+"yt": [
+"Mannheim Steamroller Christmas 1988",
+"Mannheim Steamroller Christmas full special",
+"Mannheim Steamroller Christmas 1988 broadcast",
+"Mannheim Steamroller Christmas VHS"
+]
+},
+{
+"k": "xmitsawonderfullife1946",
+"kind": "mv",
+"t": "It's a Wonderful Life",
+"y": 1946,
+"mins": 130,
+"must": "wonderful life",
+"lo": 6630,
+"hi": 11700,
+"ia": [
+"title:(it wonderful life) AND mediatype:movies",
+"it wonderful life 1946"
+],
+"yt": [
+"It's a Wonderful Life 1946 full movie",
+"It's a Wonderful Life full movie",
+"It's a Wonderful Life 1946 TV broadcast"
+]
+},
+{
+"k": "xmmiracleon34thstreet1947",
+"kind": "mv",
+"t": "Miracle on 34th Street",
+"y": 1947,
+"mins": 96,
+"must": "miracle on 34th street",
+"lo": 4896,
+"hi": 8640,
+"ia": [
+"title:(miracle on 34th street) AND mediatype:movies",
+"miracle on 34th street 1947"
+],
+"yt": [
+"Miracle on 34th Street 1947 full movie",
+"Miracle on 34th Street full movie",
+"Miracle on 34th Street 1947 TV broadcast"
+]
+},
+{
+"k": "xmachristmascarol1938",
+"kind": "mv",
+"t": "A Christmas Carol",
+"y": 1938,
+"mins": 69,
+"must": "christmas carol.{0,20}1938|1938.{0,20}christmas carol",
+"lo": 3519,
+"hi": 6210,
+"ia": [
+"title:(christmas carol) AND mediatype:movies",
+"christmas carol 1938"
+],
+"yt": [
+"A Christmas Carol 1938 full movie",
+"A Christmas Carol full movie",
+"A Christmas Carol 1938 TV broadcast"
+]
+},
+{
+"k": "xmscrooge1951",
+"kind": "mv",
+"t": "Scrooge",
+"y": 1951,
+"mins": 86,
+"must": "(scrooge|christmas carol).{0,20}(1951|alastair sim)|alastair sim",
+"lo": 4386,
+"hi": 7740,
+"ia": [
+"title:(scrooge) AND mediatype:movies",
+"scrooge 1951"
+],
+"yt": [
+"Scrooge 1951 full movie",
+"Scrooge full movie",
+"Scrooge 1951 TV broadcast"
+]
+},
+{
+"k": "xmchristmasinconnecticut1945",
+"kind": "mv",
+"t": "Christmas in Connecticut",
+"y": 1945,
+"mins": 102,
+"must": "christmas in connecticut",
+"lo": 5202,
+"hi": 9180,
+"ia": [
+"title:(christmas in connecticut) AND mediatype:movies",
+"christmas in connecticut 1945"
+],
+"yt": [
+"Christmas in Connecticut 1945 full movie",
+"Christmas in Connecticut full movie",
+"Christmas in Connecticut 1945 TV broadcast"
+]
+},
+{
+"k": "xmtheshoparoundthecorner1940",
+"kind": "mv",
+"t": "The Shop Around the Corner",
+"y": 1940,
+"mins": 99,
+"must": "shop around the corner",
+"lo": 5049,
+"hi": 8910,
+"ia": [
+"title:(shop around corner) AND mediatype:movies",
+"shop around corner 1940"
+],
+"yt": [
+"The Shop Around the Corner 1940 full movie",
+"The Shop Around the Corner full movie",
+"The Shop Around the Corner 1940 TV broadcast"
+]
+},
+{
+"k": "xmrememberthenight1940",
+"kind": "mv",
+"t": "Remember the Night",
+"y": 1940,
+"mins": 94,
+"must": "remember the night",
+"lo": 4794,
+"hi": 8460,
+"ia": [
+"title:(remember night) AND mediatype:movies",
+"remember night 1940"
+],
+"yt": [
+"Remember the Night 1940 full movie",
+"Remember the Night full movie",
+"Remember the Night 1940 TV broadcast"
+]
+},
+{
+"k": "xmholidayaffair1949",
+"kind": "mv",
+"t": "Holiday Affair",
+"y": 1949,
+"mins": 87,
+"must": "holiday affair",
+"lo": 4437,
+"hi": 7830,
+"ia": [
+"title:(holiday affair) AND mediatype:movies",
+"holiday affair 1949"
+],
+"yt": [
+"Holiday Affair 1949 full movie",
+"Holiday Affair full movie",
+"Holiday Affair 1949 TV broadcast"
+]
+},
+{
+"k": "xmthemanwhocametodinner1942",
+"kind": "mv",
+"t": "The Man Who Came to Dinner",
+"y": 1942,
+"mins": 112,
+"must": "man who came to dinner",
+"lo": 5712,
+"hi": 10080,
+"ia": [
+"title:(man who came to dinner) AND mediatype:movies",
+"man who came to dinner 1942"
+],
+"yt": [
+"The Man Who Came to Dinner 1942 full movie",
+"The Man Who Came to Dinner full movie",
+"The Man Who Came to Dinner 1942 TV broadcast"
+]
+},
+{
+"k": "xmithappenedonfifthavenue1947",
+"kind": "mv",
+"t": "It Happened on Fifth Avenue",
+"y": 1947,
+"mins": 116,
+"must": "happened on (5th|fifth) avenue",
+"lo": 5916,
+"hi": 10440,
+"ia": [
+"title:(it happened on fifth avenue) AND mediatype:movies",
+"it happened on fifth avenue 1947"
+],
+"yt": [
+"It Happened on Fifth Avenue 1947 full movie",
+"It Happened on Fifth Avenue full movie",
+"It Happened on Fifth Avenue 1947 TV broadcast"
+]
+},
+{
+"k": "xmthebellsofstmarys1945",
+"kind": "mv",
+"t": "The Bells of St. Mary's",
+"y": 1945,
+"mins": 126,
+"must": "bells of st\\.? mary",
+"lo": 6426,
+"hi": 11340,
+"ia": [
+"title:(bells of st mary) AND mediatype:movies",
+"bells of st mary 1945"
+],
+"yt": [
+"The Bells of St. Mary's 1945 full movie",
+"The Bells of St. Mary's full movie",
+"The Bells of St. Mary's 1945 TV broadcast"
+]
+},
+{
+"k": "xmwerenoangels1955",
+"kind": "mv",
+"t": "We're No Angels",
+"y": 1955,
+"mins": 106,
+"must": "we'?re no angels",
+"lo": 5406,
+"hi": 9540,
+"ia": [
+"title:(we re no angels) AND mediatype:movies",
+"we re no angels 1955"
+],
+"yt": [
+"We're No Angels 1955 full movie",
+"We're No Angels full movie",
+"We're No Angels 1955 TV broadcast"
+]
+},
+{
+"k": "xmthehollyandtheivy1952",
+"kind": "mv",
+"t": "The Holly and the Ivy",
+"y": 1952,
+"mins": 83,
+"must": "holly and the ivy",
+"lo": 4233,
+"hi": 7470,
+"ia": [
+"title:(holly and ivy) AND mediatype:movies",
+"holly and ivy 1952"
+],
+"yt": [
+"The Holly and the Ivy 1952 full movie",
+"The Holly and the Ivy full movie",
+"The Holly and the Ivy 1952 TV broadcast"
+]
+},
+{
+"k": "xmsantaclaus1959",
+"kind": "mv",
+"t": "Santa Claus",
+"y": 1959,
+"mins": 94,
+"must": "santa claus.{0,10}1959|1959.{0,10}santa claus",
+"lo": 4794,
+"hi": 8460,
+"ia": [
+"title:(santa claus) AND mediatype:movies",
+"santa claus 1959"
+],
+"yt": [
+"Santa Claus 1959 full movie",
+"Santa Claus full movie",
+"Santa Claus 1959 TV broadcast"
+]
+},
+{
+"k": "xmbabesintoyland1961",
+"kind": "mv",
+"t": "Babes in Toyland",
+"y": 1961,
+"mins": 106,
+"must": "babes in toyland.{0,10}1961|1961.{0,10}babes in toyland",
+"lo": 5406,
+"hi": 9540,
+"ia": [
+"title:(babes in toyland) AND mediatype:movies",
+"babes in toyland 1961"
+],
+"yt": [
+"Babes in Toyland 1961 full movie",
+"Babes in Toyland full movie",
+"Babes in Toyland 1961 TV broadcast"
+]
+},
+{
+"k": "xmthehomecomingachristmasstory1971",
+"kind": "mv",
+"t": "The Homecoming: A Christmas Story",
+"y": 1971,
+"mins": 98,
+"must": "homecoming.{0,5}a christmas story",
+"lo": 4998,
+"hi": 8820,
+"ia": [
+"title:(homecoming christmas story) AND mediatype:movies",
+"homecoming christmas story 1971"
+],
+"yt": [
+"The Homecoming: A Christmas Story 1971 full movie",
+"The Homecoming: A Christmas Story full movie",
+"The Homecoming: A Christmas Story 1971 TV broadcast"
+]
+},
+{
+"k": "xmthegathering1977",
+"kind": "mv",
+"t": "The Gathering",
+"y": 1977,
+"mins": 94,
+"must": "the gathering.{0,10}1977|ed asner.{0,20}gathering",
+"lo": 4794,
+"hi": 8460,
+"ia": [
+"title:(gathering) AND mediatype:movies",
+"gathering 1977"
+],
+"yt": [
+"The Gathering 1977 full movie",
+"The Gathering full movie",
+"The Gathering 1977 TV broadcast"
+]
+},
+{
+"k": "xmachristmastoremember1978",
+"kind": "mv",
+"t": "A Christmas to Remember",
+"y": 1978,
+"mins": 96,
+"must": "christmas to remember.{0,20}(1978|jason robards)",
+"lo": 4896,
+"hi": 8640,
+"ia": [
+"title:(christmas to remember) AND mediatype:movies",
+"christmas to remember 1978"
+],
+"yt": [
+"A Christmas to Remember 1978 full movie",
+"A Christmas to Remember full movie",
+"A Christmas to Remember 1978 TV broadcast"
+]
+},
+{
+"k": "xmthegiftofloveachristmasstory1983",
+"kind": "mv",
+"t": "The Gift of Love: A Christmas Story",
+"y": 1983,
+"mins": 96,
+"must": "gift of love.{0,5}a christmas story",
+"lo": 4896,
+"hi": 8640,
+"ia": [
+"title:(gift of love christmas story) AND mediatype:movies",
+"gift of love christmas story 1983"
+],
+"yt": [
+"The Gift of Love: A Christmas Story 1983 full movie",
+"The Gift of Love: A Christmas Story full movie",
+"The Gift of Love: A Christmas Story 1983 TV broadcast"
+]
+},
+{
+"k": "xmachristmasstory1983",
+"kind": "mv",
+"t": "A Christmas Story",
+"y": 1983,
+"mins": 94,
+"must": "^a christmas story|a christmas story.{0,10}(1983|full movie|ralphie)",
+"lo": 4794,
+"hi": 8460,
+"ia": [
+"title:(christmas story) AND mediatype:movies",
+"christmas story 1983"
+],
+"yt": [
+"A Christmas Story 1983 full movie",
+"A Christmas Story full movie",
+"A Christmas Story 1983 TV broadcast"
+]
+},
+{
+"k": "xmthenighttheysavedchristmas1984",
+"kind": "mv",
+"t": "The Night They Saved Christmas",
+"y": 1984,
+"mins": 94,
+"must": "night they saved christmas",
+"lo": 4794,
+"hi": 8460,
+"ia": [
+"title:(night they saved christmas) AND mediatype:movies",
+"night they saved christmas 1984"
+],
+"yt": [
+"The Night They Saved Christmas 1984 full movie",
+"The Night They Saved Christmas full movie",
+"The Night They Saved Christmas 1984 TV broadcast"
+]
+},
+{
+"k": "xmthechristmasgift1986",
+"kind": "mv",
+"t": "The Christmas Gift",
+"y": 1986,
+"mins": 95,
+"must": "the christmas gift.{0,20}(1986|john denver)",
+"lo": 4845,
+"hi": 8550,
+"ia": [
+"title:(christmas gift) AND mediatype:movies",
+"christmas gift 1986"
+],
+"yt": [
+"The Christmas Gift 1986 full movie",
+"The Christmas Gift full movie",
+"The Christmas Gift 1986 TV broadcast"
+]
+},
+{
+"k": "xmchristmascomestowillowcreek1987",
+"kind": "mv",
+"t": "Christmas Comes to Willow Creek",
+"y": 1987,
+"mins": 96,
+"must": "willow creek",
+"lo": 4896,
+"hi": 8640,
+"ia": [
+"title:(christmas comes to willow creek) AND mediatype:movies",
+"christmas comes to willow creek 1987"
+],
+"yt": [
+"Christmas Comes to Willow Creek 1987 full movie",
+"Christmas Comes to Willow Creek full movie",
+"Christmas Comes to Willow Creek 1987 TV broadcast"
+]
+},
+{
+"k": "xmachildschristmasinwales1987",
+"kind": "mv",
+"t": "A Child's Christmas in Wales",
+"y": 1987,
+"mins": 55,
+"must": "child'?s christmas in wales",
+"lo": 2805,
+"hi": 4950,
+"ia": [
+"title:(child christmas in wales) AND mediatype:movies",
+"child christmas in wales 1987"
+],
+"yt": [
+"A Child's Christmas in Wales 1987 full movie",
+"A Child's Christmas in Wales full movie",
+"A Child's Christmas in Wales 1987 TV broadcast"
+]
+},
+{
+"k": "xmthelittlematchgirl1987",
+"kind": "mv",
+"t": "The Little Match Girl",
+"y": 1987,
+"mins": 96,
+"must": "little match girl.{0,10}1987",
+"lo": 4896,
+"hi": 8640,
+"ia": [
+"title:(little match girl) AND mediatype:movies",
+"little match girl 1987"
+],
+"yt": [
+"The Little Match Girl 1987 full movie",
+"The Little Match Girl full movie",
+"The Little Match Girl 1987 TV broadcast"
+]
+},
+{
+"k": "xmillbehomeforchristmas1988",
+"kind": "mv",
+"t": "I'll Be Home for Christmas",
+"y": 1988,
+"mins": 96,
+"must": "i'?ll be home for christmas.{0,10}1988",
+"lo": 4896,
+"hi": 8640,
+"ia": [
+"title:(i ll be home for christmas) AND mediatype:movies",
+"i ll be home for christmas 1988"
+],
+"yt": [
+"I'll Be Home for Christmas 1988 full movie",
+"I'll Be Home for Christmas full movie",
+"I'll Be Home for Christmas 1988 TV broadcast"
+]
+},
+{
+"k": "xmitnearlywasntchristmas1989",
+"kind": "mv",
+"t": "It Nearly Wasn't Christmas",
+"y": 1989,
+"mins": 94,
+"must": "nearly wasn'?t christmas",
+"lo": 4794,
+"hi": 8460,
+"ia": [
+"title:(it nearly wasn t christmas) AND mediatype:movies",
+"it nearly wasn t christmas 1989"
+],
+"yt": [
+"It Nearly Wasn't Christmas 1989 full movie",
+"It Nearly Wasn't Christmas full movie",
+"It Nearly Wasn't Christmas 1989 TV broadcast"
+]
+},
+{
+"k": "xmnationallampoonschristmasvacation1989",
+"kind": "mv",
+"t": "National Lampoon's Christmas Vacation",
+"y": 1989,
+"mins": 97,
+"must": "christmas vacation(?! ?2)",
+"lo": 4947,
+"hi": 8730,
+"ia": [
+"title:(national lampoon christmas vacation) AND mediatype:movies",
+"national lampoon christmas vacation 1989"
+],
+"yt": [
+"National Lampoon's Christmas Vacation 1989 full movie",
+"National Lampoon's Christmas Vacation full movie",
+"National Lampoon's Christmas Vacation 1989 TV broadcast"
+]
+},
+{
+"k": "xmhomealone1990",
+"kind": "mv",
+"t": "Home Alone",
+"y": 1990,
+"mins": 103,
+"must": "^home alone(?! ?[23])|home alone.{0,10}1990",
+"lo": 5253,
+"hi": 9270,
+"ia": [
+"title:(home alone) AND mediatype:movies",
+"home alone 1990"
+],
+"yt": [
+"Home Alone 1990 full movie",
+"Home Alone full movie",
+"Home Alone 1990 TV broadcast"
+]
+},
+{
+"k": "xmalliwantforchristmas1991",
+"kind": "mv",
+"t": "All I Want for Christmas",
+"y": 1991,
+"mins": 92,
+"must": "all i want for christmas.{0,10}1991|1991.{0,10}all i want for christmas",
+"lo": 4692,
+"hi": 8280,
+"ia": [
+"title:(all i want for christmas) AND mediatype:movies",
+"all i want for christmas 1991"
+],
+"yt": [
+"All I Want for Christmas 1991 full movie",
+"All I Want for Christmas full movie",
+"All I Want for Christmas 1991 TV broadcast"
+]
+},
+{
+"k": "xmchristmasinconnecticut1992",
+"kind": "mv",
+"t": "Christmas in Connecticut",
+"y": 1992,
+"mins": 93,
+"must": "christmas in connecticut.{0,10}1992",
+"lo": 4743,
+"hi": 8370,
+"ia": [
+"title:(christmas in connecticut) AND mediatype:movies",
+"christmas in connecticut 1992"
+],
+"yt": [
+"Christmas in Connecticut 1992 full movie",
+"Christmas in Connecticut full movie",
+"Christmas in Connecticut 1992 TV broadcast"
+]
+},
+{
+"k": "xmthenightmarebeforechristmas1993",
+"kind": "mv",
+"t": "The Nightmare Before Christmas",
+"y": 1993,
+"mins": 76,
+"must": "nightmare before christmas",
+"lo": 3876,
+"hi": 6840,
+"ia": [
+"title:(nightmare before christmas) AND mediatype:movies",
+"nightmare before christmas 1993"
+],
+"yt": [
+"The Nightmare Before Christmas 1993 full movie",
+"The Nightmare Before Christmas full movie",
+"The Nightmare Before Christmas 1993 TV broadcast"
+]
+},
+{
+"k": "xmthesantaclause1994",
+"kind": "mv",
+"t": "The Santa Clause",
+"y": 1994,
+"mins": 97,
+"must": "^the santa clause(?! ?2)|santa clause.{0,10}1994",
+"lo": 4947,
+"hi": 8730,
+"ia": [
+"title:(santa clause) AND mediatype:movies",
+"santa clause 1994"
+],
+"yt": [
+"The Santa Clause 1994 full movie",
+"The Santa Clause full movie",
+"The Santa Clause 1994 TV broadcast"
+]
+},
+{
+"k": "xmtrappedinparadise1994",
+"kind": "mv",
+"t": "Trapped in Paradise",
+"y": 1994,
+"mins": 111,
+"must": "trapped in paradise",
+"lo": 5661,
+"hi": 9990,
+"ia": [
+"title:(trapped in paradise) AND mediatype:movies",
+"trapped in paradise 1994"
+],
+"yt": [
+"Trapped in Paradise 1994 full movie",
+"Trapped in Paradise full movie",
+"Trapped in Paradise 1994 TV broadcast"
+]
+},
+{
+"k": "xmtheref1994",
+"kind": "mv",
+"t": "The Ref",
+"y": 1994,
+"mins": 96,
+"must": "the ref.{0,10}1994",
+"lo": 4896,
+"hi": 8640,
+"ia": [
+"title:(ref) AND mediatype:movies",
+"ref 1994"
+],
+"yt": [
+"The Ref 1994 full movie",
+"The Ref full movie",
+"The Ref 1994 TV broadcast"
+]
+},
+{
+"k": "xmthechristmasbox1995",
+"kind": "mv",
+"t": "The Christmas Box",
+"y": 1995,
+"mins": 92,
+"must": "the christmas box",
+"lo": 4692,
+"hi": 8280,
+"ia": [
+"title:(christmas box) AND mediatype:movies",
+"christmas box 1995"
+],
+"yt": [
+"The Christmas Box 1995 full movie",
+"The Christmas Box full movie",
+"The Christmas Box 1995 TV broadcast"
+]
+},
+{
+"k": "xmebbie1995",
+"kind": "mv",
+"t": "Ebbie",
+"y": 1995,
+"mins": 93,
+"must": "\\bebbie\\b",
+"lo": 4743,
+"hi": 8370,
+"ia": [
+"title:(ebbie) AND mediatype:movies",
+"ebbie 1995"
+],
+"yt": [
+"Ebbie 1995 full movie",
+"Ebbie full movie",
+"Ebbie 1995 TV broadcast"
+]
+},
+{
+"k": "xmthepreacherswife1996",
+"kind": "mv",
+"t": "The Preacher's Wife",
+"y": 1996,
+"mins": 124,
+"must": "preacher'?s wife",
+"lo": 6324,
+"hi": 11160,
+"ia": [
+"title:(preacher wife) AND mediatype:movies",
+"preacher wife 1996"
+],
+"yt": [
+"The Preacher's Wife 1996 full movie",
+"The Preacher's Wife full movie",
+"The Preacher's Wife 1996 TV broadcast"
+]
+},
+{
+"k": "xmmrssantaclaus1996",
+"kind": "mv",
+"t": "Mrs. Santa Claus",
+"y": 1996,
+"mins": 91,
+"must": "mrs\\.? santa claus",
+"lo": 4641,
+"hi": 8190,
+"ia": [
+"title:(mrs santa claus) AND mediatype:movies",
+"mrs santa claus 1996"
+],
+"yt": [
+"Mrs. Santa Claus 1996 full movie",
+"Mrs. Santa Claus full movie",
+"Mrs. Santa Claus 1996 TV broadcast"
+]
+},
+{
+"k": "xmmsscrooge1997",
+"kind": "mv",
+"t": "Ms. Scrooge",
+"y": 1997,
+"mins": 87,
+"must": "ms\\.? scrooge",
+"lo": 4437,
+"hi": 7830,
+"ia": [
+"title:(ms scrooge) AND mediatype:movies",
+"ms scrooge 1997"
+],
+"yt": [
+"Ms. Scrooge 1997 full movie",
+"Ms. Scrooge full movie",
+"Ms. Scrooge 1997 TV broadcast"
+]
+},
+{
+"k": "xmholidayinyourheart1997",
+"kind": "mv",
+"t": "Holiday in Your Heart",
+"y": 1997,
+"mins": 91,
+"must": "holiday in your heart",
+"lo": 4641,
+"hi": 8190,
+"ia": [
+"title:(holiday in your heart) AND mediatype:movies",
+"holiday in your heart 1997"
+],
+"yt": [
+"Holiday in Your Heart 1997 full movie",
+"Holiday in Your Heart full movie",
+"Holiday in Your Heart 1997 TV broadcast"
+]
+},
+{
+"k": "xmillbehomeforchristmas1998",
+"kind": "mv",
+"t": "I'll Be Home for Christmas",
+"y": 1998,
+"mins": 86,
+"must": "i'?ll be home for christmas.{0,10}1998",
+"lo": 4386,
+"hi": 7740,
+"ia": [
+"title:(i ll be home for christmas) AND mediatype:movies",
+"i ll be home for christmas 1998"
+],
+"yt": [
+"I'll Be Home for Christmas 1998 full movie",
+"I'll Be Home for Christmas full movie",
+"I'll Be Home for Christmas 1998 TV broadcast"
+]
+},
+{
+"k": "xmjackfrost1998",
+"kind": "mv",
+"t": "Jack Frost",
+"y": 1998,
+"mins": 101,
+"must": "jack frost.{0,10}1998|michael keaton.{0,20}jack frost",
+"lo": 5151,
+"hi": 9090,
+"ia": [
+"title:(jack frost) AND mediatype:movies",
+"jack frost 1998"
+],
+"yt": [
+"Jack Frost 1998 full movie",
+"Jack Frost full movie",
+"Jack Frost 1998 TV broadcast"
+]
+},
+{
+"k": "xmachristmascarol1999",
+"kind": "mv",
+"t": "A Christmas Carol",
+"y": 1999,
+"mins": 95,
+"must": "christmas carol.{0,20}(1999|patrick stewart)",
+"lo": 4845,
+"hi": 8550,
+"ia": [
+"title:(christmas carol) AND mediatype:movies",
+"christmas carol 1999"
+],
+"yt": [
+"A Christmas Carol 1999 full movie",
+"A Christmas Carol full movie",
+"A Christmas Carol 1999 TV broadcast"
+]
+},
+{
+"k": "xmthefamilyman2000",
+"kind": "mv",
+"t": "The Family Man",
+"y": 2000,
+"mins": 125,
+"must": "the family man.{0,10}2000",
+"lo": 6375,
+"hi": 11250,
+"ia": [
+"title:(family man) AND mediatype:movies",
+"family man 2000"
+],
+"yt": [
+"The Family Man 2000 full movie",
+"The Family Man full movie",
+"The Family Man 2000 TV broadcast"
+]
+},
+{
+"k": "xmsantawho2000",
+"kind": "mv",
+"t": "Santa Who?",
+"y": 2000,
+"mins": 88,
+"must": "santa who",
+"lo": 4488,
+"hi": 7920,
+"ia": [
+"title:(santa who) AND mediatype:movies",
+"santa who 2000"
+],
+"yt": [
+"Santa Who? 2000 full movie",
+"Santa Who? full movie",
+"Santa Who? 2000 TV broadcast"
+]
+},
+{
+"k": "xmcallmeclaus2001",
+"kind": "mv",
+"t": "Call Me Claus",
+"y": 2001,
+"mins": 90,
+"must": "call me claus",
+"lo": 4590,
+"hi": 8100,
+"ia": [
+"title:(call me claus) AND mediatype:movies",
+"call me claus 2001"
+],
+"yt": [
+"Call Me Claus 2001 full movie",
+"Call Me Claus full movie",
+"Call Me Claus 2001 TV broadcast"
+]
+},
+{
+"k": "xmthesantaclause22002",
+"kind": "mv",
+"t": "The Santa Clause 2",
+"y": 2002,
+"mins": 104,
+"must": "santa clause 2",
+"lo": 5304,
+"hi": 9360,
+"ia": [
+"title:(santa clause 2) AND mediatype:movies",
+"santa clause 2 2002"
+],
+"yt": [
+"The Santa Clause 2 2002 full movie",
+"The Santa Clause 2 full movie",
+"The Santa Clause 2 2002 TV broadcast"
+]
+},
+{
+"k": "xmeightcrazynights2002",
+"kind": "mv",
+"t": "Eight Crazy Nights",
+"y": 2002,
+"mins": 76,
+"must": "eight crazy nights",
+"lo": 3876,
+"hi": 6840,
+"ia": [
+"title:(eight crazy nights) AND mediatype:movies",
+"eight crazy nights 2002"
+],
+"yt": [
+"Eight Crazy Nights 2002 full movie",
+"Eight Crazy Nights full movie",
+"Eight Crazy Nights 2002 TV broadcast"
+]
+},
+{
+"k": "xmthechristmasshoes2002",
+"kind": "mv",
+"t": "The Christmas Shoes",
+"y": 2002,
+"mins": 88,
+"must": "christmas shoes",
+"lo": 4488,
+"hi": 7920,
+"ia": [
+"title:(christmas shoes) AND mediatype:movies",
+"christmas shoes 2002"
+],
+"yt": [
+"The Christmas Shoes 2002 full movie",
+"The Christmas Shoes full movie",
+"The Christmas Shoes 2002 TV broadcast"
+]
+},
+{
+"k": "xmeloiseatchristmastime2003",
+"kind": "mv",
+"t": "Eloise at Christmastime",
+"y": 2003,
+"mins": 89,
+"must": "eloise at christmastime",
+"lo": 4539,
+"hi": 8010,
+"ia": [
+"title:(eloise at christmastime) AND mediatype:movies",
+"eloise at christmastime 2003"
+],
+"yt": [
+"Eloise at Christmastime 2003 full movie",
+"Eloise at Christmastime full movie",
+"Eloise at Christmastime 2003 TV broadcast"
+]
+},
+{
+"k": "xmloveactually2003",
+"kind": "mv",
+"t": "Love Actually",
+"y": 2003,
+"mins": 135,
+"must": "love actually",
+"lo": 6885,
+"hi": 12150,
+"ia": [
+"title:(love actually) AND mediatype:movies",
+"love actually 2003"
+],
+"yt": [
+"Love Actually 2003 full movie",
+"Love Actually full movie",
+"Love Actually 2003 TV broadcast"
+]
+},
+{
+"k": "xmrecesschristmasmiracleonthirdstreet2001",
+"kind": "mv",
+"t": "Recess Christmas: Miracle on Third Street",
+"y": 2001,
+"mins": 64,
+"must": "miracle on third street",
+"lo": 3264,
+"hi": 5760,
+"ia": [
+"title:(recess christmas miracle on third street) AND mediatype:movies",
+"recess christmas miracle on third street 2001"
+],
+"yt": [
+"Recess Christmas: Miracle on Third Street 2001 full movie",
+"Recess Christmas: Miracle on Third Street full movie",
+"Recess Christmas: Miracle on Third Street 2001 TV broadcast"
+]
+},
+{
+"k": "xmbarbieinthenutcracker2001",
+"kind": "mv",
+"t": "Barbie in the Nutcracker",
+"y": 2001,
+"mins": 78,
+"must": "barbie in the nutcracker",
+"lo": 3978,
+"hi": 7020,
+"ia": [
+"title:(barbie in nutcracker) AND mediatype:movies",
+"barbie in nutcracker 2001"
+],
+"yt": [
+"Barbie in the Nutcracker 2001 full movie",
+"Barbie in the Nutcracker full movie",
+"Barbie in the Nutcracker 2001 TV broadcast"
+]
+},
+{
+"k": "xmannabelleswish1997",
+"kind": "mv",
+"t": "Annabelle's Wish",
+"y": 1997,
+"mins": 54,
+"must": "annabelle'?s wish",
+"lo": 2754,
+"hi": 4860,
+"ia": [
+"title:(annabelle wish) AND mediatype:movies",
+"annabelle wish 1997"
+],
+"yt": [
+"Annabelle's Wish 1997 full movie",
+"Annabelle's Wish full movie",
+"Annabelle's Wish 1997 TV broadcast"
+]
+},
+{
+"k": "xmbeautyandthebeasttheenchantedchristmas19",
+"kind": "mv",
+"t": "Beauty and the Beast: The Enchanted Christmas",
+"y": 1997,
+"mins": 72,
+"must": "enchanted christmas",
+"lo": 3672,
+"hi": 6480,
+"ia": [
+"title:(beauty and beast enchanted christmas) AND mediatype:movies",
+"beauty and beast enchanted christmas 1997"
+],
+"yt": [
+"Beauty and the Beast: The Enchanted Christmas 1997 full movie",
+"Beauty and the Beast: The Enchanted Christmas full movie",
+"Beauty and the Beast: The Enchanted Christmas 1997 TV broadcast"
+]
+},
+{
+"k": "xmrudolphtherednosedreindeerthemovie1998",
+"kind": "mv",
+"t": "Rudolph the Red-Nosed Reindeer: The Movie",
+"y": 1998,
+"mins": 83,
+"must": "rudolph.{0,30}the movie",
+"lo": 4233,
+"hi": 7470,
+"ia": [
+"title:(rudolph red nosed reindeer movie) AND mediatype:movies",
+"rudolph red nosed reindeer movie 1998"
+],
+"yt": [
+"Rudolph the Red-Nosed Reindeer: The Movie 1998 full movie",
+"Rudolph the Red-Nosed Reindeer: The Movie full movie",
+"Rudolph the Red-Nosed Reindeer: The Movie 1998 TV broadcast"
+]
+},
+{
+"k": "xmthestarwarsholidayspecial1978",
+"kind": "mv",
+"t": "The Star Wars Holiday Special",
+"y": 1978,
+"mins": 97,
+"must": "star.{0,5}wars.{0,5}holiday.{0,5}special",
+"lo": 4947,
+"hi": 8730,
+"ia": [
+"title:(star wars holiday special) AND mediatype:movies",
+"star wars holiday special 1978"
+],
+"yt": [
+"The Star Wars Holiday Special 1978 full movie",
+"The Star Wars Holiday Special full movie",
+"The Star Wars Holiday Special 1978 TV broadcast"
+]
+},
+{
+"k": "xecheerschristmascheers1987",
+"kind": "ep",
+"series": "Cheers",
+"t": "Christmas Cheers",
+"y": 1987,
+"mins": 25,
+"must": "christmas.{0,5}cheers",
+"fm": "christmas.{0,5}cheers",
+"sm": "cheers",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(cheers) AND title:(christmas cheers)",
+"cheers christmas cheers",
+"title:(cheers) AND title:(christmas)"
+],
+"yt": [
+"Cheers Christmas Cheers",
+"Cheers Christmas Cheers full episode",
+"Cheers christmas episode 1987"
+]
+},
+{
+"k": "xefamilytiesakeatonchristmascarol1983",
+"kind": "ep",
+"series": "Family Ties",
+"t": "A Keaton Christmas Carol",
+"y": 1983,
+"mins": 25,
+"must": "keaton.{0,5}christmas.{0,5}carol",
+"fm": "keaton.{0,5}christmas.{0,5}carol",
+"sm": "family.{0,5}ties",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(family ties) AND title:(keaton christmas carol)",
+"family ties keaton christmas carol",
+"title:(family ties) AND title:(christmas)"
+],
+"yt": [
+"Family Ties A Keaton Christmas Carol",
+"Family Ties A Keaton Christmas Carol full episode",
+"Family Ties christmas episode 1983"
+]
+},
+{
+"k": "xegrowingpainschristmas1985",
+"kind": "ep",
+"series": "Growing Pains",
+"t": "Christmas",
+"y": 1985,
+"mins": 25,
+"must": "growing pains.{0,40}(christmas|santa)",
+"fm": "growing pains.{0,40}(christmas|santa)",
+"sm": "growing.{0,5}pains",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(growing pains) AND title:(christmas)",
+"growing pains christmas",
+"title:(growing pains) AND title:(christmas)"
+],
+"yt": [
+"Growing Pains Christmas",
+"Growing Pains Christmas full episode",
+"Growing Pains christmas episode 1985"
+]
+},
+{
+"k": "xefullhouseourveryfirstchristmasshow1988",
+"kind": "ep",
+"series": "Full House",
+"t": "Our Very First Christmas Show",
+"y": 1988,
+"mins": 25,
+"must": "very first christmas show",
+"fm": "very first christmas show",
+"sm": "full.{0,5}house",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(full house) AND title:(our very first christmas show)",
+"full house our very first christmas show",
+"title:(full house) AND title:(christmas)"
+],
+"yt": [
+"Full House Our Very First Christmas Show",
+"Full House Our Very First Christmas Show full episode",
+"Full House christmas episode 1988"
+]
+},
+{
+"k": "xefullhousearrestyemerrygentlemen1992",
+"kind": "ep",
+"series": "Full House",
+"t": "Arrest Ye Merry Gentlemen",
+"y": 1992,
+"mins": 25,
+"must": "arrest ye merry",
+"fm": "arrest ye merry",
+"sm": "full.{0,5}house",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(full house) AND title:(arrest ye merry gentlemen)",
+"full house arrest ye merry gentlemen",
+"title:(full house) AND title:(christmas)"
+],
+"yt": [
+"Full House Arrest Ye Merry Gentlemen",
+"Full House Arrest Ye Merry Gentlemen full episode",
+"Full House christmas episode 1992"
+]
+},
+{
+"k": "xefamilymatterschristmas1990",
+"kind": "ep",
+"series": "Family Matters",
+"t": "Christmas",
+"y": 1990,
+"mins": 25,
+"must": "family matters.{0,40}(christmas|santa)",
+"fm": "family matters.{0,40}(christmas|santa)",
+"sm": "family.{0,5}matters",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(family matters) AND title:(christmas)",
+"family matters christmas",
+"title:(family matters) AND title:(christmas)"
+],
+"yt": [
+"Family Matters Christmas",
+"Family Matters Christmas full episode",
+"Family Matters christmas episode 1990"
+]
+},
+{
+"k": "xehomeimprovementtwasthenightbeforechaos19",
+"kind": "ep",
+"series": "Home Improvement",
+"t": "'Twas the Night Before Chaos",
+"y": 1993,
+"mins": 25,
+"must": "night before chaos",
+"fm": "night before chaos",
+"sm": "home.{0,5}improvement",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(home improvement) AND title:(twas night before chaos)",
+"home improvement twas night before chaos",
+"title:(home improvement) AND title:(christmas)"
+],
+"yt": [
+"Home Improvement 'Twas the Night Before Chaos",
+"Home Improvement 'Twas the Night Before Chaos full episode",
+"Home Improvement christmas episode 1993"
+]
+},
+{
+"k": "xehomeimprovementbrightchristmas1992",
+"kind": "ep",
+"series": "Home Improvement",
+"t": "Bright Christmas",
+"y": 1992,
+"mins": 25,
+"must": "home improvement.{0,40}(christmas|bright christmas)",
+"fm": "home improvement.{0,40}(christmas|bright christmas)",
+"sm": "home.{0,5}improvement",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(home improvement) AND title:(bright christmas)",
+"home improvement bright christmas",
+"title:(home improvement) AND title:(christmas)"
+],
+"yt": [
+"Home Improvement Bright Christmas",
+"Home Improvement Bright Christmas full episode",
+"Home Improvement christmas episode 1992"
+]
+},
+{
+"k": "xeseinfeldthestrike1997",
+"kind": "ep",
+"series": "Seinfeld",
+"t": "The Strike",
+"y": 1997,
+"mins": 25,
+"must": "seinfeld.{0,40}strike|festivus",
+"fm": "seinfeld.{0,40}strike|festivus",
+"sm": "seinfeld",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(seinfeld) AND title:(strike)",
+"seinfeld strike",
+"title:(seinfeld) AND title:(christmas)"
+],
+"yt": [
+"Seinfeld The Strike",
+"Seinfeld The Strike full episode",
+"Seinfeld christmas episode 1997"
+]
+},
+{
+"k": "xefriendstheonewiththeholidayarmadillo2000",
+"kind": "ep",
+"series": "Friends",
+"t": "The One with the Holiday Armadillo",
+"y": 2000,
+"mins": 25,
+"must": "holiday armadillo",
+"fm": "holiday armadillo",
+"sm": "friends",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(friends) AND title:(one with holiday armadillo)",
+"friends one with holiday armadillo",
+"title:(friends) AND title:(christmas)"
+],
+"yt": [
+"Friends The One with the Holiday Armadillo",
+"Friends The One with the Holiday Armadillo full episode",
+"Friends christmas episode 2000"
+]
+},
+{
+"k": "xefriendstheonewiththeinappropriatesister1",
+"kind": "ep",
+"series": "Friends",
+"t": "The One with the Inappropriate Sister",
+"y": 1996,
+"mins": 25,
+"must": "inappropriate sister",
+"fm": "inappropriate sister",
+"sm": "friends",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(friends) AND title:(one with inappropriate sister)",
+"friends one with inappropriate sister",
+"title:(friends) AND title:(christmas)"
+],
+"yt": [
+"Friends The One with the Inappropriate Sister",
+"Friends The One with the Inappropriate Sister full episode",
+"Friends christmas episode 1996"
+]
+},
+{
+"k": "xefrasierfrasiergrinch1996",
+"kind": "ep",
+"series": "Frasier",
+"t": "Frasier Grinch",
+"y": 1996,
+"mins": 25,
+"must": "frasier grinch",
+"fm": "frasier grinch",
+"sm": "frasier",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(frasier) AND title:(frasier grinch)",
+"frasier frasier grinch",
+"title:(frasier) AND title:(christmas)"
+],
+"yt": [
+"Frasier Frasier Grinch",
+"Frasier Frasier Grinch full episode",
+"Frasier christmas episode 1996"
+]
+},
+{
+"k": "xeroseannesantaclaus1991",
+"kind": "ep",
+"series": "Roseanne",
+"t": "Santa Claus",
+"y": 1991,
+"mins": 25,
+"must": "roseanne.{0,40}(christmas|santa)",
+"fm": "roseanne.{0,40}(christmas|santa)",
+"sm": "roseanne",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(roseanne) AND title:(santa claus)",
+"roseanne santa claus",
+"title:(roseanne) AND title:(christmas)"
+],
+"yt": [
+"Roseanne Santa Claus",
+"Roseanne Santa Claus full episode",
+"Roseanne christmas episode 1991"
+]
+},
+{
+"k": "xemarriedwithchildrenyoubetterwatchout1987",
+"kind": "ep",
+"series": "Married... with Children",
+"t": "You Better Watch Out",
+"y": 1987,
+"mins": 25,
+"must": "you better watch out",
+"fm": "you better watch out",
+"sm": "married.{0,5}with.{0,5}children",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(married with children) AND title:(you better watch out)",
+"married with children you better watch out",
+"title:(married with children) AND title:(christmas)"
+],
+"yt": [
+"Married... with Children You Better Watch Out",
+"Married... with Children You Better Watch Out full episode",
+"Married... with Children christmas episode 1987"
+]
+},
+{
+"k": "xemarriedwithchildrenitsabundyfullife1989",
+"kind": "ep",
+"series": "Married... with Children",
+"t": "It's a Bundyful Life",
+"y": 1989,
+"mins": 50,
+"must": "bundyful life",
+"fm": "bundyful life",
+"sm": "married.{0,5}with.{0,5}children",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(married with children) AND title:(it bundyful life)",
+"married with children it bundyful life",
+"title:(married with children) AND title:(christmas)"
+],
+"yt": [
+"Married... with Children It's a Bundyful Life",
+"Married... with Children It's a Bundyful Life full episode",
+"Married... with Children christmas episode 1989"
+]
+},
+{
+"k": "xethewonderyearschristmas1988",
+"kind": "ep",
+"series": "The Wonder Years",
+"t": "Christmas",
+"y": 1988,
+"mins": 25,
+"must": "wonder years.{0,40}christmas",
+"fm": "wonder years.{0,40}christmas",
+"sm": "wonder.{0,5}years",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(wonder years) AND title:(christmas)",
+"wonder years christmas",
+"title:(wonder years) AND title:(christmas)"
+],
+"yt": [
+"The Wonder Years Christmas",
+"The Wonder Years Christmas full episode",
+"The Wonder Years christmas episode 1988"
+]
+},
+{
+"k": "xealfalfsspecialchristmas1987",
+"kind": "ep",
+"series": "ALF",
+"t": "ALF's Special Christmas",
+"y": 1987,
+"mins": 50,
+"must": "alf'?s special christmas",
+"fm": "alf'?s special christmas",
+"sm": "alf",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(alf) AND title:(alf special christmas)",
+"alf alf special christmas",
+"title:(alf) AND title:(christmas)"
+],
+"yt": [
+"ALF ALF's Special Christmas",
+"ALF ALF's Special Christmas full episode",
+"ALF christmas episode 1987"
+]
+},
+{
+"k": "xemoonlightingtwastheepisodebeforechristma",
+"kind": "ep",
+"series": "Moonlighting",
+"t": "'Twas the Episode Before Christmas",
+"y": 1985,
+"mins": 50,
+"must": "episode before christmas",
+"fm": "episode before christmas",
+"sm": "moonlighting",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(moonlighting) AND title:(twas episode before christmas)",
+"moonlighting twas episode before christmas",
+"title:(moonlighting) AND title:(christmas)"
+],
+"yt": [
+"Moonlighting 'Twas the Episode Before Christmas",
+"Moonlighting 'Twas the Episode Before Christmas full episode",
+"Moonlighting christmas episode 1985"
+]
+},
+{
+"k": "xenightcourtsantagoesdowntown1984",
+"kind": "ep",
+"series": "Night Court",
+"t": "Santa Goes Downtown",
+"y": 1984,
+"mins": 25,
+"must": "santa goes downtown",
+"fm": "santa goes downtown",
+"sm": "night.{0,5}court",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(night court) AND title:(santa goes downtown)",
+"night court santa goes downtown",
+"title:(night court) AND title:(christmas)"
+],
+"yt": [
+"Night Court Santa Goes Downtown",
+"Night Court Santa Goes Downtown full episode",
+"Night Court christmas episode 1984"
+]
+},
+{
+"k": "xewhosthebossachristmasstory1984",
+"kind": "ep",
+"series": "Who's the Boss?",
+"t": "A Christmas Story",
+"y": 1984,
+"mins": 25,
+"must": "who'?s the boss.{0,40}christmas",
+"fm": "who'?s the boss.{0,40}christmas",
+"sm": "who.{0,5}boss",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(who boss) AND title:(christmas story)",
+"who boss christmas story",
+"title:(who boss) AND title:(christmas)"
+],
+"yt": [
+"Who's the Boss? A Christmas Story",
+"Who's the Boss? A Christmas Story full episode",
+"Who's the Boss? christmas episode 1984"
+]
+},
+{
+"k": "xethegoldengirlstwasthenightmarebeforechri",
+"kind": "ep",
+"series": "The Golden Girls",
+"t": "'Twas the Nightmare Before Christmas",
+"y": 1985,
+"mins": 25,
+"must": "nightmare before christmas.{0,20}golden|golden girls.{0,40}christmas",
+"fm": "nightmare before christmas.{0,20}golden|golden girls.{0,40}christmas",
+"sm": "golden.{0,5}girls",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(golden girls) AND title:(twas nightmare before christmas)",
+"golden girls twas nightmare before christmas",
+"title:(golden girls) AND title:(christmas)"
+],
+"yt": [
+"The Golden Girls 'Twas the Nightmare Before Christmas",
+"The Golden Girls 'Twas the Nightmare Before Christmas full episode",
+"The Golden Girls christmas episode 1985"
+]
+},
+{
+"k": "xedesigningwomenillbehomeforchristmas1988",
+"kind": "ep",
+"series": "Designing Women",
+"t": "I'll Be Home for Christmas",
+"y": 1988,
+"mins": 25,
+"must": "designing women.{0,40}christmas",
+"fm": "designing women.{0,40}christmas",
+"sm": "designing.{0,5}women",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(designing women) AND title:(i ll be home for christmas)",
+"designing women i ll be home for christmas",
+"title:(designing women) AND title:(christmas)"
+],
+"yt": [
+"Designing Women I'll Be Home for Christmas",
+"Designing Women I'll Be Home for Christmas full episode",
+"Designing Women christmas episode 1988"
+]
+},
+{
+"k": "xenewhartchristmas1985",
+"kind": "ep",
+"series": "Newhart",
+"t": "Christmas",
+"y": 1985,
+"mins": 25,
+"must": "newhart.{0,40}christmas",
+"fm": "newhart.{0,40}christmas",
+"sm": "newhart",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(newhart) AND title:(christmas)",
+"newhart christmas",
+"title:(newhart) AND title:(christmas)"
+],
+"yt": [
+"Newhart Christmas",
+"Newhart Christmas full episode",
+"Newhart christmas episode 1985"
+]
+},
+{
+"k": "xemrbelvederechristmasstory1985",
+"kind": "ep",
+"series": "Mr. Belvedere",
+"t": "Christmas Story",
+"y": 1985,
+"mins": 25,
+"must": "belvedere.{0,40}christmas",
+"fm": "belvedere.{0,40}christmas",
+"sm": "mr.{0,5}belvedere",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(mr belvedere) AND title:(christmas story)",
+"mr belvedere christmas story",
+"title:(mr belvedere) AND title:(christmas)"
+],
+"yt": [
+"Mr. Belvedere Christmas Story",
+"Mr. Belvedere Christmas Story full episode",
+"Mr. Belvedere christmas episode 1985"
+]
+},
+{
+"k": "xeperfectstrangerschristmas1988",
+"kind": "ep",
+"series": "Perfect Strangers",
+"t": "Christmas",
+"y": 1988,
+"mins": 25,
+"must": "perfect strangers.{0,40}christmas",
+"fm": "perfect strangers.{0,40}christmas",
+"sm": "perfect.{0,5}strangers",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(perfect strangers) AND title:(christmas)",
+"perfect strangers christmas",
+"title:(perfect strangers) AND title:(christmas)"
+],
+"yt": [
+"Perfect Strangers Christmas",
+"Perfect Strangers Christmas full episode",
+"Perfect Strangers christmas episode 1988"
+]
+},
+{
+"k": "xe227christmas1986",
+"kind": "ep",
+"series": "227",
+"t": "Christmas",
+"y": 1986,
+"mins": 25,
+"must": "227.{0,40}christmas",
+"fm": "227.{0,40}christmas",
+"sm": "227",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(227) AND title:(christmas)",
+"227 christmas",
+"title:(227) AND title:(christmas)"
+],
+"yt": [
+"227 Christmas",
+"227 Christmas full episode",
+"227 christmas episode 1986"
+]
+},
+{
+"k": "xeamenchristmas1987",
+"kind": "ep",
+"series": "Amen",
+"t": "Christmas",
+"y": 1987,
+"mins": 25,
+"must": "amen.{0,40}christmas",
+"fm": "amen.{0,40}christmas",
+"sm": "amen",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(amen) AND title:(christmas)",
+"amen christmas",
+"title:(amen) AND title:(christmas)"
+],
+"yt": [
+"Amen Christmas",
+"Amen Christmas full episode",
+"Amen christmas episode 1987"
+]
+},
+{
+"k": "xethecosbyshowchristmas1985",
+"kind": "ep",
+"series": "The Cosby Show",
+"t": "Christmas",
+"y": 1985,
+"mins": 25,
+"must": "cosby show.{0,40}christmas",
+"fm": "cosby show.{0,40}christmas",
+"sm": "cosby.{0,5}show",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(cosby show) AND title:(christmas)",
+"cosby show christmas",
+"title:(cosby show) AND title:(christmas)"
+],
+"yt": [
+"The Cosby Show Christmas",
+"The Cosby Show Christmas full episode",
+"The Cosby Show christmas episode 1985"
+]
+},
+{
+"k": "xeadifferentworldchristmas1990",
+"kind": "ep",
+"series": "A Different World",
+"t": "Christmas",
+"y": 1990,
+"mins": 25,
+"must": "different world.{0,40}christmas",
+"fm": "different world.{0,40}christmas",
+"sm": "different.{0,5}world",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(different world) AND title:(christmas)",
+"different world christmas",
+"title:(different world) AND title:(christmas)"
+],
+"yt": [
+"A Different World Christmas",
+"A Different World Christmas full episode",
+"A Different World christmas episode 1990"
+]
+},
+{
+"k": "xemurphybrownchristmas1989",
+"kind": "ep",
+"series": "Murphy Brown",
+"t": "Christmas",
+"y": 1989,
+"mins": 25,
+"must": "murphy brown.{0,40}christmas",
+"fm": "murphy brown.{0,40}christmas",
+"sm": "murphy.{0,5}brown",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(murphy brown) AND title:(christmas)",
+"murphy brown christmas",
+"title:(murphy brown) AND title:(christmas)"
+],
+"yt": [
+"Murphy Brown Christmas",
+"Murphy Brown Christmas full episode",
+"Murphy Brown christmas episode 1989"
+]
+},
+{
+"k": "xewingschristmas1991",
+"kind": "ep",
+"series": "Wings",
+"t": "Christmas",
+"y": 1991,
+"mins": 25,
+"must": "wings.{0,40}(christmas|terminal christmas)",
+"fm": "wings.{0,40}(christmas|terminal christmas)",
+"sm": "wings",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(wings) AND title:(christmas)",
+"wings christmas",
+"title:(wings) AND title:(christmas)"
+],
+"yt": [
+"Wings Christmas",
+"Wings Christmas full episode",
+"Wings christmas episode 1991"
+]
+},
+{
+"k": "xecoachchristmas1990",
+"kind": "ep",
+"series": "Coach",
+"t": "Christmas",
+"y": 1990,
+"mins": 25,
+"must": "coach.{0,30}christmas",
+"fm": "coach.{0,30}christmas",
+"sm": "coach",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(coach) AND title:(christmas)",
+"coach christmas",
+"title:(coach) AND title:(christmas)"
+],
+"yt": [
+"Coach Christmas",
+"Coach Christmas full episode",
+"Coach christmas episode 1990"
+]
+},
+{
+"k": "xeboymeetsworldsantaslittlehelper1993",
+"kind": "ep",
+"series": "Boy Meets World",
+"t": "Santa's Little Helper",
+"y": 1993,
+"mins": 25,
+"must": "boy meets world.{0,40}(christmas|santa)",
+"fm": "boy meets world.{0,40}(christmas|santa)",
+"sm": "boy.{0,5}meets.{0,5}world",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(boy meets world) AND title:(santa little helper)",
+"boy meets world santa little helper",
+"title:(boy meets world) AND title:(christmas)"
+],
+"yt": [
+"Boy Meets World Santa's Little Helper",
+"Boy Meets World Santa's Little Helper full episode",
+"Boy Meets World christmas episode 1993"
+]
+},
+{
+"k": "xestepbystepchristmas1992",
+"kind": "ep",
+"series": "Step by Step",
+"t": "Christmas",
+"y": 1992,
+"mins": 25,
+"must": "step by step.{0,40}christmas",
+"fm": "step by step.{0,40}christmas",
+"sm": "step.{0,5}by.{0,5}step",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(step by step) AND title:(christmas)",
+"step by step christmas",
+"title:(step by step) AND title:(christmas)"
+],
+"yt": [
+"Step by Step Christmas",
+"Step by Step Christmas full episode",
+"Step by Step christmas episode 1992"
+]
+},
+{
+"k": "xesabrinatheteenagewitchchristmas1997",
+"kind": "ep",
+"series": "Sabrina the Teenage Witch",
+"t": "Christmas",
+"y": 1997,
+"mins": 25,
+"must": "sabrina.{0,40}(christmas|santa)",
+"fm": "sabrina.{0,40}(christmas|santa)",
+"sm": "sabrina.{0,5}teenage.{0,5}witch",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(sabrina teenage witch) AND title:(christmas)",
+"sabrina teenage witch christmas",
+"title:(sabrina teenage witch) AND title:(christmas)"
+],
+"yt": [
+"Sabrina the Teenage Witch Christmas",
+"Sabrina the Teenage Witch Christmas full episode",
+"Sabrina the Teenage Witch christmas episode 1997"
+]
+},
+{
+"k": "xethefreshprinceofbelairdeckthehalls1990",
+"kind": "ep",
+"series": "The Fresh Prince of Bel-Air",
+"t": "Deck the Halls",
+"y": 1990,
+"mins": 25,
+"must": "fresh prince.{0,40}(christmas|deck the halls)",
+"fm": "fresh prince.{0,40}(christmas|deck the halls)",
+"sm": "fresh.{0,5}prince.{0,5}of.{0,5}bel.{0,5}air",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(fresh prince of bel air) AND title:(deck halls)",
+"fresh prince of bel air deck halls",
+"title:(fresh prince of bel air) AND title:(christmas)"
+],
+"yt": [
+"The Fresh Prince of Bel-Air Deck the Halls",
+"The Fresh Prince of Bel-Air Deck the Halls full episode",
+"The Fresh Prince of Bel-Air christmas episode 1990"
+]
+},
+{
+"k": "xemartinchristmas1993",
+"kind": "ep",
+"series": "Martin",
+"t": "Christmas",
+"y": 1993,
+"mins": 25,
+"must": "\\bmartin\\b.{0,40}christmas",
+"fm": "\\bmartin\\b.{0,40}christmas",
+"sm": "martin",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(martin) AND title:(christmas)",
+"martin christmas",
+"title:(martin) AND title:(christmas)"
+],
+"yt": [
+"Martin Christmas",
+"Martin Christmas full episode",
+"Martin christmas episode 1993"
+]
+},
+{
+"k": "xeeverybodylovesraymondthechristmaspicture",
+"kind": "ep",
+"series": "Everybody Loves Raymond",
+"t": "The Christmas Picture",
+"y": 1997,
+"mins": 25,
+"must": "christmas picture",
+"fm": "christmas picture",
+"sm": "everybody.{0,5}loves.{0,5}raymond",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(everybody loves raymond) AND title:(christmas picture)",
+"everybody loves raymond christmas picture",
+"title:(everybody loves raymond) AND title:(christmas)"
+],
+"yt": [
+"Everybody Loves Raymond The Christmas Picture",
+"Everybody Loves Raymond The Christmas Picture full episode",
+"Everybody Loves Raymond christmas episode 1997"
+]
+},
+{
+"k": "xewillgracejingleballs2000",
+"kind": "ep",
+"series": "Will & Grace",
+"t": "Jingle Balls",
+"y": 2000,
+"mins": 25,
+"must": "jingle balls|will (and|&) grace.{0,40}christmas",
+"fm": "jingle balls|will (and|&) grace.{0,40}christmas",
+"sm": "will.{0,5}grace",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(will grace) AND title:(jingle balls)",
+"will grace jingle balls",
+"title:(will grace) AND title:(christmas)"
+],
+"yt": [
+"Will & Grace Jingle Balls",
+"Will & Grace Jingle Balls full episode",
+"Will & Grace christmas episode 2000"
+]
+},
+{
+"k": "xethedrewcareyshowchristmas1996",
+"kind": "ep",
+"series": "The Drew Carey Show",
+"t": "Christmas",
+"y": 1996,
+"mins": 25,
+"must": "drew carey.{0,40}christmas",
+"fm": "drew carey.{0,40}christmas",
+"sm": "drew.{0,5}carey.{0,5}show",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(drew carey show) AND title:(christmas)",
+"drew carey show christmas",
+"title:(drew carey show) AND title:(christmas)"
+],
+"yt": [
+"The Drew Carey Show Christmas",
+"The Drew Carey Show Christmas full episode",
+"The Drew Carey Show christmas episode 1996"
+]
+},
+{
+"k": "xe3rdrockfromthesunjollyoldstdick1997",
+"kind": "ep",
+"series": "3rd Rock from the Sun",
+"t": "Jolly Old St. Dick",
+"y": 1997,
+"mins": 25,
+"must": "jolly old st\\.? dick",
+"fm": "jolly old st\\.? dick",
+"sm": "3rd.{0,5}rock.{0,5}from.{0,5}sun",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(3rd rock from sun) AND title:(jolly old st dick)",
+"3rd rock from sun jolly old st dick",
+"title:(3rd rock from sun) AND title:(christmas)"
+],
+"yt": [
+"3rd Rock from the Sun Jolly Old St. Dick",
+"3rd Rock from the Sun Jolly Old St. Dick full episode",
+"3rd Rock from the Sun christmas episode 1997"
+]
+},
+{
+"k": "xemadaboutyouchristmas1993",
+"kind": "ep",
+"series": "Mad About You",
+"t": "Christmas",
+"y": 1993,
+"mins": 25,
+"must": "mad about you.{0,40}christmas",
+"fm": "mad about you.{0,40}christmas",
+"sm": "mad.{0,5}about.{0,5}you",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(mad about you) AND title:(christmas)",
+"mad about you christmas",
+"title:(mad about you) AND title:(christmas)"
+],
+"yt": [
+"Mad About You Christmas",
+"Mad About You Christmas full episode",
+"Mad About You christmas episode 1993"
+]
+},
+{
+"k": "xethat70sshowanericformanchristmas1999",
+"kind": "ep",
+"series": "That '70s Show",
+"t": "An Eric Forman Christmas",
+"y": 1999,
+"mins": 25,
+"must": "eric forman christmas",
+"fm": "eric forman christmas",
+"sm": "that.{0,5}70s.{0,5}show",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(that 70s show) AND title:(eric forman christmas)",
+"that 70s show eric forman christmas",
+"title:(that 70s show) AND title:(christmas)"
+],
+"yt": [
+"That '70s Show An Eric Forman Christmas",
+"That '70s Show An Eric Forman Christmas full episode",
+"That '70s Show christmas episode 1999"
+]
+},
+{
+"k": "xemalcolminthemiddlechristmas2000",
+"kind": "ep",
+"series": "Malcolm in the Middle",
+"t": "Christmas",
+"y": 2000,
+"mins": 25,
+"must": "malcolm in the middle.{0,40}christmas",
+"fm": "malcolm in the middle.{0,40}christmas",
+"sm": "malcolm.{0,5}in.{0,5}middle",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(malcolm in middle) AND title:(christmas)",
+"malcolm in middle christmas",
+"title:(malcolm in middle) AND title:(christmas)"
+],
+"yt": [
+"Malcolm in the Middle Christmas",
+"Malcolm in the Middle Christmas full episode",
+"Malcolm in the Middle christmas episode 2000"
+]
+},
+{
+"k": "xethexfileshowtheghostsstolechristmas1998",
+"kind": "ep",
+"series": "The X-Files",
+"t": "How the Ghosts Stole Christmas",
+"y": 1998,
+"mins": 45,
+"must": "ghosts stole christmas",
+"fm": "ghosts stole christmas",
+"sm": "x.{0,5}files",
+"lo": 2025,
+"hi": 5400,
+"ia": [
+"title:(x files) AND title:(how ghosts stole christmas)",
+"x files how ghosts stole christmas",
+"title:(x files) AND title:(christmas)"
+],
+"yt": [
+"The X-Files How the Ghosts Stole Christmas",
+"The X-Files How the Ghosts Stole Christmas full episode",
+"The X-Files christmas episode 1998"
+]
+},
+{
+"k": "xesavedbythebellhomeforchristmas1990",
+"kind": "ep",
+"series": "Saved by the Bell",
+"t": "Home for Christmas",
+"y": 1990,
+"mins": 25,
+"must": "saved by the bell.{0,40}christmas",
+"fm": "saved by the bell.{0,40}christmas",
+"sm": "saved.{0,5}by.{0,5}bell",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(saved by bell) AND title:(home for christmas)",
+"saved by bell home for christmas",
+"title:(saved by bell) AND title:(christmas)"
+],
+"yt": [
+"Saved by the Bell Home for Christmas",
+"Saved by the Bell Home for Christmas full episode",
+"Saved by the Bell christmas episode 1990"
+]
+},
+{
+"k": "xequantumleapalittlemiracle1990",
+"kind": "ep",
+"series": "Quantum Leap",
+"t": "A Little Miracle",
+"y": 1990,
+"mins": 50,
+"must": "quantum leap.{0,40}(christmas|little miracle)",
+"fm": "quantum leap.{0,40}(christmas|little miracle)",
+"sm": "quantum.{0,5}leap",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(quantum leap) AND title:(little miracle)",
+"quantum leap little miracle",
+"title:(quantum leap) AND title:(christmas)"
+],
+"yt": [
+"Quantum Leap A Little Miracle",
+"Quantum Leap A Little Miracle full episode",
+"Quantum Leap christmas episode 1990"
+]
+},
+{
+"k": "xemagnumpioperationsilentnight1984",
+"kind": "ep",
+"series": "Magnum, P.I.",
+"t": "Operation: Silent Night",
+"y": 1984,
+"mins": 50,
+"must": "operation:? silent night",
+"fm": "operation:? silent night",
+"sm": "magnum.{0,5}p.{0,5}i",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(magnum p i) AND title:(operation silent night)",
+"magnum p i operation silent night",
+"title:(magnum p i) AND title:(christmas)"
+],
+"yt": [
+"Magnum, P.I. Operation: Silent Night",
+"Magnum, P.I. Operation: Silent Night full episode",
+"Magnum, P.I. christmas episode 1984"
+]
+},
+{
+"k": "xehighwaytoheavenchristmas1985",
+"kind": "ep",
+"series": "Highway to Heaven",
+"t": "Christmas",
+"y": 1985,
+"mins": 50,
+"must": "highway to heaven.{0,40}christmas",
+"fm": "highway to heaven.{0,40}christmas",
+"sm": "highway.{0,5}to.{0,5}heaven",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(highway to heaven) AND title:(christmas)",
+"highway to heaven christmas",
+"title:(highway to heaven) AND title:(christmas)"
+],
+"yt": [
+"Highway to Heaven Christmas",
+"Highway to Heaven Christmas full episode",
+"Highway to Heaven christmas episode 1985"
+]
+},
+{
+"k": "xelittlehouseontheprairiechristmasatplumcr",
+"kind": "ep",
+"series": "Little House on the Prairie",
+"t": "Christmas at Plum Creek",
+"y": 1974,
+"mins": 50,
+"must": "christmas at plum creek",
+"fm": "christmas at plum creek",
+"sm": "little.{0,5}house.{0,5}on.{0,5}prairie",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(little house on prairie) AND title:(christmas at plum creek)",
+"little house on prairie christmas at plum creek",
+"title:(little house on prairie) AND title:(christmas)"
+],
+"yt": [
+"Little House on the Prairie Christmas at Plum Creek",
+"Little House on the Prairie Christmas at Plum Creek full episode",
+"Little House on the Prairie christmas episode 1974"
+]
+},
+{
+"k": "xethewaltonsthebestchristmas1976",
+"kind": "ep",
+"series": "The Waltons",
+"t": "The Best Christmas",
+"y": 1976,
+"mins": 50,
+"must": "waltons.{0,40}christmas",
+"fm": "waltons.{0,40}christmas",
+"sm": "waltons",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(waltons) AND title:(best christmas)",
+"waltons best christmas",
+"title:(waltons) AND title:(christmas)"
+],
+"yt": [
+"The Waltons The Best Christmas",
+"The Waltons The Best Christmas full episode",
+"The Waltons christmas episode 1976"
+]
+},
+{
+"k": "xemashdearsis1978",
+"kind": "ep",
+"series": "M*A*S*H",
+"t": "Dear Sis",
+"y": 1978,
+"mins": 25,
+"must": "m\\*?a\\*?s\\*?h.{0,40}(dear sis|christmas)",
+"fm": "m\\*?a\\*?s\\*?h.{0,40}(dear sis|christmas)",
+"sm": "m.{0,5}h",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(m h) AND title:(dear sis)",
+"m h dear sis",
+"title:(m h) AND title:(christmas)"
+],
+"yt": [
+"M*A*S*H Dear Sis",
+"M*A*S*H Dear Sis full episode",
+"M*A*S*H christmas episode 1978"
+]
+},
+{
+"k": "xehappydaysguesswhoscomingtochristmas1974",
+"kind": "ep",
+"series": "Happy Days",
+"t": "Guess Who's Coming to Christmas",
+"y": 1974,
+"mins": 25,
+"must": "happy days.{0,40}christmas",
+"fm": "happy days.{0,40}christmas",
+"sm": "happy.{0,5}days",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(happy days) AND title:(guess who coming to christmas)",
+"happy days guess who coming to christmas",
+"title:(happy days) AND title:(christmas)"
+],
+"yt": [
+"Happy Days Guess Who's Coming to Christmas",
+"Happy Days Guess Who's Coming to Christmas full episode",
+"Happy Days christmas episode 1974"
+]
+},
+{
+"k": "xelaverneshirleyocomeallyebums1979",
+"kind": "ep",
+"series": "Laverne & Shirley",
+"t": "O Come All Ye Bums",
+"y": 1979,
+"mins": 25,
+"must": "come all ye bums",
+"fm": "come all ye bums",
+"sm": "laverne.{0,5}shirley",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(laverne shirley) AND title:(o come all ye bums)",
+"laverne shirley o come all ye bums",
+"title:(laverne shirley) AND title:(christmas)"
+],
+"yt": [
+"Laverne & Shirley O Come All Ye Bums",
+"Laverne & Shirley O Come All Ye Bums full episode",
+"Laverne & Shirley christmas episode 1979"
+]
+},
+{
+"k": "xetheandygriffithshowchristmasstory1960",
+"kind": "ep",
+"series": "The Andy Griffith Show",
+"t": "Christmas Story",
+"y": 1960,
+"mins": 25,
+"must": "andy griffith.{0,40}christmas",
+"fm": "andy griffith.{0,40}christmas",
+"sm": "andy.{0,5}griffith.{0,5}show",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(andy griffith show) AND title:(christmas story)",
+"andy griffith show christmas story",
+"title:(andy griffith show) AND title:(christmas)"
+],
+"yt": [
+"The Andy Griffith Show Christmas Story",
+"The Andy Griffith Show Christmas Story full episode",
+"The Andy Griffith Show christmas episode 1960"
+]
+},
+{
+"k": "xeilovelucytheilovelucychristmasshow1956",
+"kind": "ep",
+"series": "I Love Lucy",
+"t": "The I Love Lucy Christmas Show",
+"y": 1956,
+"mins": 25,
+"must": "i love lucy.{0,40}christmas",
+"fm": "i love lucy.{0,40}christmas",
+"sm": "i.{0,5}love.{0,5}lucy",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(i love lucy) AND title:(i love lucy christmas show)",
+"i love lucy i love lucy christmas show",
+"title:(i love lucy) AND title:(christmas)"
+],
+"yt": [
+"I Love Lucy The I Love Lucy Christmas Show",
+"I Love Lucy The I Love Lucy Christmas Show full episode",
+"I Love Lucy christmas episode 1956"
+]
+},
+{
+"k": "xethedickvandykeshowthealanbradyshowpresen",
+"kind": "ep",
+"series": "The Dick Van Dyke Show",
+"t": "The Alan Brady Show Presents",
+"y": 1963,
+"mins": 25,
+"must": "dick van dyke.{0,40}(christmas|alan brady show presents)",
+"fm": "dick van dyke.{0,40}(christmas|alan brady show presents)",
+"sm": "dick.{0,5}van.{0,5}dyke.{0,5}show",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(dick van dyke show) AND title:(alan brady show presents)",
+"dick van dyke show alan brady show presents",
+"title:(dick van dyke show) AND title:(christmas)"
+],
+"yt": [
+"The Dick Van Dyke Show The Alan Brady Show Presents",
+"The Dick Van Dyke Show The Alan Brady Show Presents full episode",
+"The Dick Van Dyke Show christmas episode 1963"
+]
+},
+{
+"k": "xethebradybunchthevoiceofchristmas1969",
+"kind": "ep",
+"series": "The Brady Bunch",
+"t": "The Voice of Christmas",
+"y": 1969,
+"mins": 25,
+"must": "voice of christmas",
+"fm": "voice of christmas",
+"sm": "brady.{0,5}bunch",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(brady bunch) AND title:(voice of christmas)",
+"brady bunch voice of christmas",
+"title:(brady bunch) AND title:(christmas)"
+],
+"yt": [
+"The Brady Bunch The Voice of Christmas",
+"The Brady Bunch The Voice of Christmas full episode",
+"The Brady Bunch christmas episode 1969"
+]
+},
+{
+"k": "xethepartridgefamilydontbringyourgunstotow",
+"kind": "ep",
+"series": "The Partridge Family",
+"t": "Don't Bring Your Guns to Town, Santa",
+"y": 1971,
+"mins": 25,
+"must": "partridge family.{0,40}(christmas|santa)",
+"fm": "partridge family.{0,40}(christmas|santa)",
+"sm": "partridge.{0,5}family",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(partridge family) AND title:(don t bring your guns to town santa)",
+"partridge family don t bring your guns to town santa",
+"title:(partridge family) AND title:(christmas)"
+],
+"yt": [
+"The Partridge Family Don't Bring Your Guns to Town, Santa",
+"The Partridge Family Don't Bring Your Guns to Town, Santa full episode",
+"The Partridge Family christmas episode 1971"
+]
+},
+{
+"k": "xebewitchedavisionofsugarplums1964",
+"kind": "ep",
+"series": "Bewitched",
+"t": "A Vision of Sugar Plums",
+"y": 1964,
+"mins": 25,
+"must": "vision of sugar plums",
+"fm": "vision of sugar plums",
+"sm": "bewitched",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(bewitched) AND title:(vision of sugar plums)",
+"bewitched vision of sugar plums",
+"title:(bewitched) AND title:(christmas)"
+],
+"yt": [
+"Bewitched A Vision of Sugar Plums",
+"Bewitched A Vision of Sugar Plums full episode",
+"Bewitched christmas episode 1964"
+]
+},
+{
+"k": "xetheaddamsfamilychristmaswiththeaddamsfam",
+"kind": "ep",
+"series": "The Addams Family",
+"t": "Christmas with the Addams Family",
+"y": 1965,
+"mins": 25,
+"must": "christmas with the addams",
+"fm": "christmas with the addams",
+"sm": "addams.{0,5}family",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(addams family) AND title:(christmas with addams family)",
+"addams family christmas with addams family",
+"title:(addams family) AND title:(christmas)"
+],
+"yt": [
+"The Addams Family Christmas with the Addams Family",
+"The Addams Family Christmas with the Addams Family full episode",
+"The Addams Family christmas episode 1965"
+]
+},
+{
+"k": "xegreenacresanoldfashionedchristmas1966",
+"kind": "ep",
+"series": "Green Acres",
+"t": "An Old Fashioned Christmas",
+"y": 1966,
+"mins": 25,
+"must": "green acres.{0,40}christmas",
+"fm": "green acres.{0,40}christmas",
+"sm": "green.{0,5}acres",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(green acres) AND title:(old fashioned christmas)",
+"green acres old fashioned christmas",
+"title:(green acres) AND title:(christmas)"
+],
+"yt": [
+"Green Acres An Old Fashioned Christmas",
+"Green Acres An Old Fashioned Christmas full episode",
+"Green Acres christmas episode 1966"
+]
+},
+{
+"k": "xethemunsterschristmas1964",
+"kind": "ep",
+"series": "The Munsters",
+"t": "Christmas",
+"y": 1964,
+"mins": 25,
+"must": "munsters.{0,40}christmas",
+"fm": "munsters.{0,40}christmas",
+"sm": "munsters",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(munsters) AND title:(christmas)",
+"munsters christmas",
+"title:(munsters) AND title:(christmas)"
+],
+"yt": [
+"The Munsters Christmas",
+"The Munsters Christmas full episode",
+"The Munsters christmas episode 1964"
+]
+},
+{
+"k": "xegilligansislandbirdsgottaflyfishgottatal",
+"kind": "ep",
+"series": "Gilligan's Island",
+"t": "Birds Gotta Fly, Fish Gotta Talk",
+"y": 1964,
+"mins": 25,
+"must": "gilligan.{0,40}christmas",
+"fm": "gilligan.{0,40}christmas",
+"sm": "gilligan.{0,5}island",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(gilligan island) AND title:(birds gotta fly fish gotta talk)",
+"gilligan island birds gotta fly fish gotta talk",
+"title:(gilligan island) AND title:(christmas)"
+],
+"yt": [
+"Gilligan's Island Birds Gotta Fly, Fish Gotta Talk",
+"Gilligan's Island Birds Gotta Fly, Fish Gotta Talk full episode",
+"Gilligan's Island christmas episode 1964"
+]
+},
+{
+"k": "xeleaveittobeaverbeaversprize1957",
+"kind": "ep",
+"series": "Leave It to Beaver",
+"t": "Beaver's Prize",
+"y": 1957,
+"mins": 25,
+"must": "leave it to beaver.{0,40}christmas",
+"fm": "leave it to beaver.{0,40}christmas",
+"sm": "leave.{0,5}it.{0,5}to.{0,5}beaver",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(leave it to beaver) AND title:(beaver prize)",
+"leave it to beaver beaver prize",
+"title:(leave it to beaver) AND title:(christmas)"
+],
+"yt": [
+"Leave It to Beaver Beaver's Prize",
+"Leave It to Beaver Beaver's Prize full episode",
+"Leave It to Beaver christmas episode 1957"
+]
+},
+{
+"k": "xethetwilightzonethenightofthemeek1960",
+"kind": "ep",
+"series": "The Twilight Zone",
+"t": "The Night of the Meek",
+"y": 1960,
+"mins": 25,
+"must": "night of the meek",
+"fm": "night of the meek",
+"sm": "twilight.{0,5}zone",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(twilight zone) AND title:(night of meek)",
+"twilight zone night of meek",
+"title:(twilight zone) AND title:(christmas)"
+],
+"yt": [
+"The Twilight Zone The Night of the Meek",
+"The Twilight Zone The Night of the Meek full episode",
+"The Twilight Zone christmas episode 1960"
+]
+},
+{
+"k": "xethehoneymoonerstwasthenightbeforechristm",
+"kind": "ep",
+"series": "The Honeymooners",
+"t": "'Twas the Night Before Christmas",
+"y": 1955,
+"mins": 25,
+"must": "honeymooners.{0,40}christmas",
+"fm": "honeymooners.{0,40}christmas",
+"sm": "honeymooners",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(honeymooners) AND title:(twas night before christmas)",
+"honeymooners twas night before christmas",
+"title:(honeymooners) AND title:(christmas)"
+],
+"yt": [
+"The Honeymooners 'Twas the Night Before Christmas",
+"The Honeymooners 'Twas the Night Before Christmas full episode",
+"The Honeymooners christmas episode 1955"
+]
+},
+{
+"k": "xethesimpsonsmargebenotproud1995",
+"kind": "ep",
+"series": "The Simpsons",
+"t": "Marge Be Not Proud",
+"y": 1995,
+"mins": 23,
+"must": "marge be not proud",
+"fm": "marge be not proud",
+"sm": "simpsons",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(simpsons) AND title:(marge be not proud)",
+"simpsons marge be not proud",
+"title:(simpsons) AND title:(christmas)"
+],
+"yt": [
+"The Simpsons Marge Be Not Proud",
+"The Simpsons Marge Be Not Proud full episode",
+"The Simpsons christmas episode 1995"
+]
+},
+{
+"k": "xethesimpsonsmiracleonevergreenterrace1997",
+"kind": "ep",
+"series": "The Simpsons",
+"t": "Miracle on Evergreen Terrace",
+"y": 1997,
+"mins": 23,
+"must": "evergreen terrace",
+"fm": "evergreen terrace",
+"sm": "simpsons",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(simpsons) AND title:(miracle on evergreen terrace)",
+"simpsons miracle on evergreen terrace",
+"title:(simpsons) AND title:(christmas)"
+],
+"yt": [
+"The Simpsons Miracle on Evergreen Terrace",
+"The Simpsons Miracle on Evergreen Terrace full episode",
+"The Simpsons christmas episode 1997"
+]
+},
+{
+"k": "xethesimpsonsgriftofthemagi1999",
+"kind": "ep",
+"series": "The Simpsons",
+"t": "Grift of the Magi",
+"y": 1999,
+"mins": 23,
+"must": "grift of the magi",
+"fm": "grift of the magi",
+"sm": "simpsons",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(simpsons) AND title:(grift of magi)",
+"simpsons grift of magi",
+"title:(simpsons) AND title:(christmas)"
+],
+"yt": [
+"The Simpsons Grift of the Magi",
+"The Simpsons Grift of the Magi full episode",
+"The Simpsons christmas episode 1999"
+]
+},
+{
+"k": "xethesimpsonsskinnerssenseofsnow2000",
+"kind": "ep",
+"series": "The Simpsons",
+"t": "Skinner's Sense of Snow",
+"y": 2000,
+"mins": 23,
+"must": "skinner'?s sense of snow",
+"fm": "skinner'?s sense of snow",
+"sm": "simpsons",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(simpsons) AND title:(skinner sense of snow)",
+"simpsons skinner sense of snow",
+"title:(simpsons) AND title:(christmas)"
+],
+"yt": [
+"The Simpsons Skinner's Sense of Snow",
+"The Simpsons Skinner's Sense of Snow full episode",
+"The Simpsons christmas episode 2000"
+]
+},
+{
+"k": "xethesimpsonssheoflittlefaith2001",
+"kind": "ep",
+"series": "The Simpsons",
+"t": "She of Little Faith",
+"y": 2001,
+"mins": 23,
+"must": "she of little faith",
+"fm": "she of little faith",
+"sm": "simpsons",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(simpsons) AND title:(she of little faith)",
+"simpsons she of little faith",
+"title:(simpsons) AND title:(christmas)"
+],
+"yt": [
+"The Simpsons She of Little Faith",
+"The Simpsons She of Little Faith full episode",
+"The Simpsons christmas episode 2001"
+]
+},
+{
+"k": "xethesimpsonstisthefifteenthseason2003",
+"kind": "ep",
+"series": "The Simpsons",
+"t": "'Tis the Fifteenth Season",
+"y": 2003,
+"mins": 23,
+"must": "fifteenth season",
+"fm": "fifteenth season",
+"sm": "simpsons",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(simpsons) AND title:(tis fifteenth season)",
+"simpsons tis fifteenth season",
+"title:(simpsons) AND title:(christmas)"
+],
+"yt": [
+"The Simpsons 'Tis the Fifteenth Season",
+"The Simpsons 'Tis the Fifteenth Season full episode",
+"The Simpsons christmas episode 2003"
+]
+},
+{
+"k": "xesouthparkmrhankeythechristmaspoo1997",
+"kind": "ep",
+"series": "South Park",
+"t": "Mr. Hankey, the Christmas Poo",
+"y": 1997,
+"mins": 23,
+"must": "mr\\.? hankey",
+"fm": "mr\\.? hankey",
+"sm": "south.{0,5}park",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(south park) AND title:(mr hankey christmas poo)",
+"south park mr hankey christmas poo",
+"title:(south park) AND title:(christmas)"
+],
+"yt": [
+"South Park Mr. Hankey, the Christmas Poo",
+"South Park Mr. Hankey, the Christmas Poo full episode",
+"South Park christmas episode 1997"
+]
+},
+{
+"k": "xesouthparkaverycrappychristmas2000",
+"kind": "ep",
+"series": "South Park",
+"t": "A Very Crappy Christmas",
+"y": 2000,
+"mins": 23,
+"must": "very crappy christmas",
+"fm": "very crappy christmas",
+"sm": "south.{0,5}park",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(south park) AND title:(very crappy christmas)",
+"south park very crappy christmas",
+"title:(south park) AND title:(christmas)"
+],
+"yt": [
+"South Park A Very Crappy Christmas",
+"South Park A Very Crappy Christmas full episode",
+"South Park christmas episode 2000"
+]
+},
+{
+"k": "xesouthparkredsleighdown2002",
+"kind": "ep",
+"series": "South Park",
+"t": "Red Sleigh Down",
+"y": 2002,
+"mins": 23,
+"must": "red sleigh down",
+"fm": "red sleigh down",
+"sm": "south.{0,5}park",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(south park) AND title:(red sleigh down)",
+"south park red sleigh down",
+"title:(south park) AND title:(christmas)"
+],
+"yt": [
+"South Park Red Sleigh Down",
+"South Park Red Sleigh Down full episode",
+"South Park christmas episode 2002"
+]
+},
+{
+"k": "xefuturamaxmasstory1999",
+"kind": "ep",
+"series": "Futurama",
+"t": "Xmas Story",
+"y": 1999,
+"mins": 23,
+"must": "futurama.{0,40}(xmas|christmas)",
+"fm": "futurama.{0,40}(xmas|christmas)",
+"sm": "futurama",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(futurama) AND title:(xmas story)",
+"futurama xmas story",
+"title:(futurama) AND title:(christmas)"
+],
+"yt": [
+"Futurama Xmas Story",
+"Futurama Xmas Story full episode",
+"Futurama christmas episode 1999"
+]
+},
+{
+"k": "xefamilyguyaveryspecialfamilyguyfreakinchr",
+"kind": "ep",
+"series": "Family Guy",
+"t": "A Very Special Family Guy Freakin' Christmas",
+"y": 2001,
+"mins": 23,
+"must": "family guy freakin'? christmas",
+"fm": "family guy freakin'? christmas",
+"sm": "family.{0,5}guy",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(family guy) AND title:(very special family guy freakin christmas)",
+"family guy very special family guy freakin christmas",
+"title:(family guy) AND title:(christmas)"
+],
+"yt": [
+"Family Guy A Very Special Family Guy Freakin' Christmas",
+"Family Guy A Very Special Family Guy Freakin' Christmas full episode",
+"Family Guy christmas episode 2001"
+]
+},
+{
+"k": "xekingofthehillprettyprettydresses1997",
+"kind": "ep",
+"series": "King of the Hill",
+"t": "Pretty, Pretty Dresses",
+"y": 1997,
+"mins": 23,
+"must": "pretty,? pretty dresses|king of the hill.{0,40}christmas",
+"fm": "pretty,? pretty dresses|king of the hill.{0,40}christmas",
+"sm": "king.{0,5}of.{0,5}hill",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(king of hill) AND title:(pretty pretty dresses)",
+"king of hill pretty pretty dresses",
+"title:(king of hill) AND title:(christmas)"
+],
+"yt": [
+"King of the Hill Pretty, Pretty Dresses",
+"King of the Hill Pretty, Pretty Dresses full episode",
+"King of the Hill christmas episode 1997"
+]
+},
+{
+"k": "xerockosmodernliferockosmodernchristmas199",
+"kind": "ep",
+"series": "Rocko's Modern Life",
+"t": "Rocko's Modern Christmas",
+"y": 1993,
+"mins": 23,
+"must": "rocko'?s modern christmas",
+"fm": "rocko'?s modern christmas",
+"sm": "rocko.{0,5}modern.{0,5}life",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(rocko modern life) AND title:(rocko modern christmas)",
+"rocko modern life rocko modern christmas",
+"title:(rocko modern life) AND title:(christmas)"
+],
+"yt": [
+"Rocko's Modern Life Rocko's Modern Christmas",
+"Rocko's Modern Life Rocko's Modern Christmas full episode",
+"Rocko's Modern Life christmas episode 1993"
+]
+},
+{
+"k": "xetheadventuresofpetepeteochristmaspete199",
+"kind": "ep",
+"series": "The Adventures of Pete & Pete",
+"t": "O' Christmas Pete",
+"y": 1994,
+"mins": 23,
+"must": "christmas pete",
+"fm": "christmas pete",
+"sm": "adventures.{0,5}of.{0,5}pete.{0,5}pete",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(adventures of pete pete) AND title:(o christmas pete)",
+"adventures of pete pete o christmas pete",
+"title:(adventures of pete pete) AND title:(christmas)"
+],
+"yt": [
+"The Adventures of Pete & Pete O' Christmas Pete",
+"The Adventures of Pete & Pete O' Christmas Pete full episode",
+"The Adventures of Pete & Pete christmas episode 1994"
+]
+},
+{
+"k": "xespongebobsquarepantschristmaswho2000",
+"kind": "ep",
+"series": "SpongeBob SquarePants",
+"t": "Christmas Who?",
+"y": 2000,
+"mins": 23,
+"must": "spongebob.{0,40}(christmas who|christmas)",
+"fm": "spongebob.{0,40}(christmas who|christmas)",
+"sm": "spongebob.{0,5}squarepants",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(spongebob squarepants) AND title:(christmas who)",
+"spongebob squarepants christmas who",
+"title:(spongebob squarepants) AND title:(christmas)"
+],
+"yt": [
+"SpongeBob SquarePants Christmas Who?",
+"SpongeBob SquarePants Christmas Who? full episode",
+"SpongeBob SquarePants christmas episode 2000"
+]
+},
+{
+"k": "xethefairlyoddparentschristmaseveryday2002",
+"kind": "ep",
+"series": "The Fairly OddParents",
+"t": "Christmas Every Day",
+"y": 2002,
+"mins": 23,
+"must": "fairly odd ?parents.{0,40}christmas",
+"fm": "fairly odd ?parents.{0,40}christmas",
+"sm": "fairly.{0,5}oddparents",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(fairly oddparents) AND title:(christmas every day)",
+"fairly oddparents christmas every day",
+"title:(fairly oddparents) AND title:(christmas)"
+],
+"yt": [
+"The Fairly OddParents Christmas Every Day",
+"The Fairly OddParents Christmas Every Day full episode",
+"The Fairly OddParents christmas episode 2002"
+]
+},
+{
+"k": "xetheadventuresofjimmyneutronhollyjollyjim",
+"kind": "ep",
+"series": "The Adventures of Jimmy Neutron",
+"t": "Holly Jolly Jimmy",
+"y": 2003,
+"mins": 23,
+"must": "holly jolly jimmy",
+"fm": "holly jolly jimmy",
+"sm": "adventures.{0,5}of.{0,5}jimmy.{0,5}neutron",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(adventures of jimmy neutron) AND title:(holly jolly jimmy)",
+"adventures of jimmy neutron holly jolly jimmy",
+"title:(adventures of jimmy neutron) AND title:(christmas)"
+],
+"yt": [
+"The Adventures of Jimmy Neutron Holly Jolly Jimmy",
+"The Adventures of Jimmy Neutron Holly Jolly Jimmy full episode",
+"The Adventures of Jimmy Neutron christmas episode 2003"
+]
+},
+{
+"k": "xedexterslaboratorydextervssantasclaws2003",
+"kind": "ep",
+"series": "Dexter's Laboratory",
+"t": "Dexter vs. Santa's Claws",
+"y": 2003,
+"mins": 23,
+"must": "santa'?s claws",
+"fm": "santa'?s claws",
+"sm": "dexter.{0,5}laboratory",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(dexter laboratory) AND title:(dexter vs santa claws)",
+"dexter laboratory dexter vs santa claws",
+"title:(dexter laboratory) AND title:(christmas)"
+],
+"yt": [
+"Dexter's Laboratory Dexter vs. Santa's Claws",
+"Dexter's Laboratory Dexter vs. Santa's Claws full episode",
+"Dexter's Laboratory christmas episode 2003"
+]
+},
+{
+"k": "xethepowerpuffgirlstwasthefightbeforechris",
+"kind": "ep",
+"series": "The Powerpuff Girls",
+"t": "'Twas the Fight Before Christmas",
+"y": 2003,
+"mins": 23,
+"must": "fight before christmas",
+"fm": "fight before christmas",
+"sm": "powerpuff.{0,5}girls",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(powerpuff girls) AND title:(twas fight before christmas)",
+"powerpuff girls twas fight before christmas",
+"title:(powerpuff girls) AND title:(christmas)"
+],
+"yt": [
+"The Powerpuff Girls 'Twas the Fight Before Christmas",
+"The Powerpuff Girls 'Twas the Fight Before Christmas full episode",
+"The Powerpuff Girls christmas episode 2003"
+]
+},
+{
+"k": "xeededdneddyededdneddysjinglejinglejangle2",
+"kind": "ep",
+"series": "Ed, Edd n Eddy",
+"t": "Ed, Edd n Eddy's Jingle Jingle Jangle",
+"y": 2004,
+"mins": 23,
+"must": "jingle jingle jangle",
+"fm": "jingle jingle jangle",
+"sm": "ed.{0,5}edd.{0,5}n.{0,5}eddy",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(ed edd n eddy) AND title:(ed edd n eddy jingle jingle jangle)",
+"ed edd n eddy ed edd n eddy jingle jingle jangle",
+"title:(ed edd n eddy) AND title:(christmas)"
+],
+"yt": [
+"Ed, Edd n Eddy Ed, Edd n Eddy's Jingle Jingle Jangle",
+"Ed, Edd n Eddy Ed, Edd n Eddy's Jingle Jingle Jangle full episode",
+"Ed, Edd n Eddy christmas episode 2004"
+]
+},
+{
+"k": "xejohnnybravotwasthenight1997",
+"kind": "ep",
+"series": "Johnny Bravo",
+"t": "'Twas the Night",
+"y": 1997,
+"mins": 23,
+"must": "johnny bravo.{0,40}(christmas|'?twas the night)",
+"fm": "johnny bravo.{0,40}(christmas|'?twas the night)",
+"sm": "johnny.{0,5}bravo",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(johnny bravo) AND title:(twas night)",
+"johnny bravo twas night",
+"title:(johnny bravo) AND title:(christmas)"
+],
+"yt": [
+"Johnny Bravo 'Twas the Night",
+"Johnny Bravo 'Twas the Night full episode",
+"Johnny Bravo christmas episode 1997"
+]
+},
+{
+"k": "xerecessyesmikeysantadoesshave1998",
+"kind": "ep",
+"series": "Recess",
+"t": "Yes Mikey, Santa Does Shave",
+"y": 1998,
+"mins": 23,
+"must": "santa does shave",
+"fm": "santa does shave",
+"sm": "recess",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(recess) AND title:(yes mikey santa does shave)",
+"recess yes mikey santa does shave",
+"title:(recess) AND title:(christmas)"
+],
+"yt": [
+"Recess Yes Mikey, Santa Does Shave",
+"Recess Yes Mikey, Santa Does Shave full episode",
+"Recess christmas episode 1998"
+]
+},
+{
+"k": "xedougdougssecretchristmas1996",
+"kind": "ep",
+"series": "Doug",
+"t": "Doug's Secret Christmas",
+"y": 1996,
+"mins": 23,
+"must": "doug'?s secret christmas",
+"fm": "doug'?s secret christmas",
+"sm": "doug",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(doug) AND title:(doug secret christmas)",
+"doug doug secret christmas",
+"title:(doug) AND title:(christmas)"
+],
+"yt": [
+"Doug Doug's Secret Christmas",
+"Doug Doug's Secret Christmas full episode",
+"Doug christmas episode 1996"
+]
+},
+{
+"k": "xegooftroophaveyourselfagoofylittlechristm",
+"kind": "ep",
+"series": "Goof Troop",
+"t": "Have Yourself a Goofy Little Christmas",
+"y": 1992,
+"mins": 23,
+"must": "goofy little christmas",
+"fm": "goofy little christmas",
+"sm": "goof.{0,5}troop",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(goof troop) AND title:(have yourself goofy little christmas)",
+"goof troop have yourself goofy little christmas",
+"title:(goof troop) AND title:(christmas)"
+],
+"yt": [
+"Goof Troop Have Yourself a Goofy Little Christmas",
+"Goof Troop Have Yourself a Goofy Little Christmas full episode",
+"Goof Troop christmas episode 1992"
+]
+},
+{
+"k": "xetalespinjollymollychristmas1990",
+"kind": "ep",
+"series": "TaleSpin",
+"t": "Jolly Molly Christmas",
+"y": 1990,
+"mins": 23,
+"must": "jolly molly christmas",
+"fm": "jolly molly christmas",
+"sm": "talespin",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(talespin) AND title:(jolly molly christmas)",
+"talespin jolly molly christmas",
+"title:(talespin) AND title:(christmas)"
+],
+"yt": [
+"TaleSpin Jolly Molly Christmas",
+"TaleSpin Jolly Molly Christmas full episode",
+"TaleSpin christmas episode 1990"
+]
+},
+{
+"k": "xedarkwingduckitsawonderfulleaf1991",
+"kind": "ep",
+"series": "Darkwing Duck",
+"t": "It's a Wonderful Leaf",
+"y": 1991,
+"mins": 23,
+"must": "wonderful leaf",
+"fm": "wonderful leaf",
+"sm": "darkwing.{0,5}duck",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(darkwing duck) AND title:(it wonderful leaf)",
+"darkwing duck it wonderful leaf",
+"title:(darkwing duck) AND title:(christmas)"
+],
+"yt": [
+"Darkwing Duck It's a Wonderful Leaf",
+"Darkwing Duck It's a Wonderful Leaf full episode",
+"Darkwing Duck christmas episode 1991"
+]
+},
+{
+"k": "xeanimaniacstwasthedaybeforechristmas1993",
+"kind": "ep",
+"series": "Animaniacs",
+"t": "'Twas the Day Before Christmas",
+"y": 1993,
+"mins": 23,
+"must": "animaniacs.{0,40}(christmas|jingle)|twas the day before christmas",
+"fm": "animaniacs.{0,40}(christmas|jingle)|twas the day before christmas",
+"sm": "animaniacs",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(animaniacs) AND title:(twas day before christmas)",
+"animaniacs twas day before christmas",
+"title:(animaniacs) AND title:(christmas)"
+],
+"yt": [
+"Animaniacs 'Twas the Day Before Christmas",
+"Animaniacs 'Twas the Day Before Christmas full episode",
+"Animaniacs christmas episode 1993"
+]
+},
+{
+"k": "xepinkyandthebrainapinkyandthebrainchristm",
+"kind": "ep",
+"series": "Pinky and the Brain",
+"t": "A Pinky and the Brain Christmas",
+"y": 1995,
+"mins": 23,
+"must": "pinky (and|&) the brain christmas",
+"fm": "pinky (and|&) the brain christmas",
+"sm": "pinky.{0,5}and.{0,5}brain",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(pinky and brain) AND title:(pinky and brain christmas)",
+"pinky and brain pinky and brain christmas",
+"title:(pinky and brain) AND title:(christmas)"
+],
+"yt": [
+"Pinky and the Brain A Pinky and the Brain Christmas",
+"Pinky and the Brain A Pinky and the Brain Christmas full episode",
+"Pinky and the Brain christmas episode 1995"
+]
+},
+{
+"k": "xexmenhaveyourselfamorlocklittlexmas1994",
+"kind": "ep",
+"series": "X-Men",
+"t": "Have Yourself a Morlock Little X-Mas",
+"y": 1994,
+"mins": 23,
+"must": "morlock little x-?mas",
+"fm": "morlock little x-?mas",
+"sm": "x.{0,5}men",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(x men) AND title:(have yourself morlock little x mas)",
+"x men have yourself morlock little x mas",
+"title:(x men) AND title:(christmas)"
+],
+"yt": [
+"X-Men Have Yourself a Morlock Little X-Mas",
+"X-Men Have Yourself a Morlock Little X-Mas full episode",
+"X-Men christmas episode 1994"
+]
+},
+{
+"k": "xemuppetbabiesmuppetbabieschristmas1985",
+"kind": "ep",
+"series": "Muppet Babies",
+"t": "Muppet Babies Christmas",
+"y": 1985,
+"mins": 23,
+"must": "muppet babies.{0,40}(christmas|holiday)",
+"fm": "muppet babies.{0,40}(christmas|holiday)",
+"sm": "muppet.{0,5}babies",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(muppet babies) AND title:(muppet babies christmas)",
+"muppet babies muppet babies christmas",
+"title:(muppet babies) AND title:(christmas)"
+],
+"yt": [
+"Muppet Babies Muppet Babies Christmas",
+"Muppet Babies Muppet Babies Christmas full episode",
+"Muppet Babies christmas episode 1985"
+]
+},
+{
+"k": "xebobbysworldbobbyschristmas1991",
+"kind": "ep",
+"series": "Bobby's World",
+"t": "Bobby's Christmas",
+"y": 1991,
+"mins": 23,
+"must": "bobby'?s world.{0,40}christmas",
+"fm": "bobby'?s world.{0,40}christmas",
+"sm": "bobby.{0,5}world",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(bobby world) AND title:(bobby christmas)",
+"bobby world bobby christmas",
+"title:(bobby world) AND title:(christmas)"
+],
+"yt": [
+"Bobby's World Bobby's Christmas",
+"Bobby's World Bobby's Christmas full episode",
+"Bobby's World christmas episode 1991"
+]
+},
+{
+"k": "xetheangrybeaverschristmas1997",
+"kind": "ep",
+"series": "The Angry Beavers",
+"t": "Christmas",
+"y": 1997,
+"mins": 23,
+"must": "angry beavers.{0,40}christmas",
+"fm": "angry beavers.{0,40}christmas",
+"sm": "angry.{0,5}beavers",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(angry beavers) AND title:(christmas)",
+"angry beavers christmas",
+"title:(angry beavers) AND title:(christmas)"
+],
+"yt": [
+"The Angry Beavers Christmas",
+"The Angry Beavers Christmas full episode",
+"The Angry Beavers christmas episode 1997"
+]
+},
+{
+"k": "xecatdogchristmas1998",
+"kind": "ep",
+"series": "CatDog",
+"t": "Christmas",
+"y": 1998,
+"mins": 23,
+"must": "catdog.{0,40}christmas",
+"fm": "catdog.{0,40}christmas",
+"sm": "catdog",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(catdog) AND title:(christmas)",
+"catdog christmas",
+"title:(catdog) AND title:(christmas)"
+],
+"yt": [
+"CatDog Christmas",
+"CatDog Christmas full episode",
+"CatDog christmas episode 1998"
+]
+},
+{
+"k": "xeaaahhrealmonsterschristmas1995",
+"kind": "ep",
+"series": "Aaahh!!! Real Monsters",
+"t": "Christmas",
+"y": 1995,
+"mins": 23,
+"must": "real monsters.{0,40}christmas",
+"fm": "real monsters.{0,40}christmas",
+"sm": "aaahh.{0,5}real.{0,5}monsters",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(aaahh real monsters) AND title:(christmas)",
+"aaahh real monsters christmas",
+"title:(aaahh real monsters) AND title:(christmas)"
+],
+"yt": [
+"Aaahh!!! Real Monsters Christmas",
+"Aaahh!!! Real Monsters Christmas full episode",
+"Aaahh!!! Real Monsters christmas episode 1995"
+]
+},
+{
+"k": "xeheyarnoldarnoldschristmas1996",
+"kind": "ep",
+"series": "Hey Arnold!",
+"t": "Arnold's Christmas",
+"y": 1996,
+"mins": 23,
+"must": "arnold'?s christmas",
+"fm": "arnold'?s christmas",
+"sm": "hey.{0,5}arnold",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(hey arnold) AND title:(arnold christmas)",
+"hey arnold arnold christmas",
+"title:(hey arnold) AND title:(christmas)"
+],
+"yt": [
+"Hey Arnold! Arnold's Christmas",
+"Hey Arnold! Arnold's Christmas full episode",
+"Hey Arnold! christmas episode 1996"
+]
+},
+{
+"k": "xetheflintstoneschristmasflintstone1964",
+"kind": "ep",
+"series": "The Flintstones",
+"t": "Christmas Flintstone",
+"y": 1964,
+"mins": 25,
+"must": "christmas flintstone",
+"fm": "christmas flintstone",
+"sm": "flintstones",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(flintstones) AND title:(christmas flintstone)",
+"flintstones christmas flintstone",
+"title:(flintstones) AND title:(christmas)"
+],
+"yt": [
+"The Flintstones Christmas Flintstone",
+"The Flintstones Christmas Flintstone full episode",
+"The Flintstones christmas episode 1964"
+]
+},
+{
+"k": "xealvinandthechipmunkschristmas1985",
+"kind": "ep",
+"series": "Alvin and the Chipmunks",
+"t": "Christmas",
+"y": 1985,
+"mins": 23,
+"must": "chipmunks.{0,40}christmas",
+"fm": "chipmunks.{0,40}christmas",
+"sm": "alvin.{0,5}and.{0,5}chipmunks",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(alvin and chipmunks) AND title:(christmas)",
+"alvin and chipmunks christmas",
+"title:(alvin and chipmunks) AND title:(christmas)"
+],
+"yt": [
+"Alvin and the Chipmunks Christmas",
+"Alvin and the Chipmunks Christmas full episode",
+"Alvin and the Chipmunks christmas episode 1985"
+]
+},
+{
+"k": "xeducktaleschristmas1987",
+"kind": "ep",
+"series": "DuckTales",
+"t": "Christmas",
+"y": 1987,
+"mins": 23,
+"must": "ducktales.{0,40}christmas",
+"fm": "ducktales.{0,40}christmas",
+"sm": "ducktales",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(ducktales) AND title:(christmas)",
+"ducktales christmas",
+"title:(ducktales) AND title:(christmas)"
+],
+"yt": [
+"DuckTales Christmas",
+"DuckTales Christmas full episode",
+"DuckTales christmas episode 1987"
+]
+},
+{
+"k": "xechipndalerescuerangerschristmas1989",
+"kind": "ep",
+"series": "Chip 'n Dale Rescue Rangers",
+"t": "Christmas",
+"y": 1989,
+"mins": 23,
+"must": "rescue rangers.{0,40}christmas",
+"fm": "rescue rangers.{0,40}christmas",
+"sm": "chip.{0,5}n.{0,5}dale.{0,5}rescue.{0,5}rangers",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(chip n dale rescue rangers) AND title:(christmas)",
+"chip n dale rescue rangers christmas",
+"title:(chip n dale rescue rangers) AND title:(christmas)"
+],
+"yt": [
+"Chip 'n Dale Rescue Rangers Christmas",
+"Chip 'n Dale Rescue Rangers Christmas full episode",
+"Chip 'n Dale Rescue Rangers christmas episode 1989"
+]
+},
+{
+"k": "xegarfieldandfriendschristmas1988",
+"kind": "ep",
+"series": "Garfield and Friends",
+"t": "Christmas",
+"y": 1988,
+"mins": 23,
+"must": "garfield and friends.{0,40}christmas",
+"fm": "garfield and friends.{0,40}christmas",
+"sm": "garfield.{0,5}and.{0,5}friends",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(garfield and friends) AND title:(christmas)",
+"garfield and friends christmas",
+"title:(garfield and friends) AND title:(christmas)"
+],
+"yt": [
+"Garfield and Friends Christmas",
+"Garfield and Friends Christmas full episode",
+"Garfield and Friends christmas episode 1988"
+]
+},
+{
+"k": "xetherealghostbustersxmasmarksthespot1986",
+"kind": "ep",
+"series": "The Real Ghostbusters",
+"t": "X-Mas Marks the Spot",
+"y": 1986,
+"mins": 23,
+"must": "x-?mas marks the spot",
+"fm": "x-?mas marks the spot",
+"sm": "real.{0,5}ghostbusters",
+"lo": 1035,
+"hi": 2760,
+"ia": [
+"title:(real ghostbusters) AND title:(x mas marks spot)",
+"real ghostbusters x mas marks spot",
+"title:(real ghostbusters) AND title:(christmas)"
+],
+"yt": [
+"The Real Ghostbusters X-Mas Marks the Spot",
+"The Real Ghostbusters X-Mas Marks the Spot full episode",
+"The Real Ghostbusters christmas episode 1986"
+]
+},
+{
+"k": "xeteenagemutantninjaturtleswewishyouaturtl",
+"kind": "ep",
+"series": "Teenage Mutant Ninja Turtles",
+"t": "We Wish You a Turtle Christmas",
+"y": 1994,
+"mins": 25,
+"must": "turtle christmas",
+"fm": "turtle christmas",
+"sm": "teenage.{0,5}mutant.{0,5}ninja.{0,5}turtles",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(teenage mutant ninja turtles) AND title:(we wish you turtle christmas)",
+"teenage mutant ninja turtles we wish you turtle christmas",
+"title:(teenage mutant ninja turtles) AND title:(christmas)"
+],
+"yt": [
+"Teenage Mutant Ninja Turtles We Wish You a Turtle Christmas",
+"Teenage Mutant Ninja Turtles We Wish You a Turtle Christmas full episode",
+"Teenage Mutant Ninja Turtles christmas episode 1994"
+]
+},
+{
+"k": "xekenankelmerrychristmaskenankel1998",
+"kind": "ep",
+"series": "Kenan & Kel",
+"t": "Merry Christmas Kenan & Kel",
+"y": 1998,
+"mins": 25,
+"must": "kenan (and|&) kel.{0,40}christmas",
+"fm": "kenan (and|&) kel.{0,40}christmas",
+"sm": "kenan.{0,5}kel",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(kenan kel) AND title:(merry christmas kenan kel)",
+"kenan kel merry christmas kenan kel",
+"title:(kenan kel) AND title:(christmas)"
+],
+"yt": [
+"Kenan & Kel Merry Christmas Kenan & Kel",
+"Kenan & Kel Merry Christmas Kenan & Kel full episode",
+"Kenan & Kel christmas episode 1998"
+]
+},
+{
+"k": "xeallthatchristmas1996",
+"kind": "ep",
+"series": "All That",
+"t": "Christmas",
+"y": 1996,
+"mins": 25,
+"must": "all that.{0,40}christmas",
+"fm": "all that.{0,40}christmas",
+"sm": "all.{0,5}that",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(all that) AND title:(christmas)",
+"all that christmas",
+"title:(all that) AND title:(christmas)"
+],
+"yt": [
+"All That Christmas",
+"All That Christmas full episode",
+"All That christmas episode 1996"
+]
+},
+{
+"k": "xesistersisterchristmas1994",
+"kind": "ep",
+"series": "Sister, Sister",
+"t": "Christmas",
+"y": 1994,
+"mins": 25,
+"must": "sister,? sister.{0,40}christmas",
+"fm": "sister,? sister.{0,40}christmas",
+"sm": "sister.{0,5}sister",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(sister sister) AND title:(christmas)",
+"sister sister christmas",
+"title:(sister sister) AND title:(christmas)"
+],
+"yt": [
+"Sister, Sister Christmas",
+"Sister, Sister Christmas full episode",
+"Sister, Sister christmas episode 1994"
+]
+},
+{
+"k": "xehanginwithmrcooperchristmas1993",
+"kind": "ep",
+"series": "Hangin' with Mr. Cooper",
+"t": "Christmas",
+"y": 1993,
+"mins": 25,
+"must": "mr\\.? cooper.{0,40}christmas",
+"fm": "mr\\.? cooper.{0,40}christmas",
+"sm": "hangin.{0,5}with.{0,5}mr.{0,5}cooper",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(hangin with mr cooper) AND title:(christmas)",
+"hangin with mr cooper christmas",
+"title:(hangin with mr cooper) AND title:(christmas)"
+],
+"yt": [
+"Hangin' with Mr. Cooper Christmas",
+"Hangin' with Mr. Cooper Christmas full episode",
+"Hangin' with Mr. Cooper christmas episode 1993"
+]
+},
+{
+"k": "xelivingsinglechristmas1994",
+"kind": "ep",
+"series": "Living Single",
+"t": "Christmas",
+"y": 1994,
+"mins": 25,
+"must": "living single.{0,40}christmas",
+"fm": "living single.{0,40}christmas",
+"sm": "living.{0,5}single",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(living single) AND title:(christmas)",
+"living single christmas",
+"title:(living single) AND title:(christmas)"
+],
+"yt": [
+"Living Single Christmas",
+"Living Single Christmas full episode",
+"Living Single christmas episode 1994"
+]
+},
+{
+"k": "xedinosaurschristmas1991",
+"kind": "ep",
+"series": "Dinosaurs",
+"t": "Christmas",
+"y": 1991,
+"mins": 25,
+"must": "dinosaurs.{0,40}christmas",
+"fm": "dinosaurs.{0,40}christmas",
+"sm": "dinosaurs",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(dinosaurs) AND title:(christmas)",
+"dinosaurs christmas",
+"title:(dinosaurs) AND title:(christmas)"
+],
+"yt": [
+"Dinosaurs Christmas",
+"Dinosaurs Christmas full episode",
+"Dinosaurs christmas episode 1991"
+]
+},
+{
+"k": "xeknightridersilentknight1983",
+"kind": "ep",
+"series": "Knight Rider",
+"t": "Silent Knight",
+"y": 1983,
+"mins": 50,
+"must": "silent knight",
+"fm": "silent knight",
+"sm": "knight.{0,5}rider",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(knight rider) AND title:(silent knight)",
+"knight rider silent knight",
+"title:(knight rider) AND title:(christmas)"
+],
+"yt": [
+"Knight Rider Silent Knight",
+"Knight Rider Silent Knight full episode",
+"Knight Rider christmas episode 1983"
+]
+},
+{
+"k": "xetheateamchristmas1984",
+"kind": "ep",
+"series": "The A-Team",
+"t": "Christmas",
+"y": 1984,
+"mins": 50,
+"must": "a-?team.{0,40}christmas",
+"fm": "a-?team.{0,40}christmas",
+"sm": "team",
+"lo": 2250,
+"hi": 6000,
+"ia": [
+"title:(team) AND title:(christmas)",
+"team christmas",
+"title:(team) AND title:(christmas)"
+],
+"yt": [
+"The A-Team Christmas",
+"The A-Team Christmas full episode",
+"The A-Team christmas episode 1984"
+]
+},
+{
+"k": "xemorkmindymorksfirstchristmas1978",
+"kind": "ep",
+"series": "Mork & Mindy",
+"t": "Mork's First Christmas",
+"y": 1978,
+"mins": 25,
+"must": "mork'?s first christmas",
+"fm": "mork'?s first christmas",
+"sm": "mork.{0,5}mindy",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(mork mindy) AND title:(mork first christmas)",
+"mork mindy mork first christmas",
+"title:(mork mindy) AND title:(christmas)"
+],
+"yt": [
+"Mork & Mindy Mork's First Christmas",
+"Mork & Mindy Mork's First Christmas full episode",
+"Mork & Mindy christmas episode 1978"
+]
+},
+{
+"k": "xetaxichristmas1980",
+"kind": "ep",
+"series": "Taxi",
+"t": "Christmas",
+"y": 1980,
+"mins": 25,
+"must": "taxi.{0,40}christmas",
+"fm": "taxi.{0,40}christmas",
+"sm": "taxi",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(taxi) AND title:(christmas)",
+"taxi christmas",
+"title:(taxi) AND title:(christmas)"
+],
+"yt": [
+"Taxi Christmas",
+"Taxi Christmas full episode",
+"Taxi christmas episode 1980"
+]
+},
+{
+"k": "xebarneymillerchristmas1978",
+"kind": "ep",
+"series": "Barney Miller",
+"t": "Christmas",
+"y": 1978,
+"mins": 25,
+"must": "barney miller.{0,40}christmas",
+"fm": "barney miller.{0,40}christmas",
+"sm": "barney.{0,5}miller",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(barney miller) AND title:(christmas)",
+"barney miller christmas",
+"title:(barney miller) AND title:(christmas)"
+],
+"yt": [
+"Barney Miller Christmas",
+"Barney Miller Christmas full episode",
+"Barney Miller christmas episode 1978"
+]
+},
+{
+"k": "xethebobnewhartshowchristmas1974",
+"kind": "ep",
+"series": "The Bob Newhart Show",
+"t": "Christmas",
+"y": 1974,
+"mins": 25,
+"must": "bob newhart show.{0,40}christmas",
+"fm": "bob newhart show.{0,40}christmas",
+"sm": "bob.{0,5}newhart.{0,5}show",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(bob newhart show) AND title:(christmas)",
+"bob newhart show christmas",
+"title:(bob newhart show) AND title:(christmas)"
+],
+"yt": [
+"The Bob Newhart Show Christmas",
+"The Bob Newhart Show Christmas full episode",
+"The Bob Newhart Show christmas episode 1974"
+]
+},
+{
+"k": "xethejeffersonschristmas1977",
+"kind": "ep",
+"series": "The Jeffersons",
+"t": "Christmas",
+"y": 1977,
+"mins": 25,
+"must": "jeffersons.{0,40}christmas",
+"fm": "jeffersons.{0,40}christmas",
+"sm": "jeffersons",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(jeffersons) AND title:(christmas)",
+"jeffersons christmas",
+"title:(jeffersons) AND title:(christmas)"
+],
+"yt": [
+"The Jeffersons Christmas",
+"The Jeffersons Christmas full episode",
+"The Jeffersons christmas episode 1977"
+]
+},
+{
+"k": "xegoodtimespennyschristmas1977",
+"kind": "ep",
+"series": "Good Times",
+"t": "Penny's Christmas",
+"y": 1977,
+"mins": 25,
+"must": "good times.{0,40}christmas",
+"fm": "good times.{0,40}christmas",
+"sm": "good.{0,5}times",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(good times) AND title:(penny christmas)",
+"good times penny christmas",
+"title:(good times) AND title:(christmas)"
+],
+"yt": [
+"Good Times Penny's Christmas",
+"Good Times Penny's Christmas full episode",
+"Good Times christmas episode 1977"
+]
+},
+{
+"k": "xesanfordandsonebenezersanford1975",
+"kind": "ep",
+"series": "Sanford and Son",
+"t": "Ebenezer Sanford",
+"y": 1975,
+"mins": 25,
+"must": "ebenezer sanford",
+"fm": "ebenezer sanford",
+"sm": "sanford.{0,5}and.{0,5}son",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(sanford and son) AND title:(ebenezer sanford)",
+"sanford and son ebenezer sanford",
+"title:(sanford and son) AND title:(christmas)"
+],
+"yt": [
+"Sanford and Son Ebenezer Sanford",
+"Sanford and Son Ebenezer Sanford full episode",
+"Sanford and Son christmas episode 1975"
+]
+},
+{
+"k": "xeallinthefamilychristmas1975",
+"kind": "ep",
+"series": "All in the Family",
+"t": "Christmas",
+"y": 1975,
+"mins": 25,
+"must": "all in the family.{0,40}christmas",
+"fm": "all in the family.{0,40}christmas",
+"sm": "all.{0,5}in.{0,5}family",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(all in family) AND title:(christmas)",
+"all in family christmas",
+"title:(all in family) AND title:(christmas)"
+],
+"yt": [
+"All in the Family Christmas",
+"All in the Family Christmas full episode",
+"All in the Family christmas episode 1975"
+]
+},
+{
+"k": "xediffrentstrokeschristmas1979",
+"kind": "ep",
+"series": "Diff'rent Strokes",
+"t": "Christmas",
+"y": 1979,
+"mins": 25,
+"must": "diff'?rent strokes.{0,40}christmas",
+"fm": "diff'?rent strokes.{0,40}christmas",
+"sm": "diff.{0,5}rent.{0,5}strokes",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(diff rent strokes) AND title:(christmas)",
+"diff rent strokes christmas",
+"title:(diff rent strokes) AND title:(christmas)"
+],
+"yt": [
+"Diff'rent Strokes Christmas",
+"Diff'rent Strokes Christmas full episode",
+"Diff'rent Strokes christmas episode 1979"
+]
+},
+{
+"k": "xethefactsoflifechristmas1980",
+"kind": "ep",
+"series": "The Facts of Life",
+"t": "Christmas",
+"y": 1980,
+"mins": 25,
+"must": "facts of life.{0,40}christmas",
+"fm": "facts of life.{0,40}christmas",
+"sm": "facts.{0,5}of.{0,5}life",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(facts of life) AND title:(christmas)",
+"facts of life christmas",
+"title:(facts of life) AND title:(christmas)"
+],
+"yt": [
+"The Facts of Life Christmas",
+"The Facts of Life Christmas full episode",
+"The Facts of Life christmas episode 1980"
+]
+},
+{
+"k": "xesilverspoonschristmas1983",
+"kind": "ep",
+"series": "Silver Spoons",
+"t": "Christmas",
+"y": 1983,
+"mins": 25,
+"must": "silver spoons.{0,40}christmas",
+"fm": "silver spoons.{0,40}christmas",
+"sm": "silver.{0,5}spoons",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(silver spoons) AND title:(christmas)",
+"silver spoons christmas",
+"title:(silver spoons) AND title:(christmas)"
+],
+"yt": [
+"Silver Spoons Christmas",
+"Silver Spoons Christmas full episode",
+"Silver Spoons christmas episode 1983"
+]
+},
+{
+"k": "xepunkybrewsterchristmas1985",
+"kind": "ep",
+"series": "Punky Brewster",
+"t": "Christmas",
+"y": 1985,
+"mins": 25,
+"must": "punky brewster.{0,40}christmas",
+"fm": "punky brewster.{0,40}christmas",
+"sm": "punky.{0,5}brewster",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(punky brewster) AND title:(christmas)",
+"punky brewster christmas",
+"title:(punky brewster) AND title:(christmas)"
+],
+"yt": [
+"Punky Brewster Christmas",
+"Punky Brewster Christmas full episode",
+"Punky Brewster christmas episode 1985"
+]
+},
+{
+"k": "xesmallwonderchristmas1985",
+"kind": "ep",
+"series": "Small Wonder",
+"t": "Christmas",
+"y": 1985,
+"mins": 25,
+"must": "small wonder.{0,40}christmas",
+"fm": "small wonder.{0,40}christmas",
+"sm": "small.{0,5}wonder",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(small wonder) AND title:(christmas)",
+"small wonder christmas",
+"title:(small wonder) AND title:(christmas)"
+],
+"yt": [
+"Small Wonder Christmas",
+"Small Wonder Christmas full episode",
+"Small Wonder christmas episode 1985"
+]
+},
+{
+"k": "xecharlesinchargechristmas1987",
+"kind": "ep",
+"series": "Charles in Charge",
+"t": "Christmas",
+"y": 1987,
+"mins": 25,
+"must": "charles in charge.{0,40}christmas",
+"fm": "charles in charge.{0,40}christmas",
+"sm": "charles.{0,5}in.{0,5}charge",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(charles in charge) AND title:(christmas)",
+"charles in charge christmas",
+"title:(charles in charge) AND title:(christmas)"
+],
+"yt": [
+"Charles in Charge Christmas",
+"Charles in Charge Christmas full episode",
+"Charles in Charge christmas episode 1987"
+]
+},
+{
+"k": "xewebsterchristmas1984",
+"kind": "ep",
+"series": "Webster",
+"t": "Christmas",
+"y": 1984,
+"mins": 25,
+"must": "webster.{0,40}christmas",
+"fm": "webster.{0,40}christmas",
+"sm": "webster",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(webster) AND title:(christmas)",
+"webster christmas",
+"title:(webster) AND title:(christmas)"
+],
+"yt": [
+"Webster Christmas",
+"Webster Christmas full episode",
+"Webster christmas episode 1984"
+]
+},
+{
+"k": "xegimmeabreakchristmas1982",
+"kind": "ep",
+"series": "Gimme a Break!",
+"t": "Christmas",
+"y": 1982,
+"mins": 25,
+"must": "gimme a break.{0,40}christmas",
+"fm": "gimme a break.{0,40}christmas",
+"sm": "gimme.{0,5}break",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(gimme break) AND title:(christmas)",
+"gimme break christmas",
+"title:(gimme break) AND title:(christmas)"
+],
+"yt": [
+"Gimme a Break! Christmas",
+"Gimme a Break! Christmas full episode",
+"Gimme a Break! christmas episode 1982"
+]
+},
+{
+"k": "xekatealliechristmas1984",
+"kind": "ep",
+"series": "Kate & Allie",
+"t": "Christmas",
+"y": 1984,
+"mins": 25,
+"must": "kate (and|&) allie.{0,40}christmas",
+"fm": "kate (and|&) allie.{0,40}christmas",
+"sm": "kate.{0,5}allie",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(kate allie) AND title:(christmas)",
+"kate allie christmas",
+"title:(kate allie) AND title:(christmas)"
+],
+"yt": [
+"Kate & Allie Christmas",
+"Kate & Allie Christmas full episode",
+"Kate & Allie christmas episode 1984"
+]
+},
+{
+"k": "xeheadoftheclasschristmas1987",
+"kind": "ep",
+"series": "Head of the Class",
+"t": "Christmas",
+"y": 1987,
+"mins": 25,
+"must": "head of the class.{0,40}christmas",
+"fm": "head of the class.{0,40}christmas",
+"sm": "head.{0,5}of.{0,5}class",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(head of class) AND title:(christmas)",
+"head of class christmas",
+"title:(head of class) AND title:(christmas)"
+],
+"yt": [
+"Head of the Class Christmas",
+"Head of the Class Christmas full episode",
+"Head of the Class christmas episode 1987"
+]
+},
+{
+"k": "xedoogiehowsermdchristmas1990",
+"kind": "ep",
+"series": "Doogie Howser, M.D.",
+"t": "Christmas",
+"y": 1990,
+"mins": 25,
+"must": "doogie.{0,40}christmas",
+"fm": "doogie.{0,40}christmas",
+"sm": "doogie.{0,5}howser.{0,5}m.{0,5}d",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(doogie howser m d) AND title:(christmas)",
+"doogie howser m d christmas",
+"title:(doogie howser m d) AND title:(christmas)"
+],
+"yt": [
+"Doogie Howser, M.D. Christmas",
+"Doogie Howser, M.D. Christmas full episode",
+"Doogie Howser, M.D. christmas episode 1990"
+]
+},
+{
+"k": "xeblossomchristmas1991",
+"kind": "ep",
+"series": "Blossom",
+"t": "Christmas",
+"y": 1991,
+"mins": 25,
+"must": "blossom.{0,40}christmas",
+"fm": "blossom.{0,40}christmas",
+"sm": "blossom",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(blossom) AND title:(christmas)",
+"blossom christmas",
+"title:(blossom) AND title:(christmas)"
+],
+"yt": [
+"Blossom Christmas",
+"Blossom Christmas full episode",
+"Blossom christmas episode 1991"
+]
+},
+{
+"k": "xedharmagregchristmas1998",
+"kind": "ep",
+"series": "Dharma & Greg",
+"t": "Christmas",
+"y": 1998,
+"mins": 25,
+"must": "dharma (and|&) greg.{0,40}christmas",
+"fm": "dharma (and|&) greg.{0,40}christmas",
+"sm": "dharma.{0,5}greg",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(dharma greg) AND title:(christmas)",
+"dharma greg christmas",
+"title:(dharma greg) AND title:(christmas)"
+],
+"yt": [
+"Dharma & Greg Christmas",
+"Dharma & Greg Christmas full episode",
+"Dharma & Greg christmas episode 1998"
+]
+},
+{
+"k": "xethenannychristmas1993",
+"kind": "ep",
+"series": "The Nanny",
+"t": "Christmas",
+"y": 1993,
+"mins": 25,
+"must": "the nanny.{0,40}christmas",
+"fm": "the nanny.{0,40}christmas",
+"sm": "nanny",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(nanny) AND title:(christmas)",
+"nanny christmas",
+"title:(nanny) AND title:(christmas)"
+],
+"yt": [
+"The Nanny Christmas",
+"The Nanny Christmas full episode",
+"The Nanny christmas episode 1993"
+]
+},
+{
+"k": "xespincitychristmas1997",
+"kind": "ep",
+"series": "Spin City",
+"t": "Christmas",
+"y": 1997,
+"mins": 25,
+"must": "spin city.{0,40}christmas",
+"fm": "spin city.{0,40}christmas",
+"sm": "spin.{0,5}city",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(spin city) AND title:(christmas)",
+"spin city christmas",
+"title:(spin city) AND title:(christmas)"
+],
+"yt": [
+"Spin City Christmas",
+"Spin City Christmas full episode",
+"Spin City christmas episode 1997"
+]
+},
+{
+"k": "xenewsradiochristmas1996",
+"kind": "ep",
+"series": "NewsRadio",
+"t": "Christmas",
+"y": 1996,
+"mins": 25,
+"must": "newsradio.{0,40}christmas",
+"fm": "newsradio.{0,40}christmas",
+"sm": "newsradio",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(newsradio) AND title:(christmas)",
+"newsradio christmas",
+"title:(newsradio) AND title:(christmas)"
+],
+"yt": [
+"NewsRadio Christmas",
+"NewsRadio Christmas full episode",
+"NewsRadio christmas episode 1996"
+]
+},
+{
+"k": "xejustshootmechristmas1998",
+"kind": "ep",
+"series": "Just Shoot Me!",
+"t": "Christmas",
+"y": 1998,
+"mins": 25,
+"must": "just shoot me.{0,40}christmas",
+"fm": "just shoot me.{0,40}christmas",
+"sm": "just.{0,5}shoot.{0,5}me",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(just shoot me) AND title:(christmas)",
+"just shoot me christmas",
+"title:(just shoot me) AND title:(christmas)"
+],
+"yt": [
+"Just Shoot Me! Christmas",
+"Just Shoot Me! Christmas full episode",
+"Just Shoot Me! christmas episode 1998"
+]
+},
+{
+"k": "xethekingofqueenschristmas1999",
+"kind": "ep",
+"series": "The King of Queens",
+"t": "Christmas",
+"y": 1999,
+"mins": 25,
+"must": "king of queens.{0,40}christmas",
+"fm": "king of queens.{0,40}christmas",
+"sm": "king.{0,5}of.{0,5}queens",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(king of queens) AND title:(christmas)",
+"king of queens christmas",
+"title:(king of queens) AND title:(christmas)"
+],
+"yt": [
+"The King of Queens Christmas",
+"The King of Queens Christmas full episode",
+"The King of Queens christmas episode 1999"
+]
+},
+{
+"k": "xescrubsmyownpersonaljesus2001",
+"kind": "ep",
+"series": "Scrubs",
+"t": "My Own Personal Jesus",
+"y": 2001,
+"mins": 25,
+"must": "my own personal jesus",
+"fm": "my own personal jesus",
+"sm": "scrubs",
+"lo": 1125,
+"hi": 3000,
+"ia": [
+"title:(scrubs) AND title:(my own personal jesus)",
+"scrubs my own personal jesus",
+"title:(scrubs) AND title:(christmas)"
+],
+"yt": [
+"Scrubs My Own Personal Jesus",
+"Scrubs My Own Personal Jesus full episode",
+"Scrubs christmas episode 2001"
+]
+}
+]
