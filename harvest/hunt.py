@@ -49,17 +49,18 @@ for ii, it in enumerate(items):
     if only and k not in only: continue
     if ii % NS != SH: continue
     must = re.compile('(?i)' + it['must']); lo, hi = it.get('lo', 600), it.get('hi', 12000)
+    RAW = bool(it.get('raw'))
     sm = re.compile('(?i)' + it['sm']) if it.get('sm') else None; fm = re.compile('(?i)' + it['fm']) if it.get('fm') else None
     ia = {}; yt = {}
     for q in it.get('ia', []):
-        j = get('https://archive.org/advancedsearch.php?' + urllib.parse.urlencode({'q': q, 'fl[]': ['identifier', 'title', 'downloads', 'year', 'language'], 'rows': 60, 'output': 'json'}, doseq=True))
+        j = get('https://archive.org/advancedsearch.php?' + urllib.parse.urlencode({'q': q, 'fl[]': ['identifier', 'title', 'downloads', 'year', 'language'], 'rows': 200 if RAW else 60, 'sort[]': 'downloads desc', 'output': 'json'}, doseq=True))
         for d in (j or {}).get('response', {}).get('docs', []):
             t = str(d.get('title') or ''); i = d['identifier']
             ii2 = i.replace('-', ' ').replace('_', ' ')
             hit = must.search(t) or must.search(ii2)
-            if i in ia or not (hit or (sm and (sm.search(t) or sm.search(ii2)))) or JUNK.search(t): continue
+            if i in ia or not (hit or (sm and (sm.search(t) or sm.search(ii2)))) or (JUNK.search(t) and not RAW): continue
             ia[i] = {'id': i, 't': t[:160], 'y': str(d.get('year') or ''), 'dl': int(d.get('downloads') or 0), 'lang': str(d.get('language') or '')[:30], 'hit': bool(hit)}
-    for i, d in sorted(ia.items(), key=lambda x: -x[1]['dl'])[:25]:
+    for i, d in sorted(ia.items(), key=lambda x: -x[1]['dl'])[:80 if RAW else 25]:
         f, m = ia_files(i)
         d['files'] = [x for x in (f or []) if lo * 0.5 <= x[1] <= hi * 1.2 and not HEVC.search(x[0])] if f else []
         if fm and not d.get('hit'): d['files'] = [x for x in d['files'] if fm.search(x[0].replace('_', ' ').replace('.', ' '))]
@@ -73,10 +74,10 @@ for ii, it in enumerate(items):
         except Exception as e: print('ytfail', q, e, flush=True); continue
         for r in rs:
             t = r.get('t') or ''; d = int(r.get('dur') or 0)
-            if r['vid'] in yt or not must.search(t) or JUNK.search(t) or not (lo <= d <= hi): continue
+            if r['vid'] in yt or not must.search(t) or ((JUNK.search(t) or not (lo <= d <= hi)) and not RAW): continue
             yt[r['vid']] = {'vid': r['vid'], 't': t[:160], 'ch': (r.get('ch') or '')[:60], 'dur': d, 'q': q}
-    ytl = list(yt.values())[:20]
-    res[k] = {'ia': sorted(ia.values(), key=lambda x: -x['dl'])[:15], 'yt': ytl, 'at': time.strftime('%Y-%m-%d')}
+    ytl = list(yt.values())[:200 if RAW else 20]
+    res[k] = {'ia': sorted(ia.values(), key=lambda x: -x['dl'])[:80 if RAW else 15], 'yt': ytl, 'at': time.strftime('%Y-%m-%d')}
     print(k, 'ia', len(res[k]['ia']), 'yt', len(res[k]['yt']), flush=True)
 ck = res.setdefault('_check', {})
 for v in [x for x in os.environ.get('CHECK', '').split('|') if x]:

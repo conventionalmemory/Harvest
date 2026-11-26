@@ -566,5 +566,37 @@
    "Packers Lions 2003-11-27",
    "NFL 2003 Week 13 Packers Lions"
   ]
+ },
+ {
+  "k": "iawl1946",
+  "t": "It's a Wonderful Life",
+  "y": 1946,
+  "must": "wonderful life|wonderful.life",
+  "lo": 6000,
+  "hi": 14400,
+  "raw": 1,
+  "ia": [
+   "title:(wonderful life) AND mediatype:movies",
+   "wonderful life capra",
+   "wonderful life james stewart",
+   "\"wonderful life\" 1946",
+   "creator:(capra) AND mediatype:movies",
+   "subject:(wonderful life)",
+   "title:(wonderful life) AND mediatype:movies AND item_size:[400000000 TO 99999999999]"
+  ],
+  "yt": [
+   "It's a Wonderful Life 1946",
+   "It's a Wonderful Life full movie",
+   "It's a Wonderful Life 1946 full movie HD",
+   "It's a Wonderful Life colorized full movie",
+   "It's a Wonderful Life NBC broadcast",
+   "It's a Wonderful Life with commercials",
+   "It's a Wonderful Life WGN",
+   "It's a Wonderful Life original broadcast",
+   "It's a Wonderful Life James Stewart Donna Reed full film",
+   "It's a Wonderful Life VHS",
+   "Its a wonderful life 1946 movie",
+   "It's a Wonderful Life Frank Capra"
+  ]
  }
 ]
